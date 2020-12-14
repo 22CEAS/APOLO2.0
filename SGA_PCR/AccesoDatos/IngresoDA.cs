@@ -225,6 +225,9 @@ namespace AccesoDatos
             parametrosEntrada[6].Value = ingreso.Factura;
             parametrosEntrada[7].Value = ingreso.Guia;
             parametrosEntrada[8].Value = ingreso.FechaIngreso;
+
+            MessageBox.Show(parametrosEntrada[8].Value.ToString());
+
             parametrosEntrada[9].Value = ingreso.IdMonedaTipo;
             parametrosEntrada[10].Value = ingreso.MonedaTipo;
             parametrosEntrada[11].Value = ingreso.MontoCambio;
