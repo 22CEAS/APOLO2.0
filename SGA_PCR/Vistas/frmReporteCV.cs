@@ -23,6 +23,8 @@ namespace Apolo
     {
 
         DataTable tablaLaptops;
+        DataTable memoriaLC;
+        DataTable memoria;
         ReporteDA reporteDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -298,14 +300,75 @@ namespace Apolo
         {
             try
             {
+                
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarCuadroVencimiento();
+                memoriaLC = reporteDA.ListarMemoriasLC();
+                memoria = reporteDA.ListarMemoriasMaestro();
+
+
+                tablaLaptops.Columns.Add("RAM");
+
+                //PONER MEMORIA
+                for (int i = 0; i < tablaLaptops.Rows.Count; i++)
+                {
+                    //MessageBox.Show(tablaLaptops.Rows[i]["idLC"].ToString());
+                    int idLC= int.Parse(tablaLaptops.Rows[i]["idLC"].ToString());
+
+                    //MessageBox.Show(idLC.ToString());
+
+                    //RECORREMOS TABLA MEMORIALC
+                    List<int> codigosMemorias = new List<int>(); //! IMPORTANTE
+                    int aux = 0;
+                    for (int j = 0; j < memoriaLC.Rows.Count; j++)
+                    {
+                        if (int.Parse(memoriaLC.Rows[j]["idLC"].ToString()) == idLC)
+                        {
+                            aux = int.Parse(memoriaLC.Rows[j]["cantidad"].ToString());
+                            for (int h = 0; h < aux; h++)
+                            {
+                                codigosMemorias.Add(int.Parse(memoriaLC.Rows[j]["idMemoria"].ToString()));
+                            }
+
+                            //MessageBox.Show(memoriaLC.Rows[j]["idMemoria"].ToString());
+                        }
+                    }
+
+                    //RECORREMOS TABLA MEMORIA
+                    List<int> capacidadMemorias = new List<int>();
+                    for (int k = 0; k < memoria.Rows.Count; k++)
+                    {
+                        for (int s = 0; s < codigosMemorias.Count; s++)
+                        {
+                            if (int.Parse(memoria.Rows[k]["idMemoria"].ToString()) == codigosMemorias[s])
+                                capacidadMemorias.Add(int.Parse(memoria.Rows[k]["capacidad"].ToString()));
+
+                        }
+                    }
+
+                    //RECORREMOS LAS CAPACIDAD
+                    int suma = 0;
+                    for (int b = 0; b < capacidadMemorias.Count; b++)
+                    {
+                        suma = suma + capacidadMemorias[b];
+                    }
+
+                    //MessageBox.Show(suma+"GB");
+                    tablaLaptops.Rows[i]["RAM"] = suma + " GB";
+
+                    
+                }
+
+
+
 
                 dgvLaptops.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
-                
-                
+
+             
+
+
             }
             catch (Exception e)
             {

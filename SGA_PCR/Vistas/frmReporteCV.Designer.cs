@@ -58,11 +58,13 @@
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cargarData = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.verResumen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UBSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -147,8 +149,10 @@
             this.TotalDolares,
             this.CostoSoles,
             this.CostoDolares,
+            this.UBSoles,
             this.VersionOffice,
-            this.KAM});
+            this.KAM,
+            this.RAM});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -404,7 +408,7 @@
             // 
             this.MontoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MontoSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.MontoSoles.Caption = "Monto Soles";
+            this.MontoSoles.Caption = "Venta Soles";
             this.MontoSoles.FieldName = "MontoSoles";
             this.MontoSoles.MinWidth = 40;
             this.MontoSoles.Name = "MontoSoles";
@@ -417,7 +421,7 @@
             // 
             this.MontoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MontoDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.MontoDolares.Caption = "Monto Dolares";
+            this.MontoDolares.Caption = "Venta Dolares";
             this.MontoDolares.FieldName = "MontoDolares";
             this.MontoDolares.MinWidth = 40;
             this.MontoDolares.Name = "MontoDolares";
@@ -435,8 +439,6 @@
             this.TotalDolares.MinWidth = 40;
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 19;
             this.TotalDolares.Width = 100;
             // 
             // CostoSoles
@@ -449,7 +451,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 20;
+            this.CostoSoles.VisibleIndex = 19;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -462,7 +464,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 21;
+            this.CostoDolares.VisibleIndex = 20;
             this.CostoDolares.Width = 100;
             // 
             // VersionOffice
@@ -477,6 +479,17 @@
             this.VersionOffice.Visible = true;
             this.VersionOffice.VisibleIndex = 22;
             this.VersionOffice.Width = 100;
+            // 
+            // KAM
+            // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.Name = "KAM";
+            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 23;
             // 
             // cargarData
             // 
@@ -520,16 +533,21 @@
             this.label1.Text = "CANTIDAD REGISTROS:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // KAM
+            // UBSoles
             // 
-            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.KAM.AppearanceHeader.Options.UseBackColor = true;
-            this.KAM.Caption = "KAM";
-            this.KAM.FieldName = "KAM";
-            this.KAM.Name = "KAM";
-            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 23;
+            this.UBSoles.Caption = "Utilidad Bruta Soles";
+            this.UBSoles.FieldName = "UBSoles";
+            this.UBSoles.Name = "UBSoles";
+            this.UBSoles.Visible = true;
+            this.UBSoles.VisibleIndex = 21;
+            // 
+            // RAM
+            // 
+            this.RAM.Caption = "RAM";
+            this.RAM.FieldName = "RAM";
+            this.RAM.Name = "RAM";
+            this.RAM.Visible = true;
+            this.RAM.VisibleIndex = 10;
             // 
             // frmReporteCV
             // 
@@ -595,5 +613,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn ruc;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
+        private DevExpress.XtraGrid.Columns.GridColumn UBSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn RAM;
     }
 }
