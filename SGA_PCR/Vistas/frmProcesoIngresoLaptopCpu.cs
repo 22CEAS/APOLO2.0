@@ -119,26 +119,34 @@ namespace Apolo
             }
 
             tablaVideo.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaVideo.Rows.Count; h++)
+            {
+                tablaVideo.Rows[h]["Seleccionar"] = false;
+            }
 
             tablaProcesador.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaProcesador.Rows.Count; h++)
+            {
+                tablaProcesador.Rows[h]["Seleccionar"] = false;
+            }
 
             dgvLicencias.DataSource = tablaLicencia;
             vistaLicencias.OptionsBehavior.AutoPopulateColumns = false;
             vistaLicencias.OptionsSelection.MultiSelect = true;
 
-            dgvMemorias.DataSource = tablaLicencia;
+            dgvMemorias.DataSource = tablaMemoria;
             vistaMemorias.OptionsBehavior.AutoPopulateColumns = false;
             vistaMemorias.OptionsSelection.MultiSelect = true;
 
-            dgvDiscos.DataSource = tablaLicencia;
+            dgvDiscos.DataSource = tablaDisco;
             vistaDiscos.OptionsBehavior.AutoPopulateColumns = false;
             vistaDiscos.OptionsSelection.MultiSelect = true;
 
-            dgvProcesadores.DataSource = tablaLicencia;
+            dgvProcesadores.DataSource = tablaProcesador;
             vistaProcesadores.OptionsBehavior.AutoPopulateColumns = false;
             vistaProcesadores.OptionsSelection.MultiSelect = true;
 
-            dgvVideos.DataSource = tablaLicencia;
+            dgvVideos.DataSource = tablaVideo;
             vistaVideos.OptionsBehavior.AutoPopulateColumns = false;
             vistaVideos.OptionsSelection.MultiSelect = true;
             //=========================================================================
