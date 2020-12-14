@@ -43,9 +43,11 @@ namespace Apolo
 
         private int laptopIdCategoria = 1;
 
-        public frmProcesoIngresoLaptopCpu(string tipoIngreso)
+        public frmProcesoIngresoLaptopCpu(int idUsuario, string nombreUsuario,string tipoIngreso)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
             Inicializado();
 
             if (tipoIngreso == "1")
@@ -54,14 +56,14 @@ namespace Apolo
             }
         }
 
-        public frmProcesoIngresoLaptopCpu(IngresoDetalle detalleTraido)
+        public frmProcesoIngresoLaptopCpu(int idUsuario, string nombreUsuario, string tipoIngreso, IngresoDetalle detalleTraido)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
             Inicializado();
-            
             ObtenerListaLaptops(detalleTraido);
         }
-
 
         public void Inicializado()
         {
@@ -71,34 +73,13 @@ namespace Apolo
 
             txtCantidad.Text = "1";
 
-            tablaProcesador = ingresoDA.ListarProcesadores();
-            dgvProcesador.PrimaryGrid.AutoGenerateColumns = false;
-            dgvProcesador.PrimaryGrid.DataSource = tablaProcesador;
-
-            tablaMemoria = ingresoDA.ListarMemorias();
-            dgvMemoria.PrimaryGrid.AutoGenerateColumns = false;
-            dgvMemoria.PrimaryGrid.DataSource = tablaMemoria;
-
-            tablaDisco = ingresoDA.ListarDiscosDuros();
-            dgvDiscoDuro.PrimaryGrid.AutoGenerateColumns = false;
-            dgvDiscoDuro.PrimaryGrid.DataSource = tablaDisco;
-
-            tablaVideo = ingresoDA.ListarTarjetaVideos();
-            dgvVideo.PrimaryGrid.AutoGenerateColumns = false;
-            dgvVideo.PrimaryGrid.DataSource = tablaVideo;
-
-            tablaLicencia = ingresoDA.ListarLicencias();
-            dgvLicencia.PrimaryGrid.AutoGenerateColumns = false;
-            dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
-
             tablaMarca = ingresoDA.ListarMarcas();
             cmbMarca.DataSource = tablaMarca;
             cmbMarca.DisplayMember = "nombre";
             cmbMarca.ValueMember = "idMarca";
             cmbMarca.SelectedIndex = 0;
             int i = cmbMarca.SelectedIndex;
-
-            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            if (i >= 0) 
             {
                 int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
                 tablaModelo = ingresoDA.ListarModelos(idMarca);
@@ -107,35 +88,64 @@ namespace Apolo
                 cmbModelo.ValueMember = "idModelo";
                 cmbModelo.SelectedIndex = 0;
             }
-            //tablaDestino = ingresoDA.ListarDestinos();
-            //cmbDestino.DataSource = tablaDestino;
-            //cmbDestino.DisplayMember = "nombre";
-            //cmbDestino.ValueMember = "idDestino";
 
+            tablaProcesador = ingresoDA.ListarProcesadores();
 
-            
+            tablaMemoria = ingresoDA.ListarMemorias();
 
-        }
+            tablaDisco = ingresoDA.ListarDiscosDuros();
 
+            tablaVideo = ingresoDA.ListarTarjetaVideos();
 
-        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int i = cmbMarca.SelectedIndex;
-            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            tablaLicencia = ingresoDA.ListarLicencias();
+
+            //=========================================================================
+            tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaLicencia.Rows.Count; h++)
             {
-                int idMarca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
-                tablaModelo = ingresoDA.ListarModelos(idMarca);
-                cmbModelo.DataSource = (tablaModelo.Rows.Count > 0) ? tablaModelo : null;
-                cmbModelo.DisplayMember = "nombre";
-                cmbModelo.ValueMember = "idModelo";
-                cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
+                tablaLicencia.Rows[h]["Seleccionar"] = false;
             }
 
+            tablaMemoria.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaMemoria.Rows.Count; h++)
+            {
+                tablaMemoria.Rows[h]["Seleccionar"] = false;
+            }
+
+            tablaDisco.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaDisco.Rows.Count; h++)
+            {
+                tablaDisco.Rows[h]["Seleccionar"] = false;
+            }
+
+            tablaVideo.Columns.Add("Seleccionar", typeof(bool));
+
+            tablaProcesador.Columns.Add("Seleccionar", typeof(bool));
+
+            dgvLicencias.DataSource = tablaLicencia;
+            vistaLicencias.OptionsBehavior.AutoPopulateColumns = false;
+            vistaLicencias.OptionsSelection.MultiSelect = true;
+
+            dgvMemorias.DataSource = tablaLicencia;
+            vistaMemorias.OptionsBehavior.AutoPopulateColumns = false;
+            vistaMemorias.OptionsSelection.MultiSelect = true;
+
+            dgvDiscos.DataSource = tablaLicencia;
+            vistaDiscos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaDiscos.OptionsSelection.MultiSelect = true;
+
+            dgvProcesadores.DataSource = tablaLicencia;
+            vistaProcesadores.OptionsBehavior.AutoPopulateColumns = false;
+            vistaProcesadores.OptionsSelection.MultiSelect = true;
+
+            dgvVideos.DataSource = tablaLicencia;
+            vistaVideos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaVideos.OptionsSelection.MultiSelect = true;
+            //=========================================================================
         }
 
         public void ObtenerListaLaptops(IngresoDetalle detalleTraido)
         {
-
             tabControl1.SelectedTab = tabProcesador;
             tabControl1.SelectedTab = tabMemoria;
             tabControl1.SelectedTab = tabVideo;
@@ -167,26 +177,6 @@ namespace Apolo
                 dgvWindows.Rows.Add(row);
             }
 
-            /*
-            foreach (String clave in detalleTraido.Office)
-            {
-                DataGridViewRow row = (DataGridViewRow)dgvOffice.Rows[0].Clone();
-                row.Cells[1].Value = clave;
-                dgvOffice.Rows.Add(row);
-            }
-
-            foreach (String clave in detalleTraido.Antivirus)
-            {
-                DataGridViewRow row = (DataGridViewRow)dgvAntivirus.Rows[0].Clone();
-                row.Cells[1].Value = clave;
-                dgvAntivirus.Rows.Add(row);
-            }
-            */
-            tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
-            for (int i = 0; i < tablaLicencia.Rows.Count; i++)
-            {
-                tablaLicencia.Rows[i]["Seleccionar"] = false;
-            }
             foreach (Licencia licencia in laptop.Licencias)
             {
                 for (int i = 0; i < tablaLicencia.Rows.Count; i++)
@@ -195,14 +185,8 @@ namespace Apolo
                         tablaLicencia.Rows[i]["Seleccionar"] = true;
                 }
             }
-            dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
+            dgvLicencias.DataSource = tablaLicencia;
 
-
-            tablaMemoria.Columns.Add("Seleccionar", typeof(bool));
-            for (int i = 0; i < tablaMemoria.Rows.Count; i++)
-            {
-                tablaMemoria.Rows[i]["Seleccionar"] = false;
-            }
             foreach (Memoria memoria in laptop.Memorias)
             {
                 for (int i = 0; i < tablaMemoria.Rows.Count; i++)
@@ -211,15 +195,8 @@ namespace Apolo
                         tablaMemoria.Rows[i]["Seleccionar"] = true;
                 }
             }
-            dgvMemoria.PrimaryGrid.DataSource = tablaMemoria;
-
-
-
-            tablaDisco.Columns.Add("Seleccionar", typeof(bool));
-            for (int i = 0; i < tablaDisco.Rows.Count; i++)
-            {
-                tablaDisco.Rows[i]["Seleccionar"] = false;
-            }
+            dgvMemorias.DataSource = tablaMemoria;
+                      
             foreach (DiscoDuro disco in laptop.Discos)
             {
                 for (int i = 0; i < tablaDisco.Rows.Count; i++)
@@ -228,21 +205,17 @@ namespace Apolo
                         tablaDisco.Rows[i]["Seleccionar"] = true;
                 }
             }
-            dgvDiscoDuro.PrimaryGrid.DataSource = tablaDisco;
+            dgvDiscos.DataSource = tablaDisco;
 
-
-            tablaVideo.Columns.Add("Seleccionar", typeof(bool));
-            for(int i=0;i< tablaVideo.Rows.Count; i++)
+            for (int i=0;i< tablaVideo.Rows.Count; i++)
             {
                 if (laptop.Video.IdVideo == int.Parse(tablaVideo.Rows[i]["IdVideo"].ToString()))
                     tablaVideo.Rows[i]["Seleccionar"] = true;
                 else
                     tablaVideo.Rows[i]["Seleccionar"] = false;
             }
-            dgvVideo.PrimaryGrid.DataSource = tablaVideo;
+            dgvVideos.DataSource = tablaVideo;
 
-
-            tablaProcesador.Columns.Add("Seleccionar", typeof(bool));
             for (int i = 0; i < tablaProcesador.Rows.Count; i++)
             {
                 if (laptop.Procesador.IdProcesador == int.Parse(tablaProcesador.Rows[i]["IdProcesador"].ToString()))
@@ -250,16 +223,15 @@ namespace Apolo
                 else
                     tablaProcesador.Rows[i]["Seleccionar"] = false;
             }
-            dgvProcesador.PrimaryGrid.DataSource = tablaProcesador;
-
-
+            dgvProcesadores.DataSource = tablaProcesador;
+            
         }
+
         public bool llenarListaLaptops()
         {
             bool flag = false;
             laptop = new LC();
             
-
             int j = cmbMarca.SelectedIndex;
             laptop.Modelo.IdMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
             laptop.Modelo.NombreMarca = tablaMarca.Rows[j]["nombre"].ToString();
@@ -306,127 +278,88 @@ namespace Apolo
                 }
             }
             detalle.Windows = windows;
-            /*
-            for (int i = 0; i < dgvOffice.Rows.Count; i++)
-            {
-                if (!dgvOffice.Rows[i].IsNewRow)
-                {
-                    if (dgvOffice.Rows[i].Cells[1].Value != null)
-                    {
-                        String office = dgvOffice.Rows[i].Cells[1].Value.ToString();
-                        offices.Add(office);
-                    }
-                }
-            }
-            detalle.Office = offices;
-
-            for (int i = 0; i < dgvAntivirus.Rows.Count; i++)
-            {
-                if (!dgvAntivirus.Rows[i].IsNewRow)
-                {
-                    if (dgvAntivirus.Rows[i].Cells[1].Value != null)
-                    {
-                        String antiviru = dgvAntivirus.Rows[i].Cells[1].Value.ToString();
-                        antivirus.Add(antiviru);
-                    }
-                }
-            }
-            detalle.Antivirus = antivirus;
-            */
-
+            
             int filas = tablaProcesador.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaProcesadores.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        procesador = new Procesador();
-                        procesador.IdProcesador = int.Parse(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 7))).Value.ToString());
-                        procesador.IdModelo = int.Parse(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 8))).Value.ToString());
-                        procesador.Generacion = int.Parse(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        procesador.Modelo.NombreModelo = ((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        laptop.Procesador=procesador;
-                        flag = true;
-                    }
+                    procesador = new Procesador();
+                    procesador.IdProcesador = int.Parse(vistaProcesadores.GetRowCellValue(i, "idProcesador").ToString());
+                    procesador.IdModelo = int.Parse(vistaProcesadores.GetRowCellValue(i, "idTipo").ToString());
+                    procesador.Generacion = int.Parse(vistaProcesadores.GetRowCellValue(i, "generacion").ToString());
+                    procesador.Modelo.NombreModelo = vistaProcesadores.GetRowCellValue(i, "tipo").ToString();
+                    laptop.Procesador = procesador;
+                    flag = true;
                 }
             }
 
             filas = tablaVideo.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaVideos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        video = new Video();
-                        video.IdVideo = int.Parse(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        video.IdModelo = int.Parse(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 7))).Value.ToString());
-                        video.Capacidad = int.Parse(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                        video.Modelo.NombreModelo = ((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        laptop.Video = video;
-                        flag = true;
-                    }
+                    video = new Video();
+                    video.IdVideo = int.Parse(vistaVideos.GetRowCellValue(i, "idVideo").ToString());
+                    video.IdModelo = int.Parse(vistaVideos.GetRowCellValue(i, "idModelo").ToString());
+                    video.Capacidad = int.Parse(vistaVideos.GetRowCellValue(i, "capacidad").ToString());
+                    video.Modelo.NombreModelo = vistaVideos.GetRowCellValue(i, "nombreModelo").ToString();
+                    laptop.Video = video;
+                    flag = true;
                 }
             }
 
             filas = tablaMemoria.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaMemorias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        memoria = new Memoria();
-                        memoria.IdMemoria = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 5))).Value.ToString());
-                        memoria.IdModelo = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        memoria.Capacidad = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        memoria.Modelo.NombreModelo = ((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        memoria.Tipo = ((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 9))).Value.ToString();
-                        memoria.Cantidad = 1;
-                        laptop.Memorias.Add(memoria);
-                        flag = true;
-                    }
+                    memoria = new Memoria();
+                    memoria.IdMemoria = int.Parse(vistaMemorias.GetRowCellValue(i, "idMemoria").ToString());
+                    memoria.IdModelo = int.Parse(vistaMemorias.GetRowCellValue(i, "idTipo").ToString());
+                    memoria.Capacidad = int.Parse(vistaMemorias.GetRowCellValue(i, "capacidad").ToString());
+                    memoria.Modelo.NombreModelo = vistaMemorias.GetRowCellValue(i, "tipo").ToString();
+                    memoria.Tipo = vistaMemorias.GetRowCellValue(i, "tipo2").ToString();
+                    memoria.Cantidad = 1;
+                    laptop.Memorias.Add(memoria);
+                    flag = true;
                 }
             }
-
-
+            
             filas = tablaDisco.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaDiscos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        disco = new DiscoDuro();
-                        disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
-                        disco.IdTipo = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        disco.Capacidad = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        disco.Tamano = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        disco.Cantidad = 1;
-                        laptop.Discos.Add(disco);
-                        flag = true;
-                    }
+                    disco = new DiscoDuro();
+                    disco.IdDisco = int.Parse(vistaDiscos.GetRowCellValue(i, "idDisco").ToString());
+                    disco.IdTipo = int.Parse(vistaDiscos.GetRowCellValue(i, "idTipo").ToString());
+                    disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "capacidad").ToString());
+                    disco.Tamano = vistaDiscos.GetRowCellValue(i, "tamano").ToString();
+                    disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "tipo").ToString();
+                    disco.Cantidad = 1;
+                    laptop.Discos.Add(disco);
+                    flag = true;
                 }
             }
-
-
+            
             filas = tablaLicencia.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaLicencias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        licencia = new Licencia();
-                        licencia.IdCategoria = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                        licencia.IdModelo = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        licencia.Categoria = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        licencia.Version = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                        laptop.Licencias.Add(licencia);
-                        flag = true;
-                    }
+                    licencia = new Licencia();
+                    licencia.IdCategoria = int.Parse(vistaLicencias.GetRowCellValue(i, "IdCategoria").ToString());
+                    licencia.IdModelo = int.Parse(vistaLicencias.GetRowCellValue(i, "IdModelo").ToString());
+                    licencia.Categoria = vistaLicencias.GetRowCellValue(i, "Categoria").ToString();
+                    licencia.Version = vistaLicencias.GetRowCellValue(i, "Version").ToString();
+                    laptop.Licencias.Add(licencia);
+                    flag = true;
                 }
             }
 
@@ -446,25 +379,7 @@ namespace Apolo
             tabControl1.SelectedTab = tabDetalle;
 
             //==============================================================================================
-            int filas = tablaVideo.Rows.Count;
-            int cantVideos = 0;
-            for (int i = 0; i < filas; i++)
-            {
-                if (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        cantVideos++;
-                    }
-                }
-            }
-            if (cantVideos > 1)
-            {
-                MessageBox.Show("Solo seleccione una tarjeta de video", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabVideo;
-                return false;
-            }
-            //==============================================================================================
+
             if (cmbModelo.SelectedValue == null)
             {
                 MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
@@ -472,18 +387,33 @@ namespace Apolo
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
+            
             //==============================================================================================
+
+            int filas = tablaVideo.Rows.Count;
+            int cantVideos = 0;
+            for (int i = 0; i < filas; i++)
+            {
+                bool aux2 = bool.Parse(vistaVideos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                    cantVideos++;
+            }
+            if (cantVideos > 1)
+            {
+                MessageBox.Show("Solo seleccione una tarjeta de video", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabVideo;
+                return false;
+            }
+            
+            //==============================================================================================
+
             filas = tablaProcesador.Rows.Count;
             int cantProcesadores = 0;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        cantProcesadores++;
-                    }
-                }
+                bool aux2 = bool.Parse(vistaProcesadores.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                    cantProcesadores++;
             }
             if (cantProcesadores > 1)
             {
@@ -499,17 +429,14 @@ namespace Apolo
             }
 
             //==============================================================================================
+
             filas = tablaDisco.Rows.Count;
             int cantDiscos = 0;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        cantDiscos++;
-                    }
-                }
+                bool aux2 = bool.Parse(vistaDiscos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                    cantDiscos++;
             }
             if (cantDiscos > 2)
             {
@@ -525,17 +452,14 @@ namespace Apolo
             }
 
             //==============================================================================================
+
             filas = tablaMemoria.Rows.Count;
             int cantMemorias = 0;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        cantMemorias++;
-                    }
-                }
+                bool aux2 = bool.Parse(vistaMemorias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                    cantMemorias++;
             }
             if (cantMemorias > 4)
             {
@@ -550,35 +474,17 @@ namespace Apolo
                 return false;
             }
 
-
             //==============================================================================================
+
             filas = tablaLicencia.Rows.Count;
             int cantWindows = 0;
-            //int cantOffice = 0;
-            //int cantAntivirus = 0;
 
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == LicenciaSO)
-                        {
-                            cantWindows++;
-                        }
-                        /*
-                        else if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == "OFFICE")
-                        {
-                            cantOffice++;
-                        }
-                        else if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == "ANTIVIRUS")
-                        {
-                            cantAntivirus++;
-                        }
-                        */
-                    }
-                }
+                bool aux2 = bool.Parse(vistaLicencias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                    if (vistaLicencias.GetRowCellValue(i, "Categoria").ToString() == LicenciaSO)
+                        cantWindows++;
             }
             if (cantWindows > 1) //! AQUI SE VALIDA QUE SOLO SE PUEDA INGRESAR 1 LICENCIA O NIGUNA, PERO NUNCA MAS DE 1
             {
@@ -586,52 +492,13 @@ namespace Apolo
                 tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
-            
-            /*
-            if (cantOffice > 1)
-            {
-                MessageBox.Show("Solo puede seleccionar una licencia office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabLicencia;
-                return false;
-            }
 
-            if (cantAntivirus > 1)
-            {
-                MessageBox.Show("Solo puede seleccionar una licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabLicencia;
-                return false;
-            }
-            */
+            //==============================================================================================
+            //Validación de cantidad de Claves de SO = a la cantidad de equipos
 
             int aux;
             int filasDgv;
-            //==============================================================================================
 
-
-
-            /*
-
-            //! CODIGO DE LICENCIAS SEGUN EL NUMERO DE ACTIVOS A INGRESAR 
-            int canActivos = int.Parse(txtCantidad.Text);
-            int claveSO = dgvWindows.RowCount;
-
-            if (cantWindows == 1)
-            { 
-                if (canActivos < claveSO)
-                {
-                    MessageBox.Show("NO PUEDE HABER MAS LICENCIAS DE S.O QUE ACTIVOS");
-                    return false;
-                }
-
-                if (canActivos < claveSO)
-                {
-                    MessageBox.Show("NO PUEDE HABER MAS LICENCIAS DE S.O QUE ACTIVOS");
-                    return false;
-                }
-            }
-
-
-            */
             if (cantWindows == 1)
             {
                 for (int i = 0; i < dgvWindows.Rows.Count; i++)
@@ -663,77 +530,6 @@ namespace Apolo
 
             }
 
-
-            //==============================================================================================
-
-            /*
-            if (cantOffice == 1)
-            {
-                for (int i = 0; i < dgvOffice.Rows.Count; i++)
-                {
-                    if (dgvOffice.Rows[i].Cells[1].Value == null)
-                    {
-                        if (!dgvOffice.Rows[i].IsNewRow)
-                        {
-                            dgvOffice.Rows.Remove(dgvOffice.Rows[i]);
-                            i = -1;
-                        }
-                    }
-                }
-                aux = int.Parse(txtCantidad.Text);
-                filasDgv = dgvOffice.Rows.Count - 1;
-
-                if (filasDgv < aux)
-                {
-                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    tabControl1.SelectedTab = tabClavesLicencias;
-                    return false;
-                }
-                else if (filasDgv > aux)
-                {
-                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    tabControl1.SelectedTab = tabClavesLicencias;
-                    return false;
-                }
-            }
-
-
-            //==============================================================================================
-
-
-            if (cantAntivirus == 1)
-            {
-
-                for (int i = 0; i < dgvAntivirus.Rows.Count; i++)
-                {
-                    if (dgvAntivirus.Rows[i].Cells[1].Value == null)
-                    {
-                        if (!dgvAntivirus.Rows[i].IsNewRow)
-                        {
-                            dgvAntivirus.Rows.Remove(dgvAntivirus.Rows[i]);
-                            i = -1;
-                        }
-                    }
-                }
-                aux = int.Parse(txtCantidad.Text);
-                filasDgv = dgvAntivirus.Rows.Count - 1;
-
-                if (filasDgv < aux)
-                {
-                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    tabControl1.SelectedTab = tabClavesLicencias;
-                    return false;
-                }
-                else if (filasDgv > aux)
-                {
-                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    tabControl1.SelectedTab = tabClavesLicencias;
-                    return false;
-                }
-            }
-
-    */
-
             //==============================================================================================
 
             string partNumber = txtPartNumber.Text;
@@ -746,6 +542,7 @@ namespace Apolo
             }
 
             //==============================================================================================
+
             string pantalla = txtPantalla.Text;
             pantalla = pantalla.Trim();
             if (!(pantalla.Length > 0))
@@ -756,6 +553,7 @@ namespace Apolo
             }
 
             //==============================================================================================
+
             string precio = txtPrecio.Text;
             precio = precio.Trim();
             if (!(precio.Length > 0))
@@ -764,6 +562,7 @@ namespace Apolo
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
+            
             //==============================================================================================
 
             for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
@@ -793,7 +592,9 @@ namespace Apolo
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
+
             //==============================================================================================
+
             return true;
         }
 
@@ -801,16 +602,13 @@ namespace Apolo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            // 'Comprobar que tenga filas
             if (validarDatos())
             {
-                if (llenarListaLaptops())//Si entra es porque se ha seleccionado almenos solo
+                if (llenarListaLaptops())
                 {
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     this.Close();
                 }
-
             }
         }
 
@@ -931,6 +729,7 @@ namespace Apolo
         {
             e.Handled = solonumeros2(Convert.ToInt32(e.KeyChar));
         }
+
         public bool solonumeros1(int code)
         {
             bool resultado;
@@ -944,6 +743,7 @@ namespace Apolo
                 resultado = true;
             return resultado;
         }
+
         public bool solonumeros2(int code)
         {
             bool resultado;
@@ -1100,17 +900,7 @@ namespace Apolo
             }
         }
 
-        private void tabControlPanel5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProcesadorSeleccionado_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnResumen_Click(object sender, EventArgs e)
         {
             bool flag = true;
 
@@ -1122,25 +912,21 @@ namespace Apolo
             tabControl1.SelectedTab = tabClavesLicencias;
             tabControl1.SelectedTab = tabDetalle;
 
-            //============================================================================================== PROCESADOR
-            int filas = tablaProcesador.Rows.Count;
-            int canProces = 0;
-            for (int i = 0; i < filas; i++)
-            {
-                if (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value != null)
-                {
-                    if (Convert.ToBoolean(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        
-                        string MarcaP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        string TipoP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                        string GeneracionP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+            //======================================================================== PROCESADOR
 
-                        canProces++;
-                        txtProcesadorSeleccionado.ForeColor = Color.White;
-                        txtProcesadorSeleccionado.BackColor = Color.Green;
-                        txtProcesadorSeleccionado.Text = $"{MarcaP} {TipoP} {GeneracionP}";
-                    }
+            int canProces = 0;
+            for (int i = 0; i < tablaProcesador.Rows.Count; i++)
+            {
+                bool aux2 = bool.Parse(vistaProcesadores.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
+                {
+                    string MarcaP = vistaProcesadores.GetRowCellValue(i, "marca").ToString();
+                    string TipoP = vistaProcesadores.GetRowCellValue(i, "tipo").ToString();
+                    string GeneracionP = vistaProcesadores.GetRowCellValue(i, "generacion").ToString();
+                    canProces++;
+                    txtProcesadorSeleccionado.ForeColor = Color.White;
+                    txtProcesadorSeleccionado.BackColor = Color.Green;
+                    txtProcesadorSeleccionado.Text = $"{MarcaP} {TipoP} {GeneracionP}";
                 }
             }
             if (canProces > 1)
@@ -1156,24 +942,21 @@ namespace Apolo
                 txtProcesadorSeleccionado.Text = "NN";
             }
 
-            //============================================================================================== MEMORIAS
-            int filas2 = tablaMemoria.Rows.Count;
+            //=================================================================== MEMORIAS
+        
             int canMemo = 0;
-            for (int i = 0; i < filas2; i++)
+            for (int i = 0; i < tablaMemoria.Rows.Count; i++)
             {
-                if (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaMemorias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        string ModeloM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        string CapacidadM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        string TipoM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-
-                        canMemo++;
-                        txtMemoriaSeleccionada.ForeColor = Color.White;
-                        txtMemoriaSeleccionada.BackColor = Color.Green;
-                        txtMemoriaSeleccionada.Text = $"{ModeloM} {CapacidadM} {TipoM}";
-                    }
+                    string ModeloM = vistaMemorias.GetRowCellValue(i, "tipo").ToString();
+                    string CapacidadM = vistaMemorias.GetRowCellValue(i, "capacidad").ToString();
+                    string TipoM = vistaMemorias.GetRowCellValue(i, "tipo2").ToString();
+                    canMemo++;
+                    txtMemoriaSeleccionada.ForeColor = Color.White;
+                    txtMemoriaSeleccionada.BackColor = Color.Green;
+                    txtMemoriaSeleccionada.Text = $"{ModeloM} {CapacidadM} {TipoM}";
                 }
             }
             if (canMemo > 1) //MAXIMO 4
@@ -1199,26 +982,21 @@ namespace Apolo
                 txtMemoriaSeleccionada.Text = "NN";
             }
 
-            //============================================================================================== DISCO DURO
-            int filas3 = tablaDisco.Rows.Count;
+            //================================================================ DISCO DURO
+            
             int canDis = 0;
-            for (int i = 0; i < filas3; i++)
+            for (int i = 0; i < tablaDisco.Rows.Count; i++)
             {
-                if (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaDiscos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        string TipoDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        string TamDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                        string CapacidadDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        
-
-                        canDis++;
-                        txtDiscoDuroSeleccionado.ForeColor = Color.White;
-                        txtDiscoDuroSeleccionado.BackColor = Color.Green;
-                        txtDiscoDuroSeleccionado.Text = $"{TipoDD} {TamDD} {CapacidadDD}";
-
-                    }
+                    string TipoDD = vistaDiscos.GetRowCellValue(i, "tipo").ToString();
+                    string TamDD = vistaDiscos.GetRowCellValue(i, "tamano").ToString();
+                    string CapacidadDD = vistaDiscos.GetRowCellValue(i, "capacidad").ToString();
+                    canDis++;
+                    txtDiscoDuroSeleccionado.ForeColor = Color.White;
+                    txtDiscoDuroSeleccionado.BackColor = Color.Green;
+                    txtDiscoDuroSeleccionado.Text = $"{TipoDD} {TamDD} {CapacidadDD}";
                 }
             }
             if (canDis > 1) //MAXIMO 2
@@ -1244,26 +1022,21 @@ namespace Apolo
                 txtDiscoDuroSeleccionado.Text = "NN";
             }
 
+            //================================================================== TARJETA DE VIDEO
 
-            //============================================================================================== TARJETA DE VIDEO
-            int filas4 = tablaVideo.Rows.Count;
             int canTarj = 0;
-            for (int i = 0; i < filas4; i++)
+            for (int i = 0; i < tablaVideo.Rows.Count; i++)
             {
-                if (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaVideos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        string MarcaTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        string TipoTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        string CapacidadTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-
-                        canTarj++;
-                        txtTdvSeleccionado.ForeColor = Color.White;
-                        txtTdvSeleccionado.BackColor = Color.Green;
-                        txtTdvSeleccionado.Text = $"{MarcaTDV} {TipoTDV} {CapacidadTDV}";
-
-                    }
+                    string MarcaTDV = vistaVideos.GetRowCellValue(i, "marca").ToString();
+                    string TipoTDV = vistaVideos.GetRowCellValue(i, "tipo").ToString();
+                    string CapacidadTDV = vistaVideos.GetRowCellValue(i, "capacidad").ToString();
+                    canTarj++;
+                    txtTdvSeleccionado.ForeColor = Color.White;
+                    txtTdvSeleccionado.BackColor = Color.Green;
+                    txtTdvSeleccionado.Text = $"{MarcaTDV} {TipoTDV} {CapacidadTDV}";
                 }
             }
             if (canTarj > 1) 
@@ -1271,34 +1044,28 @@ namespace Apolo
                 txtTdvSeleccionado.ForeColor = Color.Yellow;
                 txtTdvSeleccionado.BackColor = Color.Red;
                 txtTdvSeleccionado.Text = $"{canTarj} SELECCIONADOS";
-
-
             }
-            if (canTarj == 0)
+            else if (canTarj == 0)
             {
                 txtTdvSeleccionado.ForeColor = Color.White;
                 txtTdvSeleccionado.BackColor = Color.Green;
                 txtTdvSeleccionado.Text = "NN";
             }
 
-            //============================================================================================== LICENCIAS
+            //============================================================================= LICENCIAS
 
-            int filas5 = tablaLicencia.Rows.Count;
             int canLic = 0;
-            for (int i = 0; i < filas4; i++)
+            for (int i = 0; i < tablaLicencia.Rows.Count; i++)
             {
-                if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaLicencias.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        string CategoriaLic = (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        string VersionLic = (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-
-                        canLic++;
-                        txtLicenciaSeleccionada.ForeColor = Color.White;
-                        txtLicenciaSeleccionada.BackColor = Color.Green;
-                        txtLicenciaSeleccionada.Text = $"{CategoriaLic} {VersionLic}";
-                    }
+                    string CategoriaLic = vistaLicencias.GetRowCellValue(i, "Categoria").ToString();
+                    string VersionLic = vistaLicencias.GetRowCellValue(i, "Version").ToString();
+                    canLic++;
+                    txtLicenciaSeleccionada.ForeColor = Color.White;
+                    txtLicenciaSeleccionada.BackColor = Color.Green;
+                    txtLicenciaSeleccionada.Text = $"{CategoriaLic} {VersionLic}";
                 }
             }
             if (canLic > 1)
@@ -1306,10 +1073,8 @@ namespace Apolo
                 txtLicenciaSeleccionada.ForeColor = Color.Yellow;
                 txtLicenciaSeleccionada.BackColor = Color.Red;
                 txtLicenciaSeleccionada.Text = $"{canLic} SELECCIONADAS";
-
-
             }
-            if (canLic == 0)
+            else if (canLic == 0)
             {
                 txtLicenciaSeleccionada.ForeColor = Color.White;
                 txtLicenciaSeleccionada.BackColor = Color.Green;
@@ -1317,5 +1082,21 @@ namespace Apolo
             }
 
         }
+
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cmbMarca.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                int idMarca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
+                tablaModelo = ingresoDA.ListarModelos(idMarca);
+                cmbModelo.DataSource = (tablaModelo.Rows.Count > 0) ? tablaModelo : null;
+                cmbModelo.DisplayMember = "nombre";
+                cmbModelo.ValueMember = "idModelo";
+                cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
+            }
+
+        }
+
     }
 }

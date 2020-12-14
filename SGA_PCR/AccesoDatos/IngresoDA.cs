@@ -54,7 +54,7 @@ namespace AccesoDatos
 
         public DataTable ListarLicencias()
         {
-            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias ;");
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias where IdCategoria= "+ this.IdCategoriaWindows + " ;");
         }
 
         public DataTable ListarMarcas()
@@ -65,6 +65,101 @@ namespace AccesoDatos
         public DataTable ListarModelos(int idMarca)
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarTabletMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablets_marca ;");
+        }
+
+        public DataTable ListarTabletModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablets_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarTabletProcesadores()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablet_procesador ;");
+        }
+
+        public DataTable ListarTabletSistemas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablet_sistema ;");
+        }
+
+        public DataTable ListarTabletRAM()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablet_ram ;");
+        }
+
+        public DataTable ListarTabletROM()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_tablet_rom ;");
+        }
+
+        public DataTable ListarMonitorMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_monitores_marca ;");
+        }
+
+        public DataTable ListarMonitorModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_monitores_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarMonitorTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_monitor_tipo ;");
+        }
+        
+        public DataTable ListarImpresoraMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_impresoras_marca ;");
+        }
+
+        public DataTable ListarImpresoraModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_impresoras_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarImpresoraTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_impresora_tipo ;");
+        }
+        
+        public DataTable ListarProyectorMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_marca ;");
+        }
+
+        public DataTable ListarProyectorModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarProyectorTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_tipo ;");
+        }
+
+        public DataTable ListarProyectorEcramTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyector_ecram_categoria ;");
+        }
+        
+        public DataTable ListarEcramMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_ecram_marca ;");
+        }
+
+        public DataTable ListarEcramModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_ecram_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarEcramTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_ecram_tipo ;");
         }
 
         public DataTable ListarDestinos()
@@ -92,28 +187,81 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_lista_ingresos v " + sql + " ;");
         }
 
-        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario, int idProveedor)
+        public int InsertarIngreso(Ingreso ingreso, string usuario)
         {
 
             bool error = false;
 
+            parametrosEntrada = new MySqlParameter[17];
+            parametrosEntrada[0] = new MySqlParameter("@_idOC", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idTipoIngreso", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_tipoIngreso", MySqlDbType.VarChar, 255);
+            parametrosEntrada[3] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
+            parametrosEntrada[4] = new MySqlParameter("@_razonSocial", MySqlDbType.VarChar, 255);
+            parametrosEntrada[5] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 11);
+            parametrosEntrada[6] = new MySqlParameter("@_facturaIngreso", MySqlDbType.VarChar, 255);
+            parametrosEntrada[7] = new MySqlParameter("@_guiaIngreso", MySqlDbType.VarChar, 255);
+            parametrosEntrada[8] = new MySqlParameter("@_fecIngresa", MySqlDbType.DateTime);
+            parametrosEntrada[9] = new MySqlParameter("@_idTipoMoneda", MySqlDbType.Int32);
+            parametrosEntrada[10] = new MySqlParameter("@_tipoMoneda", MySqlDbType.VarChar, 255);
+            parametrosEntrada[11] = new MySqlParameter("@_montoCambio", MySqlDbType.Double);
+            parametrosEntrada[12] = new MySqlParameter("@_total", MySqlDbType.Double);
+            parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
+            parametrosEntrada[14] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[15] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+            parametrosEntrada[16] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = 0;
+            parametrosEntrada[1].Value = ingreso.IdTipoIngreso;
+            parametrosEntrada[2].Value = ingreso.TipoIngreso;
+            parametrosEntrada[3].Value = ingreso.IdProveedor;
+            parametrosEntrada[4].Value = ingreso.RazonSocial;
+            parametrosEntrada[5].Value = ingreso.Ruc;
+            parametrosEntrada[6].Value = ingreso.Factura;
+            parametrosEntrada[7].Value = ingreso.Guia;
+            parametrosEntrada[8].Value = ingreso.FechaIngreso;
+            parametrosEntrada[9].Value = ingreso.IdMonedaTipo;
+            parametrosEntrada[10].Value = ingreso.MonedaTipo;
+            parametrosEntrada[11].Value = ingreso.MontoCambio;
+            parametrosEntrada[12].Value = ingreso.Total;
+            parametrosEntrada[13].Value = ingreso.Observacion;
+            parametrosEntrada[14].Value = ingreso.Estado;
+            parametrosEntrada[15].Value = usuario;
+
+            string[] datosSalida = new string[1];
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso",
+                16, 17, out datosSalida, 1);
+
+            if (datosSalida != null)
+            {
+                ingreso.IdIngreso = Convert.ToInt32(datosSalida[0]);
+
+                //Aqui ira la recursividad
+
+                //! AQUI PASAR TAMBIEN SI EL PCR-LAP O MAC
+                if (IngresosDetallesYAccesorios(ingreso, usuario, ingreso.IdProveedor) == -1) return -1;
+            }
+            return ingreso.IdIngreso;
+        }
+
+        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario, int idProveedor)
+        {
+            bool error = false;
 
             string[] datosSalida = new string[1];
             string[] codigoArrendamientoExistente = new string[1];
             int idLC = 0;
 
-
-
             if (ingreso.Detalles.Count > 0)
             {
-                error = InsertarDetalleIngreso(ingreso, usuario);
+                error = InsertarIngresoDetalleLaptops(ingreso, usuario);
                 if (error) return -1;
 
                 foreach (IngresoDetalle det in ingreso.Detalles)
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
-
                         //SI EXISTE EL CODIGO, BORRAR TODOS LOS REGISTROS Y QUE LUEGO SIGA CON EL FLUJO NORMAL
                         string[] cantidadArrendamiento = new string[1];
 
@@ -241,11 +389,8 @@ namespace AccesoDatos
                             parametrosEntrada[16].Value = det.Series[i];
                         }
 
-
                         datosSalida = new string[1];
-
-
-
+                        
                         //cantidadDeArrendamientos
                         if (ingreso.TipoIngreso == "COMPRA")
                         {
@@ -266,12 +411,9 @@ namespace AccesoDatos
                                 idLC = idLCarrendamiento;
                             }
                         }
-
-
-
+                        
                         if (datosSalida != null)
                         {
-
                             foreach (Memoria mem in det.Laptop.Memorias)
                             {
                                 parametrosEntrada = new MySqlParameter[5];
@@ -352,9 +494,222 @@ namespace AccesoDatos
                 }
 
             }
+            
+            if (ingreso.DetallesTablets.Count > 0)
+            {
+                error = InsertarIngresoDetalleTablets(ingreso, usuario);
+                if (error) return -1;
+
+                foreach (IngresoDetalleTablet det in ingreso.DetallesTablets)
+                {
+                    for (int i = 0; i < det.Cantidad; i++)
+                    {
+                        parametrosEntrada = new MySqlParameter[18];
+                        parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                        parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                        parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                        parametrosEntrada[3] = new MySqlParameter("@_idProcesador", MySqlDbType.Int32);
+                        parametrosEntrada[4] = new MySqlParameter("@_idSO", MySqlDbType.Int32);
+                        parametrosEntrada[5] = new MySqlParameter("@_idRam", MySqlDbType.Int32);
+                        parametrosEntrada[6] = new MySqlParameter("@_idRom", MySqlDbType.Int32);
+                        parametrosEntrada[7] = new MySqlParameter("@_pantalla", MySqlDbType.Double);
+                        parametrosEntrada[8] = new MySqlParameter("@_serieFabrica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[9] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[10] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                        parametrosEntrada[11] = new MySqlParameter("@_fecInicioSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[12] = new MySqlParameter("@_fecFinSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[13] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int32);
+                        parametrosEntrada[14] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[15] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[16] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[17] = new MySqlParameter("@_idTablet", MySqlDbType.Int32);
+
+                        parametrosEntrada[0].Value = ingreso.IdIngreso;
+                        parametrosEntrada[1].Value = det.IdIngresoDetalleTablet;
+                        parametrosEntrada[2].Value = det.TabletIdModelo;
+                        parametrosEntrada[3].Value = det.TabletIdProcesador;
+                        parametrosEntrada[4].Value = det.TabletIdSO;
+                        parametrosEntrada[5].Value = det.TabletIdRAM;
+                        parametrosEntrada[6].Value = det.TabletIdROM;
+                        parametrosEntrada[7].Value = det.TabletTamanoPantalla;
+                        parametrosEntrada[8].Value = "";// det.Series[i];
+                        parametrosEntrada[9].Value = det.Tablet.PartNumber;
+                        parametrosEntrada[10].Value = det.Tablet.Garantia;
+                        parametrosEntrada[11].Value = null;
+                        parametrosEntrada[12].Value = null;
+                        parametrosEntrada[13].Value = ingreso.IdTipoIngreso;
+                        parametrosEntrada[14].Value = "ALMACEN";
+                        parametrosEntrada[15].Value = det.Tablet.Observacion;
+                        parametrosEntrada[16].Value = usuario;
+
+                        datosSalida = new string[1];
+
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_tablet",
+                            17, 18, out datosSalida, 1);
+                    }
+                }
+
+            }
+
+            if (ingreso.DetallesImpresoras.Count > 0)
+            {
+                error = InsertarIngresoDetalleImpresoras(ingreso, usuario);
+                if (error) return -1;
+
+                foreach (IngresoDetalleImpresora det in ingreso.DetallesImpresoras)
+                {
+                    for (int i = 0; i < det.Cantidad; i++)
+                    {
+                        parametrosEntrada = new MySqlParameter[15];
+                        parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                        parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                        parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                        parametrosEntrada[3] = new MySqlParameter("@_idCaracteristica", MySqlDbType.Int32);
+                        parametrosEntrada[4] = new MySqlParameter("@_caracteristica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[5] = new MySqlParameter("@_serieFabrica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[6] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[7] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                        parametrosEntrada[8] = new MySqlParameter("@_fecInicioSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[9] = new MySqlParameter("@_fecFinSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[10] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int32);
+                        parametrosEntrada[11] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[12] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[13] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[14] = new MySqlParameter("@_idImpresora", MySqlDbType.Int32);
+
+                        parametrosEntrada[0].Value = ingreso.IdIngreso;
+                        parametrosEntrada[1].Value = det.IdIngresoDetalleImpresora;
+                        parametrosEntrada[2].Value = det.ImpresoraIdModelo;
+                        parametrosEntrada[3].Value = det.ImpresoraIdTipo;
+                        parametrosEntrada[4].Value = det.ImpresoraTipo;
+                        parametrosEntrada[5].Value = det.Series[i];
+                        parametrosEntrada[6].Value = det.Impresora.PartNumber;
+                        parametrosEntrada[7].Value = det.Impresora.Garantia;
+                        parametrosEntrada[8].Value = null;
+                        parametrosEntrada[9].Value = null;
+                        parametrosEntrada[10].Value = ingreso.IdTipoIngreso;
+                        parametrosEntrada[11].Value = "ALMACEN";
+                        parametrosEntrada[12].Value = det.Impresora.Observacion;
+                        parametrosEntrada[13].Value = usuario;
+
+                        datosSalida = new string[1];
+
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_impresora",
+                            14, 15, out datosSalida, 1);
+                    }
+                }
+
+            }
+
+            if (ingreso.DetallesMonitores.Count > 0)
+            {
+                error = InsertarIngresoDetalleMonitores(ingreso, usuario);
+                if (error) return -1;
+
+                foreach (IngresoDetalleMonitor det in ingreso.DetallesMonitores)
+                {
+                    for (int i = 0; i < det.Cantidad; i++)
+                    {
+                        parametrosEntrada = new MySqlParameter[16];
+                        parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                        parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                        parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                        parametrosEntrada[3] = new MySqlParameter("@_idTipo", MySqlDbType.Int32);
+                        parametrosEntrada[4] = new MySqlParameter("@_tipo", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[5] = new MySqlParameter("@_pantalla", MySqlDbType.Double);
+                        parametrosEntrada[6] = new MySqlParameter("@_serieFabrica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[7] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[8] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                        parametrosEntrada[9] = new MySqlParameter("@_fecInicioSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[10] = new MySqlParameter("@_fecFinSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[11] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int32);
+                        parametrosEntrada[12] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[15] = new MySqlParameter("@_idMonitor", MySqlDbType.Int32);
+
+                        parametrosEntrada[0].Value = ingreso.IdIngreso;
+                        parametrosEntrada[1].Value = det.IdIngresoDetalleMonitor;
+                        parametrosEntrada[2].Value = det.MonitorIdModelo;
+                        parametrosEntrada[3].Value = det.MonitorIdTipo;
+                        parametrosEntrada[4].Value = det.MonitorTipo;
+                        parametrosEntrada[5].Value = det.MonitorTamanoPantalla;
+                        parametrosEntrada[6].Value = det.Series[i];
+                        parametrosEntrada[7].Value = det.Monitor.PartNumber;
+                        parametrosEntrada[8].Value = det.Monitor.Garantia;
+                        parametrosEntrada[9].Value = null;
+                        parametrosEntrada[10].Value = null;
+                        parametrosEntrada[11].Value = ingreso.IdTipoIngreso;
+                        parametrosEntrada[12].Value = "ALMACEN";
+                        parametrosEntrada[13].Value = det.Monitor.Observacion;
+                        parametrosEntrada[14].Value = usuario;
+
+                        datosSalida = new string[1];
+
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_monitor",
+                            15, 16, out datosSalida, 1);
+                    }
+                }
+
+            }
+
+            if (ingreso.DetallesProyectores.Count > 0)
+            {
+                error = InsertarIngresoDetalleProyectores(ingreso, usuario);
+                if (error) return -1;
+
+                foreach (IngresoDetalleProyector det in ingreso.DetallesProyectores)
+                {
+                    for (int i = 0; i < det.Cantidad; i++)
+                    {
+                        parametrosEntrada = new MySqlParameter[17];
+                        parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                        parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                        parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                        parametrosEntrada[3] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
+                        parametrosEntrada[4] = new MySqlParameter("@_idCaracteristica", MySqlDbType.Int32);
+                        parametrosEntrada[5] = new MySqlParameter("@_caracteristica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[6] = new MySqlParameter("@_tamanoEcram", MySqlDbType.Double);
+                        parametrosEntrada[7] = new MySqlParameter("@_serieFabrica", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[8] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[9] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                        parametrosEntrada[10] = new MySqlParameter("@_fecInicioSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[11] = new MySqlParameter("@_fecFinSeguro", MySqlDbType.DateTime);
+                        parametrosEntrada[12] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int32);
+                        parametrosEntrada[13] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[14] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[15] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[16] = new MySqlParameter("@_idProyectorEcram", MySqlDbType.Int32);
+
+                        parametrosEntrada[0].Value = ingreso.IdIngreso;
+                        parametrosEntrada[1].Value = det.IdIngresoDetalleProyector;
+                        parametrosEntrada[2].Value = det.ProyectorIdModelo;
+                        parametrosEntrada[3].Value = det.ProyectorIdTipoEquipoProyector;
+                        parametrosEntrada[4].Value = det.ProyectorIdCaracteristica;
+                        parametrosEntrada[5].Value = det.ProyectorCaracteristica;
+                        parametrosEntrada[6].Value = det.ProyectorTamano;
+                        parametrosEntrada[7].Value = det.Series[i];
+                        parametrosEntrada[8].Value = det.Proyector.PartNumber;
+                        parametrosEntrada[9].Value = det.Proyector.Garantia;
+                        parametrosEntrada[10].Value = null;
+                        parametrosEntrada[11].Value = null;
+                        parametrosEntrada[12].Value = ingreso.IdTipoIngreso;
+                        parametrosEntrada[13].Value = "ALMACEN";
+                        parametrosEntrada[14].Value = det.Proyector.Observacion;
+                        parametrosEntrada[15].Value = usuario;
+
+                        datosSalida = new string[1];
+
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_proyectorEcram",
+                            16, 17, out datosSalida, 1);
+                    }
+                }
+
+            }
+
             if (ingreso.Discos.Count > 0 || ingreso.Memorias.Count > 0 || ingreso.Licencias.Count > 0)
             {
-                error = InsertarDetalleAccesoriosIngreso(ingreso, usuario);
+                error = InsertarIngresoDetalleAccesorios(ingreso, usuario);
                 if (error) return -1;
 
                 foreach (DiscoDuro disco in ingreso.Discos)
@@ -414,65 +769,7 @@ namespace AccesoDatos
             return 0;
         }
 
-        public int InsertarIngreso(Ingreso ingreso, string usuario)
-        {
-
-            bool error = false;
-
-            parametrosEntrada = new MySqlParameter[17];
-            parametrosEntrada[0] = new MySqlParameter("@_idOC", MySqlDbType.Int32);
-            parametrosEntrada[1] = new MySqlParameter("@_idTipoIngreso", MySqlDbType.Int32);
-            parametrosEntrada[2] = new MySqlParameter("@_tipoIngreso", MySqlDbType.VarChar, 255);
-            parametrosEntrada[3] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-            parametrosEntrada[4] = new MySqlParameter("@_razonSocial", MySqlDbType.VarChar, 255);
-            parametrosEntrada[5] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 11);
-            parametrosEntrada[6] = new MySqlParameter("@_facturaIngreso", MySqlDbType.VarChar, 255);
-            parametrosEntrada[7] = new MySqlParameter("@_guiaIngreso", MySqlDbType.VarChar, 255);
-            parametrosEntrada[8] = new MySqlParameter("@_fecIngresa", MySqlDbType.DateTime);
-            parametrosEntrada[9] = new MySqlParameter("@_idTipoMoneda", MySqlDbType.Int32);
-            parametrosEntrada[10] = new MySqlParameter("@_tipoMoneda", MySqlDbType.VarChar, 255);
-            parametrosEntrada[11] = new MySqlParameter("@_montoCambio", MySqlDbType.Double);
-            parametrosEntrada[12] = new MySqlParameter("@_total", MySqlDbType.Double);
-            parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
-            parametrosEntrada[14] = new MySqlParameter("@_estado", MySqlDbType.Int32);
-            parametrosEntrada[15] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-            parametrosEntrada[16] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
-
-            parametrosEntrada[0].Value = 0;
-            parametrosEntrada[1].Value = ingreso.IdTipoIngreso;
-            parametrosEntrada[2].Value = ingreso.TipoIngreso;
-            parametrosEntrada[3].Value = ingreso.IdProveedor;
-            parametrosEntrada[4].Value = ingreso.RazonSocial;
-            parametrosEntrada[5].Value = ingreso.Ruc;
-            parametrosEntrada[6].Value = ingreso.Factura;
-            parametrosEntrada[7].Value = ingreso.Guia;
-            parametrosEntrada[8].Value = ingreso.FechaIngreso;
-            parametrosEntrada[9].Value = ingreso.IdMonedaTipo;
-            parametrosEntrada[10].Value = ingreso.MonedaTipo;
-            parametrosEntrada[11].Value = ingreso.MontoCambio;
-            parametrosEntrada[12].Value = ingreso.Total;
-            parametrosEntrada[13].Value = ingreso.Observacion;
-            parametrosEntrada[14].Value = ingreso.Estado;
-            parametrosEntrada[15].Value = usuario;
-
-            string[] datosSalida = new string[1];
-
-            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso",
-                16, 17, out datosSalida, 1);
-
-            if (datosSalida != null)
-            {
-                ingreso.IdIngreso = Convert.ToInt32(datosSalida[0]);
-
-                //Aqui ira la recursividad
-
-                //! AQUI PASAR TAMBIEN SI EL PCR-LAP O MAC
-                if (IngresosDetallesYAccesorios(ingreso, usuario, ingreso.IdProveedor) == -1) return -1;
-            }
-            return ingreso.IdIngreso;
-        }
-
-        public bool InsertarDetalleIngreso(Ingreso ingreso, string usuario)
+        public bool InsertarIngresoDetalleLaptops(Ingreso ingreso, string usuario)
         {
             foreach (IngresoDetalle det in ingreso.Detalles)
             {
@@ -594,7 +891,7 @@ namespace AccesoDatos
             return false;
         }
 
-        public bool InsertarDetalleAccesoriosIngreso(Ingreso ingreso, string usuario)
+        public bool InsertarIngresoDetalleAccesorios(Ingreso ingreso, string usuario)
         {
             foreach (Licencia det in ingreso.Licencias)
             {
@@ -714,6 +1011,204 @@ namespace AccesoDatos
             }
             return false;
         }
+            
+        
+        public bool InsertarIngresoDetalleImpresoras(Ingreso ingreso, string usuario)
+        {
+            foreach (IngresoDetalleImpresora det in ingreso.DetallesImpresoras)
+            {
+                parametrosEntrada = new MySqlParameter[13];
+                parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idCaracteristica", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_caracteristica", MySqlDbType.VarChar, 255);
+                parametrosEntrada[5] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                parametrosEntrada[6] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                parametrosEntrada[7] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                parametrosEntrada[8] = new MySqlParameter("@_subTotal", MySqlDbType.Double);
+                parametrosEntrada[9] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                parametrosEntrada[10] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[11] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                parametrosEntrada[12] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+
+
+                parametrosEntrada[0].Value = ingreso.IdIngreso;
+                parametrosEntrada[1].Value = det.ImpresoraIdMarca; 
+                parametrosEntrada[2].Value = det.ImpresoraIdModelo;
+                parametrosEntrada[3].Value = det.ImpresoraIdTipo;
+                parametrosEntrada[4].Value = det.ImpresoraTipo;
+                parametrosEntrada[5].Value = det.Impresora.PartNumber;
+                parametrosEntrada[6].Value = det.Impresora.Garantia;
+                parametrosEntrada[7].Value = det.Cantidad;
+                parametrosEntrada[8].Value = det.Precio;
+                parametrosEntrada[9].Value = det.Observacion;
+                parametrosEntrada[10].Value = det.Estado;
+                parametrosEntrada[11].Value = usuario;
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_impresora",
+                12, 13, out datosSalida, 1);
+                if (datosSalida == null)
+                {
+                    return true;
+                }
+                det.IdIngresoDetalleImpresora = Convert.ToInt32(datosSalida[0]);
+            }
+            return false;
+        }
+
+        public bool InsertarIngresoDetalleMonitores(Ingreso ingreso, string usuario)
+        {
+            foreach (IngresoDetalleMonitor det in ingreso.DetallesMonitores)
+            {
+                parametrosEntrada = new MySqlParameter[14];
+                parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idTipo", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_tipo", MySqlDbType.VarChar, 255);
+                parametrosEntrada[5] = new MySqlParameter("@_pantalla", MySqlDbType.Double);
+                parametrosEntrada[6] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                parametrosEntrada[7] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                parametrosEntrada[8] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                parametrosEntrada[9] = new MySqlParameter("@_subTotal", MySqlDbType.Double);
+                parametrosEntrada[10] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                parametrosEntrada[11] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[12] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                parametrosEntrada[13] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+
+
+                parametrosEntrada[0].Value = ingreso.IdIngreso;
+                parametrosEntrada[1].Value = det.MonitorIdMarca;
+                parametrosEntrada[2].Value = det.MonitorIdModelo;
+                parametrosEntrada[3].Value = det.MonitorIdTipo;
+                parametrosEntrada[4].Value = det.MonitorTipo;
+                parametrosEntrada[5].Value = det.MonitorTamanoPantalla;
+                parametrosEntrada[6].Value = det.Monitor.PartNumber;
+                parametrosEntrada[7].Value = det.Monitor.Garantia;
+                parametrosEntrada[8].Value = det.Cantidad;
+                parametrosEntrada[9].Value = det.Precio;
+                parametrosEntrada[10].Value = det.Observacion;
+                parametrosEntrada[11].Value = det.Estado;
+                parametrosEntrada[12].Value = usuario;
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_monitor",
+                13, 14, out datosSalida, 1);
+                if (datosSalida == null)
+                {
+                    return true;
+                }
+                det.IdIngresoDetalleMonitor = Convert.ToInt32(datosSalida[0]);
+            }
+            return false;
+        }
+
+        public bool InsertarIngresoDetalleTablets(Ingreso ingreso, string usuario)
+        {
+            foreach (IngresoDetalleTablet det in ingreso.DetallesTablets)
+            {
+                parametrosEntrada = new MySqlParameter[16];
+                parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idProcesador", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_idSO", MySqlDbType.Int32);
+                parametrosEntrada[5] = new MySqlParameter("@_idRam", MySqlDbType.Int32);
+                parametrosEntrada[6] = new MySqlParameter("@_idRom", MySqlDbType.Int32);
+                parametrosEntrada[7] = new MySqlParameter("@_pantalla", MySqlDbType.Double);
+                parametrosEntrada[8] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                parametrosEntrada[9] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                parametrosEntrada[10] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                parametrosEntrada[11] = new MySqlParameter("@_subTotal", MySqlDbType.Double);
+                parametrosEntrada[12] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                parametrosEntrada[13] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                parametrosEntrada[15] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+
+
+                parametrosEntrada[0].Value = ingreso.IdIngreso;
+                parametrosEntrada[1].Value = det.TabletIdMarca;
+                parametrosEntrada[2].Value = det.TabletIdModelo;
+                parametrosEntrada[3].Value = det.TabletIdProcesador;
+                parametrosEntrada[4].Value = det.TabletIdSO;
+                parametrosEntrada[5].Value = det.TabletIdRAM;
+                parametrosEntrada[6].Value = det.TabletIdROM;
+                parametrosEntrada[7].Value = det.TabletTamanoPantalla;
+                parametrosEntrada[8].Value = det.Tablet.PartNumber;
+                parametrosEntrada[9].Value = det.Tablet.Garantia;
+                parametrosEntrada[10].Value = det.Cantidad;
+                parametrosEntrada[11].Value = det.Precio;
+                parametrosEntrada[12].Value = det.Observacion;
+                parametrosEntrada[13].Value = det.Estado;
+                parametrosEntrada[14].Value = usuario;
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_tablet",
+                15, 16, out datosSalida, 1);
+                if (datosSalida == null)
+                {
+                    return true;
+                }
+                det.IdIngresoDetalleTablet = Convert.ToInt32(datosSalida[0]);
+            }
+            return false;
+        }
+
+        public bool InsertarIngresoDetalleProyectores(Ingreso ingreso, string usuario)
+        {
+            foreach (IngresoDetalleProyector det in ingreso.DetallesProyectores)
+            {
+                parametrosEntrada = new MySqlParameter[15];
+                parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_idCaracteristica", MySqlDbType.Int32);
+                parametrosEntrada[5] = new MySqlParameter("@_caracteristica", MySqlDbType.VarChar, 255);
+                parametrosEntrada[6] = new MySqlParameter("@_tamanoEcram", MySqlDbType.Double);
+                parametrosEntrada[7] = new MySqlParameter("@_partNumber", MySqlDbType.VarChar, 255);
+                parametrosEntrada[8] = new MySqlParameter("@_garantia", MySqlDbType.Int32);
+                parametrosEntrada[9] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                parametrosEntrada[10] = new MySqlParameter("@_subTotal", MySqlDbType.Double);
+                parametrosEntrada[11] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+                parametrosEntrada[12] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[13] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+                parametrosEntrada[14] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+
+
+                parametrosEntrada[0].Value = ingreso.IdIngreso;
+                parametrosEntrada[1].Value = det.ProyectorIdMarca;
+                parametrosEntrada[2].Value = det.ProyectorIdModelo;
+                parametrosEntrada[3].Value = det.ProyectorIdTipoEquipoProyector;
+                parametrosEntrada[4].Value = det.ProyectorIdCaracteristica;
+                parametrosEntrada[5].Value = det.ProyectorCaracteristica;
+                parametrosEntrada[6].Value = det.ProyectorTamano;
+                parametrosEntrada[7].Value = det.Proyector.PartNumber;
+                parametrosEntrada[8].Value = det.Proyector.Garantia;
+                parametrosEntrada[9].Value = det.Cantidad;
+                parametrosEntrada[10].Value = det.Precio;
+                parametrosEntrada[11].Value = det.Observacion;
+                parametrosEntrada[12].Value = det.Estado;
+                parametrosEntrada[13].Value = usuario;
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_proyectorEcram",
+                14, 15, out datosSalida, 1);
+                if (datosSalida == null)
+                {
+                    return true;
+                }
+                det.IdIngresoDetalleProyector = Convert.ToInt32(datosSalida[0]);
+            }
+            return false;
+        }
+
 
         public int ModificarIngreso(Ingreso ingreso, string usuario)
         {
@@ -747,6 +1242,58 @@ namespace AccesoDatos
             parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
             parametrosEntrada[0].Value = ingreso.IdIngreso;
             okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_det_ingreso");
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle tablet===================
+                       
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_tablet_ingreso");
+
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_det_tablet_ingreso");
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle impresora===================
+            
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_impresora_ingreso");
+
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_det_impresora_ingreso");
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle monitor===================
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_monitor_ingreso");
+
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_det_monitor_ingreso");
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle proyectorEcram===================
+            
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_proyectorEcram_ingreso");
+
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_det_proyectorEcram_ingreso");
 
             //=================Todo lo que tiene que ver con la tabla ingreso detalle accesorio===================
 
@@ -869,7 +1416,38 @@ namespace AccesoDatos
             parametrosEntrada[0].Value = ingreso.IdIngreso;
             okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_LC_ingreso");
             if (!okey) return -1;
+            
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle tablet===================
 
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_tablet_ingreso");
+            if (!okey) return -1;
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle impresora===================
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_impresora_ingreso");
+            if (!okey) return -1;
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle monitor===================
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_monitor_ingreso");
+            if (!okey) return -1;
+
+            //=================Todo lo que tiene que ver con la tabla ingreso detalle proyectorEcram===================
+
+            parametrosEntrada = new MySqlParameter[1];
+            parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[0].Value = ingreso.IdIngreso;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_proyectorEcram_ingreso");
+            if (!okey) return -1;
 
             //=================Todo lo que tiene que ver con la tabla ingreso detalle accesorio===================
 
@@ -906,7 +1484,7 @@ namespace AccesoDatos
             MySqlDataReader reader2;
             string sql2 = "";
 
-            //==========================Este bloque es para llenar solo ingreso=================================
+            //==========================Este bloque es para llenar solo ingreso cabecera =================================
 
             sql = "Select * From ingreso where idIngreso=" + idIngreso + " ;";
             reader = objManager.MostrarInformacion(sql);
@@ -935,13 +1513,13 @@ namespace AccesoDatos
             objManager.conexion.Dispose();
             objManager.cmd.Dispose();
 
-            //==========================Este bloque es para llenar lo que es detalle de ingreso====================
+            //==========================Este bloque es para llenar lo que es ingreso detalle LC====================
 
             sql = "SELECT * FROM vista_ingresos_detalles_modificable where idIngreso = " + idIngreso + " ;";
             reader = objManager.MostrarInformacion(sql);
 
 
-            int idDetallesIngresos = 1;
+            int idIngresoDetalleLC = 1;
             while (reader.Read())
             {
                 IngresoDetalle det = new IngresoDetalle();
@@ -1087,8 +1665,8 @@ namespace AccesoDatos
                         }
                     }
                 }
-                det.IdIngresoDetalle = idDetallesIngresos;
-                idDetallesIngresos++;
+                det.IdIngresoDetalle = idIngresoDetalleLC;
+                idIngresoDetalleLC++;
                 ingresoDevuelto.Detalles.Add(det);
             }
 
@@ -1096,7 +1674,234 @@ namespace AccesoDatos
             objManager.conexion.Dispose();
             objManager.cmd.Dispose();
 
-            //==========================Este bloque es para llenar lo que es detalle accesorio de ingreso====================
+
+
+            //==========================Este bloque es para llenar lo que es ingreso detalle tablet====================
+
+            sql = "SELECT * FROM vista_ingresos_detalles_tablet_modificable where idIngreso = " + idIngreso + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            int idIngresoDetalleTablet = 1;
+            while (reader.Read())
+            {
+                IngresoDetalleTablet det = new IngresoDetalleTablet();
+
+                det.TabletMarca = reader.GetString("nombreMarca");
+                det.TabletNombreModelo = reader.GetString("nombreModelo");
+                det.TabletProcesador = reader.GetString("procesador");
+                det.TabletSistema = reader.GetString("sistema");
+
+                det.IdIngresoDetalleTablet = reader.GetInt32("idIngresoDet");
+                det.Tablet.IdMarcaTablet = reader.GetInt32("idMarca");
+                det.Tablet.IdModeloTablet = reader.GetInt32("idModelo");
+                det.Tablet.IdProcesador = reader.GetInt32("idProcesador");
+                det.Tablet.IdSO = reader.GetInt32("idSO");
+                det.Tablet.IdRAM = reader.GetInt32("idRam");
+                det.Tablet.IdROM = reader.GetInt32("idRom");
+                //det.Tablet.PartNumber = reader.GetString("partNumber");
+                det.Tablet.TamanoPantalla = reader.GetDouble("pantalla");
+                det.Tablet.Garantia = reader.GetInt32("garantia");
+                det.Cantidad = reader.GetInt32("cantidad");
+                det.Precio = reader.GetInt32("subTotal");
+
+
+                //det.Caracteristica = reader.GetString("caracteristicas");
+                det.Observacion = reader.GetString("observacion");
+                det.Estado = reader.GetInt32("estado");
+
+
+                sql2 = "Select * From tablet where idIngreso=" + ingresoDevuelto.IdIngreso + " and  idIngresoDet=" + det.IdIngresoDetalleTablet + " ;";
+                reader2 = objManager.MostrarInformacion(sql2);
+
+                BindingList<Tablet> listaTablets = new BindingList<Tablet>();
+
+                while (reader2.Read())
+                {
+                    Tablet tab = new Tablet();
+                    String serieFabrica = reader2.GetString("serieFabrica");
+                    tab.IdTablet = reader2.GetInt32("idTablet");
+                    listaTablets.Add(tab);
+                    det.Series.Add(serieFabrica);
+                }
+
+                det.IdIngresoDetalleTablet = idIngresoDetalleTablet;
+                idIngresoDetalleTablet++;
+                ingresoDevuelto.DetallesTablets.Add(det);
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+
+            //==========================Este bloque es para llenar lo que es ingreso detalle impresora====================
+
+            sql = "SELECT * FROM vista_ingresos_detalles_impresora_modificable where idIngreso = " + idIngreso + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            int idIngresoDetalleImpresora = 1;
+            while (reader.Read())
+            {
+                IngresoDetalleImpresora det = new IngresoDetalleImpresora();
+
+                det.ImpresoraMarca = reader.GetString("nombreMarca");
+                det.ImpresoraNombreModelo = reader.GetString("nombreModelo");
+                det.ImpresoraTipo = reader.GetString("caracteristica");
+
+                det.IdIngresoDetalleImpresora = reader.GetInt32("idIngresoDet");
+                det.Impresora.IdMarcaImpresora = reader.GetInt32("idMarca");
+                det.Impresora.IdModeloImpresora = reader.GetInt32("idModelo");
+                det.Impresora.IdTipo = reader.GetInt32("idCaracteristica");
+                det.Impresora.Tipo = reader.GetString("caracteristica");
+                det.Impresora.PartNumber = reader.GetString("partNumber");
+                //det.Impresora.TamanoPantalla = reader.GetDouble("pantalla");
+                det.Impresora.Garantia = reader.GetInt32("garantia");
+                det.Cantidad = reader.GetInt32("cantidad");
+                det.Precio = reader.GetInt32("subTotal");
+
+
+                //det.Caracteristica = reader.GetString("caracteristicas");
+                det.Observacion = reader.GetString("observacion");
+                det.Estado = reader.GetInt32("estado");
+
+
+                sql2 = "Select * From impresora where idIngreso=" + ingresoDevuelto.IdIngreso + " and  idIngresoDet=" + det.IdIngresoDetalleImpresora + " ;";
+                reader2 = objManager.MostrarInformacion(sql2);
+
+                BindingList<Impresora> listaImpresora = new BindingList<Impresora>();
+
+                while (reader2.Read())
+                {
+                    Impresora imp = new Impresora();
+                    String serieFabrica = reader2.GetString("serieFabrica");
+                    imp.IdImpresora = reader2.GetInt32("idImpresora");
+                    listaImpresora.Add(imp);
+                    det.Series.Add(serieFabrica);
+                }
+
+                det.IdIngresoDetalleImpresora = idIngresoDetalleImpresora;
+                idIngresoDetalleImpresora++;
+                ingresoDevuelto.DetallesImpresoras.Add(det);
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+
+            //==========================Este bloque es para llenar lo que es ingreso detalle monitor====================
+
+            sql = "SELECT * FROM vista_ingresos_detalles_monitor_modificable where idIngreso = " + idIngreso + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            int idIngresoDetalleMonitor = 1;
+            while (reader.Read())
+            {
+                IngresoDetalleMonitor det = new IngresoDetalleMonitor();
+
+                det.MonitorMarca = reader.GetString("nombreMarca");
+                det.MonitorNombreModelo = reader.GetString("nombreModelo");
+                det.MonitorTipo = reader.GetString("tipo");
+
+                det.IdIngresoDetalleMonitor = reader.GetInt32("idIngresoDet");
+                det.Monitor.IdMarcaMonitor = reader.GetInt32("idMarca");
+                det.Monitor.IdModeloMonitor = reader.GetInt32("idModelo");
+                det.Monitor.IdTipo = reader.GetInt32("idTipo");
+                det.Monitor.PartNumber = reader.GetString("partNumber");
+                det.Monitor.TamanoPantalla = reader.GetDouble("pantalla");
+                det.Monitor.Garantia = reader.GetInt32("garantia");
+                det.Cantidad = reader.GetInt32("cantidad");
+                det.Precio = reader.GetInt32("subTotal");
+
+
+                //det.Caracteristica = reader.GetString("caracteristicas");
+                det.Observacion = reader.GetString("observacion");
+                det.Estado = reader.GetInt32("estado");
+
+
+                sql2 = "Select * From monitor where idIngreso=" + ingresoDevuelto.IdIngreso + " and  idIngresoDet=" + det.IdIngresoDetalleMonitor + " ;";
+                reader2 = objManager.MostrarInformacion(sql2);
+
+                BindingList<Monitor> listaMonitores = new BindingList<Monitor>();
+
+                while (reader2.Read())
+                {
+                    Monitor mon = new Monitor();
+                    String serieFabrica = reader2.GetString("serieFabrica");
+                    mon.IdMonitor = reader2.GetInt32("idMonitor");
+                    listaMonitores.Add(mon);
+                    det.Series.Add(serieFabrica);
+                }
+
+                det.IdIngresoDetalleMonitor = idIngresoDetalleMonitor;
+                idIngresoDetalleMonitor++;
+                ingresoDevuelto.DetallesMonitores.Add(det);
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+
+            //==========================Este bloque es para llenar lo que es ingreso detalle proyectorEcram====================
+
+            sql = "SELECT * FROM vista_ingresos_detalles_proyector_modificable where idIngreso = " + idIngreso + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            int idIngresoDetalleProyector = 1;
+            while (reader.Read())
+            {
+                IngresoDetalleProyector det = new IngresoDetalleProyector();
+
+                det.ProyectorMarca = reader.GetString("nombreMarca");
+                det.ProyectorNombreModelo = reader.GetString("nombreModelo");
+                det.ProyectorTipoEquipoProyector = reader.GetString("tipoEquipoProyector");
+
+                det.IdIngresoDetalleProyector = reader.GetInt32("idIngresoDet");
+                det.Proyector.IdMarcaProyector = reader.GetInt32("idMarca");
+                det.Proyector.IdModeloProyector = reader.GetInt32("idModelo");
+                det.Proyector.IdTipoEquipoProyector = reader.GetInt32("idTipoEquipo");
+                det.Proyector.IdCaracteristica = reader.GetInt32("idCaracteristica");
+                det.Proyector.Caracteristica = reader.GetString("caracteristica");
+                //det.Proyector.PartNumber = reader.GetString("partNumber");
+                det.Proyector.TamanoProyector = reader.GetDouble("tamanoEcram");
+                det.Proyector.Garantia = reader.GetInt32("garantia");
+                det.Cantidad = reader.GetInt32("cantidad");
+                det.Precio = reader.GetInt32("subTotal");
+
+
+                //det.Caracteristica = reader.GetString("caracteristicas");
+                det.Observacion = reader.GetString("observacion");
+                det.Estado = reader.GetInt32("estado");
+
+
+                sql2 = "Select * From proyectorEcram where idIngreso=" + ingresoDevuelto.IdIngreso + " and  idIngresoDet=" + det.IdIngresoDetalleProyector + " ;";
+                reader2 = objManager.MostrarInformacion(sql2);
+
+                BindingList<Proyector> listaProyectores = new BindingList<Proyector>();
+
+                while (reader2.Read())
+                {
+                    Proyector proy = new Proyector();
+                    String serieFabrica = reader2.GetString("serieFabrica");
+                    proy.IdProyector = reader2.GetInt32("idProyectorEcram");
+                    listaProyectores.Add(proy);
+                    det.Series.Add(serieFabrica);
+                }
+
+                det.IdIngresoDetalleProyector = idIngresoDetalleProyector;
+                idIngresoDetalleProyector++;
+                ingresoDevuelto.DetallesProyectores.Add(det);
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+            //==========================Este bloque es para llenar lo que es ingreso detalle accesorio====================
 
 
             sql = "SELECT * FROM vista_ingresos_detalles_accesorios_modificable WHERE idIngreso = " + idIngreso + " ;";
@@ -1145,6 +1950,10 @@ namespace AccesoDatos
                 }
 
             }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
 
             return ingresoDevuelto;
         }

@@ -1781,3 +1781,182 @@ WHERE
 		idEstado=2 or idEstado=3
 ORDER BY
 	nombreEstado;
+	
+
+
+--=============================================================================================================
+
+
+
+DROP view IF EXISTS `vista_tablet_procesador`;
+create view vista_tablet_procesador as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="TABLET_PROCESADOR" and activo=1;
+
+DROP view IF EXISTS `vista_tablet_sistema`;
+create view vista_tablet_sistema as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="TABLET_SISTEMA" and activo=1;
+
+DROP view IF EXISTS `vista_tablet_ram`;
+create view vista_tablet_ram as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="TABLET_RAM" and activo=1;
+
+DROP view IF EXISTS `vista_tablet_rom`;
+create view vista_tablet_rom as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="TABLET_ROM" and activo=1;
+
+DROP view IF EXISTS `vista_tablets_marca`;
+create view vista_tablets_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=3 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_tablets_modelo`;
+create view vista_tablets_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=3 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_monitores_marca`;
+create view vista_monitores_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=4 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_monitores_modelo`;
+create view vista_monitores_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=4 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_monitor_tipo`;
+create view vista_monitor_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="MONITOR_TIPO" and activo=1;
+
+DROP view IF EXISTS `vista_impresoras_marca`;
+create view vista_impresoras_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=5 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_impresoras_modelo`;
+create view vista_impresoras_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=5 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_impresora_tipo`;
+create view vista_impresora_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="IMPRESORA_TIPO" and activo=1;
+
+DROP view IF EXISTS `vista_proyectores_marca`;
+create view vista_proyectores_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=6 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_proyectores_modelo`;
+create view vista_proyectores_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=6 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_proyectores_tipo`;
+create view vista_proyectores_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="PROYECTOR_TIPO" and activo=1;
+
+DROP view IF EXISTS `vista_ecram_marca`;
+create view vista_ecram_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=7 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_ecram_modelo`;
+create view vista_ecram_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=7 and m.estado=1 ;
+
+DROP view IF EXISTS `vista_ecram_tipo`;
+create view vista_ecram_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="ECRAM_TIPO" and activo=1;
+
+DROP view IF EXISTS `vista_proyector_ecram_categoria`;
+create view vista_proyector_ecram_categoria as
+Select idCategoria as idAuxiliar, nombre as descripcion
+From categoria
+where idCategoria=6 or idCategoria=7 ;
+
+
+
+DROP view IF EXISTS `vista_ingresos_detalles_tablet_modificable`;
+create view vista_ingresos_detalles_tablet_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo,
+	vtp.descripcion AS procesador,
+	vts.descripcion AS sistema
+FROM
+	ingreso_det_tablet d
+	INNER JOIN marca ma ON d.idMarca = ma.idMarca
+	INNER JOIN modelo mo ON d.idModelo = mo.idModelo
+	INNER join auxiliar vtp ON d.idProcesador=vtp.idAuxiliar and vtp.cod_tabla="TABLET_PROCESADOR"
+	INNER join auxiliar vts ON d.idSO=vts.idAuxiliar and vts.cod_tabla="TABLET_SISTEMA";
+
+
+DROP view IF EXISTS `vista_ingresos_detalles_impresora_modificable`;
+create view vista_ingresos_detalles_impresora_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo
+FROM
+	ingreso_det_impresora d
+	INNER JOIN marca ma ON d.idMarca = ma.idMarca
+	INNER JOIN modelo mo ON d.idModelo = mo.idModelo;
+
+
+DROP view IF EXISTS `vista_ingresos_detalles_monitor_modificable`;
+create view vista_ingresos_detalles_monitor_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo
+FROM
+	ingreso_det_monitor d
+	INNER JOIN marca ma ON d.idMarca = ma.idMarca
+	INNER JOIN modelo mo ON d.idModelo = mo.idModelo;
+
+
+DROP view IF EXISTS `vista_ingresos_detalles_proyector_modificable`;
+create view vista_ingresos_detalles_proyector_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo,
+	ca.nombre as tipoEquipoProyector
+FROM
+	ingreso_det_proyectorecram d
+	INNER JOIN marca ma ON d.idMarca = ma.idMarca
+	INNER JOIN modelo mo ON d.idModelo = mo.idModelo
+	INNER JOIN categoria ca ON d.idTipoEquipo = ca.idCategoria;
+
+
+
+

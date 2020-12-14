@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
+using DevExpress.XtraEditors;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace Apolo
         private string licenciaCategoriaSO = "S.O";
         private string licenciaCategoriaOffice = "OFFICE";
         private string licenciaCategoriaAntivirus = "ANTIVIRUS";
-
+        
         public frmProcesoIngreso()
         {
             InitializeComponent();
@@ -50,13 +51,13 @@ namespace Apolo
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
+
         public void Inicializado()
         {
 
             ingresoDA = new IngresoDA();
             ingreso = new Ingreso();
             dtpFechaIngreso.Value = DateTime.Now;
-
 
 
             tablaProveedor = ingresoDA.ListarProveedores();
@@ -83,15 +84,43 @@ namespace Apolo
 
             ingreso = new Ingreso();
             ingreso.Detalles = new BindingList<IngresoDetalle>();
+            ingreso.DetallesTablets = new BindingList<IngresoDetalleTablet>();
+            ingreso.DetallesMonitores = new BindingList<IngresoDetalleMonitor>();
+            ingreso.DetallesImpresoras = new BindingList<IngresoDetalleImpresora>();
+            ingreso.DetallesProyectores = new BindingList<IngresoDetalleProyector>();
             ObtenerDatosIngreso();
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
-            dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
-            dgvMemorias.PrimaryGrid.DataSource = ingreso.Memorias;
-            dgvMemorias.PrimaryGrid.AutoGenerateColumns = false;
-            dgvDisco.PrimaryGrid.DataSource = ingreso.Discos;
-            dgvDisco.PrimaryGrid.AutoGenerateColumns = false;
-            dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
-            dgvLicencia.PrimaryGrid.AutoGenerateColumns = false;
+
+            dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+            vistaLaptops.OptionsBehavior.AutoPopulateColumns = false;
+            vistaLaptops.OptionsSelection.MultiSelect = true;
+
+            dgvMemoria.DataSource = ingreso.Memorias;
+            vistaMemoria.OptionsBehavior.AutoPopulateColumns = false;
+            vistaMemoria.OptionsSelection.MultiSelect = true;
+
+            dgvDiscos.DataSource = ingreso.Discos;
+            vistaDiscos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaDiscos.OptionsSelection.MultiSelect = true;
+
+            dgvLicencias.DataSource = ingreso.Licencias;
+            vistaLicencias.OptionsBehavior.AutoPopulateColumns = false;
+            vistaLicencias.OptionsSelection.MultiSelect = true;
+
+            dgvMonitores.DataSource = ingreso.DetallesMonitores;
+            vistaMonitores.OptionsBehavior.AutoPopulateColumns = false;
+            vistaMonitores.OptionsSelection.MultiSelect = true;
+
+            dgvTablets.DataSource = ingreso.DetallesTablets;
+            vistaTablets.OptionsBehavior.AutoPopulateColumns = false;
+            vistaTablets.OptionsSelection.MultiSelect = true;
+
+            dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+            vistaImpresoras.OptionsBehavior.AutoPopulateColumns = false;
+            vistaImpresoras.OptionsSelection.MultiSelect = true;
+
+            dgvProyectores.DataSource = ingreso.DetallesProyectores;
+            vistaProyectores.OptionsBehavior.AutoPopulateColumns = false;
+            vistaProyectores.OptionsSelection.MultiSelect = true;
 
         }
 
@@ -147,7 +176,25 @@ namespace Apolo
                 ingreso.Total += d.Precio * d.Cantidad;
             }
 
+            foreach (IngresoDetalleTablet d in ingreso.DetallesTablets)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
 
+            foreach (IngresoDetalleMonitor d in ingreso.DetallesMonitores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleImpresora d in ingreso.DetallesImpresoras)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleProyector d in ingreso.DetallesProyectores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
 
         }
 
@@ -161,7 +208,9 @@ namespace Apolo
                 return true;
             }
 
-            if (ingreso.Detalles.Count == 0 && ingreso.Discos.Count == 0 && ingreso.Memorias.Count == 0 && ingreso.Licencias.Count == 0)
+            if (ingreso.Detalles.Count == 0 && ingreso.Discos.Count == 0 && ingreso.Memorias.Count == 0 && ingreso.Licencias.Count == 0
+                && ingreso.DetallesTablets.Count == 0 && ingreso.DetallesMonitores.Count == 0
+                && ingreso.DetallesImpresoras.Count == 0 && ingreso.DetallesProyectores.Count == 0)
             {
                 MessageBox.Show("No se puede grabar un Ingreso si no\nexisten laptops, memorias, disco o licencias seleccionadas.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
@@ -231,13 +280,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
@@ -258,13 +319,25 @@ namespace Apolo
                     txtGuia.Enabled = true;
                     dtpFechaIngreso.Enabled = true;
                     dgvLaptopsSeleccionados.Enabled = true;
-                    dgvDisco.Enabled = true;
-                    dgvMemorias.Enabled = true;
-                    dgvLicencia.Enabled = true;
+                    dgvMonitores.Enabled = true;
+                    dgvTablets.Enabled = true;
+                    dgvImpresoras.Enabled = true;
+                    dgvProyectores.Enabled = true;
+                    dgvDiscos.Enabled = true;
+                    dgvMemoria.Enabled = true;
+                    dgvLicencias.Enabled = true;
                     btnAgregarDisco.Enabled = true;
                     btnAgregarMemoria.Enabled = true;
                     btnAgregarLicencia.Enabled = true;
                     btnAgregarProducto.Enabled = true;
+                    btnAgregarMonitores.Enabled = true;
+                    btnAgregarTablets.Enabled = true;
+                    btnAgregarImpresora.Enabled = true;
+                    btnAgregarProyectores.Enabled = true;
+                    btnVisualizarMonitores.Enabled = true;
+                    btnVisualizarTablets.Enabled = true;
+                    btnVisualizarImpresora.Enabled = true;
+                    btnVisualizarProyectores.Enabled = true;
                     btnVisualizar.Enabled = true;
                     btnNuevo.Enabled = false;
                     btnAnular.Enabled = false;
@@ -285,13 +358,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = true;
@@ -310,13 +395,25 @@ namespace Apolo
                     txtGuia.Enabled = true;
                     dtpFechaIngreso.Enabled = true;
                     dgvLaptopsSeleccionados.Enabled = true;
-                    dgvDisco.Enabled = true;
-                    dgvMemorias.Enabled = true;
-                    dgvLicencia.Enabled = true;
+                    dgvMonitores.Enabled = true;
+                    dgvTablets.Enabled = true;
+                    dgvImpresoras.Enabled = true;
+                    dgvProyectores.Enabled = true;
+                    dgvDiscos.Enabled = true;
+                    dgvMemoria.Enabled = true;
+                    dgvLicencias.Enabled = true;
                     btnAgregarDisco.Enabled = true;
                     btnAgregarMemoria.Enabled = true;
                     btnAgregarLicencia.Enabled = true;
                     btnAgregarProducto.Enabled = true;
+                    btnAgregarMonitores.Enabled = true;
+                    btnAgregarTablets.Enabled = true;
+                    btnAgregarImpresora.Enabled = true;
+                    btnAgregarProyectores.Enabled = true;
+                    btnVisualizarMonitores.Enabled = true;
+                    btnVisualizarTablets.Enabled = true;
+                    btnVisualizarImpresora.Enabled = true;
+                    btnVisualizarProyectores.Enabled = true;
                     btnVisualizar.Enabled = true;
                     btnNuevo.Enabled = false;
                     btnAnular.Enabled = false;
@@ -335,13 +432,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = true;
@@ -362,13 +471,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = false;
@@ -389,13 +510,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -414,13 +547,25 @@ namespace Apolo
                     txtGuia.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
-                    dgvLicencia.Enabled = false;
+                    dgvMonitores.Enabled = false;
+                    dgvTablets.Enabled = false;
+                    dgvImpresoras.Enabled = false;
+                    dgvProyectores.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
+                    btnAgregarMonitores.Enabled = false;
+                    btnAgregarTablets.Enabled = false;
+                    btnAgregarImpresora.Enabled = false;
+                    btnAgregarProyectores.Enabled = false;
+                    btnVisualizarMonitores.Enabled = false;
+                    btnVisualizarTablets.Enabled = false;
+                    btnVisualizarImpresora.Enabled = false;
+                    btnVisualizarProyectores.Enabled = false;
                     btnVisualizar.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
@@ -432,7 +577,6 @@ namespace Apolo
                     break;
             }
         }
-
 
         public void limpiarComponentes()
         {
@@ -446,52 +590,14 @@ namespace Apolo
             txtFactura.Text = "";
             txtMontoCambio.Text = "";
             dtpFechaIngreso.Value = DateTime.Now;
-            dgvDisco.PrimaryGrid.DataSource = null;
-            dgvMemorias.PrimaryGrid.DataSource = null;
-            dgvLicencia.PrimaryGrid.DataSource = null;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
-        }
-
-
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-            if (cmbTipoIngreso.SelectedIndex != -1)
-            {
-                //! 0 -> COMPRA
-                //! 1 -> SUBARRIENDO
-                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
-
-                try
-                {
-                    IngresoDetalle detalle = new IngresoDetalle();
-                    using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(tipo))
-                    {
-                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        {
-                            BindingList<IngresoDetalle> auxiliares = new BindingList<IngresoDetalle>();
-                            foreach (IngresoDetalle aux in ingreso.Detalles)
-                            {
-                                auxiliares.Add(aux);
-                            }
-                            detalle = frm.DETALLE;
-                            detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
-                            auxiliares.Add(detalle);
-                            ingreso.Detalles = auxiliares;
-                            //ingreso.Detalles.Add(detalle);
-                            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
-                        }
-                    }
-                }
-                catch
-                {
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione el tipo de ingreso");
-            }
-
+            dgvDiscos.DataSource = null;
+            dgvMemoria.DataSource = null;
+            dgvLicencias.DataSource = null;
+            dgvLaptopsSeleccionados.DataSource = null;
+            dgvImpresoras.DataSource = null;
+            dgvTablets.DataSource = null;
+            dgvMonitores.DataSource = null;
+            dgvProyectores.DataSource = null;
         }
 
         private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
@@ -502,230 +608,6 @@ namespace Apolo
                 ingreso.Ruc = tablaProveedor.Rows[i]["ruc"].ToString();
                 txtRUC.Text = tablaProveedor.Rows[i]["ruc"].ToString();
                 ingreso.RazonSocial = tablaProveedor.Rows[i]["razonSocial"].ToString();
-            }
-        }
-
-        private void btnAgregarMemoria_Click(object sender, EventArgs e)
-        {
-            using (frmProcesoIngresoMemoria frm = new frmProcesoIngresoMemoria())
-            {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    BindingList<Memoria> auxiliares = new BindingList<Memoria>();
-                    foreach (Memoria aux in ingreso.Memorias)
-                    {
-                        auxiliares.Add(aux);
-                    }
-                    foreach (Memoria memoriaTraido in frm.MEMORIAS)
-                    {
-                        Memoria memTemp = new Memoria();
-                        memTemp.IdMemoria = memoriaTraido.IdMemoria;
-                        bool exists = auxiliares.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
-                        if (!(exists))
-                        {
-                            memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
-                            memTemp.Tipo = memoriaTraido.Tipo;
-                            memTemp.Capacidad = memoriaTraido.Capacidad;
-                            memTemp.Cantidad = 1;
-                            memTemp.Precio = 0.00;
-                            auxiliares.Add(memTemp);
-                        }
-                    }
-                    ingreso.Memorias = auxiliares;
-                    dgvMemorias.PrimaryGrid.DataSource = ingreso.Memorias;
-                }
-            }
-
-        }
-
-        private void dgvMemorias_DoubleClick(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
-                {
-                    BindingList<Memoria> memorias = new BindingList<Memoria>();
-                    for (int i = 0; i < dgvMemorias.PrimaryGrid.Rows.Count; i++)
-                    {
-                        Memoria memoria = new Memoria();
-                        int memoriaID = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                        memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        if (memoriaID != memoria.IdMemoria)
-                        {
-                            memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                            memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
-                            memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                            memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                            memoria.Precio = Double.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 5))).Value.ToString());
-                            memorias.Add(memoria);
-                        }
-                    }
-                    ingreso.Memorias = memorias;
-                    dgvMemorias.PrimaryGrid.DataSource = ingreso.Memorias;
-                }
-            }
-        }
-
-        private void btnAgregarDisco_Click(object sender, EventArgs e)
-        {
-            using (frmProcesoIngresoDisco frm = new frmProcesoIngresoDisco())
-            {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    BindingList<DiscoDuro> auxiliares = new BindingList<DiscoDuro>();
-                    foreach (DiscoDuro aux in ingreso.Discos)
-                    {
-                        auxiliares.Add(aux);
-                    }
-
-                    foreach (DiscoDuro discoTraido in frm.DISCOS)
-                    {
-                        DiscoDuro disTemp = new DiscoDuro();
-                        disTemp.IdDisco = discoTraido.IdDisco;
-                        bool exists = auxiliares.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
-                        if (!(exists))
-                        {
-                            disTemp.TipoDisco = discoTraido.TipoDisco;
-                            disTemp.Capacidad = discoTraido.Capacidad;
-                            disTemp.Tamano = discoTraido.Tamano;
-                            disTemp.Cantidad = 1;
-                            disTemp.Precio = 0.00;
-                            auxiliares.Add(disTemp);
-                        }
-                    }
-                    ingreso.Discos = auxiliares;
-                    dgvDisco.PrimaryGrid.DataSource = ingreso.Discos;
-                }
-            }
-
-        }
-
-        private void dgvDisco_DoubleClick(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                if (dgvDisco.PrimaryGrid.Rows.Count > 0)
-                {
-                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
-                    for (int i = 0; i < dgvDisco.PrimaryGrid.Rows.Count; i++)
-                    {
-                        DiscoDuro disco = new DiscoDuro();
-                        int discoID = int.Parse(((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                        disco.IdDisco = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        if (discoID != disco.IdDisco)
-                        {
-                            disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                            disco.Tamano = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 4))).Value.ToString();
-                            disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                            disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                            disco.Precio = Double.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 5))).Value.ToString());
-                            discos.Add(disco);
-                        }
-                    }
-                    ingreso.Discos = discos;
-                    dgvDisco.PrimaryGrid.DataSource = ingreso.Discos;
-                }
-            }
-        }
-
-        private void btnAgregarLicencia_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (frmProcesoIngresoLicencia frm = new frmProcesoIngresoLicencia())
-                {
-                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        BindingList<Licencia> auxiliares = new BindingList<Licencia>();
-                        foreach (Licencia aux in ingreso.Licencias)
-                        {
-                            auxiliares.Add(aux);
-                        }
-
-                        foreach (Licencia licenciaTraido in frm.LICENCIAS)
-                        {
-                            Licencia licTemp = new Licencia();
-                            licTemp.IdModelo = licenciaTraido.IdModelo;
-                            //bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
-                            bool exists = false;
-                            if (!(exists))
-                            {
-
-                                licTemp.IdLicencia = ingreso.Licencias.Count + 1;
-                                licTemp.Categoria = licenciaTraido.Categoria;
-                                licTemp.IdModelo = licenciaTraido.IdModelo;
-                                licTemp.Marca = licenciaTraido.Marca;
-                                licTemp.Version = licenciaTraido.Version;
-                                licTemp.Clave = licenciaTraido.Clave;
-                                licTemp.Cantidad = licenciaTraido.Cantidad;
-                                licTemp.Precio = 0.00;
-
-                                auxiliares.Add(licTemp);
-                            }
-                        }
-                        ingreso.Licencias = auxiliares;
-                        dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
-                    }
-                }
-            }
-            catch
-            {
-
-            }
-
-        }
-
-        private void dgvLicencia_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                {
-                    int detTempId;
-                    if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
-                    {
-                        detTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-
-                        int indiceLC = 0;
-                        foreach (Licencia licencia in ingreso.Licencias)
-                        {
-                            if (licencia.IdLicencia == detTempId)
-                            {
-                                break;
-                            }
-                            indiceLC++;
-                        }
-                        ingreso.Licencias.RemoveAt(indiceLC);
-
-                        for (int i = 0; i < ingreso.Licencias.Count; i++)
-                        {
-                            ingreso.Licencias[i].IdLicencia = i + 1;
-                        }
-
-                        dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
-                    }
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Entro al try cath1");
-            }
-
-        }
-
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                estadoComponentes(TipoVista.Limpiar);
-                ingreso = new Ingreso();
-                dgvDisco.PrimaryGrid.DataSource = null;
-                dgvMemorias.PrimaryGrid.DataSource = null;
-                dgvLicencia.PrimaryGrid.DataSource = null;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
             }
         }
 
@@ -752,10 +634,15 @@ namespace Apolo
                 ingreso = frmBP.ObjSeleccionado;
                 txtNroIngreso.Text = ingreso.IdIngreso.ToString();
                 LlenarDatosIngreso();
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
-                dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
-                dgvDisco.PrimaryGrid.DataSource = ingreso.Discos;
-                dgvMemorias.PrimaryGrid.DataSource = ingreso.Memorias;
+                dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                dgvLicencias.DataSource = ingreso.Licencias;
+                dgvDiscos.DataSource = ingreso.Discos;
+                dgvMemoria.DataSource = ingreso.Memorias;
+
+                dgvTablets.DataSource = ingreso.DetallesTablets;
+                dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+                dgvProyectores.DataSource = ingreso.DetallesProyectores;
             }
             else
             {
@@ -767,10 +654,26 @@ namespace Apolo
         {
             estadoComponentes(TipoVista.Nuevo);
         }
-
+        
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                estadoComponentes(TipoVista.Limpiar);
+                ingreso = new Ingreso();
+                dgvDiscos.DataSource = null;
+                dgvMemoria.DataSource = null;
+                dgvLicencias.DataSource = null;
+                dgvLaptopsSeleccionados.DataSource = null;
+                dgvTablets.DataSource = null;
+                dgvImpresoras.DataSource = null;
+                dgvMonitores.DataSource = null;
+                dgvProyectores.DataSource = null;
+            }
+        }
+        
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             if (ingreso.Estado == 7 || ingreso.Estado == 0)//en teoría 7 debería ser finalizado
             {
                 MessageBox.Show("Este ingreso ya no se puede modificar", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -780,48 +683,13 @@ namespace Apolo
             {
                 if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Ingreso N° :" + txtNroIngreso.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-
                     estadoComponentes(TipoVista.Modificar);
-
-                }
-
-            }
-        }
-
-        private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                int detTempId;
-                if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
-                {
-                    detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-
-                    int indiceLC = 0;
-                    foreach (IngresoDetalle detalle in ingreso.Detalles)
-                    {
-                        if (detalle.IdIngresoDetalle == detTempId)
-                        {
-                            break;
-                        }
-                        indiceLC++;
-                    }
-
-                    ingreso.Detalles.RemoveAt(indiceLC);
-                    for (int i = 0; i < ingreso.Detalles.Count; i++)
-                    {
-                        ingreso.Detalles[i].IdIngresoDetalle = i + 1;
-                    }
-
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
                 }
             }
-
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
             Cursor.Current = Cursors.WaitCursor;
             if (ingreso.Estado == 0)
             {
@@ -852,8 +720,7 @@ namespace Apolo
             }
             Cursor.Current = Cursors.Default;
         }
-
-
+        
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que desea Imprimir el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -878,7 +745,7 @@ namespace Apolo
                         hoja_ingreso = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
                         hoja_ingreso.Name = "Ingreso";
                         string cabecera = "Reporte de Ingreso";
-                        ExportarDataGridViewExcel(ref hoja_ingreso, dgvLaptopsSeleccionados, cabecera);
+                        ExportarDataGridViewExcel(ref hoja_ingreso, cabecera);
 
 
                         ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
@@ -901,7 +768,7 @@ namespace Apolo
             }
         }
 
-        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)
         {
 
             Cursor.Current = Cursors.WaitCursor;
@@ -1123,10 +990,10 @@ namespace Apolo
             }
 
 
-            montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia);
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia);
         }
 
-        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, SuperGridControl grd, string nombreCabecera,
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera,
                                     int filaDetalle, int filaMemoria, int filaDisco, int filaLicencia)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -1331,6 +1198,83 @@ namespace Apolo
             }
         }
 
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoIngreso.SelectedIndex != -1)
+            {
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
+                {
+                    IngresoDetalle detalle = new IngresoDetalle();
+                    using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(this.idUsuario, this.nombreUsuario,tipo))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            BindingList<IngresoDetalle> auxiliares = new BindingList<IngresoDetalle>();
+                            foreach (IngresoDetalle aux in ingreso.Detalles)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.Detalles = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                            vistaLaptops.OptionsBehavior.AutoPopulateColumns = false;
+                            vistaLaptops.OptionsSelection.MultiSelect = true;
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
+            }
+
+        }
+
+        private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int detTempId = -1;
+                vistaLaptops.ClearColumnsFilter();
+
+                for (int i = 0; i < vistaLaptops.RowCount; i++)
+                    if (vistaLaptops.IsRowSelected(i) == true)
+                        detTempId = int.Parse(vistaLaptops.GetRowCellValue(i, "IdIngresoDetalle").ToString());
+
+                if (detTempId != -1)
+                {
+                    int indiceLC = 0;
+                    foreach (IngresoDetalle detalle in ingreso.Detalles)
+                    {
+                        if (detalle.IdIngresoDetalle == detTempId)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+
+                    ingreso.Detalles.RemoveAt(indiceLC);
+                    for (int i = 0; i < ingreso.Detalles.Count; i++)
+                    {
+                        ingreso.Detalles[i].IdIngresoDetalle = i + 1;
+                    }
+
+                    dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                }
+            }
+
+        }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -1364,11 +1308,9 @@ namespace Apolo
 
             Cursor.Current = Cursors.WaitCursor;
 
-
             //VALIDAR SI ES COMPRA (0)  O ARRENDAMIENTO (1)
             //! 0 -> COMPRA
             //! 1 -> SUBARRIENDO
-
 
             if (numIngreso.Length == 0)
             {
@@ -1386,7 +1328,36 @@ namespace Apolo
                     {
                         ingreso.Detalles[i].IdIngresoDetalle = i + 1;
                     }
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                    dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+
+
+                    for (int i = 0; i < ingreso.DetallesImpresoras.Count; i++)
+                    {
+                        ingreso.DetallesImpresoras[i].IdIngresoDetalleImpresora = i + 1;
+                    }
+                    dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+
+
+                    for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
+                    {
+                        ingreso.DetallesTablets[i].IdIngresoDetalleTablet = i + 1;
+                    }
+                    dgvTablets.DataSource = ingreso.DetallesTablets;
+
+
+                    for (int i = 0; i < ingreso.DetallesMonitores.Count; i++)
+                    {
+                        ingreso.DetallesMonitores[i].IdIngresoDetalleMonitor = i + 1;
+                    }
+                    dgvMonitores.DataSource = ingreso.DetallesMonitores;
+
+
+                    for (int i = 0; i < ingreso.DetallesProyectores.Count; i++)
+                    {
+                        ingreso.DetallesProyectores[i].IdIngresoDetalleProyector = i + 1;
+                    }
+                    dgvProyectores.DataSource = ingreso.DetallesProyectores;
+
 
                     MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     ingreso.IdIngreso = idIngreso;
@@ -1403,234 +1374,105 @@ namespace Apolo
                     {
                         ingreso.Detalles[i].IdIngresoDetalle = i + 1;
                     }
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                    dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+
+
+                    for (int i = 0; i < ingreso.DetallesImpresoras.Count; i++)
+                    {
+                        ingreso.DetallesImpresoras[i].IdIngresoDetalleImpresora = i + 1;
+                    }
+                    dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+
+
+                    for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
+                    {
+                        ingreso.DetallesTablets[i].IdIngresoDetalleTablet = i + 1;
+                    }
+                    dgvTablets.DataSource = ingreso.DetallesTablets;
+
+
+                    for (int i = 0; i < ingreso.DetallesMonitores.Count; i++)
+                    {
+                        ingreso.DetallesMonitores[i].IdIngresoDetalleMonitor = i + 1;
+                    }
+                    dgvMonitores.DataSource = ingreso.DetallesMonitores;
+
+
+                    for (int i = 0; i < ingreso.DetallesProyectores.Count; i++)
+                    {
+                        ingreso.DetallesProyectores[i].IdIngresoDetalleProyector = i + 1;
+                    }
+                    dgvProyectores.DataSource = ingreso.DetallesProyectores;
+
                     MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
         }
 
-        private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
-        {
-            int i = dgvMemorias.PrimaryGrid.ActiveRow.Index;
-            int memoriaId;
-            int aux;
-            double auxDouble;
-            double precio;
-            int cantidadMemoria;
-            string myStr;
-            if (!(i == -1))
-            {
-                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    aux = int.Parse(myStr);
-                    if (aux < 0) myStr = "1";
-                }
-                else myStr = "1";
-                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
-                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
-
-                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[5])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    auxDouble = double.Parse(myStr);
-                    if (auxDouble < 0) myStr = "0.00";
-                }
-                else myStr = "0";
-                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
-                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[5])).Value = precio;
-
-                memoriaId = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-
-                for (int j = 0; j < ingreso.Memorias.Count; j++)
-                {
-                    if (memoriaId == ingreso.Memorias[j].IdMemoria)
-                    {
-                        ingreso.Memorias[j].Cantidad = cantidadMemoria;
-                        ingreso.Memorias[j].Precio = precio;
-                    }
-                }
-            }
-
-        }
-
-        private void dgvDisco_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
-        {
-            int i = dgvDisco.PrimaryGrid.ActiveRow.Index;
-            int discoId;
-            int aux;
-            double auxDouble;
-            double precio;
-            int cantidadDisco;
-            string myStr;
-            if (!(i == -1))
-            {
-                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    aux = int.Parse(myStr);
-                    if (aux < 0) myStr = "1";
-                }
-                else myStr = "1";
-                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
-                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
-
-
-                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[5])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    auxDouble = double.Parse(myStr);
-                    if (auxDouble < 0) myStr = "0.00";
-                }
-                else myStr = "0";
-                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
-                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[5])).Value = precio;
-
-
-                discoId = int.Parse(((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-
-                for (int j = 0; j < ingreso.Discos.Count; j++)
-                {
-                    if (discoId == ingreso.Discos[j].IdDisco)
-                    {
-                        ingreso.Discos[j].Cantidad = cantidadDisco;
-                        ingreso.Discos[j].Precio = precio;
-                    }
-                }
-            }
-
-        }
-
-        private void dgvLicencia_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
-        {
-            try
-            {
-
-                int i = dgvLicencia.PrimaryGrid.ActiveRow.Index;
-                int licenciaId;
-                int aux;
-                int cantidadLicencia;
-                double auxDouble;
-                double precio;
-                string myStr;
-                string clave = "";
-                if (!(i == -1))
-                {
-                    myStr = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value.ToString();
-                    myStr = myStr.TrimStart('0');
-
-                    if (myStr.Length > 0)
-                    {
-                        aux = int.Parse(myStr);
-                        if (aux < 0) myStr = "1";
-                    }
-                    else myStr = "1";
-                    cantidadLicencia = myStr.Length > 0 ? int.Parse(myStr) : 1;
-                    ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value = cantidadLicencia;
-
-
-                    if (((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value != null)
-                    {
-                        clave = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                        clave = clave.Trim();
-                    }
-                    ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value = clave;
-
-
-                    myStr = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[8])).Value.ToString();
-                    myStr = myStr.TrimStart('0');
-
-                    if (myStr.Length > 0)
-                    {
-                        auxDouble = double.Parse(myStr);
-                        if (auxDouble < 0) myStr = "0.00";
-                    }
-                    else myStr = "0";
-                    precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
-                    ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[8])).Value = precio;
-
-
-                    licenciaId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-
-                    for (int j = 0; j < ingreso.Licencias.Count; j++)
-                    {
-                        if (licenciaId == ingreso.Licencias[j].IdLicencia)
-                        {
-                            ingreso.Licencias[j].Cantidad = cantidadLicencia;
-                            ingreso.Licencias[j].Clave = clave;
-                            ingreso.Licencias[j].Precio = precio;
-                            break;
-                        }
-                    }
-                }
-
-
-            }
-            catch
-            {
-                MessageBox.Show("Entro al try cath2");
-            }
-        }
-
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            int detTempId;
-            IngresoDetalle det = new IngresoDetalle();
-            int indiceLC = 0;
+            int detTempId = -1;
+            for (int i = 0; i < vistaLaptops.RowCount; i++)
+                if (vistaLaptops.IsRowSelected(i) == true)
+                    detTempId = int.Parse(vistaLaptops.GetRowCellValue(i, "IdIngresoDetalle").ToString());
 
-            if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count == 0) return;
-            if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
-            {
-                detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-
-                foreach (IngresoDetalle detalle in ingreso.Detalles)
+            if (detTempId != -1) {
+                IngresoDetalle det = new IngresoDetalle();
+                int indiceLC = 0;
+                vistaLaptops.ClearColumnsFilter();
+                if (vistaLaptops.RowCount == 0) return;
+                if (vistaLaptops.RowCount > 0)
                 {
-                    if (detalle.IdIngresoDetalle == detTempId)
-                        break;
-                    indiceLC++;
-                }
-            }
+                    for (int i = 0; i < vistaLaptops.RowCount; i++)
+                        if (vistaLaptops.IsRowSelected(i) == true)
+                            detTempId = int.Parse(vistaLaptops.GetRowCellValue(i, "IdIngresoDetalle").ToString());
+                    //detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
 
-            using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(ingreso.Detalles[indiceLC]))
-            {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+                    foreach (IngresoDetalle detalle in ingreso.Detalles)
                     {
-                        detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-
-                        int indiceLC2 = 0;
-                        foreach (IngresoDetalle detalle in ingreso.Detalles)
-                        {
-                            if (detalle.IdIngresoDetalle == detTempId)
-                            {
-                                break;
-                            }
-                            indiceLC2++;
-                        }
-
-                        ingreso.Detalles.RemoveAt(indiceLC2);
-                        for (int i = 0; i < ingreso.Detalles.Count; i++)
-                        {
-                            ingreso.Detalles[i].IdIngresoDetalle = i + 1;
-                        }
-
-                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                        if (detalle.IdIngresoDetalle == detTempId)
+                            break;
+                        indiceLC++;
                     }
+                }
 
-                    det = frm.DETALLE;
-                    det.IdIngresoDetalle = ingreso.Detalles.Count + 1;
-                    ingreso.Detalles.Add(det);
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+                using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(this.idUsuario, this.nombreUsuario, tipo, ingreso.Detalles[indiceLC]))
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (vistaLaptops.RowCount > 0)
+                        {
+                            for (int i = 0; i < vistaLaptops.RowCount; i++)
+                                if (vistaLaptops.IsRowSelected(i) == true)
+                                    detTempId = int.Parse(vistaLaptops.GetRowCellValue(i, "IdIngresoDetalle").ToString());
+                            //detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+
+                            int indiceLC2 = 0;
+                            foreach (IngresoDetalle detalle in ingreso.Detalles)
+                            {
+                                if (detalle.IdIngresoDetalle == detTempId)
+                                {
+                                    break;
+                                }
+                                indiceLC2++;
+                            }
+
+                            ingreso.Detalles.RemoveAt(indiceLC2);
+                            for (int i = 0; i < ingreso.Detalles.Count; i++)
+                            {
+                                ingreso.Detalles[i].IdIngresoDetalle = i + 1;
+                            }
+
+                            dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                        }
+
+                        det = frm.DETALLE;
+                        det.IdIngresoDetalle = ingreso.Detalles.Count + 1;
+                        ingreso.Detalles.Add(det);
+                        dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                    }
                 }
             }
         }
@@ -1639,6 +1481,7 @@ namespace Apolo
         {
             e.Handled = solonumeros(Convert.ToInt32(e.KeyChar));
         }
+
         public bool solonumeros(int code)
         {
             bool resultado;
@@ -1661,31 +1504,987 @@ namespace Apolo
             }
 
             return resultado;
+        }
+
+        private void btnAgregarLicencia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (frmProcesoIngresoLicencia frm = new frmProcesoIngresoLicencia())
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        BindingList<Licencia> auxiliares = new BindingList<Licencia>();
+                        foreach (Licencia aux in ingreso.Licencias)
+                        {
+                            auxiliares.Add(aux);
+                        }
+
+                        foreach (Licencia licenciaTraido in frm.LICENCIAS)
+                        {
+                            Licencia licTemp = new Licencia();
+                            licTemp.IdModelo = licenciaTraido.IdModelo;
+                            //bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
+                            bool exists = false;
+                            if (!(exists))
+                            {
+
+                                licTemp.IdLicencia = auxiliares.Count + 1;
+                                licTemp.Categoria = licenciaTraido.Categoria;
+                                licTemp.IdModelo = licenciaTraido.IdModelo;
+                                licTemp.Marca = licenciaTraido.Marca;
+                                licTemp.Version = licenciaTraido.Version;
+                                licTemp.Clave = licenciaTraido.Clave;
+                                licTemp.Cantidad = licenciaTraido.Cantidad;
+                                licTemp.Precio = 0.00;
+
+                                auxiliares.Add(licTemp);
+                            }
+                        }
+                        ingreso.Licencias = auxiliares;
+                        dgvLicencias.DataSource = ingreso.Licencias;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
 
         }
 
-        private void txtMontoCambio_KeyDown(object sender, KeyEventArgs e)
+        private void dgvLicencias_DoubleClick(object sender, EventArgs e)
         {
-            //bool paste = (Convert.ToInt32(e.KeyData) == (Convert.ToInt32(Keys.Control) | Convert.ToInt32(Keys.V)));
-            //bool copy = (Convert.ToInt32(e.KeyData) == (Convert.ToInt32(Keys.Control) | Convert.ToInt32(Keys.C)));
-            //if (paste || copy)permitir = false;
-            //else permitir = true;
+            try
+            {
+                if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    vistaLicencias.ClearColumnsFilter();
+                    int detTempId = -1;
+                    int h = 0;
+                    for (h = 0; h < vistaLicencias.RowCount; h++)
+                        if (vistaLicencias.IsRowSelected(h) == true)
+                        {
+                            detTempId = int.Parse(vistaLicencias.GetRowCellValue(h, "IdLicencia").ToString());
+                            break;
+                        }
+
+                    if (detTempId != -1)
+                    {
+                        int indiceLC = 0;
+                        foreach (Licencia licencia in ingreso.Licencias)
+                        {
+                            if (licencia.IdLicencia == detTempId)
+                            {
+                                break;
+                            }
+                            indiceLC++;
+                        }
+                        ingreso.Licencias.RemoveAt(indiceLC);
+
+                        for (int i = 0; i < ingreso.Licencias.Count; i++)
+                        {
+                            ingreso.Licencias[i].IdLicencia = i + 1;
+                        }
+
+                        dgvLicencias.DataSource = ingreso.Licencias;
+                    }
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Entro al try cath1");
+            }
+
         }
 
-        private void dgvLaptopsSeleccionados_SortChanged(object sender, GridEventArgs e)
+        private void vistaLicencias_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //MessageBox.Show("Entro aqui");
-            //int aux = ingreso.Detalles.Count;
+            try
+            {
+                vistaLicencias.ClearColumnsFilter();
+                int idLicencia = -1;
+                int h = 0;
+                for (h = 0; h < vistaLicencias.RowCount; h++)
+                    if (vistaLicencias.IsRowSelected(h) == true)
+                    {
+                        idLicencia = int.Parse(vistaLicencias.GetRowCellValue(h, "IdLicencia").ToString());
+                        break;
+                    }
+
+                int aux;
+                int cantidadLicencia;
+                double auxDouble;
+                double precio;
+                string myStr;
+                string clave = "";
+                if (!(idLicencia == -1))
+                {
+                    myStr = vistaLicencias.GetRowCellValue(h, "Cantidad").ToString();
+                    myStr = myStr.TrimStart('0');
+
+                    if (myStr.Length > 0)
+                    {
+                        aux = int.Parse(myStr);
+                        if (aux < 0) myStr = "1";
+                    }
+                    else myStr = "1";
+                    cantidadLicencia = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                    //vistaLicencias.SetRowCellValue(h, "Cantidad", cantidadLicencia);
+
+                    if (vistaLicencias.GetRowCellValue(h, "Clave") != null)
+                    {
+                        clave = vistaLicencias.GetRowCellValue(h, "Clave").ToString();
+                        clave = clave.Trim();
+                    }
+                    //vistaLicencias.SetRowCellValue(h, "Clave", clave);
+
+                    myStr = vistaLicencias.GetRowCellValue(h, "Precio").ToString(); ;
+                    myStr = myStr.TrimStart('0');
+
+                    if (myStr.Length > 0)
+                    {
+                        auxDouble = double.Parse(myStr);
+                        if (auxDouble < 0) myStr = "0.00";
+                    }
+                    else myStr = "0";
+                    precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+                    //vistaLicencias.SetRowCellValue(h, "Precio", precio);
+
+                    for (int j = 0; j < ingreso.Licencias.Count; j++)
+                    {
+                        if (idLicencia == ingreso.Licencias[j].IdLicencia)
+                        {
+                            ingreso.Licencias[j].Cantidad = cantidadLicencia;
+                            ingreso.Licencias[j].Clave = clave;
+                            ingreso.Licencias[j].Precio = precio;
+                            break;
+                        }
+                    }
+                    dgvLicencias.DataSource = ingreso.Licencias;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Entro al try cath2");
+            }
         }
 
-        private void frmProcesoIngreso_Load(object sender, EventArgs e)
+        private void btnAgregarMemoria_Click(object sender, EventArgs e)
         {
+            using (frmProcesoIngresoMemoria frm = new frmProcesoIngresoMemoria())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    BindingList<Memoria> auxiliares = new BindingList<Memoria>();
+                    foreach (Memoria aux in ingreso.Memorias)
+                    {
+                        auxiliares.Add(aux);
+                    }
+                    foreach (Memoria memoriaTraido in frm.MEMORIAS)
+                    {
+                        Memoria memTemp = new Memoria();
+                        memTemp.IdMemoria = memoriaTraido.IdMemoria;
+                        bool exists = auxiliares.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
+                        if (!(exists))
+                        {
+                            memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
+                            memTemp.Tipo = memoriaTraido.Tipo;
+                            memTemp.Capacidad = memoriaTraido.Capacidad;
+                            memTemp.Cantidad = 1;
+                            memTemp.Precio = 0.00;
+                            auxiliares.Add(memTemp);
+                        }
+                    }
+                    ingreso.Memorias = auxiliares;
+                    dgvMemoria.DataSource = ingreso.Memorias;
+                }
+            }
+
+        }
+        
+        private void dgvMemoria_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+
+                vistaMemoria.ClearColumnsFilter();
+
+                int memoriaID = -1;
+                int h = 0;
+                for (h = 0; h < vistaMemoria.RowCount; h++)
+                    if (vistaMemoria.IsRowSelected(h) == true)
+                    {
+                        memoriaID = int.Parse(vistaMemoria.GetRowCellValue(h, "IdMemoria").ToString());
+                        break;
+                    }
+
+                if (memoriaID != -1)
+                {
+                    BindingList<Memoria> memorias = new BindingList<Memoria>();
+                    for (int i = 0; i < vistaMemoria.RowCount; i++)
+                    {
+                        Memoria memoria = new Memoria();
+                        memoria.IdMemoria = int.Parse(vistaMemoria.GetRowCellValue(i, "IdMemoria").ToString());
+                        if (memoriaID != memoria.IdMemoria)
+                        {
+                            memoria.TipoMemoria = vistaMemoria.GetRowCellValue(i, "TipoMemoria").ToString();
+                            memoria.Tipo = vistaMemoria.GetRowCellValue(i, "Tipo2").ToString();
+                            memoria.Capacidad = int.Parse(vistaMemoria.GetRowCellValue(i, "Capacidad").ToString());
+                            memoria.Cantidad = int.Parse(vistaMemoria.GetRowCellValue(i, "Cantidad").ToString());
+                            memoria.Precio = Double.Parse(vistaMemoria.GetRowCellValue(i, "Precio").ToString());
+                            memorias.Add(memoria);
+                        }
+                    }
+                    ingreso.Memorias = memorias;
+                    dgvMemoria.DataSource = ingreso.Memorias;
+                }
+            }
+        }
+
+        private void vistaMemoria_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            vistaMemoria.ClearColumnsFilter();
+            int memoriaId = -1;
+            int h = 0;
+            for (h = 0; h < vistaMemoria.RowCount; h++)
+                if (vistaMemoria.IsRowSelected(h) == true)
+                {
+                    memoriaId = int.Parse(vistaMemoria.GetRowCellValue(h, "IdMemoria").ToString());
+                    break;
+                }
+
+            int aux;
+            double auxDouble;
+            double precio;
+            int cantidadMemoria;
+            string myStr;
+            if (!(memoriaId == -1))
+            {
+                myStr = vistaMemoria.GetRowCellValue(h, "Cantidad").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
+
+
+                myStr = vistaMemoria.GetRowCellValue(h, "Precio").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    auxDouble = double.Parse(myStr);
+                    if (auxDouble < 0) myStr = "0.00";
+                }
+                else myStr = "0";
+                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+               
+                for (int j = 0; j < ingreso.Memorias.Count; j++)
+                {
+                    if (memoriaId == ingreso.Memorias[j].IdMemoria)
+                    {
+                        ingreso.Memorias[j].Cantidad = cantidadMemoria;
+                        ingreso.Memorias[j].Precio = precio;
+                    }
+                }
+                dgvMemoria.DataSource = ingreso.Memorias;
+            }
+        }
+
+        private void btnAgregarDisco_Click(object sender, EventArgs e)
+        {
+            using (frmProcesoIngresoDisco frm = new frmProcesoIngresoDisco())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    BindingList<DiscoDuro> auxiliares = new BindingList<DiscoDuro>();
+                    foreach (DiscoDuro aux in ingreso.Discos)
+                    {
+                        auxiliares.Add(aux);
+                    }
+
+                    foreach (DiscoDuro discoTraido in frm.DISCOS)
+                    {
+                        DiscoDuro disTemp = new DiscoDuro();
+                        disTemp.IdDisco = discoTraido.IdDisco;
+                        bool exists = auxiliares.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
+                        if (!(exists))
+                        {
+                            disTemp.TipoDisco = discoTraido.TipoDisco;
+                            disTemp.Capacidad = discoTraido.Capacidad;
+                            disTemp.Tamano = discoTraido.Tamano;
+                            disTemp.Cantidad = 1;
+                            disTemp.Precio = 0.00;
+                            auxiliares.Add(disTemp);
+                        }
+                    }
+                    ingreso.Discos = auxiliares;
+                    dgvDiscos.DataSource = ingreso.Discos;
+                }
+            }
 
         }
 
-        private void dgvLaptopsSeleccionados_Click(object sender, EventArgs e)
+        private void dgvDiscos_DoubleClick(object sender, EventArgs e)
         {
 
+            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                vistaDiscos.ClearColumnsFilter();
+
+                int discoID = -1;
+                int h = 0;
+                for (h = 0; h < vistaDiscos.RowCount; h++)
+                    if (vistaDiscos.IsRowSelected(h) == true)
+                    {
+                        discoID = int.Parse(vistaDiscos.GetRowCellValue(h, "IdDisco").ToString());
+                        break;
+                    }
+
+                if (discoID != -1)
+                {
+                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
+                    for (int i = 0; i < vistaDiscos.RowCount; i++)
+                    {
+                        DiscoDuro disco = new DiscoDuro();
+                        disco.IdDisco = int.Parse(vistaDiscos.GetRowCellValue(i, "IdDisco").ToString());
+                        if (discoID != disco.IdDisco)
+                        {
+                            disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "TipoDisco").ToString();
+                            disco.Tamano = vistaDiscos.GetRowCellValue(i, "Tamano").ToString();
+                            disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Capacidad").ToString());
+                            disco.Cantidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Cantidad").ToString());
+                            disco.Precio = Double.Parse(vistaDiscos.GetRowCellValue(i, "Precio").ToString());
+                            discos.Add(disco);
+                        }
+                    }
+                    ingreso.Discos = discos;
+                    dgvDiscos.DataSource = ingreso.Discos;
+                }
+            }
+        }
+
+        private void vistaDiscos_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            int discoId = -1;
+            vistaDiscos.ClearColumnsFilter();
+            int h = 0;
+            for (h = 0; h < vistaDiscos.RowCount; h++)
+                if (vistaDiscos.IsRowSelected(h) == true)
+                {
+                    discoId = int.Parse(vistaDiscos.GetRowCellValue(h, "IdDisco").ToString());
+                    break;
+                }
+
+            int aux;
+            double auxDouble;
+            double precio;
+            int cantidadDisco;
+            string myStr;
+            if (!(discoId == -1))
+            {
+                myStr = vistaDiscos.GetRowCellValue(h, "Cantidad").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                //((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
+
+
+                myStr = vistaDiscos.GetRowCellValue(h, "Precio").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    auxDouble = double.Parse(myStr);
+                    if (auxDouble < 0) myStr = "0.00";
+                }
+                else myStr = "0";
+                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+                //((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[5])).Value = precio;
+
+
+
+                for (int j = 0; j < ingreso.Discos.Count; j++)
+                {
+                    if (discoId == ingreso.Discos[j].IdDisco)
+                    {
+                        ingreso.Discos[j].Cantidad = cantidadDisco;
+                        ingreso.Discos[j].Precio = precio;
+                    }
+                }
+                dgvDiscos.DataSource = ingreso.Discos;
+            }
+
+        }
+
+        private void btnAgregarTablets_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoIngreso.SelectedIndex != -1)
+            {
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
+                {
+                    IngresoDetalleTablet detalle = new IngresoDetalleTablet();
+                    using (frmProcesoIngresoTablet frm = new frmProcesoIngresoTablet(this.idUsuario, this.nombreUsuario))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            BindingList<IngresoDetalleTablet> auxiliares = new BindingList<IngresoDetalleTablet>();
+                            foreach (IngresoDetalleTablet aux in ingreso.DetallesTablets)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalleTablet = ingreso.DetallesTablets.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.DetallesTablets = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvTablets.DataSource = ingreso.DetallesTablets;
+                            vistaTablets.OptionsBehavior.AutoPopulateColumns = false;
+                            vistaTablets.OptionsSelection.MultiSelect = true;
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
+            }
+
+        }
+
+        private void dgvTablets_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int detTempId = -1;
+                vistaTablets.ClearColumnsFilter();
+                for (int i = 0; i < vistaTablets.RowCount; i++)
+                    if (vistaTablets.IsRowSelected(i) == true)
+                        detTempId = int.Parse(vistaTablets.GetRowCellValue(i, "IdIngresoDetalleTablet").ToString());
+                if (detTempId != -1)
+                {
+                    int indiceLC = 0;
+                    foreach (IngresoDetalleTablet detalle in ingreso.DetallesTablets)
+                    {
+                        if (detalle.IdIngresoDetalleTablet == detTempId)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+
+                    ingreso.DetallesTablets.RemoveAt(indiceLC);
+                    for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
+                    {
+                        ingreso.DetallesTablets[i].IdIngresoDetalleTablet = i + 1;
+                    }
+
+                    dgvTablets.DataSource = ingreso.DetallesTablets;
+                }
+            }
+
+        }
+
+        private void btnVisualizarTablets_Click(object sender, EventArgs e)
+        {
+            int detTempId = -1;
+            for (int i = 0; i < vistaTablets.RowCount; i++)
+                if (vistaTablets.IsRowSelected(i) == true)
+                    detTempId = int.Parse(vistaTablets.GetRowCellValue(i, "IdIngresoDetalleTablet").ToString());
+
+            if (detTempId != -1)
+            {
+                IngresoDetalleTablet det = new IngresoDetalleTablet();
+                int indiceLC = 0;
+                vistaTablets.ClearColumnsFilter();
+                if (vistaTablets.RowCount == 0) return;
+                if (vistaTablets.RowCount > 0)
+                {
+                    for (int i = 0; i < vistaTablets.RowCount; i++)
+                        if (vistaTablets.IsRowSelected(i) == true)
+                            detTempId = int.Parse(vistaTablets.GetRowCellValue(i, "IdIngresoDetalleTablet").ToString());
+
+                    foreach (IngresoDetalleTablet detalle in ingreso.DetallesTablets)
+                    {
+                        if (detalle.IdIngresoDetalleTablet == detTempId)
+                            break;
+                        indiceLC++;
+                    }
+                }
+
+                using (frmProcesoIngresoTablet frm = new frmProcesoIngresoTablet(this.idUsuario, this.nombreUsuario,ingreso.DetallesTablets[indiceLC]))
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (vistaTablets.RowCount > 0)
+                        {
+                            for (int i = 0; i < vistaTablets.RowCount; i++)
+                                if (vistaTablets.IsRowSelected(i) == true)
+                                    detTempId = int.Parse(vistaTablets.GetRowCellValue(i, "IdIngresoDetalleTablet").ToString());
+
+                            int indiceLC2 = 0;
+                            foreach (IngresoDetalleTablet detalle in ingreso.DetallesTablets)
+                            {
+                                if (detalle.IdIngresoDetalleTablet == detTempId)
+                                {
+                                    break;
+                                }
+                                indiceLC2++;
+                            }
+
+                            ingreso.DetallesTablets.RemoveAt(indiceLC2);
+                            for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
+                            {
+                                ingreso.DetallesTablets[i].IdIngresoDetalleTablet = i + 1;
+                            }
+
+                            dgvTablets.DataSource = ingreso.DetallesTablets;
+                        }
+
+                        det = frm.DETALLE;
+                        det.IdIngresoDetalleTablet = ingreso.DetallesTablets.Count + 1;
+                        ingreso.DetallesTablets.Add(det);
+                        dgvTablets.DataSource = ingreso.DetallesTablets;
+                    }
+                }
+            }
+
+        }
+
+        private void btnAgregarMonitores_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoIngreso.SelectedIndex != -1)
+            {
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
+                {
+                    IngresoDetalleMonitor detalle = new IngresoDetalleMonitor();
+                    using (frmProcesoIngresoMonitor frm = new frmProcesoIngresoMonitor(this.idUsuario, this.nombreUsuario))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            BindingList<IngresoDetalleMonitor> auxiliares = new BindingList<IngresoDetalleMonitor>();
+                            foreach (IngresoDetalleMonitor aux in ingreso.DetallesMonitores)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalleMonitor = ingreso.DetallesMonitores.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.DetallesMonitores = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                            vistaMonitores.OptionsBehavior.AutoPopulateColumns = false;
+                            vistaMonitores.OptionsSelection.MultiSelect = true;
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
+            }
+        }
+
+        private void dgvMonitores_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int detTempId = -1;
+                vistaMonitores.ClearColumnsFilter();
+                for (int i = 0; i < vistaMonitores.RowCount; i++)
+                    if (vistaMonitores.IsRowSelected(i) == true)
+                        detTempId = int.Parse(vistaMonitores.GetRowCellValue(i, "IdIngresoDetalleMonitor").ToString());
+
+                if (detTempId != -1)
+                {
+                    int indiceLC = 0;
+                    foreach (IngresoDetalleMonitor detalle in ingreso.DetallesMonitores)
+                    {
+                        if (detalle.IdIngresoDetalleMonitor == detTempId)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+                    ingreso.DetallesMonitores.RemoveAt(indiceLC);
+                    for (int i = 0; i < ingreso.DetallesMonitores.Count; i++)
+                    {
+                        ingreso.DetallesMonitores[i].IdIngresoDetalleMonitor = i + 1;
+                    }
+                    dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                }
+            }
+        }
+
+        private void btnVisualizarMonitores_Click(object sender, EventArgs e)
+        {
+            int detTempId = -1;
+            for (int i = 0; i < vistaMonitores.RowCount; i++)
+                if (vistaMonitores.IsRowSelected(i) == true)
+                    detTempId = int.Parse(vistaMonitores.GetRowCellValue(i, "IdIngresoDetalleMonitor").ToString());
+
+            if (detTempId != -1)
+            {
+                IngresoDetalleMonitor det = new IngresoDetalleMonitor();
+                int indiceLC = 0;
+                vistaMonitores.ClearColumnsFilter();
+                if (vistaMonitores.RowCount == 0) return;
+                if (vistaMonitores.RowCount > 0)
+                {
+                    for (int i = 0; i < vistaMonitores.RowCount; i++)
+                        if (vistaMonitores.IsRowSelected(i) == true)
+                            detTempId = int.Parse(vistaMonitores.GetRowCellValue(i, "IdIngresoDetalleMonitor").ToString());
+
+                    foreach (IngresoDetalleMonitor detalle in ingreso.DetallesMonitores)
+                    {
+                        if (detalle.IdIngresoDetalleMonitor == detTempId)
+                            break;
+                        indiceLC++;
+                    }
+                }
+
+                using (frmProcesoIngresoMonitor frm = new frmProcesoIngresoMonitor(this.idUsuario, this.nombreUsuario,ingreso.DetallesMonitores[indiceLC]))
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (vistaMonitores.RowCount > 0)
+                        {
+                            for (int i = 0; i < vistaMonitores.RowCount; i++)
+                                if (vistaMonitores.IsRowSelected(i) == true)
+                                    detTempId = int.Parse(vistaMonitores.GetRowCellValue(i, "IdIngresoDetalleMonitor").ToString());
+
+                            int indiceLC2 = 0;
+                            foreach (IngresoDetalleMonitor detalle in ingreso.DetallesMonitores)
+                            {
+                                if (detalle.IdIngresoDetalleMonitor == detTempId)
+                                {
+                                    break;
+                                }
+                                indiceLC2++;
+                            }
+
+                            ingreso.DetallesMonitores.RemoveAt(indiceLC2);
+                            for (int i = 0; i < ingreso.DetallesMonitores.Count; i++)
+                            {
+                                ingreso.DetallesMonitores[i].IdIngresoDetalleMonitor = i + 1;
+                            }
+
+                            dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                        }
+
+                        det = frm.DETALLE;
+                        det.IdIngresoDetalleMonitor = ingreso.DetallesMonitores.Count + 1;
+                        ingreso.DetallesMonitores.Add(det);
+                        dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                    }
+                }
+            }
+        }
+
+        private void btnAgregarImpresora_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoIngreso.SelectedIndex != -1)
+            {
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
+                {
+                    IngresoDetalleImpresora detalle = new IngresoDetalleImpresora();
+                    using (frmProcesoIngresoImpresora frm = new frmProcesoIngresoImpresora(this.idUsuario, this.nombreUsuario))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            BindingList<IngresoDetalleImpresora> auxiliares = new BindingList<IngresoDetalleImpresora>();
+                            foreach (IngresoDetalleImpresora aux in ingreso.DetallesImpresoras)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalleImpresora = ingreso.DetallesImpresoras.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.DetallesImpresoras = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+                            vistaImpresoras.OptionsBehavior.AutoPopulateColumns = false;
+                            vistaImpresoras.OptionsSelection.MultiSelect = true;
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
+            }
+
+        }
+
+        private void dgvImpresoras_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int detTempId = -1;
+                vistaImpresoras.ClearColumnsFilter();
+                for (int i = 0; i < vistaImpresoras.RowCount; i++)
+                    if (vistaImpresoras.IsRowSelected(i) == true)
+                        detTempId = int.Parse(vistaImpresoras.GetRowCellValue(i, "IdIngresoDetalleImpresora").ToString());
+
+                if (detTempId != -1)
+                {
+                    int indiceLC = 0;
+                    foreach (IngresoDetalleImpresora detalle in ingreso.DetallesImpresoras)
+                    {
+                        if (detalle.IdIngresoDetalleImpresora == detTempId)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+                    ingreso.DetallesImpresoras.RemoveAt(indiceLC);
+                    for (int i = 0; i < ingreso.DetallesImpresoras.Count; i++)
+                    {
+                        ingreso.DetallesImpresoras[i].IdIngresoDetalleImpresora = i + 1;
+                    }
+                    dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+                }
+            }
+        }
+
+        private void btnVisualizarImpresora_Click(object sender, EventArgs e)
+        {
+            int detTempId = -1;
+            for (int i = 0; i < vistaImpresoras.RowCount; i++)
+                if (vistaImpresoras.IsRowSelected(i) == true)
+                    detTempId = int.Parse(vistaImpresoras.GetRowCellValue(i, "IdIngresoDetalleImpresora").ToString());
+
+            if (detTempId != -1)
+            {
+                IngresoDetalleImpresora det = new IngresoDetalleImpresora();
+                int indiceLC = 0;
+                vistaImpresoras.ClearColumnsFilter();
+                if (vistaImpresoras.RowCount == 0) return;
+                if (vistaImpresoras.RowCount > 0)
+                {
+                    for (int i = 0; i < vistaImpresoras.RowCount; i++)
+                        if (vistaImpresoras.IsRowSelected(i) == true)
+                            detTempId = int.Parse(vistaImpresoras.GetRowCellValue(i, "IdIngresoDetalleImpresora").ToString());
+
+                    foreach (IngresoDetalleImpresora detalle in ingreso.DetallesImpresoras)
+                    {
+                        if (detalle.IdIngresoDetalleImpresora == detTempId)
+                            break;
+                        indiceLC++;
+                    }
+                }
+
+                using (frmProcesoIngresoImpresora frm = new frmProcesoIngresoImpresora(this.idUsuario, this.nombreUsuario,ingreso.DetallesImpresoras[indiceLC]))
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (vistaImpresoras.RowCount > 0)
+                        {
+                            for (int i = 0; i < vistaImpresoras.RowCount; i++)
+                                if (vistaImpresoras.IsRowSelected(i) == true)
+                                    detTempId = int.Parse(vistaImpresoras.GetRowCellValue(i, "IdIngresoDetalleImpresora").ToString());
+
+                            int indiceLC2 = 0;
+                            foreach (IngresoDetalleImpresora detalle in ingreso.DetallesImpresoras)
+                            {
+                                if (detalle.IdIngresoDetalleImpresora == detTempId)
+                                {
+                                    break;
+                                }
+                                indiceLC2++;
+                            }
+
+                            ingreso.DetallesImpresoras.RemoveAt(indiceLC2);
+                            for (int i = 0; i < ingreso.DetallesImpresoras.Count; i++)
+                            {
+                                ingreso.DetallesImpresoras[i].IdIngresoDetalleImpresora = i + 1;
+                            }
+
+                            dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+                        }
+
+                        det = frm.DETALLE;
+                        det.IdIngresoDetalleImpresora = ingreso.DetallesImpresoras.Count + 1;
+                        ingreso.DetallesImpresoras.Add(det);
+                        dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+                    }
+                }
+            }
+        }
+
+        private void btnAgregarProyectores_Click(object sender, EventArgs e)
+        {
+            if (cmbTipoIngreso.SelectedIndex != -1)
+            {
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
+                {
+                    IngresoDetalleProyector detalle = new IngresoDetalleProyector();
+                    using (frmProcesoIngresoProyector frm = new frmProcesoIngresoProyector(this.idUsuario, this.nombreUsuario))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            BindingList<IngresoDetalleProyector> auxiliares = new BindingList<IngresoDetalleProyector>();
+                            foreach (IngresoDetalleProyector aux in ingreso.DetallesProyectores)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalleProyector = ingreso.DetallesProyectores.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.DetallesProyectores = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvProyectores.DataSource = ingreso.DetallesProyectores;
+                            vistaProyectores.OptionsBehavior.AutoPopulateColumns = false;
+                            vistaProyectores.OptionsSelection.MultiSelect = true;
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
+            }
+
+        }
+
+        private void dgvProyectores_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int detTempId = -1;
+                vistaProyectores.ClearColumnsFilter();
+                for (int i = 0; i < vistaProyectores.RowCount; i++)
+                    if (vistaProyectores.IsRowSelected(i) == true)
+                        detTempId = int.Parse(vistaProyectores.GetRowCellValue(i, "IdIngresoDetalleProyector").ToString());
+
+                if (detTempId != -1)
+                {
+                    int indiceLC = 0;
+                    foreach (IngresoDetalleProyector detalle in ingreso.DetallesProyectores)
+                    {
+                        if (detalle.IdIngresoDetalleProyector == detTempId)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+                    ingreso.DetallesProyectores.RemoveAt(indiceLC);
+                    for (int i = 0; i < ingreso.DetallesProyectores.Count; i++)
+                    {
+                        ingreso.DetallesProyectores[i].IdIngresoDetalleProyector = i + 1;
+                    }
+                    dgvProyectores.DataSource = ingreso.DetallesProyectores;
+                }
+            }
+        }
+
+        private void btnVisualizarProyectores_Click(object sender, EventArgs e)
+        {
+            int detTempId = -1;
+            for (int i = 0; i < vistaProyectores.RowCount; i++)
+                if (vistaProyectores.IsRowSelected(i) == true)
+                    detTempId = int.Parse(vistaProyectores.GetRowCellValue(i, "IdIngresoDetalleProyector").ToString());
+
+            if (detTempId != -1)
+            {
+                IngresoDetalleProyector det = new IngresoDetalleProyector();
+                int indiceLC = 0;
+                vistaProyectores.ClearColumnsFilter();
+                if (vistaProyectores.RowCount == 0) return;
+                if (vistaProyectores.RowCount > 0)
+                {
+                    for (int i = 0; i < vistaProyectores.RowCount; i++)
+                        if (vistaProyectores.IsRowSelected(i) == true)
+                            detTempId = int.Parse(vistaProyectores.GetRowCellValue(i, "IdIngresoDetalleProyector").ToString());
+
+                    foreach (IngresoDetalleProyector detalle in ingreso.DetallesProyectores)
+                    {
+                        if (detalle.IdIngresoDetalleProyector == detTempId)
+                            break;
+                        indiceLC++;
+                    }
+                }
+
+                using (frmProcesoIngresoProyector frm = new frmProcesoIngresoProyector(this.idUsuario, this.nombreUsuario,ingreso.DetallesProyectores[indiceLC]))
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (vistaProyectores.RowCount > 0)
+                        {
+                            for (int i = 0; i < vistaProyectores.RowCount; i++)
+                                if (vistaProyectores.IsRowSelected(i) == true)
+                                    detTempId = int.Parse(vistaProyectores.GetRowCellValue(i, "IdIngresoDetalleProyector").ToString());
+
+                            int indiceLC2 = 0;
+                            foreach (IngresoDetalleProyector detalle in ingreso.DetallesProyectores)
+                            {
+                                if (detalle.IdIngresoDetalleProyector == detTempId)
+                                {
+                                    break;
+                                }
+                                indiceLC2++;
+                            }
+
+                            ingreso.DetallesProyectores.RemoveAt(indiceLC2);
+                            for (int i = 0; i < ingreso.DetallesProyectores.Count; i++)
+                            {
+                                ingreso.DetallesProyectores[i].IdIngresoDetalleProyector = i + 1;
+                            }
+
+                            dgvProyectores.DataSource = ingreso.DetallesProyectores;
+                        }
+
+                        det = frm.DETALLE;
+                        det.IdIngresoDetalleProyector = ingreso.DetallesProyectores.Count + 1;
+                        ingreso.DetallesProyectores.Add(det);
+                        dgvProyectores.DataSource = ingreso.DetallesProyectores;
+                    }
+                }
+            }
         }
     }
 }

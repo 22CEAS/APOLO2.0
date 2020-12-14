@@ -196,6 +196,12 @@
     <Compile Include="frmProcesoIngresoDisco.Designer.cs">
       <DependentUpon>frmProcesoIngresoDisco.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoIngresoImpresora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoImpresora.Designer.cs">
+      <DependentUpon>frmProcesoIngresoImpresora.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoIngresoLicencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,24 @@
     </Compile>
     <Compile Include="frmProcesoIngresoMemoria.Designer.cs">
       <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoMonitor.Designer.cs">
+      <DependentUpon>frmProcesoIngresoMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoProyector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoProyector.Designer.cs">
+      <DependentUpon>frmProcesoIngresoProyector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoTablet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoTablet.Designer.cs">
+      <DependentUpon>frmProcesoIngresoTablet.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcesoLevantamientoObservacionesAgregarObservacion.cs">
       <SubType>Form</SubType>
@@ -552,11 +576,23 @@
     <EmbeddedResource Include="frmProcesoIngresoDisco.resx">
       <DependentUpon>frmProcesoIngresoDisco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoImpresora.resx">
+      <DependentUpon>frmProcesoIngresoImpresora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoIngresoLicencia.resx">
       <DependentUpon>frmProcesoIngresoLicencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoIngresoMemoria.resx">
       <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoMonitor.resx">
+      <DependentUpon>frmProcesoIngresoMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoProyector.resx">
+      <DependentUpon>frmProcesoIngresoProyector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoTablet.resx">
+      <DependentUpon>frmProcesoIngresoTablet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoLevantamientoObservacionesAgregarObservacion.resx">
       <DependentUpon>frmProcesoLevantamientoObservacionesAgregarObservacion.cs</DependentUpon>

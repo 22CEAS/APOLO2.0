@@ -123,6 +123,7 @@
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // CodigoLC

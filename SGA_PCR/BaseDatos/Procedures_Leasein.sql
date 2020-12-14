@@ -2103,3 +2103,410 @@ DELIMITER ;
 CREATE EVENT update_salida_det_fechaFinalPlazoEvento
 ON SCHEDULE EVERY 1 DAY STARTS '2020-12-02 00:01:00'
 DO call update_salida_det_fechaFinalPlazoEvento();
+
+
+--==============================================================================================
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det_impresora`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_impresora`(
+	IN _idIngreso INT,
+	IN _idMarca INT,
+	IN _idModelo INT,
+	IN _idCaracteristica INT,
+	IN _caracteristica NVARCHAR(255),
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_impresora);
+	INSERT INTO ingreso_det_impresora (idIngresoDet,idIngreso,idMarca,idModelo,idCaracteristica,caracteristica,partNumber,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idCaracteristica,_caracteristica,_partNumber,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det_monitor`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_monitor`(
+	IN _idIngreso INT,
+	IN _idMarca INT,
+	IN _idModelo INT,
+	IN _idTipo INT ,
+	IN _tipo NVARCHAR(255) ,
+	IN _pantalla DOUBLE,
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_monitor);
+	INSERT INTO ingreso_det_monitor (idIngresoDet,idIngreso,idMarca,idModelo,idTipo,tipo,partNumber,pantalla,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipo,_tipo,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det_tablet`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_tablet`(
+	IN _idIngreso INT,
+	IN _idMarca INT,
+	IN _idModelo INT,
+	IN _idProcesador INT ,
+	IN _idSO INT ,
+	IN _idRam INT ,
+	IN _idRom INT ,
+	IN _pantalla DOUBLE,
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_tablet);
+	INSERT INTO ingreso_det_tablet (idIngresoDet,idIngreso,idMarca,idModelo,idProcesador,idSO,idRam,idRom,partNumber,pantalla,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idProcesador,_idSO,_idRam,_idRom,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det_proyectorEcram`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_proyectorEcram`(
+	IN _idIngreso INT,
+	IN _idMarca INT,
+	IN _idModelo INT,
+	IN _idTipoEquipo INT,
+	IN _idCaracteristica INT,
+	IN _caracteristica NVARCHAR(255),
+	IN _tamanoEcram DOUBLE,
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_proyectorEcram);
+	INSERT INTO ingreso_det_proyectorEcram (idIngresoDet,idIngreso,idMarca,idModelo,idTipoEquipo,idCaracteristica,caracteristica,partNumber,tamanoEcram,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_partNumber,_tamanoEcram,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_tablet`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_tablet`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _idProcesador INT ,
+	IN _idSO INT ,
+	IN _idRam INT ,
+	IN _idRom INT ,
+	IN _pantalla DOUBLE,
+	IN _serieFabrica NVARCHAR(255),
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _compraSubarriendo TINYINT, 
+	IN _ubicacion NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idTablet INT
+)
+BEGIN
+	SET @codigo=(SELECT CONCAT("PCR-TAB",IFNULL( MAX( idTablet ) , 0 )+1) from tablet);
+	SET _idTablet=(SELECT IFNULL( MAX( idTablet ) , 0 )+1 FROM tablet);
+	INSERT INTO tablet (idTablet,codigo,idIngreso,idIngresoDet,idModelo,idProcesador,idSO,idRam,idRom,pantalla,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idTablet,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idProcesador,_idSO,_idRam,_idRom,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_impresora`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_impresora`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _idCaracteristica INT ,
+	IN _caracteristica NVARCHAR(255) ,
+	IN _serieFabrica NVARCHAR(255),
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _compraSubarriendo TINYINT, 
+	IN _ubicacion NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idImpresora INT
+)
+BEGIN
+	SET @codigo=(SELECT CONCAT("PCR-IMP",IFNULL( MAX( idImpresora ) , 0 )+1) FROM impresora);
+	SET _idImpresora=(SELECT IFNULL( MAX( idImpresora ) , 0 )+1 FROM impresora);
+	INSERT INTO impresora (idImpresora,codigo,idIngreso,idIngresoDet,idModelo,idCaracteristica,caracteristica,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idImpresora,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idCaracteristica,_caracteristica,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_monitor`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_monitor`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _idTipo INT ,
+	IN _tipo NVARCHAR(255) ,
+	IN _pantalla DOUBLE,
+	IN _serieFabrica NVARCHAR(255),
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _compraSubarriendo TINYINT, 
+	IN _ubicacion NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idMonitor INT
+)
+BEGIN
+	SET @codigo=(SELECT CONCAT("PCR-MTR",IFNULL( MAX( idMonitor ) , 0 )+1) from monitor);
+	SET _idMonitor=(SELECT IFNULL( MAX( idMonitor ) , 0 )+1 FROM monitor);
+	INSERT INTO monitor (idMonitor,codigo,idIngreso,idIngresoDet,idModelo,idTipo,tipo,pantalla,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idMonitor,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipo,_tipo,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_proyectorEcram`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proyectorEcram`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _idTipoEquipo INT,
+	IN _idCaracteristica INT ,
+	IN _caracteristica NVARCHAR(255) ,
+	IN _tamanoEcram DOUBLE,
+	IN _serieFabrica NVARCHAR(255),
+	IN _partNumber NVARCHAR(255),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _compraSubarriendo TINYINT, 
+	IN _ubicacion NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(255), 
+	OUT _idProyectorEcram INT
+)
+BEGIN
+	SET @codigo=(SELECT CONCAT("PCR-PROY",IFNULL( MAX( idProyectorEcram ) , 0 )+1) from proyectorEcram);
+	SET _idProyectorEcram=(SELECT IFNULL( MAX( idProyectorEcram ) , 0 )+1 FROM proyectorEcram);
+	INSERT INTO proyectorEcram (idProyectorEcram,codigo,idIngreso,idIngresoDet,idModelo,idTipoEquipo,idCaracteristica,caracteristica,tamanoEcram,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idProyectorEcram,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_tamanoEcram,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_tablet_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_tablet_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM tablet where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_tablet_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_tablet_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det_tablet where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_impresora_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_impresora_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM impresora where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_impresora_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_impresora_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det_impresora where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_monitor_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_monitor_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM monitor where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_monitor_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_monitor_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det_monitor where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_proyectorEcram_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_proyectorEcram_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM proyectorEcram where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_proyectorEcram_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_proyectorEcram_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det_proyectorEcram where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `anular_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_ingreso`(
+	IN _observacion NVARCHAR(100),
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idIngreso INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_impresora
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_monitor
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_tablet
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_proyectorEcram
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_accesorios
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+END
+$$
+DELIMITER ;

@@ -30,56 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoIngresoLaptopCpu));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn36 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn37 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn38 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn39 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn40 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn41 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn42 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn43 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn44 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn45 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn48 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn50 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPartNumber = new System.Windows.Forms.TextBox();
@@ -94,7 +44,7 @@
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.txtLicenciaSeleccionada = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnResumen = new System.Windows.Forms.Button();
             this.btnAgregarMarcaLaptop = new System.Windows.Forms.Button();
             this.txtTdvSeleccionado = new System.Windows.Forms.TextBox();
             this.btnAgregarModeloLaptop = new System.Windows.Forms.Button();
@@ -115,6 +65,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtProcesadorSeleccionado = new System.Windows.Forms.TextBox();
             this.tabDetalle = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabProcesador = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabLicencia = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabVideo = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabDiscoDuro = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabMemoria = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnSubirSO = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -122,35 +82,90 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabClavesLicencias = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabLicencia = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvProcesador = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabProcesador = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvVideo = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabVideo = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvMemoria = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabMemoria = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvDiscoDuro = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabDiscoDuro = new DevComponents.DotNetBar.TabItem(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.dgvLicencias = new DevExpress.XtraGrid.GridControl();
+            this.vistaLicencias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Version = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdMarca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdModelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvProcesadores = new DevExpress.XtraGrid.GridControl();
+            this.vistaProcesadores = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.generacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.velocidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.velocidadMax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvMemorias = new DevExpress.XtraGrid.GridControl();
+            this.vistaMemorias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipo2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.frecuencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.estado2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idTipo2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvDiscos = new DevExpress.XtraGrid.GridControl();
+            this.vistaDiscos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipo3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tamano = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.capacidad3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.estado3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idTipo3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvVideos = new DevExpress.XtraGrid.GridControl();
+            this.vistaVideos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.marca4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nombreModelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipo4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.capacidad4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.estado4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idMarca1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idGeneracion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idVelocidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idVelocidadMax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idCapacidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idBusFrecuencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipo22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idCapacidad3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idTamano = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idModelo4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idMarca4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idTipo4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idCapacidad4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabControlPanel1.SuspendLayout();
+            this.tabControlPanel6.SuspendLayout();
+            this.tabControlPanel4.SuspendLayout();
+            this.tabControlPanel3.SuspendLayout();
+            this.tabControlPanel2.SuspendLayout();
             this.tabControlPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindows)).BeginInit();
-            this.tabControlPanel6.SuspendLayout();
-            this.tabControlPanel1.SuspendLayout();
-            this.tabControlPanel4.SuspendLayout();
-            this.tabControlPanel2.SuspendLayout();
-            this.tabControlPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcesadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProcesadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaVideos)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -160,7 +175,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Modelo";
             // 
@@ -171,7 +186,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Marca";
             // 
@@ -179,7 +194,7 @@
             // 
             this.txtPartNumber.Location = new System.Drawing.Point(112, 118);
             this.txtPartNumber.Name = "txtPartNumber";
-            this.txtPartNumber.Size = new System.Drawing.Size(204, 22);
+            this.txtPartNumber.Size = new System.Drawing.Size(204, 20);
             this.txtPartNumber.TabIndex = 2;
             // 
             // cmbMarca
@@ -187,7 +202,7 @@
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(75, 24);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(241, 24);
+            this.cmbMarca.Size = new System.Drawing.Size(241, 21);
             this.cmbMarca.TabIndex = 0;
             this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
             // 
@@ -198,7 +213,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Part Number";
             // 
@@ -209,7 +224,7 @@
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Location = new System.Drawing.Point(88, 71);
             this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(228, 24);
+            this.cmbModelo.Size = new System.Drawing.Size(228, 21);
             this.cmbModelo.TabIndex = 1;
             // 
             // label4
@@ -219,7 +234,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(26, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 16;
             this.label4.Text = "Pantalla";
             // 
@@ -227,7 +242,7 @@
             // 
             this.txtPantalla.Location = new System.Drawing.Point(86, 157);
             this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(64, 22);
+            this.txtPantalla.Size = new System.Drawing.Size(64, 20);
             this.txtPantalla.TabIndex = 3;
             this.txtPantalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPantalla_KeyPress);
             // 
@@ -238,7 +253,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(474, 19);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.Size = new System.Drawing.Size(62, 16);
             this.label7.TabIndex = 22;
             this.label7.Text = "Cantidad";
             // 
@@ -246,7 +261,7 @@
             // 
             this.txtCantidad.Location = new System.Drawing.Point(563, 18);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(67, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(67, 20);
             this.txtCantidad.TabIndex = 5;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
@@ -255,15 +270,15 @@
             // 
             this.tabControl1.BackColor = System.Drawing.SystemColors.Window;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
-            this.tabControl1.Controls.Add(this.tabControlPanel7);
-            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel6);
+            this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
+            this.tabControl1.Controls.Add(this.tabControlPanel7);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
-            this.tabControl1.Location = new System.Drawing.Point(1, 12);
+            this.tabControl1.Location = new System.Drawing.Point(24, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
@@ -283,7 +298,7 @@
             // 
             this.tabControlPanel5.Controls.Add(this.txtLicenciaSeleccionada);
             this.tabControlPanel5.Controls.Add(this.label14);
-            this.tabControlPanel5.Controls.Add(this.button1);
+            this.tabControlPanel5.Controls.Add(this.btnResumen);
             this.tabControlPanel5.Controls.Add(this.btnAgregarMarcaLaptop);
             this.tabControlPanel5.Controls.Add(this.txtTdvSeleccionado);
             this.tabControlPanel5.Controls.Add(this.btnAgregarModeloLaptop);
@@ -323,14 +338,13 @@
             this.tabControlPanel5.TabIndex = 5;
             this.tabControlPanel5.TabItem = this.tabDetalle;
             this.tabControlPanel5.Text = "VER RESUMEN";
-            this.tabControlPanel5.Click += new System.EventHandler(this.tabControlPanel5_Click);
             // 
             // txtLicenciaSeleccionada
             // 
             this.txtLicenciaSeleccionada.Location = new System.Drawing.Point(119, 328);
             this.txtLicenciaSeleccionada.Name = "txtLicenciaSeleccionada";
             this.txtLicenciaSeleccionada.ReadOnly = true;
-            this.txtLicenciaSeleccionada.Size = new System.Drawing.Size(166, 22);
+            this.txtLicenciaSeleccionada.Size = new System.Drawing.Size(166, 20);
             this.txtLicenciaSeleccionada.TabIndex = 137;
             // 
             // label14
@@ -340,19 +354,19 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(10, 332);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 20);
+            this.label14.Size = new System.Drawing.Size(58, 16);
             this.label14.TabIndex = 136;
             this.label14.Text = "Licencia";
             // 
-            // button1
+            // btnResumen
             // 
-            this.button1.Location = new System.Drawing.Point(300, 265);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 37);
-            this.button1.TabIndex = 136;
-            this.button1.Text = "VER RESUMEN";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnResumen.Location = new System.Drawing.Point(300, 265);
+            this.btnResumen.Name = "btnResumen";
+            this.btnResumen.Size = new System.Drawing.Size(122, 37);
+            this.btnResumen.TabIndex = 136;
+            this.btnResumen.Text = "VER RESUMEN";
+            this.btnResumen.UseVisualStyleBackColor = true;
+            this.btnResumen.Click += new System.EventHandler(this.btnResumen_Click);
             // 
             // btnAgregarMarcaLaptop
             // 
@@ -378,7 +392,7 @@
             this.txtTdvSeleccionado.Location = new System.Drawing.Point(119, 305);
             this.txtTdvSeleccionado.Name = "txtTdvSeleccionado";
             this.txtTdvSeleccionado.ReadOnly = true;
-            this.txtTdvSeleccionado.Size = new System.Drawing.Size(166, 22);
+            this.txtTdvSeleccionado.Size = new System.Drawing.Size(166, 20);
             this.txtTdvSeleccionado.TabIndex = 135;
             // 
             // btnAgregarModeloLaptop
@@ -426,7 +440,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(8, 309);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(131, 20);
+            this.label13.Size = new System.Drawing.Size(109, 16);
             this.label13.TabIndex = 134;
             this.label13.Text = "Tarjeta de Video";
             // 
@@ -438,7 +452,7 @@
             this.chbGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbGarantia.Location = new System.Drawing.Point(321, 157);
             this.chbGarantia.Name = "chbGarantia";
-            this.chbGarantia.Size = new System.Drawing.Size(95, 24);
+            this.chbGarantia.Size = new System.Drawing.Size(78, 20);
             this.chbGarantia.TabIndex = 26;
             this.chbGarantia.Text = "Garantía";
             this.chbGarantia.UseVisualStyleBackColor = false;
@@ -450,7 +464,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(172, 158);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 20);
+            this.label8.Size = new System.Drawing.Size(47, 16);
             this.label8.TabIndex = 25;
             this.label8.Text = "Precio";
             // 
@@ -458,7 +472,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(232, 158);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(64, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(64, 20);
             this.txtPrecio.TabIndex = 4;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -467,7 +481,7 @@
             this.txtDiscoDuroSeleccionado.Location = new System.Drawing.Point(119, 282);
             this.txtDiscoDuroSeleccionado.Name = "txtDiscoDuroSeleccionado";
             this.txtDiscoDuroSeleccionado.ReadOnly = true;
-            this.txtDiscoDuroSeleccionado.Size = new System.Drawing.Size(166, 22);
+            this.txtDiscoDuroSeleccionado.Size = new System.Drawing.Size(166, 20);
             this.txtDiscoDuroSeleccionado.TabIndex = 130;
             // 
             // dgvSerieFabrica
@@ -507,7 +521,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(8, 283);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 20);
+            this.label12.Size = new System.Drawing.Size(75, 16);
             this.label12.TabIndex = 133;
             this.label12.Text = "Disco Duro";
             // 
@@ -518,7 +532,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(10, 256);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
+            this.label11.Size = new System.Drawing.Size(61, 16);
             this.label11.TabIndex = 132;
             this.label11.Text = "Memoria";
             // 
@@ -527,7 +541,7 @@
             this.txtMemoriaSeleccionada.Location = new System.Drawing.Point(119, 256);
             this.txtMemoriaSeleccionada.Name = "txtMemoriaSeleccionada";
             this.txtMemoriaSeleccionada.ReadOnly = true;
-            this.txtMemoriaSeleccionada.Size = new System.Drawing.Size(166, 22);
+            this.txtMemoriaSeleccionada.Size = new System.Drawing.Size(166, 20);
             this.txtMemoriaSeleccionada.TabIndex = 129;
             // 
             // label10
@@ -537,7 +551,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(10, 231);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 20);
+            this.label10.Size = new System.Drawing.Size(79, 16);
             this.label10.TabIndex = 131;
             this.label10.Text = "Procesador";
             // 
@@ -557,7 +571,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(111, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 17);
+            this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 129;
             // 
             // txtProcesadorSeleccionado
@@ -565,15 +579,129 @@
             this.txtProcesadorSeleccionado.Location = new System.Drawing.Point(113, 11);
             this.txtProcesadorSeleccionado.Name = "txtProcesadorSeleccionado";
             this.txtProcesadorSeleccionado.ReadOnly = true;
-            this.txtProcesadorSeleccionado.Size = new System.Drawing.Size(166, 22);
+            this.txtProcesadorSeleccionado.Size = new System.Drawing.Size(166, 20);
             this.txtProcesadorSeleccionado.TabIndex = 128;
-            this.txtProcesadorSeleccionado.TextChanged += new System.EventHandler(this.txtProcesadorSeleccionado_TextChanged);
             // 
             // tabDetalle
             // 
             this.tabDetalle.AttachedControl = this.tabControlPanel5;
             this.tabDetalle.Name = "tabDetalle";
             this.tabDetalle.Text = "Detalles";
+            // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Controls.Add(this.dgvProcesadores);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(737, 361);
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tabProcesador;
+            // 
+            // tabProcesador
+            // 
+            this.tabProcesador.AttachedControl = this.tabControlPanel1;
+            this.tabProcesador.Name = "tabProcesador";
+            this.tabProcesador.Text = "Procesador";
+            // 
+            // tabControlPanel6
+            // 
+            this.tabControlPanel6.Controls.Add(this.dgvLicencias);
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(737, 361);
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabLicencia;
+            // 
+            // tabLicencia
+            // 
+            this.tabLicencia.AttachedControl = this.tabControlPanel6;
+            this.tabLicencia.Name = "tabLicencia";
+            this.tabLicencia.Text = "Licencias";
+            // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.dgvVideos);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(737, 361);
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 4;
+            this.tabControlPanel4.TabItem = this.tabVideo;
+            // 
+            // tabVideo
+            // 
+            this.tabVideo.AttachedControl = this.tabControlPanel4;
+            this.tabVideo.Name = "tabVideo";
+            this.tabVideo.Text = "Tarjeta de Video";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.dgvDiscos);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(737, 361);
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tabDiscoDuro;
+            // 
+            // tabDiscoDuro
+            // 
+            this.tabDiscoDuro.AttachedControl = this.tabControlPanel3;
+            this.tabDiscoDuro.Name = "tabDiscoDuro";
+            this.tabDiscoDuro.Text = "Disco Duro";
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.dgvMemorias);
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(737, 361);
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 2;
+            this.tabControlPanel2.TabItem = this.tabMemoria;
+            // 
+            // tabMemoria
+            // 
+            this.tabMemoria.AttachedControl = this.tabControlPanel2;
+            this.tabMemoria.Name = "tabMemoria";
+            this.tabMemoria.Text = "Memoria";
             // 
             // tabControlPanel7
             // 
@@ -620,7 +748,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(385, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.Size = new System.Drawing.Size(30, 16);
             this.label5.TabIndex = 129;
             this.label5.Text = "S.O";
             // 
@@ -660,590 +788,6 @@
             this.tabClavesLicencias.Name = "tabClavesLicencias";
             this.tabClavesLicencias.Text = "Claves Licencias";
             // 
-            // tabControlPanel6
-            // 
-            this.tabControlPanel6.Controls.Add(this.dgvLicencia);
-            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel6.Name = "tabControlPanel6";
-            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(737, 361);
-            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel6.Style.GradientAngle = 90;
-            this.tabControlPanel6.TabIndex = 6;
-            this.tabControlPanel6.TabItem = this.tabLicencia;
-            // 
-            // dgvLicencia
-            // 
-            this.dgvLicencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLicencia.BackColor = System.Drawing.Color.White;
-            this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
-            this.dgvLicencia.Location = new System.Drawing.Point(109, 25);
-            this.dgvLicencia.Name = "dgvLicencia";
-            this.dgvLicencia.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvLicencia.PrimaryGrid.AllowRowResize = true;
-            this.dgvLicencia.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn1.Name = "Seleccionar";
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "Categoria";
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Categoría";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.Width = 120;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "Tipo";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Tipo";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.Visible = false;
-            gridColumn3.Width = 120;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "Version";
-            gridColumn4.MinimumWidth = 250;
-            gridColumn4.Name = "Versión";
-            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.Width = 250;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "IdCategoria";
-            gridColumn5.MinimumWidth = 50;
-            gridColumn5.Name = "IdCategoria";
-            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn5.Visible = false;
-            gridColumn5.Width = 50;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "IdMarca";
-            gridColumn6.MinimumWidth = 100;
-            gridColumn6.Name = "IdMarca";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.Visible = false;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "IdModelo";
-            gridColumn7.MinimumWidth = 100;
-            gridColumn7.Name = "IdModelo";
-            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.Visible = false;
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvLicencia.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLicencia.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvLicencia.PrimaryGrid.EnableFiltering = true;
-            this.dgvLicencia.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvLicencia.PrimaryGrid.Filter.Visible = true;
-            this.dgvLicencia.PrimaryGrid.MultiSelect = false;
-            this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia, cree una licencia";
-            this.dgvLicencia.PrimaryGrid.NullString = "<<null>>";
-            this.dgvLicencia.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLicencia.Size = new System.Drawing.Size(544, 310);
-            this.dgvLicencia.TabIndex = 73;
-            this.dgvLicencia.Text = "Tabla Licencia";
-            // 
-            // tabLicencia
-            // 
-            this.tabLicencia.AttachedControl = this.tabControlPanel6;
-            this.tabLicencia.Name = "tabLicencia";
-            this.tabLicencia.Text = "Licencias";
-            // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Controls.Add(this.dgvProcesador);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(737, 361);
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabProcesador;
-            // 
-            // dgvProcesador
-            // 
-            this.dgvProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProcesador.BackColor = System.Drawing.Color.White;
-            this.dgvProcesador.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvProcesador.ForeColor = System.Drawing.Color.Black;
-            this.dgvProcesador.Location = new System.Drawing.Point(120, 21);
-            this.dgvProcesador.Name = "dgvProcesador";
-            this.dgvProcesador.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvProcesador.PrimaryGrid.AllowRowResize = true;
-            this.dgvProcesador.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn8.DataPropertyName = "Seleccionar";
-            gridColumn8.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn8.Name = "Seleccionar";
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "marca";
-            gridColumn9.MinimumWidth = 100;
-            gridColumn9.Name = "Marca";
-            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn9.Width = 120;
-            gridColumn10.AllowEdit = false;
-            gridColumn10.DataPropertyName = "tipo";
-            gridColumn10.FilterAutoScan = true;
-            gridColumn10.MinimumWidth = 100;
-            gridColumn10.Name = "Tipo";
-            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn10.Width = 120;
-            gridColumn11.AllowEdit = false;
-            gridColumn11.DataPropertyName = "generacion";
-            gridColumn11.MinimumWidth = 100;
-            gridColumn11.Name = "Generacion";
-            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn11.Width = 120;
-            gridColumn12.DataPropertyName = "velocidad";
-            gridColumn12.Name = "Velocidad";
-            gridColumn12.Visible = false;
-            gridColumn13.DataPropertyName = "velocidadMax";
-            gridColumn13.Name = "VelocidadMax";
-            gridColumn13.Visible = false;
-            gridColumn14.AllowEdit = false;
-            gridColumn14.DataPropertyName = "estado";
-            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn14.MinimumWidth = 100;
-            gridColumn14.Name = "Activo";
-            gridColumn14.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn14.Visible = false;
-            gridColumn15.AllowEdit = false;
-            gridColumn15.DataPropertyName = "idProcesador";
-            gridColumn15.MinimumWidth = 50;
-            gridColumn15.Name = "IdProcesador";
-            gridColumn15.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn15.Visible = false;
-            gridColumn15.Width = 50;
-            gridColumn16.AllowEdit = false;
-            gridColumn16.DataPropertyName = "idTipo";
-            gridColumn16.MinimumWidth = 100;
-            gridColumn16.Name = "IdTipo";
-            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn16.Visible = false;
-            gridColumn17.AllowEdit = false;
-            gridColumn17.DataPropertyName = "idMarca";
-            gridColumn17.MinimumWidth = 100;
-            gridColumn17.Name = "IdMarca";
-            gridColumn17.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn17.Visible = false;
-            gridColumn18.AllowEdit = false;
-            gridColumn18.DataPropertyName = "idGeneracion";
-            gridColumn18.MinimumWidth = 100;
-            gridColumn18.Name = "IdGeneracion";
-            gridColumn18.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn18.Visible = false;
-            gridColumn19.DataPropertyName = "idVelocidad";
-            gridColumn19.Name = "IdVelocidad";
-            gridColumn19.Visible = false;
-            gridColumn20.DataPropertyName = "idVelocidadMax";
-            gridColumn20.Name = "idVelocidadMax";
-            gridColumn20.Visible = false;
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn16);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn17);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn20);
-            this.dgvProcesador.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvProcesador.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvProcesador.PrimaryGrid.EnableFiltering = true;
-            this.dgvProcesador.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvProcesador.PrimaryGrid.Filter.Visible = true;
-            this.dgvProcesador.PrimaryGrid.MultiSelect = false;
-            this.dgvProcesador.PrimaryGrid.NoRowsText = "No hay ningun procesador, cree un procesador";
-            this.dgvProcesador.PrimaryGrid.NullString = "<<null>>";
-            this.dgvProcesador.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvProcesador.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvProcesador.Size = new System.Drawing.Size(522, 314);
-            this.dgvProcesador.TabIndex = 95;
-            this.dgvProcesador.Text = "Tabla Procesador";
-            // 
-            // tabProcesador
-            // 
-            this.tabProcesador.AttachedControl = this.tabControlPanel1;
-            this.tabProcesador.Name = "tabProcesador";
-            this.tabProcesador.Text = "Procesador";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.dgvVideo);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(737, 361);
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 4;
-            this.tabControlPanel4.TabItem = this.tabVideo;
-            // 
-            // dgvVideo
-            // 
-            this.dgvVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVideo.BackColor = System.Drawing.Color.White;
-            this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvVideo.ForeColor = System.Drawing.Color.Black;
-            this.dgvVideo.Location = new System.Drawing.Point(86, 29);
-            this.dgvVideo.Name = "dgvVideo";
-            this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvVideo.PrimaryGrid.AllowRowResize = true;
-            this.dgvVideo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn21.DataPropertyName = "Seleccionar";
-            gridColumn21.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn21.Name = "Seleccionar";
-            gridColumn22.DataPropertyName = "marca";
-            gridColumn22.Name = "Marca";
-            gridColumn23.AllowEdit = false;
-            gridColumn23.DataPropertyName = "nombreModelo";
-            gridColumn23.FilterAutoScan = true;
-            gridColumn23.MinimumWidth = 150;
-            gridColumn23.Name = "Modelo";
-            gridColumn23.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn23.Width = 150;
-            gridColumn24.AllowEdit = false;
-            gridColumn24.DataPropertyName = "tipo";
-            gridColumn24.MinimumWidth = 100;
-            gridColumn24.Name = "Tipo";
-            gridColumn24.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn25.AllowEdit = false;
-            gridColumn25.DataPropertyName = "capacidad";
-            gridColumn25.MinimumWidth = 100;
-            gridColumn25.Name = "Capacidad";
-            gridColumn25.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn26.AllowEdit = false;
-            gridColumn26.DataPropertyName = "estado";
-            gridColumn26.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn26.MinimumWidth = 100;
-            gridColumn26.Name = "Activo";
-            gridColumn26.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn26.Visible = false;
-            gridColumn27.AllowEdit = false;
-            gridColumn27.DataPropertyName = "idVideo";
-            gridColumn27.MinimumWidth = 50;
-            gridColumn27.Name = "IdVideo";
-            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn27.Visible = false;
-            gridColumn27.Width = 50;
-            gridColumn28.AllowEdit = false;
-            gridColumn28.DataPropertyName = "idModelo";
-            gridColumn28.MinimumWidth = 100;
-            gridColumn28.Name = "idModelo";
-            gridColumn28.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn28.Visible = false;
-            gridColumn29.DataPropertyName = "idMarca";
-            gridColumn29.Name = "idMarca";
-            gridColumn29.Visible = false;
-            gridColumn30.AllowEdit = false;
-            gridColumn30.DataPropertyName = "idTipo";
-            gridColumn30.MinimumWidth = 100;
-            gridColumn30.Name = "idTipo";
-            gridColumn30.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn30.Visible = false;
-            gridColumn31.AllowEdit = false;
-            gridColumn31.DataPropertyName = "idCapacidad";
-            gridColumn31.MinimumWidth = 100;
-            gridColumn31.Name = "idCapacidad";
-            gridColumn31.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn31.Visible = false;
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn21);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn22);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn23);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn24);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn25);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn26);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn27);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn28);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn29);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn30);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn31);
-            this.dgvVideo.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvVideo.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvVideo.PrimaryGrid.EnableFiltering = true;
-            this.dgvVideo.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvVideo.PrimaryGrid.Filter.Visible = true;
-            this.dgvVideo.PrimaryGrid.MultiSelect = false;
-            this.dgvVideo.PrimaryGrid.NoRowsText = "No hay ninguna tarjeta de video, cree una tarjeta de video";
-            this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
-            this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvVideo.Size = new System.Drawing.Size(595, 303);
-            this.dgvVideo.TabIndex = 106;
-            this.dgvVideo.Text = "Tabla Video";
-            // 
-            // tabVideo
-            // 
-            this.tabVideo.AttachedControl = this.tabControlPanel4;
-            this.tabVideo.Name = "tabVideo";
-            this.tabVideo.Text = "Tarjeta de Video";
-            // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Controls.Add(this.dgvMemoria);
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(737, 361);
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 2;
-            this.tabControlPanel2.TabItem = this.tabMemoria;
-            // 
-            // dgvMemoria
-            // 
-            this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMemoria.BackColor = System.Drawing.Color.White;
-            this.dgvMemoria.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvMemoria.ForeColor = System.Drawing.Color.Black;
-            this.dgvMemoria.Location = new System.Drawing.Point(120, 24);
-            this.dgvMemoria.Name = "dgvMemoria";
-            this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
-            this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn32.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn32.Name = "Seleccionar";
-            gridColumn33.AllowEdit = false;
-            gridColumn33.DataPropertyName = "tipo";
-            gridColumn33.FilterAutoScan = true;
-            gridColumn33.MinimumWidth = 100;
-            gridColumn33.Name = "Modelo";
-            gridColumn33.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn33.Width = 120;
-            gridColumn34.AllowEdit = false;
-            gridColumn34.DataPropertyName = "frecuencia";
-            gridColumn34.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn34.MinimumWidth = 100;
-            gridColumn34.Name = "Frecuencia";
-            gridColumn34.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn34.Visible = false;
-            gridColumn34.Width = 120;
-            gridColumn35.AllowEdit = false;
-            gridColumn35.DataPropertyName = "capacidad";
-            gridColumn35.MinimumWidth = 100;
-            gridColumn35.Name = "Capacidad";
-            gridColumn35.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn35.Width = 120;
-            gridColumn36.AllowEdit = false;
-            gridColumn36.DataPropertyName = "estado";
-            gridColumn36.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn36.MinimumWidth = 100;
-            gridColumn36.Name = "Activo";
-            gridColumn36.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn36.Visible = false;
-            gridColumn37.AllowEdit = false;
-            gridColumn37.DataPropertyName = "idMemoria";
-            gridColumn37.MinimumWidth = 50;
-            gridColumn37.Name = "IdMemoria";
-            gridColumn37.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn37.Visible = false;
-            gridColumn37.Width = 50;
-            gridColumn38.AllowEdit = false;
-            gridColumn38.DataPropertyName = "idTipo";
-            gridColumn38.MinimumWidth = 100;
-            gridColumn38.Name = "idTipo";
-            gridColumn38.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn38.Visible = false;
-            gridColumn39.AllowEdit = false;
-            gridColumn39.DataPropertyName = "idCapacidad";
-            gridColumn39.MinimumWidth = 100;
-            gridColumn39.Name = "idCapacidad";
-            gridColumn39.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn39.Visible = false;
-            gridColumn40.AllowEdit = false;
-            gridColumn40.DataPropertyName = "idBusFrecuencia";
-            gridColumn40.MinimumWidth = 100;
-            gridColumn40.Name = "idFrecuencia";
-            gridColumn40.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn40.Visible = false;
-            gridColumn41.DataPropertyName = "tipo2";
-            gridColumn41.Name = "Tipo";
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn32);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn33);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn34);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn35);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn36);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn37);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn38);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn39);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn40);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn41);
-            this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvMemoria.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvMemoria.PrimaryGrid.EnableFiltering = true;
-            this.dgvMemoria.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvMemoria.PrimaryGrid.Filter.Visible = true;
-            this.dgvMemoria.PrimaryGrid.MultiSelect = false;
-            this.dgvMemoria.PrimaryGrid.NoRowsText = "No hay ninguna memoria, cree una memoria";
-            this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
-            this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemoria.Size = new System.Drawing.Size(482, 314);
-            this.dgvMemoria.TabIndex = 93;
-            this.dgvMemoria.Text = "Tabla Memoria";
-            // 
-            // tabMemoria
-            // 
-            this.tabMemoria.AttachedControl = this.tabControlPanel2;
-            this.tabMemoria.Name = "tabMemoria";
-            this.tabMemoria.Text = "Memoria";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.dgvDiscoDuro);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(737, 361);
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tabDiscoDuro;
-            // 
-            // dgvDiscoDuro
-            // 
-            this.dgvDiscoDuro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDiscoDuro.BackColor = System.Drawing.Color.White;
-            this.dgvDiscoDuro.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvDiscoDuro.ForeColor = System.Drawing.Color.Black;
-            this.dgvDiscoDuro.Location = new System.Drawing.Point(133, 25);
-            this.dgvDiscoDuro.Name = "dgvDiscoDuro";
-            this.dgvDiscoDuro.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvDiscoDuro.PrimaryGrid.AllowRowResize = true;
-            this.dgvDiscoDuro.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn42.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn42.Name = "Seleccionar";
-            gridColumn43.AllowEdit = false;
-            gridColumn43.DataPropertyName = "tipo";
-            gridColumn43.FilterAutoScan = true;
-            gridColumn43.MinimumWidth = 100;
-            gridColumn43.Name = "Tipo";
-            gridColumn43.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn43.Width = 120;
-            gridColumn44.AllowEdit = false;
-            gridColumn44.DataPropertyName = "tamano";
-            gridColumn44.MinimumWidth = 100;
-            gridColumn44.Name = "Tamaño";
-            gridColumn44.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn44.Width = 120;
-            gridColumn45.AllowEdit = false;
-            gridColumn45.DataPropertyName = "capacidad";
-            gridColumn45.MinimumWidth = 100;
-            gridColumn45.Name = "Capacidad";
-            gridColumn45.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn45.Width = 120;
-            gridColumn46.AllowEdit = false;
-            gridColumn46.DataPropertyName = "estado";
-            gridColumn46.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn46.MinimumWidth = 100;
-            gridColumn46.Name = "Activo";
-            gridColumn46.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn46.Visible = false;
-            gridColumn47.AllowEdit = false;
-            gridColumn47.DataPropertyName = "idDisco";
-            gridColumn47.MinimumWidth = 50;
-            gridColumn47.Name = "idDisco";
-            gridColumn47.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn47.Visible = false;
-            gridColumn47.Width = 50;
-            gridColumn48.AllowEdit = false;
-            gridColumn48.DataPropertyName = "idTipo";
-            gridColumn48.MinimumWidth = 100;
-            gridColumn48.Name = "idTipo";
-            gridColumn48.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn48.Visible = false;
-            gridColumn49.AllowEdit = false;
-            gridColumn49.DataPropertyName = "idCapacidad";
-            gridColumn49.MinimumWidth = 100;
-            gridColumn49.Name = "idCapacidad";
-            gridColumn49.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn49.Visible = false;
-            gridColumn50.AllowEdit = false;
-            gridColumn50.DataPropertyName = "idTamano";
-            gridColumn50.MinimumWidth = 100;
-            gridColumn50.Name = "idTamano";
-            gridColumn50.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn50.Visible = false;
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn42);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn43);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn44);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn45);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn46);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn47);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn48);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn49);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn50);
-            this.dgvDiscoDuro.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDiscoDuro.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.EnableFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.Filter.Visible = true;
-            this.dgvDiscoDuro.PrimaryGrid.MultiSelect = false;
-            this.dgvDiscoDuro.PrimaryGrid.NoRowsText = "No hay ningun disco, cree un disco";
-            this.dgvDiscoDuro.PrimaryGrid.NullString = "<<null>>";
-            this.dgvDiscoDuro.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvDiscoDuro.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDiscoDuro.Size = new System.Drawing.Size(502, 310);
-            this.dgvDiscoDuro.TabIndex = 71;
-            this.dgvDiscoDuro.Text = "Tabla Discos Duros";
-            // 
-            // tabDiscoDuro
-            // 
-            this.tabDiscoDuro.AttachedControl = this.tabControlPanel3;
-            this.tabDiscoDuro.Name = "tabDiscoDuro";
-            this.tabDiscoDuro.Text = "Disco Duro";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1254,7 +798,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(545, 403);
+            this.btnCancelar.Location = new System.Drawing.Point(582, 403);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 65);
             this.btnCancelar.TabIndex = 125;
@@ -1274,7 +818,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(643, 403);
+            this.btnGrabar.Location = new System.Drawing.Point(680, 403);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(81, 63);
             this.btnGrabar.TabIndex = 124;
@@ -1283,12 +827,656 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // dgvLicencias
+            // 
+            this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLicencias.Location = new System.Drawing.Point(66, 20);
+            this.dgvLicencias.MainView = this.vistaLicencias;
+            this.dgvLicencias.Name = "dgvLicencias";
+            this.dgvLicencias.Size = new System.Drawing.Size(569, 278);
+            this.dgvLicencias.TabIndex = 192;
+            this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaLicencias});
+            // 
+            // vistaLicencias
+            // 
+            this.vistaLicencias.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaLicencias.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaLicencias.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaLicencias.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaLicencias.Appearance.Row.Options.UseFont = true;
+            this.vistaLicencias.Appearance.Row.Options.UseForeColor = true;
+            this.vistaLicencias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar,
+            this.Categoria,
+            this.Tipo,
+            this.Version,
+            this.IdCategoria,
+            this.IdMarca,
+            this.IdModelo});
+            this.vistaLicencias.GridControl = this.dgvLicencias;
+            this.vistaLicencias.Name = "vistaLicencias";
+            this.vistaLicencias.OptionsCustomization.AllowGroup = false;
+            this.vistaLicencias.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaLicencias.OptionsView.ColumnAutoWidth = false;
+            this.vistaLicencias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaLicencias.OptionsView.ShowAutoFilterRow = true;
+            this.vistaLicencias.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.Caption = "Seleccionar";
+            this.Seleccionar.FieldName = "Seleccionar";
+            this.Seleccionar.MinWidth = 40;
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar.Visible = true;
+            this.Seleccionar.VisibleIndex = 0;
+            this.Seleccionar.Width = 140;
+            // 
+            // Categoria
+            // 
+            this.Categoria.Caption = "Categoría";
+            this.Categoria.FieldName = "Categoria";
+            this.Categoria.MinWidth = 40;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Categoria.Visible = true;
+            this.Categoria.VisibleIndex = 1;
+            this.Categoria.Width = 140;
+            // 
+            // Tipo
+            // 
+            this.Tipo.Caption = "Tipo";
+            this.Tipo.FieldName = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // Version
+            // 
+            this.Version.Caption = "Versión";
+            this.Version.FieldName = "Version";
+            this.Version.MinWidth = 40;
+            this.Version.Name = "Version";
+            this.Version.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Version.Visible = true;
+            this.Version.VisibleIndex = 2;
+            this.Version.Width = 250;
+            // 
+            // IdCategoria
+            // 
+            this.IdCategoria.Caption = "IdCategoria";
+            this.IdCategoria.FieldName = "IdCategoria";
+            this.IdCategoria.Name = "IdCategoria";
+            this.IdCategoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // IdMarca
+            // 
+            this.IdMarca.Caption = "IdMarca";
+            this.IdMarca.FieldName = "IdMarca";
+            this.IdMarca.Name = "IdMarca";
+            this.IdMarca.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // IdModelo
+            // 
+            this.IdModelo.Caption = "IdModelo";
+            this.IdModelo.FieldName = "IdModelo";
+            this.IdModelo.Name = "IdModelo";
+            this.IdModelo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // dgvProcesadores
+            // 
+            this.dgvProcesadores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProcesadores.Location = new System.Drawing.Point(64, 29);
+            this.dgvProcesadores.MainView = this.vistaProcesadores;
+            this.dgvProcesadores.Name = "dgvProcesadores";
+            this.dgvProcesadores.Size = new System.Drawing.Size(612, 296);
+            this.dgvProcesadores.TabIndex = 193;
+            this.dgvProcesadores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaProcesadores});
+            // 
+            // vistaProcesadores
+            // 
+            this.vistaProcesadores.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaProcesadores.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaProcesadores.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaProcesadores.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaProcesadores.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaProcesadores.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaProcesadores.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaProcesadores.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaProcesadores.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaProcesadores.Appearance.Row.Options.UseFont = true;
+            this.vistaProcesadores.Appearance.Row.Options.UseForeColor = true;
+            this.vistaProcesadores.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar1,
+            this.marca,
+            this.tipo1,
+            this.generacion,
+            this.velocidad,
+            this.velocidadMax,
+            this.estado,
+            this.idProcesador,
+            this.idTipo,
+            this.idMarca1,
+            this.idGeneracion,
+            this.idVelocidad,
+            this.idVelocidadMax});
+            this.vistaProcesadores.GridControl = this.dgvProcesadores;
+            this.vistaProcesadores.Name = "vistaProcesadores";
+            this.vistaProcesadores.OptionsCustomization.AllowGroup = false;
+            this.vistaProcesadores.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaProcesadores.OptionsView.ColumnAutoWidth = false;
+            this.vistaProcesadores.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaProcesadores.OptionsView.ShowAutoFilterRow = true;
+            this.vistaProcesadores.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar1
+            // 
+            this.Seleccionar1.Caption = "Seleccionar";
+            this.Seleccionar1.FieldName = "Seleccionar";
+            this.Seleccionar1.MinWidth = 40;
+            this.Seleccionar1.Name = "Seleccionar1";
+            this.Seleccionar1.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar1.Visible = true;
+            this.Seleccionar1.VisibleIndex = 0;
+            this.Seleccionar1.Width = 140;
+            // 
+            // marca
+            // 
+            this.marca.Caption = "Marca";
+            this.marca.FieldName = "marca";
+            this.marca.MinWidth = 40;
+            this.marca.Name = "marca";
+            this.marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.marca.Visible = true;
+            this.marca.VisibleIndex = 1;
+            this.marca.Width = 140;
+            // 
+            // tipo1
+            // 
+            this.tipo1.Caption = "Tipo";
+            this.tipo1.FieldName = "tipo";
+            this.tipo1.MinWidth = 40;
+            this.tipo1.Name = "tipo1";
+            this.tipo1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.tipo1.Visible = true;
+            this.tipo1.VisibleIndex = 2;
+            this.tipo1.Width = 140;
+            // 
+            // generacion
+            // 
+            this.generacion.Caption = "Generación";
+            this.generacion.FieldName = "generacion";
+            this.generacion.MinWidth = 40;
+            this.generacion.Name = "generacion";
+            this.generacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.generacion.Visible = true;
+            this.generacion.VisibleIndex = 2;
+            this.generacion.Width = 140;
+            // 
+            // velocidad
+            // 
+            this.velocidad.Caption = "velocidad";
+            this.velocidad.FieldName = "velocidad";
+            this.velocidad.Name = "velocidad";
+            this.velocidad.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // velocidadMax
+            // 
+            this.velocidadMax.Caption = "velocidadMax";
+            this.velocidadMax.FieldName = "velocidadMax";
+            this.velocidadMax.Name = "velocidadMax";
+            this.velocidadMax.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // estado
+            // 
+            this.estado.Caption = "estado";
+            this.estado.FieldName = "estado";
+            this.estado.Name = "estado";
+            this.estado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // dgvMemorias
+            // 
+            this.dgvMemorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMemorias.Location = new System.Drawing.Point(73, 20);
+            this.dgvMemorias.MainView = this.vistaMemorias;
+            this.dgvMemorias.Name = "dgvMemorias";
+            this.dgvMemorias.Size = new System.Drawing.Size(610, 321);
+            this.dgvMemorias.TabIndex = 193;
+            this.dgvMemorias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaMemorias});
+            // 
+            // vistaMemorias
+            // 
+            this.vistaMemorias.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaMemorias.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaMemorias.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaMemorias.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaMemorias.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaMemorias.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaMemorias.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaMemorias.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaMemorias.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaMemorias.Appearance.Row.Options.UseFont = true;
+            this.vistaMemorias.Appearance.Row.Options.UseForeColor = true;
+            this.vistaMemorias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar2,
+            this.tipo2,
+            this.frecuencia,
+            this.capacidad,
+            this.estado2,
+            this.idMemoria,
+            this.idTipo2,
+            this.idCapacidad,
+            this.idBusFrecuencia,
+            this.tipo22});
+            this.vistaMemorias.GridControl = this.dgvMemorias;
+            this.vistaMemorias.Name = "vistaMemorias";
+            this.vistaMemorias.OptionsCustomization.AllowGroup = false;
+            this.vistaMemorias.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaMemorias.OptionsView.ColumnAutoWidth = false;
+            this.vistaMemorias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaMemorias.OptionsView.ShowAutoFilterRow = true;
+            this.vistaMemorias.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar2
+            // 
+            this.Seleccionar2.Caption = "Seleccionar";
+            this.Seleccionar2.FieldName = "Seleccionar";
+            this.Seleccionar2.MinWidth = 40;
+            this.Seleccionar2.Name = "Seleccionar2";
+            this.Seleccionar2.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar2.Visible = true;
+            this.Seleccionar2.VisibleIndex = 0;
+            this.Seleccionar2.Width = 140;
+            // 
+            // tipo2
+            // 
+            this.tipo2.Caption = "Modelo";
+            this.tipo2.FieldName = "tipo";
+            this.tipo2.MinWidth = 40;
+            this.tipo2.Name = "tipo2";
+            this.tipo2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.tipo2.Visible = true;
+            this.tipo2.VisibleIndex = 1;
+            this.tipo2.Width = 140;
+            // 
+            // frecuencia
+            // 
+            this.frecuencia.Caption = "Frecuencia";
+            this.frecuencia.FieldName = "frecuencia";
+            this.frecuencia.Name = "frecuencia";
+            this.frecuencia.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // capacidad
+            // 
+            this.capacidad.Caption = "Capacidad";
+            this.capacidad.FieldName = "capacidad";
+            this.capacidad.MinWidth = 40;
+            this.capacidad.Name = "capacidad";
+            this.capacidad.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.capacidad.Visible = true;
+            this.capacidad.VisibleIndex = 2;
+            this.capacidad.Width = 140;
+            // 
+            // estado2
+            // 
+            this.estado2.Caption = "estado";
+            this.estado2.FieldName = "estado";
+            this.estado2.Name = "estado2";
+            this.estado2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // idMemoria
+            // 
+            this.idMemoria.Caption = "idMemoria";
+            this.idMemoria.FieldName = "idMemoria";
+            this.idMemoria.Name = "idMemoria";
+            this.idMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idTipo2
+            // 
+            this.idTipo2.Caption = "idTipo";
+            this.idTipo2.FieldName = "idTipo";
+            this.idTipo2.Name = "idTipo2";
+            this.idTipo2.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // dgvDiscos
+            // 
+            this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiscos.Location = new System.Drawing.Point(71, 20);
+            this.dgvDiscos.MainView = this.vistaDiscos;
+            this.dgvDiscos.Name = "dgvDiscos";
+            this.dgvDiscos.Size = new System.Drawing.Size(618, 305);
+            this.dgvDiscos.TabIndex = 193;
+            this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaDiscos});
+            // 
+            // vistaDiscos
+            // 
+            this.vistaDiscos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaDiscos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaDiscos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaDiscos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaDiscos.Appearance.Row.Options.UseFont = true;
+            this.vistaDiscos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaDiscos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar3,
+            this.tipo3,
+            this.tamano,
+            this.capacidad3,
+            this.estado3,
+            this.idDisco,
+            this.idTipo3,
+            this.idCapacidad3,
+            this.idTamano});
+            this.vistaDiscos.GridControl = this.dgvDiscos;
+            this.vistaDiscos.Name = "vistaDiscos";
+            this.vistaDiscos.OptionsCustomization.AllowGroup = false;
+            this.vistaDiscos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaDiscos.OptionsView.ColumnAutoWidth = false;
+            this.vistaDiscos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaDiscos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaDiscos.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar3
+            // 
+            this.Seleccionar3.Caption = "Seleccionar";
+            this.Seleccionar3.FieldName = "Seleccionar";
+            this.Seleccionar3.MinWidth = 40;
+            this.Seleccionar3.Name = "Seleccionar3";
+            this.Seleccionar3.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar3.Visible = true;
+            this.Seleccionar3.VisibleIndex = 0;
+            this.Seleccionar3.Width = 140;
+            // 
+            // tipo3
+            // 
+            this.tipo3.Caption = "Tipo";
+            this.tipo3.FieldName = "tipo";
+            this.tipo3.MinWidth = 40;
+            this.tipo3.Name = "tipo3";
+            this.tipo3.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.tipo3.Visible = true;
+            this.tipo3.VisibleIndex = 1;
+            this.tipo3.Width = 140;
+            // 
+            // tamano
+            // 
+            this.tamano.Caption = "Tamaño";
+            this.tamano.FieldName = "tamano";
+            this.tamano.MinWidth = 40;
+            this.tamano.Name = "tamano";
+            this.tamano.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.tamano.Visible = true;
+            this.tamano.VisibleIndex = 2;
+            this.tamano.Width = 140;
+            // 
+            // capacidad3
+            // 
+            this.capacidad3.Caption = "Capacidad";
+            this.capacidad3.FieldName = "capacidad";
+            this.capacidad3.MinWidth = 40;
+            this.capacidad3.Name = "capacidad3";
+            this.capacidad3.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.capacidad3.Visible = true;
+            this.capacidad3.VisibleIndex = 3;
+            this.capacidad3.Width = 140;
+            // 
+            // estado3
+            // 
+            this.estado3.Caption = "estado";
+            this.estado3.FieldName = "estado";
+            this.estado3.Name = "estado3";
+            // 
+            // idDisco
+            // 
+            this.idDisco.Caption = "idDisco";
+            this.idDisco.FieldName = "idDisco";
+            this.idDisco.Name = "idDisco";
+            this.idDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idTipo3
+            // 
+            this.idTipo3.Caption = "idTipo";
+            this.idTipo3.FieldName = "idTipo";
+            this.idTipo3.Name = "idTipo3";
+            this.idTipo3.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // dgvVideos
+            // 
+            this.dgvVideos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVideos.Location = new System.Drawing.Point(18, 20);
+            this.dgvVideos.MainView = this.vistaVideos;
+            this.dgvVideos.Name = "dgvVideos";
+            this.dgvVideos.Size = new System.Drawing.Size(700, 307);
+            this.dgvVideos.TabIndex = 193;
+            this.dgvVideos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaVideos});
+            // 
+            // vistaVideos
+            // 
+            this.vistaVideos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaVideos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaVideos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaVideos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaVideos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaVideos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaVideos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaVideos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaVideos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaVideos.Appearance.Row.Options.UseFont = true;
+            this.vistaVideos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaVideos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar4,
+            this.marca4,
+            this.nombreModelo,
+            this.tipo4,
+            this.capacidad4,
+            this.estado4,
+            this.idVideo,
+            this.idModelo4,
+            this.idMarca4,
+            this.idTipo4,
+            this.idCapacidad4});
+            this.vistaVideos.GridControl = this.dgvVideos;
+            this.vistaVideos.Name = "vistaVideos";
+            this.vistaVideos.OptionsCustomization.AllowGroup = false;
+            this.vistaVideos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaVideos.OptionsView.ColumnAutoWidth = false;
+            this.vistaVideos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaVideos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaVideos.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar4
+            // 
+            this.Seleccionar4.Caption = "Seleccionar";
+            this.Seleccionar4.FieldName = "Seleccionar";
+            this.Seleccionar4.MinWidth = 40;
+            this.Seleccionar4.Name = "Seleccionar4";
+            this.Seleccionar4.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar4.Visible = true;
+            this.Seleccionar4.VisibleIndex = 0;
+            this.Seleccionar4.Width = 100;
+            // 
+            // marca4
+            // 
+            this.marca4.Caption = "Marca";
+            this.marca4.FieldName = "marca";
+            this.marca4.MinWidth = 40;
+            this.marca4.Name = "marca4";
+            this.marca4.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.marca4.Visible = true;
+            this.marca4.VisibleIndex = 1;
+            this.marca4.Width = 140;
+            // 
+            // nombreModelo
+            // 
+            this.nombreModelo.Caption = "Modelo";
+            this.nombreModelo.FieldName = "nombreModelo";
+            this.nombreModelo.MinWidth = 40;
+            this.nombreModelo.Name = "nombreModelo";
+            this.nombreModelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.nombreModelo.Visible = true;
+            this.nombreModelo.VisibleIndex = 2;
+            this.nombreModelo.Width = 140;
+            // 
+            // tipo4
+            // 
+            this.tipo4.Caption = "Tipo";
+            this.tipo4.FieldName = "tipo";
+            this.tipo4.MinWidth = 40;
+            this.tipo4.Name = "tipo4";
+            this.tipo4.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.tipo4.Visible = true;
+            this.tipo4.VisibleIndex = 3;
+            this.tipo4.Width = 140;
+            // 
+            // capacidad4
+            // 
+            this.capacidad4.Caption = "Capacidad";
+            this.capacidad4.FieldName = "capacidad";
+            this.capacidad4.MinWidth = 40;
+            this.capacidad4.Name = "capacidad4";
+            this.capacidad4.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.capacidad4.Visible = true;
+            this.capacidad4.VisibleIndex = 4;
+            this.capacidad4.Width = 140;
+            // 
+            // estado4
+            // 
+            this.estado4.Caption = "estado";
+            this.estado4.FieldName = "estado";
+            this.estado4.Name = "estado4";
+            this.estado4.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idVideo
+            // 
+            this.idVideo.Caption = "idVideo";
+            this.idVideo.FieldName = "idVideo";
+            this.idVideo.Name = "idVideo";
+            this.idVideo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idProcesador
+            // 
+            this.idProcesador.Caption = "idProcesador";
+            this.idProcesador.FieldName = "idProcesador";
+            this.idProcesador.Name = "idProcesador";
+            // 
+            // idTipo
+            // 
+            this.idTipo.Caption = "idTipo";
+            this.idTipo.FieldName = "idTipo";
+            this.idTipo.Name = "idTipo";
+            // 
+            // idMarca1
+            // 
+            this.idMarca1.Caption = "idMarca";
+            this.idMarca1.FieldName = "idMarca";
+            this.idMarca1.Name = "idMarca1";
+            // 
+            // idGeneracion
+            // 
+            this.idGeneracion.Caption = "idGeneracion";
+            this.idGeneracion.FieldName = "idGeneracion";
+            this.idGeneracion.Name = "idGeneracion";
+            // 
+            // idVelocidad
+            // 
+            this.idVelocidad.Caption = "idVelocidad";
+            this.idVelocidad.FieldName = "idVelocidad";
+            this.idVelocidad.Name = "idVelocidad";
+            // 
+            // idVelocidadMax
+            // 
+            this.idVelocidadMax.Caption = "idVelocidadMax";
+            this.idVelocidadMax.FieldName = "idVelocidadMax";
+            this.idVelocidadMax.Name = "idVelocidadMax";
+            // 
+            // idCapacidad
+            // 
+            this.idCapacidad.Caption = "idCapacidad";
+            this.idCapacidad.FieldName = "idCapacidad";
+            this.idCapacidad.Name = "idCapacidad";
+            // 
+            // idBusFrecuencia
+            // 
+            this.idBusFrecuencia.Caption = "idBusFrecuencia";
+            this.idBusFrecuencia.FieldName = "idBusFrecuencia";
+            this.idBusFrecuencia.Name = "idBusFrecuencia";
+            // 
+            // tipo22
+            // 
+            this.tipo22.Caption = "Tipo";
+            this.tipo22.FieldName = "tipo2";
+            this.tipo22.MinWidth = 40;
+            this.tipo22.Name = "tipo22";
+            this.tipo22.Visible = true;
+            this.tipo22.VisibleIndex = 3;
+            this.tipo22.Width = 140;
+            // 
+            // idCapacidad3
+            // 
+            this.idCapacidad3.Caption = "idCapacidad";
+            this.idCapacidad3.FieldName = "idCapacidad";
+            this.idCapacidad3.Name = "idCapacidad3";
+            // 
+            // idTamano
+            // 
+            this.idTamano.Caption = "idTamano";
+            this.idTamano.FieldName = "idTamano";
+            this.idTamano.Name = "idTamano";
+            // 
+            // idModelo4
+            // 
+            this.idModelo4.Caption = "idModelo";
+            this.idModelo4.FieldName = "idModelo";
+            this.idModelo4.Name = "idModelo4";
+            // 
+            // idMarca4
+            // 
+            this.idMarca4.Caption = "idMarca";
+            this.idMarca4.FieldName = "idMarca";
+            this.idMarca4.Name = "idMarca4";
+            // 
+            // idTipo4
+            // 
+            this.idTipo4.Caption = "idTipo";
+            this.idTipo4.FieldName = "idTipo";
+            this.idTipo4.Name = "idTipo4";
+            // 
+            // idCapacidad4
+            // 
+            this.idCapacidad4.Caption = "idCapacidad";
+            this.idCapacidad4.FieldName = "idCapacidad";
+            this.idCapacidad4.Name = "idCapacidad4";
+            // 
             // frmProcesoIngresoLaptopCpu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(750, 471);
+            this.ClientSize = new System.Drawing.Size(787, 471);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.tabControl1);
@@ -1307,14 +1495,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabControlPanel1.ResumeLayout(false);
+            this.tabControlPanel6.ResumeLayout(false);
+            this.tabControlPanel4.ResumeLayout(false);
+            this.tabControlPanel3.ResumeLayout(false);
+            this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel7.ResumeLayout(false);
             this.tabControlPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindows)).EndInit();
-            this.tabControlPanel6.ResumeLayout(false);
-            this.tabControlPanel1.ResumeLayout(false);
-            this.tabControlPanel4.ResumeLayout(false);
-            this.tabControlPanel2.ResumeLayout(false);
-            this.tabControlPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcesadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProcesadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaVideos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1347,12 +1545,7 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
         private DevComponents.DotNetBar.TabItem tabLicencia;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvDiscoDuro;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvMemoria;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvVideo;
         private System.Windows.Forms.CheckBox chbGarantia;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLicencia;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvProcesador;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel7;
@@ -1374,12 +1567,72 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDiscoDuroSeleccionado;
         private System.Windows.Forms.TextBox txtMemoriaSeleccionada;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnResumen;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtLicenciaSeleccionada;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtProcesadorSeleccionado;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox cmbMarca;
+        public DevExpress.XtraGrid.GridControl dgvLicencias;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaLicencias;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn Categoria;
+        private DevExpress.XtraGrid.Columns.GridColumn Tipo;
+        private DevExpress.XtraGrid.Columns.GridColumn Version;
+        private DevExpress.XtraGrid.Columns.GridColumn IdCategoria;
+        private DevExpress.XtraGrid.Columns.GridColumn IdMarca;
+        private DevExpress.XtraGrid.Columns.GridColumn IdModelo;
+        public DevExpress.XtraGrid.GridControl dgvProcesadores;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaProcesadores;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar1;
+        private DevExpress.XtraGrid.Columns.GridColumn marca;
+        private DevExpress.XtraGrid.Columns.GridColumn tipo1;
+        private DevExpress.XtraGrid.Columns.GridColumn generacion;
+        private DevExpress.XtraGrid.Columns.GridColumn velocidad;
+        private DevExpress.XtraGrid.Columns.GridColumn estado;
+        public DevExpress.XtraGrid.GridControl dgvVideos;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaVideos;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar4;
+        private DevExpress.XtraGrid.Columns.GridColumn marca4;
+        private DevExpress.XtraGrid.Columns.GridColumn nombreModelo;
+        private DevExpress.XtraGrid.Columns.GridColumn tipo4;
+        private DevExpress.XtraGrid.Columns.GridColumn capacidad4;
+        private DevExpress.XtraGrid.Columns.GridColumn estado4;
+        private DevExpress.XtraGrid.Columns.GridColumn idVideo;
+        public DevExpress.XtraGrid.GridControl dgvDiscos;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaDiscos;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar3;
+        private DevExpress.XtraGrid.Columns.GridColumn tipo3;
+        private DevExpress.XtraGrid.Columns.GridColumn tamano;
+        private DevExpress.XtraGrid.Columns.GridColumn capacidad3;
+        private DevExpress.XtraGrid.Columns.GridColumn estado3;
+        private DevExpress.XtraGrid.Columns.GridColumn idDisco;
+        private DevExpress.XtraGrid.Columns.GridColumn idTipo3;
+        public DevExpress.XtraGrid.GridControl dgvMemorias;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaMemorias;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar2;
+        private DevExpress.XtraGrid.Columns.GridColumn tipo2;
+        private DevExpress.XtraGrid.Columns.GridColumn frecuencia;
+        private DevExpress.XtraGrid.Columns.GridColumn capacidad;
+        private DevExpress.XtraGrid.Columns.GridColumn estado2;
+        private DevExpress.XtraGrid.Columns.GridColumn idMemoria;
+        private DevExpress.XtraGrid.Columns.GridColumn idTipo2;
+        private DevExpress.XtraGrid.Columns.GridColumn velocidadMax;
+        private DevExpress.XtraGrid.Columns.GridColumn idProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn idTipo;
+        private DevExpress.XtraGrid.Columns.GridColumn idMarca1;
+        private DevExpress.XtraGrid.Columns.GridColumn idGeneracion;
+        private DevExpress.XtraGrid.Columns.GridColumn idVelocidad;
+        private DevExpress.XtraGrid.Columns.GridColumn idVelocidadMax;
+        private DevExpress.XtraGrid.Columns.GridColumn idCapacidad;
+        private DevExpress.XtraGrid.Columns.GridColumn idBusFrecuencia;
+        private DevExpress.XtraGrid.Columns.GridColumn tipo22;
+        private DevExpress.XtraGrid.Columns.GridColumn idCapacidad3;
+        private DevExpress.XtraGrid.Columns.GridColumn idTamano;
+        private DevExpress.XtraGrid.Columns.GridColumn idModelo4;
+        private DevExpress.XtraGrid.Columns.GridColumn idMarca4;
+        private DevExpress.XtraGrid.Columns.GridColumn idTipo4;
+        private DevExpress.XtraGrid.Columns.GridColumn idCapacidad4;
     }
 }

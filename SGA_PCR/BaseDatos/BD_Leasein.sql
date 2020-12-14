@@ -699,3 +699,216 @@ CREATE TABLE ingresos_salidas_internas(
     REFERENCES laptop_cpu(idLC)
 )ENGINE=INNODB;
 
+--=============================================================================================================
+
+DROP TABLE IF EXISTS `impresora`;
+CREATE TABLE impresora(
+	idImpresora INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idIngresoDet INT,
+	codigo NVARCHAR(255) NOT NULL,
+	idModelo INT NOT NULL,
+	idCaracteristica INT NOT NULL,
+	caracteristica NVARCHAR(255) NOT NULL,
+	partNumber NVARCHAR(255),
+	serieFabrica NVARCHAR(255),
+	garantia TINYINT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	ubicacion NVARCHAR(255) NOT NULL,
+	observacion NVARCHAR(255),
+	compraSubarriendo TINYINT NOT NULL,
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255),
+	FOREIGN KEY (idModelo)
+	REFERENCES modelo(idModelo)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `monitor`;
+CREATE TABLE monitor(
+	idMonitor INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idIngresoDet INT,
+	codigo NVARCHAR(255) NOT NULL,
+	idModelo INT NOT NULL,
+	idTipo INT NOT NULL,
+	tipo NVARCHAR(255) NOT NULL,
+	pantalla DOUBLE,
+	partNumber NVARCHAR(255),
+	serieFabrica NVARCHAR(255),
+	garantia TINYINT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	ubicacion NVARCHAR(255) NOT NULL,
+	observacion NVARCHAR(255),
+	compraSubarriendo TINYINT NOT NULL,
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255),
+	FOREIGN KEY (idModelo)
+	REFERENCES modelo(idModelo)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `tablet`;
+CREATE TABLE tablet(
+	idTablet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idIngresoDet INT,
+	codigo NVARCHAR(255) NOT NULL,
+	idModelo INT NOT NULL,
+	idProcesador INT NOT NULL,
+	idSO INT NOT NULL,
+	idRam INT NOT NULL,
+	idRom INT NOT NULL,
+	pantalla DOUBLE,
+	partNumber NVARCHAR(255),
+	serieFabrica NVARCHAR(255),
+	garantia TINYINT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	ubicacion NVARCHAR(255) NOT NULL,
+	observacion NVARCHAR(255),
+	compraSubarriendo TINYINT NOT NULL,
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255),
+	FOREIGN KEY (idModelo)
+	REFERENCES modelo(idModelo)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `proyectorEcram`;
+CREATE TABLE proyectorEcram(
+	idProyectorEcram INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idIngresoDet INT,
+	idTipoEquipo INT NOT NULL,
+	codigo NVARCHAR(255) NOT NULL,
+	idModelo INT NOT NULL,
+	idCaracteristica INT NOT NULL,
+	caracteristica NVARCHAR(255) NOT NULL,
+	tamanoEcram DOUBLE,
+	partNumber NVARCHAR(255),
+	serieFabrica NVARCHAR(255),
+	garantia TINYINT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	ubicacion NVARCHAR(255) NOT NULL,
+	observacion NVARCHAR(255),
+	compraSubarriendo TINYINT NOT NULL,
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255),
+	FOREIGN KEY (idModelo)
+	REFERENCES modelo(idModelo)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `ingreso_det_impresora`;
+CREATE TABLE ingreso_det_impresora(
+	idIngresoDet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idMarca INT NOT NULL,
+	idModelo INT NOT NULL,
+	idCaracteristica INT NOT NULL,
+	caracteristica NVARCHAR(255) NOT NULL,
+	partNumber NVARCHAR(255),
+	garantia TINYINT,
+	cantidad INT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	subTotal DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `ingreso_det_monitor`;
+CREATE TABLE ingreso_det_monitor(
+	idIngresoDet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idMarca INT NOT NULL,
+	idModelo INT NOT NULL,
+	idTipo INT NOT NULL,
+	tipo NVARCHAR(255) NOT NULL,
+	pantalla DOUBLE,
+	partNumber NVARCHAR(255),
+	garantia TINYINT,
+	cantidad INT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	subTotal DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `ingreso_det_tablet`;
+CREATE TABLE ingreso_det_tablet(
+	idIngresoDet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idMarca INT NOT NULL,
+	idModelo INT NOT NULL,
+	idProcesador INT NOT NULL,
+	idSO INT NOT NULL,
+	idRam INT NOT NULL,
+	idRom INT NOT NULL,
+	pantalla DOUBLE,
+	partNumber NVARCHAR(255),
+	garantia TINYINT,
+	cantidad INT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	subTotal DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `ingreso_det_proyectorEcram`;
+CREATE TABLE ingreso_det_proyectorEcram(
+	idIngresoDet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idMarca INT NOT NULL,
+	idModelo INT NOT NULL,
+	idTipoEquipo INT NOT NULL,
+	idCaracteristica INT NOT NULL,
+	caracteristica NVARCHAR(255) NOT NULL,
+	tamanoEcram DOUBLE,
+	partNumber NVARCHAR(255),
+	garantia TINYINT,
+	cantidad INT,
+	fecInicioSeguro DATE,
+	fecFinSeguro DATE,
+	subTotal DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
