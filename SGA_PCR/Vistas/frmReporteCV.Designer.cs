@@ -57,12 +57,14 @@
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UBSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cargarData = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.verResumen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -102,7 +104,6 @@
             this.dgvLaptops.TabIndex = 136;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
-            this.dgvLaptops.Click += new System.EventHandler(this.dgvLaptops_Click);
             this.dgvLaptops.MouseLeave += new System.EventHandler(this.dgvLaptops_MouseLeave);
             this.dgvLaptops.MouseHover += new System.EventHandler(this.dgvLaptops_MouseHover);
             // 
@@ -147,8 +148,10 @@
             this.TotalDolares,
             this.CostoSoles,
             this.CostoDolares,
+            this.UBSoles,
             this.VersionOffice,
-            this.KAM});
+            this.KAM,
+            this.RAM});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -332,7 +335,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 11;
+            this.CodigoAntiguo.VisibleIndex = 12;
             this.CodigoAntiguo.Width = 120;
             // 
             // fecIniContrato
@@ -345,7 +348,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 12;
+            this.fecIniContrato.VisibleIndex = 13;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -358,7 +361,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 13;
+            this.fecFinContrato.VisibleIndex = 14;
             this.fecFinContrato.Width = 100;
             // 
             // factura
@@ -371,7 +374,7 @@
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 14;
+            this.factura.VisibleIndex = 15;
             this.factura.Width = 100;
             // 
             // fecInicioFactura
@@ -384,7 +387,7 @@
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 15;
+            this.fecInicioFactura.VisibleIndex = 16;
             this.fecInicioFactura.Width = 100;
             // 
             // fecFinFactura
@@ -397,33 +400,33 @@
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 16;
+            this.fecFinFactura.VisibleIndex = 17;
             this.fecFinFactura.Width = 100;
             // 
             // MontoSoles
             // 
             this.MontoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MontoSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.MontoSoles.Caption = "Monto Soles";
+            this.MontoSoles.Caption = "Venta Soles";
             this.MontoSoles.FieldName = "MontoSoles";
             this.MontoSoles.MinWidth = 40;
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 17;
+            this.MontoSoles.VisibleIndex = 18;
             this.MontoSoles.Width = 100;
             // 
             // MontoDolares
             // 
             this.MontoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MontoDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.MontoDolares.Caption = "Monto Dolares";
+            this.MontoDolares.Caption = "Venta Dolares";
             this.MontoDolares.FieldName = "MontoDolares";
             this.MontoDolares.MinWidth = 40;
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 18;
+            this.MontoDolares.VisibleIndex = 19;
             this.MontoDolares.Width = 100;
             // 
             // TotalDolares
@@ -435,8 +438,6 @@
             this.TotalDolares.MinWidth = 40;
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 19;
             this.TotalDolares.Width = 100;
             // 
             // CostoSoles
@@ -465,6 +466,16 @@
             this.CostoDolares.VisibleIndex = 21;
             this.CostoDolares.Width = 100;
             // 
+            // UBSoles
+            // 
+            this.UBSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.UBSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.UBSoles.Caption = "Utilidad Bruta Soles";
+            this.UBSoles.FieldName = "UBSoles";
+            this.UBSoles.Name = "UBSoles";
+            this.UBSoles.Visible = true;
+            this.UBSoles.VisibleIndex = 22;
+            // 
             // VersionOffice
             // 
             this.VersionOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -475,8 +486,29 @@
             this.VersionOffice.Name = "VersionOffice";
             this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.VersionOffice.Visible = true;
-            this.VersionOffice.VisibleIndex = 22;
+            this.VersionOffice.VisibleIndex = 23;
             this.VersionOffice.Width = 100;
+            // 
+            // KAM
+            // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.Name = "KAM";
+            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 24;
+            // 
+            // RAM
+            // 
+            this.RAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RAM.AppearanceHeader.Options.UseBackColor = true;
+            this.RAM.Caption = "RAM";
+            this.RAM.FieldName = "RAM";
+            this.RAM.Name = "RAM";
+            this.RAM.Visible = true;
+            this.RAM.VisibleIndex = 11;
             // 
             // cargarData
             // 
@@ -518,18 +550,6 @@
             this.label1.Size = new System.Drawing.Size(162, 16);
             this.label1.TabIndex = 144;
             this.label1.Text = "CANTIDAD REGISTROS:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // KAM
-            // 
-            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.KAM.AppearanceHeader.Options.UseBackColor = true;
-            this.KAM.Caption = "KAM";
-            this.KAM.FieldName = "KAM";
-            this.KAM.Name = "KAM";
-            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 23;
             // 
             // frmReporteCV
             // 
@@ -595,5 +615,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn ruc;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
+        private DevExpress.XtraGrid.Columns.GridColumn UBSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn RAM;
     }
 }

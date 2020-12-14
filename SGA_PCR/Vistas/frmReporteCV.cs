@@ -23,6 +23,8 @@ namespace Apolo
     {
 
         DataTable tablaLaptops;
+        DataTable memoriaLC;
+        DataTable memoria;
         ReporteDA reporteDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -75,7 +77,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(23, 1))); //EL 18 SON LAS COLUMNAS QUE TIENE EL REPORTE
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(24, 1))); //EL 18 SON LAS COLUMNAS QUE TIENE EL REPORTE
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -262,20 +264,6 @@ namespace Apolo
             }
         }
 
-        private void dgvLaptops_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-      
-
-
-
 
         private async void cargarData_Click(object sender, EventArgs e)
         {
@@ -298,14 +286,75 @@ namespace Apolo
         {
             try
             {
+                
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarCuadroVencimiento();
+                memoriaLC = reporteDA.ListarMemoriasLC();
+                memoria = reporteDA.ListarMemoriasMaestro();
+
+
+                tablaLaptops.Columns.Add("RAM");
+
+                //PONER MEMORIA
+                for (int i = 0; i < tablaLaptops.Rows.Count; i++)
+                {
+                    //MessageBox.Show(tablaLaptops.Rows[i]["idLC"].ToString());
+                    int idLC= int.Parse(tablaLaptops.Rows[i]["idLC"].ToString());
+
+                    //MessageBox.Show(idLC.ToString());
+
+                    //RECORREMOS TABLA MEMORIALC
+                    List<int> codigosMemorias = new List<int>(); //! IMPORTANTE
+                    int aux = 0;
+                    for (int j = 0; j < memoriaLC.Rows.Count; j++)
+                    {
+                        if (int.Parse(memoriaLC.Rows[j]["idLC"].ToString()) == idLC)
+                        {
+                            aux = int.Parse(memoriaLC.Rows[j]["cantidad"].ToString());
+                            for (int h = 0; h < aux; h++)
+                            {
+                                codigosMemorias.Add(int.Parse(memoriaLC.Rows[j]["idMemoria"].ToString()));
+                            }
+
+                            //MessageBox.Show(memoriaLC.Rows[j]["idMemoria"].ToString());
+                        }
+                    }
+
+                    //RECORREMOS TABLA MEMORIA
+                    List<int> capacidadMemorias = new List<int>();
+                    for (int k = 0; k < memoria.Rows.Count; k++)
+                    {
+                        for (int s = 0; s < codigosMemorias.Count; s++)
+                        {
+                            if (int.Parse(memoria.Rows[k]["idMemoria"].ToString()) == codigosMemorias[s])
+                                capacidadMemorias.Add(int.Parse(memoria.Rows[k]["capacidad"].ToString()));
+
+                        }
+                    }
+
+                    //RECORREMOS LAS CAPACIDAD
+                    int suma = 0;
+                    for (int b = 0; b < capacidadMemorias.Count; b++)
+                    {
+                        suma = suma + capacidadMemorias[b];
+                    }
+
+                    //MessageBox.Show(suma+"GB");
+                    tablaLaptops.Rows[i]["RAM"] = suma + " GB";
+
+                    
+                }
+
+
+
 
                 dgvLaptops.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
-                
-                
+
+             
+
+
             }
             catch (Exception e)
             {
@@ -328,20 +377,6 @@ namespace Apolo
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cantidadTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvLaptops_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void dgvLaptops_MouseLeave(object sender, EventArgs e)
         {
