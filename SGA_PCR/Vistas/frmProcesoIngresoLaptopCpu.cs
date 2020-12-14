@@ -97,7 +97,7 @@ namespace Apolo
 
             tablaVideo = ingresoDA.ListarTarjetaVideos();
 
-            tablaLicencia = ingresoDA.ListarLicencias();
+            tablaLicencia = ingresoDA.ListarLicenciasSO();
 
             //=========================================================================
             tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
@@ -153,7 +153,13 @@ namespace Apolo
             tabControl1.SelectedTab = tabLicencia;
             tabControl1.SelectedTab = tabClavesLicencias;
             tabControl1.SelectedTab = tabDetalle;
-
+            
+            vistaDiscos.ClearColumnsFilter();
+            vistaLicencias.ClearColumnsFilter();
+            vistaMemorias.ClearColumnsFilter();
+            vistaProcesadores.ClearColumnsFilter();
+            vistaVideos.ClearColumnsFilter();
+                
             cmbMarca.SelectedValue = detalleTraido.LaptopIdMarca;
             cmbModelo.SelectedValue = detalleTraido.LaptopIdModelo;
             laptop = detalleTraido.Laptop;
@@ -229,6 +235,12 @@ namespace Apolo
 
         public bool llenarListaLaptops()
         {
+            vistaDiscos.ClearColumnsFilter();
+            vistaLicencias.ClearColumnsFilter();
+            vistaMemorias.ClearColumnsFilter();
+            vistaProcesadores.ClearColumnsFilter();
+            vistaVideos.ClearColumnsFilter();
+
             bool flag = false;
             laptop = new LC();
             
@@ -377,6 +389,12 @@ namespace Apolo
             tabControl1.SelectedTab = tabLicencia;
             tabControl1.SelectedTab = tabClavesLicencias;
             tabControl1.SelectedTab = tabDetalle;
+
+            vistaDiscos.ClearColumnsFilter();
+            vistaLicencias.ClearColumnsFilter();
+            vistaMemorias.ClearColumnsFilter();
+            vistaProcesadores.ClearColumnsFilter();
+            vistaVideos.ClearColumnsFilter();
 
             //==============================================================================================
 
@@ -911,6 +929,12 @@ namespace Apolo
             tabControl1.SelectedTab = tabLicencia;
             tabControl1.SelectedTab = tabClavesLicencias;
             tabControl1.SelectedTab = tabDetalle;
+
+            vistaDiscos.ClearColumnsFilter();
+            vistaLicencias.ClearColumnsFilter();
+            vistaMemorias.ClearColumnsFilter();
+            vistaProcesadores.ClearColumnsFilter();
+            vistaVideos.ClearColumnsFilter();
 
             //======================================================================== PROCESADOR
 

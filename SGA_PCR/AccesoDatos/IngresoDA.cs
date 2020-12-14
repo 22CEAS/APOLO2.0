@@ -54,7 +54,12 @@ namespace AccesoDatos
 
         public DataTable ListarLicencias()
         {
-            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias where IdCategoria= "+ this.IdCategoriaWindows + " ;");
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias ;");
+        }
+
+        public DataTable ListarLicenciasSO()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias where IdCategoria= " + this.IdCategoriaWindows + " ;");
         }
 
         public DataTable ListarMarcas()

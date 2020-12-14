@@ -1412,6 +1412,7 @@ namespace Apolo
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
+            vistaLaptops.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaLaptops.RowCount; i++)
                 if (vistaLaptops.IsRowSelected(i) == true)
@@ -1420,7 +1421,6 @@ namespace Apolo
             if (detTempId != -1) {
                 IngresoDetalle det = new IngresoDetalle();
                 int indiceLC = 0;
-                vistaLaptops.ClearColumnsFilter();
                 if (vistaLaptops.RowCount == 0) return;
                 if (vistaLaptops.RowCount > 0)
                 {
@@ -2007,6 +2007,7 @@ namespace Apolo
 
         private void btnVisualizarTablets_Click(object sender, EventArgs e)
         {
+            vistaTablets.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaTablets.RowCount; i++)
                 if (vistaTablets.IsRowSelected(i) == true)
@@ -2016,7 +2017,6 @@ namespace Apolo
             {
                 IngresoDetalleTablet det = new IngresoDetalleTablet();
                 int indiceLC = 0;
-                vistaTablets.ClearColumnsFilter();
                 if (vistaTablets.RowCount == 0) return;
                 if (vistaTablets.RowCount > 0)
                 {
@@ -2146,6 +2146,7 @@ namespace Apolo
 
         private void btnVisualizarMonitores_Click(object sender, EventArgs e)
         {
+            vistaMonitores.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaMonitores.RowCount; i++)
                 if (vistaMonitores.IsRowSelected(i) == true)
@@ -2155,7 +2156,6 @@ namespace Apolo
             {
                 IngresoDetalleMonitor det = new IngresoDetalleMonitor();
                 int indiceLC = 0;
-                vistaMonitores.ClearColumnsFilter();
                 if (vistaMonitores.RowCount == 0) return;
                 if (vistaMonitores.RowCount > 0)
                 {
@@ -2285,6 +2285,7 @@ namespace Apolo
 
         private void btnVisualizarImpresora_Click(object sender, EventArgs e)
         {
+            vistaImpresoras.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaImpresoras.RowCount; i++)
                 if (vistaImpresoras.IsRowSelected(i) == true)
@@ -2294,7 +2295,6 @@ namespace Apolo
             {
                 IngresoDetalleImpresora det = new IngresoDetalleImpresora();
                 int indiceLC = 0;
-                vistaImpresoras.ClearColumnsFilter();
                 if (vistaImpresoras.RowCount == 0) return;
                 if (vistaImpresoras.RowCount > 0)
                 {
@@ -2424,6 +2424,7 @@ namespace Apolo
 
         private void btnVisualizarProyectores_Click(object sender, EventArgs e)
         {
+            vistaProyectores.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaProyectores.RowCount; i++)
                 if (vistaProyectores.IsRowSelected(i) == true)
@@ -2433,7 +2434,6 @@ namespace Apolo
             {
                 IngresoDetalleProyector det = new IngresoDetalleProyector();
                 int indiceLC = 0;
-                vistaProyectores.ClearColumnsFilter();
                 if (vistaProyectores.RowCount == 0) return;
                 if (vistaProyectores.RowCount > 0)
                 {
