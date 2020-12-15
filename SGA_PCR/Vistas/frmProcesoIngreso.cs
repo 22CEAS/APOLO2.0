@@ -1413,6 +1413,7 @@ namespace Apolo
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             vistaLaptops.ClearColumnsFilter();
+
             int detTempId = -1;
             for (int i = 0; i < vistaLaptops.RowCount; i++)
                 if (vistaLaptops.IsRowSelected(i) == true)
@@ -2486,5 +2487,7 @@ namespace Apolo
                 }
             }
         }
+
+        
     }
 }
