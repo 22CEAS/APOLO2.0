@@ -367,6 +367,9 @@ namespace AccesoDatos
                         }
 
                         //AQUI PONER PROCEDURE DE CODIGO CORRELATIVO
+
+                        
+
                         parametrosEntrada = new MySqlParameter[18];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
