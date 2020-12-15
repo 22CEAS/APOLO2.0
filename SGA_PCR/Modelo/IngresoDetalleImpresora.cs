@@ -45,5 +45,7 @@ namespace Modelo
 
         public int ImpresoraIdTipo { get => Impresora.IdTipo; set => Impresora.IdTipo = value; }
         public string ImpresoraTipo { get => Impresora.Tipo; set => Impresora.Tipo = value; }
+
+        public int ImpresoraMultifuncional { get => Impresora.Multifuncional; set => Impresora.Multifuncional = value; }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoIngreso));
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.txtRUC = new System.Windows.Forms.TextBox();
@@ -71,7 +72,7 @@
             this.Procesador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabLaptops = new DevComponents.DotNetBar.TabItem();
+            this.tabLaptops = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnVisualizarProyectores = new System.Windows.Forms.Button();
             this.btnAgregarProyectores = new System.Windows.Forms.Button();
@@ -85,7 +86,7 @@
             this.IdIngresoDetalleProyector = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ProyectorCaracteristica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ProyectorTamano = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabProyectores = new DevComponents.DotNetBar.TabItem();
+            this.tabProyectores = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnVisualizarMonitores = new System.Windows.Forms.Button();
             this.btnAgregarMonitores = new System.Windows.Forms.Button();
@@ -98,7 +99,7 @@
             this.MonitorPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdIngresoDetalleMonitor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MonitorTamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabMonitores = new DevComponents.DotNetBar.TabItem();
+            this.tabMonitores = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnVisualizarImpresora = new System.Windows.Forms.Button();
             this.btnAgregarImpresora = new System.Windows.Forms.Button();
@@ -110,7 +111,7 @@
             this.ImpresoraCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ImpresoraPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdIngresoDetalleImpresora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabImpresoras = new DevComponents.DotNetBar.TabItem();
+            this.tabImpresoras = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvDiscos = new DevExpress.XtraGrid.GridControl();
             this.vistaDiscos = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -120,7 +121,7 @@
             this.TamanoDisco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PrecioDisco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabDiscosDuro = new DevComponents.DotNetBar.TabItem();
+            this.tabDiscosDuro = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvMemoria = new DevExpress.XtraGrid.GridControl();
             this.vistaMemoria = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -130,7 +131,7 @@
             this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PrecioMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabMemorias = new DevComponents.DotNetBar.TabItem();
+            this.tabMemorias = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnVisualizarTablets = new System.Windows.Forms.Button();
             this.btnAgregarTablets = new System.Windows.Forms.Button();
@@ -146,7 +147,7 @@
             this.TabletSistema = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TabletRam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TabletRom = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabTablets = new DevComponents.DotNetBar.TabItem();
+            this.tabTablets = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvLicencias = new DevExpress.XtraGrid.GridControl();
             this.vistaLicencias = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -159,7 +160,7 @@
             this.IdCategoría = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdModelo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabSoftwares = new DevComponents.DotNetBar.TabItem();
+            this.tabSoftwares = new DevComponents.DotNetBar.TabItem(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -709,7 +710,7 @@
             this.TipoEquipo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.TipoEquipo.AppearanceHeader.Options.UseBackColor = true;
             this.TipoEquipo.Caption = "Tipo Equipo";
-            this.TipoEquipo.FieldName = "TipoEquipo";
+            this.TipoEquipo.FieldName = "LaptopTipoEquipoLC";
             this.TipoEquipo.MinWidth = 40;
             this.TipoEquipo.Name = "TipoEquipo";
             this.TipoEquipo.UnboundType = DevExpress.Data.UnboundColumnType.String;

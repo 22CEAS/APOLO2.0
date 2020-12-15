@@ -15,6 +15,8 @@ namespace Modelo
         private Modelo modelo;
         private int idCaracteristica;
         private string caracteristica;
+        private int idResolucion;
+        private int idLuminen;
         private double tamanoProyector;
         private int cantidad;
         private double precio;
@@ -64,5 +66,7 @@ namespace Modelo
         public int IdModeloProyector { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }
         public string NombreModeloProyector { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
 
+        public int IdResolucion { get => idResolucion; set => idResolucion = value; }
+        public int IdLuminen { get => idLuminen; set => idLuminen = value; }
     }
 }

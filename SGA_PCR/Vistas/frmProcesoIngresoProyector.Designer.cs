@@ -53,6 +53,12 @@
             this.btnAgregarProyectorCaracteristica = new System.Windows.Forms.Button();
             this.cmbCaracteristica = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnAgregarProyectorLuminen = new System.Windows.Forms.Button();
+            this.cmbLuminen = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAgregarProyectorResolucion = new System.Windows.Forms.Button();
+            this.cmbResolucion = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +73,7 @@
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAceptar.Location = new System.Drawing.Point(594, 266);
+            this.btnAceptar.Location = new System.Drawing.Point(594, 304);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(111, 67);
             this.btnAceptar.TabIndex = 212;
@@ -86,7 +92,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(496, 268);
+            this.btnCancelar.Location = new System.Drawing.Point(496, 306);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 65);
             this.btnCancelar.TabIndex = 211;
@@ -106,7 +112,7 @@
             this.btnSubirSeries.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubirSeries.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirSeries.Image")));
             this.btnSubirSeries.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSubirSeries.Location = new System.Drawing.Point(672, 21);
+            this.btnSubirSeries.Location = new System.Drawing.Point(674, 18);
             this.btnSubirSeries.Name = "btnSubirSeries";
             this.btnSubirSeries.Size = new System.Drawing.Size(40, 34);
             this.btnSubirSeries.TabIndex = 210;
@@ -120,10 +126,10 @@
             this.dgvSerieFabrica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nro,
             this.SerieFabrico});
-            this.dgvSerieFabrica.Location = new System.Drawing.Point(479, 66);
+            this.dgvSerieFabrica.Location = new System.Drawing.Point(477, 72);
             this.dgvSerieFabrica.Name = "dgvSerieFabrica";
             this.dgvSerieFabrica.RowHeadersVisible = false;
-            this.dgvSerieFabrica.Size = new System.Drawing.Size(228, 192);
+            this.dgvSerieFabrica.Size = new System.Drawing.Size(228, 212);
             this.dgvSerieFabrica.TabIndex = 209;
             // 
             // Nro
@@ -175,7 +181,7 @@
             this.btnAgregarProyectorMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProyectorMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProyectorMarca.Image")));
             this.btnAgregarProyectorMarca.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProyectorMarca.Location = new System.Drawing.Point(342, 68);
+            this.btnAgregarProyectorMarca.Location = new System.Drawing.Point(342, 65);
             this.btnAgregarProyectorMarca.Name = "btnAgregarProyectorMarca";
             this.btnAgregarProyectorMarca.Size = new System.Drawing.Size(30, 30);
             this.btnAgregarProyectorMarca.TabIndex = 203;
@@ -194,7 +200,7 @@
             this.btnAgregarProyectorModelo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProyectorModelo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProyectorModelo.Image")));
             this.btnAgregarProyectorModelo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProyectorModelo.Location = new System.Drawing.Point(342, 113);
+            this.btnAgregarProyectorModelo.Location = new System.Drawing.Point(342, 110);
             this.btnAgregarProyectorModelo.Name = "btnAgregarProyectorModelo";
             this.btnAgregarProyectorModelo.Size = new System.Drawing.Size(30, 30);
             this.btnAgregarProyectorModelo.TabIndex = 202;
@@ -208,7 +214,7 @@
             this.chbGarantia.BackColor = System.Drawing.Color.White;
             this.chbGarantia.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chbGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbGarantia.Location = new System.Drawing.Point(258, 216);
+            this.chbGarantia.Location = new System.Drawing.Point(257, 308);
             this.chbGarantia.Name = "chbGarantia";
             this.chbGarantia.Size = new System.Drawing.Size(78, 20);
             this.chbGarantia.TabIndex = 201;
@@ -220,7 +226,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(27, 265);
+            this.label8.Location = new System.Drawing.Point(26, 357);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 16);
             this.label8.TabIndex = 200;
@@ -228,7 +234,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(128, 264);
+            this.txtPrecio.Location = new System.Drawing.Point(127, 356);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(87, 20);
             this.txtPrecio.TabIndex = 194;
@@ -297,7 +303,7 @@
             // 
             // txtPantalla
             // 
-            this.txtPantalla.Location = new System.Drawing.Point(128, 216);
+            this.txtPantalla.Location = new System.Drawing.Point(127, 308);
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(87, 20);
             this.txtPantalla.TabIndex = 193;
@@ -308,7 +314,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 212);
+            this.label4.Location = new System.Drawing.Point(28, 304);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 32);
             this.label4.TabIndex = 198;
@@ -325,7 +331,7 @@
             this.btnAgregarProyectorCaracteristica.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProyectorCaracteristica.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProyectorCaracteristica.Image")));
             this.btnAgregarProyectorCaracteristica.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProyectorCaracteristica.Location = new System.Drawing.Point(342, 163);
+            this.btnAgregarProyectorCaracteristica.Location = new System.Drawing.Point(342, 152);
             this.btnAgregarProyectorCaracteristica.Name = "btnAgregarProyectorCaracteristica";
             this.btnAgregarProyectorCaracteristica.Size = new System.Drawing.Size(30, 30);
             this.btnAgregarProyectorCaracteristica.TabIndex = 215;
@@ -338,7 +344,7 @@
             this.cmbCaracteristica.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbCaracteristica.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCaracteristica.FormattingEnabled = true;
-            this.cmbCaracteristica.Location = new System.Drawing.Point(128, 169);
+            this.cmbCaracteristica.Location = new System.Drawing.Point(128, 161);
             this.cmbCaracteristica.Name = "cmbCaracteristica";
             this.cmbCaracteristica.Size = new System.Drawing.Size(208, 21);
             this.cmbCaracteristica.TabIndex = 213;
@@ -348,18 +354,104 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 171);
+            this.label6.Location = new System.Drawing.Point(28, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 214;
             this.label6.Text = "Caracteristica";
+            // 
+            // btnAgregarProyectorLuminen
+            // 
+            this.btnAgregarProyectorLuminen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProyectorLuminen.AutoSize = true;
+            this.btnAgregarProyectorLuminen.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarProyectorLuminen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProyectorLuminen.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProyectorLuminen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProyectorLuminen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProyectorLuminen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProyectorLuminen.Image")));
+            this.btnAgregarProyectorLuminen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarProyectorLuminen.Location = new System.Drawing.Point(342, 237);
+            this.btnAgregarProyectorLuminen.Name = "btnAgregarProyectorLuminen";
+            this.btnAgregarProyectorLuminen.Size = new System.Drawing.Size(30, 30);
+            this.btnAgregarProyectorLuminen.TabIndex = 221;
+            this.btnAgregarProyectorLuminen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarProyectorLuminen.UseVisualStyleBackColor = false;
+            this.btnAgregarProyectorLuminen.Click += new System.EventHandler(this.btnAgregarProyectorLuminen_Click);
+            // 
+            // cmbLuminen
+            // 
+            this.cmbLuminen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbLuminen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbLuminen.FormattingEnabled = true;
+            this.cmbLuminen.Location = new System.Drawing.Point(128, 246);
+            this.cmbLuminen.Name = "cmbLuminen";
+            this.cmbLuminen.Size = new System.Drawing.Size(208, 21);
+            this.cmbLuminen.TabIndex = 219;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 248);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.TabIndex = 220;
+            this.label3.Text = "Luminen";
+            // 
+            // btnAgregarProyectorResolucion
+            // 
+            this.btnAgregarProyectorResolucion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProyectorResolucion.AutoSize = true;
+            this.btnAgregarProyectorResolucion.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarProyectorResolucion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProyectorResolucion.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProyectorResolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProyectorResolucion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProyectorResolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProyectorResolucion.Image")));
+            this.btnAgregarProyectorResolucion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarProyectorResolucion.Location = new System.Drawing.Point(342, 195);
+            this.btnAgregarProyectorResolucion.Name = "btnAgregarProyectorResolucion";
+            this.btnAgregarProyectorResolucion.Size = new System.Drawing.Size(30, 30);
+            this.btnAgregarProyectorResolucion.TabIndex = 218;
+            this.btnAgregarProyectorResolucion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarProyectorResolucion.UseVisualStyleBackColor = false;
+            this.btnAgregarProyectorResolucion.Click += new System.EventHandler(this.btnAgregarProyectorResolucion_Click);
+            // 
+            // cmbResolucion
+            // 
+            this.cmbResolucion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbResolucion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbResolucion.FormattingEnabled = true;
+            this.cmbResolucion.Location = new System.Drawing.Point(128, 204);
+            this.cmbResolucion.Name = "cmbResolucion";
+            this.cmbResolucion.Size = new System.Drawing.Size(208, 21);
+            this.cmbResolucion.TabIndex = 216;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(28, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.TabIndex = 217;
+            this.label9.Text = "Resolución";
             // 
             // frmProcesoIngresoProyector
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 345);
+            this.ClientSize = new System.Drawing.Size(800, 383);
+            this.Controls.Add(this.btnAgregarProyectorLuminen);
+            this.Controls.Add(this.cmbLuminen);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnAgregarProyectorResolucion);
+            this.Controls.Add(this.cmbResolucion);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnAgregarProyectorCaracteristica);
             this.Controls.Add(this.cmbCaracteristica);
             this.Controls.Add(this.label6);
@@ -421,5 +513,11 @@
         private System.Windows.Forms.Button btnAgregarProyectorCaracteristica;
         private System.Windows.Forms.ComboBox cmbCaracteristica;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAgregarProyectorLuminen;
+        private System.Windows.Forms.ComboBox cmbLuminen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAgregarProyectorResolucion;
+        private System.Windows.Forms.ComboBox cmbResolucion;
+        private System.Windows.Forms.Label label9;
     }
 }

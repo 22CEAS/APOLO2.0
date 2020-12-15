@@ -2122,12 +2122,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_impresora`(
 	IN _observacion NVARCHAR(255),
 	IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(255), 
+	IN _multifuncional TINYINT,
 	OUT _idIngresoDet INT
 )
 BEGIN
 	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_impresora);
-	INSERT INTO ingreso_det_impresora (idIngresoDet,idIngreso,idMarca,idModelo,idCaracteristica,caracteristica,partNumber,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
-	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idCaracteristica,_caracteristica,_partNumber,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	INSERT INTO ingreso_det_impresora (idIngresoDet,idIngreso,idMarca,idModelo,idCaracteristica,caracteristica,multifuncional,partNumber,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idCaracteristica,_caracteristica,_multifuncional,_partNumber,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
 	COMMIT;
 END
 $$
@@ -2150,12 +2151,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_monitor`(
 	IN _observacion NVARCHAR(255),
 	IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(255), 
+	IN _hdmi TINYINT,
+	IN _vga TINYINT,
+	IN _displayPort TINYINT,
 	OUT _idIngresoDet INT
 )
 BEGIN
 	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_monitor);
-	INSERT INTO ingreso_det_monitor (idIngresoDet,idIngreso,idMarca,idModelo,idTipo,tipo,partNumber,pantalla,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
-	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipo,_tipo,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	INSERT INTO ingreso_det_monitor (idIngresoDet,idIngreso,idMarca,idModelo,idTipo,tipo,hdmi,vga,displayPort,partNumber,pantalla,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipo,_tipo,_hdmi,_vga,_displayPort,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
 	COMMIT;
 END
 $$
@@ -2209,12 +2213,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_proyectorEcram`(
 	IN _observacion NVARCHAR(255),
 	IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(100), 
+	IN _idResolucion INT ,
+	IN _idLuminen INT ,
 	OUT _idIngresoDet INT
 )
 BEGIN
 	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det_proyectorEcram);
-	INSERT INTO ingreso_det_proyectorEcram (idIngresoDet,idIngreso,idMarca,idModelo,idTipoEquipo,idCaracteristica,caracteristica,partNumber,tamanoEcram,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
-	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_partNumber,_tamanoEcram,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	INSERT INTO ingreso_det_proyectorEcram (idIngresoDet,idIngreso,idMarca,idModelo,idTipoEquipo,idCaracteristica,caracteristica,idResolucion,idLuminen,partNumber,tamanoEcram,garantia,cantidad,subTotal, observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idMarca,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_idResolucion,_idLuminen,_partNumber,_tamanoEcram,_garantia,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
 	COMMIT;
 END
 $$
@@ -2241,13 +2247,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_tablet`(
 	IN _ubicacion NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
 	IN _usuario_ins NVARCHAR(255), 
+	IN _codigo NVARCHAR(255), 
 	OUT _idTablet INT
 )
 BEGIN
-	SET @codigo=(SELECT CONCAT("PCR-TAB",IFNULL( MAX( idTablet ) , 0 )+1) from tablet);
 	SET _idTablet=(SELECT IFNULL( MAX( idTablet ) , 0 )+1 FROM tablet);
 	INSERT INTO tablet (idTablet,codigo,idIngreso,idIngresoDet,idModelo,idProcesador,idSO,idRam,idRom,pantalla,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
-	(_idTablet,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idProcesador,_idSO,_idRam,_idRom,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	(_idTablet,_codigo,_idIngreso,_idIngresoDet,_idModelo,_idProcesador,_idSO,_idRam,_idRom,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
 	COMMIT;
 END
 $$
@@ -2271,13 +2277,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_impresora`(
 	IN _ubicacion NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
 	IN _usuario_ins NVARCHAR(255), 
+	IN _codigo NVARCHAR(255), 
+	IN _multifuncional TINYINT,
 	OUT _idImpresora INT
 )
 BEGIN
-	SET @codigo=(SELECT CONCAT("PCR-IMP",IFNULL( MAX( idImpresora ) , 0 )+1) FROM impresora);
 	SET _idImpresora=(SELECT IFNULL( MAX( idImpresora ) , 0 )+1 FROM impresora);
-	INSERT INTO impresora (idImpresora,codigo,idIngreso,idIngresoDet,idModelo,idCaracteristica,caracteristica,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
-	(_idImpresora,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idCaracteristica,_caracteristica,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	INSERT INTO impresora (idImpresora,codigo,idIngreso,idIngresoDet,idModelo,idCaracteristica,caracteristica,multifuncional,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idImpresora,_codigo,_idIngreso,_idIngresoDet,_idModelo,_idCaracteristica,_caracteristica,_multifuncional,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
 	COMMIT;
 END
 $$
@@ -2302,13 +2309,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_monitor`(
 	IN _ubicacion NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
 	IN _usuario_ins NVARCHAR(255), 
+	IN _codigo NVARCHAR(255), 
+	IN _hdmi TINYINT,
+	IN _vga TINYINT,
+	IN _displayPort TINYINT,
 	OUT _idMonitor INT
 )
 BEGIN
-	SET @codigo=(SELECT CONCAT("PCR-MTR",IFNULL( MAX( idMonitor ) , 0 )+1) from monitor);
 	SET _idMonitor=(SELECT IFNULL( MAX( idMonitor ) , 0 )+1 FROM monitor);
-	INSERT INTO monitor (idMonitor,codigo,idIngreso,idIngresoDet,idModelo,idTipo,tipo,pantalla,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
-	(_idMonitor,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipo,_tipo,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	INSERT INTO monitor (idMonitor,codigo,idIngreso,idIngresoDet,idModelo,idTipo,tipo,hdmi,vga,displayPort,pantalla,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idMonitor,_codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipo,_tipo,_hdmi,_vga,_displayPort,_pantalla,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
 	COMMIT;
 END
 $$
@@ -2334,13 +2344,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proyectorEcram`(
 	IN _ubicacion NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
 	IN _usuario_ins NVARCHAR(255), 
+	IN _codigo NVARCHAR(255), 
+	IN _idResolucion INT ,
+	IN _idLuminen INT ,
 	OUT _idProyectorEcram INT
 )
 BEGIN
-	SET @codigo=(SELECT CONCAT("PCR-PROY",IFNULL( MAX( idProyectorEcram ) , 0 )+1) from proyectorEcram);
 	SET _idProyectorEcram=(SELECT IFNULL( MAX( idProyectorEcram ) , 0 )+1 FROM proyectorEcram);
-	INSERT INTO proyectorEcram (idProyectorEcram,codigo,idIngreso,idIngresoDet,idModelo,idTipoEquipo,idCaracteristica,caracteristica,tamanoEcram,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
-	(_idProyectorEcram,@codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_tamanoEcram,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
+	INSERT INTO proyectorEcram (idProyectorEcram,codigo,idIngreso,idIngresoDet,idModelo,idTipoEquipo,idCaracteristica,caracteristica,idResolucion,idLuminen,tamanoEcram,serieFabrica,partNumber,garantia,fecInicioSeguro,fecFinSeguro,compraSubarriendo,ubicacion,observacion,usuario_ins,estado) values
+	(_idProyectorEcram,_codigo,_idIngreso,_idIngresoDet,_idModelo,_idTipoEquipo,_idCaracteristica,_caracteristica,_idResolucion,_idLuminen,_tamanoEcram,_serieFabrica,_partNumber,_garantia,_fecInicioSeguro,_fecFinSeguro,_compraSubarriendo,_ubicacion,_observacion,_usuario_ins,2);
 	COMMIT;
 END
 $$
@@ -2507,6 +2519,270 @@ BEGIN
 		estado=_estado,
 		usuario_mod=_usuario_mod
 	WHERE idIngreso=_idIngreso; 
+END
+$$
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_impresora`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_impresora`(
+	IN _idProveedor int,
+	IN _monthIngreso int,
+	IN _yearIngreso NVARCHAR(80),
+	OUT _proximoCodigo NVARCHAR(80),
+	OUT _prefijo NVARCHAR(80)
+)
+BEGIN
+
+		
+	SET _proximoCodigo=(
+	SELECT count(*)
+	from impresora
+	WHERE  
+	length(codigo)=15
+	and SUBSTRING(codigo, 8, 2) =  _yearIngreso
+	and SUBSTRING(codigo, 10, 2) = _monthIngreso
+	and SUBSTRING(codigo, 12, 1)  =  (select abreviacionF
+									from proveedor
+									where idProveedor=_idProveedor
+									)				
+	);
+		
+	SET @_abreviacion=(select abreviacion from proveedor where idProveedor=_idProveedor);
+
+	#SET DE PREFIJO SEGUN MARCA
+
+
+	SET @_prefijo = ( CONCAT("PCR-IMP",_yearIngreso,_monthIngreso,@_abreviacion));
+	SET _prefijo = @_prefijo;										
+
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_monitor`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_monitor`(
+	IN _idProveedor int,
+	IN _monthIngreso int,
+	IN _yearIngreso NVARCHAR(80),
+	OUT _proximoCodigo NVARCHAR(80),
+	OUT _prefijo NVARCHAR(80)
+)
+BEGIN
+
+	SET _proximoCodigo=(
+	SELECT count(*)
+	from monitor
+	WHERE  
+	length(codigo)=15
+	and SUBSTRING(codigo, 8, 2) =  _yearIngreso
+	and SUBSTRING(codigo, 10, 2) = _monthIngreso
+	and SUBSTRING(codigo, 12, 1)  =  (select abreviacion
+									From proveedor
+									where idProveedor=_idProveedor
+									)				
+	);
+		
+	SET @_abreviacion=(select abreviacion from proveedor where idProveedor=_idProveedor);
+
+	#SET DE PREFIJO SEGUN MARCA
+
+	SET @_prefijo = ( CONCAT("PCR-MTR",_yearIngreso,_monthIngreso,@_abreviacion));
+	SET _prefijo = @_prefijo;										
+
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_tablet`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_tablet`(
+	IN _idProveedor int,
+	IN _monthIngreso int,
+	IN _yearIngreso NVARCHAR(80),
+	OUT _proximoCodigo NVARCHAR(80),
+	OUT _prefijo NVARCHAR(80)
+)
+BEGIN
+
+	SET _proximoCodigo=(
+	SELECT count(*)
+	from tablet
+	WHERE  
+	length(codigo)=15
+	and SUBSTRING(codigo, 8, 2) =  _yearIngreso
+	and SUBSTRING(codigo, 10, 2) = _monthIngreso
+	and SUBSTRING(codigo, 12, 1)  =  (select abreviacion	from proveedor
+									where idProveedor=_idProveedor
+									)				
+	);
+		
+	SET @_abreviacion=(select abreviacion from proveedor where idProveedor=_idProveedor);
+
+	#SET DE PREFIJO SEGUN MARCA
+
+	SET @_prefijo = ( CONCAT("PCR-TAB",_yearIngreso,_monthIngreso,@_abreviacion));
+	SET _prefijo = @_prefijo;										
+
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_proy_ecram`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_proy_ecram`(
+	IN _marcaProyEcram NVARCHAR(80),
+	IN _idProveedor int,
+	IN _monthIngreso int,
+	IN _yearIngreso NVARCHAR(80),
+	OUT _proximoCodigo NVARCHAR(80),
+	OUT _prefijo NVARCHAR(80)
+)
+BEGIN
+	IF _marcaProyEcram="PCR-PROY" THEN
+		SET _proximoCodigo=(
+		SELECT count(*)
+		from proyectorecram
+		WHERE  SUBSTRING(codigo, 1, 8) = 'PCR-PROY'
+		and length(codigo)=16
+		and SUBSTRING(codigo, 9, 2) =  _yearIngreso
+		and SUBSTRING(codigo, 11, 2) = _monthIngreso
+		and SUBSTRING(codigo, 13, 1)  =  (select abreviacion
+										from proveedor
+										where idProveedor=_idProveedor
+										)				
+		);
+	ELSE
+		SET _proximoCodigo=(
+		SELECT count(*)
+		from proyectorecram
+		WHERE  SUBSTRING(codigo, 1, 7) = 'PCR-TRI'
+		and length(codigo)=15
+		and SUBSTRING(codigo, 8, 2) =  _yearIngreso
+		and SUBSTRING(codigo, 10, 2) = _monthIngreso
+		and SUBSTRING(codigo, 12, 1)  =  (select abreviacion
+										from proveedor
+										where idProveedor=_idProveedor
+										)				
+		);
+
+	END IF;
+
+
+
+	SET @_abreviacion=(select abreviacion from proveedor where idProveedor=_idProveedor);
+
+	#SET DE PREFIJO SEGUN MARCA
+
+	IF _marcaProyEcram="PCR-PROY" then
+		SET @_prefijo = ( CONCAT("PCR-PROY",_yearIngreso,_monthIngreso,@_abreviacion));
+	else
+		SET @_prefijo = ( CONCAT("PCR-TRI",_yearIngreso,_monthIngreso,@_abreviacion));
+	END IF;
+
+	SET _prefijo = @_prefijo;										
+    #SET _proximoCodigo = @_proximoCodigo;
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+
+ALTER TABLE `bd_leasein`.`ingreso_det` 
+ADD COLUMN `idTipoEquipoLC` int(0) ZEROFILL NULL AFTER `idIngreso`;
+ALTER TABLE `bd_leasein`.`ingreso_det` 
+ADD COLUMN `nombreTipoEquipoLC` varchar(255) NULL AFTER `idTipoEquipoLC`;
+
+ALTER TABLE `bd_leasein`.`laptop_cpu` 
+ADD COLUMN `idTipoEquipoLC` int NULL AFTER `codigo`;
+ALTER TABLE `bd_leasein`.`laptop_cpu` 
+ADD COLUMN `nombreTipoEquipoLC` varchar(255) NULL AFTER `idTipoEquipoLC`;
+
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
+	IN _idIngreso INT,
+	IN _idMarcaLC INT,
+	IN _idModeloLC INT,
+	IN _partNumber NVARCHAR(255),
+	IN _pantalla DOUBLE,
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _idProcesador INT,
+	IN _idVideo INT,
+	IN _idDisco1 INT,
+	IN _cantidadDisco1 INT,
+	IN _idDisco2 INT,
+	IN _cantidadDisco2 INT,
+	IN _idMemoria1 INT,
+	IN _cantidadMemoria1 INT,
+	IN _idMemoria2 INT,
+	IN _cantidadMemoria2 INT,
+	IN _idMemoria3 INT,
+	IN _cantidadMemoria3 INT,
+	IN _idModeloWindows INT,
+	IN _idModeloOffice INT,
+	IN _idModeloAntivirus INT,
+	IN _caracteristicas NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	IN _idTipoEquipoLC INT,
+	IN _nombreTipoEquipoLC NVARCHAR(255), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET _idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det);
+	INSERT INTO ingreso_det (idIngresoDet,idIngreso,idTipoEquipoLC,nombreTipoEquipoLC,idMarcaLC,idModeloLC,partNumber,pantalla,garantia,cantidad,subTotal,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idMemoria3,cantidadMemoria3,idModeloWindows,idModeloOffice,idModeloAntivirus,caracteristicas,observacion,estado,usuario_ins) values
+	(_idIngresoDet,_idIngreso,_idTipoEquipoLC,_nombreTipoEquipoLC,_idMarcaLC,_idModeloLC,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idMemoria3,_cantidadMemoria3,_idModeloWindows,_idModeloOffice,_idModeloAntivirus,_caracteristicas,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_laptop_cpu`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _descripcion NVARCHAR(250),
+	IN _tamanoPantalla DOUBLE,
+	IN _idProcesador INT,
+	IN _idVideo INT,
+	IN _partNumber NVARCHAR(80),
+	IN _serieFabrica NVARCHAR(80),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _ubicacion NVARCHAR(80),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100), 
+	IN _compraSubarriendo TINYINT,
+	IN _codigo NVARCHAR(80),
+	IN _idTipoEquipoLC INT,
+	IN _nombreTipoEquipoLC NVARCHAR(255), 
+	OUT _idLC INT
+)
+BEGIN
+	#SET @codigo=(SELECT CONCAT("PCR-LAP",IFNULL( MAX( idLC ) , 0 )+1) from laptop_cpu);
+	SET _idLC=(SELECT IFNULL( MAX( idLC ) , 0 )+1 FROM laptop_cpu);
+	INSERT INTO laptop_cpu (idLC,codigo,idIngreso,idIngresoDet,idTipoEquipoLC,nombreTipoEquipoLC,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins,compraSubarriendo) values
+	(_idLC,_codigo,_idIngreso,_idIngresoDet,_idTipoEquipoLC,_nombreTipoEquipoLC,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins,_compraSubarriendo);
+	COMMIT;
 END
 $$
 DELIMITER ;

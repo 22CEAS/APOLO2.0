@@ -1878,6 +1878,18 @@ Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="PROYECTOR_TIPO" and activo=1;
 
+DROP view IF EXISTS `vista_proyectores_resolucion`;
+create view vista_proyectores_resolucion as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="PROYECTOR_RESOLUCION" and activo=1;
+
+DROP view IF EXISTS `vista_proyectores_luminen`;
+create view vista_proyectores_luminen as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="PROYECTOR_LUMINEN" and activo=1;
+
 DROP view IF EXISTS `vista_ecram_marca`;
 create view vista_ecram_marca as
 Select m.idMarca, m.nombre
@@ -1902,6 +1914,12 @@ Select idCategoria as idAuxiliar, nombre as descripcion
 From categoria
 where idCategoria=6 or idCategoria=7 ;
 
+
+DROP view IF EXISTS `vista_laptop_cpu_categoria`;
+create view vista_laptop_cpu_categoria as
+Select idCategoria as idAuxiliar, nombre as descripcion
+From categoria
+where idCategoria=1 or idCategoria=2 ;
 
 
 DROP view IF EXISTS `vista_ingresos_detalles_tablet_modificable`;
@@ -1959,4 +1977,64 @@ FROM
 
 
 
+DROP view IF EXISTS `vista_cpus_marca`;
+create view vista_cpus_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=2 and m.estado=1 ;
+
+
+DROP view IF EXISTS `vista_cpus_modelo`;
+create view vista_cpus_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=2 and m.estado=1 ;
+
+
+
+DROP view IF EXISTS `vista_ingresos_detalles_modificable`;
+create view vista_ingresos_detalles_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo,
+	vp.tipo AS tipoProcesador,
+	vp.generacion AS generacionProcesador,
+	IFNULL( vv.nombreModelo, '' ) AS modeloVideo,
+	IFNULL( vv.capacidad, '' ) AS capacidadVideo,
+	IFNULL( vd1.capacidad, 0 ) AS CapacidadDisco1,
+	IFNULL( vd1.tipo, '' ) AS TipoDisco1,
+	IFNULL( vd1.tamano, '' ) AS TamanoDisco1,
+	IFNULL( vd2.capacidad, 0 ) AS CapacidadDisco2,
+	IFNULL( vd2.tipo, '' ) AS TipoDisco2,
+	IFNULL( vd2.tamano, '' ) AS TamanoDisco2,
+	IFNULL( m1.capacidad, 0 ) AS CapacidadMemoria1,
+	IFNULL( m1.tipo, '' ) AS TipoMemoria1,
+	IFNULL( m1.tipo2, '' ) AS Tipo2Memoria1,
+	IFNULL( m2.capacidad, 0 ) AS CapacidadMemoria2,
+	IFNULL( m2.tipo, '' ) AS TipoMemoria2,
+	IFNULL( m2.tipo2, '' ) AS Tipo2Memoria2,
+	IFNULL( m3.capacidad, 0 ) AS CapacidadMemoria3,
+	IFNULL( m3.tipo, '' ) AS TipoMemoria3,
+	IFNULL( m3.tipo2, '' ) AS Tipo2Memoria3,
+	IFNULL( l1.Version, '' ) AS ModeloWindows,
+	IFNULL( l1.Categoria, '' ) AS CategoriaWindows,
+	IFNULL( l2.Version, '' ) AS ModeloOffice,
+	IFNULL( l2.Categoria, '' ) AS CategoriaOffice,
+	IFNULL( l3.Version, '' ) AS ModeloAntivirus,
+	IFNULL( l3.Categoria, '' ) AS CategoriaAntivirus 
+FROM
+	ingreso_det d
+	INNER JOIN marca ma ON d.idMarcaLC = ma.idMarca
+	INNER JOIN modelo mo ON d.idModeloLC = mo.idModelo
+	INNER JOIN vista_maestro_procesador vp ON d.idProcesador = vp.idProcesador
+	LEFT JOIN vista_maestro_video vv ON d.idVideo = vv.idVideo
+	LEFT JOIN vista_maestro_disco vd1 ON d.idDisco1 = vd1.idDisco
+	LEFT JOIN vista_maestro_disco vd2 ON d.idDisco2 = vd2.idDisco
+	LEFT JOIN vista_maestro_memoria m1 ON d.idMemoria1 = m1.idMemoria
+	LEFT JOIN vista_maestro_memoria m2 ON d.idMemoria2 = m2.idMemoria
+	LEFT JOIN vista_maestro_memoria m3 ON d.idMemoria3 = m3.idMemoria
+	LEFT JOIN vista_maestro_licencias l1 ON d.idModeloWindows = l1.IdModelo
+	LEFT JOIN vista_maestro_licencias l2 ON d.idModeloOffice = l2.IdModelo
+	LEFT JOIN vista_maestro_licencias l3 ON d.idModeloAntivirus = l3.IdModelo ;
 

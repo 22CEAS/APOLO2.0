@@ -53,5 +53,8 @@ namespace Modelo
 
         public double ProyectorTamano { get => Proyector.TamanoProyector; set => Proyector.TamanoProyector = value; }
 
+        public int ProyectorIdResolucion { get => Proyector.IdResolucion; set => Proyector.IdResolucion = value; }
+        public int ProyectorIdLuminen { get => Proyector.IdLuminen; set => Proyector.IdLuminen = value; }
+
     }
 }

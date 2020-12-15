@@ -53,6 +53,9 @@
             this.SerieFabrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chbDisplayPort = new System.Windows.Forms.CheckBox();
+            this.chbVga = new System.Windows.Forms.CheckBox();
+            this.chbHdmi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -350,12 +353,54 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // chbDisplayPort
+            // 
+            this.chbDisplayPort.AutoSize = true;
+            this.chbDisplayPort.BackColor = System.Drawing.Color.White;
+            this.chbDisplayPort.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbDisplayPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDisplayPort.Location = new System.Drawing.Point(198, 282);
+            this.chbDisplayPort.Name = "chbDisplayPort";
+            this.chbDisplayPort.Size = new System.Drawing.Size(100, 20);
+            this.chbDisplayPort.TabIndex = 191;
+            this.chbDisplayPort.Text = "Display Port";
+            this.chbDisplayPort.UseVisualStyleBackColor = false;
+            // 
+            // chbVga
+            // 
+            this.chbVga.AutoSize = true;
+            this.chbVga.BackColor = System.Drawing.Color.White;
+            this.chbVga.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbVga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbVga.Location = new System.Drawing.Point(114, 282);
+            this.chbVga.Name = "chbVga";
+            this.chbVga.Size = new System.Drawing.Size(55, 20);
+            this.chbVga.TabIndex = 192;
+            this.chbVga.Text = "VGA";
+            this.chbVga.UseVisualStyleBackColor = false;
+            // 
+            // chbHdmi
+            // 
+            this.chbHdmi.AutoSize = true;
+            this.chbHdmi.BackColor = System.Drawing.Color.White;
+            this.chbHdmi.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbHdmi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbHdmi.Location = new System.Drawing.Point(28, 282);
+            this.chbHdmi.Name = "chbHdmi";
+            this.chbHdmi.Size = new System.Drawing.Size(61, 20);
+            this.chbHdmi.TabIndex = 193;
+            this.chbHdmi.Text = "HDMI";
+            this.chbHdmi.UseVisualStyleBackColor = false;
+            // 
             // frmProcesoIngresoMonitor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 388);
+            this.Controls.Add(this.chbHdmi);
+            this.Controls.Add(this.chbVga);
+            this.Controls.Add(this.chbDisplayPort);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSubirSeries);
@@ -417,5 +462,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SerieFabrico;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox chbDisplayPort;
+        private System.Windows.Forms.CheckBox chbVga;
+        private System.Windows.Forms.CheckBox chbHdmi;
     }
 }
