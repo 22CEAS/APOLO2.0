@@ -10,6 +10,8 @@ namespace Modelo
 {
     public class LC
     {
+        private int idTipoEquipoLC;
+        private string nombreTipoEquipoLC;
         private int idLC;
         private string codigo;
         private Modelo modelo;
@@ -218,5 +220,7 @@ namespace Modelo
         public string LicenciaOffice { get => licenciaOffice; set => licenciaOffice = value; }
         public string IdSalida { get => idSalida; set => idSalida = value; }
         public string RucCliente { get => rucCliente; set => rucCliente = value; }
+        public int IdTipoEquipoLC { get => idTipoEquipoLC; set => idTipoEquipoLC = value; }
+        public string NombreTipoEquipoLC { get => nombreTipoEquipoLC; set => nombreTipoEquipoLC = value; }
     }
 }

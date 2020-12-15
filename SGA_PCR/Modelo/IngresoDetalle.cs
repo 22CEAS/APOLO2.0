@@ -56,5 +56,10 @@ namespace Modelo
         public string LaptopNombreModeloVideo { get => Laptop.NombreModeloVideo; set => Laptop.NombreModeloVideo = value; }
         public int LaptopCapacidadVideo { get => Laptop.CapacidadVideo; set => Laptop.CapacidadVideo = value; }
         public double LaptopTamanoPantalla { get => Laptop.TamanoPantalla; set => Laptop.TamanoPantalla = value; }
+
+        public int LaptopIdTipoEquipoLC { get => Laptop.IdTipoEquipoLC; set => Laptop.IdTipoEquipoLC = value; }
+        public string LaptopTipoEquipoLC { get => Laptop.NombreTipoEquipoLC; set => Laptop.NombreTipoEquipoLC = value; }
+
+
     }
 }

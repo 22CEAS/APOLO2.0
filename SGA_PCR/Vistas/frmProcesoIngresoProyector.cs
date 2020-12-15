@@ -20,7 +20,8 @@ namespace Apolo
         DataTable tablaModelo;
         DataTable tablaTipo;
         DataTable tablaCaracteristica;
-        DataTable tablaDestino;
+        DataTable tablaResolucion;
+        DataTable tablaLuminen;
 
         IngresoDetalleProyector detalle;
 
@@ -35,6 +36,8 @@ namespace Apolo
         private int ecramIdCategoria = 7;
         private string proyectorTipo = "PROYECTOR_TIPO";
         private string ecramTipo = "ECRAM_TIPO";
+        private string proyectorResolucion = "PROYECTOR_RESOLUCION";
+        private string proyectorLuminen = "PROYECTOR_LUMINEN";
 
         public frmProcesoIngresoProyector(int idUsuario, string nombreUsuario)
         {
@@ -68,6 +71,10 @@ namespace Apolo
             cmbTipo.SelectedIndex = -1;
 
             txtPantalla.Enabled = false;
+            btnAgregarProyectorResolucion.Enabled = false;
+            btnAgregarProyectorLuminen.Enabled = false;
+            cmbResolucion.Enabled = false;
+            cmbLuminen.Enabled = false;
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -219,6 +226,13 @@ namespace Apolo
             txtPrecio.Text = detalleTraido.Precio.ToString();
             txtCantidad.Text = detalleTraido.Cantidad.ToString();
 
+            if (detalleTraido.ProyectorIdTipoEquipoProyector == 6)
+            {
+                cmbResolucion.SelectedValue = detalleTraido.ProyectorIdResolucion;
+                cmbLuminen.SelectedValue = detalleTraido.ProyectorIdLuminen;
+            }
+
+
             foreach (String serie in detalleTraido.Series)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvSerieFabrica.Rows[0].Clone();
@@ -260,6 +274,14 @@ namespace Apolo
             {
                 int idCategoria = Convert.ToInt32(tablaTipo.Rows[h]["idAuxiliar"].ToString());
                 proyector.TamanoProyector = (idCategoria == 7) ? Double.Parse(txtPantalla.Text) : 0;
+                if (idCategoria == 6)
+                {
+                    j = cmbLuminen.SelectedIndex;
+                    proyector.IdLuminen = Convert.ToInt32(cmbLuminen.SelectedValue.ToString());
+                    
+                    j = cmbResolucion.SelectedIndex;
+                    proyector.IdResolucion = Convert.ToInt32(cmbResolucion.SelectedValue.ToString());
+                }
                 
             }
 
@@ -354,6 +376,21 @@ namespace Apolo
                     if (!(pantalla.Length > 0))
                     {
                         MessageBox.Show("Ingrese un tamaño válido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return false;
+                    }
+                }
+                if (idCategoria == 6)
+                {
+                    if (cmbLuminen.SelectedValue == null || cmbLuminen.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("No se puede grabar si no\nha seleccionado un Luminen correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if (cmbResolucion.SelectedValue == null || cmbResolucion.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("No se puede grabar si no\nha seleccionado una Resolución correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
                         return false;
                     }
                 }
@@ -495,13 +532,47 @@ namespace Apolo
                 cmbMarca.ValueMember = "idMarca";
                 cmbMarca.SelectedIndex = (tablaMarca.Rows.Count > 0) ? -1 : -1;
 
+                if (idCategoria == 6)
+                {
+                    tablaResolucion = (idCategoria == 6) ? ingresoDA.ListarProyectorResolucion() : null;
+                    cmbResolucion.DataSource = (tablaResolucion.Rows.Count > 0) ? tablaResolucion : null;
+                    cmbResolucion.DisplayMember = "descripcion";
+                    cmbResolucion.ValueMember = "idAuxiliar";
+                    cmbResolucion.SelectedIndex = (tablaResolucion.Rows.Count > 0) ? -1 : -1;
+                    cmbResolucion.Enabled = (idCategoria == 6) ? true : false;
+
+                    tablaLuminen = (idCategoria == 6) ? ingresoDA.ListarProyectorLuminen() : null;
+                    cmbLuminen.DataSource = (tablaLuminen.Rows.Count > 0) ? tablaLuminen : null;
+                    cmbLuminen.DisplayMember = "descripcion";
+                    cmbLuminen.ValueMember = "idAuxiliar";
+                    cmbLuminen.SelectedIndex = (tablaLuminen.Rows.Count > 0) ? -1 : -1;
+                    cmbLuminen.Enabled = (idCategoria == 6) ? true : false;
+
+                    btnAgregarProyectorResolucion.Enabled = true;
+                    btnAgregarProyectorLuminen.Enabled = true;
+                    cmbResolucion.Enabled = true;
+                    cmbLuminen.Enabled = true;
+                }
+                else
+                {
+                    tablaResolucion = null;
+                    cmbResolucion.DataSource = null;
+                    tablaLuminen = null;
+                    cmbLuminen.DataSource = null;
+
+                    btnAgregarProyectorResolucion.Enabled = false;
+                    btnAgregarProyectorLuminen.Enabled = false;
+                    cmbResolucion.Enabled = false;
+                    cmbLuminen.Enabled = false;
+                }
+
+
 
                 tablaCaracteristica = (idCategoria == 6) ? ingresoDA.ListarProyectorTipo() : ingresoDA.ListarEcramTipo();
                 cmbCaracteristica.DataSource = (tablaCaracteristica.Rows.Count > 0) ? tablaCaracteristica : null;
                 cmbCaracteristica.DisplayMember = "descripcion";
                 cmbCaracteristica.ValueMember = "idAuxiliar";
                 cmbCaracteristica.SelectedIndex = (tablaCaracteristica.Rows.Count > 0) ? -1 : -1;
-
 
 
                 txtPantalla.Enabled = (idCategoria == 6) ? false : true;
@@ -512,7 +583,47 @@ namespace Apolo
                 cmbMarca.DataSource =  null;
                 cmbModelo.DataSource = null;
                 cmbCaracteristica.DataSource = null;
+                cmbResolucion.DataSource = null;
+                cmbLuminen.DataSource = null;
                 txtPantalla.Enabled = false;
+            }
+        }
+
+        private void btnAgregarProyectorResolucion_Click(object sender, EventArgs e)
+        {
+            int h = cmbTipo.SelectedIndex;
+            if (h >= 0)
+            {
+
+                frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.proyectorResolucion);
+                if (frmBP.ShowDialog() == DialogResult.OK)
+                {
+                }
+                tablaResolucion = ingresoDA.ListarProyectorResolucion();
+                cmbResolucion.DataSource = (tablaResolucion.Rows.Count > 0) ? tablaResolucion : null;
+                cmbResolucion.DisplayMember = "descripcion";
+                cmbResolucion.ValueMember = "idAuxiliar";
+                cmbResolucion.SelectedIndex = -1;
+
+            }
+        }
+
+        private void btnAgregarProyectorLuminen_Click(object sender, EventArgs e)
+        {
+            int h = cmbTipo.SelectedIndex;
+            if (h >= 0)
+            {
+
+                frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.proyectorLuminen);
+                if (frmBP.ShowDialog() == DialogResult.OK)
+                {
+                }
+                tablaLuminen = ingresoDA.ListarProyectorLuminen();
+                cmbLuminen.DataSource = (tablaLuminen.Rows.Count > 0) ? tablaLuminen : null;
+                cmbLuminen.DisplayMember = "descripcion";
+                cmbLuminen.ValueMember = "idAuxiliar";
+                cmbLuminen.SelectedIndex = -1;
+
             }
         }
     }

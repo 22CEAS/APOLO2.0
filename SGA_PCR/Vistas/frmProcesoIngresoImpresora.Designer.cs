@@ -51,6 +51,7 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chbMultifuncional = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -329,12 +330,26 @@
             this.label2.TabIndex = 197;
             this.label2.Text = "Modelo";
             // 
+            // chbMultifuncional
+            // 
+            this.chbMultifuncional.AutoSize = true;
+            this.chbMultifuncional.BackColor = System.Drawing.Color.White;
+            this.chbMultifuncional.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbMultifuncional.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbMultifuncional.Location = new System.Drawing.Point(229, 214);
+            this.chbMultifuncional.Name = "chbMultifuncional";
+            this.chbMultifuncional.Size = new System.Drawing.Size(107, 20);
+            this.chbMultifuncional.TabIndex = 213;
+            this.chbMultifuncional.Text = "Multifuncional";
+            this.chbMultifuncional.UseVisualStyleBackColor = false;
+            // 
             // frmProcesoIngresoImpresora
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 327);
+            this.Controls.Add(this.chbMultifuncional);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSubirSeries);
@@ -392,5 +407,6 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chbMultifuncional;
     }
 }

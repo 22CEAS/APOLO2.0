@@ -203,6 +203,7 @@ namespace Apolo
             cmbTipo.SelectedValue = detalleTraido.ImpresoraIdTipo;
             impresora = detalleTraido.Impresora;
             chbGarantia.Checked = (impresora.Garantia == 1) ? true : false;
+            chbMultifuncional.Checked = (impresora.Multifuncional == 1) ? true : false;
             txtPartNumber.Text = impresora.PartNumber;
             txtPrecio.Text = detalleTraido.Precio.ToString();
             txtCantidad.Text = detalleTraido.Cantidad.ToString();
@@ -237,6 +238,7 @@ namespace Apolo
 
             impresora.PartNumber = txtPartNumber.Text;
             impresora.Garantia = (chbGarantia.Checked) ? 1 : 0;
+            impresora.Multifuncional = (chbMultifuncional.Checked) ? 1 : 0;
             detalle.Impresora = impresora;
             detalle.Precio = Double.Parse(txtPrecio.Text);
             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text);

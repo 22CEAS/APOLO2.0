@@ -18,7 +18,7 @@ namespace Apolo
     {
         DataTable tablaMarca;
         DataTable tablaModelo;
-        DataTable tablaDestino;
+        DataTable tablaTipo;
         DataTable tablaProcesador;
         DataTable tablaMemoria;
         DataTable tablaDisco;
@@ -77,21 +77,32 @@ namespace Apolo
 
             txtCantidad.Text = "1";
 
-            tablaMarca = ingresoDA.ListarMarcas();
-            cmbMarca.DataSource = tablaMarca;
-            cmbMarca.DisplayMember = "nombre";
-            cmbMarca.ValueMember = "idMarca";
-            cmbMarca.SelectedIndex = 0;
-            int i = cmbMarca.SelectedIndex;
-            if (i >= 0) 
-            {
-                int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
-                tablaModelo = ingresoDA.ListarModelos(idMarca);
-                cmbModelo.DataSource = tablaModelo;
-                cmbModelo.DisplayMember = "nombre";
-                cmbModelo.ValueMember = "idModelo";
-                cmbModelo.SelectedIndex = 0;
-            }
+            tablaTipo = ingresoDA.ListarLaptopCpuTipo();
+            cmbTipo.DataSource = tablaTipo;
+            cmbTipo.DisplayMember = "descripcion";
+            cmbTipo.ValueMember = "idAuxiliar";
+            cmbTipo.SelectedIndex = -1;
+
+
+            cmbMarca.DataSource = null;
+            cmbModelo.DataSource = null;
+            txtPantalla.Enabled = false;
+
+            //tablaMarca = ingresoDA.ListarMarcas();
+            //cmbMarca.DataSource = tablaMarca;
+            //cmbMarca.DisplayMember = "nombre";
+            //cmbMarca.ValueMember = "idMarca";
+            //cmbMarca.SelectedIndex = 0;
+            //int i = cmbMarca.SelectedIndex;
+            //if (i >= 0) 
+            //{
+            //    int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+            //    tablaModelo = ingresoDA.ListarModelos(idMarca);
+            //    cmbModelo.DataSource = tablaModelo;
+            //    cmbModelo.DisplayMember = "nombre";
+            //    cmbModelo.ValueMember = "idModelo";
+            //    cmbModelo.SelectedIndex = 0;
+            //}
 
             tablaProcesador = ingresoDA.ListarProcesadores();
 
@@ -171,12 +182,13 @@ namespace Apolo
             vistaMemorias.ClearColumnsFilter();
             vistaProcesadores.ClearColumnsFilter();
             vistaVideos.ClearColumnsFilter();
-                
+
+            cmbTipo.SelectedValue = detalleTraido.LaptopIdTipoEquipoLC;
             cmbMarca.SelectedValue = detalleTraido.LaptopIdMarca;
             cmbModelo.SelectedValue = detalleTraido.LaptopIdModelo;
             laptop = detalleTraido.Laptop;
             chbGarantia.Checked= (laptop.Garantia == 1) ? true : false;
-            txtPantalla.Text = laptop.TamanoPantalla.ToString();
+            txtPantalla.Text = (laptop.IdTipoEquipoLC==1) ?laptop.TamanoPantalla.ToString():"";
             txtPartNumber.Text = laptop.PartNumber.ToString();
             txtPrecio.Text = detalleTraido.Precio.ToString();
             txtCantidad.Text = detalleTraido.Cantidad.ToString();
@@ -259,10 +271,16 @@ namespace Apolo
             int j = cmbMarca.SelectedIndex;
             laptop.Modelo.IdMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
             laptop.Modelo.NombreMarca = tablaMarca.Rows[j]["nombre"].ToString();
+
             j = cmbModelo.SelectedIndex;
             laptop.Modelo.IdModelo = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
             laptop.Modelo.NombreModelo = tablaModelo.Rows[j]["nombre"].ToString();
-            laptop.TamanoPantalla = Double.Parse(txtPantalla.Text);
+
+            j = cmbTipo.SelectedIndex;
+            laptop.IdTipoEquipoLC = Convert.ToInt32(cmbTipo.SelectedValue.ToString());
+            laptop.NombreTipoEquipoLC = tablaTipo.Rows[j]["descripcion"].ToString();
+
+            laptop.TamanoPantalla = (laptop.IdTipoEquipoLC==1) ? Double.Parse(txtPantalla.Text):0;
             laptop.PartNumber = txtPartNumber.Text;
             laptop.Garantia = (chbGarantia.Checked) ? 1 : 0;
             detalle.Laptop = laptop;
@@ -408,9 +426,28 @@ namespace Apolo
             vistaProcesadores.ClearColumnsFilter();
             vistaVideos.ClearColumnsFilter();
 
+
+            //==============================================================================================
+            if (cmbTipo.SelectedValue == null || cmbTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un tipo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return false;
+            }
+
             //==============================================================================================
 
-            if (cmbModelo.SelectedValue == null)
+            if (cmbMarca.SelectedValue == null || cmbMarca.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede grabar si no\nha seleccionado una marca correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                tabControl1.SelectedTab = tabDetalle;
+                return false;
+            }
+
+            //==============================================================================================
+
+            if (cmbModelo.SelectedValue == null || cmbModelo.SelectedIndex == -1)
             {
                 MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
@@ -562,24 +599,89 @@ namespace Apolo
 
             //==============================================================================================
 
-            string partNumber = txtPartNumber.Text;
-            partNumber = partNumber.Trim();
-            if (!(partNumber.Length > 0))
+            int h = cmbTipo.SelectedIndex;
+            if (h >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
-                MessageBox.Show("Ingrese un part number", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabDetalle;
-                return false;
-            }
+                int idCategoria = Convert.ToInt32(tablaTipo.Rows[h]["idAuxiliar"].ToString());
 
-            //==============================================================================================
+                //==Series de Fábrica=======================================================================
+                for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
+                {
+                    if (dgvSerieFabrica.Rows[i].Cells[1].Value == null)
+                    {
+                        if (!dgvSerieFabrica.Rows[i].IsNewRow)
+                        {
+                            dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.Rows[i]);
+                            i = -1;
+                        }
+                    }
+                }
 
-            string pantalla = txtPantalla.Text;
-            pantalla = pantalla.Trim();
-            if (!(pantalla.Length > 0))
-            {
-                MessageBox.Show("Ingrese un tamaño de pantalla válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabDetalle;
-                return false;
+                aux = int.Parse(txtCantidad.Text);
+                filasDgv = dgvSerieFabrica.Rows.Count - 1;
+
+                //======================================================================================
+
+                if (idCategoria == 1)
+                {
+
+                    string partNumber = txtPartNumber.Text;
+                    partNumber = partNumber.Trim();
+                    if (!(partNumber.Length > 0))
+                    {
+                        MessageBox.Show("Ingrese un part number", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        tabControl1.SelectedTab = tabDetalle;
+                        return false;
+                    }
+
+                    //==============================================================================================
+
+                    string pantalla = txtPantalla.Text;
+                    pantalla = pantalla.Trim();
+                    if (!(pantalla.Length > 0))
+                    {
+                        MessageBox.Show("Ingrese un tamaño de pantalla válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        tabControl1.SelectedTab = tabDetalle;
+                        return false;
+                    }
+
+                    //==Series de Fábrica====================================================================================
+                    
+                    if (filasDgv < aux)
+                    {
+                        MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        tabControl1.SelectedTab = tabDetalle;
+                        return false;
+                    }
+                    else if (filasDgv > aux)
+                    {
+                        MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        tabControl1.SelectedTab = tabDetalle;
+                        return false;
+                    }
+
+                    //==============================================================================================
+                }
+
+                if(idCategoria == 2)
+                {
+                    if (filasDgv >= 1)
+                    {
+                        if (filasDgv < aux)
+                        {
+                            MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            tabControl1.SelectedTab = tabDetalle;
+                            return false;
+                        }
+                        else if (filasDgv > aux)
+                        {
+                            MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            tabControl1.SelectedTab = tabDetalle;
+                            return false;
+                        }
+                    }
+                }
+
             }
 
             //==============================================================================================
@@ -594,37 +696,7 @@ namespace Apolo
             }
             
             //==============================================================================================
-
-            for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
-            {
-                if (dgvSerieFabrica.Rows[i].Cells[1].Value == null)
-                {
-                    if (!dgvSerieFabrica.Rows[i].IsNewRow)
-                    {
-                        dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.Rows[i]);
-                        i = -1;
-                    }
-                }
-            }
-
-            aux = int.Parse(txtCantidad.Text);
-            filasDgv = dgvSerieFabrica.Rows.Count - 1;
             
-            if (filasDgv < aux)
-            {
-                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabDetalle;
-                return false;
-            }
-            else if (filasDgv > aux)
-            {
-                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                tabControl1.SelectedTab = tabDetalle;
-                return false;
-            }
-
-            //==============================================================================================
-
             return true;
         }
 
@@ -717,39 +789,7 @@ namespace Apolo
         {
             dgvWindows.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
-        /*
-        private void dgvOffice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvOffice.CurrentRow == null)
-                return;
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                dgvOffice.Rows.Remove(dgvOffice.CurrentRow);
-            }
-
-        }
-
-        private void dgvOffice_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            dgvOffice.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
-
-        private void dgvAntivirus_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvAntivirus.CurrentRow == null)
-                return;
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                dgvAntivirus.Rows.Remove(dgvAntivirus.CurrentRow);
-            }
-
-        }
-
-        private void dgvAntivirus_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            dgvAntivirus.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
-        */
+        
         private void txtPantalla_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = solonumeros1(Convert.ToInt32(e.KeyChar));
@@ -881,52 +921,65 @@ namespace Apolo
 
         private void btnAgregarMarcaLaptop_Click(object sender, EventArgs e)
         {
-            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, this.laptopIdCategoria);
-            if (frmBP.ShowDialog() == DialogResult.OK)
+            int h = cmbTipo.SelectedIndex;
+            if (h >= 0)
             {
-            }
+                int idCategoria = Convert.ToInt32(tablaTipo.Rows[h]["idAuxiliar"].ToString());
 
-            tablaMarca = ingresoDA.ListarMarcas();
-            cmbMarca.DataSource = tablaMarca;
-            cmbMarca.DisplayMember = "nombre";
-            cmbMarca.ValueMember = "idMarca";
-            cmbMarca.SelectedIndex = 0;
-            int i = cmbMarca.SelectedIndex;
+                frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, idCategoria);
+                if (frmBP.ShowDialog() == DialogResult.OK)
+                {
+                }
 
-            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
-            {
-                int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
-                tablaModelo = ingresoDA.ListarModelos(idMarca);
-                cmbModelo.DataSource = tablaModelo;
-                cmbModelo.DisplayMember = "nombre";
-                cmbModelo.ValueMember = "idModelo";
-                cmbModelo.SelectedIndex = 0;
+                tablaMarca = (idCategoria == 1) ? ingresoDA.ListarLaptopsMarcas() : ingresoDA.ListarCpusMarcas();
+                cmbMarca.DataSource = tablaMarca;
+                cmbMarca.DisplayMember = "nombre";
+                cmbMarca.ValueMember = "idMarca";
+                cmbMarca.SelectedIndex = -1;
+                //int i = cmbMarca.SelectedIndex;
+
+                //if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                //{
+                //    int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+                //    tablaModelo = ingresoDA.ListarModelos(idMarca);
+                //    cmbModelo.DataSource = tablaModelo;
+                //    cmbModelo.DisplayMember = "nombre";
+                //    cmbModelo.ValueMember = "idModelo";
+                //    cmbModelo.SelectedIndex = 0;
+                //}
             }
 
         }
 
         private void btnAgregarModeloLaptop_Click(object sender, EventArgs e)
         {
-            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.laptopIdCategoria);
-            if (frmBP.ShowDialog() == DialogResult.OK)
-            {
-            }
 
-            tablaMarca = ingresoDA.ListarMarcas();
-            cmbMarca.DataSource = tablaMarca;
-            cmbMarca.DisplayMember = "nombre";
-            cmbMarca.ValueMember = "idMarca";
-            cmbMarca.SelectedIndex = 0;
-            int i = cmbMarca.SelectedIndex;
-
-            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            int h = cmbTipo.SelectedIndex;
+            if (h >= 0)
             {
-                int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
-                tablaModelo = ingresoDA.ListarModelos(idMarca);
-                cmbModelo.DataSource = tablaModelo;
-                cmbModelo.DisplayMember = "nombre";
-                cmbModelo.ValueMember = "idModelo";
-                cmbModelo.SelectedIndex = 0;
+                int idCategoria = Convert.ToInt32(tablaTipo.Rows[h]["idAuxiliar"].ToString());
+
+                frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, idCategoria);
+                if (frmBP.ShowDialog() == DialogResult.OK)
+                {
+                }
+
+                tablaMarca = (idCategoria == 1) ? ingresoDA.ListarLaptopsMarcas() : ingresoDA.ListarCpusMarcas();
+                cmbMarca.DataSource = tablaMarca;
+                cmbMarca.DisplayMember = "nombre";
+                cmbMarca.ValueMember = "idMarca";
+                cmbMarca.SelectedIndex = -1;
+                //int i = cmbMarca.SelectedIndex;
+
+                //if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                //{
+                //    int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+                //    tablaModelo = ingresoDA.ListarModelos(idMarca);
+                //    cmbModelo.DataSource = tablaModelo;
+                //    cmbModelo.DisplayMember = "nombre";
+                //    cmbModelo.ValueMember = "idModelo";
+                //    cmbModelo.SelectedIndex = 0;
+                //}
             }
         }
 
@@ -1121,18 +1174,48 @@ namespace Apolo
 
         private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int j = cmbTipo.SelectedIndex;
+            int idCategoria = Convert.ToInt32(tablaTipo.Rows[j]["idAuxiliar"].ToString());
+
             int i = cmbMarca.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
                 int idMarca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
-                tablaModelo = ingresoDA.ListarModelos(idMarca);
+                tablaModelo = (idCategoria == 1) ? ingresoDA.ListarLaptopsModelos(idMarca) : ingresoDA.ListarCpusModelos(idMarca);
                 cmbModelo.DataSource = (tablaModelo.Rows.Count > 0) ? tablaModelo : null;
                 cmbModelo.DisplayMember = "nombre";
                 cmbModelo.ValueMember = "idModelo";
-                cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
+                cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? -1 : -1;
+            }
+            else if (i == -1)
+            {
+                cmbModelo.DataSource = null;
             }
 
         }
 
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cmbTipo.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                int idCategoria = Convert.ToInt32(tablaTipo.Rows[i]["idAuxiliar"].ToString());
+
+                tablaMarca = (idCategoria == 1) ? ingresoDA.ListarLaptopsMarcas() : ingresoDA.ListarCpusMarcas();
+                cmbMarca.DataSource = (tablaMarca.Rows.Count > 0) ? tablaMarca : null;
+                cmbMarca.DisplayMember = "nombre";
+                cmbMarca.ValueMember = "idMarca";
+                cmbMarca.SelectedIndex = (tablaMarca.Rows.Count > 0) ? -1 : -1;
+
+                txtPantalla.Enabled = (idCategoria == 1) ? true : false;
+
+            }
+            else if (i == -1)
+            {
+                cmbMarca.DataSource = null;
+                cmbModelo.DataSource = null;
+                txtPantalla.Enabled = false;
+            }
+        }
     }
 }

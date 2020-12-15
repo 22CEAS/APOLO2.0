@@ -33,6 +33,11 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM estados ; ");
         }
 
+        public DataTable ListarLaptopCpuTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_laptop_cpu_categoria ;");
+        }
+
         public DataTable ListarDiscosDuros()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_disco ;");
@@ -63,14 +68,24 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_licencias where IdCategoria= " + this.IdCategoriaWindows + " ;");
         }
 
-        public DataTable ListarMarcas()
+        public DataTable ListarLaptopsMarcas()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_marca ;");
         }
 
-        public DataTable ListarModelos(int idMarca)
+        public DataTable ListarLaptopsModelos(int idMarca)
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_modelo where idMarca=" + idMarca + " ;");
+        }
+
+        public DataTable ListarCpusMarcas()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_cpus_marca ;");
+        }
+
+        public DataTable ListarCpusModelos(int idMarca)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_cpus_modelo where idMarca=" + idMarca + " ;");
         }
 
         public DataTable ListarTabletMarcas()
@@ -146,6 +161,16 @@ namespace AccesoDatos
         public DataTable ListarProyectorTipo()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_tipo ;");
+        }
+
+        public DataTable ListarProyectorResolucion()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_resolucion ;");
+        }
+
+        public DataTable ListarProyectorLuminen()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_proyectores_luminen ;");
         }
 
         public DataTable ListarProyectorEcramTipo()
@@ -271,9 +296,7 @@ namespace AccesoDatos
             string[] datosSalida = new string[1];
             string[] codigoArrendamientoExistente = new string[1];
             int idLC = 0;
-
             
-
             if (ingreso.Detalles.Count > 0)
             {
                 error = InsertarIngresoDetalleLaptops(ingreso, usuario);
@@ -367,10 +390,14 @@ namespace AccesoDatos
                         }
 
                         //AQUI PONER PROCEDURE DE CODIGO CORRELATIVO
+<<<<<<< HEAD
 
                         
 
                         parametrosEntrada = new MySqlParameter[18];
+=======
+                        parametrosEntrada = new MySqlParameter[20];
+>>>>>>> f2aae5a45f110363faf7fd5d1a13b9c1d10fbf25
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -388,7 +415,9 @@ namespace AccesoDatos
                         parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
                         parametrosEntrada[15] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int16);
                         parametrosEntrada[16] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 80);
-                        parametrosEntrada[17] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                        parametrosEntrada[17] = new MySqlParameter("@_idTipoEquipoLC", MySqlDbType.Int32);
+                        parametrosEntrada[18] = new MySqlParameter("@_nombreTipoEquipoLC", MySqlDbType.VarChar, 255);
+                        parametrosEntrada[19] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalle;
@@ -423,13 +452,16 @@ namespace AccesoDatos
                             parametrosEntrada[16].Value = det.Series[i];
                         }
 
+                        parametrosEntrada[17].Value = det.LaptopIdTipoEquipoLC;
+                        parametrosEntrada[18].Value = det.LaptopTipoEquipoLC;
+
                         datosSalida = new string[1];
                         
                         //cantidadDeArrendamientos
                         if (ingreso.TipoIngreso == "COMPRA")
                         {
                             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                                17, 18, out datosSalida, 1);
+                                19, 20, out datosSalida, 1);
                             idLC = Convert.ToInt32(datosSalida[0]);
                         }
                         else
@@ -437,7 +469,7 @@ namespace AccesoDatos
                             if (cantidadDeArrendamientos == 0)
                             {
                                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                                17, 18, out datosSalida, 1);
+                                19, 20, out datosSalida, 1);
                                 idLC = Convert.ToInt32(datosSalida[0]);
                             }
                             else
@@ -607,7 +639,7 @@ namespace AccesoDatos
                         parametrosEntrada[5].Value = det.TabletIdRAM;
                         parametrosEntrada[6].Value = det.TabletIdROM;
                         parametrosEntrada[7].Value = det.TabletTamanoPantalla;
-                        parametrosEntrada[8].Value = "";// det.Series[i];
+                        parametrosEntrada[8].Value = det.Series[i];
                         parametrosEntrada[9].Value = det.Tablet.PartNumber;
                         parametrosEntrada[10].Value = det.Tablet.Garantia;
                         parametrosEntrada[11].Value = null;
@@ -676,7 +708,7 @@ namespace AccesoDatos
 
                         }
 
-                        parametrosEntrada = new MySqlParameter[16];
+                        parametrosEntrada = new MySqlParameter[17];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -692,7 +724,8 @@ namespace AccesoDatos
                         parametrosEntrada[12] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                         parametrosEntrada[13] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
                         parametrosEntrada[14] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
-                        parametrosEntrada[15] = new MySqlParameter("@_idImpresora", MySqlDbType.Int32);
+                        parametrosEntrada[15] = new MySqlParameter("@_multifuncional", MySqlDbType.Int32);
+                        parametrosEntrada[16] = new MySqlParameter("@_idImpresora", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalleImpresora;
@@ -709,12 +742,13 @@ namespace AccesoDatos
                         parametrosEntrada[12].Value = det.Impresora.Observacion;
                         parametrosEntrada[13].Value = usuario;
                         parametrosEntrada[14].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        parametrosEntrada[15].Value = det.Impresora.Multifuncional;
 
 
                         datosSalida = new string[1];
 
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_impresora",
-                            15, 16, out datosSalida, 1);
+                            16, 17, out datosSalida, 1);
                     }
                 }
 
@@ -769,7 +803,7 @@ namespace AccesoDatos
 
                         }
 
-                        parametrosEntrada = new MySqlParameter[17];
+                        parametrosEntrada = new MySqlParameter[20];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -786,7 +820,10 @@ namespace AccesoDatos
                         parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                         parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
                         parametrosEntrada[15] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
-                        parametrosEntrada[16] = new MySqlParameter("@_idMonitor", MySqlDbType.Int32);
+                        parametrosEntrada[16] = new MySqlParameter("@_hdmi", MySqlDbType.Int32);
+                        parametrosEntrada[17] = new MySqlParameter("@_vga", MySqlDbType.Int32);
+                        parametrosEntrada[18] = new MySqlParameter("@_displayPort", MySqlDbType.Int32);
+                        parametrosEntrada[19] = new MySqlParameter("@_idMonitor", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalleMonitor;
@@ -804,11 +841,14 @@ namespace AccesoDatos
                         parametrosEntrada[13].Value = det.Monitor.Observacion;
                         parametrosEntrada[14].Value = usuario;
                         parametrosEntrada[15].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        parametrosEntrada[16].Value = det.Monitor.Hdmi;
+                        parametrosEntrada[17].Value = det.Monitor.Vga;
+                        parametrosEntrada[18].Value = det.Monitor.DisplayPort;
 
                         datosSalida = new string[1];
 
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_monitor",
-                            16, 17, out datosSalida, 1);
+                            19, 20, out datosSalida, 1);
                     }
                 }
 
@@ -881,7 +921,7 @@ namespace AccesoDatos
                             //FIN LOGICA CORRELATIVO
 
                         }
-                        parametrosEntrada = new MySqlParameter[18];
+                        parametrosEntrada = new MySqlParameter[20];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -899,7 +939,9 @@ namespace AccesoDatos
                         parametrosEntrada[14] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                         parametrosEntrada[15] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
                         parametrosEntrada[16] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
-                        parametrosEntrada[17] = new MySqlParameter("@_idProyectorEcram", MySqlDbType.Int32);
+                        parametrosEntrada[17] = new MySqlParameter("@_idResolucion", MySqlDbType.Int32);
+                        parametrosEntrada[18] = new MySqlParameter("@_idLuminen", MySqlDbType.Int32);
+                        parametrosEntrada[19] = new MySqlParameter("@_idProyectorEcram", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalleProyector;
@@ -917,12 +959,14 @@ namespace AccesoDatos
                         parametrosEntrada[13].Value = "ALMACEN";
                         parametrosEntrada[14].Value = det.Proyector.Observacion;
                         parametrosEntrada[15].Value = usuario;
-                        parametrosEntrada[16].Value = aux2 + (codigoCorr + 1).ToString("000"); ;
+                        parametrosEntrada[16].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        parametrosEntrada[17].Value = det.ProyectorIdResolucion;
+                        parametrosEntrada[18].Value = det.ProyectorIdLuminen;
 
                         datosSalida = new string[1];
 
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_proyectorEcram",
-                            17, 18, out datosSalida, 1);
+                            19, 20, out datosSalida, 1);
                     }
                 }
 
@@ -994,7 +1038,7 @@ namespace AccesoDatos
         {
             foreach (IngresoDetalle det in ingreso.Detalles)
             {
-                parametrosEntrada = new MySqlParameter[28];
+                parametrosEntrada = new MySqlParameter[30];
                 parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idMarcaLC", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idModeloLC", MySqlDbType.Int32);
@@ -1022,7 +1066,9 @@ namespace AccesoDatos
                 parametrosEntrada[24] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
                 parametrosEntrada[25] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[26] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-                parametrosEntrada[27] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                parametrosEntrada[27] = new MySqlParameter("@_idTipoEquipoLC", MySqlDbType.Int32);
+                parametrosEntrada[28] = new MySqlParameter("@_nombreTipoEquipoLC", MySqlDbType.VarChar, 255);
+                parametrosEntrada[29] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
 
 
                 parametrosEntrada[0].Value = ingreso.IdIngreso;
@@ -1098,11 +1144,13 @@ namespace AccesoDatos
                 parametrosEntrada[24].Value = det.Observacion;
                 parametrosEntrada[25].Value = det.Estado;
                 parametrosEntrada[26].Value = usuario;
+                parametrosEntrada[27].Value = det.LaptopIdTipoEquipoLC;
+                parametrosEntrada[28].Value = det.LaptopTipoEquipoLC;
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det",
-                27, 28, out datosSalida, 1);
+                29, 30, out datosSalida, 1);
                 if (datosSalida == null)
                 {
                     return true;
@@ -1232,13 +1280,12 @@ namespace AccesoDatos
             }
             return false;
         }
-            
-        
+                    
         public bool InsertarIngresoDetalleImpresoras(Ingreso ingreso, string usuario)
         {
             foreach (IngresoDetalleImpresora det in ingreso.DetallesImpresoras)
             {
-                parametrosEntrada = new MySqlParameter[13];
+                parametrosEntrada = new MySqlParameter[14];
                 parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -1251,7 +1298,8 @@ namespace AccesoDatos
                 parametrosEntrada[9] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                 parametrosEntrada[10] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[11] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
-                parametrosEntrada[12] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                parametrosEntrada[12] = new MySqlParameter("@_multifuncional", MySqlDbType.Int32);
+                parametrosEntrada[13] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
 
 
                 parametrosEntrada[0].Value = ingreso.IdIngreso;
@@ -1266,11 +1314,12 @@ namespace AccesoDatos
                 parametrosEntrada[9].Value = det.Observacion;
                 parametrosEntrada[10].Value = det.Estado;
                 parametrosEntrada[11].Value = usuario;
+                parametrosEntrada[12].Value = det.Impresora.Multifuncional;
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_impresora",
-                12, 13, out datosSalida, 1);
+                13, 14, out datosSalida, 1);
                 if (datosSalida == null)
                 {
                     return true;
@@ -1284,7 +1333,7 @@ namespace AccesoDatos
         {
             foreach (IngresoDetalleMonitor det in ingreso.DetallesMonitores)
             {
-                parametrosEntrada = new MySqlParameter[14];
+                parametrosEntrada = new MySqlParameter[17];
                 parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -1298,7 +1347,10 @@ namespace AccesoDatos
                 parametrosEntrada[10] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                 parametrosEntrada[11] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[12] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
-                parametrosEntrada[13] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                parametrosEntrada[13] = new MySqlParameter("@_hdmi", MySqlDbType.Int32);
+                parametrosEntrada[14] = new MySqlParameter("@_vga", MySqlDbType.Int32);
+                parametrosEntrada[15] = new MySqlParameter("@_displayPort", MySqlDbType.Int32);
+                parametrosEntrada[16] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
 
 
                 parametrosEntrada[0].Value = ingreso.IdIngreso;
@@ -1314,11 +1366,14 @@ namespace AccesoDatos
                 parametrosEntrada[10].Value = det.Observacion;
                 parametrosEntrada[11].Value = det.Estado;
                 parametrosEntrada[12].Value = usuario;
+                parametrosEntrada[13].Value = det.Monitor.Hdmi;
+                parametrosEntrada[14].Value = det.Monitor.Vga;
+                parametrosEntrada[15].Value = det.Monitor.DisplayPort;
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_monitor",
-                13, 14, out datosSalida, 1);
+                16, 17, out datosSalida, 1);
                 if (datosSalida == null)
                 {
                     return true;
@@ -1384,7 +1439,7 @@ namespace AccesoDatos
         {
             foreach (IngresoDetalleProyector det in ingreso.DetallesProyectores)
             {
-                parametrosEntrada = new MySqlParameter[15];
+                parametrosEntrada = new MySqlParameter[17];
                 parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -1399,7 +1454,9 @@ namespace AccesoDatos
                 parametrosEntrada[11] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                 parametrosEntrada[12] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[13] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
-                parametrosEntrada[14] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
+                parametrosEntrada[14] = new MySqlParameter("@_idResolucion", MySqlDbType.Int32);
+                parametrosEntrada[15] = new MySqlParameter("@_idLuminen", MySqlDbType.Int32);
+                parametrosEntrada[16] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
 
 
                 parametrosEntrada[0].Value = ingreso.IdIngreso;
@@ -1416,11 +1473,13 @@ namespace AccesoDatos
                 parametrosEntrada[11].Value = det.Observacion;
                 parametrosEntrada[12].Value = det.Estado;
                 parametrosEntrada[13].Value = usuario;
+                parametrosEntrada[14].Value = det.Proyector.IdResolucion;
+                parametrosEntrada[15].Value = det.Proyector.IdLuminen;
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso_det_proyectorEcram",
-                14, 15, out datosSalida, 1);
+                16, 17, out datosSalida, 1);
                 if (datosSalida == null)
                 {
                     return true;
@@ -1429,8 +1488,7 @@ namespace AccesoDatos
             }
             return false;
         }
-
-
+        
         public int ModificarIngreso(Ingreso ingreso, string usuario)
         {
             bool okey;
@@ -1763,6 +1821,8 @@ namespace AccesoDatos
                 det.Laptop.Procesador.Generacion = reader.GetInt32("generacionProcesador");
 
                 det.IdIngresoDetalle = reader.GetInt32("idIngresoDet");
+                det.Laptop.IdTipoEquipoLC = reader.GetInt32("idTipoEquipoLC");
+                det.Laptop.NombreTipoEquipoLC = reader.GetString("nombreTipoEquipoLC");
                 det.Laptop.IdMarca = reader.GetInt32("idMarcaLC");
                 det.Laptop.IdModelo = reader.GetInt32("idModeloLC");
                 det.Laptop.PartNumber = reader.GetString("partNumber");
@@ -1987,6 +2047,7 @@ namespace AccesoDatos
                 det.Impresora.IdModeloImpresora = reader.GetInt32("idModelo");
                 det.Impresora.IdTipo = reader.GetInt32("idCaracteristica");
                 det.Impresora.Tipo = reader.GetString("caracteristica");
+                det.Impresora.Multifuncional = reader.GetInt32("multifuncional");
                 det.Impresora.PartNumber = reader.GetString("partNumber");
                 //det.Impresora.TamanoPantalla = reader.GetDouble("pantalla");
                 det.Impresora.Garantia = reader.GetInt32("garantia");
@@ -2042,6 +2103,9 @@ namespace AccesoDatos
                 det.Monitor.IdMarcaMonitor = reader.GetInt32("idMarca");
                 det.Monitor.IdModeloMonitor = reader.GetInt32("idModelo");
                 det.Monitor.IdTipo = reader.GetInt32("idTipo");
+                det.Monitor.Hdmi = reader.GetInt32("hdmi");
+                det.Monitor.Vga = reader.GetInt32("vga");
+                det.Monitor.DisplayPort = reader.GetInt32("displayPort");
                 det.Monitor.PartNumber = reader.GetString("partNumber");
                 det.Monitor.TamanoPantalla = reader.GetDouble("pantalla");
                 det.Monitor.Garantia = reader.GetInt32("garantia");
@@ -2099,6 +2163,8 @@ namespace AccesoDatos
                 det.Proyector.IdTipoEquipoProyector = reader.GetInt32("idTipoEquipo");
                 det.Proyector.IdCaracteristica = reader.GetInt32("idCaracteristica");
                 det.Proyector.Caracteristica = reader.GetString("caracteristica");
+                det.Proyector.IdLuminen = reader.GetInt32("idLuminen");
+                det.Proyector.IdResolucion = reader.GetInt32("idResolucion");
                 //det.Proyector.PartNumber = reader.GetString("partNumber");
                 det.Proyector.TamanoProyector = reader.GetDouble("tamanoEcram");
                 det.Proyector.Garantia = reader.GetInt32("garantia");

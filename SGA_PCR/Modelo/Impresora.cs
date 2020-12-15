@@ -18,6 +18,7 @@ namespace Modelo
         private string partNumber;
         private string serieFabrica;
         private int garantia;
+        private int multifuncional;
         private DateTime fecInicioSeguro;
         private DateTime fecFinSeguro;
         private string ubicacion;
@@ -56,5 +57,7 @@ namespace Modelo
         public string MarcaImpresora { get => Modelo.NombreMarca; set => Modelo.NombreMarca = value; }
         public int IdModeloImpresora { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }
         public string NombreModeloImpresora { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
+
+        public int Multifuncional { get => multifuncional; set => multifuncional = value; }
     }
 }

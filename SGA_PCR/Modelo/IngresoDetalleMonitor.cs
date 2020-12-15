@@ -47,5 +47,9 @@ namespace Modelo
         public double MonitorTamanoPantalla { get => Monitor.TamanoPantalla; set => Monitor.TamanoPantalla = value; }
         public int MonitorIdTipo { get => Monitor.IdTipo; set => Monitor.IdTipo = value; }
         public string MonitorTipo { get => Monitor.Tipo; set => Monitor.Tipo = value; }
+
+        public int MonitorHdmi { get => Monitor.Hdmi; set => Monitor.Hdmi = value; }
+        public int MonitorVga { get => Monitor.Vga; set => Monitor.Vga = value; }
+        public int MonitorDisplayPort { get => Monitor.DisplayPort; set => Monitor.DisplayPort = value; }
     }
 }

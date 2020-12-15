@@ -222,6 +222,9 @@ namespace Apolo
             cmbTipo.SelectedValue = detalleTraido.MonitorIdTipo;
             monitor = detalleTraido.Monitor;
             chbGarantia.Checked = (monitor.Garantia == 1) ? true : false;
+            chbHdmi.Checked = (monitor.Hdmi == 1) ? true : false;
+            chbVga.Checked = (monitor.Vga == 1) ? true : false;
+            chbDisplayPort.Checked = (monitor.DisplayPort == 1) ? true : false;
             txtPantalla.Text = monitor.TamanoPantalla.ToString();
             txtPartNumber.Text = monitor.PartNumber;
             txtPrecio.Text = detalleTraido.Precio.ToString();
@@ -258,6 +261,9 @@ namespace Apolo
             monitor.TamanoPantalla = Double.Parse(txtPantalla.Text);
             monitor.PartNumber = txtPartNumber.Text;
             monitor.Garantia = (chbGarantia.Checked) ? 1 : 0;
+            monitor.Hdmi = (chbHdmi.Checked) ? 1 : 0;
+            monitor.Vga = (chbVga.Checked) ? 1 : 0;
+            monitor.DisplayPort = (chbDisplayPort.Checked) ? 1 : 0;
             detalle.Monitor = monitor;
             detalle.Precio = Double.Parse(txtPrecio.Text);
             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text);

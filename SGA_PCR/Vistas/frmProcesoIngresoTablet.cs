@@ -207,6 +207,13 @@ namespace Apolo
             txtPrecio.Text = detalleTraido.Precio.ToString();
             txtCantidad.Text = detalleTraido.Cantidad.ToString();
 
+            foreach (String serie in detalleTraido.Series)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvSerieFabrica.Rows[0].Clone();
+                row.Cells[1].Value = serie;
+                dgvSerieFabrica.Rows.Add(row);
+            }
+
         }
 
         public bool llenarListaTablets()
@@ -245,6 +252,20 @@ namespace Apolo
             detalle.Precio = Double.Parse(txtPrecio.Text);
             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text);
             detalle.Series = null;
+            BindingList<String> series = new BindingList<String>();
+
+            for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
+            {
+                if (!dgvSerieFabrica.Rows[i].IsNewRow)
+                {
+                    if (dgvSerieFabrica.Rows[i].Cells[1].Value != null)
+                    {
+                        String serie = dgvSerieFabrica.Rows[i].Cells[1].Value.ToString();
+                        series.Add(serie);
+                    }
+                }
+            }
+            detalle.Series = series;
 
             flag = true;
 
@@ -325,6 +346,35 @@ namespace Apolo
             if (!(cantidad.Length > 0))
             {
                 MessageBox.Show("Ingrese una cantidad válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            //==============================================================================================
+
+            //==============================================================================================
+
+            for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
+            {
+                if (dgvSerieFabrica.Rows[i].Cells[1].Value == null)
+                {
+                    if (!dgvSerieFabrica.Rows[i].IsNewRow)
+                    {
+                        dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.Rows[i]);
+                        i = -1;
+                    }
+                }
+            }
+
+            int aux = int.Parse(txtCantidad.Text);
+            int filasDgv = dgvSerieFabrica.Rows.Count - 1;
+
+            if (filasDgv < aux)
+            {
+                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            else if (filasDgv > aux)
+            {
+                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             //==============================================================================================
@@ -437,5 +487,50 @@ namespace Apolo
             cmbROM.SelectedIndex = -1;
         }
 
+        private void btnSubirSeries_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    //DE ESTA MANERA FILTRAMOS TODOS LOS ARCHIVOS EXCEL EN EL NAVEGADOR DE ARCHIVOS
+                    Filter = "Excel | *.xls;*.xlsx;",
+
+                    //AQUÍ INDICAMOS QUE NOMBRE TENDRÁ EL NAVEGADOR DE ARCHIVOS COMO TITULO
+                    Title = "Seleccionar Archivo"
+                };
+
+                //EN CASO DE SELECCIONAR EL ARCHIVO, ENTONCES PROCEDEMOS A ABRIR EL ARCHIVO CORRESPONDIENTE
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable miDataTable = new DataTable();
+                    miDataTable.Columns.Add("serie");
+
+                    path = openFileDialog.FileName;
+                    SLDocument sl = new SLDocument(path);
+
+                    int iRow = 2;
+                    while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
+                    {
+                        DataRow Renglon = miDataTable.NewRow();
+                        Renglon["serie"] = sl.GetCellValueAsString(iRow, 1);
+                        iRow++;
+                        miDataTable.Rows.Add(Renglon);
+                    }
+
+                    dgvSerieFabrica.DataSource = miDataTable;
+                    dgvSerieFabrica.AutoGenerateColumns = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+
+        }
     }
 }

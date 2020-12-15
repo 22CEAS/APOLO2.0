@@ -19,6 +19,9 @@ namespace Modelo
         private string partNumber;
         private string serieFabrica;
         private int garantia;
+        private int hdmi;
+        private int vga;
+        private int displayPort;
         private DateTime fecInicioSeguro;
         private DateTime fecFinSeguro;
         private string ubicacion;
@@ -58,5 +61,9 @@ namespace Modelo
         public string MarcaMonitor { get => Modelo.NombreMarca; set => Modelo.NombreMarca = value; }
         public int IdModeloMonitor { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }
         public string NombreModeloMonitor { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
+
+        public int Hdmi { get => hdmi; set => hdmi = value; }
+        public int Vga { get => vga; set => vga = value; }
+        public int DisplayPort { get => displayPort; set => displayPort = value; }
     }
 }
