@@ -62,6 +62,10 @@ namespace Apolo
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;
             Inicializado();
+            if (tipoIngreso == "1")
+            {
+                dgvSerieFabrica.Columns[1].HeaderText = "Codigo Laptop";
+            }
             ObtenerListaLaptops(detalleTraido);
         }
 
