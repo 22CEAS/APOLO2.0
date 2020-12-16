@@ -20,10 +20,17 @@ namespace AccesoDatos
         {
             objManager = new DBManager();
         }
+
         public DataTable ListarCV()
         {
             return objManager.MostrarTablaDatos("Select * from vista_factura_CV ;");
         }
+
+        public DataTable BuscarV()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_buscarV ;");
+        }
+
         public int InsertarFacturas(BindingList<Factura> facturas, string usuario)
         {
 

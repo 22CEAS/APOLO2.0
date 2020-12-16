@@ -18,6 +18,8 @@ namespace Modelo
         private string observacion;
         private int estado;
 
+        private bool seleccionar;
+
         public AlquilerDetalle()
         {
             this.Laptop = new LC();
@@ -26,6 +28,7 @@ namespace Modelo
             this.MotivoNoRecojo = "";
             this.Observacion = "";
             this.Caracteristica = "";
+            this.Seleccionar = false;
         }
 
         public AlquilerDetalle(long idAlquilerDetalle, LC laptop, string caracteristica, string guiaSalida, string motivoNoRecojo, string observacion, int estado)
@@ -63,5 +66,6 @@ namespace Modelo
         public int IdVideo { get => laptop.Video.IdVideo; }
         public string NombreModeloVideo { get => laptop.Video.Modelo.NombreModelo; }
         public int CapacidadVideo { get => laptop.Video.Capacidad; }
+        public bool Seleccionar { get => seleccionar; set => seleccionar = value; }
     }
 }

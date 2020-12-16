@@ -2038,3 +2038,25 @@ FROM
 	LEFT JOIN vista_maestro_licencias l2 ON d.idModeloOffice = l2.IdModelo
 	LEFT JOIN vista_maestro_licencias l3 ON d.idModeloAntivirus = l3.IdModelo ;
 
+
+
+DROP VIEW IF EXISTS vista_buscarV;
+create view vista_buscarV as
+SELECT c.nroDocumento, lc.codigo, d.guiaSalida, CONCAT(c.nroDocumento,"-",lc.codigo) as concatenado
+FROM salida_det d
+INNER JOIN salida s on d.idSalida=s.idSalida
+INNER JOIN laptop_cpu lc on d.idLC=lc.idLC
+INNER JOIN cliente c on s.idCliente=c.idCliente
+where d.fueDevuelto=0 and d.estado=4
+	and  DATEDIFF( d.fecFinContrato , CURDATE())>=0 
+
+UNION ALL
+
+SELECT c.nroDocumento, lc.codigo, d.guiaSalida, CONCAT(c.nroDocumento,"-",lc.codigo) as concatenado
+FROM salida_det d
+INNER JOIN salida s on d.idSalida=s.idSalida
+INNER JOIN laptop_cpu lc on d.idLC=lc.idLC
+INNER JOIN cliente c on s.idCliente=c.idCliente
+WHERE d.fueDevuelto = 0  
+		AND ((d.estado = 4 AND ( to_days( d.fecFinContrato ) - to_days( curdate())) < 0 ) 
+				OR d.estado = 9 ) ;

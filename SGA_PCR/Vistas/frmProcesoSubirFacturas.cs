@@ -21,6 +21,7 @@ namespace Apolo
         BindingList<Factura> facturas;
         FacturaDA facturaDA;
         DataTable cuadroVencimiento;
+        DataTable buscarV;
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -146,12 +147,14 @@ namespace Apolo
                     btnGrabar.Enabled = false;
                     btnSubirFactura.Enabled = false;
                     btnValidar.Enabled = false;
+                    btnBuscarV.Enabled = false;
                     bool resultado = await task; //MIENTRAS CARGA
                     giftCarga.Enabled = false;
                     giftCarga.Visible = false;
                     btnGrabar.Enabled = true;
                     btnSubirFactura.Enabled = true;
                     btnValidar.Enabled = true;
+                    btnBuscarV.Enabled = true;
                 }
             }
         }
@@ -499,6 +502,7 @@ namespace Apolo
             btnSubirFactura.Enabled = false;
             btnGrabar.Enabled = false;
             btnValidar.Enabled = false;
+            btnBuscarV.Enabled = false;
 
             bool resultado = await task; //MIENTRAS CARGA
 
@@ -508,6 +512,7 @@ namespace Apolo
             btnSubirFactura.Enabled = true;
             btnGrabar.Enabled = true;
             btnValidar.Enabled = true;
+            btnBuscarV.Enabled = true;
         }
 
         public bool ValidarFactura()
@@ -521,6 +526,57 @@ namespace Apolo
         {
             giftCarga.Enabled = false;
             giftCarga.Visible = false;
+        }
+
+        private async void btnBuscarV_Click(object sender, EventArgs e)
+        {
+            giftCarga.Enabled = true;
+            giftCarga.Visible = true;
+            Task<bool> task = new Task<bool>(BuscarV);
+            task.Start();
+            giftCarga.Image = Image.FromFile(@".\progress.gif");
+            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            btnSubirFactura.Enabled = false;
+            btnGrabar.Enabled = false;
+            btnValidar.Enabled = false;
+            btnBuscarV.Enabled = false;
+
+            bool resultado = await task; //MIENTRAS CARGA
+
+            giftCarga.Enabled = false;
+            giftCarga.Visible = false;
+
+            btnSubirFactura.Enabled = true;
+            btnGrabar.Enabled = true;
+            btnValidar.Enabled = true;
+            btnBuscarV.Enabled = true;
+        }
+
+        public bool BuscarV()
+        {
+            buscarV = facturaDA.BuscarV();
+            foreach (Factura f in facturas)
+            {
+                String concatCodSis = f.RucDni + "-" + f.CodigoLC;
+                for (int i = 0; i < buscarV.Rows.Count; i++)
+                {
+                    string concatenado = buscarV.Rows[i]["concatenado"].ToString();
+
+                    if (concatCodSis == concatenado)
+                    {
+                        f.NumeroDocRef = buscarV.Rows[i]["guiaSalida"].ToString();
+                        break;
+                    }
+                }
+            }
+
+            dgvLaptops.DataSource = facturas;
+            vista.OptionsBehavior.AutoPopulateColumns = false;
+            vista.OptionsSelection.MultiSelect = true;
+
+            MessageBox.Show("Se realizó la busquedad", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            return true;
         }
     }
 }
