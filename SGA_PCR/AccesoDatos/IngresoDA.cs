@@ -21,7 +21,11 @@ namespace AccesoDatos
         int IdCategoriaAntivirus = 14;
 
         private int idMarcaApple = 1;
-        private int idTipoProyector = 6; 
+        private int idMarcaAppleCPU = 8;
+        private int idTipoProyector = 6;
+        //private int idTipoEcram = 7;
+        private int idLAPTOP = 1;
+        //private int idCPU = 2;
 
         public IngresoDA()
         {
@@ -309,19 +313,21 @@ namespace AccesoDatos
                         //SI EXISTE EL CODIGO, BORRAR TODOS LOS REGISTROS Y QUE LUEGO SIGA CON EL FLUJO NORMAL
                         string[] cantidadArrendamiento = new string[1];
 
-                        parametrosEntrada_aux_2 = new MySqlParameter[3];
+                        parametrosEntrada_aux_2 = new MySqlParameter[4];
                         parametrosEntrada_aux_2[0] = new MySqlParameter("@_codigoLapArrendamiento", MySqlDbType.VarChar, 255);
                         parametrosEntrada_aux_2[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
                         parametrosEntrada_aux_2[2] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[3] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
 
                         parametrosEntrada_aux_2[0].Value = det.Series[i];
 
 
                         //! VERIFICAR DEVOLUCION DE DATOS
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux_2, "verificarArrendamiento",
-                                            1, 3, out cantidadArrendamiento, 2);
+                                            1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
+                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]); 
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -345,21 +351,31 @@ namespace AccesoDatos
                             parametrosEntrada_aux[5] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
 
 
-                            //! VALIDAR SI ES UNA LAP NORMAL O UNA MAC
 
-
-                            //! VALIDAR SI ES UNA LAP NORMAL O UNA MAC
-
-                            
-                            
-                            if (det.LaptopIdMarca == this.idMarcaApple) //APPLE  
+                            //VALIDAR SI ES LAPTOP O CPU (1 LAPTOP //2 CPU)
+                            if (det.LaptopIdTipoEquipoLC == this.idLAPTOP) //-> LAPTOP
                             {
-                                parametrosEntrada_aux[0].Value = "PCR-MAC";
+                                if (det.LaptopIdMarca == this.idMarcaApple) //APPLE  
+                                {
+                                    parametrosEntrada_aux[0].Value = "PCR-MAC";
+                                }
+                                else
+                                {
+                                    parametrosEntrada_aux[0].Value = "PCR-LAP";
+                                }
                             }
-                            else
+                            else //CPU
                             {
-                                parametrosEntrada_aux[0].Value = "PCR-LAP";
+                                if (det.LaptopIdMarca == this.idMarcaAppleCPU) //APPLE  
+                                {
+                                    parametrosEntrada_aux[0].Value = "PCR-MAC";
+                                }
+                                else
+                                {
+                                    parametrosEntrada_aux[0].Value = "PCR-CPU";
+                                };
                             }
+                            
 
                             parametrosEntrada_aux[1].Value = idProveedor;
                             parametrosEntrada_aux[2].Value = month;
@@ -367,9 +383,16 @@ namespace AccesoDatos
                             //MessageBox.Show("ID DEL PROVEEDOR: "+idProveedor.ToString());
 
 
-
-                            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo",
+                            if (det.LaptopIdTipoEquipoLC == this.idLAPTOP) //-> LAPTOP
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo",
                                             4, 6, out codigoSiguiente, 2);
+                            }
+                            else //CPU
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo_cpu",
+                                            4, 6, out codigoSiguiente, 2);
+                            }
 
                             aux = codigoSiguiente[0]; //CODIGO
                             aux2 = codigoSiguiente[1]; //PREFIJO
@@ -390,14 +413,13 @@ namespace AccesoDatos
                         }
 
                         //AQUI PONER PROCEDURE DE CODIGO CORRELATIVO
-<<<<<<< HEAD
+                        //<<<<<<< HEAD
 
                         
 
                         parametrosEntrada = new MySqlParameter[18];
-=======
+                            
                         parametrosEntrada = new MySqlParameter[20];
->>>>>>> f2aae5a45f110363faf7fd5d1a13b9c1d10fbf25
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -452,12 +474,12 @@ namespace AccesoDatos
                             parametrosEntrada[16].Value = det.Series[i];
                         }
 
-                        parametrosEntrada[17].Value = det.LaptopIdTipoEquipoLC;
+                        parametrosEntrada[17].Value = det.LaptopIdTipoEquipoLC; //1 LAPTOP //2 CPU
                         parametrosEntrada[18].Value = det.LaptopTipoEquipoLC;
 
                         datosSalida = new string[1];
                         
-                        //cantidadDeArrendamientos
+                        
                         if (ingreso.TipoIngreso == "COMPRA")
                         {
                             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
@@ -474,7 +496,20 @@ namespace AccesoDatos
                             }
                             else
                             {
+                                //HACER EL UPDATE DEL CODIGO ANTIGUO AL NUEVO
                                 idLC = idLCarrendamiento;
+                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+
+                                parametrosEntrada[0].Value = idIngresoArrendamiento;
+                                parametrosEntrada[1].Value = ingreso.IdIngreso;
+                                parametrosEntrada[2].Value = idLC;
+
+
+                                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento");
+                                
                             }
                         }
                         
@@ -571,6 +606,26 @@ namespace AccesoDatos
                     for (int i = 0; i < det.Cantidad; i++)
                     {
 
+                        string[] cantidadArrendamiento = new string[1];
+
+                        parametrosEntrada_aux_2 = new MySqlParameter[4];
+                        parametrosEntrada_aux_2[0] = new MySqlParameter("@_codigoLapArrendamiento", MySqlDbType.VarChar, 255);
+                        parametrosEntrada_aux_2[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[2] = new MySqlParameter("@_idTablet", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[3] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+
+                        parametrosEntrada_aux_2[0].Value = det.Series[i];
+
+
+                        //! VERIFICAR DEVOLUCION DE DATOS
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux_2, "verificarArrendamiento_tablet",
+                                            1, 4, out cantidadArrendamiento, 3);
+                        int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
+                        int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
+                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //MessageBox.Show(cantidadDeArrendamientos.ToString());
+                        //MessageBox.Show(idLCarrendamiento.ToString());
+
                         string aux = "";
                         string aux2 = "";
                         int codigoCorr = 0;
@@ -648,12 +703,51 @@ namespace AccesoDatos
                         parametrosEntrada[14].Value = "ALMACEN";
                         parametrosEntrada[15].Value = det.Tablet.Observacion;
                         parametrosEntrada[16].Value = usuario;
-                        parametrosEntrada[17].Value = aux2 + (codigoCorr + 1).ToString("000");
+
+                        if (ingreso.TipoIngreso == "COMPRA") //SI ES COMPRA
+                        {
+                            parametrosEntrada[17].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        }
+                        else //SI ES ARRENDAMIENTO GUARDA LO QUE ELLOS HAN INGRESADO
+                        {
+                            parametrosEntrada[17].Value = det.Series[i];
+                        }
 
                         datosSalida = new string[1];
 
-                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_tablet",
-                            18, 19, out datosSalida, 1);
+
+                        if (ingreso.TipoIngreso == "COMPRA")
+                        {
+                            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_tablet",
+                                18, 19, out datosSalida, 1);
+                            idLC = Convert.ToInt32(datosSalida[0]);
+                        }
+                        else
+                        {
+                            if (cantidadDeArrendamientos == 0)
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_tablet",
+                                    18, 19, out datosSalida, 1);
+                                idLC = Convert.ToInt32(datosSalida[0]);
+                            }
+                            else
+                            {
+                                idLC = idLCarrendamiento;
+                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idTablet", MySqlDbType.Int32);
+
+                                parametrosEntrada[0].Value = idIngresoArrendamiento;
+                                parametrosEntrada[1].Value = ingreso.IdIngreso;
+                                parametrosEntrada[2].Value = idLC;
+
+
+                                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento_tablet");
+                            }
+                        }
+
+                        
                     }
                 }
 
@@ -668,6 +762,28 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
+
+
+                        string[] cantidadArrendamiento = new string[1];
+
+                        parametrosEntrada_aux_2 = new MySqlParameter[4];
+                        parametrosEntrada_aux_2[0] = new MySqlParameter("@_codigoLapArrendamiento", MySqlDbType.VarChar, 255);
+                        parametrosEntrada_aux_2[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[2] = new MySqlParameter("@_idImpresora", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[3] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+
+                        parametrosEntrada_aux_2[0].Value = det.Series[i];
+
+
+                        //! VERIFICAR DEVOLUCION DE DATOS
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux_2, "verificarArrendamiento_impresora",
+                                            1, 4, out cantidadArrendamiento, 3);
+                        int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
+                        int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
+                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //MessageBox.Show(cantidadDeArrendamientos.ToString());
+                        //MessageBox.Show(idLCarrendamiento.ToString());
+
 
                         string aux = "";
                         string aux2 = "";
@@ -741,14 +857,55 @@ namespace AccesoDatos
                         parametrosEntrada[11].Value = "ALMACEN";
                         parametrosEntrada[12].Value = det.Impresora.Observacion;
                         parametrosEntrada[13].Value = usuario;
-                        parametrosEntrada[14].Value = aux2 + (codigoCorr + 1).ToString("000");
+
+                        if (ingreso.TipoIngreso == "COMPRA") //SI ES COMPRA
+                        {
+                            parametrosEntrada[14].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        }
+                        else //SI ES ARRENDAMIENTO GUARDA LO QUE ELLOS HAN INGRESADO
+                        {
+                            parametrosEntrada[14].Value = det.Series[i];
+                        }
+
                         parametrosEntrada[15].Value = det.Impresora.Multifuncional;
 
 
                         datosSalida = new string[1];
 
-                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_impresora",
-                            16, 17, out datosSalida, 1);
+
+
+                        if (ingreso.TipoIngreso == "COMPRA")
+                        {
+                            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_impresora",
+                                16, 17, out datosSalida, 1);
+                            idLC = Convert.ToInt32(datosSalida[0]);
+                        }
+                        else
+                        {
+                            if (cantidadDeArrendamientos == 0)
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_impresora",
+                                    16, 17, out datosSalida, 1);
+                                idLC = Convert.ToInt32(datosSalida[0]);
+                            }
+                            else
+                            {
+                                idLC = idLCarrendamiento;
+                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idImpresora", MySqlDbType.Int32);
+
+                                parametrosEntrada[0].Value = idIngresoArrendamiento;
+                                parametrosEntrada[1].Value = ingreso.IdIngreso;
+                                parametrosEntrada[2].Value = idLC;
+
+
+                                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento_impresora");
+                            }
+                        }
+
+                         
                     }
                 }
 
@@ -763,6 +920,27 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
+
+                        string[] cantidadArrendamiento = new string[1];
+
+                        parametrosEntrada_aux_2 = new MySqlParameter[4];
+                        parametrosEntrada_aux_2[0] = new MySqlParameter("@_codigoLapArrendamiento", MySqlDbType.VarChar, 255);
+                        parametrosEntrada_aux_2[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[2] = new MySqlParameter("@_idMonitor", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[3] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+
+                        parametrosEntrada_aux_2[0].Value = det.Series[i];
+
+
+                        //! VERIFICAR DEVOLUCION DE DATOS
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux_2, "verificarArrendamiento_monitor",
+                                            1, 4, out cantidadArrendamiento, 3);
+                        int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
+                        int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
+                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //MessageBox.Show(cantidadDeArrendamientos.ToString());
+                        //MessageBox.Show(idLCarrendamiento.ToString());
+
 
                         string aux = "";
                         string aux2 = "";
@@ -840,15 +1018,63 @@ namespace AccesoDatos
                         parametrosEntrada[12].Value = "ALMACEN";
                         parametrosEntrada[13].Value = det.Monitor.Observacion;
                         parametrosEntrada[14].Value = usuario;
-                        parametrosEntrada[15].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        
+                        if (ingreso.TipoIngreso == "COMPRA") //SI ES COMPRA
+                        {
+                            parametrosEntrada[15].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        }
+                        else //SI ES ARRENDAMIENTO GUARDA LO QUE ELLOS HAN INGRESADO
+                        {
+                            parametrosEntrada[15].Value = det.Series[i];
+                        }
+
+
                         parametrosEntrada[16].Value = det.Monitor.Hdmi;
                         parametrosEntrada[17].Value = det.Monitor.Vga;
                         parametrosEntrada[18].Value = det.Monitor.DisplayPort;
 
+
+
+
                         datosSalida = new string[1];
 
-                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_monitor",
-                            19, 20, out datosSalida, 1);
+                  
+
+
+
+                        if (ingreso.TipoIngreso == "COMPRA")
+                        {
+                            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_monitor",
+                                19, 20, out datosSalida, 1);
+                            idLC = Convert.ToInt32(datosSalida[0]);
+                        }
+                        else
+                        {
+                            if (cantidadDeArrendamientos == 0)
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_monitor",
+                                    19, 20, out datosSalida, 1);
+                                idLC = Convert.ToInt32(datosSalida[0]);
+                            }
+                            else
+                            {
+                                idLC = idLCarrendamiento;
+                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idMonitor", MySqlDbType.Int32);
+
+                                parametrosEntrada[0].Value = idIngresoArrendamiento;
+                                parametrosEntrada[1].Value = ingreso.IdIngreso;
+                                parametrosEntrada[2].Value = idLC;
+
+
+                                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento_monitor");
+                            }
+                        }
+
+
+                       
                     }
                 }
 
@@ -863,6 +1089,27 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
+
+                        string[] cantidadArrendamiento = new string[1];
+
+                        parametrosEntrada_aux_2 = new MySqlParameter[4];
+                        parametrosEntrada_aux_2[0] = new MySqlParameter("@_codigoLapArrendamiento", MySqlDbType.VarChar, 255);
+                        parametrosEntrada_aux_2[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[2] = new MySqlParameter("@_idProyectorEcram", MySqlDbType.Int32);
+                        parametrosEntrada_aux_2[3] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+
+                        parametrosEntrada_aux_2[0].Value = det.Series[i];
+
+
+                        //! VERIFICAR DEVOLUCION DE DATOS
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux_2, "verificarArrendamiento_proyector_ecram",
+                                            1, 4, out cantidadArrendamiento, 3);
+                        int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
+                        int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
+                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //MessageBox.Show(cantidadDeArrendamientos.ToString());
+                        //MessageBox.Show(idLCarrendamiento.ToString());
+
 
                         string aux = "";
                         string aux2 = "";
@@ -959,14 +1206,57 @@ namespace AccesoDatos
                         parametrosEntrada[13].Value = "ALMACEN";
                         parametrosEntrada[14].Value = det.Proyector.Observacion;
                         parametrosEntrada[15].Value = usuario;
-                        parametrosEntrada[16].Value = aux2 + (codigoCorr + 1).ToString("000");
+
+                        if (ingreso.TipoIngreso == "COMPRA") //SI ES COMPRA
+                        {
+                            parametrosEntrada[16].Value = aux2 + (codigoCorr + 1).ToString("000");
+                        }
+                        else //SI ES ARRENDAMIENTO GUARDA LO QUE ELLOS HAN INGRESADO
+                        {
+                            parametrosEntrada[16].Value = det.Series[i];
+                        }
+
                         parametrosEntrada[17].Value = det.ProyectorIdResolucion;
                         parametrosEntrada[18].Value = det.ProyectorIdLuminen;
 
+
+
                         datosSalida = new string[1];
 
-                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_proyectorEcram",
-                            19, 20, out datosSalida, 1);
+                        
+
+                        if (ingreso.TipoIngreso == "COMPRA")
+                        {
+                            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_proyectorEcram",
+                                 19, 20, out datosSalida, 1);
+                            idLC = Convert.ToInt32(datosSalida[0]);
+                        }
+                        else
+                        {
+                            if (cantidadDeArrendamientos == 0)
+                            {
+                                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_proyectorEcram",
+                                 19, 20, out datosSalida, 1);
+                                idLC = Convert.ToInt32(datosSalida[0]);
+                            }
+                            else
+                            {
+                                idLC = idLCarrendamiento;
+                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idProyectorEcram", MySqlDbType.Int32);
+
+                                parametrosEntrada[0].Value = idIngresoArrendamiento;
+                                parametrosEntrada[1].Value = ingreso.IdIngreso;
+                                parametrosEntrada[2].Value = idLC;
+
+
+                                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento_proyector_ecram");
+                            }
+                        }
+
+
                     }
                 }
 
@@ -1819,10 +2109,11 @@ namespace AccesoDatos
                 det.LaptopNombreModeloLC = reader.GetString("nombreModelo");
                 det.LaptopTipoProcesador = reader.GetString("tipoProcesador");
                 det.Laptop.Procesador.Generacion = reader.GetInt32("generacionProcesador");
-
                 det.IdIngresoDetalle = reader.GetInt32("idIngresoDet");
+
                 det.Laptop.IdTipoEquipoLC = reader.GetInt32("idTipoEquipoLC");
                 det.Laptop.NombreTipoEquipoLC = reader.GetString("nombreTipoEquipoLC");
+
                 det.Laptop.IdMarca = reader.GetInt32("idMarcaLC");
                 det.Laptop.IdModelo = reader.GetInt32("idModeloLC");
                 det.Laptop.PartNumber = reader.GetString("partNumber");
@@ -2041,12 +2332,12 @@ namespace AccesoDatos
                 det.ImpresoraMarca = reader.GetString("nombreMarca");
                 det.ImpresoraNombreModelo = reader.GetString("nombreModelo");
                 det.ImpresoraTipo = reader.GetString("caracteristica");
-
                 det.IdIngresoDetalleImpresora = reader.GetInt32("idIngresoDet");
                 det.Impresora.IdMarcaImpresora = reader.GetInt32("idMarca");
                 det.Impresora.IdModeloImpresora = reader.GetInt32("idModelo");
                 det.Impresora.IdTipo = reader.GetInt32("idCaracteristica");
                 det.Impresora.Tipo = reader.GetString("caracteristica");
+
                 det.Impresora.Multifuncional = reader.GetInt32("multifuncional");
                 det.Impresora.PartNumber = reader.GetString("partNumber");
                 //det.Impresora.TamanoPantalla = reader.GetDouble("pantalla");

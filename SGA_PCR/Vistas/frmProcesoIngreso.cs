@@ -775,12 +775,47 @@ namespace Apolo
             Excel.Range rango;
             int i = 0;
 
+            //ORIGINAL
+            /*
             int inicio = 10;
             int filaDetalle = inicio;
             int filaMemoria = inicio + ingreso.Detalles.Count + 4;
             int filaDisco = inicio + ingreso.Detalles.Count + 4 + ingreso.Memorias.Count + 4;
             int filaLicencia = inicio + ingreso.Detalles.Count + 4 + ingreso.Memorias.Count + 4 + ingreso.Discos.Count + 4;
+            int filaImpresora = inicio + ingreso.Detalles.Count + 4 + ingreso.Memorias.Count + 4 + ingreso.Discos.Count + 4 + ingreso.Licencias.Count + 4;
+            */
 
+
+            int ultimaPosicion = 10;
+
+            int inicio = 10;
+            int filaDetalle = (ingreso.Detalles.Count>0) ?  inicio: -1;
+            if (ingreso.Detalles.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.Detalles.Count + 4;
+
+            int filaMemoria = (ingreso.Memorias.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.Memorias.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.Memorias.Count + 4;
+
+            int filaDisco = (ingreso.Discos.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.Discos.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.Discos.Count + 4;
+
+            int filaLicencia = (ingreso.Licencias.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.Licencias.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.Licencias.Count + 4;
+
+            int filaImpresora = (ingreso.DetallesImpresoras.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.DetallesImpresoras.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.DetallesImpresoras.Count + 4;
+
+            int filaMonitor = (ingreso.DetallesMonitores.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.DetallesMonitores.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.DetallesMonitores.Count + 4;
+
+            int filaTablet = (ingreso.DetallesTablets.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.DetallesTablets.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.DetallesTablets.Count + 4;
+
+            int filaProyectorEcram = (ingreso.DetallesProyectores.Count > 0) ? ultimaPosicion : -1;
+            if (ingreso.DetallesProyectores.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.DetallesProyectores.Count + 4;
+
+
+
+            /*
             if (ingreso.Detalles.Count > 0)
             {
                 if (ingreso.Memorias.Count > 0)
@@ -845,8 +880,15 @@ namespace Apolo
 
                 }
             }
+            */
+
+
+
 
             //Recorremos el DataGridView rellenando la hoja de trabajo
+
+
+            //==============================================================================================LAPTOPS/CPU
             foreach (IngresoDetalle det in ingreso.Detalles)
             {
                 //int k = grd.Columns.Count + 64;
@@ -918,7 +960,7 @@ namespace Apolo
                 i++;
             }
 
-
+            //==============================================================================================MEMORIAS
             i = 0;
             foreach (Memoria det in ingreso.Memorias)
             {
@@ -941,7 +983,7 @@ namespace Apolo
 
                 i++;
             }
-
+            //==============================================================================================DISCO DURO
             i = 0;
             foreach (DiscoDuro det in ingreso.Discos)
             {
@@ -965,6 +1007,7 @@ namespace Apolo
                 i++;
             }
 
+            //==============================================================================================LICENCIAS
             i = 0;
             foreach (Licencia det in ingreso.Licencias)
             {
@@ -989,12 +1032,115 @@ namespace Apolo
                 i++;
             }
 
+            i = 0;
+            foreach (IngresoDetalleImpresora det in ingreso.DetallesImpresoras)
+            {
+                //int k = grd.Columns.Count + 64;
+                int k = 6 + 64;
+                char columF = (char)k;
+                int fila2 = i + filaImpresora;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Style.Font.Bold = false;
 
-            montaCabeceras(1, ref hoja_trabajo, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia);
+                hoja_trabajo.Cells[i + filaImpresora, 1] = det.ImpresoraMarca;
+                hoja_trabajo.Cells[i + filaImpresora, 2] = det.ImpresoraNombreModelo;
+                hoja_trabajo.Cells[i + filaImpresora, 3] = (det.ImpresoraMultifuncional==1) ? "SI":"NO";
+                hoja_trabajo.Cells[i + filaImpresora, 4] = det.ImpresoraTipo;
+                hoja_trabajo.Cells[i + filaImpresora, 5] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaImpresora, 6] = det.Precio;
+
+                i++;
+            }
+
+            i = 0;
+            foreach (IngresoDetalleMonitor det in ingreso.DetallesMonitores)
+            {
+                //int k = grd.Columns.Count + 64;
+                int k = 9 + 64;
+                char columF = (char)k;
+                int fila2 = i + filaMonitor;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Style.Font.Bold = false;
+
+                hoja_trabajo.Cells[i + filaMonitor, 1] = det.MonitorMarca;
+                hoja_trabajo.Cells[i + filaMonitor, 2] = det.MonitorNombreModelo;
+                hoja_trabajo.Cells[i + filaMonitor, 3] = det.MonitorTipo;
+                hoja_trabajo.Cells[i + filaMonitor, 4] = det.MonitorTamanoPantalla;
+                hoja_trabajo.Cells[i + filaMonitor, 5] = (det.MonitorHdmi==1) ? "SI":"NO";
+                hoja_trabajo.Cells[i + filaMonitor, 6] = (det.MonitorVga == 1) ? "SI" : "NO";
+                hoja_trabajo.Cells[i + filaMonitor, 7] = (det.MonitorDisplayPort == 1) ? "SI" : "NO";
+                hoja_trabajo.Cells[i + filaMonitor, 8] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaMonitor, 9] = det.Precio;
+
+                i++;
+            }
+
+            i = 0;
+            foreach (IngresoDetalleTablet det in ingreso.DetallesTablets)
+            {
+                //int k = grd.Columns.Count + 64;
+                int k = 8 + 64;
+                char columF = (char)k;
+                int fila2 = i + filaTablet;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Style.Font.Bold = false;
+
+                hoja_trabajo.Cells[i + filaTablet, 1] = det.TabletMarca;
+                hoja_trabajo.Cells[i + filaTablet, 2] = det.TabletNombreModelo;
+                hoja_trabajo.Cells[i + filaTablet, 3] = det.TabletProcesador;
+                hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletIdRAM+"GB";
+                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+ "GB";
+                hoja_trabajo.Cells[i + filaTablet, 6] = det.TabletTamanoPantalla;
+                hoja_trabajo.Cells[i + filaTablet, 7] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaTablet, 8] = det.Precio;
+
+                i++;
+            }
+
+            i = 0;
+            foreach (IngresoDetalleProyector det in ingreso.DetallesProyectores)
+            {
+                //int k = grd.Columns.Count + 64;
+                int k = 6 + 64;
+                char columF = (char)k;
+                int fila2 = i + filaProyectorEcram;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Style.Font.Bold = false;
+
+                hoja_trabajo.Cells[i + filaProyectorEcram, 1] = det.ProyectorTipoEquipoProyector;
+                hoja_trabajo.Cells[i + filaProyectorEcram, 2] = det.ProyectorMarca;
+                hoja_trabajo.Cells[i + filaProyectorEcram, 3] = det.ProyectorNombreModelo;
+                hoja_trabajo.Cells[i + filaProyectorEcram, 4] = det.ProyectorCaracteristica;
+                hoja_trabajo.Cells[i + filaProyectorEcram, 5] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaProyectorEcram, 6] = det.Precio;
+
+                i++;
+            }
+
+            //==============================================================================================MEMORIAS
+
+
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia,filaImpresora,filaMonitor,filaTablet,filaProyectorEcram);
         }
 
         private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera,
-                                    int filaDetalle, int filaMemoria, int filaDisco, int filaLicencia)
+                                    int filaDetalle, int filaMemoria, int filaDisco, int filaLicencia,int filaImpresora,int filaMonitor,int filaTablet,int filaProyectorEcram)
         {
             Cursor.Current = Cursors.WaitCursor;
             try
@@ -1004,7 +1150,7 @@ namespace Apolo
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 15]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 15]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 15]].Interior.Color = Color.Orange;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 15]].Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila];
@@ -1040,7 +1186,7 @@ namespace Apolo
 
                 if (ingreso.Detalles.Count > 0)
                 {
-                    hoja.Cells[filaDetalle - 2, 1] = "Laptops";
+                    hoja.Cells[filaDetalle - 2, 1] = "LAPTOP/CPU";
                     hoja.Cells[filaDetalle - 1, 1] = "Marca";
                     hoja.Cells[filaDetalle - 1, 2] = "Modelo";
                     hoja.Cells[filaDetalle - 1, 3] = "Part Number";
@@ -1066,7 +1212,7 @@ namespace Apolo
                     //Ponemos borde a las celdas
                     rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                     rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                    rango.Interior.Color = Color.Silver;
+                    rango.Interior.Color = Color.Orange;
                     rango.Style.Font.Bold = true;
                     //Centramos los textos
                     rango = hoja.Rows[fila2];
@@ -1097,7 +1243,7 @@ namespace Apolo
                     //Ponemos borde a las celdas
                     rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                     rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                    rango.Interior.Color = Color.Silver;
+                    rango.Interior.Color = Color.Orange;
                     rango.Style.Font.Bold = true;
                     //Centramos los textos
                     rango = hoja.Rows[fila2];
@@ -1128,7 +1274,7 @@ namespace Apolo
                     //Ponemos borde a las celdas
                     rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                     rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                    rango.Interior.Color = Color.Silver;
+                    rango.Interior.Color = Color.Orange;
                     rango.Style.Font.Bold = true;
                     //Centramos los textos
                     rango = hoja.Rows[fila2];
@@ -1160,7 +1306,7 @@ namespace Apolo
                     //Ponemos borde a las celdas
                     rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                     rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                    rango.Interior.Color = Color.Silver;
+                    rango.Interior.Color = Color.Orange;
                     rango.Style.Font.Bold = true;
                     //Centramos los textos
                     rango = hoja.Rows[fila2];
@@ -1172,6 +1318,144 @@ namespace Apolo
                         rango.ColumnWidth = 13;
                     }
                 }
+
+                if (ingreso.DetallesImpresoras.Count > 0)
+                {
+                    hoja.Cells[filaImpresora - 2, 1] = "IMPRESORAS";
+                    hoja.Cells[filaImpresora - 1, 1] = "Marca";
+                    hoja.Cells[filaImpresora - 1, 2] = "Modelo";
+                    hoja.Cells[filaImpresora - 1, 3] = "Multifuncional";
+                    hoja.Cells[filaImpresora - 1, 4] = "Tipo";
+                    hoja.Cells[filaImpresora - 1, 5] = "Cantidad";
+                    hoja.Cells[filaImpresora - 1, 6] = "Precio";
+
+                    //int i = grd.Columns.Count + 64;
+                    int i = 6 + 64;
+                    char columF = (char)i;
+                    int fila2 = filaImpresora - 1;
+                    string filaBorde = fila2.ToString();
+                    char columI = 'A';
+                    //Ponemos borde a las celdas
+                    rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                    rango.Interior.Color = Color.Orange;
+                    rango.Style.Font.Bold = true;
+                    //Centramos los textos
+                    rango = hoja.Rows[fila2];
+                    rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                    for (int j = 0; j < 4; j++)
+                    {
+                        rango = hoja.Columns[j + 1];
+                        rango.ColumnWidth = 13;
+                    }
+                }
+
+                if (ingreso.DetallesMonitores.Count > 0)
+                {
+                    hoja.Cells[filaMonitor - 2, 1] = "MONITOR";
+                    hoja.Cells[filaMonitor - 1, 1] = "Marca";
+                    hoja.Cells[filaMonitor - 1, 2] = "Modelo";
+                    hoja.Cells[filaMonitor - 1, 3] = "Tipo";
+                    hoja.Cells[filaMonitor - 1, 4] = "Tamaño Pantalla";
+                    hoja.Cells[filaMonitor - 1, 5] = "Hdmi";
+                    hoja.Cells[filaMonitor - 1, 6] = "Vga";
+                    hoja.Cells[filaMonitor - 1, 7] = "Display Port";
+                    hoja.Cells[filaMonitor - 1, 8] = "Cantidad";
+                    hoja.Cells[filaMonitor - 1, 9] = "Precio";
+
+                    //int i = grd.Columns.Count + 64;
+                    int i = 9 + 64;
+                    char columF = (char)i;
+                    int fila2 = filaMonitor - 1;
+                    string filaBorde = fila2.ToString();
+                    char columI = 'A';
+                    //Ponemos borde a las celdas
+                    rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                    rango.Interior.Color = Color.Orange;
+                    rango.Style.Font.Bold = true;
+                    //Centramos los textos
+                    rango = hoja.Rows[fila2];
+                    rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                    for (int j = 0; j < 4; j++)
+                    {
+                        rango = hoja.Columns[j + 1];
+                        rango.ColumnWidth = 13;
+                    }
+                }
+
+                if (ingreso.DetallesTablets.Count > 0)
+                {
+                    hoja.Cells[filaTablet - 2, 1] = "TABLET";
+                    hoja.Cells[filaTablet - 1, 1] = "Marca";
+                    hoja.Cells[filaTablet - 1, 2] = "Modelo";
+                    hoja.Cells[filaTablet - 1, 3] = "Procesador";
+                    hoja.Cells[filaTablet - 1, 4] = "Ram";
+                    hoja.Cells[filaTablet - 1, 5] = "Rom";
+                    hoja.Cells[filaTablet - 1, 6] = "Tamaño Pantalla";
+                    hoja.Cells[filaTablet - 1, 7] = "Cantidad";
+                    hoja.Cells[filaTablet - 1, 8] = "Precio";
+
+                    //int i = grd.Columns.Count + 64;
+                    int i = 8 + 64;
+                    char columF = (char)i;
+                    int fila2 = filaTablet - 1;
+                    string filaBorde = fila2.ToString();
+                    char columI = 'A';
+                    //Ponemos borde a las celdas
+                    rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                    rango.Interior.Color = Color.Orange;
+                    rango.Style.Font.Bold = true;
+                    //Centramos los textos
+                    rango = hoja.Rows[fila2];
+                    rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                    for (int j = 0; j < 4; j++)
+                    {
+                        rango = hoja.Columns[j + 1];
+                        rango.ColumnWidth = 13;
+                    }
+                }
+
+                if (ingreso.DetallesProyectores.Count > 0)
+                {
+                    hoja.Cells[filaProyectorEcram - 2, 1] = "PROYECTOR/ECRAM";
+                    hoja.Cells[filaProyectorEcram - 1, 1] = "Tipo";
+                    hoja.Cells[filaProyectorEcram - 1, 2] = "Marca";
+                    hoja.Cells[filaProyectorEcram - 1, 3] = "Modelo";
+                    hoja.Cells[filaProyectorEcram - 1, 4] = "Caracteristica";
+                    hoja.Cells[filaProyectorEcram - 1, 5] = "Cantidad";
+                    hoja.Cells[filaProyectorEcram - 1, 6] = "Precio";
+
+                    //int i = grd.Columns.Count + 64;
+                    int i = 6 + 64;
+                    char columF = (char)i;
+                    int fila2 = filaProyectorEcram - 1;
+                    string filaBorde = fila2.ToString();
+                    char columI = 'A';
+                    //Ponemos borde a las celdas
+                    rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                    rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                    rango.Interior.Color = Color.Orange;
+                    rango.Style.Font.Bold = true;
+                    //Centramos los textos
+                    rango = hoja.Rows[fila2];
+                    rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                    for (int j = 0; j < 4; j++)
+                    {
+                        rango = hoja.Columns[j + 1];
+                        rango.ColumnWidth = 13;
+                    }
+                }
+
+                //======================================================AQUI PONER LO DEMAS
+
+
+
             }
             catch (Exception ex)
             {
