@@ -55,6 +55,7 @@
             this.UtilidadDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.btnBuscarV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -63,7 +64,7 @@
             // btnSubirFactura
             // 
             this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirFactura.Location = new System.Drawing.Point(1021, 12);
+            this.btnSubirFactura.Location = new System.Drawing.Point(883, 12);
             this.btnSubirFactura.Name = "btnSubirFactura";
             this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
             this.btnSubirFactura.TabIndex = 0;
@@ -74,7 +75,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.Location = new System.Drawing.Point(1120, 12);
+            this.btnGrabar.Location = new System.Drawing.Point(1182, 12);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 41);
             this.btnGrabar.TabIndex = 1;
@@ -85,7 +86,7 @@
             // btnValidar
             // 
             this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Location = new System.Drawing.Point(1224, 12);
+            this.btnValidar.Location = new System.Drawing.Point(1083, 12);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 41);
             this.btnValidar.TabIndex = 2;
@@ -141,13 +142,18 @@
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsCustomization.AllowColumnMoving = false;
+            this.vista.OptionsMenu.EnableColumnMenu = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.OptionsView.ShowGroupPanel = false;
             // 
             // FechaPago
             // 
             this.FechaPago.Caption = "FechaPago";
             this.FechaPago.FieldName = "FechaPago";
-            this.FechaPago.MinWidth = 100;
+            this.FechaPago.MinWidth = 40;
             this.FechaPago.Name = "FechaPago";
             this.FechaPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.FechaPago.Visible = true;
@@ -158,7 +164,7 @@
             // 
             this.TipoPago.Caption = "TipoPago";
             this.TipoPago.FieldName = "TipoPago";
-            this.TipoPago.MinWidth = 100;
+            this.TipoPago.MinWidth = 40;
             this.TipoPago.Name = "TipoPago";
             this.TipoPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoPago.Visible = true;
@@ -169,7 +175,7 @@
             // 
             this.CodigoLC.Caption = "CodigoLC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MinWidth = 100;
+            this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoLC.Visible = true;
@@ -180,7 +186,7 @@
             // 
             this.Descripcion.Caption = "Descripción";
             this.Descripcion.FieldName = "Descripcion";
-            this.Descripcion.MinWidth = 100;
+            this.Descripcion.MinWidth = 40;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Descripcion.Visible = true;
@@ -191,7 +197,7 @@
             // 
             this.FechaIniPago.Caption = "FechaIniPago";
             this.FechaIniPago.FieldName = "FechaIniPago";
-            this.FechaIniPago.MinWidth = 100;
+            this.FechaIniPago.MinWidth = 40;
             this.FechaIniPago.Name = "FechaIniPago";
             this.FechaIniPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.FechaIniPago.Visible = true;
@@ -202,7 +208,7 @@
             // 
             this.FechaFinPago.Caption = "FechaFinPago";
             this.FechaFinPago.FieldName = "FechaFinPago";
-            this.FechaFinPago.MinWidth = 100;
+            this.FechaFinPago.MinWidth = 40;
             this.FechaFinPago.Name = "FechaFinPago";
             this.FechaFinPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.FechaFinPago.Visible = true;
@@ -213,7 +219,7 @@
             // 
             this.RucDni.Caption = "RucDni";
             this.RucDni.FieldName = "RucDni";
-            this.RucDni.MinWidth = 100;
+            this.RucDni.MinWidth = 40;
             this.RucDni.Name = "RucDni";
             this.RucDni.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RucDni.Visible = true;
@@ -224,7 +230,7 @@
             // 
             this.RazonSocial.Caption = "RazonSocial";
             this.RazonSocial.FieldName = "RazonSocial";
-            this.RazonSocial.MinWidth = 100;
+            this.RazonSocial.MinWidth = 40;
             this.RazonSocial.Name = "RazonSocial";
             this.RazonSocial.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RazonSocial.Visible = true;
@@ -235,7 +241,7 @@
             // 
             this.NumeroOC.Caption = "NumeroOC";
             this.NumeroOC.FieldName = "NumeroOC";
-            this.NumeroOC.MinWidth = 100;
+            this.NumeroOC.MinWidth = 40;
             this.NumeroOC.Name = "NumeroOC";
             this.NumeroOC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroOC.Visible = true;
@@ -246,7 +252,7 @@
             // 
             this.NumeroDocRef.Caption = "NumeroDocRef";
             this.NumeroDocRef.FieldName = "NumeroDocRef";
-            this.NumeroDocRef.MinWidth = 100;
+            this.NumeroDocRef.MinWidth = 40;
             this.NumeroDocRef.Name = "NumeroDocRef";
             this.NumeroDocRef.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroDocRef.Visible = true;
@@ -257,7 +263,7 @@
             // 
             this.NumeroFactura.Caption = "NumeroFactura";
             this.NumeroFactura.FieldName = "NumeroFactura";
-            this.NumeroFactura.MinWidth = 100;
+            this.NumeroFactura.MinWidth = 40;
             this.NumeroFactura.Name = "NumeroFactura";
             this.NumeroFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroFactura.Visible = true;
@@ -268,7 +274,7 @@
             // 
             this.TotalSoles.Caption = "TotalSoles";
             this.TotalSoles.FieldName = "TotalSoles";
-            this.TotalSoles.MinWidth = 100;
+            this.TotalSoles.MinWidth = 40;
             this.TotalSoles.Name = "TotalSoles";
             this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TotalSoles.Visible = true;
@@ -279,7 +285,7 @@
             // 
             this.TotalDolares.Caption = "TotalDolares";
             this.TotalDolares.FieldName = "TotalDolares";
-            this.TotalDolares.MinWidth = 100;
+            this.TotalDolares.MinWidth = 40;
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TotalDolares.Visible = true;
@@ -290,7 +296,7 @@
             // 
             this.TipoCambio.Caption = "TipoCambio";
             this.TipoCambio.FieldName = "TipoCambio";
-            this.TipoCambio.MinWidth = 100;
+            this.TipoCambio.MinWidth = 40;
             this.TipoCambio.Name = "TipoCambio";
             this.TipoCambio.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoCambio.Visible = true;
@@ -301,7 +307,7 @@
             // 
             this.VentaSoles.Caption = "VentaSoles";
             this.VentaSoles.FieldName = "VentaSoles";
-            this.VentaSoles.MinWidth = 100;
+            this.VentaSoles.MinWidth = 40;
             this.VentaSoles.Name = "VentaSoles";
             this.VentaSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.VentaSoles.Visible = true;
@@ -312,7 +318,7 @@
             // 
             this.Proveedor.Caption = "Proveedor";
             this.Proveedor.FieldName = "Proveedor";
-            this.Proveedor.MinWidth = 100;
+            this.Proveedor.MinWidth = 40;
             this.Proveedor.Name = "Proveedor";
             this.Proveedor.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Proveedor.Visible = true;
@@ -323,7 +329,7 @@
             // 
             this.CostoSoles.Caption = "CostoSoles";
             this.CostoSoles.FieldName = "CostoSoles";
-            this.CostoSoles.MinWidth = 100;
+            this.CostoSoles.MinWidth = 40;
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CostoSoles.Visible = true;
@@ -334,7 +340,7 @@
             // 
             this.CostoDolares.Caption = "CostoDolares";
             this.CostoDolares.FieldName = "CostoDolares";
-            this.CostoDolares.MinWidth = 100;
+            this.CostoDolares.MinWidth = 40;
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CostoDolares.Visible = true;
@@ -345,7 +351,7 @@
             // 
             this.UtilidadSoles.Caption = "UtilidadSoles";
             this.UtilidadSoles.FieldName = "UtilidadSoles";
-            this.UtilidadSoles.MinWidth = 100;
+            this.UtilidadSoles.MinWidth = 40;
             this.UtilidadSoles.Name = "UtilidadSoles";
             this.UtilidadSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.UtilidadSoles.Visible = true;
@@ -356,7 +362,7 @@
             // 
             this.UtilidadDolares.Caption = "UtilidadDolares";
             this.UtilidadDolares.FieldName = "UtilidadDolares";
-            this.UtilidadDolares.MinWidth = 100;
+            this.UtilidadDolares.MinWidth = 40;
             this.UtilidadDolares.Name = "UtilidadDolares";
             this.UtilidadDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.UtilidadDolares.Visible = true;
@@ -367,7 +373,7 @@
             // 
             this.ObservacionXLevantar.Caption = "ObservacionXLevantar";
             this.ObservacionXLevantar.FieldName = "ObservacionXLevantar";
-            this.ObservacionXLevantar.MinWidth = 300;
+            this.ObservacionXLevantar.MinWidth = 40;
             this.ObservacionXLevantar.Name = "ObservacionXLevantar";
             this.ObservacionXLevantar.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ObservacionXLevantar.Visible = true;
@@ -382,12 +388,24 @@
             this.giftCarga.TabIndex = 141;
             this.giftCarga.TabStop = false;
             // 
+            // btnBuscarV
+            // 
+            this.btnBuscarV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarV.Location = new System.Drawing.Point(985, 12);
+            this.btnBuscarV.Name = "btnBuscarV";
+            this.btnBuscarV.Size = new System.Drawing.Size(75, 41);
+            this.btnBuscarV.TabIndex = 142;
+            this.btnBuscarV.Text = "Buscar V";
+            this.btnBuscarV.UseVisualStyleBackColor = true;
+            this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
+            // 
             // frmProcesoSubirFacturas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1315, 533);
+            this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.btnValidar);
@@ -437,5 +455,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Descripcion;
         private DevExpress.XtraGrid.Columns.GridColumn Proveedor;
         public System.Windows.Forms.PictureBox giftCarga;
+        private System.Windows.Forms.Button btnBuscarV;
     }
 }

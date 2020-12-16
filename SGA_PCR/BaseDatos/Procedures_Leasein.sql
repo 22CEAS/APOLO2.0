@@ -2544,7 +2544,7 @@ BEGIN
 	length(codigo)=15
 	and SUBSTRING(codigo, 8, 2) =  _yearIngreso
 	and SUBSTRING(codigo, 10, 2) = _monthIngreso
-	and SUBSTRING(codigo, 12, 1)  =  (select abreviacionF
+	and SUBSTRING(codigo, 12, 1)  =  (select abreviacion
 									from proveedor
 									where idProveedor=_idProveedor
 									)				

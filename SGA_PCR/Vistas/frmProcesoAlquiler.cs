@@ -54,6 +54,8 @@ namespace Apolo
         public void Inicializado()
         {
 
+            //tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
+
             clienteDA = new ClienteDA();
             alquilerDA = new AlquilerDA();
 
@@ -87,10 +89,13 @@ namespace Apolo
             alquiler = new Alquiler();
             alquiler.Detalles = new BindingList<AlquilerDetalle>();
             ObtenerDatosAlquiler();
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = alquiler.Detalles;
-            dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
-            dgvMemorias.PrimaryGrid.AutoGenerateColumns = false;
-            dgvDisco.PrimaryGrid.AutoGenerateColumns = false;
+            dgvEquipos.DataSource = alquiler.Detalles;
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
+            vistaMemorias.OptionsBehavior.AutoPopulateColumns = false;
+            vistaMemorias.OptionsSelection.MultiSelect = true;
+            vistaDiscos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaDiscos.OptionsSelection.MultiSelect = true;
             vistaLicencias.OptionsBehavior.AutoPopulateColumns = false;
             vistaLicencias.OptionsSelection.MultiSelect = true;
 
@@ -131,21 +136,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvDiscos.Enabled = false;
+                    dgvMemoria.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnAnular.Enabled = false;
@@ -165,21 +170,22 @@ namespace Apolo
                     txtNroContrato.Enabled = true;
                     txtNroOC.Enabled = true;
                     txtNroDocumento.Enabled = true;
-                    dgvLaptopsSeleccionados.Enabled = true;
-                    dgvDisco.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false;
-                    dgvMemorias.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false;
-                    dgvLicencias.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false;
-                    btnAgregarDisco.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count>0)?true:false;
-                    btnEditarDisco.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnGuardarDisco.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false;
-                    btnAgregarMemoria.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnEditarMemoria.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnGuardarMemoria.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnAgregarLicencia.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnEliminarLicencia.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
-                    btnCaducidadLicencia.Enabled = (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0) ? true : false; 
+                    dgvEquipos.Enabled = true;
+                    vistaEquipos.ClearColumnsFilter();
+                    dgvDiscos.Enabled = (vistaEquipos.RowCount > 0) ? true : false;
+                    dgvMemoria.Enabled = (vistaEquipos.RowCount > 0) ? true : false;
+                    dgvLicencias.Enabled = (vistaEquipos.RowCount > 0) ? true : false;
+                    btnAgregarDisco.Enabled = (vistaEquipos.RowCount > 0)?true:false; 
+                    btnGuardarDisco.Enabled = (vistaEquipos.RowCount > 0) ? true : false;
+                    btnAgregarMemoria.Enabled = (vistaEquipos.RowCount > 0) ? true : false; 
+                    btnGuardarMemoria.Enabled = (vistaEquipos.RowCount > 0) ? true : false; 
+                    btnAgregarLicencia.Enabled = (vistaEquipos.RowCount > 0) ? true : false; 
+                    btnEliminarLicencia.Enabled = (vistaEquipos.RowCount > 0) ? true : false; 
+                    btnCaducidadLicencia.Enabled = (vistaEquipos.RowCount > 0) ? true : false; 
                     btnAgregarProducto.Enabled = true;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = false;
                     btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
@@ -199,21 +205,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvDiscos.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
@@ -234,21 +240,21 @@ namespace Apolo
                     txtNroContrato.Enabled = true;
                     txtNroOC.Enabled = true;
                     txtNroDocumento.Enabled = true;
-                    dgvLaptopsSeleccionados.Enabled = true;
-                    dgvDisco.Enabled = true;
-                    dgvMemorias.Enabled = true;
+                    dgvEquipos.Enabled = true;
+                    dgvDiscos.Enabled = true;
+                    dgvMemoria.Enabled = true;
                     dgvLicencias.Enabled = true;
                     btnAgregarDisco.Enabled = true;
-                    btnEditarDisco.Enabled = true;
                     btnGuardarDisco.Enabled = true;
                     btnAgregarMemoria.Enabled = true;
-                    btnEditarMemoria.Enabled = true;
                     btnGuardarMemoria.Enabled = true;
                     btnAgregarLicencia.Enabled = true;
                     btnEliminarLicencia.Enabled = true;
                     btnCaducidadLicencia.Enabled = true;
                     btnAgregarProducto.Enabled = true;
                     btnAgregarGuia.Enabled = true;
+                    btnSeleccionarFilas.Enabled = true;
+                    btnDeseleccionarFilas.Enabled = true;
                     btnNuevo.Enabled = false;
                     btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
@@ -268,21 +274,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvDiscos.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
@@ -302,21 +308,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvDiscos.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnAnular.Enabled = false;
                     btnBuscar.Enabled = true;
@@ -336,21 +342,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvDiscos.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
@@ -368,21 +374,21 @@ namespace Apolo
                     txtNroContrato.Enabled = false;
                     txtNroOC.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
-                    dgvDisco.Enabled = false;
-                    dgvMemorias.Enabled = false;
+                    dgvEquipos.Enabled = false;
+                    dgvMemoria.Enabled = false;
+                    dgvDiscos.Enabled = false;
                     dgvLicencias.Enabled = false;
                     btnAgregarDisco.Enabled = false;
-                    btnEditarDisco.Enabled = false;
                     btnGuardarDisco.Enabled = false;
                     btnAgregarMemoria.Enabled = false;
-                    btnEditarMemoria.Enabled = false;
                     btnGuardarMemoria.Enabled = false;
                     btnAgregarLicencia.Enabled = false;
                     btnEliminarLicencia.Enabled = false;
                     btnCaducidadLicencia.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
+                    btnSeleccionarFilas.Enabled = false;
+                    btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnAnular.Enabled = false;
@@ -408,99 +414,12 @@ namespace Apolo
             cmbSucursal.SelectedIndex = -1;
             txtNroDocumento.Text = "";
 
-            dgvDisco.PrimaryGrid.DataSource = null;
-            dgvMemorias.PrimaryGrid.DataSource = null;
+            dgvDiscos.DataSource = null;
+            dgvMemoria.DataSource = null;
             dgvLicencias.DataSource = null;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+            dgvEquipos.DataSource = null;
         }
         
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-            using (frmProcesoAlquilerAgregarProducto frm = new frmProcesoAlquilerAgregarProducto())
-            {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    BindingList<AlquilerDetalle> auxiliares = new BindingList<AlquilerDetalle>();
-                    foreach (AlquilerDetalle aux in alquiler.Detalles)
-                    {
-                        auxiliares.Add(aux);
-                    }
-                    foreach (LC laptopTraido in frm.LAPTOPS)
-                    {
-                        AlquilerDetalle dp = new AlquilerDetalle();
-                        artTemp = new LC();
-                        artTemp.IdLC = laptopTraido.IdLC;
-                        bool exists = auxiliares.Any(x => x.Laptop.IdLC.Equals(artTemp.IdLC));
-                        if (!(exists))
-                        {
-                            tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
-                            tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
-                            tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
-                            laptopTraido.SetDisco(tablaDisco);
-                            laptopTraido.SetMemoria(tablaMemoria);
-                            laptopTraido.SetLicencia(tablaLicencia);
-
-                            dp.Laptop = laptopTraido;
-                            auxiliares.Add(dp);
-                        }
-                    }
-
-                    alquiler.Detalles = auxiliares;
-                }
-            }
-
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = alquiler.Detalles;
-            lblContador.Text = $"CANTIDAD REGISTRO: {alquiler.Detalles.Count.ToString()}";
-            if (alquiler.Detalles.Count > 0)
-            {
-                dgvDisco.Enabled = true;
-                dgvMemorias.Enabled = true;
-                dgvLicencias.Enabled = true;
-                btnAgregarDisco.Enabled = true;
-                btnEditarDisco.Enabled = true;
-                btnGuardarDisco.Enabled = true;
-                btnAgregarMemoria.Enabled = true;
-                btnEditarMemoria.Enabled = true;
-                btnGuardarMemoria.Enabled = true;
-                btnAgregarLicencia.Enabled = true;
-                btnEliminarLicencia.Enabled = true;
-                btnCaducidadLicencia.Enabled = true;
-            }
-        }
-
-        private void dgvLaptopsSeleccionados_Click(object sender, EventArgs e)
-        {
-            GridRow aux = (GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow;
-            if (aux != null)
-            {
-                artTemp = new LC();
-                artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-                
-                int indice = 0;
-                foreach(AlquilerDetalle detalle in alquiler.Detalles)
-                {
-                    if(detalle.Laptop.IdLC== artTemp.IdLC)
-                    {
-                        break;
-                    }
-                    indice++;
-                }
-                /*AlquilerDetalle auxLC = new AlquilerDetalle();
-                auxLC = alquiler.Detalles.SingleOrDefault(p => p.Laptop.IdLC == artTemp.IdLC);
-                dgvDisco.PrimaryGrid.DataSource = alquiler.Detalles[indice].Laptop.Discos;
-                dgvMemorias.PrimaryGrid.DataSource = auxLC.Laptop.Memorias;
-                dgvLicencia.PrimaryGrid.DataSource = auxLC.Laptop.Licencias;*/
-
-
-                tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
-                tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
-                tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
-                dgvDisco.PrimaryGrid.DataSource = tablaDisco;
-                dgvMemorias.PrimaryGrid.DataSource = tablaMemoria;
-                dgvLicencias.DataSource = tablaLicencia;
-            }
-        }
-
         private void btnGrabarPreAlquiler_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -579,10 +498,10 @@ namespace Apolo
             {
                 estadoComponentes(TipoVista.Limpiar);
                 alquiler = new Alquiler();
-                dgvDisco.PrimaryGrid.DataSource = null;
-                dgvMemorias.PrimaryGrid.DataSource = null;
+                dgvDiscos.DataSource = null;
+                dgvMemoria.DataSource = null;
                 dgvLicencias.DataSource = null;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvEquipos.DataSource = null;
             }
         }
 
@@ -636,7 +555,7 @@ namespace Apolo
                 }
                 txtNroAlquiler.Text = alquiler.IdAlquiler.ToString();
                 LlenarDatosAlquiler();
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = alquiler.Detalles;
+                dgvEquipos.DataSource = alquiler.Detalles;
             }
             else
             {
@@ -649,10 +568,13 @@ namespace Apolo
         private void btnAgregarGuia_Click(object sender, EventArgs e)
         {
             bool flag = false;
-            int filas = dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count;
+            vistaLicencias.ClearColumnsFilter();
+            vistaEquipos.ClearColumnsFilter();
+            int filas = vistaEquipos.RowCount;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvLaptopsSeleccionados.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaEquipos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                     flag = true;
             }
 
@@ -665,9 +587,10 @@ namespace Apolo
                         filas = alquiler.Detalles.Count;
                         for (int i = 0; i < filas; i++)
                         {
-                            if (((GridCell)(dgvLaptopsSeleccionados.PrimaryGrid.GetCell(i, 0))).Value != null)
+                            bool aux2 = bool.Parse(vistaEquipos.GetRowCellValue(i, "Seleccionar").ToString());
+                            if (aux2)
                             {
-                                int idLc = int.Parse((((GridCell)(dgvLaptopsSeleccionados.PrimaryGrid.GetCell(i, 10))).Value).ToString());
+                                int idLc = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
 
                                 int indiceLC = 0;
                                 foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -678,19 +601,15 @@ namespace Apolo
                                     }
                                     indiceLC++;
                                 }
-                                alquiler.Detalles[indiceLC].GuiaSalida= frm.GuiaDevuelto;
-                                ((GridCell)(dgvLaptopsSeleccionados.PrimaryGrid.GetCell(i, 1))).Value = frm.GuiaDevuelto;
+                                alquiler.Detalles[indiceLC].GuiaSalida = frm.GuiaDevuelto;
                             }
-
-
                         }
-                        
                     }
                 }
             }
 
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = alquiler.Detalles;
+            dgvEquipos.DataSource = null;
+            dgvEquipos.DataSource = alquiler.Detalles;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -712,34 +631,6 @@ namespace Apolo
                     estadoComponentes(TipoVista.Modificar);
                 }
             }
-        }
-
-        private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool error;
-                if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
-                {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-                    
-                    int indiceLC = 0;
-                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                    {
-                        if (detalle.Laptop.IdLC == artTemp.IdLC)
-                        {
-                            break;
-                        }
-                        indiceLC++;
-                    }
-                    
-                    alquiler.Detalles.RemoveAt(indiceLC);
-                    
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = alquiler.Detalles;
-                }
-            }
-
-            lblContador.Text = $"CANTIDAD REGISTRO: {alquiler.Detalles.Count.ToString()}";
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -813,414 +704,24 @@ namespace Apolo
 
         }
 
-        private void btnAgregarMemoria_Click(object sender, EventArgs e)
-        {
-            int i = dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow.Index;
-            if (!(i == -1))
-            {
-                using (frmProcesoEditarMemoria frm = new frmProcesoEditarMemoria())
-                {
-                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
-                        int indice = 0;
-                        foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                        {
-                            if (detalle.Laptop.IdLC == artTemp.IdLC)
-                            {
-                                break;
-                            }
-                            indice++;
-                        }
-
-                        foreach (Memoria memoriaTraido in frm.MEMORIAS)
-                        {
-                            Memoria memTemp = new Memoria();
-                            memTemp.IdMemoria = memoriaTraido.IdMemoria;
-                            bool exists = alquiler.Detalles[indice].Laptop.Memorias.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
-                            if (!(exists))
-                            {
-                                memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
-                                memTemp.Capacidad = memoriaTraido.Capacidad;
-                                memTemp.Tipo = memoriaTraido.Tipo;
-                                memTemp.Cantidad = 1;
-                                alquiler.Detalles[indice].Laptop.Memorias.Add(memTemp);
-                            }
-                        }
-
-                        bool error;
-                        if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
-                        {
-                            error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Memorias, this.nombreUsuario);
-                        }
-                        else
-                        {
-                            error = alquilerDA.InsertarLaptopMemoriasPrimeraVez(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Memorias, this.nombreUsuario);
-                        }
-
-                        if (!error)
-                        {
-                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            return;
-                        }
-
-                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
-                        dgvMemorias.PrimaryGrid.DataSource = tablaMemoria;
-                    }
-                }
-            }
-
-        }
-
-        private void btnGuardarMemoria_Click(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool error;
-                if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
-                {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-
-                    int indice = 0;
-                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                    {
-                        if (detalle.Laptop.IdLC == artTemp.IdLC)
-                        {
-                            break;
-                        }
-                        indice++;
-                    }
-
-                    BindingList<Memoria> memorias = new BindingList<Memoria>();
-                    for (int i = 0; i < dgvMemorias.PrimaryGrid.Rows.Count; i++)
-                    {
-                        Memoria memoria = new Memoria();
-                        memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                        memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
-                        memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                        memorias.Add(memoria);
-                    }
-                    int maxCant = alquilerDA.ValidarCantidadLaptopMemoria(artTemp.IdLC, memorias);
-                    if (maxCant == -1)
-                    {
-                        MessageBox.Show("Uno de las memorias tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-
-                    error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
-                    if (!error)
-                    {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                    alquiler.Detalles[indice].Laptop.Memorias = memorias;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                }
-            }
-        }
-
-        private void dgvMemorias_DoubleClick(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool error;
-                if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
-                {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-
-                    int indice = 0;
-                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                    {
-                        if (detalle.Laptop.IdLC == artTemp.IdLC)
-                        {
-                            break;
-                        }
-                        indice++;
-                    }
-
-                    BindingList<Memoria> memorias = new BindingList<Memoria>();
-                    for (int i = 0; i < dgvMemorias.PrimaryGrid.Rows.Count; i++)
-                    {
-                        Memoria memoria = new Memoria();
-                        int memoriaID = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                        memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        if (memoriaID != memoria.IdMemoria)
-                        {
-                            memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                            memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
-                            memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                            memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                            memorias.Add(memoria);
-
-                        }
-                    }
-                    error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
-                    if (!error)
-                    {
-                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                    alquiler.Detalles[indice].Laptop.Memorias = memorias;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
-                    dgvMemorias.PrimaryGrid.DataSource = tablaMemoria;
-                }
-            }
-        }
-        
-        private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
-        {
-            int i = dgvMemorias.PrimaryGrid.ActiveRow.Index;
-            int aux;
-            int cantidadMemoria;
-            string myStr;
-            if (!(i == -1))
-            {
-                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    aux = int.Parse(myStr);
-                    if (aux < 0) myStr = "1";
-                }
-                else myStr = "1";
-                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
-                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
-            }
-        }
-
-        private void btnEditarMemoria_Click(object sender, EventArgs e)
-        {
-            int i = dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow.Index;
-            if (!(i == -1))
-            {
-            }
-            //laptop.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-            dgvMemorias.PrimaryGrid.Columns[2].AllowEdit = true;
-            //dgvMemorias.PrimaryGrid.AllowEdit = true;
-        }
-
-        private void btnAgregarDisco_Click(object sender, EventArgs e)
-        {
-            int i = dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow.Index;
-            if (!(i == -1))
-            {
-                int cantidadDiscos = dgvDisco.PrimaryGrid.Rows.Count;
-                if (cantidadDiscos < this.maxCantidadDiscos)
-                {
-                    using (frmProcesoEditarDisco frm = new frmProcesoEditarDisco(cantidadDiscos, this.maxCantidadDiscos))
-                    {
-                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        {
-                            artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-
-                            int indice = 0;
-                            foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                            {
-                                if (detalle.Laptop.IdLC == artTemp.IdLC)
-                                {
-                                    break;
-                                }
-                                indice++;
-                            }
-
-                            foreach (DiscoDuro discoTraido in frm.DISCOS)
-                            {
-                                DiscoDuro disTemp = new DiscoDuro();
-                                disTemp.IdDisco = discoTraido.IdDisco;
-                                bool exists = alquiler.Detalles[indice].Laptop.Discos.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
-                                if (!(exists))
-                                {
-                                    disTemp.TipoDisco = discoTraido.TipoDisco;
-                                    disTemp.Capacidad = discoTraido.Capacidad;
-                                    disTemp.Cantidad = 1;
-                                    alquiler.Detalles[indice].Laptop.Discos.Add(disTemp);
-                                }
-                            }
-
-                            bool error;
-                            if (dgvDisco.PrimaryGrid.Rows.Count > 0)
-                            {
-                                error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Discos, this.nombreUsuario);
-                            }
-                            else
-                            {
-                                error = alquilerDA.InsertarLaptopDiscosPrimeraVez(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Discos, this.nombreUsuario);
-                            }
-
-                            if (!error)
-                            {
-                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                                return;
-                            }
-
-
-                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
-                            dgvDisco.PrimaryGrid.DataSource = tablaDisco;
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                }
-            }
-
-        }
-
-        private void btnGuardarDisco_Click(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool error;
-                if (dgvDisco.PrimaryGrid.Rows.Count > 0)
-                {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-
-                    int indice = 0;
-                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                    {
-                        if (detalle.Laptop.IdLC == artTemp.IdLC)
-                        {
-                            break;
-                        }
-                        indice++;
-                    }
-
-                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
-                    for (int i = 0; i < dgvDisco.PrimaryGrid.Rows.Count; i++)
-                    {
-                        DiscoDuro disco = new DiscoDuro();
-                        disco.IdDisco = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                        disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                        disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                        discos.Add(disco);
-                    }
-                    int maxCant = alquilerDA.ValidarCantidadLaptopDiscos(artTemp.IdLC, discos);
-                    if (maxCant == -1)
-                    {
-                        MessageBox.Show("Uno de los discos tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-
-                    error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
-                    if (!error)
-                    {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                    alquiler.Detalles[indice].Laptop.Discos = discos;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                }
-            }
-        }
-
-        private void dgvDisco_DoubleClick(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool error;
-                if (dgvDisco.PrimaryGrid.Rows.Count > 0)
-                {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-
-                    int indice = 0;
-                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
-                    {
-                        if (detalle.Laptop.IdLC == artTemp.IdLC)
-                        {
-                            break;
-                        }
-                        indice++;
-                    }
-
-                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
-                    for (int i = 0; i < dgvDisco.PrimaryGrid.Rows.Count; i++)
-                    {
-                        DiscoDuro disco = new DiscoDuro();
-                        int discoID = int.Parse(((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                        disco.IdDisco = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        if (discoID != disco.IdDisco)
-                        {
-                            disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value.ToString();
-                            disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString());
-                            disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                            discos.Add(disco);
-
-                        }
-                    }
-                    error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
-                    if (!error)
-                    {
-                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                    alquiler.Detalles[indice].Laptop.Discos = discos;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
-                    dgvDisco.PrimaryGrid.DataSource = tablaDisco;
-                }
-            }
-        }
-
-        private void dgvDisco_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
-        {
-
-            int i = dgvDisco.PrimaryGrid.ActiveRow.Index;
-            int aux;
-            int cantidadDisco;
-            string myStr;
-            if (!(i == -1))
-            {
-                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                myStr = myStr.TrimStart('0');
-
-                if (myStr.Length > 0)
-                {
-                    aux = int.Parse(myStr);
-                    if (aux < 0) myStr = "1";
-                }
-                else myStr = "1";
-                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
-                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
-
-            }
-
-        }
-
-        private void btnEditarDisco_Click(object sender, EventArgs e)
-        {
-            int i = dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow.Index;
-            if (!(i == -1))
-            {
-            }
-            //laptop.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-            dgvDisco.PrimaryGrid.Columns[2].AllowEdit = true;
-            //dgvMemorias.PrimaryGrid.AllowEdit = true;
-
-        }
 
         private void btnAgregarLicencia_Click(object sender, EventArgs e)
         {
-            int i = dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow.Index;
-            if (!(i == -1))
+
+            int equipoTempId = -1;
+            vistaEquipos.ClearColumnsFilter();
+            for (int i = 0; i < vistaEquipos.RowCount; i++)
+                if (vistaEquipos.IsRowSelected(i) == true)
+                    equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+            if (equipoTempId != -1)
             {
                 using (frmProcesoEditarLicencia frm = new frmProcesoEditarLicencia())
                 {
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
+                        artTemp.IdLC = equipoTempId;
 
                         int indice = 0;
                         foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -1288,10 +789,17 @@ namespace Apolo
                         licTempId = int.Parse(vistaLicencias.GetRowCellValue(i, "IdLicencia").ToString());
 
 
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
                 bool error;
-                if (licTempId != -1)
+                if (licTempId != -1 && equipoTempId != -1)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
+                    artTemp.IdLC = equipoTempId;
                     //int licTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value.ToString());
 
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario, 0);
@@ -1343,11 +851,19 @@ namespace Apolo
                     if (vistaLicencias.IsRowSelected(i) == true)
                         licTempId = int.Parse(vistaLicencias.GetRowCellValue(i, "IdLicencia").ToString());
 
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
+
                 bool error;
                 //if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
-                if (licTempId != -1)
+                if (licTempId != -1 && equipoTempId != -1)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
+                    artTemp.IdLC = equipoTempId;
                     //int licTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value.ToString());
 
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario, 1);
@@ -1387,10 +903,7 @@ namespace Apolo
             }
         }
 
-
-
-
-
+        
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que desea Imprimir el Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -1415,7 +928,7 @@ namespace Apolo
                         hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
                         hoja_pre_alquiler.Name = "Alquiler";
                         string cabecera = "Reporte de Alquiler";
-                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, dgvLaptopsSeleccionados, cabecera);
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
 
 
                         ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
@@ -1438,7 +951,7 @@ namespace Apolo
             }
         }
 
-        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo,  string nombreCabecera)
         {
             Excel.Range rango;
             int i = 0;
@@ -1512,10 +1025,10 @@ namespace Apolo
 
                 i++;
             }
-            montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera);
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
         }
 
-        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, SuperGridControl grd, string nombreCabecera)
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera)
         {
             try
             {
@@ -1617,5 +1130,674 @@ namespace Apolo
             }
         }
 
+
+        private void vistaDiscos_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            vistaDiscos.ClearColumnsFilter();
+
+            int discoID = -1;
+            int h = 0;
+            for (h = 0; h < vistaDiscos.RowCount; h++)
+                if (vistaDiscos.IsRowSelected(h) == true)
+                {
+                    discoID = int.Parse(vistaDiscos.GetRowCellValue(h, "IdDisco").ToString());
+                    break;
+                }
+
+            int aux;
+            int cantidadDisco;
+            string myStr;
+            if (discoID != -1)
+            {
+                myStr = vistaDiscos.GetRowCellValue(h, "Cantidad").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                //================================SE HIZO ESTE BLOQUE EN VEZ DEL SIGUIENTE================
+                BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
+                for (int i = 0; i < vistaDiscos.RowCount; i++)
+                {
+                    DiscoDuro disco = new DiscoDuro();
+                    disco.IdDisco = int.Parse(vistaDiscos.GetRowCellValue(i, "IdDisco").ToString());
+                    if (discoID != disco.IdDisco)
+                    {
+                        disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "TipoDisco").ToString();
+                        disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Capacidad").ToString());
+                        disco.Cantidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Cantidad").ToString());
+                        disco.Tamano = vistaDiscos.GetRowCellValue(i, "Tamano").ToString();
+                        discos.Add(disco);
+                    }
+                    else
+                    {
+                        disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "TipoDisco").ToString();
+                        disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Capacidad").ToString());
+                        disco.Cantidad = cantidadDisco;
+                        disco.Tamano = vistaDiscos.GetRowCellValue(i, "Tamano").ToString();
+                        discos.Add(disco);
+                    }
+                }
+                dgvDiscos.DataSource = discos;
+                //=====================================================================================
+                //vistaDiscos.SetRowCellValue(h, "Cantidad", cantidadDisco);
+                //=====================================================================================
+            }
+        }
+
+        private void dgvDiscos_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool error;
+
+                vistaDiscos.ClearColumnsFilter();
+
+                int discoID = -1;
+                int h = 0;
+                for (h = 0; h < vistaDiscos.RowCount; h++)
+                    if (vistaDiscos.IsRowSelected(h) == true)
+                    {
+                        discoID = int.Parse(vistaDiscos.GetRowCellValue(h, "IdDisco").ToString());
+                        break;
+                    }
+
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+                               
+                if (discoID != -1 && equipoTempId != -1)
+                {
+                    artTemp.IdLC = equipoTempId;
+
+                    int indice = 0;
+                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                    {
+                        if (detalle.Laptop.IdLC == artTemp.IdLC)
+                        {
+                            break;
+                        }
+                        indice++;
+                    }
+
+                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
+                    for (int i = 0; i < vistaDiscos.RowCount; i++)
+                    {
+                        DiscoDuro disco = new DiscoDuro();
+                        disco.IdDisco = int.Parse(vistaDiscos.GetRowCellValue(i, "IdDisco").ToString());
+                        if (discoID != disco.IdDisco)
+                        {
+                            disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "TipoDisco").ToString();
+                            disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Capacidad").ToString());
+                            disco.Cantidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Cantidad").ToString());
+                            disco.Tamano = vistaDiscos.GetRowCellValue(i, "Tamano").ToString();
+                            discos.Add(disco);
+                        }
+                    }
+                    error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
+                    if (!error)
+                    {
+                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    alquiler.Detalles[indice].Laptop.Discos = discos;
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
+                    dgvDiscos.DataSource = tablaDisco;
+                }
+            }
+        }
+
+        private void btnAgregarDisco_Click(object sender, EventArgs e)
+        {
+            int equipoTempId = -1;
+            vistaEquipos.ClearColumnsFilter();
+            for (int i = 0; i < vistaEquipos.RowCount; i++)
+                if (vistaEquipos.IsRowSelected(i) == true)
+                    equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+            
+            if (equipoTempId!=-1)
+            {
+                int cantidadDiscos = vistaDiscos.RowCount;
+                if (cantidadDiscos < this.maxCantidadDiscos)
+                {
+                    using (frmProcesoEditarDisco frm = new frmProcesoEditarDisco(cantidadDiscos, this.maxCantidadDiscos))
+                    {
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            artTemp.IdLC = equipoTempId;
+
+                            int indice = 0;
+                            foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                            {
+                                if (detalle.Laptop.IdLC == artTemp.IdLC)
+                                {
+                                    break;
+                                }
+                                indice++;
+                            }
+
+                            foreach (DiscoDuro discoTraido in frm.DISCOS)
+                            {
+                                DiscoDuro disTemp = new DiscoDuro();
+                                disTemp.IdDisco = discoTraido.IdDisco;
+                                bool exists = alquiler.Detalles[indice].Laptop.Discos.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
+                                if (!(exists))
+                                {
+                                    disTemp.TipoDisco = discoTraido.TipoDisco;
+                                    disTemp.Capacidad = discoTraido.Capacidad;
+                                    disTemp.Cantidad = 1;
+                                    alquiler.Detalles[indice].Laptop.Discos.Add(disTemp);
+                                }
+                            }
+
+                            bool error;
+                            if (vistaDiscos.RowCount > 0)
+                            {
+                                error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Discos, this.nombreUsuario);
+                            }
+                            else
+                            {
+                                error = alquilerDA.InsertarLaptopDiscosPrimeraVez(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Discos, this.nombreUsuario);
+                            }
+
+                            if (!error)
+                            {
+                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                return;
+                            }
+
+                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
+                            dgvDiscos.DataSource = tablaDisco;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+        }
+
+        private void btnGuardarDisco_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool error;
+
+                vistaDiscos.ClearColumnsFilter();
+
+
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
+                if (vistaDiscos.RowCount>0 && equipoTempId != -1)
+                {
+                    artTemp.IdLC = equipoTempId;
+
+                    int indice = 0;
+                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                    {
+                        if (detalle.Laptop.IdLC == artTemp.IdLC)
+                        {
+                            break;
+                        }
+                        indice++;
+                    }
+
+                    BindingList<DiscoDuro> discos = new BindingList<DiscoDuro>();
+                    for (int i = 0; i < vistaDiscos.RowCount; i++)
+                    {
+                        DiscoDuro disco = new DiscoDuro();
+                        disco.IdDisco = int.Parse(vistaDiscos.GetRowCellValue(i, "IdDisco").ToString());
+                        disco.TipoDisco = vistaDiscos.GetRowCellValue(i, "TipoDisco").ToString();
+                        disco.Capacidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Capacidad").ToString());
+                        disco.Cantidad = int.Parse(vistaDiscos.GetRowCellValue(i, "Cantidad").ToString());
+                        disco.Tamano = vistaDiscos.GetRowCellValue(i, "Tamano").ToString();
+                        discos.Add(disco);
+                    }
+
+                    int maxCant = alquilerDA.ValidarCantidadLaptopDiscos(artTemp.IdLC, discos);
+                    if (maxCant == -1)
+                    {
+                        MessageBox.Show("Uno de los discos tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+
+                    error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
+                    if (!error)
+                    {
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    alquiler.Detalles[indice].Laptop.Discos = discos;
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+
+        private void vistaMemorias_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            vistaMemorias.ClearColumnsFilter();
+
+            int memoriaID = -1;
+            int h = 0;
+            for (h = 0; h < vistaMemorias.RowCount; h++)
+                if (vistaMemorias.IsRowSelected(h) == true)
+                {
+                    memoriaID = int.Parse(vistaMemorias.GetRowCellValue(h, "IdMemoria").ToString());
+                    break;
+                }
+
+
+            int aux;
+            int cantidadMemoria;
+            string myStr;
+            if (memoriaID != -1)
+            {
+                myStr = vistaMemorias.GetRowCellValue(h, "Cantidad").ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
+
+                //================================SE HIZO ESTE BLOQUE EN VEZ DEL SIGUIENTE================
+                BindingList<Memoria> memorias = new BindingList<Memoria>();
+                for (int i = 0; i < vistaMemorias.RowCount; i++)
+                {
+                    Memoria memoria = new Memoria();
+                    memoria.IdMemoria = int.Parse(vistaMemorias.GetRowCellValue(i, "IdMemoria").ToString());
+                    if (memoriaID != memoria.IdMemoria)
+                    {
+                        memoria.TipoMemoria = vistaMemorias.GetRowCellValue(i, "TipoMemoria").ToString();
+                        memoria.Tipo = vistaMemorias.GetRowCellValue(i, "Tipo2").ToString();
+                        memoria.Capacidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Capacidad").ToString());
+                        memoria.Cantidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Cantidad").ToString());
+                        memorias.Add(memoria);
+                    }
+                    else
+                    {
+                        memoria.TipoMemoria = vistaMemorias.GetRowCellValue(i, "TipoMemoria").ToString();
+                        memoria.Tipo = vistaMemorias.GetRowCellValue(i, "Tipo2").ToString();
+                        memoria.Capacidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Capacidad").ToString());
+                        memoria.Cantidad = cantidadMemoria;
+                        memorias.Add(memoria);
+                    }
+                }
+                dgvMemoria.DataSource = memorias;
+                //=====================================================================================
+                //vistaDiscos.SetRowCellValue(h, "Cantidad", cantidadDisco);
+                //=====================================================================================
+
+            }
+
+        }
+
+        private void dgvMemoria_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool error;
+
+                vistaMemorias.ClearColumnsFilter();
+
+                int memoriaID = -1;
+                int h = 0;
+                for (h = 0; h < vistaMemorias.RowCount; h++)
+                    if (vistaMemorias.IsRowSelected(h) == true)
+                    {
+                        memoriaID = int.Parse(vistaMemorias.GetRowCellValue(h, "IdMemoria").ToString());
+                        break;
+                    }
+
+
+
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
+
+                if (memoriaID != -1 && equipoTempId != -1)
+                {
+                    artTemp.IdLC = equipoTempId;
+
+                    int indice = 0;
+                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                    {
+                        if (detalle.Laptop.IdLC == artTemp.IdLC)
+                        {
+                            break;
+                        }
+                        indice++;
+                    }
+
+                    BindingList<Memoria> memorias = new BindingList<Memoria>();
+                    for (int i = 0; i < vistaMemorias.RowCount; i++)
+                    {
+                        Memoria memoria = new Memoria();
+                        //int memoriaID = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                        memoria.IdMemoria = int.Parse(vistaMemorias.GetRowCellValue(i, "IdMemoria").ToString());
+                        if (memoriaID != memoria.IdMemoria)
+                        {
+                            memoria.TipoMemoria = vistaMemorias.GetRowCellValue(i, "TipoMemoria").ToString();
+                            memoria.Tipo = vistaMemorias.GetRowCellValue(i, "Tipo2").ToString();
+                            memoria.Capacidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Capacidad").ToString());
+                            memoria.Cantidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Cantidad").ToString());
+                            memorias.Add(memoria);
+
+                        }
+                    }
+                    error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
+                    if (!error)
+                    {
+                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    alquiler.Detalles[indice].Laptop.Memorias = memorias;
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
+                    dgvMemoria.DataSource = tablaMemoria;
+                }
+            }
+        }
+
+        private void btnAgregarMemoria_Click(object sender, EventArgs e)
+        {
+
+            int equipoTempId = -1;
+            vistaEquipos.ClearColumnsFilter();
+            for (int i = 0; i < vistaEquipos.RowCount; i++)
+                if (vistaEquipos.IsRowSelected(i) == true)
+                    equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
+            if (equipoTempId!=-1)
+            {
+                using (frmProcesoEditarMemoria frm = new frmProcesoEditarMemoria())
+                {
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        artTemp.IdLC = equipoTempId;
+
+                        int indice = 0;
+                        foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                        {
+                            if (detalle.Laptop.IdLC == artTemp.IdLC)
+                            {
+                                break;
+                            }
+                            indice++;
+                        }
+
+                        foreach (Memoria memoriaTraido in frm.MEMORIAS)
+                        {
+                            Memoria memTemp = new Memoria();
+                            memTemp.IdMemoria = memoriaTraido.IdMemoria;
+                            bool exists = alquiler.Detalles[indice].Laptop.Memorias.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
+                            if (!(exists))
+                            {
+                                memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
+                                memTemp.Capacidad = memoriaTraido.Capacidad;
+                                memTemp.Tipo = memoriaTraido.Tipo;
+                                memTemp.Cantidad = 1;
+                                alquiler.Detalles[indice].Laptop.Memorias.Add(memTemp);
+                            }
+                        }
+
+                        bool error;
+                        if (vistaMemorias.RowCount > 0)
+                        {
+                            error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Memorias, this.nombreUsuario);
+                        }
+                        else
+                        {
+                            error = alquilerDA.InsertarLaptopMemoriasPrimeraVez(artTemp.IdLC, alquiler.Detalles[indice].Laptop.Memorias, this.nombreUsuario);
+                        }
+
+                        if (!error)
+                        {
+                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            return;
+                        }
+
+                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
+                        dgvMemoria.DataSource = tablaMemoria;
+                    }
+                }
+            }
+
+        }
+
+        private void btnGuardarMemoria_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool error;
+                vistaMemorias.ClearColumnsFilter();
+
+                int equipoTempId = -1;
+                vistaEquipos.ClearColumnsFilter();
+                for (int i = 0; i < vistaEquipos.RowCount; i++)
+                    if (vistaEquipos.IsRowSelected(i) == true)
+                        equipoTempId = int.Parse(vistaEquipos.GetRowCellValue(i, "IdLC").ToString());
+
+
+                if (vistaMemorias.RowCount > 0 && equipoTempId!=-1)
+                {
+                    artTemp.IdLC = equipoTempId;
+
+                    int indice = 0;
+                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                    {
+                        if (detalle.Laptop.IdLC == artTemp.IdLC)
+                        {
+                            break;
+                        }
+                        indice++;
+                    }
+
+                    BindingList<Memoria> memorias = new BindingList<Memoria>();
+                    for (int i = 0; i < vistaMemorias.RowCount; i++)
+                    {
+                        Memoria memoria = new Memoria();
+
+                        memoria.IdMemoria = int.Parse(vistaMemorias.GetRowCellValue(i, "IdMemoria").ToString());
+                        memoria.TipoMemoria = vistaMemorias.GetRowCellValue(i, "TipoMemoria").ToString();
+                        memoria.Tipo = vistaMemorias.GetRowCellValue(i, "Tipo2").ToString();
+                        memoria.Capacidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Capacidad").ToString());
+                        memoria.Cantidad = int.Parse(vistaMemorias.GetRowCellValue(i, "Cantidad").ToString());
+                        memorias.Add(memoria);
+                    }
+
+                    int maxCant = alquilerDA.ValidarCantidadLaptopMemoria(artTemp.IdLC, memorias);
+                    if (maxCant == -1)
+                    {
+                        MessageBox.Show("Uno de las memorias tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+
+                    error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
+                    if (!error)
+                    {
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    alquiler.Detalles[indice].Laptop.Memorias = memorias;
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            using (frmProcesoAlquilerAgregarProducto frm = new frmProcesoAlquilerAgregarProducto())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    BindingList<AlquilerDetalle> auxiliares = new BindingList<AlquilerDetalle>();
+                    foreach (AlquilerDetalle aux in alquiler.Detalles)
+                    {
+                        auxiliares.Add(aux);
+                    }
+                    foreach (LC laptopTraido in frm.LAPTOPS)
+                    {
+                        AlquilerDetalle dp = new AlquilerDetalle();
+                        artTemp = new LC();
+                        artTemp.IdLC = laptopTraido.IdLC;
+                        bool exists = auxiliares.Any(x => x.Laptop.IdLC.Equals(artTemp.IdLC));
+                        if (!(exists))
+                        {
+                            tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
+                            tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
+                            tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
+                            laptopTraido.SetDisco(tablaDisco);
+                            laptopTraido.SetMemoria(tablaMemoria);
+                            laptopTraido.SetLicencia(tablaLicencia);
+
+                            dp.Laptop = laptopTraido;
+                            auxiliares.Add(dp);
+                        }
+                    }
+
+                    alquiler.Detalles = auxiliares;
+                }
+            }
+
+            dgvEquipos.DataSource = alquiler.Detalles;
+            lblContador.Text = $"CANTIDAD REGISTRO: {alquiler.Detalles.Count.ToString()}";
+            if (alquiler.Detalles.Count > 0)
+            {
+                dgvDiscos.Enabled = true;
+                dgvMemoria.Enabled = true;
+                dgvLicencias.Enabled = true;
+                btnAgregarDisco.Enabled = true;
+                btnGuardarDisco.Enabled = true;
+                btnAgregarMemoria.Enabled = true;
+                btnGuardarMemoria.Enabled = true;
+                btnAgregarLicencia.Enabled = true;
+                btnEliminarLicencia.Enabled = true;
+                btnCaducidadLicencia.Enabled = true;
+            }
+        }
+
+        private void dgvEquipos_Click(object sender, EventArgs e)
+        {
+            vistaEquipos.ClearColumnsFilter();
+
+            int equipoID = -1;
+            int h = 0;
+            for (h = 0; h < vistaEquipos.RowCount; h++)
+                if (vistaEquipos.IsRowSelected(h) == true)
+                {
+                    equipoID = int.Parse(vistaEquipos.GetRowCellValue(h, "IdLC").ToString());
+                    break;
+                }
+
+
+            if (equipoID != -1)
+            {
+                artTemp = new LC();
+                artTemp.IdLC = equipoID;
+
+                int indice = 0;
+                foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                {
+                    if (detalle.Laptop.IdLC == artTemp.IdLC)
+                    {
+                        break;
+                    }
+                    indice++;
+                }
+
+                tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
+                tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
+                tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
+                dgvDiscos.DataSource = tablaDisco;
+                dgvMemoria.DataSource = tablaMemoria;
+                dgvLicencias.DataSource = tablaLicencia;
+            }
+        }
+
+        private void dgvEquipos_DoubleClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool error;
+                vistaEquipos.ClearColumnsFilter();
+
+                int equipoID = -1;
+                int h = 0;
+                for (h = 0; h < vistaEquipos.RowCount; h++)
+                    if (vistaEquipos.IsRowSelected(h) == true)
+                    {
+                        equipoID = int.Parse(vistaEquipos.GetRowCellValue(h, "IdLC").ToString());
+                        break;
+                    }
+
+                if (equipoID != -1)
+                {
+                    artTemp.IdLC = equipoID;
+
+                    int indiceLC = 0;
+                    foreach (AlquilerDetalle detalle in alquiler.Detalles)
+                    {
+                        if (detalle.Laptop.IdLC == artTemp.IdLC)
+                        {
+                            break;
+                        }
+                        indiceLC++;
+                    }
+
+                    alquiler.Detalles.RemoveAt(indiceLC);
+
+                    dgvEquipos.DataSource = alquiler.Detalles;
+                }
+            }
+
+            lblContador.Text = $"CANTIDAD REGISTRO: {alquiler.Detalles.Count.ToString()}";
+        }
+
+        private void btnSeleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", true);
+            }
+        }
+
+        private void btnDeseleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", false);
+            }
+        }
     }
 }
