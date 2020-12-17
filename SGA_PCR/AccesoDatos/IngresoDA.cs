@@ -280,7 +280,8 @@ namespace AccesoDatos
                 DateTime fechaIngreso = Convert.ToDateTime(parametrosEntrada[8].Value);
                 //MessageBox.Show(dtpFechaIngreso.Value.ToString());
 
-                int month = fechaIngreso.Month;
+                string month = fechaIngreso.Month.ToString("00");
+
                 string year = fechaIngreso.Year.ToString();
                 year = year.Substring(fechaIngreso.Year.ToString().Length-2,2);
 
@@ -293,7 +294,7 @@ namespace AccesoDatos
             return ingreso.IdIngreso;
         }
 
-        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario, int idProveedor,int month,string year)
+        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario, int idProveedor,string month,string year)
         {
             bool error = false;
 
@@ -345,7 +346,7 @@ namespace AccesoDatos
                             parametrosEntrada_aux = new MySqlParameter[6];
                             parametrosEntrada_aux[0] = new MySqlParameter("@_marcaLap", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[1] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-                            parametrosEntrada_aux[2] = new MySqlParameter("@_monthIngreso", MySqlDbType.Int32);
+                            parametrosEntrada_aux[2] = new MySqlParameter("@_monthIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[3] = new MySqlParameter("@_yearIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[4] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                             parametrosEntrada_aux[5] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
@@ -636,7 +637,7 @@ namespace AccesoDatos
 
                             parametrosEntrada_aux = new MySqlParameter[5];
                             parametrosEntrada_aux[0] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.Int32);
+                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[2] = new MySqlParameter("@_yearIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[3] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                             parametrosEntrada_aux[4] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
@@ -795,7 +796,7 @@ namespace AccesoDatos
 
                             parametrosEntrada_aux = new MySqlParameter[5];
                             parametrosEntrada_aux[0] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.Int32);
+                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[2] = new MySqlParameter("@_yearIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[3] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                             parametrosEntrada_aux[4] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
@@ -952,7 +953,7 @@ namespace AccesoDatos
 
                             parametrosEntrada_aux = new MySqlParameter[5];
                             parametrosEntrada_aux[0] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.Int32);
+                            parametrosEntrada_aux[1] = new MySqlParameter("@_monthIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[2] = new MySqlParameter("@_yearIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[3] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                             parametrosEntrada_aux[4] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
@@ -1125,7 +1126,7 @@ namespace AccesoDatos
                             parametrosEntrada_aux = new MySqlParameter[6];
                             parametrosEntrada_aux[0] = new MySqlParameter("@_marcaProyEcram", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[1] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-                            parametrosEntrada_aux[2] = new MySqlParameter("@_monthIngreso", MySqlDbType.Int32);
+                            parametrosEntrada_aux[2] = new MySqlParameter("@_monthIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[3] = new MySqlParameter("@_yearIngreso", MySqlDbType.VarChar, 80);
                             parametrosEntrada_aux[4] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                             parametrosEntrada_aux[5] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
@@ -1940,7 +1941,7 @@ namespace AccesoDatos
             DateTime fechaIngreso = Convert.ToDateTime(parametrosEntrada[8].Value);
             //MessageBox.Show(dtpFechaIngreso.Value.ToString());
 
-            int month = fechaIngreso.Month;
+            string month = fechaIngreso.Month.ToString("00");
             string year = fechaIngreso.Year.ToString();
             year = year.Substring(fechaIngreso.Year.ToString().Length - 2, 2);
 
