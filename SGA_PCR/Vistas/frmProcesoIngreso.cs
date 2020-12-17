@@ -54,7 +54,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-
+            
             ingresoDA = new IngresoDA();
             ingreso = new Ingreso();
             dtpFechaIngreso.Value = DateTime.Now;
@@ -1100,8 +1100,12 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaTablet, 1] = det.TabletMarca;
                 hoja_trabajo.Cells[i + filaTablet, 2] = det.TabletNombreModelo;
                 hoja_trabajo.Cells[i + filaTablet, 3] = det.TabletProcesador;
+
+
                 hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletRam+"GB";
-                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+ "GB";
+                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+"GB";
+
+
                 hoja_trabajo.Cells[i + filaTablet, 6] = det.TabletTamanoPantalla;
                 hoja_trabajo.Cells[i + filaTablet, 7] = det.Cantidad;
                 hoja_trabajo.Cells[i + filaTablet, 8] = det.Precio;
