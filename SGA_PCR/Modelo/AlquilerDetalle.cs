@@ -9,6 +9,8 @@ namespace Modelo
     public class AlquilerDetalle
     {
         private long idAlquilerDetalle;
+        private int idTipoEquipo;
+        private string nombreTipoEquipo;
         private LC laptop;
         private DateTime fechaIniContrato;
         private DateTime fechaFinContrato;
@@ -67,5 +69,9 @@ namespace Modelo
         public string NombreModeloVideo { get => laptop.Video.Modelo.NombreModelo; }
         public int CapacidadVideo { get => laptop.Video.Capacidad; }
         public bool Seleccionar { get => seleccionar; set => seleccionar = value; }
+
+        public int IdTipoEquipo { get => idTipoEquipo; set => idTipoEquipo = value; }
+        public string NombreTipoEquipo { get => nombreTipoEquipo; set => nombreTipoEquipo = value; }
+
     }
 }

@@ -29,7 +29,6 @@ namespace Apolo
         {
             InitializeComponent();
             Inicializado();
-            //estadoComponentes(TipoVista.Inicial);
         }
 
         public frmProcesoAlquilerAgregarProducto(int idUsuario, string nombreUsuario)
@@ -38,51 +37,58 @@ namespace Apolo
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;
             Inicializado();
-            //estadoComponentes(TipoVista.Inicial);
         }
 
         public void Inicializado()
         {
-
             alquilerDA = new AlquilerDA();
-            //laptop = new LC();
+
             laptops = new BindingList<LC>();
             tablaLaptops = alquilerDA.ListarLaptopsAlmacenSinMemoriaDisco();
 
-            dgvLaptops.PrimaryGrid.AutoGenerateColumns = false;
-            dgvLaptops.PrimaryGrid.DataSource = tablaLaptops; ;
+            tablaLaptops.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaLaptops.Rows.Count; h++)
+            {
+                tablaLaptops.Rows[h]["Seleccionar"] = false;
+            }
+
+            dgvEquipos.DataSource = tablaLaptops;
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
         }
 
         public bool llenarListaLaptops()
         {
+            vistaEquipos.ClearColumnsFilter();
+
             bool flag = false;
-            int filas = tablaLaptops.Rows.Count;
-            for (int i = 0; i < filas; i++)
+
+            for (int i = 0; i < vistaEquipos.RowCount; i++)
             {
-                if(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaEquipos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        laptop = new LC();
-                        laptop.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-                        laptop.Codigo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        laptop.Modelo.NombreMarca = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        laptop.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                        laptop.TamanoPantalla = Double.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                        laptop.Procesador.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 5))).Value.ToString();
-                        laptop.Procesador.Generacion = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        laptop.Video.IdVideo = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 10))).Value.ToString());
-                        laptop.Video.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 7))).Value.ToString();
-                        laptop.Video.Capacidad = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 8))).Value.ToString());
-                        laptop.Procesador.IdProcesador = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 11))).Value.ToString());
-                        laptops.Add(laptop);
-                        flag = true;
-                    }
+                    laptop = new LC();
+                    laptop.IdLC = int.Parse(vistaEquipos.GetRowCellValue(i, "idLC").ToString());
+                    laptop.Codigo = vistaEquipos.GetRowCellValue(i, "codigo").ToString();
+                    laptop.Modelo.NombreMarca = vistaEquipos.GetRowCellValue(i, "marcaLC").ToString();
+                    laptop.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "nombreModeloLC").ToString();
+                    laptop.TamanoPantalla = Double.Parse(vistaEquipos.GetRowCellValue(i, "tamanoPantalla").ToString());
+                    laptop.Procesador.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "tipoProcesador").ToString();
+                    laptop.Procesador.Generacion = int.Parse(vistaEquipos.GetRowCellValue(i, "generacionProcesador").ToString());
+                    laptop.Video.IdVideo = int.Parse(vistaEquipos.GetRowCellValue(i, "idVideo").ToString());
+                    laptop.Video.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "nombreModeloVideo").ToString();
+                    laptop.Video.Capacidad = int.Parse(vistaEquipos.GetRowCellValue(i, "capacidadVideo").ToString());
+                    laptop.Procesador.IdProcesador = int.Parse(vistaEquipos.GetRowCellValue(i, "idProcesador").ToString());
+                    laptops.Add(laptop);
+                    flag = true;
                 }
             }
             return flag;
         }
+
         public BindingList<LC> LAPTOPS { get => laptops; set => laptops = value; }
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             if (llenarListaLaptops())//Si entra es porque se ha seleccionado almenos solo
@@ -131,33 +137,46 @@ namespace Apolo
                         miDataTable.Rows.Add(Renglon);
                     }
 
-                    //dgvSerieFabrica.DataSource = miDataTable;
-                    //dgvSerieFabrica.AutoGenerateColumns = false;
-
                     int filasExcel = miDataTable.Rows.Count;
                     for (int i = 0; i < filasExcel; i++)
                     {
                         string codigo = miDataTable.Rows[i]["CODIGO_LC"].ToString();
-                        int filasDgv = tablaLaptops.Rows.Count;
+                        vistaEquipos.ClearColumnsFilter();
+                        int filasDgv = vistaEquipos.RowCount;
                         for (int j = 0; j < filasDgv; j++)
                         {
-                            if (codigo == ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(j, 1))).Value.ToString())
+                            if (codigo == vistaEquipos.GetRowCellValue(j, "codigo").ToString())
                             {
-                                ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(j, 0))).Value = true;
+                                vistaEquipos.SetRowCellValue(j, "Seleccionar", true);
                                 break;
                             }
                         }
                     }
-
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-
-
         }
+
+        private void btnSeleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", true);
+            }
+        }
+
+        private void btnDeseleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", false);
+            }
+        }
+        
     }
 }

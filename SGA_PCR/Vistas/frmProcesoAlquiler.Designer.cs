@@ -1040,8 +1040,10 @@
             this.IdLC});
             this.vistaEquipos.GridControl = this.dgvEquipos;
             this.vistaEquipos.Name = "vistaEquipos";
+            this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
             this.vistaEquipos.OptionsCustomization.AllowGroup = false;
             this.vistaEquipos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
             this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
             this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
