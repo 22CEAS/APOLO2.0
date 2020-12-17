@@ -492,27 +492,37 @@ namespace Apolo
 
         private async void btnValidar_Click(object sender, EventArgs e)
         {
-            giftCarga.Enabled = true;
-            giftCarga.Visible = true;
-            Task<bool> task = new Task<bool>(ValidarFactura);
-            task.Start();
-            giftCarga.Image = Image.FromFile(@".\progress.gif");
-            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (facturas.Count > 0)
+            {
+                if (MessageBox.Show("Estas seguro que desea Validar las facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
 
-            btnSubirFactura.Enabled = false;
-            btnGrabar.Enabled = false;
-            btnValidar.Enabled = false;
-            btnBuscarV.Enabled = false;
+                    giftCarga.Enabled = true;
+                    giftCarga.Visible = true;
+                    Task<bool> task = new Task<bool>(ValidarFactura);
+                    task.Start();
+                    giftCarga.Image = Image.FromFile(@".\progress.gif");
+                    giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            bool resultado = await task; //MIENTRAS CARGA
+                    btnSubirFactura.Enabled = false;
+                    btnGrabar.Enabled = false;
+                    btnValidar.Enabled = false;
+                    btnBuscarV.Enabled = false;
 
-            giftCarga.Enabled = false;
-            giftCarga.Visible = false;
+                    bool resultado = await task; //MIENTRAS CARGA
 
-            btnSubirFactura.Enabled = true;
-            btnGrabar.Enabled = true;
-            btnValidar.Enabled = true;
-            btnBuscarV.Enabled = true;
+                    giftCarga.Enabled = false;
+                    giftCarga.Visible = false;
+
+                    btnSubirFactura.Enabled = true;
+                    btnGrabar.Enabled = true;
+                    btnValidar.Enabled = true;
+                    btnBuscarV.Enabled = true;
+                }
+
+            }
+
+
         }
 
         public bool ValidarFactura()
@@ -530,27 +540,34 @@ namespace Apolo
 
         private async void btnBuscarV_Click(object sender, EventArgs e)
         {
-            giftCarga.Enabled = true;
-            giftCarga.Visible = true;
-            Task<bool> task = new Task<bool>(BuscarV);
-            task.Start();
-            giftCarga.Image = Image.FromFile(@".\progress.gif");
-            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            btnSubirFactura.Enabled = false;
-            btnGrabar.Enabled = false;
-            btnValidar.Enabled = false;
-            btnBuscarV.Enabled = false;
+            if (facturas.Count > 0)
+            {
+                if (MessageBox.Show("Estas seguro que desea realizar el Buscar V en estas facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    giftCarga.Enabled = true;
+                    giftCarga.Visible = true;
+                    Task<bool> task = new Task<bool>(BuscarV);
+                    task.Start();
+                    giftCarga.Image = Image.FromFile(@".\progress.gif");
+                    giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            bool resultado = await task; //MIENTRAS CARGA
+                    btnSubirFactura.Enabled = false;
+                    btnGrabar.Enabled = false;
+                    btnValidar.Enabled = false;
+                    btnBuscarV.Enabled = false;
 
-            giftCarga.Enabled = false;
-            giftCarga.Visible = false;
+                    bool resultado = await task; //MIENTRAS CARGA
 
-            btnSubirFactura.Enabled = true;
-            btnGrabar.Enabled = true;
-            btnValidar.Enabled = true;
-            btnBuscarV.Enabled = true;
+                    giftCarga.Enabled = false;
+                    giftCarga.Visible = false;
+
+                    btnSubirFactura.Enabled = true;
+                    btnGrabar.Enabled = true;
+                    btnValidar.Enabled = true;
+                    btnBuscarV.Enabled = true;
+                }
+            }
         }
 
         public bool BuscarV()
