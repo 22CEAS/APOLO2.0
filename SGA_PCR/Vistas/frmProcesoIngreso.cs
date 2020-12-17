@@ -905,14 +905,14 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaDetalle, 1] = det.LaptopMarcaLC;
                 hoja_trabajo.Cells[i + filaDetalle, 2] = det.LaptopNombreModeloLC;
                 hoja_trabajo.Cells[i + filaDetalle, 3] = det.Laptop.PartNumber;
-                hoja_trabajo.Cells[i + filaDetalle, 4] = det.LaptopTamanoPantalla.ToString();
+                hoja_trabajo.Cells[i + filaDetalle, 4] = (det.LaptopTamanoPantalla>0) ? det.LaptopTamanoPantalla.ToString():" ";
                 hoja_trabajo.Cells[i + filaDetalle, 5] = (det.Laptop.Garantia == 1) ? "Si" : "No";
                 hoja_trabajo.Cells[i + filaDetalle, 6] = det.Precio.ToString();
                 hoja_trabajo.Cells[i + filaDetalle, 7] = det.Cantidad.ToString();
                 string aux = "";
                 aux = det.Laptop.Procesador.Modelo.NombreModelo + "/GEN" + det.Laptop.Procesador.Generacion.ToString();
                 hoja_trabajo.Cells[i + filaDetalle, 8] = aux;
-                hoja_trabajo.Cells[i + filaDetalle, 9] = det.Laptop.Video.Capacidad.ToString() + " GB";
+                hoja_trabajo.Cells[i + filaDetalle, 9] = (det.Laptop.Video.Capacidad>0) ? det.Laptop.Video.Capacidad.ToString() + " GB":" ";
 
                 string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
                 if (det.Laptop.Discos.Count > 0)
@@ -1100,7 +1100,7 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaTablet, 1] = det.TabletMarca;
                 hoja_trabajo.Cells[i + filaTablet, 2] = det.TabletNombreModelo;
                 hoja_trabajo.Cells[i + filaTablet, 3] = det.TabletProcesador;
-                hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletIdRAM+"GB";
+                hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletRam+"GB";
                 hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+ "GB";
                 hoja_trabajo.Cells[i + filaTablet, 6] = det.TabletTamanoPantalla;
                 hoja_trabajo.Cells[i + filaTablet, 7] = det.Cantidad;
