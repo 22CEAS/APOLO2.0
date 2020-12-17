@@ -35,6 +35,10 @@ namespace Apolo
         private string licenciaCategoriaSO = "S.O";
         private string licenciaCategoriaOffice = "OFFICE";
         private string licenciaCategoriaAntivirus = "ANTIVIRUS";
+
+
+        private double total = 0;
+        private double ultimoMovimiento = 0;
         
         public frmProcesoIngreso()
         {
@@ -54,7 +58,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-
+            
             ingresoDA = new IngresoDA();
             ingreso = new Ingreso();
             dtpFechaIngreso.Value = DateTime.Now;
@@ -643,6 +647,8 @@ namespace Apolo
                 dgvMonitores.DataSource = ingreso.DetallesMonitores;
                 dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
                 dgvProyectores.DataSource = ingreso.DetallesProyectores;
+
+                ObtenerTotal();
             }
             else
             {
@@ -1100,8 +1106,12 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaTablet, 1] = det.TabletMarca;
                 hoja_trabajo.Cells[i + filaTablet, 2] = det.TabletNombreModelo;
                 hoja_trabajo.Cells[i + filaTablet, 3] = det.TabletProcesador;
+
+
                 hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletRam+"GB";
-                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+ "GB";
+                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+"GB";
+
+
                 hoja_trabajo.Cells[i + filaTablet, 6] = det.TabletTamanoPantalla;
                 hoja_trabajo.Cells[i + filaTablet, 7] = det.Cantidad;
                 hoja_trabajo.Cells[i + filaTablet, 8] = det.Precio;
@@ -1510,6 +1520,8 @@ namespace Apolo
                             dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
                             vistaLaptops.OptionsBehavior.AutoPopulateColumns = false;
                             vistaLaptops.OptionsSelection.MultiSelect = true;
+
+                            ObtenerTotal();
                         }
                     }
                 }
@@ -1557,11 +1569,15 @@ namespace Apolo
                     dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
                 }
             }
+            ObtenerTotal();
 
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+
+            
+
             Cursor.Current = Cursors.WaitCursor;
             string numIngreso = txtNroIngreso.Text;
             if (cmbProveedor.SelectedValue == null)
@@ -1590,6 +1606,8 @@ namespace Apolo
                 return;
             }
 
+            //MessageBox.Show(ingreso.Total.ToString());
+
             Cursor.Current = Cursors.WaitCursor;
 
             //VALIDAR SI ES COMPRA (0)  O ARRENDAMIENTO (1)
@@ -1602,6 +1620,7 @@ namespace Apolo
                 {
 
                     int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
+                    
 
                     if (idIngreso == -1)
                     {
@@ -1725,6 +1744,8 @@ namespace Apolo
                 string tipo = cmbTipoIngreso.SelectedIndex.ToString();
                 using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(this.idUsuario, this.nombreUsuario, tipo, ingreso.Detalles[indiceLC]))
                 {
+
+                    ObtenerTotal();
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         if (vistaLaptops.RowCount > 0)
@@ -1757,6 +1778,7 @@ namespace Apolo
                         det.IdIngresoDetalle = ingreso.Detalles.Count + 1;
                         ingreso.Detalles.Add(det);
                         dgvLaptopsSeleccionados.DataSource = ingreso.Detalles;
+                        ObtenerTotal();
                     }
                 }
             }
@@ -1828,6 +1850,8 @@ namespace Apolo
                         }
                         ingreso.Licencias = auxiliares;
                         dgvLicencias.DataSource = ingreso.Licencias;
+
+                        ObtenerTotal();
                     }
                 }
             }
@@ -1876,6 +1900,7 @@ namespace Apolo
                     }
 
                 }
+                ObtenerTotal();
             }
             catch
             {
@@ -1984,6 +2009,8 @@ namespace Apolo
                     }
                     ingreso.Memorias = auxiliares;
                     dgvMemoria.DataSource = ingreso.Memorias;
+
+                    ObtenerTotal();
                 }
             }
 
@@ -2026,6 +2053,7 @@ namespace Apolo
                     dgvMemoria.DataSource = ingreso.Memorias;
                 }
             }
+            ObtenerTotal();
         }
 
         private void vistaMemoria_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -2111,6 +2139,8 @@ namespace Apolo
                     }
                     ingreso.Discos = auxiliares;
                     dgvDiscos.DataSource = ingreso.Discos;
+
+                    ObtenerTotal();
                 }
             }
 
@@ -2153,6 +2183,7 @@ namespace Apolo
                     dgvDiscos.DataSource = ingreso.Discos;
                 }
             }
+            ObtenerTotal();
         }
 
         private void vistaDiscos_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -2242,6 +2273,11 @@ namespace Apolo
                             dgvTablets.DataSource = ingreso.DetallesTablets;
                             vistaTablets.OptionsBehavior.AutoPopulateColumns = false;
                             vistaTablets.OptionsSelection.MultiSelect = true;
+
+                            //MessageBox.Show((detalle.Precio*detalle.Cantidad).ToString());
+
+                            ObtenerTotal();
+
                         }
                     }
                 }
@@ -2287,11 +2323,13 @@ namespace Apolo
                     dgvTablets.DataSource = ingreso.DetallesTablets;
                 }
             }
-
+            ObtenerTotal();
         }
 
         private void btnVisualizarTablets_Click(object sender, EventArgs e)
         {
+            
+
             vistaTablets.ClearColumnsFilter();
             int detTempId = -1;
             for (int i = 0; i < vistaTablets.RowCount; i++)
@@ -2300,6 +2338,8 @@ namespace Apolo
 
             if (detTempId != -1)
             {
+          
+
                 IngresoDetalleTablet det = new IngresoDetalleTablet();
                 int indiceLC = 0;
                 if (vistaTablets.RowCount == 0) return;
@@ -2319,6 +2359,9 @@ namespace Apolo
 
                 using (frmProcesoIngresoTablet frm = new frmProcesoIngresoTablet(this.idUsuario, this.nombreUsuario,ingreso.DetallesTablets[indiceLC]))
                 {
+
+
+                    ObtenerTotal();
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         if (vistaTablets.RowCount > 0)
@@ -2330,6 +2373,10 @@ namespace Apolo
                             int indiceLC2 = 0;
                             foreach (IngresoDetalleTablet detalle in ingreso.DetallesTablets)
                             {
+
+
+                                
+
                                 if (detalle.IdIngresoDetalleTablet == detTempId)
                                 {
                                     break;
@@ -2337,12 +2384,14 @@ namespace Apolo
                                 indiceLC2++;
                             }
 
+
+                            
+
                             ingreso.DetallesTablets.RemoveAt(indiceLC2);
                             for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
                             {
                                 ingreso.DetallesTablets[i].IdIngresoDetalleTablet = i + 1;
                             }
-
                             dgvTablets.DataSource = ingreso.DetallesTablets;
                         }
 
@@ -2350,9 +2399,12 @@ namespace Apolo
                         det.IdIngresoDetalleTablet = ingreso.DetallesTablets.Count + 1;
                         ingreso.DetallesTablets.Add(det);
                         dgvTablets.DataSource = ingreso.DetallesTablets;
+
+                        ObtenerTotal();
                     }
                 }
             }
+
 
         }
 
@@ -2384,6 +2436,8 @@ namespace Apolo
                             dgvMonitores.DataSource = ingreso.DetallesMonitores;
                             vistaMonitores.OptionsBehavior.AutoPopulateColumns = false;
                             vistaMonitores.OptionsSelection.MultiSelect = true;
+
+                            ObtenerTotal();
                         }
                     }
                 }
@@ -2402,6 +2456,7 @@ namespace Apolo
         {
             if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
+                
                 int detTempId = -1;
                 vistaMonitores.ClearColumnsFilter();
                 for (int i = 0; i < vistaMonitores.RowCount; i++)
@@ -2427,6 +2482,7 @@ namespace Apolo
                     dgvMonitores.DataSource = ingreso.DetallesMonitores;
                 }
             }
+            ObtenerTotal();
         }
 
         private void btnVisualizarMonitores_Click(object sender, EventArgs e)
@@ -2458,6 +2514,8 @@ namespace Apolo
 
                 using (frmProcesoIngresoMonitor frm = new frmProcesoIngresoMonitor(this.idUsuario, this.nombreUsuario,ingreso.DetallesMonitores[indiceLC]))
                 {
+
+                    ObtenerTotal();
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         if (vistaMonitores.RowCount > 0)
@@ -2489,6 +2547,7 @@ namespace Apolo
                         det.IdIngresoDetalleMonitor = ingreso.DetallesMonitores.Count + 1;
                         ingreso.DetallesMonitores.Add(det);
                         dgvMonitores.DataSource = ingreso.DetallesMonitores;
+                        ObtenerTotal();
                     }
                 }
             }
@@ -2522,6 +2581,8 @@ namespace Apolo
                             dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
                             vistaImpresoras.OptionsBehavior.AutoPopulateColumns = false;
                             vistaImpresoras.OptionsSelection.MultiSelect = true;
+
+                            ObtenerTotal();
                         }
                     }
                 }
@@ -2566,6 +2627,7 @@ namespace Apolo
                     dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
                 }
             }
+            ObtenerTotal();
         }
 
         private void btnVisualizarImpresora_Click(object sender, EventArgs e)
@@ -2597,6 +2659,8 @@ namespace Apolo
 
                 using (frmProcesoIngresoImpresora frm = new frmProcesoIngresoImpresora(this.idUsuario, this.nombreUsuario,ingreso.DetallesImpresoras[indiceLC]))
                 {
+
+                    ObtenerTotal();
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         if (vistaImpresoras.RowCount > 0)
@@ -2628,6 +2692,8 @@ namespace Apolo
                         det.IdIngresoDetalleImpresora = ingreso.DetallesImpresoras.Count + 1;
                         ingreso.DetallesImpresoras.Add(det);
                         dgvImpresoras.DataSource = ingreso.DetallesImpresoras;
+
+                        ObtenerTotal();
                     }
                 }
             }
@@ -2661,6 +2727,8 @@ namespace Apolo
                             dgvProyectores.DataSource = ingreso.DetallesProyectores;
                             vistaProyectores.OptionsBehavior.AutoPopulateColumns = false;
                             vistaProyectores.OptionsSelection.MultiSelect = true;
+
+                            ObtenerTotal();
                         }
                     }
                 }
@@ -2705,6 +2773,7 @@ namespace Apolo
                     dgvProyectores.DataSource = ingreso.DetallesProyectores;
                 }
             }
+            ObtenerTotal();
         }
 
         private void btnVisualizarProyectores_Click(object sender, EventArgs e)
@@ -2736,6 +2805,8 @@ namespace Apolo
 
                 using (frmProcesoIngresoProyector frm = new frmProcesoIngresoProyector(this.idUsuario, this.nombreUsuario,ingreso.DetallesProyectores[indiceLC]))
                 {
+
+                    ObtenerTotal();
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         if (vistaProyectores.RowCount > 0)
@@ -2767,11 +2838,100 @@ namespace Apolo
                         det.IdIngresoDetalleProyector = ingreso.DetallesProyectores.Count + 1;
                         ingreso.DetallesProyectores.Add(det);
                         dgvProyectores.DataSource = ingreso.DetallesProyectores;
+                        ObtenerTotal();
                     }
                 }
             }
         }
 
-        
+        private void ObtenerTotal()
+        {
+
+            //Aqui se va a hacer la suma de todo el Total
+            ingreso.Total = 0;
+            foreach (IngresoDetalle d in ingreso.Detalles)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (Licencia d in ingreso.Licencias)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (DiscoDuro d in ingreso.Discos)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (Memoria d in ingreso.Memorias)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleTablet d in ingreso.DetallesTablets)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleMonitor d in ingreso.DetallesMonitores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleImpresora d in ingreso.DetallesImpresoras)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleProyector d in ingreso.DetallesProyectores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            label2.Text = $"TOTAL : S/ {ingreso.Total}";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //Aqui se va a hacer la suma de todo el Total
+            ingreso.Total = 0;
+            foreach (IngresoDetalle d in ingreso.Detalles)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (Licencia d in ingreso.Licencias)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (DiscoDuro d in ingreso.Discos)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+            foreach (Memoria d in ingreso.Memorias)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleTablet d in ingreso.DetallesTablets)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleMonitor d in ingreso.DetallesMonitores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleImpresora d in ingreso.DetallesImpresoras)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            foreach (IngresoDetalleProyector d in ingreso.DetallesProyectores)
+            {
+                ingreso.Total += d.Precio * d.Cantidad;
+            }
+
+            label2.Text = $"TOTAL : S/ {ingreso.Total}";
+        }
     }
 }

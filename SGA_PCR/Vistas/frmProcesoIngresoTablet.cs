@@ -238,6 +238,8 @@ namespace Apolo
             tablet.IdSO = Convert.ToInt32(cmbSO.SelectedValue.ToString());
             tablet.Sistema = tablaSO.Rows[j]["descripcion"].ToString();
 
+
+            
             j = cmbRAM.SelectedIndex;
             tablet.IdRAM = Convert.ToInt32(cmbRAM.SelectedValue.ToString());
             tablet.Ram = Convert.ToInt32(tablaRAM.Rows[j]["descripcion"].ToString());
@@ -245,7 +247,9 @@ namespace Apolo
             j = cmbROM.SelectedIndex;
             tablet.IdROM = Convert.ToInt32(cmbROM.SelectedValue.ToString());
             tablet.Rom = Convert.ToInt32(tablaROM.Rows[j]["descripcion"].ToString());
+            
 
+        
             tablet.TamanoPantalla = Double.Parse(txtPantalla.Text);
             tablet.Garantia = (chbGarantia.Checked) ? 1 : 0;
             detalle.Tablet = tablet;
