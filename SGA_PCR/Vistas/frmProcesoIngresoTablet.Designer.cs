@@ -60,8 +60,6 @@
             this.dgvSerieFabrica = new System.Windows.Forms.DataGridView();
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerieFabrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auxRam = new System.Windows.Forms.TextBox();
-            this.auxRom = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -459,28 +457,12 @@
             this.SerieFabrico.Name = "SerieFabrico";
             this.SerieFabrico.Width = 150;
             // 
-            // auxRam
-            // 
-            this.auxRam.Location = new System.Drawing.Point(414, 210);
-            this.auxRam.Name = "auxRam";
-            this.auxRam.Size = new System.Drawing.Size(48, 20);
-            this.auxRam.TabIndex = 213;
-            // 
-            // auxRom
-            // 
-            this.auxRom.Location = new System.Drawing.Point(414, 252);
-            this.auxRom.Name = "auxRom";
-            this.auxRom.Size = new System.Drawing.Size(48, 20);
-            this.auxRom.TabIndex = 214;
-            // 
             // frmProcesoIngresoTablet
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(776, 401);
-            this.Controls.Add(this.auxRom);
-            this.Controls.Add(this.auxRam);
             this.Controls.Add(this.btnSubirSeries);
             this.Controls.Add(this.dgvSerieFabrica);
             this.Controls.Add(this.btnAceptar);
@@ -556,7 +538,5 @@
         private System.Windows.Forms.DataGridView dgvSerieFabrica;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerieFabrico;
-        private System.Windows.Forms.TextBox auxRam;
-        private System.Windows.Forms.TextBox auxRom;
     }
 }

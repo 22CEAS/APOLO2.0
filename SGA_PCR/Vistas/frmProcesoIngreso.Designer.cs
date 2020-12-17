@@ -161,6 +161,7 @@
             this.IdModelo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabSoftwares = new DevComponents.DotNetBar.TabItem(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -311,11 +312,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(817, 569);
+            this.label2.Location = new System.Drawing.Point(699, 569);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 16;
-            this.label2.Text = "TOTAL: $25300";
+            this.label2.Text = "TOTAL: 0";
             // 
             // label8
             // 
@@ -1957,12 +1958,23 @@
             this.tabSoftwares.Name = "tabSoftwares";
             this.tabSoftwares.Text = "Software";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(720, 569);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 188;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProcesoIngreso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1248, 607);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label10);
@@ -1982,7 +1994,6 @@
             this.Controls.Add(this.txtNroIngreso);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtGuia);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.LabelX4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -2048,7 +2059,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAgregarProducto;
         internal DevComponents.DotNetBar.LabelX LabelX4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtGuia;
         private System.Windows.Forms.Button btnBuscar;
@@ -2170,5 +2180,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn TabletSistema;
         private DevExpress.XtraGrid.Columns.GridColumn TabletRam;
         private DevExpress.XtraGrid.Columns.GridColumn TabletRom;
+        public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
