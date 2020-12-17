@@ -2281,7 +2281,9 @@ namespace AccesoDatos
                 det.Tablet.IdProcesador = reader.GetInt32("idProcesador");
                 det.Tablet.IdSO = reader.GetInt32("idSO");
                 det.Tablet.IdRAM = reader.GetInt32("idRam");
-                det.Tablet.IdROM = reader.GetInt32("idRom");
+                det.Tablet.IdROM = reader.GetInt32("idRom"); 
+                det.Tablet.Rom = reader.GetInt32("rom");
+                det.Tablet.Ram = reader.GetInt32("ram");
                 //det.Tablet.PartNumber = reader.GetString("partNumber");
                 det.Tablet.TamanoPantalla = reader.GetDouble("pantalla");
                 det.Tablet.Garantia = reader.GetInt32("garantia");

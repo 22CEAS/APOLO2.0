@@ -1929,13 +1929,17 @@ SELECT
 	ma.nombre AS nombreMarca,
 	mo.nombre AS nombreModelo,
 	vtp.descripcion AS procesador,
-	vts.descripcion AS sistema
+	vts.descripcion AS sistema,
+	vtro.descripcion AS rom,
+	vtra.descripcion AS ram
 FROM
 	ingreso_det_tablet d
 	INNER JOIN marca ma ON d.idMarca = ma.idMarca
 	INNER JOIN modelo mo ON d.idModelo = mo.idModelo
 	INNER join auxiliar vtp ON d.idProcesador=vtp.idAuxiliar and vtp.cod_tabla="TABLET_PROCESADOR"
-	INNER join auxiliar vts ON d.idSO=vts.idAuxiliar and vts.cod_tabla="TABLET_SISTEMA";
+	INNER join auxiliar vts ON d.idSO=vts.idAuxiliar and vts.cod_tabla="TABLET_SISTEMA"
+	INNER join auxiliar vtro ON d.idRom=vtro.idAuxiliar and vtro.cod_tabla="TABLET_ROM"
+	INNER join auxiliar vtra ON d.idRam=vtra.idAuxiliar and vtra.cod_tabla="TABLET_RAM";
 
 
 DROP view IF EXISTS `vista_ingresos_detalles_impresora_modificable`;
