@@ -272,12 +272,12 @@
             // 
             this.tabControl1.BackColor = System.Drawing.SystemColors.Window;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
+            this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel7);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
             this.tabControl1.Location = new System.Drawing.Point(24, 10);
@@ -671,8 +671,10 @@
             this.idVelocidadMax});
             this.vistaProcesadores.GridControl = this.dgvProcesadores;
             this.vistaProcesadores.Name = "vistaProcesadores";
+            this.vistaProcesadores.OptionsCustomization.AllowColumnMoving = false;
             this.vistaProcesadores.OptionsCustomization.AllowGroup = false;
             this.vistaProcesadores.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaProcesadores.OptionsMenu.EnableColumnMenu = false;
             this.vistaProcesadores.OptionsView.ColumnAutoWidth = false;
             this.vistaProcesadores.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaProcesadores.OptionsView.ShowAutoFilterRow = true;
@@ -841,8 +843,10 @@
             this.tipo22});
             this.vistaMemorias.GridControl = this.dgvMemorias;
             this.vistaMemorias.Name = "vistaMemorias";
+            this.vistaMemorias.OptionsCustomization.AllowColumnMoving = false;
             this.vistaMemorias.OptionsCustomization.AllowGroup = false;
             this.vistaMemorias.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaMemorias.OptionsMenu.EnableColumnMenu = false;
             this.vistaMemorias.OptionsView.ColumnAutoWidth = false;
             this.vistaMemorias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaMemorias.OptionsView.ShowAutoFilterRow = true;
@@ -990,8 +994,10 @@
             this.IdModelo});
             this.vistaLicencias.GridControl = this.dgvLicencias;
             this.vistaLicencias.Name = "vistaLicencias";
+            this.vistaLicencias.OptionsCustomization.AllowColumnMoving = false;
             this.vistaLicencias.OptionsCustomization.AllowGroup = false;
             this.vistaLicencias.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaLicencias.OptionsMenu.EnableColumnMenu = false;
             this.vistaLicencias.OptionsView.ColumnAutoWidth = false;
             this.vistaLicencias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaLicencias.OptionsView.ShowAutoFilterRow = true;
@@ -1121,8 +1127,10 @@
             this.idCapacidad4});
             this.vistaVideos.GridControl = this.dgvVideos;
             this.vistaVideos.Name = "vistaVideos";
+            this.vistaVideos.OptionsCustomization.AllowColumnMoving = false;
             this.vistaVideos.OptionsCustomization.AllowGroup = false;
             this.vistaVideos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaVideos.OptionsMenu.EnableColumnMenu = false;
             this.vistaVideos.OptionsView.ColumnAutoWidth = false;
             this.vistaVideos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaVideos.OptionsView.ShowAutoFilterRow = true;
@@ -1282,8 +1290,10 @@
             this.idTamano});
             this.vistaDiscos.GridControl = this.dgvDiscos;
             this.vistaDiscos.Name = "vistaDiscos";
+            this.vistaDiscos.OptionsCustomization.AllowColumnMoving = false;
             this.vistaDiscos.OptionsCustomization.AllowGroup = false;
             this.vistaDiscos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaDiscos.OptionsMenu.EnableColumnMenu = false;
             this.vistaDiscos.OptionsView.ColumnAutoWidth = false;
             this.vistaDiscos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaDiscos.OptionsView.ShowAutoFilterRow = true;

@@ -53,13 +53,13 @@
             this.IdSucursal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
             this.btnSeleccionarFilas = new System.Windows.Forms.Button();
             this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
-            this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -143,10 +143,14 @@
             this.FechaFinContratoAntiguo});
             this.vista.GridControl = this.dgvRenovacionProductos;
             this.vista.Name = "vista";
+            this.vista.OptionsCustomization.AllowColumnMoving = false;
+            this.vista.OptionsCustomization.AllowGroup = false;
+            this.vista.OptionsMenu.EnableColumnMenu = false;
             this.vista.OptionsSelection.MultiSelect = true;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.OptionsView.ShowGroupPanel = false;
             // 
             // Seleccionar
             // 
@@ -323,6 +327,20 @@
             this.GuiaSalida.Name = "GuiaSalida";
             this.GuiaSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             // 
+            // FechaIniContratoAntiguo
+            // 
+            this.FechaIniContratoAntiguo.Caption = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.FieldName = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.Name = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // FechaFinContratoAntiguo
+            // 
+            this.FechaFinContratoAntiguo.Caption = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.FieldName = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.Name = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -411,20 +429,6 @@
             this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
             this.btnDeseleccionarFilas.Click += new System.EventHandler(this.btnDeseleccionarFilas_Click);
-            // 
-            // FechaIniContratoAntiguo
-            // 
-            this.FechaIniContratoAntiguo.Caption = "FechaIniContratoAntiguo";
-            this.FechaIniContratoAntiguo.FieldName = "FechaIniContratoAntiguo";
-            this.FechaIniContratoAntiguo.Name = "FechaIniContratoAntiguo";
-            this.FechaIniContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            // 
-            // FechaFinContratoAntiguo
-            // 
-            this.FechaFinContratoAntiguo.Caption = "FechaFinContratoAntiguo";
-            this.FechaFinContratoAntiguo.FieldName = "FechaFinContratoAntiguo";
-            this.FechaFinContratoAntiguo.Name = "FechaFinContratoAntiguo";
-            this.FechaFinContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             // 
             // frmProcesoRenovacionAgregarProducto
             // 
