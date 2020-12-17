@@ -39,7 +39,7 @@ namespace Apolo
 
         private double total = 0;
         private double ultimoMovimiento = 0;
-        
+
         public frmProcesoIngreso()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-            
+
             ingresoDA = new IngresoDA();
             ingreso = new Ingreso();
             dtpFechaIngreso.Value = DateTime.Now;
@@ -660,7 +660,7 @@ namespace Apolo
         {
             estadoComponentes(TipoVista.Nuevo);
         }
-        
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -677,7 +677,7 @@ namespace Apolo
                 dgvProyectores.DataSource = null;
             }
         }
-        
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (ingreso.Estado == 7 || ingreso.Estado == 0)//en teoría 7 debería ser finalizado
@@ -726,7 +726,7 @@ namespace Apolo
             }
             Cursor.Current = Cursors.Default;
         }
-        
+
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que desea Imprimir el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -795,7 +795,7 @@ namespace Apolo
             int ultimaPosicion = 10;
 
             int inicio = 10;
-            int filaDetalle = (ingreso.Detalles.Count>0) ?  inicio: -1;
+            int filaDetalle = (ingreso.Detalles.Count > 0) ? inicio : -1;
             if (ingreso.Detalles.Count > 0) ultimaPosicion = ultimaPosicion + ingreso.Detalles.Count + 4;
 
             int filaMemoria = (ingreso.Memorias.Count > 0) ? ultimaPosicion : -1;
@@ -911,14 +911,14 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaDetalle, 1] = det.LaptopMarcaLC;
                 hoja_trabajo.Cells[i + filaDetalle, 2] = det.LaptopNombreModeloLC;
                 hoja_trabajo.Cells[i + filaDetalle, 3] = det.Laptop.PartNumber;
-                hoja_trabajo.Cells[i + filaDetalle, 4] = (det.LaptopTamanoPantalla>0) ? det.LaptopTamanoPantalla.ToString():" ";
+                hoja_trabajo.Cells[i + filaDetalle, 4] = (det.LaptopTamanoPantalla > 0) ? det.LaptopTamanoPantalla.ToString() : " ";
                 hoja_trabajo.Cells[i + filaDetalle, 5] = (det.Laptop.Garantia == 1) ? "Si" : "No";
                 hoja_trabajo.Cells[i + filaDetalle, 6] = det.Precio.ToString();
                 hoja_trabajo.Cells[i + filaDetalle, 7] = det.Cantidad.ToString();
                 string aux = "";
                 aux = det.Laptop.Procesador.Modelo.NombreModelo + "/GEN" + det.Laptop.Procesador.Generacion.ToString();
                 hoja_trabajo.Cells[i + filaDetalle, 8] = aux;
-                hoja_trabajo.Cells[i + filaDetalle, 9] = (det.Laptop.Video.Capacidad>0) ? det.Laptop.Video.Capacidad.ToString() + " GB":" ";
+                hoja_trabajo.Cells[i + filaDetalle, 9] = (det.Laptop.Video.Capacidad > 0) ? det.Laptop.Video.Capacidad.ToString() + " GB" : " ";
 
                 string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
                 if (det.Laptop.Discos.Count > 0)
@@ -1054,7 +1054,7 @@ namespace Apolo
 
                 hoja_trabajo.Cells[i + filaImpresora, 1] = det.ImpresoraMarca;
                 hoja_trabajo.Cells[i + filaImpresora, 2] = det.ImpresoraNombreModelo;
-                hoja_trabajo.Cells[i + filaImpresora, 3] = (det.ImpresoraMultifuncional==1) ? "SI":"NO";
+                hoja_trabajo.Cells[i + filaImpresora, 3] = (det.ImpresoraMultifuncional == 1) ? "SI" : "NO";
                 hoja_trabajo.Cells[i + filaImpresora, 4] = det.ImpresoraTipo;
                 hoja_trabajo.Cells[i + filaImpresora, 5] = det.Cantidad;
                 hoja_trabajo.Cells[i + filaImpresora, 6] = det.Precio;
@@ -1080,7 +1080,7 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaMonitor, 2] = det.MonitorNombreModelo;
                 hoja_trabajo.Cells[i + filaMonitor, 3] = det.MonitorTipo;
                 hoja_trabajo.Cells[i + filaMonitor, 4] = det.MonitorTamanoPantalla;
-                hoja_trabajo.Cells[i + filaMonitor, 5] = (det.MonitorHdmi==1) ? "SI":"NO";
+                hoja_trabajo.Cells[i + filaMonitor, 5] = (det.MonitorHdmi == 1) ? "SI" : "NO";
                 hoja_trabajo.Cells[i + filaMonitor, 6] = (det.MonitorVga == 1) ? "SI" : "NO";
                 hoja_trabajo.Cells[i + filaMonitor, 7] = (det.MonitorDisplayPort == 1) ? "SI" : "NO";
                 hoja_trabajo.Cells[i + filaMonitor, 8] = det.Cantidad;
@@ -1108,8 +1108,8 @@ namespace Apolo
                 hoja_trabajo.Cells[i + filaTablet, 3] = det.TabletProcesador;
 
 
-                hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletRam+"GB";
-                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom+"GB";
+                hoja_trabajo.Cells[i + filaTablet, 4] = det.TabletRam + "GB";
+                hoja_trabajo.Cells[i + filaTablet, 5] = det.TabletRom + "GB";
 
 
                 hoja_trabajo.Cells[i + filaTablet, 6] = det.TabletTamanoPantalla;
@@ -1146,11 +1146,11 @@ namespace Apolo
             //==============================================================================================MEMORIAS
 
 
-            montaCabeceras(1, ref hoja_trabajo, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia,filaImpresora,filaMonitor,filaTablet,filaProyectorEcram);
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera, filaDetalle, filaMemoria, filaDisco, filaLicencia, filaImpresora, filaMonitor, filaTablet, filaProyectorEcram);
         }
 
         private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera,
-                                    int filaDetalle, int filaMemoria, int filaDisco, int filaLicencia,int filaImpresora,int filaMonitor,int filaTablet,int filaProyectorEcram)
+                                    int filaDetalle, int filaMemoria, int filaDisco, int filaLicencia, int filaImpresora, int filaMonitor, int filaTablet, int filaProyectorEcram)
         {
             Cursor.Current = Cursors.WaitCursor;
             try
@@ -1503,7 +1503,7 @@ namespace Apolo
                 try
                 {
                     IngresoDetalle detalle = new IngresoDetalle();
-                    using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(this.idUsuario, this.nombreUsuario,tipo))
+                    using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(this.idUsuario, this.nombreUsuario, tipo))
                     {
                         if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
@@ -1576,7 +1576,7 @@ namespace Apolo
         private void btnGrabar_Click(object sender, EventArgs e)
         {
 
-            
+
 
             Cursor.Current = Cursors.WaitCursor;
             string numIngreso = txtNroIngreso.Text;
@@ -1620,7 +1620,7 @@ namespace Apolo
                 {
 
                     int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
-                    
+
 
                     if (idIngreso == -1)
                     {
@@ -1722,7 +1722,8 @@ namespace Apolo
                 if (vistaLaptops.IsRowSelected(i) == true)
                     detTempId = int.Parse(vistaLaptops.GetRowCellValue(i, "IdIngresoDetalle").ToString());
 
-            if (detTempId != -1) {
+            if (detTempId != -1)
+            {
                 IngresoDetalle det = new IngresoDetalle();
                 int indiceLC = 0;
                 if (vistaLaptops.RowCount == 0) return;
@@ -1960,6 +1961,7 @@ namespace Apolo
                     }
                     else myStr = "0";
                     precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+
                     //vistaLicencias.SetRowCellValue(h, "Precio", precio);
 
                     for (int j = 0; j < ingreso.Licencias.Count; j++)
@@ -1974,11 +1976,13 @@ namespace Apolo
                     }
                     dgvLicencias.DataSource = ingreso.Licencias;
                 }
+                ObtenerTotal();
             }
             catch
             {
                 MessageBox.Show("Entro al try cath2");
             }
+
         }
 
         private void btnAgregarMemoria_Click(object sender, EventArgs e)
@@ -2015,7 +2019,7 @@ namespace Apolo
             }
 
         }
-        
+
         private void dgvMemoria_DoubleClick(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -2097,7 +2101,7 @@ namespace Apolo
                 }
                 else myStr = "0";
                 precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
-               
+
                 for (int j = 0; j < ingreso.Memorias.Count; j++)
                 {
                     if (memoriaId == ingreso.Memorias[j].IdMemoria)
@@ -2108,6 +2112,7 @@ namespace Apolo
                 }
                 dgvMemoria.DataSource = ingreso.Memorias;
             }
+            ObtenerTotal();
         }
 
         private void btnAgregarDisco_Click(object sender, EventArgs e)
@@ -2242,7 +2247,7 @@ namespace Apolo
                 }
                 dgvDiscos.DataSource = ingreso.Discos;
             }
-
+            ObtenerTotal();
         }
 
         private void btnAgregarTablets_Click(object sender, EventArgs e)
@@ -2328,7 +2333,7 @@ namespace Apolo
 
         private void btnVisualizarTablets_Click(object sender, EventArgs e)
         {
-            
+
 
             vistaTablets.ClearColumnsFilter();
             int detTempId = -1;
@@ -2338,7 +2343,7 @@ namespace Apolo
 
             if (detTempId != -1)
             {
-          
+
 
                 IngresoDetalleTablet det = new IngresoDetalleTablet();
                 int indiceLC = 0;
@@ -2357,7 +2362,7 @@ namespace Apolo
                     }
                 }
 
-                using (frmProcesoIngresoTablet frm = new frmProcesoIngresoTablet(this.idUsuario, this.nombreUsuario,ingreso.DetallesTablets[indiceLC]))
+                using (frmProcesoIngresoTablet frm = new frmProcesoIngresoTablet(this.idUsuario, this.nombreUsuario, ingreso.DetallesTablets[indiceLC]))
                 {
 
 
@@ -2375,7 +2380,7 @@ namespace Apolo
                             {
 
 
-                                
+
 
                                 if (detalle.IdIngresoDetalleTablet == detTempId)
                                 {
@@ -2385,7 +2390,7 @@ namespace Apolo
                             }
 
 
-                            
+
 
                             ingreso.DetallesTablets.RemoveAt(indiceLC2);
                             for (int i = 0; i < ingreso.DetallesTablets.Count; i++)
@@ -2456,7 +2461,7 @@ namespace Apolo
         {
             if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                
+
                 int detTempId = -1;
                 vistaMonitores.ClearColumnsFilter();
                 for (int i = 0; i < vistaMonitores.RowCount; i++)
@@ -2512,7 +2517,7 @@ namespace Apolo
                     }
                 }
 
-                using (frmProcesoIngresoMonitor frm = new frmProcesoIngresoMonitor(this.idUsuario, this.nombreUsuario,ingreso.DetallesMonitores[indiceLC]))
+                using (frmProcesoIngresoMonitor frm = new frmProcesoIngresoMonitor(this.idUsuario, this.nombreUsuario, ingreso.DetallesMonitores[indiceLC]))
                 {
 
                     ObtenerTotal();
@@ -2657,7 +2662,7 @@ namespace Apolo
                     }
                 }
 
-                using (frmProcesoIngresoImpresora frm = new frmProcesoIngresoImpresora(this.idUsuario, this.nombreUsuario,ingreso.DetallesImpresoras[indiceLC]))
+                using (frmProcesoIngresoImpresora frm = new frmProcesoIngresoImpresora(this.idUsuario, this.nombreUsuario, ingreso.DetallesImpresoras[indiceLC]))
                 {
 
                     ObtenerTotal();
@@ -2803,7 +2808,7 @@ namespace Apolo
                     }
                 }
 
-                using (frmProcesoIngresoProyector frm = new frmProcesoIngresoProyector(this.idUsuario, this.nombreUsuario,ingreso.DetallesProyectores[indiceLC]))
+                using (frmProcesoIngresoProyector frm = new frmProcesoIngresoProyector(this.idUsuario, this.nombreUsuario, ingreso.DetallesProyectores[indiceLC]))
                 {
 
                     ObtenerTotal();
@@ -2886,52 +2891,8 @@ namespace Apolo
                 ingreso.Total += d.Precio * d.Cantidad;
             }
 
-            label2.Text = $"TOTAL : S/ {ingreso.Total}";
+            label2.Text = $"TOTAL : {ingreso.Total}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            //Aqui se va a hacer la suma de todo el Total
-            ingreso.Total = 0;
-            foreach (IngresoDetalle d in ingreso.Detalles)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-            foreach (Licencia d in ingreso.Licencias)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-            foreach (DiscoDuro d in ingreso.Discos)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-            foreach (Memoria d in ingreso.Memorias)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-
-            foreach (IngresoDetalleTablet d in ingreso.DetallesTablets)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-
-            foreach (IngresoDetalleMonitor d in ingreso.DetallesMonitores)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-
-            foreach (IngresoDetalleImpresora d in ingreso.DetallesImpresoras)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-
-            foreach (IngresoDetalleProyector d in ingreso.DetallesProyectores)
-            {
-                ingreso.Total += d.Precio * d.Cantidad;
-            }
-
-            label2.Text = $"TOTAL : S/ {ingreso.Total}";
-        }
     }
 }
