@@ -73,6 +73,8 @@ namespace Apolo
         private int totalDispo = 0;
         private int totalPronosticador = 0;
 
+        private int GeneracionDesfasado = 6;
+        
 
         public TEST_MENU_PRINCIPAL(int idUsuario, string nombreUsuario)
         {
@@ -1473,9 +1475,9 @@ namespace Apolo
                 {
                     int idGen = int.Parse(tablaProcesadoresGeneracion.Rows[i]["idAuxiliar"].ToString());
                     int idModPro = int.Parse(tablaProcesadoresModelos.Rows[j]["idModelo"].ToString());
-                    var cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.GeneracionProcesador>6 && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+                    var cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.GeneracionProcesador> this.GeneracionDesfasado && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
                     this.arregloLCGeneral[i][j] = cantidad.Count;
-                    cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.GeneracionProcesador > 6 && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+                    cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.GeneracionProcesador > this.GeneracionDesfasado && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
                     this.arregloLCApple[i][j] = cantidad.Count;
                 }
             }
@@ -1633,9 +1635,9 @@ namespace Apolo
                 {
                     int idGen = int.Parse(tablaProcesadoresGeneracion.Rows[i]["idAuxiliar"].ToString());
                     int idModPro = int.Parse(tablaProcesadoresModelos.Rows[j]["idModelo"].ToString());
-                    var cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.GeneracionProcesador > 6 && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC).ToList());
+                    var cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.GeneracionProcesador > this.GeneracionDesfasado && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC).ToList());
                     this.arregloLCGeneral[i][j] = cantidad.Count;
-                    cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.GeneracionProcesador > 6 && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC).ToList());
+                    cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.GeneracionProcesador > this.GeneracionDesfasado && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC).ToList());
                     this.arregloLCApple[i][j] = cantidad.Count;
                 }
             }
@@ -1679,7 +1681,7 @@ namespace Apolo
       
 
 
-            lblFecPronosticador.Text = "FECHA: " + CalendarioDash.SelectionRange.Start.ToShortDateString();
+            lblFecPronosticador.Text = "Fecha: " + CalendarioDash.SelectionRange.Start.ToShortDateString();
             lblCantidadTotal.Text= (totalPronosticador + totalDispo).ToString();
 
         }
@@ -1738,8 +1740,8 @@ namespace Apolo
 
             lblMontoFacturado.Text = string.Format("{0:C0}", MontoFacturadoMes.Rows[0]["total"]);//MONTO FACTURADO EN EL MES
             lblFechaMF.Text= $"Desde el 01/{DateTime.Now.Month}/{DateTime.Now.Year} al { DateTime.Now.ToShortDateString()}";
-            
 
+            lblFecPF.Text = $"Al {DateTime.Now.ToShortDateString()}";
             //TOTAL DE MONTOS
 
 

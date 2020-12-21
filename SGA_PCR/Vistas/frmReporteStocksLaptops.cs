@@ -52,6 +52,11 @@ namespace Apolo
         private int[][] arregloLCApple;
 
 
+        private int GeneracionDesfasado = 6;
+
+        
+
+
         public frmReporteStocksLaptops()
         {
             InitializeComponent();
@@ -486,7 +491,7 @@ namespace Apolo
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
                     if (laptop.EstadoNombre == "DISPONIBLE")
                     {
-                        if (laptop.GeneracionProcesador <= 6)
+                        if (laptop.GeneracionProcesador <= this.GeneracionDesfasado)
                         {
                             laptop.EstadoNombre = "DESFASADO";
                         }

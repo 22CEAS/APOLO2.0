@@ -677,10 +677,13 @@
             // GeneracionProcesador
             // 
             this.GeneracionProcesador.Caption = "Generacion Procesador";
+            this.GeneracionProcesador.DisplayFormat.FormatString = "{0} GEN";
+            this.GeneracionProcesador.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.GeneracionProcesador.FieldName = "GeneracionProcesador";
             this.GeneracionProcesador.Name = "GeneracionProcesador";
             this.GeneracionProcesador.Visible = true;
             this.GeneracionProcesador.VisibleIndex = 4;
+            this.GeneracionProcesador.Width = 120;
             // 
             // frmReporteStocksLaptops
             // 
