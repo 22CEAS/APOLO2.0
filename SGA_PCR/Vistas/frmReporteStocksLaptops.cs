@@ -12,10 +12,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
+
 
 namespace Apolo
 {
@@ -96,7 +98,7 @@ namespace Apolo
         {
             if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Cursor.Current = Cursors.WaitCursor;
+                //Cursor.Current = Cursors.WaitCursor;
                 try
                 {
                     DevExpress.Export.ExportSettings.DefaultExportType = ExportType.DataAware;
@@ -112,7 +114,7 @@ namespace Apolo
                 {
                     MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
 
             }
         }
@@ -122,7 +124,7 @@ namespace Apolo
 
             if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Cursor.Current = Cursors.WaitCursor;
+                //Cursor.Current = Cursors.WaitCursor;
                 try
                 {
 
@@ -160,7 +162,7 @@ namespace Apolo
                 {
                     MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
             }
         }
 
@@ -417,6 +419,20 @@ namespace Apolo
             //lblTotalLaptops.Text = $"TOTAL LAPTOPS: {(contador-cantidadReporte).ToString()}";
             txtTotalLaptops.Text = (canDisponibles + cantidadAlquilado + cantidadPreAlquilado + canInutilizable + canPersonalPCR + canDanado).ToString();
             vista.ActiveFilterString = "[EstadoNombre] null";
+
+
+
+            //ACTIVAR DASHBOARD
+            string[] series = { "LAPTOPS DISPONIBLES", "LAPTOPS ALQUILADAS", "LAPTOPS INUTILIZABLES", "LAPTOPS PERSONAL PCR", "LAPTOPS DAÑADAS" };
+            int[] puntos = { int.Parse(txtDisponibles.Text), int.Parse(txtAlquilados.Text), int.Parse(txtInutilizables.Text), int.Parse(txtPersonales.Text), int.Parse(txtDanados.Text)};
+            
+            for (int i = 0; i < series.Length; i++)
+            {
+                Series serie = DashInventario.Series.Add(series[i]);
+                serie.Label = puntos[i].ToString();
+                serie.Points.Add(puntos[i]);
+            }
+
         }
 
 
@@ -566,6 +582,9 @@ namespace Apolo
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
 
+
+ 
+
             }
             catch (Exception e)
             {
@@ -633,6 +652,11 @@ namespace Apolo
         private void txtVendido_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void vista_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            txtCantidadFiltrada.Text = vista.RowCount.ToString();
         }
     }
 }

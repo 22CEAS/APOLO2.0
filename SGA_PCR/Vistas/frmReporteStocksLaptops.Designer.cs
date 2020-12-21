@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteStocksLaptops));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,23 +57,37 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtCantidadFiltrada = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtTotalLaptops = new System.Windows.Forms.TextBox();
             this.txtDanados = new System.Windows.Forms.TextBox();
             this.txtPersonales = new System.Windows.Forms.TextBox();
             this.txtInutilizables = new System.Windows.Forms.TextBox();
             this.txtAlquilados = new System.Windows.Forms.TextBox();
             this.txtDisponibles = new System.Windows.Forms.TextBox();
-            this.lblTotalLaptops = new System.Windows.Forms.Label();
-            this.lblDanado = new System.Windows.Forms.Label();
-            this.lblPersonal = new System.Windows.Forms.Label();
-            this.lblInutilizables = new System.Windows.Forms.Label();
-            this.lblAlquilados = new System.Windows.Forms.Label();
-            this.lblDisponible = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DashInventario = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DashInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLaptops
@@ -78,10 +95,14 @@
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.Location = new System.Drawing.Point(11, 234);
+            this.dgvLaptops.Location = new System.Drawing.Point(11, 139);
+            this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1074, 294);
+            this.dgvLaptops.Size = new System.Drawing.Size(1075, 351);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -125,6 +146,7 @@
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vista_CellValueChanged);
             // 
             // CodigoLC
             // 
@@ -339,29 +361,31 @@
             this.btnExportar.FlatAppearance.BorderSize = 0;
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(935, 68);
+            this.btnExportar.Location = new System.Drawing.Point(1109, 193);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 63);
+            this.btnExportar.Size = new System.Drawing.Size(82, 63);
             this.btnExportar.TabIndex = 139;
-            this.btnExportar.Text = "Exportar";
+            this.btnExportar.Text = "EXPORTAR";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(526, 12);
+            this.giftCarga.BackColor = System.Drawing.Color.White;
+            this.giftCarga.Location = new System.Drawing.Point(419, 266);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(203, 138);
+            this.giftCarga.Size = new System.Drawing.Size(239, 185);
             this.giftCarga.TabIndex = 146;
             this.giftCarga.TabStop = false;
             // 
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(573, 156);
+            this.cargarData.Location = new System.Drawing.Point(498, 331);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 145;
@@ -378,218 +402,338 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1016, 74);
+            this.button1.Location = new System.Drawing.Point(1119, 308);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 57);
+            this.button1.Size = new System.Drawing.Size(72, 63);
             this.button1.TabIndex = 149;
-            this.button1.Text = "Reporte";
+            this.button1.Text = "REPORTE";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnExportar2_Click);
             // 
             // txtCantidadFiltrada
             // 
-            this.txtCantidadFiltrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadFiltrada.BackColor = System.Drawing.Color.White;
+            this.txtCantidadFiltrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCantidadFiltrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadFiltrada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtCantidadFiltrada.Location = new System.Drawing.Point(999, 156);
+            this.txtCantidadFiltrada.Location = new System.Drawing.Point(1000, 496);
             this.txtCantidadFiltrada.Name = "txtCantidadFiltrada";
-            this.txtCantidadFiltrada.Size = new System.Drawing.Size(86, 22);
+            this.txtCantidadFiltrada.ReadOnly = true;
+            this.txtCantidadFiltrada.Size = new System.Drawing.Size(86, 19);
             this.txtCantidadFiltrada.TabIndex = 171;
             this.txtCantidadFiltrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(845, 157);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(794, 496);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 16);
+            this.label2.Size = new System.Drawing.Size(196, 20);
             this.label2.TabIndex = 170;
             this.label2.Text = "CANTIDAD FILTRADA:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(155, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 184;
-            this.label1.Text = "RESUMEN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txtTotalLaptops
             // 
-            this.txtTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalLaptops.BackColor = System.Drawing.Color.White;
+            this.txtTotalLaptops.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalLaptops.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtTotalLaptops.Location = new System.Drawing.Point(183, 180);
+            this.txtTotalLaptops.Location = new System.Drawing.Point(32, 29);
             this.txtTotalLaptops.Name = "txtTotalLaptops";
             this.txtTotalLaptops.ReadOnly = true;
-            this.txtTotalLaptops.Size = new System.Drawing.Size(57, 24);
+            this.txtTotalLaptops.Size = new System.Drawing.Size(127, 37);
             this.txtTotalLaptops.TabIndex = 183;
             this.txtTotalLaptops.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDanados
             // 
-            this.txtDanados.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDanados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDanados.BackColor = System.Drawing.Color.White;
+            this.txtDanados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDanados.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDanados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtDanados.Location = new System.Drawing.Point(131, 143);
+            this.txtDanados.Location = new System.Drawing.Point(9, 28);
             this.txtDanados.Name = "txtDanados";
             this.txtDanados.ReadOnly = true;
-            this.txtDanados.Size = new System.Drawing.Size(160, 22);
+            this.txtDanados.Size = new System.Drawing.Size(160, 37);
             this.txtDanados.TabIndex = 182;
             this.txtDanados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPersonales
             // 
-            this.txtPersonales.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonales.BackColor = System.Drawing.Color.White;
+            this.txtPersonales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtPersonales.Location = new System.Drawing.Point(131, 115);
+            this.txtPersonales.Location = new System.Drawing.Point(13, 29);
             this.txtPersonales.Name = "txtPersonales";
             this.txtPersonales.ReadOnly = true;
-            this.txtPersonales.Size = new System.Drawing.Size(160, 22);
+            this.txtPersonales.Size = new System.Drawing.Size(160, 37);
             this.txtPersonales.TabIndex = 181;
             this.txtPersonales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtInutilizables
             // 
-            this.txtInutilizables.BackColor = System.Drawing.SystemColors.Control;
-            this.txtInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInutilizables.BackColor = System.Drawing.Color.White;
+            this.txtInutilizables.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInutilizables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtInutilizables.Location = new System.Drawing.Point(131, 87);
+            this.txtInutilizables.Location = new System.Drawing.Point(12, 29);
             this.txtInutilizables.Name = "txtInutilizables";
             this.txtInutilizables.ReadOnly = true;
-            this.txtInutilizables.Size = new System.Drawing.Size(160, 22);
+            this.txtInutilizables.Size = new System.Drawing.Size(160, 37);
             this.txtInutilizables.TabIndex = 180;
             this.txtInutilizables.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAlquilados
             // 
-            this.txtAlquilados.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlquilados.BackColor = System.Drawing.Color.White;
+            this.txtAlquilados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlquilados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtAlquilados.Location = new System.Drawing.Point(131, 60);
+            this.txtAlquilados.Location = new System.Drawing.Point(12, 29);
             this.txtAlquilados.Name = "txtAlquilados";
             this.txtAlquilados.ReadOnly = true;
-            this.txtAlquilados.Size = new System.Drawing.Size(160, 22);
+            this.txtAlquilados.Size = new System.Drawing.Size(160, 37);
             this.txtAlquilados.TabIndex = 179;
             this.txtAlquilados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDisponibles
             // 
-            this.txtDisponibles.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisponibles.BackColor = System.Drawing.Color.White;
+            this.txtDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtDisponibles.Location = new System.Drawing.Point(131, 33);
+            this.txtDisponibles.Location = new System.Drawing.Point(3, 31);
             this.txtDisponibles.Name = "txtDisponibles";
             this.txtDisponibles.ReadOnly = true;
-            this.txtDisponibles.Size = new System.Drawing.Size(160, 22);
+            this.txtDisponibles.Size = new System.Drawing.Size(180, 37);
             this.txtDisponibles.TabIndex = 178;
             this.txtDisponibles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTotalLaptops
-            // 
-            this.lblTotalLaptops.AutoSize = true;
-            this.lblTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalLaptops.Location = new System.Drawing.Point(21, 180);
-            this.lblTotalLaptops.Name = "lblTotalLaptops";
-            this.lblTotalLaptops.Size = new System.Drawing.Size(139, 32);
-            this.lblTotalLaptops.TabIndex = 177;
-            this.lblTotalLaptops.Text = "TOTAL DE LAPTOPS\r\n EN LA EMPRESA";
-            this.lblTotalLaptops.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDanado
-            // 
-            this.lblDanado.AutoSize = true;
-            this.lblDanado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDanado.Location = new System.Drawing.Point(21, 147);
-            this.lblDanado.Name = "lblDanado";
-            this.lblDanado.Size = new System.Drawing.Size(66, 16);
-            this.lblDanado.TabIndex = 176;
-            this.lblDanado.Text = "DAÑADO";
-            // 
-            // lblPersonal
-            // 
-            this.lblPersonal.AutoSize = true;
-            this.lblPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonal.Location = new System.Drawing.Point(21, 116);
-            this.lblPersonal.Name = "lblPersonal";
-            this.lblPersonal.Size = new System.Drawing.Size(81, 16);
-            this.lblPersonal.TabIndex = 175;
-            this.lblPersonal.Text = "PERSONAL";
-            // 
-            // lblInutilizables
-            // 
-            this.lblInutilizables.AutoSize = true;
-            this.lblInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInutilizables.Location = new System.Drawing.Point(21, 91);
-            this.lblInutilizables.Name = "lblInutilizables";
-            this.lblInutilizables.Size = new System.Drawing.Size(104, 16);
-            this.lblInutilizables.TabIndex = 174;
-            this.lblInutilizables.Text = "INUTILIZABLES";
-            // 
-            // lblAlquilados
-            // 
-            this.lblAlquilados.AutoSize = true;
-            this.lblAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlquilados.Location = new System.Drawing.Point(21, 64);
-            this.lblAlquilados.Name = "lblAlquilados";
-            this.lblAlquilados.Size = new System.Drawing.Size(92, 16);
-            this.lblAlquilados.TabIndex = 173;
-            this.lblAlquilados.Text = "ALQUILADOS";
-            // 
-            // lblDisponible
-            // 
-            this.lblDisponible.AutoSize = true;
-            this.lblDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisponible.Location = new System.Drawing.Point(21, 37);
-            this.lblDisponible.Name = "lblDisponible";
-            this.lblDisponible.Size = new System.Drawing.Size(96, 16);
-            this.lblDisponible.TabIndex = 172;
-            this.lblDisponible.Text = "DISPONIBLES";
             // 
             // verResumen
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(1181, 528);
+            this.verResumen.Location = new System.Drawing.Point(1151, 340);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(10, 10);
             this.verResumen.TabIndex = 185;
             this.verResumen.Text = "VER RESUMEN";
             this.verResumen.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtDisponibles);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(11, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(191, 80);
+            this.panel1.TabIndex = 186;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(3, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 16);
+            this.label3.TabIndex = 187;
+            this.label3.Text = "LAPTOPS DISPONIBLES";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(505, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 29);
+            this.label4.TabIndex = 188;
+            this.label4.Text = "RESUMEN";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.txtAlquilados);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(208, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(191, 80);
+            this.panel2.TabIndex = 188;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(9, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 16);
+            this.label5.TabIndex = 187;
+            this.label5.Text = "LAPTOPS ALQUILADAS";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txtInutilizables);
+            this.panel3.ForeColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(405, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(191, 80);
+            this.panel3.TabIndex = 189;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(0, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(190, 16);
+            this.label6.TabIndex = 187;
+            this.label6.Text = "LAPTOPS INUTILIZABLES";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.txtPersonales);
+            this.panel4.ForeColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(602, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(191, 80);
+            this.panel4.TabIndex = 190;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(10, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(162, 16);
+            this.label7.TabIndex = 187;
+            this.label7.Text = "LAPTOPS PERSONAL";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.txtDanados);
+            this.panel5.ForeColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(799, 40);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(191, 80);
+            this.panel5.TabIndex = 191;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(15, 2);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 16);
+            this.label8.TabIndex = 187;
+            this.label8.Text = "LAPTOPS DAÑADAS";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.txtTotalLaptops);
+            this.panel6.ForeColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(1000, 40);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(191, 80);
+            this.panel6.TabIndex = 192;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(29, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 16);
+            this.label9.TabIndex = 187;
+            this.label9.Text = "TOTAL LAPTOPS";
+            // 
+            // DashInventario
+            // 
+            chartArea1.Area3DStyle.Inclination = 5;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.DashInventario.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BackColor = System.Drawing.Color.White;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            legend1.IsTextAutoFit = false;
+            legend1.ItemColumnSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            legend1.Name = "Legend1";
+            this.DashInventario.Legends.Add(legend1);
+            this.DashInventario.Location = new System.Drawing.Point(16, 509);
+            this.DashInventario.Name = "DashInventario";
+            series1.ChartArea = "ChartArea1";
+            series1.CustomProperties = "PixelPointWidth=50";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBorderWidth = 0;
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
+            this.DashInventario.Series.Add(series1);
+            this.DashInventario.Size = new System.Drawing.Size(772, 238);
+            this.DashInventario.TabIndex = 193;
+            this.DashInventario.Text = "chart1";
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1117, 540);
+            this.ClientSize = new System.Drawing.Size(1206, 759);
+            this.Controls.Add(this.DashInventario);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTotalLaptops);
-            this.Controls.Add(this.txtDanados);
-            this.Controls.Add(this.txtPersonales);
-            this.Controls.Add(this.txtInutilizables);
-            this.Controls.Add(this.txtAlquilados);
-            this.Controls.Add(this.txtDisponibles);
-            this.Controls.Add(this.lblTotalLaptops);
-            this.Controls.Add(this.lblDanado);
-            this.Controls.Add(this.lblPersonal);
-            this.Controls.Add(this.lblInutilizables);
-            this.Controls.Add(this.lblAlquilados);
-            this.Controls.Add(this.lblDisponible);
             this.Controls.Add(this.txtCantidadFiltrada);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.giftCarga);
-            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
+            this.Controls.Add(this.cargarData);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -602,6 +746,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DashInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,20 +789,27 @@
         private DevExpress.XtraGrid.Columns.GridColumn RucCliente;
         private System.Windows.Forms.TextBox txtCantidadFiltrada;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalLaptops;
         private System.Windows.Forms.TextBox txtDanados;
         private System.Windows.Forms.TextBox txtPersonales;
         private System.Windows.Forms.TextBox txtInutilizables;
         private System.Windows.Forms.TextBox txtAlquilados;
         public System.Windows.Forms.TextBox txtDisponibles;
-        private System.Windows.Forms.Label lblTotalLaptops;
-        private System.Windows.Forms.Label lblDanado;
-        private System.Windows.Forms.Label lblPersonal;
-        private System.Windows.Forms.Label lblInutilizables;
-        private System.Windows.Forms.Label lblAlquilados;
-        private System.Windows.Forms.Label lblDisponible;
         private System.Windows.Forms.Button verResumen;
         public DevExpress.XtraGrid.GridControl dgvLaptops;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart DashInventario;
     }
 }
