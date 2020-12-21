@@ -1779,11 +1779,24 @@ namespace Apolo
 
         private void btnOCDash_Click(object sender, EventArgs e)
         {
-            //CERRAR
-            pnlInventarioOfi.Visible = false;
-            pnlFacturacionOfi.Visible = false;
-            //VOLVER A ABRIR
-            pnlInventarioOfi.Visible = true;
+
+            if (pnlInventarioOfi.Visible == true || pnlFacturacionOfi.Visible == true)
+            {
+                //CERRAR
+                pnlInventarioOfi.Visible = false;
+                pnlFacturacionOfi.Visible = false;
+            }
+            else
+            {
+                if (pnlInventarioOfi.Visible == false && pnlFacturacionOfi.Visible == false)
+                {
+                    //VOLVER A ABRIR
+                    pnlInventarioOfi.Visible = true;
+                }
+            }
+
+            
+            
         }
 
         private void CerrarDash()
