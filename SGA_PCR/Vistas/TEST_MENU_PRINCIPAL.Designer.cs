@@ -120,7 +120,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.lblMontoFacturado = new System.Windows.Forms.Label();
-            this.lblHoraMF = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.lblPendientePorFacturar = new System.Windows.Forms.Label();
@@ -1467,7 +1466,6 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.lblHoraMF);
             this.panel9.Controls.Add(this.lblMontoFacturado);
             this.panel9.Controls.Add(this.lblFechaMF);
             this.panel9.Controls.Add(this.label25);
@@ -1497,9 +1495,9 @@
             this.lblFechaMF.ForeColor = System.Drawing.Color.White;
             this.lblFechaMF.Location = new System.Drawing.Point(7, 99);
             this.lblFechaMF.Name = "lblFechaMF";
-            this.lblFechaMF.Size = new System.Drawing.Size(159, 24);
+            this.lblFechaMF.Size = new System.Drawing.Size(254, 24);
             this.lblFechaMF.TabIndex = 1;
-            this.lblFechaMF.Text = "Fecha 01/01/2020";
+            this.lblFechaMF.Text = "Desde el 01/01/20 al 01/01/20";
             // 
             // lblMontoFacturado
             // 
@@ -1512,18 +1510,6 @@
             this.lblMontoFacturado.Size = new System.Drawing.Size(327, 73);
             this.lblMontoFacturado.TabIndex = 2;
             this.lblMontoFacturado.Text = "S/888.888";
-            // 
-            // lblHoraMF
-            // 
-            this.lblHoraMF.AutoSize = true;
-            this.lblHoraMF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            this.lblHoraMF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraMF.ForeColor = System.Drawing.Color.White;
-            this.lblHoraMF.Location = new System.Drawing.Point(7, 127);
-            this.lblHoraMF.Name = "lblHoraMF";
-            this.lblHoraMF.Size = new System.Drawing.Size(106, 24);
-            this.lblHoraMF.TabIndex = 3;
-            this.lblHoraMF.Text = "Hora: 18:30";
             // 
             // panel10
             // 
@@ -1889,12 +1875,14 @@
             this.gridColumn36.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn36.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn36.Caption = "Pendiente por facturar";
+            this.gridColumn36.DisplayFormat.FormatString = "S/ {0:n0}";
+            this.gridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn36.FieldName = "PendienteFacturarSoles";
             this.gridColumn36.MinWidth = 40;
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.OptionsFilter.AllowFilter = false;
             this.gridColumn36.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PendienteFacturarSoles", "Tot. ={0:#.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PendienteFacturarSoles", "Tot. ={0:n0}")});
             this.gridColumn36.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.gridColumn36.Visible = true;
             this.gridColumn36.VisibleIndex = 1;
@@ -2468,7 +2456,6 @@
         private System.Windows.Forms.Label lblPendientePorFacturar;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lblHoraMF;
         private System.Windows.Forms.Label lblMontoFacturado;
         private System.Windows.Forms.Label lblFechaMF;
         private System.Windows.Forms.Label label25;

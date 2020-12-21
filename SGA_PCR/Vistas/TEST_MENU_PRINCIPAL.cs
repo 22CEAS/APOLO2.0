@@ -1737,8 +1737,8 @@ namespace Apolo
 
 
             lblMontoFacturado.Text = string.Format("{0:C0}", MontoFacturadoMes.Rows[0]["total"]);//MONTO FACTURADO EN EL MES
-            lblFechaMF.Text= $"Fecha: { DateTime.Now.ToShortDateString()}";
-            lblHoraMF.Text = $"Hora: { DateTime.Now.ToLongTimeString()}";
+            lblFechaMF.Text= $"Desde el 01/{DateTime.Now.Month}/{DateTime.Now.Year} al { DateTime.Now.ToShortDateString()}";
+            
 
             //TOTAL DE MONTOS
 
