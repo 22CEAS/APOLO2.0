@@ -290,7 +290,7 @@ namespace Apolo
 
                 hoja.Cells[3, 1] = "INUTILIZABLES";
                 hoja.Cells[3, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
-                hoja.Cells[3, 2] = txtInutilizables.Text;
+                hoja.Cells[3, 2] = txtReservadas.Text;
 
                 hoja.Cells[4, 1] = "PERSONAL PCR";
                 hoja.Cells[4, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
@@ -298,7 +298,7 @@ namespace Apolo
 
                 hoja.Cells[5, 1] = "DAÑADO";
                 hoja.Cells[5, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
-                hoja.Cells[5, 2] = txtDanados.Text;
+                hoja.Cells[5, 2] = txtDesfasadas.Text;
 
                 hoja.Cells[6, 1] = "TOTAL";
                 hoja.Cells[6, 1].Interior.Color = Color.FromArgb(218, 152, 36);//FromArgb(255, 132, 0)
@@ -376,6 +376,13 @@ namespace Apolo
         {
             int contador = 0;
 
+            //PRE-ALQUILER
+            vista.ActiveFilterString = "[EstadoNombre] like '%PRE-ALQUILER%'";
+            int canPreAlquiler = vista.RowCount;
+            contador = contador + canPreAlquiler;
+            //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
+            txtReservadas.Text = canPreAlquiler.ToString();
+
             //DISPONIBLE
             vista.ActiveFilterString = "[EstadoNombre] like '%DISPONIBLE%'";
             int canDisponibles = vista.RowCount;
@@ -383,22 +390,19 @@ namespace Apolo
             //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
             txtDisponibles.Text = canDisponibles.ToString();
 
-            //ALQUILADO/PRE ALQUILADO
+            //DESFASADO
+            vista.ActiveFilterString = "[EstadoNombre] like '%DESFASADO%'";
+            int canDesfasado = vista.RowCount;
+            contador = contador + canDesfasado;
+            //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
+            txtDesfasadas.Text = canDesfasado.ToString();
+
+            //ALQUILADO
             vista.ActiveFilterString = "[EstadoNombre] like '%ALQUILADO%'";
             int cantidadAlquilado = vista.RowCount;
-            int cantidadPreAlquilado;
-            vista.ActiveFilterString = "[EstadoNombre] like '%PRE-ALQUILER%'";
-            cantidadPreAlquilado = vista.RowCount;
-            contador = contador + cantidadAlquilado + cantidadPreAlquilado;
+            contador = contador + cantidadAlquilado;
             //lblAlquilados.Text = $"ALQUILADOS: {(cantidadReporte + aux).ToString()}";
-            txtAlquilados.Text = (cantidadAlquilado + cantidadPreAlquilado).ToString();
-
-            //INUTILIZABLES
-            vista.ActiveFilterString = "[EstadoNombre] like '%INUTILIZABLE%'";
-            int canInutilizable = vista.RowCount;
-            contador = contador + canInutilizable;
-            //lblInutilizables.Text = $"INUTILIZABLES: {cantidadReporte.ToString()}";
-            txtInutilizables.Text = canInutilizable.ToString();
+            txtAlquilados.Text = cantidadAlquilado.ToString();
 
             //PERSONAL
             vista.ActiveFilterString = "[EstadoNombre] like '%PERSONALPCR%'";
@@ -407,24 +411,18 @@ namespace Apolo
             //lblPersonal.Text = $"PERSONAL PCR: {cantidadReporte.ToString()}";
             txtPersonales.Text = canPersonalPCR.ToString();
 
-            //DAÑADO
-            vista.ActiveFilterString = "[EstadoNombre] like '%DAÑADO%'";
-            int canDanado = vista.RowCount;
-            contador = contador + canDanado;
-            //lblDanado.Text = $"DAÑADO: {cantidadReporte.ToString()}";
-            txtDanados.Text = canDanado.ToString();
 
-
+            
             //TOTAL
             //lblTotalLaptops.Text = $"TOTAL LAPTOPS: {(contador-cantidadReporte).ToString()}";
-            txtTotalLaptops.Text = (canDisponibles + cantidadAlquilado + cantidadPreAlquilado + canInutilizable + canPersonalPCR + canDanado).ToString();
+            txtTotalLaptops.Text = (canPreAlquiler+canDisponibles + canDesfasado ).ToString();
             vista.ActiveFilterString = "[EstadoNombre] null";
+            
 
-
-
+            /*
             //ACTIVAR DASHBOARD
-            string[] series = { "LAPTOPS DISPONIBLES", "LAPTOPS ALQUILADAS", "LAPTOPS INUTILIZABLES", "LAPTOPS PERSONAL PCR", "LAPTOPS DAÑADAS" };
-            int[] puntos = { int.Parse(txtDisponibles.Text), int.Parse(txtAlquilados.Text), int.Parse(txtInutilizables.Text), int.Parse(txtPersonales.Text), int.Parse(txtDanados.Text)};
+            string[] series = { "LAPTOPS RESERVADAS", "LAPTOPS DISPONIBLES", "LAPTOPS DESFASADAS", "LAPTOPS ALQUILADAS", "LAPTOPS PERSONAL PCR" };
+            int[] puntos = { int.Parse(txtReservadas.Text), int.Parse(txtDisponibles.Text), int.Parse(txtDesfasadas.Text), int.Parse(txtAlquilados.Text), int.Parse(txtPersonales.Text)};
             
             for (int i = 0; i < series.Length; i++)
             {
@@ -432,6 +430,7 @@ namespace Apolo
                 serie.Label = puntos[i].ToString();
                 serie.Points.Add(puntos[i]);
             }
+            */
 
         }
 
@@ -485,6 +484,14 @@ namespace Apolo
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    if (laptop.EstadoNombre == "DISPONIBLE")
+                    {
+                        if (laptop.GeneracionProcesador <= 6)
+                        {
+                            laptop.EstadoNombre = "DESFASADO";
+                        }
+                    }
+
                     laptop.Estado = int.Parse(tablaLaptops.Rows[rec]["idEstado"].ToString());
                     laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
                     laptop.RucCliente = tablaLaptops.Rows[rec]["rucCliente"].ToString();
@@ -657,6 +664,11 @@ namespace Apolo
         private void vista_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             txtCantidadFiltrada.Text = vista.RowCount.ToString();
+        }
+
+        private void DashInventario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

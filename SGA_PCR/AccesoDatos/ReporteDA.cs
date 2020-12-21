@@ -124,6 +124,12 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("Select * from vista_inventario_memoria;");
         }
+
+        public DataTable ListarFacturas()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_facturas_relacion_guias;");
+        }
+
         public DataTable ListarDiscos()
         {
             return objManager.MostrarTablaDatos("Select * from vista_inventario_discos;");
@@ -159,7 +165,7 @@ namespace AccesoDatos
         }
         public DataTable tablaProcesadoresGeneracion(string descripcion)
         {
-            return objManager.MostrarTablaDatos("Select * From auxiliar where cod_tabla = '"+ descripcion+"' order by (0 + descripcion);");
+            return objManager.MostrarTablaDatos("Select * From auxiliar where cod_tabla = '"+ descripcion+"' order by (0 + descripcion);");  
         }
 
     }

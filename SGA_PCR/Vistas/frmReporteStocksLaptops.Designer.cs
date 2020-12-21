@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteStocksLaptops));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,9 +55,9 @@
             this.txtCantidadFiltrada = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalLaptops = new System.Windows.Forms.TextBox();
-            this.txtDanados = new System.Windows.Forms.TextBox();
+            this.txtDesfasadas = new System.Windows.Forms.TextBox();
             this.txtPersonales = new System.Windows.Forms.TextBox();
-            this.txtInutilizables = new System.Windows.Forms.TextBox();
+            this.txtReservadas = new System.Windows.Forms.TextBox();
             this.txtAlquilados = new System.Windows.Forms.TextBox();
             this.txtDisponibles = new System.Windows.Forms.TextBox();
             this.verResumen = new System.Windows.Forms.Button();
@@ -77,7 +74,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.DashInventario = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.GeneracionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -87,7 +84,6 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DashInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLaptops
@@ -102,7 +98,7 @@
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1075, 351);
+            this.dgvLaptops.Size = new System.Drawing.Size(1075, 354);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -127,6 +123,7 @@
             this.Marca,
             this.Modelo,
             this.Procesador,
+            this.GeneracionProcesador,
             this.Video,
             this.CapacidadVideo,
             this.Disco1,
@@ -215,7 +212,7 @@
             this.CapacidadVideo.MinWidth = 40;
             this.CapacidadVideo.Name = "CapacidadVideo";
             this.CapacidadVideo.Visible = true;
-            this.CapacidadVideo.VisibleIndex = 4;
+            this.CapacidadVideo.VisibleIndex = 5;
             this.CapacidadVideo.Width = 130;
             // 
             // Disco1
@@ -227,7 +224,7 @@
             this.Disco1.MinWidth = 40;
             this.Disco1.Name = "Disco1";
             this.Disco1.Visible = true;
-            this.Disco1.VisibleIndex = 5;
+            this.Disco1.VisibleIndex = 6;
             this.Disco1.Width = 70;
             // 
             // CapacidadDisco1
@@ -239,7 +236,7 @@
             this.CapacidadDisco1.MinWidth = 40;
             this.CapacidadDisco1.Name = "CapacidadDisco1";
             this.CapacidadDisco1.Visible = true;
-            this.CapacidadDisco1.VisibleIndex = 6;
+            this.CapacidadDisco1.VisibleIndex = 7;
             this.CapacidadDisco1.Width = 130;
             // 
             // Disco2
@@ -251,7 +248,7 @@
             this.Disco2.MinWidth = 40;
             this.Disco2.Name = "Disco2";
             this.Disco2.Visible = true;
-            this.Disco2.VisibleIndex = 7;
+            this.Disco2.VisibleIndex = 8;
             this.Disco2.Width = 70;
             // 
             // CapacidadDisco2
@@ -263,7 +260,7 @@
             this.CapacidadDisco2.MinWidth = 40;
             this.CapacidadDisco2.Name = "CapacidadDisco2";
             this.CapacidadDisco2.Visible = true;
-            this.CapacidadDisco2.VisibleIndex = 8;
+            this.CapacidadDisco2.VisibleIndex = 9;
             this.CapacidadDisco2.Width = 130;
             // 
             // MemoriaRam
@@ -275,7 +272,7 @@
             this.MemoriaRam.MinWidth = 40;
             this.MemoriaRam.Name = "MemoriaRam";
             this.MemoriaRam.Visible = true;
-            this.MemoriaRam.VisibleIndex = 9;
+            this.MemoriaRam.VisibleIndex = 10;
             this.MemoriaRam.Width = 100;
             // 
             // Estado
@@ -287,7 +284,7 @@
             this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 10;
+            this.Estado.VisibleIndex = 11;
             this.Estado.Width = 130;
             // 
             // Cliente
@@ -299,7 +296,7 @@
             this.Cliente.MinWidth = 40;
             this.Cliente.Name = "Cliente";
             this.Cliente.Visible = true;
-            this.Cliente.VisibleIndex = 11;
+            this.Cliente.VisibleIndex = 12;
             this.Cliente.Width = 150;
             // 
             // RucCliente
@@ -312,7 +309,7 @@
             this.RucCliente.Name = "RucCliente";
             this.RucCliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RucCliente.Visible = true;
-            this.RucCliente.VisibleIndex = 12;
+            this.RucCliente.VisibleIndex = 13;
             this.RucCliente.Width = 140;
             // 
             // Ubicacion
@@ -324,7 +321,7 @@
             this.Ubicacion.MinWidth = 40;
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.Visible = true;
-            this.Ubicacion.VisibleIndex = 13;
+            this.Ubicacion.VisibleIndex = 14;
             this.Ubicacion.Width = 150;
             // 
             // SerieFabrica
@@ -336,7 +333,7 @@
             this.SerieFabrica.MinWidth = 40;
             this.SerieFabrica.Name = "SerieFabrica";
             this.SerieFabrica.Visible = true;
-            this.SerieFabrica.VisibleIndex = 14;
+            this.SerieFabrica.VisibleIndex = 15;
             this.SerieFabrica.Width = 150;
             // 
             // IdSalida
@@ -349,7 +346,7 @@
             this.IdSalida.Name = "IdSalida";
             this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.IdSalida.Visible = true;
-            this.IdSalida.VisibleIndex = 15;
+            this.IdSalida.VisibleIndex = 16;
             this.IdSalida.Width = 80;
             // 
             // btnExportar
@@ -361,7 +358,7 @@
             this.btnExportar.FlatAppearance.BorderSize = 0;
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.ForeColor = System.Drawing.Color.Black;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExportar.Location = new System.Drawing.Point(1109, 193);
@@ -402,7 +399,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(1119, 308);
@@ -451,18 +448,18 @@
             this.txtTotalLaptops.TabIndex = 183;
             this.txtTotalLaptops.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtDanados
+            // txtDesfasadas
             // 
-            this.txtDanados.BackColor = System.Drawing.Color.White;
-            this.txtDanados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDanados.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDanados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtDanados.Location = new System.Drawing.Point(9, 28);
-            this.txtDanados.Name = "txtDanados";
-            this.txtDanados.ReadOnly = true;
-            this.txtDanados.Size = new System.Drawing.Size(160, 37);
-            this.txtDanados.TabIndex = 182;
-            this.txtDanados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDesfasadas.BackColor = System.Drawing.Color.White;
+            this.txtDesfasadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDesfasadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesfasadas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtDesfasadas.Location = new System.Drawing.Point(9, 28);
+            this.txtDesfasadas.Name = "txtDesfasadas";
+            this.txtDesfasadas.ReadOnly = true;
+            this.txtDesfasadas.Size = new System.Drawing.Size(160, 37);
+            this.txtDesfasadas.TabIndex = 182;
+            this.txtDesfasadas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPersonales
             // 
@@ -477,18 +474,18 @@
             this.txtPersonales.TabIndex = 181;
             this.txtPersonales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtInutilizables
+            // txtReservadas
             // 
-            this.txtInutilizables.BackColor = System.Drawing.Color.White;
-            this.txtInutilizables.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInutilizables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtInutilizables.Location = new System.Drawing.Point(12, 29);
-            this.txtInutilizables.Name = "txtInutilizables";
-            this.txtInutilizables.ReadOnly = true;
-            this.txtInutilizables.Size = new System.Drawing.Size(160, 37);
-            this.txtInutilizables.TabIndex = 180;
-            this.txtInutilizables.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtReservadas.BackColor = System.Drawing.Color.White;
+            this.txtReservadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReservadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReservadas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtReservadas.Location = new System.Drawing.Point(12, 29);
+            this.txtReservadas.Name = "txtReservadas";
+            this.txtReservadas.ReadOnly = true;
+            this.txtReservadas.Size = new System.Drawing.Size(160, 37);
+            this.txtReservadas.TabIndex = 180;
+            this.txtReservadas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAlquilados
             // 
@@ -534,7 +531,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtDisponibles);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(11, 40);
+            this.panel1.Location = new System.Drawing.Point(209, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(191, 80);
             this.panel1.TabIndex = 186;
@@ -569,7 +566,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtAlquilados);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(208, 40);
+            this.panel2.Location = new System.Drawing.Point(607, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(191, 80);
             this.panel2.TabIndex = 188;
@@ -590,9 +587,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txtInutilizables);
+            this.panel3.Controls.Add(this.txtReservadas);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(405, 40);
+            this.panel3.Location = new System.Drawing.Point(12, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(191, 80);
             this.panel3.TabIndex = 189;
@@ -604,9 +601,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(0, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 16);
+            this.label6.Size = new System.Drawing.Size(184, 16);
             this.label6.TabIndex = 187;
-            this.label6.Text = "LAPTOPS INUTILIZABLES";
+            this.label6.Text = "LAPTOPS RESERVADAS";
             // 
             // panel4
             // 
@@ -615,7 +612,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.txtPersonales);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(602, 40);
+            this.panel4.Location = new System.Drawing.Point(803, 40);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(191, 80);
             this.panel4.TabIndex = 190;
@@ -636,9 +633,9 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.txtDanados);
+            this.panel5.Controls.Add(this.txtDesfasadas);
             this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(799, 40);
+            this.panel5.Location = new System.Drawing.Point(406, 40);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(191, 80);
             this.panel5.TabIndex = 191;
@@ -648,11 +645,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(15, 2);
+            this.label8.Location = new System.Drawing.Point(3, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 16);
+            this.label8.Size = new System.Drawing.Size(182, 16);
             this.label8.TabIndex = 187;
-            this.label8.Text = "LAPTOPS DAÑADAS";
+            this.label8.Text = "LAPTOPS DESFASADAS";
             // 
             // panel6
             // 
@@ -671,54 +668,25 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(29, 2);
+            this.label9.Location = new System.Drawing.Point(-2, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 16);
+            this.label9.Size = new System.Drawing.Size(193, 16);
             this.label9.TabIndex = 187;
-            this.label9.Text = "TOTAL LAPTOPS";
+            this.label9.Text = "TOTAL LAPTOPS OFICINA";
             // 
-            // DashInventario
+            // GeneracionProcesador
             // 
-            chartArea1.Area3DStyle.Inclination = 5;
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.BackColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.DashInventario.ChartAreas.Add(chartArea1);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BackColor = System.Drawing.Color.White;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            legend1.IsTextAutoFit = false;
-            legend1.ItemColumnSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
-            legend1.Name = "Legend1";
-            this.DashInventario.Legends.Add(legend1);
-            this.DashInventario.Location = new System.Drawing.Point(16, 509);
-            this.DashInventario.Name = "DashInventario";
-            series1.ChartArea = "ChartArea1";
-            series1.CustomProperties = "PixelPointWidth=50";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.LabelBorderWidth = 0;
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.White;
-            this.DashInventario.Series.Add(series1);
-            this.DashInventario.Size = new System.Drawing.Size(772, 238);
-            this.DashInventario.TabIndex = 193;
-            this.DashInventario.Text = "chart1";
+            this.GeneracionProcesador.Caption = "Generacion Procesador";
+            this.GeneracionProcesador.FieldName = "GeneracionProcesador";
+            this.GeneracionProcesador.Name = "GeneracionProcesador";
+            this.GeneracionProcesador.Visible = true;
+            this.GeneracionProcesador.VisibleIndex = 4;
             // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1206, 759);
-            this.Controls.Add(this.DashInventario);
+            this.ClientSize = new System.Drawing.Size(1206, 531);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -758,7 +726,6 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DashInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -790,9 +757,9 @@
         private System.Windows.Forms.TextBox txtCantidadFiltrada;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTotalLaptops;
-        private System.Windows.Forms.TextBox txtDanados;
+        private System.Windows.Forms.TextBox txtDesfasadas;
         private System.Windows.Forms.TextBox txtPersonales;
-        private System.Windows.Forms.TextBox txtInutilizables;
+        private System.Windows.Forms.TextBox txtReservadas;
         private System.Windows.Forms.TextBox txtAlquilados;
         public System.Windows.Forms.TextBox txtDisponibles;
         private System.Windows.Forms.Button verResumen;
@@ -810,6 +777,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataVisualization.Charting.Chart DashInventario;
+        private DevExpress.XtraGrid.Columns.GridColumn GeneracionProcesador;
     }
 }

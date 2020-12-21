@@ -244,6 +244,12 @@
     <Compile Include="frmProcesoLevantamientoObservacionesBuscar.Designer.cs">
       <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoRelacionarGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoRelacionarGuia.Designer.cs">
+      <DependentUpon>frmProcesoRelacionarGuia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoRenovacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -599,6 +605,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoLevantamientoObservacionesBuscar.resx">
       <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoRelacionarGuia.resx">
+      <DependentUpon>frmProcesoRelacionarGuia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoRenovacion.resx">
       <DependentUpon>frmProcesoRenovacion.cs</DependentUpon>
