@@ -81,7 +81,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1188, 20);
+            this.btnExportar.Location = new System.Drawing.Point(1056, 194);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 137;
@@ -97,10 +97,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLaptops.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.dgvLaptops.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvLaptops.Location = new System.Drawing.Point(42, 123);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 12);
+            this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1245, 337);
+            this.dgvLaptops.Size = new System.Drawing.Size(1038, 403);
             this.dgvLaptops.TabIndex = 136;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -513,7 +517,7 @@
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(550, 90);
+            this.cargarData.Location = new System.Drawing.Point(528, 329);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 138;
@@ -523,9 +527,10 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(550, 2);
+            this.giftCarga.BackColor = System.Drawing.Color.White;
+            this.giftCarga.Location = new System.Drawing.Point(485, 185);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.Size = new System.Drawing.Size(190, 138);
             this.giftCarga.TabIndex = 140;
             this.giftCarga.TabStop = false;
             // 
@@ -533,7 +538,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(42, 20);
+            this.verResumen.Location = new System.Drawing.Point(628, 329);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 143;
@@ -544,10 +549,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 50);
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(799, 418);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 144;
             this.label1.Text = "CANTIDAD REGISTROS:";
             // 
@@ -555,13 +562,13 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 461);
+            this.ClientSize = new System.Drawing.Size(1152, 470);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.giftCarga);
-            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.dgvLaptops);
+            this.Controls.Add(this.cargarData);
+            this.Controls.Add(this.verResumen);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);

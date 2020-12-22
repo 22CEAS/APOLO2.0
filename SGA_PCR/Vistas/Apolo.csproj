@@ -244,11 +244,19 @@
     <Compile Include="frmProcesoLevantamientoObservacionesBuscar.Designer.cs">
       <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmProcesoNotaCredito.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProcesoNotaCredito.Designer.cs">
       <DependentUpon>frmProcesoNotaCredito.cs</DependentUpon>
+=======
+    <Compile Include="frmProcesoRelacionarGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoRelacionarGuia.Designer.cs">
+      <DependentUpon>frmProcesoRelacionarGuia.cs</DependentUpon>
+>>>>>>> 2f9e15784650e7b28a47884df909584372c1ad4d
     </Compile>
     <Compile Include="frmProcesoRenovacion.cs">
       <SubType>Form</SubType>
@@ -606,8 +614,13 @@
     <EmbeddedResource Include="frmProcesoLevantamientoObservacionesBuscar.resx">
       <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmProcesoNotaCredito.resx">
       <DependentUpon>frmProcesoNotaCredito.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmProcesoRelacionarGuia.resx">
+      <DependentUpon>frmProcesoRelacionarGuia.cs</DependentUpon>
+>>>>>>> 2f9e15784650e7b28a47884df909584372c1ad4d
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoRenovacion.resx">
       <DependentUpon>frmProcesoRenovacion.cs</DependentUpon>

@@ -2892,6 +2892,19 @@ namespace Apolo
             }
 
             label2.Text = $"TOTAL : {ingreso.Total}";
+
+
+            /*
+            if (ingreso.Total > 0)
+            {
+                cmbTipoIngreso.Enabled = false;
+            }
+            else
+            {
+                cmbTipoIngreso.Enabled = true;
+            }
+            */
+
         }
 
     }

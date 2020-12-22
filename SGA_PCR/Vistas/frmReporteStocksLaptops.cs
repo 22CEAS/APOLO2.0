@@ -12,10 +12,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
+
 
 namespace Apolo
 {
@@ -48,6 +50,11 @@ namespace Apolo
         private int cantModeloProcesador;
         private int[][] arregloLCGeneral;
         private int[][] arregloLCApple;
+
+
+        private int GeneracionDesfasado = 6;
+
+        
 
 
         public frmReporteStocksLaptops()
@@ -96,7 +103,7 @@ namespace Apolo
         {
             if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Cursor.Current = Cursors.WaitCursor;
+                //Cursor.Current = Cursors.WaitCursor;
                 try
                 {
                     DevExpress.Export.ExportSettings.DefaultExportType = ExportType.DataAware;
@@ -112,7 +119,7 @@ namespace Apolo
                 {
                     MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
 
             }
         }
@@ -122,7 +129,7 @@ namespace Apolo
 
             if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Cursor.Current = Cursors.WaitCursor;
+                //Cursor.Current = Cursors.WaitCursor;
                 try
                 {
 
@@ -160,7 +167,7 @@ namespace Apolo
                 {
                     MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
             }
         }
 
@@ -288,7 +295,7 @@ namespace Apolo
 
                 hoja.Cells[3, 1] = "INUTILIZABLES";
                 hoja.Cells[3, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
-                hoja.Cells[3, 2] = txtInutilizables.Text;
+                hoja.Cells[3, 2] = txtReservadas.Text;
 
                 hoja.Cells[4, 1] = "PERSONAL PCR";
                 hoja.Cells[4, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
@@ -296,7 +303,7 @@ namespace Apolo
 
                 hoja.Cells[5, 1] = "DAÑADO";
                 hoja.Cells[5, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
-                hoja.Cells[5, 2] = txtDanados.Text;
+                hoja.Cells[5, 2] = txtDesfasadas.Text;
 
                 hoja.Cells[6, 1] = "TOTAL";
                 hoja.Cells[6, 1].Interior.Color = Color.FromArgb(218, 152, 36);//FromArgb(255, 132, 0)
@@ -374,6 +381,13 @@ namespace Apolo
         {
             int contador = 0;
 
+            //PRE-ALQUILER
+            vista.ActiveFilterString = "[EstadoNombre] like '%PRE-ALQUILER%'";
+            int canPreAlquiler = vista.RowCount;
+            contador = contador + canPreAlquiler;
+            //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
+            txtReservadas.Text = canPreAlquiler.ToString();
+
             //DISPONIBLE
             vista.ActiveFilterString = "[EstadoNombre] like '%DISPONIBLE%'";
             int canDisponibles = vista.RowCount;
@@ -381,22 +395,19 @@ namespace Apolo
             //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
             txtDisponibles.Text = canDisponibles.ToString();
 
-            //ALQUILADO/PRE ALQUILADO
+            //DESFASADO
+            vista.ActiveFilterString = "[EstadoNombre] like '%DESFASADO%'";
+            int canDesfasado = vista.RowCount;
+            contador = contador + canDesfasado;
+            //lblDisponible.Text = $"DISPONIBLES: {cantidadReporte.ToString()}";
+            txtDesfasadas.Text = canDesfasado.ToString();
+
+            //ALQUILADO
             vista.ActiveFilterString = "[EstadoNombre] like '%ALQUILADO%'";
             int cantidadAlquilado = vista.RowCount;
-            int cantidadPreAlquilado;
-            vista.ActiveFilterString = "[EstadoNombre] like '%PRE-ALQUILER%'";
-            cantidadPreAlquilado = vista.RowCount;
-            contador = contador + cantidadAlquilado + cantidadPreAlquilado;
+            contador = contador + cantidadAlquilado;
             //lblAlquilados.Text = $"ALQUILADOS: {(cantidadReporte + aux).ToString()}";
-            txtAlquilados.Text = (cantidadAlquilado + cantidadPreAlquilado).ToString();
-
-            //INUTILIZABLES
-            vista.ActiveFilterString = "[EstadoNombre] like '%INUTILIZABLE%'";
-            int canInutilizable = vista.RowCount;
-            contador = contador + canInutilizable;
-            //lblInutilizables.Text = $"INUTILIZABLES: {cantidadReporte.ToString()}";
-            txtInutilizables.Text = canInutilizable.ToString();
+            txtAlquilados.Text = cantidadAlquilado.ToString();
 
             //PERSONAL
             vista.ActiveFilterString = "[EstadoNombre] like '%PERSONALPCR%'";
@@ -405,18 +416,27 @@ namespace Apolo
             //lblPersonal.Text = $"PERSONAL PCR: {cantidadReporte.ToString()}";
             txtPersonales.Text = canPersonalPCR.ToString();
 
-            //DAÑADO
-            vista.ActiveFilterString = "[EstadoNombre] like '%DAÑADO%'";
-            int canDanado = vista.RowCount;
-            contador = contador + canDanado;
-            //lblDanado.Text = $"DAÑADO: {cantidadReporte.ToString()}";
-            txtDanados.Text = canDanado.ToString();
 
-
+            
             //TOTAL
             //lblTotalLaptops.Text = $"TOTAL LAPTOPS: {(contador-cantidadReporte).ToString()}";
-            txtTotalLaptops.Text = (canDisponibles + cantidadAlquilado + cantidadPreAlquilado + canInutilizable + canPersonalPCR + canDanado).ToString();
+            txtTotalLaptops.Text = (canPreAlquiler+canDisponibles + canDesfasado ).ToString();
             vista.ActiveFilterString = "[EstadoNombre] null";
+            
+
+            /*
+            //ACTIVAR DASHBOARD
+            string[] series = { "LAPTOPS RESERVADAS", "LAPTOPS DISPONIBLES", "LAPTOPS DESFASADAS", "LAPTOPS ALQUILADAS", "LAPTOPS PERSONAL PCR" };
+            int[] puntos = { int.Parse(txtReservadas.Text), int.Parse(txtDisponibles.Text), int.Parse(txtDesfasadas.Text), int.Parse(txtAlquilados.Text), int.Parse(txtPersonales.Text)};
+            
+            for (int i = 0; i < series.Length; i++)
+            {
+                Series serie = DashInventario.Series.Add(series[i]);
+                serie.Label = puntos[i].ToString();
+                serie.Points.Add(puntos[i]);
+            }
+            */
+
         }
 
 
@@ -469,6 +489,23 @@ namespace Apolo
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    if (tablaLaptops.Rows[rec]["fecTraslado"].ToString() == " ")
+                    {
+                        laptop.FechaTraslado = "";
+                    }
+                    else
+                    {
+                        laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
+                    }
+                    
+                    if (laptop.EstadoNombre == "DISPONIBLE")
+                    {
+                        if (laptop.GeneracionProcesador <= this.GeneracionDesfasado)
+                        {
+                            laptop.EstadoNombre = "DESFASADO";
+                        }
+                    }
+
                     laptop.Estado = int.Parse(tablaLaptops.Rows[rec]["idEstado"].ToString());
                     laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
                     laptop.RucCliente = tablaLaptops.Rows[rec]["rucCliente"].ToString();
@@ -566,6 +603,9 @@ namespace Apolo
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
 
+
+ 
+
             }
             catch (Exception e)
             {
@@ -631,6 +671,21 @@ namespace Apolo
         }
 
         private void txtVendido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vista_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            txtCantidadFiltrada.Text = vista.RowCount.ToString();
+        }
+
+        private void DashInventario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLaptops_Click(object sender, EventArgs e)
         {
 
         }

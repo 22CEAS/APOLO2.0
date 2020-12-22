@@ -280,6 +280,28 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
             cargarData.Visible = false;
 
+
+
+            string[] cliente = new string[500];
+            int[] count_cliente = new int[500];
+
+            string clienteFilaActual = "";
+
+            for (int i = 0; i < tablaLaptops.Rows.Count; i++)
+            {
+                clienteFilaActual = tablaLaptops.Rows[i]["Cliente"].ToString();
+
+                //REVISAR SI EXISTE EN EL ARREGLO
+                for (int j = 0; j < cliente.Length; j++)
+                {
+                    if (clienteFilaActual == cliente[j])
+                    {
+                        continue;
+                    }
+                }
+            }
+
+       
         }
 
         public bool cargarDataTabla()
@@ -351,10 +373,6 @@ namespace Apolo
                 dgvLaptops.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
-
-             
-
-
             }
             catch (Exception e)
             {
@@ -386,6 +404,11 @@ namespace Apolo
         private void dgvLaptops_MouseHover(object sender, EventArgs e)
         {
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
+
+        private void DashPastel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
