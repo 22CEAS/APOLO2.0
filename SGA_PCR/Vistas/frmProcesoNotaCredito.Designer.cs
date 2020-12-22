@@ -48,12 +48,12 @@
             this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -92,7 +92,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(154, 107);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(155, 107);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 140;
@@ -112,7 +112,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(32, 107);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(33, 107);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 139;
@@ -123,12 +123,12 @@
             // 
             // dgvFacturas
             // 
-            this.dgvFacturas.Location = new System.Drawing.Point(32, 172);
+            this.dgvFacturas.Location = new System.Drawing.Point(12, 163);
             this.dgvFacturas.MainView = this.vistaFacturas;
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.dgvFacturas.Size = new System.Drawing.Size(903, 239);
+            this.dgvFacturas.Size = new System.Drawing.Size(1031, 239);
             this.dgvFacturas.TabIndex = 138;
             this.dgvFacturas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaFacturas});
@@ -150,14 +150,14 @@
             this.Seleccionar,
             this.Codigo,
             this.GuiaSalida,
+            this.ruc,
             this.VentaSoles,
             this.VentaDolares,
             this.CostoSoles,
             this.CostoDolares,
-            this.idFactura,
-            this.ruc,
             this.fecIniPago,
             this.fecFinPago,
+            this.idFactura,
             this.idSalida,
             this.idLC});
             this.vistaFacturas.GridControl = this.dgvFacturas;
@@ -207,6 +207,7 @@
             this.GuiaSalida.FieldName = "guiaSalida";
             this.GuiaSalida.MinWidth = 40;
             this.GuiaSalida.Name = "GuiaSalida";
+            this.GuiaSalida.OptionsColumn.AllowEdit = false;
             this.GuiaSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GuiaSalida.Visible = true;
             this.GuiaSalida.VisibleIndex = 2;
@@ -218,9 +219,10 @@
             this.VentaSoles.FieldName = "totalSoles";
             this.VentaSoles.MinWidth = 40;
             this.VentaSoles.Name = "VentaSoles";
+            this.VentaSoles.OptionsColumn.AllowEdit = false;
             this.VentaSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.VentaSoles.Visible = true;
-            this.VentaSoles.VisibleIndex = 3;
+            this.VentaSoles.VisibleIndex = 4;
             this.VentaSoles.Width = 100;
             // 
             // VentaDolares
@@ -229,9 +231,10 @@
             this.VentaDolares.FieldName = "totalDolares";
             this.VentaDolares.MinWidth = 40;
             this.VentaDolares.Name = "VentaDolares";
+            this.VentaDolares.OptionsColumn.AllowEdit = false;
             this.VentaDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.VentaDolares.Visible = true;
-            this.VentaDolares.VisibleIndex = 4;
+            this.VentaDolares.VisibleIndex = 5;
             this.VentaDolares.Width = 100;
             // 
             // CostoSoles
@@ -240,9 +243,10 @@
             this.CostoSoles.FieldName = "costoSoles";
             this.CostoSoles.MinWidth = 40;
             this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.OptionsColumn.AllowEdit = false;
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 5;
+            this.CostoSoles.VisibleIndex = 6;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -251,9 +255,10 @@
             this.CostoDolares.FieldName = "costoDolares";
             this.CostoDolares.MinWidth = 40;
             this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.OptionsColumn.AllowEdit = false;
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 6;
+            this.CostoDolares.VisibleIndex = 7;
             this.CostoDolares.Width = 100;
             // 
             // idFactura
@@ -264,45 +269,53 @@
             this.idFactura.Name = "idFactura";
             this.idFactura.OptionsColumn.AllowEdit = false;
             this.idFactura.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.idFactura.Visible = true;
-            this.idFactura.VisibleIndex = 7;
             this.idFactura.Width = 100;
             // 
             // ruc
             // 
-            this.ruc.Caption = "ruc";
+            this.ruc.Caption = "RUC";
             this.ruc.FieldName = "ruc";
             this.ruc.Name = "ruc";
+            this.ruc.OptionsColumn.AllowEdit = false;
             this.ruc.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ruc.Visible = true;
-            this.ruc.VisibleIndex = 8;
+            this.ruc.VisibleIndex = 3;
             // 
             // fecIniPago
             // 
-            this.fecIniPago.Caption = "fecIniPago";
+            this.fecIniPago.Caption = "Fecha Inicio Pago";
             this.fecIniPago.FieldName = "fecIniPago";
             this.fecIniPago.Name = "fecIniPago";
+            this.fecIniPago.OptionsColumn.AllowEdit = false;
             this.fecIniPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniPago.Visible = true;
-            this.fecIniPago.VisibleIndex = 9;
+            this.fecIniPago.VisibleIndex = 8;
             // 
             // fecFinPago
             // 
-            this.fecFinPago.Caption = "fecFinPago";
+            this.fecFinPago.Caption = "Fecha Fin Pago";
             this.fecFinPago.FieldName = "fecFinPago";
             this.fecFinPago.Name = "fecFinPago";
+            this.fecFinPago.OptionsColumn.AllowEdit = false;
             this.fecFinPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinPago.Visible = true;
-            this.fecFinPago.VisibleIndex = 10;
+            this.fecFinPago.VisibleIndex = 9;
             // 
             // idSalida
             // 
             this.idSalida.Caption = "idSalida";
             this.idSalida.FieldName = "idSalida";
             this.idSalida.Name = "idSalida";
+            this.idSalida.OptionsColumn.AllowEdit = false;
             this.idSalida.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.idSalida.Visible = true;
-            this.idSalida.VisibleIndex = 11;
+            // 
+            // idLC
+            // 
+            this.idLC.Caption = "idLC";
+            this.idLC.FieldName = "idLC";
+            this.idLC.Name = "idLC";
+            this.idLC.OptionsColumn.AllowEdit = false;
+            this.idLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
             // txtReferencia
             // 
@@ -331,7 +344,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(845, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(954, 434);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 214;
@@ -351,7 +364,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(664, 436);
+            this.btnNuevo.Location = new System.Drawing.Point(773, 436);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 213;
@@ -371,7 +384,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(745, 436);
+            this.btnGrabar.Location = new System.Drawing.Point(854, 436);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 212;
@@ -380,21 +393,12 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // idLC
-            // 
-            this.idLC.Caption = "idLC";
-            this.idLC.FieldName = "idLC";
-            this.idLC.Name = "idLC";
-            this.idLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.idLC.Visible = true;
-            this.idLC.VisibleIndex = 12;
-            // 
             // frmProcesoNotaCredito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(991, 511);
+            this.ClientSize = new System.Drawing.Size(1100, 511);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
