@@ -123,6 +123,7 @@
             this.PROCESADORprono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LAPprono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MACprono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnlProsticar = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.lblFecPron = new System.Windows.Forms.Label();
@@ -134,9 +135,9 @@
             this.PROCESADORdash = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LAPdash = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MACdash = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lblFechaActual = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnlFacturacionOfi = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -161,17 +162,17 @@
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lblFactToInv = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lblFecPF = new System.Windows.Forms.Label();
             this.lblPendientePorFacturar = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lblFecPF = new System.Windows.Forms.Label();
+            this.btnNotaDeCredito = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -188,6 +189,7 @@
             this.pnlPronosticadorInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLapDispoPronosticador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaLapDispoPronosticador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             this.pnlProsticar.SuspendLayout();
             this.pnlLaptopsDisponibles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLapDispo)).BeginInit();
@@ -196,10 +198,9 @@
             this.pnlFacturacionOfi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturacionDash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturacionDash)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn40
@@ -282,7 +283,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1905);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1947);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -337,7 +338,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1865);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1907);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -362,7 +363,7 @@
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1195);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1237);
             this.REPORTES.Name = "REPORTES";
             this.REPORTES.Size = new System.Drawing.Size(327, 670);
             this.REPORTES.TabIndex = 20;
@@ -626,7 +627,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 1155);
+            this.button20.Location = new System.Drawing.Point(0, 1197);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(327, 40);
             this.button20.TabIndex = 18;
@@ -637,6 +638,7 @@
             // PROCESOS
             // 
             this.PROCESOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PROCESOS.Controls.Add(this.btnNotaDeCredito);
             this.PROCESOS.Controls.Add(this.btnCorteAlquiler);
             this.PROCESOS.Controls.Add(this.btnMovimientosInternos);
             this.PROCESOS.Controls.Add(this.button19);
@@ -652,7 +654,7 @@
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(327, 618);
+            this.PROCESOS.Size = new System.Drawing.Size(327, 660);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
@@ -1565,6 +1567,11 @@
             this.MACprono.VisibleIndex = 2;
             this.MACprono.Width = 100;
             // 
+            // gridView10
+            // 
+            this.gridView10.GridControl = this.dgvLapDispoPronosticador;
+            this.gridView10.Name = "gridView10";
+            // 
             // pnlProsticar
             // 
             this.pnlProsticar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
@@ -1764,6 +1771,11 @@
             this.MACdash.VisibleIndex = 2;
             this.MACdash.Width = 100;
             // 
+            // gridView6
+            // 
+            this.gridView6.GridControl = this.dgvLapDispo;
+            this.gridView6.Name = "gridView6";
+            // 
             // lblFechaActual
             // 
             this.lblFechaActual.AutoSize = true;
@@ -1787,11 +1799,6 @@
             this.label20.Size = new System.Drawing.Size(220, 92);
             this.label20.TabIndex = 3;
             this.label20.Text = "Laptops\r\ndisponibles";
-            // 
-            // gridView6
-            // 
-            this.gridView6.GridControl = this.dgvLapDispo;
-            this.gridView6.Name = "gridView6";
             // 
             // pnlFacturacionOfi
             // 
@@ -2166,6 +2173,11 @@
             this.gridColumn39.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.gridColumn39.Width = 200;
             // 
+            // gridView9
+            // 
+            this.gridView9.GridControl = this.dgvFacturacionDash;
+            this.gridView9.Name = "gridView9";
+            // 
             // lblFactToInv
             // 
             this.lblFactToInv.AutoSize = true;
@@ -2191,6 +2203,18 @@
             this.panel10.Size = new System.Drawing.Size(401, 236);
             this.panel10.TabIndex = 5;
             this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // lblFecPF
+            // 
+            this.lblFecPF.AutoSize = true;
+            this.lblFecPF.BackColor = System.Drawing.Color.White;
+            this.lblFecPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecPF.ForeColor = System.Drawing.Color.Black;
+            this.lblFecPF.Location = new System.Drawing.Point(9, 95);
+            this.lblFecPF.Name = "lblFecPF";
+            this.lblFecPF.Size = new System.Drawing.Size(122, 24);
+            this.lblFecPF.TabIndex = 3;
+            this.lblFecPF.Text = "Al 12/12/2020";
             // 
             // lblPendientePorFacturar
             // 
@@ -2265,27 +2289,23 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
-            // gridView9
+            // btnNotaDeCredito
             // 
-            this.gridView9.GridControl = this.dgvFacturacionDash;
-            this.gridView9.Name = "gridView9";
-            // 
-            // gridView10
-            // 
-            this.gridView10.GridControl = this.dgvLapDispoPronosticador;
-            this.gridView10.Name = "gridView10";
-            // 
-            // lblFecPF
-            // 
-            this.lblFecPF.AutoSize = true;
-            this.lblFecPF.BackColor = System.Drawing.Color.White;
-            this.lblFecPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecPF.ForeColor = System.Drawing.Color.Black;
-            this.lblFecPF.Location = new System.Drawing.Point(9, 95);
-            this.lblFecPF.Name = "lblFecPF";
-            this.lblFecPF.Size = new System.Drawing.Size(122, 24);
-            this.lblFecPF.TabIndex = 3;
-            this.lblFecPF.Text = "Al 12/12/2020";
+            this.btnNotaDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNotaDeCredito.FlatAppearance.BorderSize = 0;
+            this.btnNotaDeCredito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnNotaDeCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotaDeCredito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotaDeCredito.ForeColor = System.Drawing.Color.Black;
+            this.btnNotaDeCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotaDeCredito.Location = new System.Drawing.Point(3, 610);
+            this.btnNotaDeCredito.Name = "btnNotaDeCredito";
+            this.btnNotaDeCredito.Size = new System.Drawing.Size(319, 45);
+            this.btnNotaDeCredito.TabIndex = 22;
+            this.btnNotaDeCredito.Text = "> NOTA DE CREDITO";
+            this.btnNotaDeCredito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotaDeCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotaDeCredito.UseVisualStyleBackColor = false;
             // 
             // TEST_MENU_PRINCIPAL
             // 
@@ -2328,6 +2348,7 @@
             this.pnlPronosticadorInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLapDispoPronosticador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaLapDispoPronosticador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             this.pnlProsticar.ResumeLayout(false);
             this.pnlProsticar.PerformLayout();
             this.pnlLaptopsDisponibles.ResumeLayout(false);
@@ -2339,12 +2360,11 @@
             this.pnlFacturacionOfi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturacionDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturacionDash)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2481,5 +2501,6 @@
         private System.Windows.Forms.Button btnOCDash;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblFecPF;
+        private System.Windows.Forms.Button btnNotaDeCredito;
     }
 }

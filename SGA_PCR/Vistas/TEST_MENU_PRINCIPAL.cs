@@ -137,8 +137,8 @@ namespace Apolo
         private void verificandoPermisosProcesos()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19,btnMovimientosInternos,btnCorteAlquiler };
-            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b" };
+            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19,btnMovimientosInternos,btnCorteAlquiler,btnNotaDeCredito};
+            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b" };
 
             foreach (Button btn in botones_procesos)
             {
