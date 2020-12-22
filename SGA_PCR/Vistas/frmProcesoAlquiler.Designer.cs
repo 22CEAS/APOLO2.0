@@ -99,6 +99,7 @@
             this.MarcaEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvEquipos = new DevExpress.XtraGrid.GridControl();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).BeginInit();
@@ -110,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelX4
@@ -1043,7 +1045,7 @@
             this.Seleccionar.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Seleccionar.Visible = true;
             this.Seleccionar.VisibleIndex = 0;
-            this.Seleccionar.Width = 80;
+            this.Seleccionar.Width = 100;
             // 
             // GuiaSalida
             // 
@@ -1109,6 +1111,8 @@
             this.dgvEquipos.Location = new System.Drawing.Point(94, 244);
             this.dgvEquipos.MainView = this.vistaEquipos;
             this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
             this.dgvEquipos.Size = new System.Drawing.Size(503, 402);
             this.dgvEquipos.TabIndex = 199;
             this.dgvEquipos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1116,10 +1120,16 @@
             this.dgvEquipos.Click += new System.EventHandler(this.dgvEquipos_Click);
             this.dgvEquipos.DoubleClick += new System.EventHandler(this.dgvEquipos_DoubleClick);
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // frmProcesoAlquiler
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1147, 702);
             this.Controls.Add(this.dgvEquipos);
             this.Controls.Add(this.btnDeseleccionarFilas);
@@ -1184,6 +1194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1261,5 +1272,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn MarcaEquipo;
         private DevExpress.XtraGrid.Columns.GridColumn IdLC;
         public DevExpress.XtraGrid.GridControl dgvEquipos;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }

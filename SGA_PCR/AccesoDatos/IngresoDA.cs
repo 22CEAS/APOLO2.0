@@ -54,7 +54,7 @@ namespace AccesoDatos
 
         public DataTable ListarMemorias()
         {
-            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_memoria ;");
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_memoria Order by tipo;");
         }
 
         public DataTable ListarTarjetaVideos()

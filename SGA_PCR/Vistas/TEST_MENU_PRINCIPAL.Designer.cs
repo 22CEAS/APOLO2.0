@@ -66,6 +66,7 @@
             this.button30 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.PROCESOS = new System.Windows.Forms.Panel();
+            this.btnNotaDeCredito = new System.Windows.Forms.Button();
             this.btnCorteAlquiler = new System.Windows.Forms.Button();
             this.btnMovimientosInternos = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -172,7 +173,6 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnNotaDeCredito = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -657,6 +657,25 @@
             this.PROCESOS.Size = new System.Drawing.Size(327, 660);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
+            // 
+            // btnNotaDeCredito
+            // 
+            this.btnNotaDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNotaDeCredito.FlatAppearance.BorderSize = 0;
+            this.btnNotaDeCredito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnNotaDeCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotaDeCredito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotaDeCredito.ForeColor = System.Drawing.Color.Black;
+            this.btnNotaDeCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotaDeCredito.Location = new System.Drawing.Point(3, 610);
+            this.btnNotaDeCredito.Name = "btnNotaDeCredito";
+            this.btnNotaDeCredito.Size = new System.Drawing.Size(319, 45);
+            this.btnNotaDeCredito.TabIndex = 22;
+            this.btnNotaDeCredito.Text = "> NOTA DE CREDITO";
+            this.btnNotaDeCredito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotaDeCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotaDeCredito.UseVisualStyleBackColor = false;
+            this.btnNotaDeCredito.Click += new System.EventHandler(this.btnNotaDeCredito_Click);
             // 
             // btnCorteAlquiler
             // 
@@ -2288,24 +2307,6 @@
             this.label25.Size = new System.Drawing.Size(200, 92);
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
-            // 
-            // btnNotaDeCredito
-            // 
-            this.btnNotaDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnNotaDeCredito.FlatAppearance.BorderSize = 0;
-            this.btnNotaDeCredito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnNotaDeCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotaDeCredito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotaDeCredito.ForeColor = System.Drawing.Color.Black;
-            this.btnNotaDeCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaDeCredito.Location = new System.Drawing.Point(3, 610);
-            this.btnNotaDeCredito.Name = "btnNotaDeCredito";
-            this.btnNotaDeCredito.Size = new System.Drawing.Size(319, 45);
-            this.btnNotaDeCredito.TabIndex = 22;
-            this.btnNotaDeCredito.Text = "> NOTA DE CREDITO";
-            this.btnNotaDeCredito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaDeCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotaDeCredito.UseVisualStyleBackColor = false;
             // 
             // TEST_MENU_PRINCIPAL
             // 

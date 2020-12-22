@@ -1806,6 +1806,27 @@ namespace Apolo
             pnlInventarioOfi.Visible = false;
             pnlFacturacionOfi.Visible = false;
         }
+
+        private void btnNotaDeCredito_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoNotaCredito")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmProcesoNotaCredito f2 = new frmProcesoNotaCredito(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
     }
 }
 
