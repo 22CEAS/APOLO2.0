@@ -489,6 +489,15 @@ namespace Apolo
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    if (tablaLaptops.Rows[rec]["fecTraslado"].ToString() == " ")
+                    {
+                        laptop.FechaTraslado = "";
+                    }
+                    else
+                    {
+                        laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
+                    }
+                    
                     if (laptop.EstadoNombre == "DISPONIBLE")
                     {
                         if (laptop.GeneracionProcesador <= this.GeneracionDesfasado)
@@ -672,6 +681,11 @@ namespace Apolo
         }
 
         private void DashInventario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLaptops_Click(object sender, EventArgs e)
         {
 
         }

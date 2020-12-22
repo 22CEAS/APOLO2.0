@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteStocksLaptops));
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -35,6 +37,7 @@
             this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Procesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GeneracionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Video = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CapacidadVideo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Disco1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +77,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.GeneracionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -98,10 +101,11 @@
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1075, 354);
+            this.dgvLaptops.Size = new System.Drawing.Size(1092, 354);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvLaptops.Click += new System.EventHandler(this.dgvLaptops_Click);
             this.dgvLaptops.MouseLeave += new System.EventHandler(this.dgvLaptops_MouseLeave);
             this.dgvLaptops.MouseHover += new System.EventHandler(this.dgvLaptops_MouseHover);
             // 
@@ -136,7 +140,15 @@
             this.RucCliente,
             this.Ubicacion,
             this.SerieFabrica,
-            this.IdSalida});
+            this.IdSalida,
+            this.FechaTraslado});
+            gridFormatRule1.Name = "FechaTraslado";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue1.Expression = "[FechaTraslado] = \'12/12/999\'";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.vista.FormatRules.Add(gridFormatRule1);
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -192,6 +204,17 @@
             this.Procesador.Visible = true;
             this.Procesador.VisibleIndex = 3;
             this.Procesador.Width = 100;
+            // 
+            // GeneracionProcesador
+            // 
+            this.GeneracionProcesador.Caption = "Generacion Procesador";
+            this.GeneracionProcesador.DisplayFormat.FormatString = "{0} GEN";
+            this.GeneracionProcesador.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.GeneracionProcesador.FieldName = "GeneracionProcesador";
+            this.GeneracionProcesador.Name = "GeneracionProcesador";
+            this.GeneracionProcesador.Visible = true;
+            this.GeneracionProcesador.VisibleIndex = 4;
+            this.GeneracionProcesador.Width = 120;
             // 
             // Video
             // 
@@ -674,16 +697,16 @@
             this.label9.TabIndex = 187;
             this.label9.Text = "TOTAL LAPTOPS OFICINA";
             // 
-            // GeneracionProcesador
+            // FechaTraslado
             // 
-            this.GeneracionProcesador.Caption = "Generacion Procesador";
-            this.GeneracionProcesador.DisplayFormat.FormatString = "{0} GEN";
-            this.GeneracionProcesador.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.GeneracionProcesador.FieldName = "GeneracionProcesador";
-            this.GeneracionProcesador.Name = "GeneracionProcesador";
-            this.GeneracionProcesador.Visible = true;
-            this.GeneracionProcesador.VisibleIndex = 4;
-            this.GeneracionProcesador.Width = 120;
+            this.FechaTraslado.Caption = "Fecha Traslado";
+            this.FechaTraslado.DisplayFormat.FormatString = "{MM/dd/yyyy}";
+            this.FechaTraslado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.FechaTraslado.FieldName = "FechaTraslado";
+            this.FechaTraslado.Name = "FechaTraslado";
+            this.FechaTraslado.Visible = true;
+            this.FechaTraslado.VisibleIndex = 17;
+            this.FechaTraslado.Width = 120;
             // 
             // frmReporteStocksLaptops
             // 
@@ -781,5 +804,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraGrid.Columns.GridColumn GeneracionProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaTraslado;
     }
 }

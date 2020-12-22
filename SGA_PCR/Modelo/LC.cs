@@ -42,6 +42,7 @@ namespace Modelo
         private string licenciaAntivirus;
         private string licenciaOffice;
         private string idSalida;//Esto se usa más en el caso de preAlquiler
+        private string fechaTraslado;
 
 
         public LC()
@@ -222,5 +223,6 @@ namespace Modelo
         public string RucCliente { get => rucCliente; set => rucCliente = value; }
         public int IdTipoEquipoLC { get => idTipoEquipoLC; set => idTipoEquipoLC = value; }
         public string NombreTipoEquipoLC { get => nombreTipoEquipoLC; set => nombreTipoEquipoLC = value; }
+        public string FechaTraslado { get => fechaTraslado; set => fechaTraslado = value; }
     }
 }
