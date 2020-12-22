@@ -2197,5 +2197,21 @@ DROP VIEW IF EXISTS facturas_activas;
 create view facturas_activas as
 Select Distinct numFactura
 from factura
-where estado=1;
+where estado=1
+order by numFactura;
+
+DROP VIEW IF EXISTS equipos_por_factura;
+create view equipos_por_factura as
+Select f.*,
+lc.idLC,
+f.fecIniPago as fecIniPagoAntiguo,
+f.fecFinPago as fecFinPagoAntiguo,
+f.totalSoles As totalSolesAntiguo, 
+f.totalDolares As totalDolaresAntiguo, 
+f.costoSoles As costoSolesAntiguo, 
+f.costoDolares As costoDolaresAntiguo
+from factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo   
+where f.estado=1
+Order By codigoLC;
+
 

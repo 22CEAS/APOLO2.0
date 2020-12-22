@@ -2091,10 +2091,10 @@ DELIMITER $$
 CREATE PROCEDURE update_salida_det_fechaFinalPlazoEvento(
 	)
 BEGIN
-		SET @fechaModificacion=(SELECT now());
-		UPDATE salida_det 
-		SET fecFinContrato=DATE(DATE_ADD(fecFinContrato, INTERVAL 1 MONTH))
-		WHERE corteAlquiler=0 and fueDevuelto=0 and estado=4 and cast(fecFinContrato as date)<cast(@fechaModificacion as date); 
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det 
+	SET fecFinContrato=DATE(DATE_ADD(fecFinContrato, INTERVAL 1 MONTH))
+	WHERE corteAlquiler=0 and fueDevuelto=0 and estado=4 and cast(fecFinContrato as date)<cast(@fechaModificacion as date); 
 END
 $$
 DELIMITER ;
@@ -3305,14 +3305,28 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
 	IN _idSalida int,
 	IN _idTipoEquipo int,
 	IN _idEquipo int,
+	IN _codigo NVARCHAR(255),
 	IN _guiaSalida NVARCHAR(255),
 	IN _nroNotaCredito NVARCHAR(255),
-	IN _codigo NVARCHAR(255),
+	IN _numFactura NVARCHAR(255),
+	IN _fecIniPagoActual DATE,
+	IN _fecFinPagoActual DATE,
+	IN _totalSolesActual DOUBLE,
+	IN _totalDolaresActual DOUBLE,
+	IN _costoSolesActual DOUBLE,
+	IN _costoDolaresActual DOUBLE,
+	IN _fecIniPagoAntiguo DATE,
+	IN _fecFinPagoAntiguo DATE,
+	IN _totalSolesAntiguo DOUBLE,
+	IN _totalDolaresAntiguo DOUBLE,
+	IN _costoSolesAntiguo DOUBLE,
+	IN _costoDolaresAntiguo DOUBLE,
+	IN _observacion NVARCHAR(1000),
 	IN _usuario_mod NVARCHAR(255), 
 	OUT _idNotaCredito INT
 )
 BEGIN
-	
+
 	(select count(*) INTO @cantidad from cuota WHERE idFactura=_idFactura);
 	
 	SET @fechaModificacion=(SELECT now());
@@ -3351,8 +3365,8 @@ BEGIN
 	
 	
 	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
-	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,observacion,estado,usuario_ins) values
-	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,"",1,_usuario_mod);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
 	
 	
 	COMMIT;

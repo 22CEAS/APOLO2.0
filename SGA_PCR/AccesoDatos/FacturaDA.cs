@@ -38,7 +38,7 @@ namespace AccesoDatos
 
         public DataTable CargarEquiposFactura(string numFactura)
         {
-            return objManager.MostrarTablaDatos("Select f.* ,lc.idLC  from factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo   where f.estado=1 and f.numFactura='" + numFactura + "' ; " );
+            return objManager.MostrarTablaDatos("Select * from equipos_por_factura where numFactura='" + numFactura + "' ; " );
         }
 
         public int InsertarFacturas(BindingList<Factura> facturas, string usuario)
@@ -275,31 +275,59 @@ namespace AccesoDatos
 
             foreach (Factura f in facturas)
             {
-                parametrosEntrada = new MySqlParameter[9];
+                parametrosEntrada = new MySqlParameter[23];
                 parametrosEntrada[0] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
                 parametrosEntrada[3] = new MySqlParameter("@_idEquipo", MySqlDbType.Int32);
-                parametrosEntrada[4] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
-                parametrosEntrada[5] = new MySqlParameter("@_nroNotaCredito", MySqlDbType.VarChar, 255);
-                parametrosEntrada[6] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
-                parametrosEntrada[7] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 255);
-                parametrosEntrada[8] = new MySqlParameter("@_idNotaCredito", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
+                parametrosEntrada[5] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
+                parametrosEntrada[6] = new MySqlParameter("@_nroNotaCredito", MySqlDbType.VarChar, 255);
+                parametrosEntrada[7] = new MySqlParameter("@_numFactura", MySqlDbType.VarChar, 255);
+                parametrosEntrada[8] = new MySqlParameter("@_fecIniPagoActual", MySqlDbType.Date);
+                parametrosEntrada[9] = new MySqlParameter("@_fecFinPagoActual", MySqlDbType.Date);
+                parametrosEntrada[10] = new MySqlParameter("@_totalSolesActual", MySqlDbType.Decimal);
+                parametrosEntrada[11] = new MySqlParameter("@_totalDolaresActual", MySqlDbType.Decimal);
+                parametrosEntrada[12] = new MySqlParameter("@_costoSolesActual", MySqlDbType.Decimal);
+                parametrosEntrada[13] = new MySqlParameter("@_costoDolaresActual", MySqlDbType.Decimal);
+                parametrosEntrada[14] = new MySqlParameter("@_fecIniPagoAntiguo", MySqlDbType.Date);
+                parametrosEntrada[15] = new MySqlParameter("@_fecFinPagoAntiguo", MySqlDbType.Date);
+                parametrosEntrada[16] = new MySqlParameter("@_totalSolesAntiguo", MySqlDbType.Decimal);
+                parametrosEntrada[17] = new MySqlParameter("@_totalDolaresAntiguo", MySqlDbType.Decimal);
+                parametrosEntrada[18] = new MySqlParameter("@_costoSolesAntiguo", MySqlDbType.Decimal);
+                parametrosEntrada[19] = new MySqlParameter("@_costoDolaresAntiguo", MySqlDbType.Decimal);
+                parametrosEntrada[20] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 1000);
+                parametrosEntrada[21] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 255);
+                parametrosEntrada[22] = new MySqlParameter("@_idNotaCredito", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = f.IdFactura;
                 parametrosEntrada[1].Value = f.IdSalida;
                 parametrosEntrada[2].Value = 1;
                 parametrosEntrada[3].Value = f.IdLC;
-                parametrosEntrada[4].Value = f.GuiaSalida;
-                parametrosEntrada[5].Value = f.NroNotaCredito;
-                parametrosEntrada[6].Value = f.Codigo;
-                parametrosEntrada[7].Value = usuario;
+                parametrosEntrada[4].Value = f.Codigo;
+                parametrosEntrada[5].Value = f.GuiaSalida;
+                parametrosEntrada[6].Value = f.NroNotaCredito;
+                parametrosEntrada[7].Value = f.NumeroFactura;
+                parametrosEntrada[8].Value = f.FechaIniPago;
+                parametrosEntrada[9].Value = f.FechaFinPago;
+                parametrosEntrada[10].Value = f.TotalSoles;
+                parametrosEntrada[11].Value = f.TotalDolares;
+                parametrosEntrada[12].Value = f.CostoSoles;
+                parametrosEntrada[13].Value = f.CostoDolares;
+                parametrosEntrada[14].Value = f.FechaIniPagoAntiguo;
+                parametrosEntrada[15].Value = f.FechaFinPagoAntiguo;
+                parametrosEntrada[16].Value = f.TotalSolesAntiguo;
+                parametrosEntrada[17].Value = f.TotalDolaresAntiguo;
+                parametrosEntrada[18].Value = f.CostoSolesAntiguo;
+                parametrosEntrada[19].Value = f.CostoDolaresAntiguo;
+                parametrosEntrada[20].Value = f.ObservacionXLevantar;
+                parametrosEntrada[21].Value = usuario;
 
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
-                    8, 9, out datosSalida, 1);
+                    22, 23, out datosSalida, 1);
 
                 if (datosSalida != null)
                 {
