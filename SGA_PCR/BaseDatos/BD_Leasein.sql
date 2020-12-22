@@ -924,3 +924,30 @@ CREATE TABLE ingreso_det_proyectorEcram(
 	FOREIGN KEY (idIngreso)
 	REFERENCES ingreso(idIngreso)
 )ENGINE=INNODB;
+
+
+
+--===========================================================================	
+
+
+
+DROP TABLE IF EXISTS `nota_credito`;
+CREATE TABLE nota_credito(
+	idNotaCredito INT  NOT NULL PRIMARY KEY,
+	idFactura INT NOT NULL,
+	idSalida INT NOT NULL,
+	idTipoEquipo INT NOT NULL,
+	idEquipo INT NOT NULL,
+	codigo NVARCHAR(255) NOT NULL,
+	guiaSalida NVARCHAR(255) NOT NULL,
+	nroNotaCredito NVARCHAR(255) NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100)
+)ENGINE=INNODB;
+
+
+

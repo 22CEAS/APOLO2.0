@@ -34,6 +34,10 @@ namespace Modelo
         private Double utilidadDolares;
         private Double utilidadTotalSolesSinIGV;
         private string observacionXLevantar;
+        private string guiaSalida;
+        private string codigo;
+        private bool seleccionar;
+        private string nroNotaCredito;
 
         public int IdFactura { get => idFactura; set => idFactura = value; }
         public DateTime FechaPago { get => fechaPago; set => fechaPago = value; }
@@ -61,5 +65,9 @@ namespace Modelo
         public int IdLC { get => idLC; set => idLC = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Proveedor { get => proveedor; set => proveedor = value; }
+        public string GuiaSalida { get => guiaSalida; set => guiaSalida = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
+        public bool Seleccionar { get => seleccionar; set => seleccionar = value; }
+        public string NroNotaCredito { get => nroNotaCredito; set => nroNotaCredito = value; }
     }
 }

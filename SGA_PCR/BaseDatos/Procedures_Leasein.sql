@@ -2529,7 +2529,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_impresora`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_impresora`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2569,7 +2569,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_monitor`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_monitor`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2605,7 +2605,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_tablet`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_tablet`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2641,7 +2641,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_proy_ecram`(
 	IN _marcaProyEcram NVARCHAR(80),
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2792,7 +2792,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo`(
 	IN _marcaLap NVARCHAR(80), #PCR-LAP o PCR_MAC
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2834,7 +2834,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_cpu`(	
 	IN _marcaLap NVARCHAR(80), #PCR-LAP o PCR_MAC
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2876,7 +2876,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_impresora`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_impresora`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2914,7 +2914,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_monitor`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_monitor`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -2951,7 +2951,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_proy_ecram`(
 	IN _marcaProyEcram NVARCHAR(80),
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -3009,7 +3009,7 @@ DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_tablet`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_tablet`(
 	IN _idProveedor int,
-	IN _monthIngreso int,
+	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
 	OUT _proximoCodigo NVARCHAR(80),
 	OUT _prefijo NVARCHAR(80)
@@ -3296,5 +3296,68 @@ DELIMITER ;
 
 
 
+--===========================================================================	
 
+DROP PROCEDURE IF EXISTS `anular_factura`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
+	IN _idFactura int,
+	IN _idSalida int,
+	IN _idTipoEquipo int,
+	IN _idEquipo int,
+	IN _guiaSalida NVARCHAR(255),
+	IN _nroNotaCredito NVARCHAR(255),
+	IN _codigo NVARCHAR(255),
+	IN _usuario_mod NVARCHAR(255), 
+	OUT _idNotaCredito INT
+)
+BEGIN
+	
+	(select count(*) INTO @cantidad from cuota WHERE idFactura=_idFactura);
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE factura SET usuario_mod=_usuario_mod, estado=0, fec_mod=@fechaModificacion WHERE idFactura=_idFactura;
+	
+	
+	if  @cantidad>0 then
+	
+		DELETE FROM cuota WHERE idFactura=_idFactura; 
+		
+		
+		(SELECT d.observacion  INTO @codigoAntiguo
+		FROM salida_det d INNER JOIN laptop_cpu lc ON d.idLC=lc.idLC 
+		WHERE d.idSalida=_idSalida AND d.guiaSalida=_guiaSalida AND lc.codigo=_codigo);
+								
+		(SELECT d.guiaSalida INTO @guiaAntigua
+		FROM salida_det d INNER JOIN laptop_cpu lc ON d.idLC=lc.idLC
+		WHERE d.IdSalida=_idSalida AND lc.codigo=@codigoAntiguo);
+
+
+		INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado) 
+
+		SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, f.estado
+		FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
+		WHERE f.codigoLC=_codigo AND f.guiaSalida=_guiaSalida and f.estado=1 
+
+		UNION
+
+		SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, f.estado
+		FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
+		WHERE f.codigoLC=@codigoAntiguo AND f.guiaSalida=@guiaAntigua AND f.estado=1 
+
+		ORDER BY fecFinPago desc LIMIT 1;
+			
+	End if;
+	
+	
+	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,"",1,_usuario_mod);
+	
+	
+	COMMIT;
+	
+END
+$$
+DELIMITER ;
 

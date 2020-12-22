@@ -31,6 +31,16 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_buscarV ;");
         }
 
+        public DataTable BuscarFacturasActivas()
+        {
+            return objManager.MostrarTablaDatos("Select * from facturas_activas ;");
+        }
+
+        public DataTable CargarEquiposFactura(string numFactura)
+        {
+            return objManager.MostrarTablaDatos("Select f.* ,lc.idLC  from factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo   where f.estado=1 and f.numFactura='" + numFactura + "' ; " );
+        }
+
         public int InsertarFacturas(BindingList<Factura> facturas, string usuario)
         {
 
@@ -255,5 +265,60 @@ namespace AccesoDatos
             parametrosEntrada[3].Value = usuario;
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
         }
+
+        public int RegistrarNC(BindingList<Factura> facturas, string usuario)
+        {
+
+            MySqlDataReader reader;
+            string sql = "";
+
+
+            foreach (Factura f in facturas)
+            {
+                parametrosEntrada = new MySqlParameter[9];
+                parametrosEntrada[0] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idEquipo", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
+                parametrosEntrada[5] = new MySqlParameter("@_nroNotaCredito", MySqlDbType.VarChar, 255);
+                parametrosEntrada[6] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 255);
+                parametrosEntrada[7] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 255);
+                parametrosEntrada[8] = new MySqlParameter("@_idNotaCredito", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = f.IdFactura;
+                parametrosEntrada[1].Value = f.IdSalida;
+                parametrosEntrada[2].Value = 1;
+                parametrosEntrada[3].Value = f.IdLC;
+                parametrosEntrada[4].Value = f.GuiaSalida;
+                parametrosEntrada[5].Value = f.NroNotaCredito;
+                parametrosEntrada[6].Value = f.Codigo;
+                parametrosEntrada[7].Value = usuario;
+
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
+                    8, 9, out datosSalida, 1);
+
+                if (datosSalida != null)
+                {
+                    int idNotaCredito = Convert.ToInt32(datosSalida[0]);
+                }
+                else
+                {
+                    return 0;
+                }
+
+                //bool aux = objManager.EjecutarProcedure(parametrosEntrada, "anular_factura");
+                //if (!aux) return 0;
+            }
+
+            return 1;
+        }
+
+
+
+
     }
 }

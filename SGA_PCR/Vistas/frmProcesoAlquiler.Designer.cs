@@ -91,14 +91,14 @@
             this.IdMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
             this.btnSeleccionarFilas = new System.Windows.Forms.Button();
-            this.dgvEquipos = new DevExpress.XtraGrid.GridControl();
             this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MarcaEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvEquipos = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).BeginInit();
@@ -108,8 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelX4
@@ -1003,21 +1003,6 @@
             this.btnSeleccionarFilas.UseVisualStyleBackColor = false;
             this.btnSeleccionarFilas.Click += new System.EventHandler(this.btnSeleccionarFilas_Click);
             // 
-            // dgvEquipos
-            // 
-            this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquipos.Location = new System.Drawing.Point(94, 244);
-            this.dgvEquipos.MainView = this.vistaEquipos;
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.Size = new System.Drawing.Size(503, 400);
-            this.dgvEquipos.TabIndex = 199;
-            this.dgvEquipos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaEquipos});
-            this.dgvEquipos.Click += new System.EventHandler(this.dgvEquipos_Click);
-            this.dgvEquipos.DoubleClick += new System.EventHandler(this.dgvEquipos_DoubleClick);
-            // 
             // vistaEquipos
             // 
             this.vistaEquipos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1035,8 +1020,8 @@
             this.Seleccionar,
             this.GuiaSalida,
             this.Codigo,
-            this.MarcaEquipo,
             this.Modelo,
+            this.MarcaEquipo,
             this.IdLC});
             this.vistaEquipos.GridControl = this.dgvEquipos;
             this.vistaEquipos.Name = "vistaEquipos";
@@ -1070,7 +1055,7 @@
             this.GuiaSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GuiaSalida.Visible = true;
             this.GuiaSalida.VisibleIndex = 1;
-            this.GuiaSalida.Width = 80;
+            this.GuiaSalida.Width = 140;
             // 
             // Codigo
             // 
@@ -1082,19 +1067,7 @@
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
             this.Codigo.VisibleIndex = 2;
-            this.Codigo.Width = 100;
-            // 
-            // MarcaEquipo
-            // 
-            this.MarcaEquipo.Caption = "Marca";
-            this.MarcaEquipo.FieldName = "MarcaLC";
-            this.MarcaEquipo.MinWidth = 40;
-            this.MarcaEquipo.Name = "MarcaEquipo";
-            this.MarcaEquipo.OptionsColumn.AllowEdit = false;
-            this.MarcaEquipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MarcaEquipo.Visible = true;
-            this.MarcaEquipo.VisibleIndex = 3;
-            this.MarcaEquipo.Width = 100;
+            this.Codigo.Width = 140;
             // 
             // Modelo
             // 
@@ -1105,8 +1078,20 @@
             this.Modelo.OptionsColumn.AllowEdit = false;
             this.Modelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 4;
+            this.Modelo.VisibleIndex = 3;
             this.Modelo.Width = 100;
+            // 
+            // MarcaEquipo
+            // 
+            this.MarcaEquipo.Caption = "Marca";
+            this.MarcaEquipo.FieldName = "MarcaLC";
+            this.MarcaEquipo.MinWidth = 40;
+            this.MarcaEquipo.Name = "MarcaEquipo";
+            this.MarcaEquipo.OptionsColumn.AllowEdit = false;
+            this.MarcaEquipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MarcaEquipo.Visible = true;
+            this.MarcaEquipo.VisibleIndex = 4;
+            this.MarcaEquipo.Width = 100;
             // 
             // IdLC
             // 
@@ -1115,6 +1100,21 @@
             this.IdLC.Name = "IdLC";
             this.IdLC.OptionsColumn.AllowEdit = false;
             this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // dgvEquipos
+            // 
+            this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEquipos.Location = new System.Drawing.Point(94, 244);
+            this.dgvEquipos.MainView = this.vistaEquipos;
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.Size = new System.Drawing.Size(503, 402);
+            this.dgvEquipos.TabIndex = 199;
+            this.dgvEquipos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaEquipos});
+            this.dgvEquipos.Click += new System.EventHandler(this.dgvEquipos_Click);
+            this.dgvEquipos.DoubleClick += new System.EventHandler(this.dgvEquipos_DoubleClick);
             // 
             // frmProcesoAlquiler
             // 
@@ -1182,8 +1182,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaMemorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1253,13 +1253,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn IdMemoria;
         private System.Windows.Forms.Button btnDeseleccionarFilas;
         private System.Windows.Forms.Button btnSeleccionarFilas;
-        public DevExpress.XtraGrid.GridControl dgvEquipos;
         private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
         private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn GuiaSalida;
         private DevExpress.XtraGrid.Columns.GridColumn Codigo;
-        private DevExpress.XtraGrid.Columns.GridColumn MarcaEquipo;
         private DevExpress.XtraGrid.Columns.GridColumn Modelo;
+        private DevExpress.XtraGrid.Columns.GridColumn MarcaEquipo;
         private DevExpress.XtraGrid.Columns.GridColumn IdLC;
+        public DevExpress.XtraGrid.GridControl dgvEquipos;
     }
 }
