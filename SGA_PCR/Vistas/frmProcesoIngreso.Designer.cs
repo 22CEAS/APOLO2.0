@@ -73,51 +73,6 @@
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabLaptops = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvLicencias = new DevExpress.XtraGrid.GridControl();
-            this.vistaLicencias = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MarcaLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Version = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Clave = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CantidadLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Precio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdCategoría = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdModelo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabSoftwares = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvMemoria = new DevExpress.XtraGrid.GridControl();
-            this.vistaMemoria = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ModeloMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CapacidadMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CantidadMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PrecioMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabMemorias = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvDiscos = new DevExpress.XtraGrid.GridControl();
-            this.vistaDiscos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Tipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CapacidadDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CantidadDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TamanoDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PrecioDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdDisco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabDiscosDuro = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.btnVisualizarImpresora = new System.Windows.Forms.Button();
-            this.btnAgregarImpresora = new System.Windows.Forms.Button();
-            this.dgvImpresoras = new DevExpress.XtraGrid.GridControl();
-            this.vistaImpresoras = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ImpresoraMarca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImpresoraNombreModelo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImpresoraTipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImpresoraCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImpresoraPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdIngresoDetalleImpresora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tabImpresoras = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
             this.btnVisualizarProyectores = new System.Windows.Forms.Button();
             this.btnAgregarProyectores = new System.Windows.Forms.Button();
@@ -161,24 +116,62 @@
             this.TabletRam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TabletRom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabTablets = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.btnVisualizarImpresora = new System.Windows.Forms.Button();
+            this.btnAgregarImpresora = new System.Windows.Forms.Button();
+            this.dgvImpresoras = new DevExpress.XtraGrid.GridControl();
+            this.vistaImpresoras = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ImpresoraMarca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImpresoraNombreModelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImpresoraTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImpresoraCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImpresoraPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdIngresoDetalleImpresora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabImpresoras = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvDiscos = new DevExpress.XtraGrid.GridControl();
+            this.vistaDiscos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CantidadDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TamanoDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PrecioDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdDisco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabDiscosDuro = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvMemoria = new DevExpress.XtraGrid.GridControl();
+            this.vistaMemoria = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ModeloMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CantidadMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PrecioMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabMemorias = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvLicencias = new DevExpress.XtraGrid.GridControl();
+            this.vistaLicencias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Version = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Clave = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CantidadLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Precio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdCategoría = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdModelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdLicencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabSoftwares = new DevComponents.DotNetBar.TabItem(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbSede = new System.Windows.Forms.ComboBox();
+            this.pnlC = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaLaptops)).BeginInit();
-            this.tabControlPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).BeginInit();
-            this.tabControlPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaMemoria)).BeginInit();
-            this.tabControlPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).BeginInit();
-            this.tabControlPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresoras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaImpresoras)).BeginInit();
             this.tabControlPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProyectores)).BeginInit();
@@ -188,6 +181,19 @@
             this.tabControlPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaTablets)).BeginInit();
+            this.tabControlPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresoras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaImpresoras)).BeginInit();
+            this.tabControlPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).BeginInit();
+            this.tabControlPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaMemoria)).BeginInit();
+            this.tabControlPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).BeginInit();
+            this.pnlC.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbProveedor
@@ -195,7 +201,7 @@
             this.cmbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(359, 68);
+            this.cmbProveedor.Location = new System.Drawing.Point(370, 150);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(283, 24);
             this.cmbProveedor.TabIndex = 2;
@@ -204,14 +210,14 @@
             // txtRUC
             // 
             this.txtRUC.Enabled = false;
-            this.txtRUC.Location = new System.Drawing.Point(703, 69);
+            this.txtRUC.Location = new System.Drawing.Point(714, 151);
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(136, 23);
             this.txtRUC.TabIndex = 3;
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(72, 111);
+            this.txtFactura.Location = new System.Drawing.Point(83, 193);
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.Size = new System.Drawing.Size(193, 23);
             this.txtFactura.TabIndex = 5;
@@ -225,7 +231,7 @@
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(1004, 65);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(1015, 147);
             // 
             // 
             // 
@@ -255,7 +261,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 69);
+            this.label1.Location = new System.Drawing.Point(292, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 7;
@@ -265,7 +271,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 114);
+            this.label3.Location = new System.Drawing.Point(24, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 9;
@@ -275,7 +281,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(878, 69);
+            this.label4.Location = new System.Drawing.Point(889, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 16);
             this.label4.TabIndex = 10;
@@ -301,7 +307,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(659, 70);
+            this.LabelX4.Location = new System.Drawing.Point(670, 152);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(28, 18);
             this.LabelX4.TabIndex = 15;
@@ -311,7 +317,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(699, 569);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(871, 642);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 16;
@@ -321,7 +328,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(281, 116);
+            this.label8.Location = new System.Drawing.Point(292, 198);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 16);
             this.label8.TabIndex = 19;
@@ -329,7 +336,7 @@
             // 
             // txtGuia
             // 
-            this.txtGuia.Location = new System.Drawing.Point(414, 112);
+            this.txtGuia.Location = new System.Drawing.Point(425, 194);
             this.txtGuia.Name = "txtGuia";
             this.txtGuia.Size = new System.Drawing.Size(189, 23);
             this.txtGuia.TabIndex = 6;
@@ -345,7 +352,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(206, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(218, 83);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -358,7 +365,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 25);
+            this.label5.Location = new System.Drawing.Point(27, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 149;
@@ -366,7 +373,7 @@
             // 
             // txtNroIngreso
             // 
-            this.txtNroIngreso.Location = new System.Drawing.Point(95, 24);
+            this.txtNroIngreso.Location = new System.Drawing.Point(106, 106);
             this.txtNroIngreso.Name = "txtNroIngreso";
             this.txtNroIngreso.ReadOnly = true;
             this.txtNroIngreso.Size = new System.Drawing.Size(106, 23);
@@ -376,7 +383,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 69);
+            this.label7.Location = new System.Drawing.Point(23, 151);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 16);
             this.label7.TabIndex = 152;
@@ -387,7 +394,7 @@
             this.cmbTipoIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipoIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoIngreso.FormattingEnabled = true;
-            this.cmbTipoIngreso.Location = new System.Drawing.Point(72, 69);
+            this.cmbTipoIngreso.Location = new System.Drawing.Point(83, 151);
             this.cmbTipoIngreso.Name = "cmbTipoIngreso";
             this.cmbTipoIngreso.Size = new System.Drawing.Size(193, 24);
             this.cmbTipoIngreso.TabIndex = 1;
@@ -436,7 +443,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(19, 387);
+            this.btnAnular.Location = new System.Drawing.Point(19, 472);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(59, 66);
             this.btnAnular.TabIndex = 180;
@@ -456,7 +463,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(9, 531);
+            this.btnImprimir.Location = new System.Drawing.Point(9, 616);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 66);
             this.btnImprimir.TabIndex = 179;
@@ -475,7 +482,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(9, 459);
+            this.btnCancelar.Location = new System.Drawing.Point(9, 544);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 14;
@@ -494,7 +501,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(15, 239);
+            this.btnEditar.Location = new System.Drawing.Point(15, 324);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(78, 65);
             this.btnEditar.TabIndex = 177;
@@ -514,7 +521,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(16, 163);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 248);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 176;
@@ -534,7 +541,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(18, 315);
+            this.btnGrabar.Location = new System.Drawing.Point(18, 400);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(66, 64);
             this.btnGrabar.TabIndex = 13;
@@ -567,7 +574,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(656, 118);
+            this.label9.Location = new System.Drawing.Point(667, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 16);
             this.label9.TabIndex = 183;
@@ -578,7 +585,7 @@
             this.cmbMonedaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMonedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonedaTipo.FormattingEnabled = true;
-            this.cmbMonedaTipo.Location = new System.Drawing.Point(720, 116);
+            this.cmbMonedaTipo.Location = new System.Drawing.Point(731, 198);
             this.cmbMonedaTipo.Name = "cmbMonedaTipo";
             this.cmbMonedaTipo.Size = new System.Drawing.Size(119, 24);
             this.cmbMonedaTipo.TabIndex = 7;
@@ -587,7 +594,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(881, 119);
+            this.label10.Location = new System.Drawing.Point(892, 201);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 16);
             this.label10.TabIndex = 185;
@@ -595,7 +602,7 @@
             // 
             // txtMontoCambio
             // 
-            this.txtMontoCambio.Location = new System.Drawing.Point(986, 116);
+            this.txtMontoCambio.Location = new System.Drawing.Point(997, 198);
             this.txtMontoCambio.Name = "txtMontoCambio";
             this.txtMontoCambio.Size = new System.Drawing.Size(119, 23);
             this.txtMontoCambio.TabIndex = 8;
@@ -605,7 +612,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(734, 140);
+            this.label14.Location = new System.Drawing.Point(745, 222);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 16);
             this.label14.TabIndex = 186;
@@ -624,7 +631,7 @@
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
-            this.tabControl1.Location = new System.Drawing.Point(95, 175);
+            this.tabControl1.Location = new System.Drawing.Point(99, 248);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
@@ -785,616 +792,6 @@
             this.tabLaptops.AttachedControl = this.tabControlPanel5;
             this.tabLaptops.Name = "tabLaptops";
             this.tabLaptops.Text = "Laptops y CPU";
-            // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Controls.Add(this.dgvLicencias);
-            this.tabControlPanel1.Controls.Add(this.btnAgregarLicencia);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(877, 355);
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabSoftwares;
-            // 
-            // dgvLicencias
-            // 
-            this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLicencias.Location = new System.Drawing.Point(52, 31);
-            this.dgvLicencias.MainView = this.vistaLicencias;
-            this.dgvLicencias.Name = "dgvLicencias";
-            this.dgvLicencias.Size = new System.Drawing.Size(696, 305);
-            this.dgvLicencias.TabIndex = 189;
-            this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaLicencias});
-            this.dgvLicencias.DoubleClick += new System.EventHandler(this.dgvLicencias_DoubleClick);
-            // 
-            // vistaLicencias
-            // 
-            this.vistaLicencias.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaLicencias.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.vistaLicencias.Appearance.HeaderPanel.Options.UseFont = true;
-            this.vistaLicencias.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.vistaLicencias.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.vistaLicencias.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaLicencias.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.vistaLicencias.Appearance.Row.Options.UseFont = true;
-            this.vistaLicencias.Appearance.Row.Options.UseForeColor = true;
-            this.vistaLicencias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Categoria,
-            this.MarcaLicencia,
-            this.Version,
-            this.Clave,
-            this.CantidadLicencia,
-            this.Precio,
-            this.IdCategoría,
-            this.IdModelo,
-            this.IdLicencia});
-            this.vistaLicencias.GridControl = this.dgvLicencias;
-            this.vistaLicencias.Name = "vistaLicencias";
-            this.vistaLicencias.OptionsCustomization.AllowColumnMoving = false;
-            this.vistaLicencias.OptionsCustomization.AllowGroup = false;
-            this.vistaLicencias.OptionsDetail.EnableMasterViewMode = false;
-            this.vistaLicencias.OptionsMenu.EnableColumnMenu = false;
-            this.vistaLicencias.OptionsView.ColumnAutoWidth = false;
-            this.vistaLicencias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.vistaLicencias.OptionsView.ShowAutoFilterRow = true;
-            this.vistaLicencias.OptionsView.ShowGroupPanel = false;
-            this.vistaLicencias.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaLicencias_CellValueChanged);
-            // 
-            // Categoria
-            // 
-            this.Categoria.Caption = "Categoria";
-            this.Categoria.FieldName = "Categoria";
-            this.Categoria.MinWidth = 40;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.OptionsColumn.AllowEdit = false;
-            this.Categoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Categoria.Visible = true;
-            this.Categoria.VisibleIndex = 0;
-            this.Categoria.Width = 100;
-            // 
-            // MarcaLicencia
-            // 
-            this.MarcaLicencia.Caption = "Marca";
-            this.MarcaLicencia.FieldName = "Marca";
-            this.MarcaLicencia.Name = "MarcaLicencia";
-            this.MarcaLicencia.OptionsColumn.AllowEdit = false;
-            this.MarcaLicencia.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            // 
-            // Version
-            // 
-            this.Version.Caption = "Version";
-            this.Version.FieldName = "Version";
-            this.Version.MinWidth = 40;
-            this.Version.Name = "Version";
-            this.Version.OptionsColumn.AllowEdit = false;
-            this.Version.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Version.Visible = true;
-            this.Version.VisibleIndex = 1;
-            this.Version.Width = 150;
-            // 
-            // Clave
-            // 
-            this.Clave.Caption = "Clave";
-            this.Clave.FieldName = "Clave";
-            this.Clave.MinWidth = 40;
-            this.Clave.Name = "Clave";
-            this.Clave.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Clave.Visible = true;
-            this.Clave.VisibleIndex = 2;
-            this.Clave.Width = 200;
-            // 
-            // CantidadLicencia
-            // 
-            this.CantidadLicencia.Caption = "Cantidad";
-            this.CantidadLicencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.CantidadLicencia.FieldName = "Cantidad";
-            this.CantidadLicencia.MinWidth = 40;
-            this.CantidadLicencia.Name = "CantidadLicencia";
-            this.CantidadLicencia.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CantidadLicencia.Visible = true;
-            this.CantidadLicencia.VisibleIndex = 3;
-            this.CantidadLicencia.Width = 100;
-            // 
-            // Precio
-            // 
-            this.Precio.Caption = "Precio";
-            this.Precio.FieldName = "Precio";
-            this.Precio.MinWidth = 40;
-            this.Precio.Name = "Precio";
-            this.Precio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.Precio.Visible = true;
-            this.Precio.VisibleIndex = 4;
-            this.Precio.Width = 100;
-            // 
-            // IdCategoría
-            // 
-            this.IdCategoría.Caption = "IdCategoría";
-            this.IdCategoría.FieldName = "IdCategoría";
-            this.IdCategoría.Name = "IdCategoría";
-            this.IdCategoría.OptionsColumn.AllowEdit = false;
-            this.IdCategoría.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // IdModelo
-            // 
-            this.IdModelo.Caption = "IdModelo";
-            this.IdModelo.FieldName = "IdModelo";
-            this.IdModelo.Name = "IdModelo";
-            this.IdModelo.OptionsColumn.AllowEdit = false;
-            this.IdModelo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // IdLicencia
-            // 
-            this.IdLicencia.Caption = "IdLicencia";
-            this.IdLicencia.FieldName = "IdLicencia";
-            this.IdLicencia.Name = "IdLicencia";
-            this.IdLicencia.OptionsColumn.AllowEdit = false;
-            this.IdLicencia.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // tabSoftwares
-            // 
-            this.tabSoftwares.AttachedControl = this.tabControlPanel1;
-            this.tabSoftwares.Name = "tabSoftwares";
-            this.tabSoftwares.Text = "Software";
-            // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Controls.Add(this.dgvMemoria);
-            this.tabControlPanel2.Controls.Add(this.btnAgregarMemoria);
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(877, 355);
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 2;
-            this.tabControlPanel2.TabItem = this.tabMemorias;
-            // 
-            // dgvMemoria
-            // 
-            this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMemoria.Location = new System.Drawing.Point(52, 31);
-            this.dgvMemoria.MainView = this.vistaMemoria;
-            this.dgvMemoria.Name = "dgvMemoria";
-            this.dgvMemoria.Size = new System.Drawing.Size(686, 290);
-            this.dgvMemoria.TabIndex = 190;
-            this.dgvMemoria.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaMemoria});
-            this.dgvMemoria.DoubleClick += new System.EventHandler(this.dgvMemoria_DoubleClick);
-            // 
-            // vistaMemoria
-            // 
-            this.vistaMemoria.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaMemoria.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.vistaMemoria.Appearance.HeaderPanel.Options.UseFont = true;
-            this.vistaMemoria.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.vistaMemoria.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.vistaMemoria.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.vistaMemoria.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.vistaMemoria.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaMemoria.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.vistaMemoria.Appearance.Row.Options.UseFont = true;
-            this.vistaMemoria.Appearance.Row.Options.UseForeColor = true;
-            this.vistaMemoria.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ModeloMemoria,
-            this.CapacidadMemoria,
-            this.CantidadMemoria,
-            this.TipoMemoria,
-            this.PrecioMemoria,
-            this.IdMemoria});
-            this.vistaMemoria.GridControl = this.dgvMemoria;
-            this.vistaMemoria.Name = "vistaMemoria";
-            this.vistaMemoria.OptionsCustomization.AllowColumnMoving = false;
-            this.vistaMemoria.OptionsCustomization.AllowGroup = false;
-            this.vistaMemoria.OptionsDetail.EnableMasterViewMode = false;
-            this.vistaMemoria.OptionsMenu.EnableColumnMenu = false;
-            this.vistaMemoria.OptionsView.ColumnAutoWidth = false;
-            this.vistaMemoria.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.vistaMemoria.OptionsView.ShowAutoFilterRow = true;
-            this.vistaMemoria.OptionsView.ShowGroupPanel = false;
-            this.vistaMemoria.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaMemoria_CellValueChanged);
-            // 
-            // ModeloMemoria
-            // 
-            this.ModeloMemoria.Caption = "Modelo";
-            this.ModeloMemoria.FieldName = "TipoMemoria";
-            this.ModeloMemoria.MinWidth = 40;
-            this.ModeloMemoria.Name = "ModeloMemoria";
-            this.ModeloMemoria.OptionsColumn.AllowEdit = false;
-            this.ModeloMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ModeloMemoria.Visible = true;
-            this.ModeloMemoria.VisibleIndex = 0;
-            this.ModeloMemoria.Width = 130;
-            // 
-            // CapacidadMemoria
-            // 
-            this.CapacidadMemoria.Caption = "Capacidad";
-            this.CapacidadMemoria.FieldName = "Capacidad";
-            this.CapacidadMemoria.MinWidth = 40;
-            this.CapacidadMemoria.Name = "CapacidadMemoria";
-            this.CapacidadMemoria.OptionsColumn.AllowEdit = false;
-            this.CapacidadMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CapacidadMemoria.Visible = true;
-            this.CapacidadMemoria.VisibleIndex = 1;
-            this.CapacidadMemoria.Width = 130;
-            // 
-            // CantidadMemoria
-            // 
-            this.CantidadMemoria.Caption = "Cantidad";
-            this.CantidadMemoria.FieldName = "Cantidad";
-            this.CantidadMemoria.MinWidth = 40;
-            this.CantidadMemoria.Name = "CantidadMemoria";
-            this.CantidadMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CantidadMemoria.Visible = true;
-            this.CantidadMemoria.VisibleIndex = 2;
-            this.CantidadMemoria.Width = 130;
-            // 
-            // TipoMemoria
-            // 
-            this.TipoMemoria.Caption = "Tipo";
-            this.TipoMemoria.FieldName = "Tipo2";
-            this.TipoMemoria.MinWidth = 40;
-            this.TipoMemoria.Name = "TipoMemoria";
-            this.TipoMemoria.OptionsColumn.AllowEdit = false;
-            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.TipoMemoria.Visible = true;
-            this.TipoMemoria.VisibleIndex = 3;
-            this.TipoMemoria.Width = 130;
-            // 
-            // PrecioMemoria
-            // 
-            this.PrecioMemoria.Caption = "Precio";
-            this.PrecioMemoria.FieldName = "Precio";
-            this.PrecioMemoria.MinWidth = 40;
-            this.PrecioMemoria.Name = "PrecioMemoria";
-            this.PrecioMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.PrecioMemoria.Visible = true;
-            this.PrecioMemoria.VisibleIndex = 4;
-            this.PrecioMemoria.Width = 130;
-            // 
-            // IdMemoria
-            // 
-            this.IdMemoria.Caption = "IdMemoria";
-            this.IdMemoria.FieldName = "IdMemoria";
-            this.IdMemoria.Name = "IdMemoria";
-            this.IdMemoria.OptionsColumn.AllowEdit = false;
-            this.IdMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // tabMemorias
-            // 
-            this.tabMemorias.AttachedControl = this.tabControlPanel2;
-            this.tabMemorias.Name = "tabMemorias";
-            this.tabMemorias.Text = "Memoria";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.dgvDiscos);
-            this.tabControlPanel3.Controls.Add(this.btnAgregarDisco);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(877, 355);
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tabDiscosDuro;
-            // 
-            // dgvDiscos
-            // 
-            this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDiscos.Location = new System.Drawing.Point(59, 21);
-            this.dgvDiscos.MainView = this.vistaDiscos;
-            this.dgvDiscos.Name = "dgvDiscos";
-            this.dgvDiscos.Size = new System.Drawing.Size(685, 310);
-            this.dgvDiscos.TabIndex = 191;
-            this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaDiscos});
-            this.dgvDiscos.DoubleClick += new System.EventHandler(this.dgvDiscos_DoubleClick);
-            // 
-            // vistaDiscos
-            // 
-            this.vistaDiscos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaDiscos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.vistaDiscos.Appearance.HeaderPanel.Options.UseFont = true;
-            this.vistaDiscos.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.vistaDiscos.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.vistaDiscos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaDiscos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.vistaDiscos.Appearance.Row.Options.UseFont = true;
-            this.vistaDiscos.Appearance.Row.Options.UseForeColor = true;
-            this.vistaDiscos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Tipo,
-            this.CapacidadDisco,
-            this.CantidadDisco,
-            this.TamanoDisco,
-            this.PrecioDisco,
-            this.IdDisco});
-            this.vistaDiscos.GridControl = this.dgvDiscos;
-            this.vistaDiscos.Name = "vistaDiscos";
-            this.vistaDiscos.OptionsCustomization.AllowColumnMoving = false;
-            this.vistaDiscos.OptionsCustomization.AllowGroup = false;
-            this.vistaDiscos.OptionsDetail.EnableMasterViewMode = false;
-            this.vistaDiscos.OptionsMenu.EnableColumnMenu = false;
-            this.vistaDiscos.OptionsView.ColumnAutoWidth = false;
-            this.vistaDiscos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.vistaDiscos.OptionsView.ShowAutoFilterRow = true;
-            this.vistaDiscos.OptionsView.ShowGroupPanel = false;
-            this.vistaDiscos.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaDiscos_CellValueChanged);
-            // 
-            // Tipo
-            // 
-            this.Tipo.Caption = "TipoDisco";
-            this.Tipo.FieldName = "TipoDisco";
-            this.Tipo.MinWidth = 40;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.OptionsColumn.AllowEdit = false;
-            this.Tipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Tipo.Visible = true;
-            this.Tipo.VisibleIndex = 0;
-            this.Tipo.Width = 130;
-            // 
-            // CapacidadDisco
-            // 
-            this.CapacidadDisco.Caption = "Capacidad";
-            this.CapacidadDisco.FieldName = "Capacidad";
-            this.CapacidadDisco.MinWidth = 40;
-            this.CapacidadDisco.Name = "CapacidadDisco";
-            this.CapacidadDisco.OptionsColumn.AllowEdit = false;
-            this.CapacidadDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CapacidadDisco.Visible = true;
-            this.CapacidadDisco.VisibleIndex = 1;
-            this.CapacidadDisco.Width = 130;
-            // 
-            // CantidadDisco
-            // 
-            this.CantidadDisco.Caption = "Cantidad";
-            this.CantidadDisco.FieldName = "Cantidad";
-            this.CantidadDisco.MinWidth = 40;
-            this.CantidadDisco.Name = "CantidadDisco";
-            this.CantidadDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.CantidadDisco.Visible = true;
-            this.CantidadDisco.VisibleIndex = 2;
-            this.CantidadDisco.Width = 130;
-            // 
-            // TamanoDisco
-            // 
-            this.TamanoDisco.Caption = "Tamano";
-            this.TamanoDisco.FieldName = "Tamano";
-            this.TamanoDisco.MinWidth = 40;
-            this.TamanoDisco.Name = "TamanoDisco";
-            this.TamanoDisco.OptionsColumn.AllowEdit = false;
-            this.TamanoDisco.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.TamanoDisco.Visible = true;
-            this.TamanoDisco.VisibleIndex = 3;
-            this.TamanoDisco.Width = 130;
-            // 
-            // PrecioDisco
-            // 
-            this.PrecioDisco.Caption = "Precio";
-            this.PrecioDisco.FieldName = "Precio";
-            this.PrecioDisco.MinWidth = 40;
-            this.PrecioDisco.Name = "PrecioDisco";
-            this.PrecioDisco.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.PrecioDisco.Visible = true;
-            this.PrecioDisco.VisibleIndex = 4;
-            this.PrecioDisco.Width = 130;
-            // 
-            // IdDisco
-            // 
-            this.IdDisco.Caption = "IdDisco";
-            this.IdDisco.FieldName = "IdDisco";
-            this.IdDisco.Name = "IdDisco";
-            this.IdDisco.OptionsColumn.AllowEdit = false;
-            this.IdDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // tabDiscosDuro
-            // 
-            this.tabDiscosDuro.AttachedControl = this.tabControlPanel3;
-            this.tabDiscosDuro.Name = "tabDiscosDuro";
-            this.tabDiscosDuro.Text = "Disco Duro";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.btnVisualizarImpresora);
-            this.tabControlPanel4.Controls.Add(this.btnAgregarImpresora);
-            this.tabControlPanel4.Controls.Add(this.dgvImpresoras);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(877, 355);
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 4;
-            this.tabControlPanel4.TabItem = this.tabImpresoras;
-            // 
-            // btnVisualizarImpresora
-            // 
-            this.btnVisualizarImpresora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVisualizarImpresora.AutoSize = true;
-            this.btnVisualizarImpresora.BackColor = System.Drawing.Color.Transparent;
-            this.btnVisualizarImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisualizarImpresora.FlatAppearance.BorderSize = 0;
-            this.btnVisualizarImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarImpresora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizarImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizarImpresora.Image")));
-            this.btnVisualizarImpresora.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisualizarImpresora.Location = new System.Drawing.Point(735, 136);
-            this.btnVisualizarImpresora.Name = "btnVisualizarImpresora";
-            this.btnVisualizarImpresora.Size = new System.Drawing.Size(100, 63);
-            this.btnVisualizarImpresora.TabIndex = 191;
-            this.btnVisualizarImpresora.Text = "Visualizar";
-            this.btnVisualizarImpresora.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVisualizarImpresora.UseVisualStyleBackColor = false;
-            this.btnVisualizarImpresora.Click += new System.EventHandler(this.btnVisualizarImpresora_Click);
-            // 
-            // btnAgregarImpresora
-            // 
-            this.btnAgregarImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarImpresora.Location = new System.Drawing.Point(735, 62);
-            this.btnAgregarImpresora.Name = "btnAgregarImpresora";
-            this.btnAgregarImpresora.Size = new System.Drawing.Size(91, 41);
-            this.btnAgregarImpresora.TabIndex = 190;
-            this.btnAgregarImpresora.Text = "Agregar Impresoras";
-            this.btnAgregarImpresora.UseVisualStyleBackColor = true;
-            this.btnAgregarImpresora.Click += new System.EventHandler(this.btnAgregarImpresora_Click);
-            // 
-            // dgvImpresoras
-            // 
-            this.dgvImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvImpresoras.Location = new System.Drawing.Point(67, 23);
-            this.dgvImpresoras.MainView = this.vistaImpresoras;
-            this.dgvImpresoras.Name = "dgvImpresoras";
-            this.dgvImpresoras.Size = new System.Drawing.Size(616, 304);
-            this.dgvImpresoras.TabIndex = 189;
-            this.dgvImpresoras.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaImpresoras});
-            this.dgvImpresoras.DoubleClick += new System.EventHandler(this.dgvImpresoras_DoubleClick);
-            // 
-            // vistaImpresoras
-            // 
-            this.vistaImpresoras.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaImpresoras.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseFont = true;
-            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.vistaImpresoras.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.vistaImpresoras.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.vistaImpresoras.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaImpresoras.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.vistaImpresoras.Appearance.Row.Options.UseFont = true;
-            this.vistaImpresoras.Appearance.Row.Options.UseForeColor = true;
-            this.vistaImpresoras.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ImpresoraMarca,
-            this.ImpresoraNombreModelo,
-            this.ImpresoraTipo,
-            this.ImpresoraCantidad,
-            this.ImpresoraPrecio,
-            this.IdIngresoDetalleImpresora});
-            this.vistaImpresoras.GridControl = this.dgvImpresoras;
-            this.vistaImpresoras.Name = "vistaImpresoras";
-            this.vistaImpresoras.OptionsBehavior.Editable = false;
-            this.vistaImpresoras.OptionsCustomization.AllowColumnMoving = false;
-            this.vistaImpresoras.OptionsCustomization.AllowGroup = false;
-            this.vistaImpresoras.OptionsDetail.EnableMasterViewMode = false;
-            this.vistaImpresoras.OptionsMenu.EnableColumnMenu = false;
-            this.vistaImpresoras.OptionsView.ColumnAutoWidth = false;
-            this.vistaImpresoras.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.vistaImpresoras.OptionsView.ShowAutoFilterRow = true;
-            this.vistaImpresoras.OptionsView.ShowGroupPanel = false;
-            // 
-            // ImpresoraMarca
-            // 
-            this.ImpresoraMarca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ImpresoraMarca.AppearanceHeader.Options.UseBackColor = true;
-            this.ImpresoraMarca.Caption = "Marca";
-            this.ImpresoraMarca.FieldName = "ImpresoraMarca";
-            this.ImpresoraMarca.MinWidth = 40;
-            this.ImpresoraMarca.Name = "ImpresoraMarca";
-            this.ImpresoraMarca.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ImpresoraMarca.Visible = true;
-            this.ImpresoraMarca.VisibleIndex = 0;
-            this.ImpresoraMarca.Width = 140;
-            // 
-            // ImpresoraNombreModelo
-            // 
-            this.ImpresoraNombreModelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ImpresoraNombreModelo.AppearanceHeader.Options.UseBackColor = true;
-            this.ImpresoraNombreModelo.Caption = "Modelo";
-            this.ImpresoraNombreModelo.FieldName = "ImpresoraNombreModelo";
-            this.ImpresoraNombreModelo.MinWidth = 40;
-            this.ImpresoraNombreModelo.Name = "ImpresoraNombreModelo";
-            this.ImpresoraNombreModelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ImpresoraNombreModelo.Visible = true;
-            this.ImpresoraNombreModelo.VisibleIndex = 1;
-            this.ImpresoraNombreModelo.Width = 140;
-            // 
-            // ImpresoraTipo
-            // 
-            this.ImpresoraTipo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ImpresoraTipo.AppearanceHeader.Options.UseBackColor = true;
-            this.ImpresoraTipo.Caption = "Caracteristica";
-            this.ImpresoraTipo.FieldName = "ImpresoraTipo";
-            this.ImpresoraTipo.MinWidth = 40;
-            this.ImpresoraTipo.Name = "ImpresoraTipo";
-            this.ImpresoraTipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ImpresoraTipo.Visible = true;
-            this.ImpresoraTipo.VisibleIndex = 2;
-            this.ImpresoraTipo.Width = 200;
-            // 
-            // ImpresoraCantidad
-            // 
-            this.ImpresoraCantidad.Caption = "Cantidad";
-            this.ImpresoraCantidad.FieldName = "Cantidad";
-            this.ImpresoraCantidad.MinWidth = 40;
-            this.ImpresoraCantidad.Name = "ImpresoraCantidad";
-            this.ImpresoraCantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.ImpresoraCantidad.Visible = true;
-            this.ImpresoraCantidad.VisibleIndex = 3;
-            this.ImpresoraCantidad.Width = 100;
-            // 
-            // ImpresoraPrecio
-            // 
-            this.ImpresoraPrecio.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ImpresoraPrecio.AppearanceHeader.Options.UseBackColor = true;
-            this.ImpresoraPrecio.Caption = "Precio";
-            this.ImpresoraPrecio.FieldName = "Precio";
-            this.ImpresoraPrecio.MinWidth = 40;
-            this.ImpresoraPrecio.Name = "ImpresoraPrecio";
-            this.ImpresoraPrecio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.ImpresoraPrecio.Width = 100;
-            // 
-            // IdIngresoDetalleImpresora
-            // 
-            this.IdIngresoDetalleImpresora.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.IdIngresoDetalleImpresora.AppearanceHeader.Options.UseBackColor = true;
-            this.IdIngresoDetalleImpresora.Caption = "IdIngresoDetalleImpresora";
-            this.IdIngresoDetalleImpresora.FieldName = "IdIngresoDetalleImpresora";
-            this.IdIngresoDetalleImpresora.MinWidth = 40;
-            this.IdIngresoDetalleImpresora.Name = "IdIngresoDetalleImpresora";
-            this.IdIngresoDetalleImpresora.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.IdIngresoDetalleImpresora.Width = 80;
-            // 
-            // tabImpresoras
-            // 
-            this.tabImpresoras.AttachedControl = this.tabControlPanel4;
-            this.tabImpresoras.Name = "tabImpresoras";
-            this.tabImpresoras.Text = "Impresoras";
-            this.tabImpresoras.Visible = false;
             // 
             // tabControlPanel8
             // 
@@ -1977,12 +1374,685 @@
             this.tabTablets.Text = "Tablets";
             this.tabTablets.Visible = false;
             // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.btnVisualizarImpresora);
+            this.tabControlPanel4.Controls.Add(this.btnAgregarImpresora);
+            this.tabControlPanel4.Controls.Add(this.dgvImpresoras);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(877, 355);
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 4;
+            this.tabControlPanel4.TabItem = this.tabImpresoras;
+            // 
+            // btnVisualizarImpresora
+            // 
+            this.btnVisualizarImpresora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVisualizarImpresora.AutoSize = true;
+            this.btnVisualizarImpresora.BackColor = System.Drawing.Color.Transparent;
+            this.btnVisualizarImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisualizarImpresora.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarImpresora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizarImpresora.Image")));
+            this.btnVisualizarImpresora.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVisualizarImpresora.Location = new System.Drawing.Point(735, 136);
+            this.btnVisualizarImpresora.Name = "btnVisualizarImpresora";
+            this.btnVisualizarImpresora.Size = new System.Drawing.Size(100, 63);
+            this.btnVisualizarImpresora.TabIndex = 191;
+            this.btnVisualizarImpresora.Text = "Visualizar";
+            this.btnVisualizarImpresora.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVisualizarImpresora.UseVisualStyleBackColor = false;
+            this.btnVisualizarImpresora.Click += new System.EventHandler(this.btnVisualizarImpresora_Click);
+            // 
+            // btnAgregarImpresora
+            // 
+            this.btnAgregarImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarImpresora.Location = new System.Drawing.Point(735, 62);
+            this.btnAgregarImpresora.Name = "btnAgregarImpresora";
+            this.btnAgregarImpresora.Size = new System.Drawing.Size(91, 41);
+            this.btnAgregarImpresora.TabIndex = 190;
+            this.btnAgregarImpresora.Text = "Agregar Impresoras";
+            this.btnAgregarImpresora.UseVisualStyleBackColor = true;
+            this.btnAgregarImpresora.Click += new System.EventHandler(this.btnAgregarImpresora_Click);
+            // 
+            // dgvImpresoras
+            // 
+            this.dgvImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvImpresoras.Location = new System.Drawing.Point(67, 23);
+            this.dgvImpresoras.MainView = this.vistaImpresoras;
+            this.dgvImpresoras.Name = "dgvImpresoras";
+            this.dgvImpresoras.Size = new System.Drawing.Size(616, 304);
+            this.dgvImpresoras.TabIndex = 189;
+            this.dgvImpresoras.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaImpresoras});
+            this.dgvImpresoras.DoubleClick += new System.EventHandler(this.dgvImpresoras_DoubleClick);
+            // 
+            // vistaImpresoras
+            // 
+            this.vistaImpresoras.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaImpresoras.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaImpresoras.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaImpresoras.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaImpresoras.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaImpresoras.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaImpresoras.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaImpresoras.Appearance.Row.Options.UseFont = true;
+            this.vistaImpresoras.Appearance.Row.Options.UseForeColor = true;
+            this.vistaImpresoras.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ImpresoraMarca,
+            this.ImpresoraNombreModelo,
+            this.ImpresoraTipo,
+            this.ImpresoraCantidad,
+            this.ImpresoraPrecio,
+            this.IdIngresoDetalleImpresora});
+            this.vistaImpresoras.GridControl = this.dgvImpresoras;
+            this.vistaImpresoras.Name = "vistaImpresoras";
+            this.vistaImpresoras.OptionsBehavior.Editable = false;
+            this.vistaImpresoras.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaImpresoras.OptionsCustomization.AllowGroup = false;
+            this.vistaImpresoras.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaImpresoras.OptionsMenu.EnableColumnMenu = false;
+            this.vistaImpresoras.OptionsView.ColumnAutoWidth = false;
+            this.vistaImpresoras.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaImpresoras.OptionsView.ShowAutoFilterRow = true;
+            this.vistaImpresoras.OptionsView.ShowGroupPanel = false;
+            // 
+            // ImpresoraMarca
+            // 
+            this.ImpresoraMarca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ImpresoraMarca.AppearanceHeader.Options.UseBackColor = true;
+            this.ImpresoraMarca.Caption = "Marca";
+            this.ImpresoraMarca.FieldName = "ImpresoraMarca";
+            this.ImpresoraMarca.MinWidth = 40;
+            this.ImpresoraMarca.Name = "ImpresoraMarca";
+            this.ImpresoraMarca.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ImpresoraMarca.Visible = true;
+            this.ImpresoraMarca.VisibleIndex = 0;
+            this.ImpresoraMarca.Width = 140;
+            // 
+            // ImpresoraNombreModelo
+            // 
+            this.ImpresoraNombreModelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ImpresoraNombreModelo.AppearanceHeader.Options.UseBackColor = true;
+            this.ImpresoraNombreModelo.Caption = "Modelo";
+            this.ImpresoraNombreModelo.FieldName = "ImpresoraNombreModelo";
+            this.ImpresoraNombreModelo.MinWidth = 40;
+            this.ImpresoraNombreModelo.Name = "ImpresoraNombreModelo";
+            this.ImpresoraNombreModelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ImpresoraNombreModelo.Visible = true;
+            this.ImpresoraNombreModelo.VisibleIndex = 1;
+            this.ImpresoraNombreModelo.Width = 140;
+            // 
+            // ImpresoraTipo
+            // 
+            this.ImpresoraTipo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ImpresoraTipo.AppearanceHeader.Options.UseBackColor = true;
+            this.ImpresoraTipo.Caption = "Caracteristica";
+            this.ImpresoraTipo.FieldName = "ImpresoraTipo";
+            this.ImpresoraTipo.MinWidth = 40;
+            this.ImpresoraTipo.Name = "ImpresoraTipo";
+            this.ImpresoraTipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ImpresoraTipo.Visible = true;
+            this.ImpresoraTipo.VisibleIndex = 2;
+            this.ImpresoraTipo.Width = 200;
+            // 
+            // ImpresoraCantidad
+            // 
+            this.ImpresoraCantidad.Caption = "Cantidad";
+            this.ImpresoraCantidad.FieldName = "Cantidad";
+            this.ImpresoraCantidad.MinWidth = 40;
+            this.ImpresoraCantidad.Name = "ImpresoraCantidad";
+            this.ImpresoraCantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.ImpresoraCantidad.Visible = true;
+            this.ImpresoraCantidad.VisibleIndex = 3;
+            this.ImpresoraCantidad.Width = 100;
+            // 
+            // ImpresoraPrecio
+            // 
+            this.ImpresoraPrecio.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ImpresoraPrecio.AppearanceHeader.Options.UseBackColor = true;
+            this.ImpresoraPrecio.Caption = "Precio";
+            this.ImpresoraPrecio.FieldName = "Precio";
+            this.ImpresoraPrecio.MinWidth = 40;
+            this.ImpresoraPrecio.Name = "ImpresoraPrecio";
+            this.ImpresoraPrecio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.ImpresoraPrecio.Width = 100;
+            // 
+            // IdIngresoDetalleImpresora
+            // 
+            this.IdIngresoDetalleImpresora.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdIngresoDetalleImpresora.AppearanceHeader.Options.UseBackColor = true;
+            this.IdIngresoDetalleImpresora.Caption = "IdIngresoDetalleImpresora";
+            this.IdIngresoDetalleImpresora.FieldName = "IdIngresoDetalleImpresora";
+            this.IdIngresoDetalleImpresora.MinWidth = 40;
+            this.IdIngresoDetalleImpresora.Name = "IdIngresoDetalleImpresora";
+            this.IdIngresoDetalleImpresora.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.IdIngresoDetalleImpresora.Width = 80;
+            // 
+            // tabImpresoras
+            // 
+            this.tabImpresoras.AttachedControl = this.tabControlPanel4;
+            this.tabImpresoras.Name = "tabImpresoras";
+            this.tabImpresoras.Text = "Impresoras";
+            this.tabImpresoras.Visible = false;
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.dgvDiscos);
+            this.tabControlPanel3.Controls.Add(this.btnAgregarDisco);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(877, 355);
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tabDiscosDuro;
+            // 
+            // dgvDiscos
+            // 
+            this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiscos.Location = new System.Drawing.Point(59, 21);
+            this.dgvDiscos.MainView = this.vistaDiscos;
+            this.dgvDiscos.Name = "dgvDiscos";
+            this.dgvDiscos.Size = new System.Drawing.Size(685, 310);
+            this.dgvDiscos.TabIndex = 191;
+            this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaDiscos});
+            this.dgvDiscos.DoubleClick += new System.EventHandler(this.dgvDiscos_DoubleClick);
+            // 
+            // vistaDiscos
+            // 
+            this.vistaDiscos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaDiscos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaDiscos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaDiscos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaDiscos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaDiscos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaDiscos.Appearance.Row.Options.UseFont = true;
+            this.vistaDiscos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaDiscos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Tipo,
+            this.CapacidadDisco,
+            this.CantidadDisco,
+            this.TamanoDisco,
+            this.PrecioDisco,
+            this.IdDisco});
+            this.vistaDiscos.GridControl = this.dgvDiscos;
+            this.vistaDiscos.Name = "vistaDiscos";
+            this.vistaDiscos.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaDiscos.OptionsCustomization.AllowGroup = false;
+            this.vistaDiscos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaDiscos.OptionsMenu.EnableColumnMenu = false;
+            this.vistaDiscos.OptionsView.ColumnAutoWidth = false;
+            this.vistaDiscos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaDiscos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaDiscos.OptionsView.ShowGroupPanel = false;
+            this.vistaDiscos.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaDiscos_CellValueChanged);
+            // 
+            // Tipo
+            // 
+            this.Tipo.Caption = "TipoDisco";
+            this.Tipo.FieldName = "TipoDisco";
+            this.Tipo.MinWidth = 40;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.OptionsColumn.AllowEdit = false;
+            this.Tipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Tipo.Visible = true;
+            this.Tipo.VisibleIndex = 0;
+            this.Tipo.Width = 130;
+            // 
+            // CapacidadDisco
+            // 
+            this.CapacidadDisco.Caption = "Capacidad";
+            this.CapacidadDisco.FieldName = "Capacidad";
+            this.CapacidadDisco.MinWidth = 40;
+            this.CapacidadDisco.Name = "CapacidadDisco";
+            this.CapacidadDisco.OptionsColumn.AllowEdit = false;
+            this.CapacidadDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CapacidadDisco.Visible = true;
+            this.CapacidadDisco.VisibleIndex = 1;
+            this.CapacidadDisco.Width = 130;
+            // 
+            // CantidadDisco
+            // 
+            this.CantidadDisco.Caption = "Cantidad";
+            this.CantidadDisco.FieldName = "Cantidad";
+            this.CantidadDisco.MinWidth = 40;
+            this.CantidadDisco.Name = "CantidadDisco";
+            this.CantidadDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CantidadDisco.Visible = true;
+            this.CantidadDisco.VisibleIndex = 2;
+            this.CantidadDisco.Width = 130;
+            // 
+            // TamanoDisco
+            // 
+            this.TamanoDisco.Caption = "Tamano";
+            this.TamanoDisco.FieldName = "Tamano";
+            this.TamanoDisco.MinWidth = 40;
+            this.TamanoDisco.Name = "TamanoDisco";
+            this.TamanoDisco.OptionsColumn.AllowEdit = false;
+            this.TamanoDisco.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TamanoDisco.Visible = true;
+            this.TamanoDisco.VisibleIndex = 3;
+            this.TamanoDisco.Width = 130;
+            // 
+            // PrecioDisco
+            // 
+            this.PrecioDisco.Caption = "Precio";
+            this.PrecioDisco.FieldName = "Precio";
+            this.PrecioDisco.MinWidth = 40;
+            this.PrecioDisco.Name = "PrecioDisco";
+            this.PrecioDisco.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.PrecioDisco.Visible = true;
+            this.PrecioDisco.VisibleIndex = 4;
+            this.PrecioDisco.Width = 130;
+            // 
+            // IdDisco
+            // 
+            this.IdDisco.Caption = "IdDisco";
+            this.IdDisco.FieldName = "IdDisco";
+            this.IdDisco.Name = "IdDisco";
+            this.IdDisco.OptionsColumn.AllowEdit = false;
+            this.IdDisco.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // tabDiscosDuro
+            // 
+            this.tabDiscosDuro.AttachedControl = this.tabControlPanel3;
+            this.tabDiscosDuro.Name = "tabDiscosDuro";
+            this.tabDiscosDuro.Text = "Disco Duro";
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.dgvMemoria);
+            this.tabControlPanel2.Controls.Add(this.btnAgregarMemoria);
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(877, 355);
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 2;
+            this.tabControlPanel2.TabItem = this.tabMemorias;
+            // 
+            // dgvMemoria
+            // 
+            this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMemoria.Location = new System.Drawing.Point(52, 31);
+            this.dgvMemoria.MainView = this.vistaMemoria;
+            this.dgvMemoria.Name = "dgvMemoria";
+            this.dgvMemoria.Size = new System.Drawing.Size(686, 290);
+            this.dgvMemoria.TabIndex = 190;
+            this.dgvMemoria.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaMemoria});
+            this.dgvMemoria.DoubleClick += new System.EventHandler(this.dgvMemoria_DoubleClick);
+            // 
+            // vistaMemoria
+            // 
+            this.vistaMemoria.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaMemoria.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaMemoria.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaMemoria.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaMemoria.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaMemoria.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaMemoria.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaMemoria.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaMemoria.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaMemoria.Appearance.Row.Options.UseFont = true;
+            this.vistaMemoria.Appearance.Row.Options.UseForeColor = true;
+            this.vistaMemoria.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ModeloMemoria,
+            this.CapacidadMemoria,
+            this.CantidadMemoria,
+            this.TipoMemoria,
+            this.PrecioMemoria,
+            this.IdMemoria});
+            this.vistaMemoria.GridControl = this.dgvMemoria;
+            this.vistaMemoria.Name = "vistaMemoria";
+            this.vistaMemoria.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaMemoria.OptionsCustomization.AllowGroup = false;
+            this.vistaMemoria.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaMemoria.OptionsMenu.EnableColumnMenu = false;
+            this.vistaMemoria.OptionsView.ColumnAutoWidth = false;
+            this.vistaMemoria.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaMemoria.OptionsView.ShowAutoFilterRow = true;
+            this.vistaMemoria.OptionsView.ShowGroupPanel = false;
+            this.vistaMemoria.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaMemoria_CellValueChanged);
+            // 
+            // ModeloMemoria
+            // 
+            this.ModeloMemoria.Caption = "Modelo";
+            this.ModeloMemoria.FieldName = "TipoMemoria";
+            this.ModeloMemoria.MinWidth = 40;
+            this.ModeloMemoria.Name = "ModeloMemoria";
+            this.ModeloMemoria.OptionsColumn.AllowEdit = false;
+            this.ModeloMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ModeloMemoria.Visible = true;
+            this.ModeloMemoria.VisibleIndex = 0;
+            this.ModeloMemoria.Width = 130;
+            // 
+            // CapacidadMemoria
+            // 
+            this.CapacidadMemoria.Caption = "Capacidad";
+            this.CapacidadMemoria.FieldName = "Capacidad";
+            this.CapacidadMemoria.MinWidth = 40;
+            this.CapacidadMemoria.Name = "CapacidadMemoria";
+            this.CapacidadMemoria.OptionsColumn.AllowEdit = false;
+            this.CapacidadMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CapacidadMemoria.Visible = true;
+            this.CapacidadMemoria.VisibleIndex = 1;
+            this.CapacidadMemoria.Width = 130;
+            // 
+            // CantidadMemoria
+            // 
+            this.CantidadMemoria.Caption = "Cantidad";
+            this.CantidadMemoria.FieldName = "Cantidad";
+            this.CantidadMemoria.MinWidth = 40;
+            this.CantidadMemoria.Name = "CantidadMemoria";
+            this.CantidadMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CantidadMemoria.Visible = true;
+            this.CantidadMemoria.VisibleIndex = 2;
+            this.CantidadMemoria.Width = 130;
+            // 
+            // TipoMemoria
+            // 
+            this.TipoMemoria.Caption = "Tipo";
+            this.TipoMemoria.FieldName = "Tipo2";
+            this.TipoMemoria.MinWidth = 40;
+            this.TipoMemoria.Name = "TipoMemoria";
+            this.TipoMemoria.OptionsColumn.AllowEdit = false;
+            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoMemoria.Visible = true;
+            this.TipoMemoria.VisibleIndex = 3;
+            this.TipoMemoria.Width = 130;
+            // 
+            // PrecioMemoria
+            // 
+            this.PrecioMemoria.Caption = "Precio";
+            this.PrecioMemoria.FieldName = "Precio";
+            this.PrecioMemoria.MinWidth = 40;
+            this.PrecioMemoria.Name = "PrecioMemoria";
+            this.PrecioMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.PrecioMemoria.Visible = true;
+            this.PrecioMemoria.VisibleIndex = 4;
+            this.PrecioMemoria.Width = 130;
+            // 
+            // IdMemoria
+            // 
+            this.IdMemoria.Caption = "IdMemoria";
+            this.IdMemoria.FieldName = "IdMemoria";
+            this.IdMemoria.Name = "IdMemoria";
+            this.IdMemoria.OptionsColumn.AllowEdit = false;
+            this.IdMemoria.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // tabMemorias
+            // 
+            this.tabMemorias.AttachedControl = this.tabControlPanel2;
+            this.tabMemorias.Name = "tabMemorias";
+            this.tabMemorias.Text = "Memoria";
+            // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Controls.Add(this.dgvLicencias);
+            this.tabControlPanel1.Controls.Add(this.btnAgregarLicencia);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(877, 355);
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(247)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tabSoftwares;
+            // 
+            // dgvLicencias
+            // 
+            this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLicencias.Location = new System.Drawing.Point(52, 31);
+            this.dgvLicencias.MainView = this.vistaLicencias;
+            this.dgvLicencias.Name = "dgvLicencias";
+            this.dgvLicencias.Size = new System.Drawing.Size(696, 305);
+            this.dgvLicencias.TabIndex = 189;
+            this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaLicencias});
+            this.dgvLicencias.DoubleClick += new System.EventHandler(this.dgvLicencias_DoubleClick);
+            // 
+            // vistaLicencias
+            // 
+            this.vistaLicencias.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaLicencias.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaLicencias.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaLicencias.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaLicencias.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaLicencias.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaLicencias.Appearance.Row.Options.UseFont = true;
+            this.vistaLicencias.Appearance.Row.Options.UseForeColor = true;
+            this.vistaLicencias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Categoria,
+            this.MarcaLicencia,
+            this.Version,
+            this.Clave,
+            this.CantidadLicencia,
+            this.Precio,
+            this.IdCategoría,
+            this.IdModelo,
+            this.IdLicencia});
+            this.vistaLicencias.GridControl = this.dgvLicencias;
+            this.vistaLicencias.Name = "vistaLicencias";
+            this.vistaLicencias.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaLicencias.OptionsCustomization.AllowGroup = false;
+            this.vistaLicencias.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaLicencias.OptionsMenu.EnableColumnMenu = false;
+            this.vistaLicencias.OptionsView.ColumnAutoWidth = false;
+            this.vistaLicencias.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaLicencias.OptionsView.ShowAutoFilterRow = true;
+            this.vistaLicencias.OptionsView.ShowGroupPanel = false;
+            this.vistaLicencias.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vistaLicencias_CellValueChanged);
+            // 
+            // Categoria
+            // 
+            this.Categoria.Caption = "Categoria";
+            this.Categoria.FieldName = "Categoria";
+            this.Categoria.MinWidth = 40;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.OptionsColumn.AllowEdit = false;
+            this.Categoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Categoria.Visible = true;
+            this.Categoria.VisibleIndex = 0;
+            this.Categoria.Width = 100;
+            // 
+            // MarcaLicencia
+            // 
+            this.MarcaLicencia.Caption = "Marca";
+            this.MarcaLicencia.FieldName = "Marca";
+            this.MarcaLicencia.Name = "MarcaLicencia";
+            this.MarcaLicencia.OptionsColumn.AllowEdit = false;
+            this.MarcaLicencia.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // Version
+            // 
+            this.Version.Caption = "Version";
+            this.Version.FieldName = "Version";
+            this.Version.MinWidth = 40;
+            this.Version.Name = "Version";
+            this.Version.OptionsColumn.AllowEdit = false;
+            this.Version.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Version.Visible = true;
+            this.Version.VisibleIndex = 1;
+            this.Version.Width = 150;
+            // 
+            // Clave
+            // 
+            this.Clave.Caption = "Clave";
+            this.Clave.FieldName = "Clave";
+            this.Clave.MinWidth = 40;
+            this.Clave.Name = "Clave";
+            this.Clave.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Clave.Visible = true;
+            this.Clave.VisibleIndex = 2;
+            this.Clave.Width = 200;
+            // 
+            // CantidadLicencia
+            // 
+            this.CantidadLicencia.Caption = "Cantidad";
+            this.CantidadLicencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.CantidadLicencia.FieldName = "Cantidad";
+            this.CantidadLicencia.MinWidth = 40;
+            this.CantidadLicencia.Name = "CantidadLicencia";
+            this.CantidadLicencia.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CantidadLicencia.Visible = true;
+            this.CantidadLicencia.VisibleIndex = 3;
+            this.CantidadLicencia.Width = 100;
+            // 
+            // Precio
+            // 
+            this.Precio.Caption = "Precio";
+            this.Precio.FieldName = "Precio";
+            this.Precio.MinWidth = 40;
+            this.Precio.Name = "Precio";
+            this.Precio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Precio.Visible = true;
+            this.Precio.VisibleIndex = 4;
+            this.Precio.Width = 100;
+            // 
+            // IdCategoría
+            // 
+            this.IdCategoría.Caption = "IdCategoría";
+            this.IdCategoría.FieldName = "IdCategoría";
+            this.IdCategoría.Name = "IdCategoría";
+            this.IdCategoría.OptionsColumn.AllowEdit = false;
+            this.IdCategoría.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // IdModelo
+            // 
+            this.IdModelo.Caption = "IdModelo";
+            this.IdModelo.FieldName = "IdModelo";
+            this.IdModelo.Name = "IdModelo";
+            this.IdModelo.OptionsColumn.AllowEdit = false;
+            this.IdModelo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // IdLicencia
+            // 
+            this.IdLicencia.Caption = "IdLicencia";
+            this.IdLicencia.FieldName = "IdLicencia";
+            this.IdLicencia.Name = "IdLicencia";
+            this.IdLicencia.OptionsColumn.AllowEdit = false;
+            this.IdLicencia.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // tabSoftwares
+            // 
+            this.tabSoftwares.AttachedControl = this.tabControlPanel1;
+            this.tabSoftwares.Name = "tabSoftwares";
+            this.tabSoftwares.Text = "Software";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(310, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.TabIndex = 188;
+            this.label6.Text = "Sede";
+            // 
+            // cmbSede
+            // 
+            this.cmbSede.FormattingEnabled = true;
+            this.cmbSede.Location = new System.Drawing.Point(370, 118);
+            this.cmbSede.Name = "cmbSede";
+            this.cmbSede.Size = new System.Drawing.Size(251, 24);
+            this.cmbSede.TabIndex = 189;
+            // 
+            // pnlC
+            // 
+            this.pnlC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlC.Controls.Add(this.label11);
+            this.pnlC.Controls.Add(this.button1);
+            this.pnlC.Location = new System.Drawing.Point(1, 2);
+            this.pnlC.Name = "pnlC";
+            this.pnlC.Size = new System.Drawing.Size(1246, 83);
+            this.pnlC.TabIndex = 190;
+            this.pnlC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1160, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 191;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(497, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(134, 32);
+            this.label11.TabIndex = 192;
+            this.label11.Text = "COMPRA";
+            // 
             // frmProcesoIngreso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1248, 607);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1248, 692);
+            this.Controls.Add(this.pnlC);
+            this.Controls.Add(this.cmbSede);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label14);
@@ -2012,7 +2082,7 @@
             this.Controls.Add(this.txtRUC);
             this.Controls.Add(this.cmbProveedor);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoIngreso";
@@ -2020,6 +2090,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Ingreso";
+            this.Load += new System.EventHandler(this.frmProcesoIngreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -2027,19 +2098,6 @@
             this.tabControlPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaLaptops)).EndInit();
-            this.tabControlPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).EndInit();
-            this.tabControlPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaMemoria)).EndInit();
-            this.tabControlPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).EndInit();
-            this.tabControlPanel4.ResumeLayout(false);
-            this.tabControlPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresoras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaImpresoras)).EndInit();
             this.tabControlPanel8.ResumeLayout(false);
             this.tabControlPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectores)).EndInit();
@@ -2052,6 +2110,21 @@
             this.tabControlPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaTablets)).EndInit();
+            this.tabControlPanel4.ResumeLayout(false);
+            this.tabControlPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImpresoras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaImpresoras)).EndInit();
+            this.tabControlPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDiscos)).EndInit();
+            this.tabControlPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaMemoria)).EndInit();
+            this.tabControlPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaLicencias)).EndInit();
+            this.pnlC.ResumeLayout(false);
+            this.pnlC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2190,5 +2263,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn TabletRam;
         private DevExpress.XtraGrid.Columns.GridColumn TabletRom;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbSede;
+        private System.Windows.Forms.Panel pnlC;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
     }
 }

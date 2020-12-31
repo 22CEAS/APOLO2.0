@@ -217,6 +217,11 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_moneda_tipo ;");
         }
 
+        public DataTable ListarSede()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_sedes ;");
+        }
+
         public DataTable ListarIngreso(string sql)
         {
             return objManager.MostrarTablaDatos("Select * from vista_lista_ingresos v " + sql + " ;");
@@ -227,7 +232,7 @@ namespace AccesoDatos
 
             bool error = false;
 
-            parametrosEntrada = new MySqlParameter[17];
+            parametrosEntrada = new MySqlParameter[19];
             parametrosEntrada[0] = new MySqlParameter("@_idOC", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_idTipoIngreso", MySqlDbType.Int32);
             parametrosEntrada[2] = new MySqlParameter("@_tipoIngreso", MySqlDbType.VarChar, 255);
@@ -244,7 +249,9 @@ namespace AccesoDatos
             parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
             parametrosEntrada[14] = new MySqlParameter("@_estado", MySqlDbType.Int32);
             parametrosEntrada[15] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-            parametrosEntrada[16] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[16] = new MySqlParameter("@_idSede", MySqlDbType.VarChar, 255);
+            parametrosEntrada[17] = new MySqlParameter("@_nombreSede", MySqlDbType.VarChar, 255);
+            parametrosEntrada[18] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = 0;
             parametrosEntrada[1].Value = ingreso.IdTipoIngreso;
@@ -262,11 +269,13 @@ namespace AccesoDatos
             parametrosEntrada[13].Value = ingreso.Observacion;
             parametrosEntrada[14].Value = ingreso.Estado;
             parametrosEntrada[15].Value = usuario;
+            parametrosEntrada[16].Value = ingreso.IdSede;
+            parametrosEntrada[17].Value = ingreso.TipoSede;
 
             string[] datosSalida = new string[1];
 
             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_ingreso",
-                16, 17, out datosSalida, 1);
+                18, 19, out datosSalida, 1);
 
             if (datosSalida != null)
             {
@@ -328,7 +337,9 @@ namespace AccesoDatos
                                             1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]); 
+
+                        //int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]); 
+                        int idIngresoArrendamiento=0;
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -420,7 +431,7 @@ namespace AccesoDatos
 
                         parametrosEntrada = new MySqlParameter[18];
                             
-                        parametrosEntrada = new MySqlParameter[20];
+                        parametrosEntrada = new MySqlParameter[21];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -440,7 +451,8 @@ namespace AccesoDatos
                         parametrosEntrada[16] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 80);
                         parametrosEntrada[17] = new MySqlParameter("@_idTipoEquipoLC", MySqlDbType.Int32);
                         parametrosEntrada[18] = new MySqlParameter("@_nombreTipoEquipoLC", MySqlDbType.VarChar, 255);
-                        parametrosEntrada[19] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                        parametrosEntrada[19] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
+                        parametrosEntrada[20] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalle;
@@ -477,6 +489,7 @@ namespace AccesoDatos
 
                         parametrosEntrada[17].Value = det.LaptopIdTipoEquipoLC; //1 LAPTOP //2 CPU
                         parametrosEntrada[18].Value = det.LaptopTipoEquipoLC;
+                        parametrosEntrada[19].Value = ingreso.IdSede;
 
                         datosSalida = new string[1];
                         
@@ -484,7 +497,7 @@ namespace AccesoDatos
                         if (ingreso.TipoIngreso == "COMPRA")
                         {
                             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                                19, 20, out datosSalida, 1);
+                                20, 21, out datosSalida, 1);
                             idLC = Convert.ToInt32(datosSalida[0]);
                         }
                         else
@@ -492,21 +505,23 @@ namespace AccesoDatos
                             if (cantidadDeArrendamientos == 0)
                             {
                                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                                19, 20, out datosSalida, 1);
+                                20, 21, out datosSalida, 1);
                                 idLC = Convert.ToInt32(datosSalida[0]);
                             }
                             else
                             {
                                 //HACER EL UPDATE DEL CODIGO ANTIGUO AL NUEVO
                                 idLC = idLCarrendamiento;
-                                parametrosEntrada = new MySqlParameter[3];
+                                parametrosEntrada = new MySqlParameter[4];
                                 parametrosEntrada[0] = new MySqlParameter("@_idIngresoAntiguo", MySqlDbType.Int32);
                                 parametrosEntrada[1] = new MySqlParameter("@_idIngresoNuevo", MySqlDbType.Int32);
                                 parametrosEntrada[2] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                                parametrosEntrada[3] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
 
                                 parametrosEntrada[0].Value = idIngresoArrendamiento;
                                 parametrosEntrada[1].Value = ingreso.IdIngreso;
                                 parametrosEntrada[2].Value = idLC;
+                                parametrosEntrada[3].Value = ingreso.IdSede;
 
 
                                 bool okey = objManager.EjecutarProcedure(parametrosEntrada, "actualizarIngresoArrendamiento");
@@ -623,7 +638,8 @@ namespace AccesoDatos
                                             1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        int idIngresoArrendamiento = 0;
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -781,7 +797,8 @@ namespace AccesoDatos
                                             1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        int idIngresoArrendamiento = 0;
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -938,7 +955,8 @@ namespace AccesoDatos
                                             1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        int idIngresoArrendamiento = 0;
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -1107,7 +1125,8 @@ namespace AccesoDatos
                                             1, 4, out cantidadArrendamiento, 3);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        //int idIngresoArrendamiento = int.Parse(cantidadArrendamiento[2]);
+                        int idIngresoArrendamiento = 0;
                         //MessageBox.Show(cantidadDeArrendamientos.ToString());
                         //MessageBox.Show(idLCarrendamiento.ToString());
 
@@ -1896,7 +1915,7 @@ namespace AccesoDatos
             //========================Se modificara el ingreso=========================
 
 
-            parametrosEntrada = new MySqlParameter[17];
+            parametrosEntrada = new MySqlParameter[19];
             parametrosEntrada[0] = new MySqlParameter("@_idOC", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_idTipoIngreso", MySqlDbType.Int32);
             parametrosEntrada[2] = new MySqlParameter("@_tipoIngreso", MySqlDbType.VarChar, 255);
@@ -1914,6 +1933,8 @@ namespace AccesoDatos
             parametrosEntrada[14] = new MySqlParameter("@_estado", MySqlDbType.Int32);
             parametrosEntrada[15] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
             parametrosEntrada[16] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
+            parametrosEntrada[17] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
+            parametrosEntrada[18] = new MySqlParameter("@_nombreSede", MySqlDbType.VarChar, 255);
 
             parametrosEntrada[0].Value = 0;
             parametrosEntrada[1].Value = ingreso.IdTipoIngreso;
@@ -1932,6 +1953,8 @@ namespace AccesoDatos
             parametrosEntrada[14].Value = ingreso.Estado;
             parametrosEntrada[15].Value = usuario;
             parametrosEntrada[16].Value = ingreso.IdIngreso;
+            parametrosEntrada[17].Value = ingreso.IdSede;
+            parametrosEntrada[18].Value = ingreso.TipoSede;
 
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_ingreso");
 
@@ -2085,6 +2108,10 @@ namespace AccesoDatos
                 ingresoDevuelto.IdMonedaTipo = reader.GetInt32("idTipoMoneda");
                 ingresoDevuelto.MonedaTipo = reader.GetString("tipoMoneda");
                 ingresoDevuelto.MontoCambio = reader.GetDouble("montoCambio");
+
+                ingresoDevuelto.IdSede= reader.GetInt32("idSede");
+                ingresoDevuelto.TipoSede = reader.GetString("nombreSede");
+
                 ingresoDevuelto.Total = reader.GetDouble("total");
                 ingresoDevuelto.Observacion = reader.GetString("observacion");
                 ingresoDevuelto.Estado = reader.GetInt32("estado");

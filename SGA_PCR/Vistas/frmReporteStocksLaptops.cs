@@ -17,7 +17,8 @@ using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
-
+using System.Runtime.InteropServices;
+using System.Globalization;
 
 namespace Apolo
 {
@@ -54,7 +55,17 @@ namespace Apolo
 
         private int GeneracionDesfasado = 6;
 
-        
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+           (
+           int nLeftRect, // x-coordinate of upper-left corner
+           int nTopRect, // y-coordinate of upper-left corner
+           int nRightRect, // x-coordinate of lower-right corner
+           int nBottomRect, // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+           );
 
 
         public frmReporteStocksLaptops()
@@ -117,7 +128,8 @@ namespace Apolo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    //MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion | Si tiene un reporte de INVENTARIO ya abierto, cierrelo.", " ◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 //Cursor.Current = Cursors.Default;
 
@@ -489,6 +501,7 @@ namespace Apolo
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    /*
                     if (tablaLaptops.Rows[rec]["fecTraslado"].ToString() == " ")
                     {
                         laptop.FechaTraslado = "";
@@ -497,6 +510,7 @@ namespace Apolo
                     {
                         laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
                     }
+                    */
                     
                     if (laptop.EstadoNombre == "DISPONIBLE")
                     {
@@ -511,6 +525,12 @@ namespace Apolo
                     laptop.RucCliente = tablaLaptops.Rows[rec]["rucCliente"].ToString();
                     laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
                     laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
+
+                    
+                    laptop.IdSede = tablaLaptops.Rows[rec]["idSede"].ToString();
+                    laptop.IdSalida= tablaLaptops.Rows[rec]["idSalidaAlquilado"].ToString();
+                    laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
+                    laptop.TipoSede= tablaLaptops.Rows[rec]["Sede"].ToString();
 
                     viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
                     viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
@@ -570,7 +590,7 @@ namespace Apolo
                     laptop.Discos = null;
                     laptop.Memorias = null;
 
-                    laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
+                    //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
 
                     laptops.Add(laptop);
                     rec++;
@@ -688,6 +708,33 @@ namespace Apolo
         private void dgvLaptops_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            panel7.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel7.Width,
+                 panel7.Height, 30, 30));
+        }
+
+        int posY = 0;
+        int posX = 0;
+        private void pnlInv_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

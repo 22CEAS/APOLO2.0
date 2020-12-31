@@ -43,6 +43,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoCambioComponentes));
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -75,6 +76,10 @@
             this.txtVideoCapacidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtVideo = new System.Windows.Forms.TextBox();
+            this.pnlCC = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pnlCC.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -91,7 +96,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(35, 18);
+            this.label8.Location = new System.Drawing.Point(32, 119);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 16);
             this.label8.TabIndex = 81;
@@ -99,7 +104,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(37, 39);
+            this.txtCodigo.Location = new System.Drawing.Point(34, 140);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(180, 20);
             this.txtCodigo.TabIndex = 0;
@@ -109,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 78);
+            this.label2.Location = new System.Drawing.Point(30, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 85;
@@ -117,7 +122,7 @@
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(36, 99);
+            this.txtModelo.Location = new System.Drawing.Point(33, 200);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.ReadOnly = true;
             this.txtModelo.Size = new System.Drawing.Size(180, 20);
@@ -127,7 +132,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 134);
+            this.label3.Location = new System.Drawing.Point(31, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 87;
@@ -135,7 +140,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(37, 155);
+            this.txtMarca.Location = new System.Drawing.Point(34, 256);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(180, 20);
@@ -145,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 306);
+            this.label4.Location = new System.Drawing.Point(31, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 93;
@@ -153,7 +158,7 @@
             // 
             // txtProcesadorGeneracion
             // 
-            this.txtProcesadorGeneracion.Location = new System.Drawing.Point(37, 327);
+            this.txtProcesadorGeneracion.Location = new System.Drawing.Point(34, 428);
             this.txtProcesadorGeneracion.Name = "txtProcesadorGeneracion";
             this.txtProcesadorGeneracion.ReadOnly = true;
             this.txtProcesadorGeneracion.Size = new System.Drawing.Size(180, 20);
@@ -163,7 +168,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 247);
+            this.label5.Location = new System.Drawing.Point(31, 348);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 91;
@@ -171,7 +176,7 @@
             // 
             // txtProcesador
             // 
-            this.txtProcesador.Location = new System.Drawing.Point(37, 268);
+            this.txtProcesador.Location = new System.Drawing.Point(34, 369);
             this.txtProcesador.Name = "txtProcesador";
             this.txtProcesador.ReadOnly = true;
             this.txtProcesador.Size = new System.Drawing.Size(179, 20);
@@ -181,7 +186,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 191);
+            this.label6.Location = new System.Drawing.Point(31, 292);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 16);
             this.label6.TabIndex = 89;
@@ -189,7 +194,7 @@
             // 
             // txtPantalla
             // 
-            this.txtPantalla.Location = new System.Drawing.Point(36, 212);
+            this.txtPantalla.Location = new System.Drawing.Point(33, 313);
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.ReadOnly = true;
             this.txtPantalla.Size = new System.Drawing.Size(180, 20);
@@ -198,7 +203,7 @@
             // btnAgregarLicencia
             // 
             this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarLicencia.Location = new System.Drawing.Point(684, 364);
+            this.btnAgregarLicencia.Location = new System.Drawing.Point(681, 465);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarLicencia.TabIndex = 14;
@@ -209,7 +214,7 @@
             // btnCaducidadLicencia
             // 
             this.btnCaducidadLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaducidadLicencia.Location = new System.Drawing.Point(684, 437);
+            this.btnCaducidadLicencia.Location = new System.Drawing.Point(681, 538);
             this.btnCaducidadLicencia.Name = "btnCaducidadLicencia";
             this.btnCaducidadLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnCaducidadLicencia.TabIndex = 16;
@@ -220,7 +225,7 @@
             // btnAgregarDisco
             // 
             this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarDisco.Location = new System.Drawing.Point(684, 194);
+            this.btnAgregarDisco.Location = new System.Drawing.Point(681, 295);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarDisco.TabIndex = 11;
@@ -231,7 +236,7 @@
             // btnGuardarDisco
             // 
             this.btnGuardarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarDisco.Location = new System.Drawing.Point(684, 267);
+            this.btnGuardarDisco.Location = new System.Drawing.Point(681, 368);
             this.btnGuardarDisco.Name = "btnGuardarDisco";
             this.btnGuardarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarDisco.TabIndex = 13;
@@ -242,7 +247,7 @@
             // btnAgregarMemoria
             // 
             this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMemoria.Location = new System.Drawing.Point(684, 37);
+            this.btnAgregarMemoria.Location = new System.Drawing.Point(681, 138);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarMemoria.TabIndex = 8;
@@ -253,7 +258,7 @@
             // btnGuardarMemoria
             // 
             this.btnGuardarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarMemoria.Location = new System.Drawing.Point(684, 110);
+            this.btnGuardarMemoria.Location = new System.Drawing.Point(681, 211);
             this.btnGuardarMemoria.Name = "btnGuardarMemoria";
             this.btnGuardarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarMemoria.TabIndex = 10;
@@ -266,7 +271,7 @@
             this.dgvLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
-            this.dgvLicencia.Location = new System.Drawing.Point(250, 354);
+            this.dgvLicencia.Location = new System.Drawing.Point(247, 455);
             this.dgvLicencia.Name = "dgvLicencia";
             gridColumn1.AllowEdit = false;
             gridColumn1.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
@@ -309,7 +314,7 @@
             // btnEliminarLicencia
             // 
             this.btnEliminarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarLicencia.Location = new System.Drawing.Point(684, 400);
+            this.btnEliminarLicencia.Location = new System.Drawing.Point(681, 501);
             this.btnEliminarLicencia.Name = "btnEliminarLicencia";
             this.btnEliminarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnEliminarLicencia.TabIndex = 15;
@@ -321,7 +326,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(266, 327);
+            this.label13.Location = new System.Drawing.Point(263, 428);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 148;
@@ -332,7 +337,7 @@
             this.dgvDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvDisco.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvDisco.ForeColor = System.Drawing.Color.Black;
-            this.dgvDisco.Location = new System.Drawing.Point(250, 195);
+            this.dgvDisco.Location = new System.Drawing.Point(247, 296);
             this.dgvDisco.Name = "dgvDisco";
             gridColumn6.AllowEdit = false;
             gridColumn6.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
@@ -376,7 +381,7 @@
             this.dgvMemorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvMemorias.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvMemorias.ForeColor = System.Drawing.Color.Black;
-            this.dgvMemorias.Location = new System.Drawing.Point(250, 38);
+            this.dgvMemorias.Location = new System.Drawing.Point(247, 139);
             this.dgvMemorias.Name = "dgvMemorias";
             gridColumn11.AllowEdit = false;
             gridColumn11.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
@@ -418,7 +423,7 @@
             // btnEditarDisco
             // 
             this.btnEditarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarDisco.Location = new System.Drawing.Point(684, 231);
+            this.btnEditarDisco.Location = new System.Drawing.Point(681, 332);
             this.btnEditarDisco.Name = "btnEditarDisco";
             this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnEditarDisco.TabIndex = 12;
@@ -429,7 +434,7 @@
             // btnEditarMemoria
             // 
             this.btnEditarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMemoria.Location = new System.Drawing.Point(684, 73);
+            this.btnEditarMemoria.Location = new System.Drawing.Point(681, 174);
             this.btnEditarMemoria.Name = "btnEditarMemoria";
             this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnEditarMemoria.TabIndex = 9;
@@ -441,7 +446,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(266, 168);
+            this.label12.Location = new System.Drawing.Point(263, 269);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 16);
             this.label12.TabIndex = 143;
@@ -451,7 +456,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(266, 16);
+            this.label11.Location = new System.Drawing.Point(263, 117);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 16);
             this.label11.TabIndex = 142;
@@ -461,7 +466,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 433);
+            this.label1.Location = new System.Drawing.Point(31, 534);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 160;
@@ -469,7 +474,7 @@
             // 
             // txtVideoCapacidad
             // 
-            this.txtVideoCapacidad.Location = new System.Drawing.Point(37, 454);
+            this.txtVideoCapacidad.Location = new System.Drawing.Point(34, 555);
             this.txtVideoCapacidad.Name = "txtVideoCapacidad";
             this.txtVideoCapacidad.ReadOnly = true;
             this.txtVideoCapacidad.Size = new System.Drawing.Size(180, 20);
@@ -479,7 +484,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 368);
+            this.label7.Location = new System.Drawing.Point(32, 469);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 158;
@@ -487,18 +492,61 @@
             // 
             // txtVideo
             // 
-            this.txtVideo.Location = new System.Drawing.Point(38, 389);
+            this.txtVideo.Location = new System.Drawing.Point(35, 490);
             this.txtVideo.Name = "txtVideo";
             this.txtVideo.ReadOnly = true;
             this.txtVideo.Size = new System.Drawing.Size(179, 20);
             this.txtVideo.TabIndex = 6;
             // 
+            // pnlCC
+            // 
+            this.pnlCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlCC.Controls.Add(this.label9);
+            this.pnlCC.Controls.Add(this.btnNuevo);
+            this.pnlCC.Location = new System.Drawing.Point(2, 1);
+            this.pnlCC.Name = "pnlCC";
+            this.pnlCC.Size = new System.Drawing.Size(796, 98);
+            this.pnlCC.TabIndex = 161;
+            this.pnlCC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCC_MouseMove);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(718, 11);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 174;
+            this.btnNuevo.Text = "CERRAR";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(239, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(359, 31);
+            this.label9.TabIndex = 175;
+            this.label9.Text = "CAMBIO COMPONENTES";
+            // 
             // frmProcesoCambioComponentes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(799, 497);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(799, 591);
+            this.Controls.Add(this.pnlCC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVideoCapacidad);
             this.Controls.Add(this.label7);
@@ -531,6 +579,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label14);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoCambioComponentes";
@@ -538,6 +587,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio de Componentes";
+            this.pnlCC.ResumeLayout(false);
+            this.pnlCC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +627,8 @@
         private System.Windows.Forms.TextBox txtVideoCapacidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtVideo;
+        private System.Windows.Forms.Panel pnlCC;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label9;
     }
 }

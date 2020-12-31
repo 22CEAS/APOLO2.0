@@ -29,6 +29,9 @@ namespace Modelo
         private int danoLC;
         private string observacion;
         private int estado;
+        private int idSede;
+        private string tipoSede;
+        private int idSedeAntigua;
 
         public Cambio()
         {
@@ -122,5 +125,8 @@ namespace Modelo
         public int Estado { get => estado; set => estado = value; }
         public DateTime FechaIniContrato { get => fechaIniContrato; set => fechaIniContrato = value; }
         public DateTime FechaFinContrato { get => fechaFinContrato; set => fechaFinContrato = value; }
+        public int IdSede { get => idSede; set => idSede = value; }
+        public string TipoSede { get => tipoSede; set => tipoSede = value; }
+        public int IdSedeAntigua { get => idSedeAntigua; set => idSedeAntigua = value; }
     }
 }

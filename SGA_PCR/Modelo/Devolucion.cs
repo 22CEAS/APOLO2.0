@@ -18,6 +18,8 @@ namespace Modelo
         private string observacion;
         private int estado;
         private BindingList<DevolucionDetalle> detalles;
+        private int idSede;
+        private string tipoSede;
 
         public Devolucion()
         {
@@ -49,6 +51,8 @@ namespace Modelo
         public int Estado { get => estado; set => estado = value; }
         public BindingList<DevolucionDetalle> Detalles { get => detalles; set => detalles = value; }
         public string RucDni { get => rucDni; set => rucDni = value; }
+        public int IdSede { get => idSede; set => idSede = value; }
+        public string TipoSede { get => tipoSede; set => tipoSede = value; }
 
         public void LlenarDatos(DataTable data)
         {

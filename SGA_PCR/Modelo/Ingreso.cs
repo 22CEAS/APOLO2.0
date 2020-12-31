@@ -10,6 +10,8 @@ namespace Modelo
     public class Ingreso
     {
         private int idIngreso;
+        private int idSede;
+        private string tipoSede;
         private int idTipoIngreso;//Compra o arrendamiento
         private string tipoIngreso;
         private int idMonedaTipo;
@@ -78,5 +80,7 @@ namespace Modelo
         public BindingList<IngresoDetalleMonitor> DetallesMonitores { get => detallesMonitores; set => detallesMonitores = value; }
         public BindingList<IngresoDetalleImpresora> DetallesImpresoras { get => detallesImpresoras; set => detallesImpresoras = value; }
         public BindingList<IngresoDetalleProyector> DetallesProyectores { get => detallesProyectores; set => detallesProyectores = value; }
+        public int IdSede { get => idSede; set => idSede = value; }
+        public string TipoSede { get => tipoSede; set => tipoSede = value; }
     }
 }

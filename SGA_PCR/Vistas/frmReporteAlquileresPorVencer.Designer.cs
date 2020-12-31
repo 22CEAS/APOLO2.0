@@ -47,15 +47,19 @@
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pnlLV = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
+            this.pnlLV.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvLaptops
@@ -63,10 +67,14 @@
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.Location = new System.Drawing.Point(29, 119);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 119);
+            this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1245, 381);
+            this.dgvLaptops.Size = new System.Drawing.Size(1286, 394);
             this.dgvLaptops.TabIndex = 131;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -307,67 +315,6 @@
             this.fecFinContrato.VisibleIndex = 12;
             this.fecFinContrato.Width = 100;
             // 
-            // btnExportar
-            // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportar.AutoSize = true;
-            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1180, 12);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 63);
-            this.btnExportar.TabIndex = 135;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
-            this.label1.TabIndex = 160;
-            this.label1.Text = "CANTIDAD REGISTROS:";
-            // 
-            // verResumen
-            // 
-            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(47, 19);
-            this.verResumen.Name = "verResumen";
-            this.verResumen.Size = new System.Drawing.Size(115, 19);
-            this.verResumen.TabIndex = 159;
-            this.verResumen.Text = "VER RESUMEN";
-            this.verResumen.UseVisualStyleBackColor = false;
-            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
-            // 
-            // giftCarga
-            // 
-            this.giftCarga.Location = new System.Drawing.Point(581, 2);
-            this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(123, 82);
-            this.giftCarga.TabIndex = 158;
-            this.giftCarga.TabStop = false;
-            // 
-            // cargarData
-            // 
-            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(581, 94);
-            this.cargarData.Name = "cargarData";
-            this.cargarData.Size = new System.Drawing.Size(113, 19);
-            this.cargarData.TabIndex = 157;
-            this.cargarData.Text = "CARGANDO DATA";
-            this.cargarData.UseVisualStyleBackColor = true;
-            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
-            // 
             // KAM
             // 
             this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -379,17 +326,124 @@
             this.KAM.Visible = true;
             this.KAM.VisibleIndex = 13;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.AutoSize = true;
+            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExportar.Location = new System.Drawing.Point(29, 523);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 63);
+            this.btnExportar.TabIndex = 135;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(989, 523);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 20);
+            this.label1.TabIndex = 160;
+            this.label1.Text = "CANTIDAD REGISTROS:";
+            // 
+            // verResumen
+            // 
+            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.verResumen.Location = new System.Drawing.Point(569, 432);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 159;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = false;
+            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            // 
+            // giftCarga
+            // 
+            this.giftCarga.BackColor = System.Drawing.Color.White;
+            this.giftCarga.Location = new System.Drawing.Point(499, 291);
+            this.giftCarga.Name = "giftCarga";
+            this.giftCarga.Size = new System.Drawing.Size(304, 171);
+            this.giftCarga.TabIndex = 158;
+            this.giftCarga.TabStop = false;
+            // 
+            // cargarData
+            // 
+            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cargarData.Location = new System.Drawing.Point(558, 407);
+            this.cargarData.Name = "cargarData";
+            this.cargarData.Size = new System.Drawing.Size(113, 19);
+            this.cargarData.TabIndex = 157;
+            this.cargarData.Text = "CARGANDO DATA";
+            this.cargarData.UseVisualStyleBackColor = true;
+            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
+            // 
+            // pnlLV
+            // 
+            this.pnlLV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlLV.Controls.Add(this.label2);
+            this.pnlLV.Controls.Add(this.button1);
+            this.pnlLV.Location = new System.Drawing.Point(2, 0);
+            this.pnlLV.Name = "pnlLV";
+            this.pnlLV.Size = new System.Drawing.Size(1296, 95);
+            this.pnlLV.TabIndex = 161;
+            this.pnlLV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLV_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(506, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(344, 31);
+            this.label2.TabIndex = 163;
+            this.label2.Text = "LAPTOPS POR VENCER";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1213, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 162;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmReporteAlquileresPorVencer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 503);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1302, 598);
+            this.Controls.Add(this.pnlLV);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.verResumen);
             this.Controls.Add(this.giftCarga);
-            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
+            this.Controls.Add(this.cargarData);
+            this.Controls.Add(this.verResumen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -402,6 +456,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
+            this.pnlLV.ResumeLayout(false);
+            this.pnlLV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,5 +489,8 @@
         public System.Windows.Forms.Button cargarData;
         private DevExpress.XtraGrid.Columns.GridColumn Ruc;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
+        private System.Windows.Forms.Panel pnlLV;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

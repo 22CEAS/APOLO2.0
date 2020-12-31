@@ -61,13 +61,18 @@
             this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FecPrimerTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cargarData = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.verResumen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pnlCV = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
+            this.pnlCV.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExportar
@@ -81,7 +86,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1056, 194);
+            this.btnExportar.Location = new System.Drawing.Point(12, 585);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 137;
@@ -97,14 +102,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLaptops.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.dgvLaptops.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 12);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 118);
             this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1038, 403);
+            this.dgvLaptops.Size = new System.Drawing.Size(1128, 461);
             this.dgvLaptops.TabIndex = 136;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -155,7 +160,8 @@
             this.UBSoles,
             this.VersionOffice,
             this.KAM,
-            this.RAM});
+            this.RAM,
+            this.FecPrimerTraslado});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -514,6 +520,15 @@
             this.RAM.Visible = true;
             this.RAM.VisibleIndex = 11;
             // 
+            // FecPrimerTraslado
+            // 
+            this.FecPrimerTraslado.Caption = "Fecha Primer Traslado";
+            this.FecPrimerTraslado.FieldName = "FecPrimerTraslado";
+            this.FecPrimerTraslado.Name = "FecPrimerTraslado";
+            this.FecPrimerTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.FecPrimerTraslado.Visible = true;
+            this.FecPrimerTraslado.VisibleIndex = 25;
+            // 
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -528,7 +543,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(485, 185);
+            this.giftCarga.Location = new System.Drawing.Point(432, 329);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(190, 138);
             this.giftCarga.TabIndex = 140;
@@ -549,26 +564,70 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(799, 418);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(886, 595);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 144;
             this.label1.Text = "CANTIDAD REGISTROS:";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1063, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 145;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pnlCV
+            // 
+            this.pnlCV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlCV.Controls.Add(this.label2);
+            this.pnlCV.Controls.Add(this.button1);
+            this.pnlCV.Location = new System.Drawing.Point(2, 0);
+            this.pnlCV.Name = "pnlCV";
+            this.pnlCV.Size = new System.Drawing.Size(1148, 80);
+            this.pnlCV.TabIndex = 146;
+            this.pnlCV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCV_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(386, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(396, 31);
+            this.label2.TabIndex = 146;
+            this.label2.Text = "CUADRO DE VENCIMIENTO";
+            // 
             // frmReporteCV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1152, 470);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1152, 660);
+            this.Controls.Add(this.pnlCV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.cargarData);
             this.Controls.Add(this.verResumen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -581,6 +640,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
+            this.pnlCV.ResumeLayout(false);
+            this.pnlCV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,5 +685,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private DevExpress.XtraGrid.Columns.GridColumn UBSoles;
         private DevExpress.XtraGrid.Columns.GridColumn RAM;
+        private DevExpress.XtraGrid.Columns.GridColumn FecPrimerTraslado;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlCV;
+        private System.Windows.Forms.Label label2;
     }
 }

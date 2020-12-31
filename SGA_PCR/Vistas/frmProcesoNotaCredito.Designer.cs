@@ -39,14 +39,14 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.idFactura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtReferencia = new System.Windows.Forms.TextBox();
@@ -54,9 +54,13 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.pnlNC = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.pnlNC.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbFactura
@@ -65,7 +69,7 @@
             this.cmbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFactura.FormattingEnabled = true;
-            this.cmbFactura.Location = new System.Drawing.Point(33, 52);
+            this.cmbFactura.Location = new System.Drawing.Point(21, 150);
             this.cmbFactura.Name = "cmbFactura";
             this.cmbFactura.Size = new System.Drawing.Size(177, 21);
             this.cmbFactura.TabIndex = 57;
@@ -75,7 +79,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(30, 31);
+            this.label15.Location = new System.Drawing.Point(18, 129);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 16);
             this.label15.TabIndex = 58;
@@ -92,7 +96,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(155, 107);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(573, 121);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 140;
@@ -112,7 +116,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(33, 107);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(451, 121);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 139;
@@ -123,7 +127,7 @@
             // 
             // dgvFacturas
             // 
-            this.dgvFacturas.Location = new System.Drawing.Point(12, 163);
+            this.dgvFacturas.Location = new System.Drawing.Point(38, 186);
             this.dgvFacturas.MainView = this.vistaFacturas;
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -213,6 +217,16 @@
             this.GuiaSalida.VisibleIndex = 2;
             this.GuiaSalida.Width = 100;
             // 
+            // ruc
+            // 
+            this.ruc.Caption = "RUC";
+            this.ruc.FieldName = "ruc";
+            this.ruc.Name = "ruc";
+            this.ruc.OptionsColumn.AllowEdit = false;
+            this.ruc.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ruc.Visible = true;
+            this.ruc.VisibleIndex = 3;
+            // 
             // VentaSoles
             // 
             this.VentaSoles.Caption = "Venta Soles";
@@ -261,26 +275,6 @@
             this.CostoDolares.VisibleIndex = 7;
             this.CostoDolares.Width = 100;
             // 
-            // idFactura
-            // 
-            this.idFactura.Caption = "idFactura";
-            this.idFactura.FieldName = "idFactura";
-            this.idFactura.MinWidth = 40;
-            this.idFactura.Name = "idFactura";
-            this.idFactura.OptionsColumn.AllowEdit = false;
-            this.idFactura.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.idFactura.Width = 100;
-            // 
-            // ruc
-            // 
-            this.ruc.Caption = "RUC";
-            this.ruc.FieldName = "ruc";
-            this.ruc.Name = "ruc";
-            this.ruc.OptionsColumn.AllowEdit = false;
-            this.ruc.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ruc.Visible = true;
-            this.ruc.VisibleIndex = 3;
-            // 
             // fecIniPago
             // 
             this.fecIniPago.Caption = "Fecha Inicio Pago";
@@ -301,6 +295,16 @@
             this.fecFinPago.Visible = true;
             this.fecFinPago.VisibleIndex = 9;
             // 
+            // idFactura
+            // 
+            this.idFactura.Caption = "idFactura";
+            this.idFactura.FieldName = "idFactura";
+            this.idFactura.MinWidth = 40;
+            this.idFactura.Name = "idFactura";
+            this.idFactura.OptionsColumn.AllowEdit = false;
+            this.idFactura.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.idFactura.Width = 100;
+            // 
             // idSalida
             // 
             this.idSalida.Caption = "idSalida";
@@ -319,7 +323,7 @@
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(246, 52);
+            this.txtReferencia.Location = new System.Drawing.Point(234, 150);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 20);
             this.txtReferencia.TabIndex = 164;
@@ -328,7 +332,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 31);
+            this.label1.Location = new System.Drawing.Point(231, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 166;
@@ -344,7 +348,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(954, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(954, 431);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 214;
@@ -364,7 +368,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(773, 436);
+            this.btnNuevo.Location = new System.Drawing.Point(773, 433);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 213;
@@ -384,7 +388,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(854, 436);
+            this.btnGrabar.Location = new System.Drawing.Point(854, 433);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 212;
@@ -393,12 +397,55 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // pnlNC
+            // 
+            this.pnlNC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlNC.Controls.Add(this.label2);
+            this.pnlNC.Controls.Add(this.button1);
+            this.pnlNC.Location = new System.Drawing.Point(2, 3);
+            this.pnlNC.Name = "pnlNC";
+            this.pnlNC.Size = new System.Drawing.Size(1095, 104);
+            this.pnlNC.TabIndex = 215;
+            this.pnlNC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1011, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 216;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(405, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(281, 31);
+            this.label2.TabIndex = 217;
+            this.label2.Text = "NOTA DE CREDITO";
+            // 
             // frmProcesoNotaCredito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 511);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1100, 508);
+            this.Controls.Add(this.pnlNC);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
@@ -409,6 +456,7 @@
             this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.cmbFactura);
             this.Controls.Add(this.label15);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoNotaCredito";
@@ -419,6 +467,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.pnlNC.ResumeLayout(false);
+            this.pnlNC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +501,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn fecFinPago;
         private DevExpress.XtraGrid.Columns.GridColumn idSalida;
         private DevExpress.XtraGrid.Columns.GridColumn idLC;
+        private System.Windows.Forms.Panel pnlNC;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

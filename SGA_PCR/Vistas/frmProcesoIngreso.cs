@@ -22,6 +22,7 @@ namespace Apolo
         DataTable tablaIngresoTipo;
         DataTable tablaMonedaTipo;
         DataTable tablaProveedor;
+        DataTable tablaSede;
 
         Ingreso ingreso;
         IngresoDA ingresoDA;
@@ -86,6 +87,14 @@ namespace Apolo
             cmbMonedaTipo.DisplayMember = "descripcion";
             cmbMonedaTipo.ValueMember = "idAuxiliar";
 
+            //============================================
+            tablaSede = ingresoDA.ListarSede();
+            cmbSede.DataSource = tablaSede;
+            cmbSede.DisplayMember = "nombreSede";
+            cmbSede.ValueMember = "idSede";
+            //============================================
+
+
             ingreso = new Ingreso();
             ingreso.Detalles = new BindingList<IngresoDetalle>();
             ingreso.DetallesTablets = new BindingList<IngresoDetalleTablet>();
@@ -134,6 +143,7 @@ namespace Apolo
             ingreso.IdProveedor = Convert.ToInt32(cmbProveedor.SelectedValue.ToString());
             ingreso.IdTipoIngreso = Convert.ToInt32(cmbTipoIngreso.SelectedValue.ToString());
             ingreso.IdMonedaTipo = Convert.ToInt32(cmbMonedaTipo.SelectedValue.ToString());
+            ingreso.IdSede = Convert.ToInt32(cmbSede.SelectedValue.ToString());
 
             int i = cmbProveedor.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
@@ -152,6 +162,12 @@ namespace Apolo
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
                 ingreso.MonedaTipo = tablaMonedaTipo.Rows[i]["descripcion"].ToString();
+            }
+
+            i = cmbSede.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                ingreso.TipoSede = tablaSede.Rows[i]["nombreSede"].ToString();
             }
 
             ingreso.FechaIngreso = dtpFechaIngreso.Value;
@@ -279,6 +295,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -318,6 +335,7 @@ namespace Apolo
                     cmbProveedor.Enabled = true;
                     cmbTipoIngreso.Enabled = true;
                     cmbMonedaTipo.Enabled = true;
+                    cmbSede.Enabled = true;
                     txtMontoCambio.Enabled = true;
                     txtFactura.Enabled = true;
                     txtGuia.Enabled = true;
@@ -357,6 +375,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -394,6 +413,7 @@ namespace Apolo
                     cmbProveedor.Enabled = true;
                     cmbTipoIngreso.Enabled = true;
                     cmbMonedaTipo.Enabled = true;
+                    cmbSede.Enabled = true;
                     txtMontoCambio.Enabled = true;
                     txtFactura.Enabled = true;
                     txtGuia.Enabled = true;
@@ -431,6 +451,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -470,6 +491,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -509,6 +531,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -546,6 +569,7 @@ namespace Apolo
                     cmbProveedor.Enabled = false;
                     cmbTipoIngreso.Enabled = false;
                     cmbMonedaTipo.Enabled = false;
+                    cmbSede.Enabled = false;
                     txtMontoCambio.Enabled = false;
                     txtFactura.Enabled = false;
                     txtGuia.Enabled = false;
@@ -587,6 +611,7 @@ namespace Apolo
             cmbTipoIngreso.SelectedIndex = -1;
             cmbProveedor.SelectedIndex = -1;
             cmbMonedaTipo.SelectedIndex = -1;
+            cmbSede.SelectedIndex = -1;
 
             txtNroIngreso.Text = "";
             txtRUC.Text = "";
@@ -620,6 +645,7 @@ namespace Apolo
             cmbProveedor.SelectedValue = ingreso.IdProveedor;
             cmbTipoIngreso.SelectedValue = ingreso.IdTipoIngreso;
             cmbMonedaTipo.SelectedValue = ingreso.IdMonedaTipo;
+            cmbSede.SelectedValue = ingreso.IdSede;
             txtRUC.Text = ingreso.Ruc;
             dtpFechaIngreso.Value = ingreso.FechaIngreso;
             txtFactura.Text = ingreso.Factura;
@@ -1597,6 +1623,13 @@ namespace Apolo
             if (cmbMonedaTipo.SelectedIndex == -1)
             {
                 MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de moneda.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cmbSede.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica la sede.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -2907,5 +2940,31 @@ namespace Apolo
 
         }
 
+        private void frmProcesoIngreso_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        int posY = 0;
+        int posX = 0;
+        private void pnlC_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
     }
 }

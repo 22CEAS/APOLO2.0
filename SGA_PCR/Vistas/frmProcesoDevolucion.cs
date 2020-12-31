@@ -20,11 +20,16 @@ namespace Apolo
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
         DataTable tablaCliente;
         DataTable tablaLaptops;
+        DataTable tablaSede;
         ClienteDA clienteDA;
         AlquilerDA alquilerDA;
         DevolucionDA devolucionDA;
         Devolucion devolucion;
         DevolucionDetalle detalleTemp;
+
+
+        Ingreso ingreso;
+        IngresoDA ingresoDA;
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -53,6 +58,9 @@ namespace Apolo
             devolucionDA = new DevolucionDA();
             devolucion = new Devolucion();
 
+            ingresoDA = new IngresoDA();
+            ingreso = new Ingreso();
+
             detalleTemp = new DevolucionDetalle();
             dtpFechaIngreso.Value = DateTime.Now;
 
@@ -69,6 +77,14 @@ namespace Apolo
             txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
 
             tablaLaptops = devolucionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
+
+            //===============================================
+            tablaSede = ingresoDA.ListarSede();
+            cmbSede.DataSource = tablaSede;
+            cmbSede.DisplayMember = "nombreSede";
+            cmbSede.ValueMember = "idSede";
+            cmbSede.SelectedIndex = -1;
+            //===============================================
 
             ObtenerDatosDevolucion();
             devolucion.LlenarDatos(tablaLaptops);
@@ -89,6 +105,14 @@ namespace Apolo
             aux2 = txtNroDocumento.Text;
             devolucion.RucDni = aux2.Trim();
 
+            
+            int i = cmbSede.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                devolucion.IdSede = Convert.ToInt32(cmbSede.SelectedValue.ToString());
+                devolucion.TipoSede = tablaSede.Rows[i]["nombreSede"].ToString();
+            }
+
         }
 
         public void estadoComponentes(TipoVista estado)
@@ -97,6 +121,7 @@ namespace Apolo
             {
                 case TipoVista.Inicial:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -115,6 +140,7 @@ namespace Apolo
                     break;
                 case TipoVista.Nuevo:
                     cmbCliente.Enabled = true;
+                    cmbSede.Enabled = true;
                     dtpFechaIngreso.Enabled = true;
                     txtNroGuia.Enabled = true;
                     txtNroDocumento.Enabled = true;
@@ -134,6 +160,7 @@ namespace Apolo
                     break;
                 case TipoVista.Guardar:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -153,6 +180,7 @@ namespace Apolo
                     break;
                 case TipoVista.Modificar:
                     cmbCliente.Enabled = true;
+                    cmbSede.Enabled = true;
                     dtpFechaIngreso.Enabled = true;
                     txtNroGuia.Enabled = true;
                     txtNroDocumento.Enabled = true;
@@ -171,6 +199,7 @@ namespace Apolo
                     break;
                 case TipoVista.Vista:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -189,6 +218,7 @@ namespace Apolo
                     break;
                 case TipoVista.Limpiar:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -207,6 +237,7 @@ namespace Apolo
                     break;
                 case TipoVista.Duplicar:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -223,6 +254,7 @@ namespace Apolo
                     break;
                 case TipoVista.Anular:
                     cmbCliente.Enabled = false;
+                    cmbSede.Enabled = false;
                     dtpFechaIngreso.Enabled = false;
                     txtNroGuia.Enabled = false;
                     txtNroDocumento.Enabled = false;
@@ -245,6 +277,7 @@ namespace Apolo
         public void limpiarComponentes()
         {
             cmbCliente.SelectedIndex = 0;
+            cmbSede.SelectedIndex = -1;
             txtNroDevolucion.Text = "";
             txtNroGuia.Text = "";
             dtpFechaIngreso.Value = DateTime.Now;
@@ -278,6 +311,7 @@ namespace Apolo
             txtNroGuia.Text = devolucion.GuiaDevolucion.ToString();
             dtpFechaIngreso.Value = devolucion.FechaDevolucion;
             cmbCliente.SelectedValue = devolucion.IdCliente;
+            cmbSede.SelectedValue = devolucion.IdSede;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -671,6 +705,24 @@ namespace Apolo
             }
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlD_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
     }
 }

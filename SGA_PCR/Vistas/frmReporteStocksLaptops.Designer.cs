@@ -31,6 +31,8 @@
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteStocksLaptops));
+            this.IdEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoSede = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,7 +52,9 @@
             this.RucCliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idSalidaAlquilado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idSede = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
@@ -66,7 +70,6 @@
             this.verResumen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -77,7 +80,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.FechaTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlInv = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -87,21 +94,39 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.pnlInv.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // IdEstado
+            // 
+            this.IdEstado.Caption = "Id Estado";
+            this.IdEstado.FieldName = "Estado";
+            this.IdEstado.Name = "IdEstado";
+            this.IdEstado.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // TipoSede
+            // 
+            this.TipoSede.Caption = "Sede";
+            this.TipoSede.FieldName = "TipoSede";
+            this.TipoSede.Name = "TipoSede";
+            this.TipoSede.Visible = true;
+            this.TipoSede.VisibleIndex = 18;
+            this.TipoSede.Width = 150;
             // 
             // dgvLaptops
             // 
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.Location = new System.Drawing.Point(11, 139);
+            this.dgvLaptops.Location = new System.Drawing.Point(15, 177);
             this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1092, 354);
+            this.dgvLaptops.Size = new System.Drawing.Size(1171, 388);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -140,13 +165,22 @@
             this.RucCliente,
             this.Ubicacion,
             this.SerieFabrica,
-            this.IdSalida,
-            this.FechaTraslado});
-            gridFormatRule1.Name = "FechaTraslado";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Red;
+            this.idSalidaAlquilado,
+            this.fecTraslado,
+            this.idSede,
+            this.TipoSede,
+            this.IdEstado});
+            gridFormatRule1.Column = this.IdEstado;
+            gridFormatRule1.ColumnApplyTo = this.TipoSede;
+            gridFormatRule1.Name = "5555";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.White;
+            formatConditionRuleValue1.Appearance.BackColor2 = System.Drawing.Color.White;
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.White;
+            formatConditionRuleValue1.Appearance.Options.HighPriority = true;
             formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
             formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue1.Expression = "[FechaTraslado] = \'12/12/999\'";
+            formatConditionRuleValue1.Expression = "[Estado] = 4 Or [Estado] = 12 Or [Estado] = 5";
             gridFormatRule1.Rule = formatConditionRuleValue1;
             this.vista.FormatRules.Add(gridFormatRule1);
             this.vista.GridControl = this.dgvLaptops;
@@ -359,18 +393,36 @@
             this.SerieFabrica.VisibleIndex = 15;
             this.SerieFabrica.Width = 150;
             // 
-            // IdSalida
+            // idSalidaAlquilado
             // 
-            this.IdSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.IdSalida.AppearanceHeader.Options.UseBackColor = true;
-            this.IdSalida.Caption = "Id Salida";
-            this.IdSalida.FieldName = "IdSalida";
-            this.IdSalida.MinWidth = 40;
-            this.IdSalida.Name = "IdSalida";
-            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.IdSalida.Visible = true;
-            this.IdSalida.VisibleIndex = 16;
-            this.IdSalida.Width = 80;
+            this.idSalidaAlquilado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.idSalidaAlquilado.AppearanceHeader.Options.UseBackColor = true;
+            this.idSalidaAlquilado.Caption = "Id Salida";
+            this.idSalidaAlquilado.FieldName = "IdSalida";
+            this.idSalidaAlquilado.MinWidth = 40;
+            this.idSalidaAlquilado.Name = "idSalidaAlquilado";
+            this.idSalidaAlquilado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.idSalidaAlquilado.Visible = true;
+            this.idSalidaAlquilado.VisibleIndex = 16;
+            this.idSalidaAlquilado.Width = 80;
+            // 
+            // fecTraslado
+            // 
+            this.fecTraslado.Caption = "Fecha Traslado";
+            this.fecTraslado.DisplayFormat.FormatString = "d";
+            this.fecTraslado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.fecTraslado.FieldName = "FechaTraslado";
+            this.fecTraslado.Name = "fecTraslado";
+            this.fecTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.fecTraslado.Visible = true;
+            this.fecTraslado.VisibleIndex = 17;
+            this.fecTraslado.Width = 120;
+            // 
+            // idSede
+            // 
+            this.idSede.Caption = "id Sede";
+            this.idSede.FieldName = "IdSede";
+            this.idSede.Name = "idSede";
             // 
             // btnExportar
             // 
@@ -384,7 +436,7 @@
             this.btnExportar.ForeColor = System.Drawing.Color.Black;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1109, 193);
+            this.btnExportar.Location = new System.Drawing.Point(15, 571);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(82, 63);
             this.btnExportar.TabIndex = 139;
@@ -396,7 +448,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(419, 266);
+            this.giftCarga.Location = new System.Drawing.Point(426, 331);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(239, 185);
             this.giftCarga.TabIndex = 146;
@@ -425,7 +477,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1119, 308);
+            this.button1.Location = new System.Drawing.Point(112, 571);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 63);
             this.button1.TabIndex = 149;
@@ -436,11 +488,11 @@
             // 
             // txtCantidadFiltrada
             // 
-            this.txtCantidadFiltrada.BackColor = System.Drawing.Color.White;
+            this.txtCantidadFiltrada.BackColor = System.Drawing.Color.Silver;
             this.txtCantidadFiltrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCantidadFiltrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadFiltrada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtCantidadFiltrada.Location = new System.Drawing.Point(1000, 496);
+            this.txtCantidadFiltrada.Location = new System.Drawing.Point(1100, 571);
             this.txtCantidadFiltrada.Name = "txtCantidadFiltrada";
             this.txtCantidadFiltrada.ReadOnly = true;
             this.txtCantidadFiltrada.Size = new System.Drawing.Size(86, 19);
@@ -452,7 +504,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(794, 496);
+            this.label2.Location = new System.Drawing.Point(874, 571);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 20);
             this.label2.TabIndex = 170;
@@ -460,20 +512,20 @@
             // 
             // txtTotalLaptops
             // 
-            this.txtTotalLaptops.BackColor = System.Drawing.Color.White;
+            this.txtTotalLaptops.BackColor = System.Drawing.Color.Silver;
             this.txtTotalLaptops.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalLaptops.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtTotalLaptops.Location = new System.Drawing.Point(32, 29);
             this.txtTotalLaptops.Name = "txtTotalLaptops";
             this.txtTotalLaptops.ReadOnly = true;
-            this.txtTotalLaptops.Size = new System.Drawing.Size(127, 37);
+            this.txtTotalLaptops.Size = new System.Drawing.Size(97, 37);
             this.txtTotalLaptops.TabIndex = 183;
             this.txtTotalLaptops.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDesfasadas
             // 
-            this.txtDesfasadas.BackColor = System.Drawing.Color.White;
+            this.txtDesfasadas.BackColor = System.Drawing.Color.Silver;
             this.txtDesfasadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDesfasadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesfasadas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -486,7 +538,7 @@
             // 
             // txtPersonales
             // 
-            this.txtPersonales.BackColor = System.Drawing.Color.White;
+            this.txtPersonales.BackColor = System.Drawing.Color.Silver;
             this.txtPersonales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -499,7 +551,7 @@
             // 
             // txtReservadas
             // 
-            this.txtReservadas.BackColor = System.Drawing.Color.White;
+            this.txtReservadas.BackColor = System.Drawing.Color.Silver;
             this.txtReservadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtReservadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReservadas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -512,7 +564,7 @@
             // 
             // txtAlquilados
             // 
-            this.txtAlquilados.BackColor = System.Drawing.Color.White;
+            this.txtAlquilados.BackColor = System.Drawing.Color.Silver;
             this.txtAlquilados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlquilados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -525,7 +577,7 @@
             // 
             // txtDisponibles
             // 
-            this.txtDisponibles.BackColor = System.Drawing.Color.White;
+            this.txtDisponibles.BackColor = System.Drawing.Color.Silver;
             this.txtDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -540,7 +592,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(1151, 340);
+            this.verResumen.Location = new System.Drawing.Point(1151, 413);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(10, 10);
             this.verResumen.TabIndex = 185;
@@ -549,12 +601,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtDisponibles);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(209, 40);
+            this.panel1.Location = new System.Drawing.Point(207, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(191, 80);
             this.panel1.TabIndex = 186;
@@ -570,26 +622,14 @@
             this.label3.TabIndex = 187;
             this.label3.Text = "LAPTOPS DISPONIBLES";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(505, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 29);
-            this.label4.TabIndex = 188;
-            this.label4.Text = "RESUMEN";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtAlquilados);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(607, 40);
+            this.panel2.Location = new System.Drawing.Point(798, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(191, 80);
             this.panel2.TabIndex = 188;
@@ -607,12 +647,12 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtReservadas);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 40);
+            this.panel3.Location = new System.Drawing.Point(10, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(191, 80);
             this.panel3.TabIndex = 189;
@@ -630,12 +670,12 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.txtPersonales);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(803, 40);
+            this.panel4.Location = new System.Drawing.Point(601, 93);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(191, 80);
             this.panel4.TabIndex = 190;
@@ -653,12 +693,12 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.txtDesfasadas);
             this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(406, 40);
+            this.panel5.Location = new System.Drawing.Point(404, 93);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(191, 80);
             this.panel5.TabIndex = 191;
@@ -676,15 +716,16 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Silver;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.txtTotalLaptops);
             this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(1000, 40);
+            this.panel6.Location = new System.Drawing.Point(998, 93);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(191, 80);
+            this.panel6.Size = new System.Drawing.Size(161, 80);
             this.panel6.TabIndex = 192;
+            this.panel6.Visible = false;
             // 
             // label9
             // 
@@ -697,37 +738,92 @@
             this.label9.TabIndex = 187;
             this.label9.Text = "TOTAL LAPTOPS OFICINA";
             // 
-            // FechaTraslado
+            // label1
             // 
-            this.FechaTraslado.Caption = "Fecha Traslado";
-            this.FechaTraslado.DisplayFormat.FormatString = "{MM/dd/yyyy}";
-            this.FechaTraslado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.FechaTraslado.FieldName = "FechaTraslado";
-            this.FechaTraslado.Name = "FechaTraslado";
-            this.FechaTraslado.Visible = true;
-            this.FechaTraslado.VisibleIndex = 17;
-            this.FechaTraslado.Width = 120;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(183, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 20);
+            this.label1.TabIndex = 188;
+            this.label1.Text = "LAPTOPS EN OFICINA";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Location = new System.Drawing.Point(10, 70);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(579, 22);
+            this.panel7.TabIndex = 193;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // pnlInv
+            // 
+            this.pnlInv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlInv.Controls.Add(this.button2);
+            this.pnlInv.Controls.Add(this.label4);
+            this.pnlInv.Location = new System.Drawing.Point(2, 2);
+            this.pnlInv.Name = "pnlInv";
+            this.pnlInv.Size = new System.Drawing.Size(1202, 65);
+            this.pnlInv.TabIndex = 194;
+            this.pnlInv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(1110, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 57);
+            this.button2.TabIndex = 195;
+            this.button2.Text = "CERRAR";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(490, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 31);
+            this.label4.TabIndex = 189;
+            this.label4.Text = "INVENTARIO";
             // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1206, 531);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1206, 640);
+            this.Controls.Add(this.pnlInv);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.verResumen);
             this.Controls.Add(this.txtCantidadFiltrada);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.cargarData);
+            this.Controls.Add(this.verResumen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -752,6 +848,10 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.pnlInv.ResumeLayout(false);
+            this.pnlInv.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -775,7 +875,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ubicacion;
         private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
         private System.Windows.Forms.Button btnExportar;
-        private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn idSalidaAlquilado;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
         private System.Windows.Forms.Button button1;
@@ -792,7 +892,6 @@
         public DevExpress.XtraGrid.GridControl dgvLaptops;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
@@ -804,6 +903,14 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraGrid.Columns.GridColumn GeneracionProcesador;
-        private DevExpress.XtraGrid.Columns.GridColumn FechaTraslado;
+        private DevExpress.XtraGrid.Columns.GridColumn fecTraslado;
+        private DevExpress.XtraGrid.Columns.GridColumn idSede;
+        private DevExpress.XtraGrid.Columns.GridColumn IdEstado;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoSede;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlInv;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
     }
 }

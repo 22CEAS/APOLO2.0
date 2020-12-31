@@ -100,6 +100,9 @@
             this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvEquipos = new DevExpress.XtraGrid.GridControl();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.pnlD = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).BeginInit();
@@ -112,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.pnlD.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelX4
@@ -123,7 +127,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(611, 114);
+            this.LabelX4.Location = new System.Drawing.Point(618, 162);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(68, 18);
             this.LabelX4.TabIndex = 29;
@@ -132,7 +136,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(918, 149);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(945, 197);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarProducto.TabIndex = 8;
@@ -144,7 +148,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 78);
+            this.label4.Location = new System.Drawing.Point(52, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 24;
@@ -154,7 +158,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 114);
+            this.label1.Location = new System.Drawing.Point(52, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 22;
@@ -169,7 +173,7 @@
             this.dtpFechaTraslado.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaTraslado.ButtonDropDown.Visible = true;
             this.dtpFechaTraslado.IsPopupCalendarOpen = false;
-            this.dtpFechaTraslado.Location = new System.Drawing.Point(195, 74);
+            this.dtpFechaTraslado.Location = new System.Drawing.Point(202, 122);
             // 
             // 
             // 
@@ -198,7 +202,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(681, 113);
+            this.txtNroDocumento.Location = new System.Drawing.Point(688, 161);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.ReadOnly = true;
             this.txtNroDocumento.Size = new System.Drawing.Size(210, 20);
@@ -208,7 +212,7 @@
             // 
             this.lblNroDias.AutoSize = true;
             this.lblNroDias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroDias.Location = new System.Drawing.Point(766, 79);
+            this.lblNroDias.Location = new System.Drawing.Point(773, 127);
             this.lblNroDias.Name = "lblNroDias";
             this.lblNroDias.Size = new System.Drawing.Size(46, 16);
             this.lblNroDias.TabIndex = 33;
@@ -218,7 +222,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(352, 76);
+            this.label7.Location = new System.Drawing.Point(359, 124);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 16);
             this.label7.TabIndex = 35;
@@ -233,7 +237,7 @@
             this.dtpIniPlazo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpIniPlazo.ButtonDropDown.Visible = true;
             this.dtpIniPlazo.IsPopupCalendarOpen = false;
-            this.dtpIniPlazo.Location = new System.Drawing.Point(488, 76);
+            this.dtpIniPlazo.Location = new System.Drawing.Point(495, 124);
             // 
             // 
             // 
@@ -264,7 +268,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 31);
+            this.label8.Location = new System.Drawing.Point(52, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 16);
             this.label8.TabIndex = 37;
@@ -272,7 +276,7 @@
             // 
             // txtNroAlquiler
             // 
-            this.txtNroAlquiler.Location = new System.Drawing.Point(136, 30);
+            this.txtNroAlquiler.Location = new System.Drawing.Point(143, 78);
             this.txtNroAlquiler.Name = "txtNroAlquiler";
             this.txtNroAlquiler.ReadOnly = true;
             this.txtNroAlquiler.Size = new System.Drawing.Size(106, 20);
@@ -282,7 +286,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(621, 80);
+            this.label9.Location = new System.Drawing.Point(628, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 16);
             this.label9.TabIndex = 38;
@@ -297,7 +301,7 @@
             this.dtpFinPlazo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFinPlazo.ButtonDropDown.Visible = true;
             this.dtpFinPlazo.IsPopupCalendarOpen = false;
-            this.dtpFinPlazo.Location = new System.Drawing.Point(644, 76);
+            this.dtpFinPlazo.Location = new System.Drawing.Point(651, 124);
             // 
             // 
             // 
@@ -328,7 +332,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(651, 217);
+            this.label11.Location = new System.Drawing.Point(660, 245);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 16);
             this.label11.TabIndex = 42;
@@ -338,7 +342,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(651, 369);
+            this.label12.Location = new System.Drawing.Point(660, 397);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 16);
             this.label12.TabIndex = 43;
@@ -347,7 +351,7 @@
             // btnEliminarLicencia
             // 
             this.btnEliminarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarLicencia.Location = new System.Drawing.Point(1066, 578);
+            this.btnEliminarLicencia.Location = new System.Drawing.Point(1075, 606);
             this.btnEliminarLicencia.Name = "btnEliminarLicencia";
             this.btnEliminarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnEliminarLicencia.TabIndex = 49;
@@ -359,7 +363,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(650, 509);
+            this.label13.Location = new System.Drawing.Point(659, 537);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 16);
             this.label13.TabIndex = 48;
@@ -369,7 +373,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(43, 151);
+            this.label15.Location = new System.Drawing.Point(50, 199);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 16);
             this.label15.TabIndex = 54;
@@ -384,7 +388,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(611, 150);
+            this.labelX1.Location = new System.Drawing.Point(618, 198);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(76, 18);
             this.labelX1.TabIndex = 56;
@@ -393,7 +397,7 @@
             // 
             // txtNroContrato
             // 
-            this.txtNroContrato.Location = new System.Drawing.Point(693, 151);
+            this.txtNroContrato.Location = new System.Drawing.Point(700, 199);
             this.txtNroContrato.Name = "txtNroContrato";
             this.txtNroContrato.Size = new System.Drawing.Size(85, 20);
             this.txtNroContrato.TabIndex = 6;
@@ -408,7 +412,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(793, 154);
+            this.labelX2.Location = new System.Drawing.Point(800, 202);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(42, 18);
             this.labelX2.TabIndex = 58;
@@ -417,7 +421,7 @@
             // 
             // txtNroOC
             // 
-            this.txtNroOC.Location = new System.Drawing.Point(837, 153);
+            this.txtNroOC.Location = new System.Drawing.Point(844, 201);
             this.txtNroOC.Name = "txtNroOC";
             this.txtNroOC.Size = new System.Drawing.Size(85, 20);
             this.txtNroOC.TabIndex = 7;
@@ -429,7 +433,7 @@
             this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(112, 110);
+            this.cmbCliente.Location = new System.Drawing.Point(119, 158);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(466, 21);
             this.cmbCliente.TabIndex = 4;
@@ -441,7 +445,7 @@
             this.cmbSucursal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(112, 149);
+            this.cmbSucursal.Location = new System.Drawing.Point(119, 197);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(466, 21);
             this.cmbSucursal.TabIndex = 5;
@@ -449,7 +453,7 @@
             // btnGuardarMemoria
             // 
             this.btnGuardarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarMemoria.Location = new System.Drawing.Point(1066, 306);
+            this.btnGuardarMemoria.Location = new System.Drawing.Point(1075, 334);
             this.btnGuardarMemoria.Name = "btnGuardarMemoria";
             this.btnGuardarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarMemoria.TabIndex = 136;
@@ -460,7 +464,7 @@
             // btnAgregarMemoria
             // 
             this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMemoria.Location = new System.Drawing.Point(1066, 257);
+            this.btnAgregarMemoria.Location = new System.Drawing.Point(1075, 285);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarMemoria.TabIndex = 137;
@@ -471,7 +475,7 @@
             // btnAgregarDisco
             // 
             this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarDisco.Location = new System.Drawing.Point(1066, 407);
+            this.btnAgregarDisco.Location = new System.Drawing.Point(1075, 435);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarDisco.TabIndex = 139;
@@ -482,7 +486,7 @@
             // btnGuardarDisco
             // 
             this.btnGuardarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarDisco.Location = new System.Drawing.Point(1066, 451);
+            this.btnGuardarDisco.Location = new System.Drawing.Point(1075, 479);
             this.btnGuardarDisco.Name = "btnGuardarDisco";
             this.btnGuardarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarDisco.TabIndex = 138;
@@ -493,7 +497,7 @@
             // btnAgregarLicencia
             // 
             this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarLicencia.Location = new System.Drawing.Point(1066, 542);
+            this.btnAgregarLicencia.Location = new System.Drawing.Point(1075, 570);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarLicencia.TabIndex = 141;
@@ -504,7 +508,7 @@
             // btnCaducidadLicencia
             // 
             this.btnCaducidadLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaducidadLicencia.Location = new System.Drawing.Point(1066, 615);
+            this.btnCaducidadLicencia.Location = new System.Drawing.Point(1075, 643);
             this.btnCaducidadLicencia.Name = "btnCaducidadLicencia";
             this.btnCaducidadLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnCaducidadLicencia.TabIndex = 140;
@@ -523,7 +527,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(-5, 594);
+            this.btnImprimir.Location = new System.Drawing.Point(2, 631);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(83, 66);
             this.btnImprimir.TabIndex = 146;
@@ -542,7 +546,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(-10, 523);
+            this.btnCancelar.Location = new System.Drawing.Point(-3, 560);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 65);
             this.btnCancelar.TabIndex = 145;
@@ -561,7 +565,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(-11, 306);
+            this.btnEditar.Location = new System.Drawing.Point(-4, 343);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(99, 65);
             this.btnEditar.TabIndex = 144;
@@ -581,7 +585,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(7, 237);
+            this.btnNuevo.Location = new System.Drawing.Point(14, 274);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(76, 63);
             this.btnNuevo.TabIndex = 143;
@@ -601,7 +605,7 @@
             this.btnGrabarPreAlquiler.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabarPreAlquiler.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabarPreAlquiler.Image")));
             this.btnGrabarPreAlquiler.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabarPreAlquiler.Location = new System.Drawing.Point(-6, 378);
+            this.btnGrabarPreAlquiler.Location = new System.Drawing.Point(1, 415);
             this.btnGrabarPreAlquiler.Name = "btnGrabarPreAlquiler";
             this.btnGrabarPreAlquiler.Size = new System.Drawing.Size(94, 64);
             this.btnGrabarPreAlquiler.TabIndex = 142;
@@ -621,9 +625,9 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(248, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(255, 60);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(74, 56);
+            this.btnBuscar.Size = new System.Drawing.Size(62, 56);
             this.btnBuscar.TabIndex = 147;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -634,7 +638,7 @@
             // 
             this.btnAgregarGuia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarGuia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarGuia.Location = new System.Drawing.Point(468, 204);
+            this.btnAgregarGuia.Location = new System.Drawing.Point(477, 232);
             this.btnAgregarGuia.Name = "btnAgregarGuia";
             this.btnAgregarGuia.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarGuia.TabIndex = 148;
@@ -653,7 +657,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(2, 451);
+            this.btnAnular.Location = new System.Drawing.Point(9, 488);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(73, 66);
             this.btnAnular.TabIndex = 149;
@@ -666,7 +670,7 @@
             // 
             this.lblContador.AutoSize = true;
             this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContador.Location = new System.Drawing.Point(98, 661);
+            this.lblContador.Location = new System.Drawing.Point(107, 689);
             this.lblContador.Name = "lblContador";
             this.lblContador.Size = new System.Drawing.Size(162, 16);
             this.lblContador.TabIndex = 153;
@@ -677,10 +681,10 @@
             this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLicencias.Location = new System.Drawing.Point(635, 537);
+            this.dgvLicencias.Location = new System.Drawing.Point(644, 565);
             this.dgvLicencias.MainView = this.vistaLicencias;
             this.dgvLicencias.Name = "dgvLicencias";
-            this.dgvLicencias.Size = new System.Drawing.Size(407, 109);
+            this.dgvLicencias.Size = new System.Drawing.Size(405, 118);
             this.dgvLicencias.TabIndex = 193;
             this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaLicencias});
@@ -770,10 +774,10 @@
             this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDiscos.Location = new System.Drawing.Point(635, 396);
+            this.dgvDiscos.Location = new System.Drawing.Point(644, 424);
             this.dgvDiscos.MainView = this.vistaDiscos;
             this.dgvDiscos.Name = "dgvDiscos";
-            this.dgvDiscos.Size = new System.Drawing.Size(405, 98);
+            this.dgvDiscos.Size = new System.Drawing.Size(403, 107);
             this.dgvDiscos.TabIndex = 194;
             this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaDiscos});
@@ -870,10 +874,10 @@
             this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMemoria.Location = new System.Drawing.Point(635, 239);
+            this.dgvMemoria.Location = new System.Drawing.Point(644, 267);
             this.dgvMemoria.MainView = this.vistaMemorias;
             this.dgvMemoria.Name = "dgvMemoria";
-            this.dgvMemoria.Size = new System.Drawing.Size(405, 107);
+            this.dgvMemoria.Size = new System.Drawing.Size(403, 116);
             this.dgvMemoria.TabIndex = 195;
             this.dgvMemoria.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaMemorias});
@@ -976,7 +980,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(223, 188);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(230, 225);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 198;
@@ -996,7 +1000,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(101, 188);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(108, 225);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 197;
@@ -1108,12 +1112,12 @@
             this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquipos.Location = new System.Drawing.Point(94, 244);
+            this.dgvEquipos.Location = new System.Drawing.Point(103, 272);
             this.dgvEquipos.MainView = this.vistaEquipos;
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.dgvEquipos.Size = new System.Drawing.Size(503, 402);
+            this.dgvEquipos.Size = new System.Drawing.Size(501, 411);
             this.dgvEquipos.TabIndex = 199;
             this.dgvEquipos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaEquipos});
@@ -1125,12 +1129,55 @@
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
+            // pnlD
+            // 
+            this.pnlD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlD.Controls.Add(this.label2);
+            this.pnlD.Controls.Add(this.button1);
+            this.pnlD.Location = new System.Drawing.Point(3, 1);
+            this.pnlD.Name = "pnlD";
+            this.pnlD.Size = new System.Drawing.Size(1140, 62);
+            this.pnlD.TabIndex = 200;
+            this.pnlD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlD_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(433, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 31);
+            this.label2.TabIndex = 202;
+            this.label2.Text = "ALQUILER";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1065, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 56);
+            this.button1.TabIndex = 201;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProcesoAlquiler
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1147, 702);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1145, 711);
+            this.Controls.Add(this.pnlD);
             this.Controls.Add(this.dgvEquipos);
             this.Controls.Add(this.btnDeseleccionarFilas);
             this.Controls.Add(this.btnSeleccionarFilas);
@@ -1176,6 +1223,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaTraslado);
             this.Controls.Add(this.txtNroDocumento);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoAlquiler";
@@ -1183,6 +1231,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler";
+            this.Load += new System.EventHandler(this.frmProcesoAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).EndInit();
@@ -1195,6 +1244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.pnlD.ResumeLayout(false);
+            this.pnlD.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1273,5 +1324,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn IdLC;
         public DevExpress.XtraGrid.GridControl dgvEquipos;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private System.Windows.Forms.Panel pnlD;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

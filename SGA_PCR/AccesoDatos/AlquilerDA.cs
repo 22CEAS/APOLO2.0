@@ -563,7 +563,7 @@ namespace AccesoDatos
 
                 if (datosSalida != null)
                 {
-                    int idSalidaDet = Convert.ToInt32(datosSalida[0]);
+                    det.IdAlquilerDetalle = Convert.ToInt32(datosSalida[0]);
                     error = true;
                 }
                 else

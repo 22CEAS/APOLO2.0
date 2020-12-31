@@ -53,6 +53,10 @@
             this.btnAgregarMarcaProcesador = new System.Windows.Forms.Button();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.pnlP = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlP.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelX2
@@ -64,7 +68,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(26, 202);
+            this.labelX2.Location = new System.Drawing.Point(26, 287);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(71, 16);
             this.labelX2.TabIndex = 103;
@@ -79,7 +83,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(26, 121);
+            this.labelX1.Location = new System.Drawing.Point(26, 206);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(30, 16);
             this.labelX1.TabIndex = 102;
@@ -93,7 +97,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(26, 288);
+            this.chbActivo.Location = new System.Drawing.Point(26, 373);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 101;
@@ -111,7 +115,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(744, 320);
+            this.btnImprimir.Location = new System.Drawing.Point(744, 407);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 100;
@@ -130,7 +134,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(739, 249);
+            this.btnCancelar.Location = new System.Drawing.Point(739, 336);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 99;
@@ -149,7 +153,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(739, 101);
+            this.btnEditar.Location = new System.Drawing.Point(739, 188);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 98;
@@ -169,7 +173,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(739, 34);
+            this.btnNuevo.Location = new System.Drawing.Point(739, 121);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 97;
@@ -189,7 +193,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(739, 180);
+            this.btnGrabar.Location = new System.Drawing.Point(739, 267);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 96;
@@ -203,7 +207,7 @@
             this.cmbGeneracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGeneracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGeneracion.FormattingEnabled = true;
-            this.cmbGeneracion.Location = new System.Drawing.Point(26, 224);
+            this.cmbGeneracion.Location = new System.Drawing.Point(26, 309);
             this.cmbGeneracion.Name = "cmbGeneracion";
             this.cmbGeneracion.Size = new System.Drawing.Size(155, 21);
             this.cmbGeneracion.TabIndex = 94;
@@ -213,7 +217,7 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(26, 143);
+            this.cmbTipo.Location = new System.Drawing.Point(26, 228);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(155, 21);
             this.cmbTipo.TabIndex = 93;
@@ -226,7 +230,7 @@
             this.dgvProcesadores.BackColor = System.Drawing.Color.White;
             this.dgvProcesadores.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvProcesadores.ForeColor = System.Drawing.Color.Black;
-            this.dgvProcesadores.Location = new System.Drawing.Point(261, 31);
+            this.dgvProcesadores.Location = new System.Drawing.Point(267, 118);
             this.dgvProcesadores.MaximumSize = new System.Drawing.Size(550, 352);
             this.dgvProcesadores.MinimumSize = new System.Drawing.Size(419, 352);
             this.dgvProcesadores.Name = "dgvProcesadores";
@@ -313,7 +317,7 @@
             this.btnAgregarTipoProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTipoProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoProcesador.Image")));
             this.btnAgregarTipoProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarTipoProcesador.Location = new System.Drawing.Point(187, 133);
+            this.btnAgregarTipoProcesador.Location = new System.Drawing.Point(187, 220);
             this.btnAgregarTipoProcesador.Name = "btnAgregarTipoProcesador";
             this.btnAgregarTipoProcesador.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarTipoProcesador.TabIndex = 104;
@@ -332,7 +336,7 @@
             this.btnAgregarGeneracionProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarGeneracionProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarGeneracionProcesador.Image")));
             this.btnAgregarGeneracionProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarGeneracionProcesador.Location = new System.Drawing.Point(187, 213);
+            this.btnAgregarGeneracionProcesador.Location = new System.Drawing.Point(187, 300);
             this.btnAgregarGeneracionProcesador.Name = "btnAgregarGeneracionProcesador";
             this.btnAgregarGeneracionProcesador.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarGeneracionProcesador.TabIndex = 105;
@@ -351,7 +355,7 @@
             this.btnAgregarMarcaProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarMarcaProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMarcaProcesador.Image")));
             this.btnAgregarMarcaProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarMarcaProcesador.Location = new System.Drawing.Point(187, 64);
+            this.btnAgregarMarcaProcesador.Location = new System.Drawing.Point(187, 151);
             this.btnAgregarMarcaProcesador.Name = "btnAgregarMarcaProcesador";
             this.btnAgregarMarcaProcesador.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarMarcaProcesador.TabIndex = 108;
@@ -368,7 +372,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(26, 52);
+            this.labelX3.Location = new System.Drawing.Point(26, 137);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(41, 16);
             this.labelX3.TabIndex = 107;
@@ -379,18 +383,61 @@
             this.cmbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(26, 74);
+            this.cmbMarca.Location = new System.Drawing.Point(26, 159);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(155, 21);
             this.cmbMarca.TabIndex = 106;
             this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
             // 
+            // pnlP
+            // 
+            this.pnlP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlP.Controls.Add(this.label1);
+            this.pnlP.Controls.Add(this.button1);
+            this.pnlP.Location = new System.Drawing.Point(4, 2);
+            this.pnlP.Name = "pnlP";
+            this.pnlP.Size = new System.Drawing.Size(841, 98);
+            this.pnlP.TabIndex = 109;
+            this.pnlP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlP_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(763, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 110;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(269, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(367, 31);
+            this.label1.TabIndex = 111;
+            this.label1.Text = "MAESTRO PROCESADOR";
+            // 
             // frmArchivoCrearProcesador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(845, 414);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(845, 501);
+            this.Controls.Add(this.pnlP);
             this.Controls.Add(this.btnAgregarMarcaProcesador);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.cmbMarca);
@@ -407,6 +454,7 @@
             this.Controls.Add(this.cmbGeneracion);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.dgvProcesadores);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmArchivoCrearProcesador";
@@ -414,6 +462,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Procesador";
+            this.pnlP.ResumeLayout(false);
+            this.pnlP.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +486,8 @@
         private System.Windows.Forms.Button btnAgregarMarcaProcesador;
         internal DevComponents.DotNetBar.LabelX labelX3;
         private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.Panel pnlP;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

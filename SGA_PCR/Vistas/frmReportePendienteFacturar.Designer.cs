@@ -54,8 +54,8 @@
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PendienteFacturarSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PendienteFacturarDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PendienteFacturarUtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
@@ -68,9 +68,13 @@
             this.button38 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
+            this.pnlPF = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
+            this.pnlPF.SuspendLayout();
             this.SuspendLayout();
             // 
             // DíasVencidos
@@ -104,10 +108,14 @@
             this.dgvFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFacturas.Location = new System.Drawing.Point(27, 125);
+            this.dgvFacturas.Location = new System.Drawing.Point(12, 114);
+            this.dgvFacturas.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvFacturas.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvFacturas.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvFacturas.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvFacturas.MainView = this.vista;
             this.dgvFacturas.Name = "dgvFacturas";
-            this.dgvFacturas.Size = new System.Drawing.Size(1161, 458);
+            this.dgvFacturas.Size = new System.Drawing.Size(1195, 458);
             this.dgvFacturas.TabIndex = 132;
             this.dgvFacturas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -370,6 +378,18 @@
             this.PendienteFacturarDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PendienteFacturarDolares.Width = 100;
             // 
+            // PendienteFacturarUtilidadSoles
+            // 
+            this.PendienteFacturarUtilidadSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.PendienteFacturarUtilidadSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.PendienteFacturarUtilidadSoles.Caption = "Pendiente Facturar Utilidad Soles";
+            this.PendienteFacturarUtilidadSoles.FieldName = "PendienteFacturarUtilidadSoles";
+            this.PendienteFacturarUtilidadSoles.MinWidth = 40;
+            this.PendienteFacturarUtilidadSoles.Name = "PendienteFacturarUtilidadSoles";
+            this.PendienteFacturarUtilidadSoles.Visible = true;
+            this.PendienteFacturarUtilidadSoles.VisibleIndex = 15;
+            this.PendienteFacturarUtilidadSoles.Width = 140;
+            // 
             // KAM
             // 
             this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -383,18 +403,6 @@
             this.KAM.VisibleIndex = 16;
             this.KAM.Width = 200;
             // 
-            // PendienteFacturarUtilidadSoles
-            // 
-            this.PendienteFacturarUtilidadSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PendienteFacturarUtilidadSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.PendienteFacturarUtilidadSoles.Caption = "Pendiente Facturar Utilidad Soles";
-            this.PendienteFacturarUtilidadSoles.FieldName = "PendienteFacturarUtilidadSoles";
-            this.PendienteFacturarUtilidadSoles.MinWidth = 40;
-            this.PendienteFacturarUtilidadSoles.Name = "PendienteFacturarUtilidadSoles";
-            this.PendienteFacturarUtilidadSoles.Visible = true;
-            this.PendienteFacturarUtilidadSoles.VisibleIndex = 15;
-            this.PendienteFacturarUtilidadSoles.Width = 140;
-            // 
             // btnExportar
             // 
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -406,7 +414,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1113, 12);
+            this.btnExportar.Location = new System.Drawing.Point(570, 599);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 135;
@@ -418,10 +426,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 41);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(889, 599);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.Size = new System.Drawing.Size(242, 24);
             this.label1.TabIndex = 148;
             this.label1.Text = "CANTIDAD REGISTROS:";
             // 
@@ -429,7 +437,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(17, 11);
+            this.verResumen.Location = new System.Drawing.Point(512, 437);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 147;
@@ -439,16 +447,18 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(531, 11);
+            this.giftCarga.BackColor = System.Drawing.Color.White;
+            this.giftCarga.Location = new System.Drawing.Point(474, 333);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.Size = new System.Drawing.Size(215, 148);
             this.giftCarga.TabIndex = 146;
             this.giftCarga.TabStop = false;
+            this.giftCarga.Click += new System.EventHandler(this.giftCarga_Click);
             // 
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(541, 100);
+            this.cargarData.Location = new System.Drawing.Point(512, 462);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 145;
@@ -526,11 +536,54 @@
             this.button36.TabIndex = 156;
             this.button36.UseVisualStyleBackColor = false;
             // 
+            // pnlPF
+            // 
+            this.pnlPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlPF.Controls.Add(this.label2);
+            this.pnlPF.Controls.Add(this.button1);
+            this.pnlPF.Location = new System.Drawing.Point(3, 1);
+            this.pnlPF.Name = "pnlPF";
+            this.pnlPF.Size = new System.Drawing.Size(1212, 82);
+            this.pnlPF.TabIndex = 163;
+            this.pnlPF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPF_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(1129, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 164;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(402, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(416, 31);
+            this.label2.TabIndex = 165;
+            this.label2.Text = "PENDIENTE POR FACTURAR";
+            // 
             // frmReportePendienteFacturar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1219, 700);
+            this.Controls.Add(this.pnlPF);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -539,11 +592,12 @@
             this.Controls.Add(this.button37);
             this.Controls.Add(this.button36);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.verResumen);
             this.Controls.Add(this.giftCarga);
-            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvFacturas);
+            this.Controls.Add(this.verResumen);
+            this.Controls.Add(this.cargarData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -556,6 +610,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
+            this.pnlPF.ResumeLayout(false);
+            this.pnlPF.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,5 +651,8 @@
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button36;
         private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarUtilidadSoles;
+        private System.Windows.Forms.Panel pnlPF;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoDevolucion));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,14 +54,20 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnObservacion = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbSede = new System.Windows.Forms.ComboBox();
+            this.pnlD = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
+            this.pnlD.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(237, 120);
+            this.label4.Location = new System.Drawing.Point(253, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 24;
@@ -71,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 120);
+            this.label3.Location = new System.Drawing.Point(46, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 23;
@@ -81,7 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 68);
+            this.label1.Location = new System.Drawing.Point(45, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 22;
@@ -96,7 +102,7 @@
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(240, 143);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(256, 251);
             // 
             // 
             // 
@@ -124,7 +130,7 @@
             // 
             // txtNroGuia
             // 
-            this.txtNroGuia.Location = new System.Drawing.Point(33, 143);
+            this.txtNroGuia.Location = new System.Drawing.Point(49, 251);
             this.txtNroGuia.Name = "txtNroGuia";
             this.txtNroGuia.Size = new System.Drawing.Size(170, 20);
             this.txtNroGuia.TabIndex = 2;
@@ -137,36 +143,36 @@
             this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
             this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
-            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(35, 201);
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(49, 343);
             this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
             this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
             this.dgvLaptopsSeleccionados.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "CodigoLC";
-            gridColumn1.MinimumWidth = 100;
-            gridColumn1.Name = "Código";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "MarcaLC";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Marca";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "ModeloLC";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Modelo";
-            gridColumn4.DataPropertyName = "Observacion";
-            gridColumn4.Name = "Observación";
-            gridColumn4.Width = 220;
-            gridColumn5.DataPropertyName = "IdLC";
-            gridColumn5.Name = "Id LC";
-            gridColumn5.Visible = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn5);
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "CodigoLC";
+            gridColumn11.MinimumWidth = 100;
+            gridColumn11.Name = "Código";
+            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn12.AllowEdit = false;
+            gridColumn12.DataPropertyName = "MarcaLC";
+            gridColumn12.MinimumWidth = 100;
+            gridColumn12.Name = "Marca";
+            gridColumn12.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn13.AllowEdit = false;
+            gridColumn13.DataPropertyName = "ModeloLC";
+            gridColumn13.MinimumWidth = 100;
+            gridColumn13.Name = "Modelo";
+            gridColumn14.DataPropertyName = "Observacion";
+            gridColumn14.Name = "Observación";
+            gridColumn14.Width = 220;
+            gridColumn15.DataPropertyName = "IdLC";
+            gridColumn15.Name = "Id LC";
+            gridColumn15.Visible = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn15);
             this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -180,7 +186,7 @@
             this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
             this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(520, 461);
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(520, 487);
             this.dgvLaptopsSeleccionados.TabIndex = 135;
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
             this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
@@ -194,7 +200,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(409, 68);
+            this.labelX1.Location = new System.Drawing.Point(425, 176);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(64, 16);
             this.labelX1.TabIndex = 137;
@@ -202,7 +208,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(409, 90);
+            this.txtNroDocumento.Location = new System.Drawing.Point(425, 198);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.ReadOnly = true;
             this.txtNroDocumento.Size = new System.Drawing.Size(146, 20);
@@ -214,7 +220,7 @@
             this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(32, 90);
+            this.cmbCliente.Location = new System.Drawing.Point(48, 198);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(349, 21);
             this.cmbCliente.TabIndex = 1;
@@ -231,7 +237,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(240, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(256, 110);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -244,7 +250,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 25);
+            this.label8.Location = new System.Drawing.Point(46, 133);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 149;
@@ -252,7 +258,7 @@
             // 
             // txtNroDevolucion
             // 
-            this.txtNroDevolucion.Location = new System.Drawing.Point(128, 24);
+            this.txtNroDevolucion.Location = new System.Drawing.Point(144, 132);
             this.txtNroDevolucion.Name = "txtNroDevolucion";
             this.txtNroDevolucion.ReadOnly = true;
             this.txtNroDevolucion.Size = new System.Drawing.Size(106, 20);
@@ -269,9 +275,9 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(584, 603);
+            this.btnImprimir.Location = new System.Drawing.Point(584, 773);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(75, 63);
+            this.btnImprimir.Size = new System.Drawing.Size(75, 57);
             this.btnImprimir.TabIndex = 155;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -288,9 +294,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(579, 532);
+            this.btnCancelar.Location = new System.Drawing.Point(579, 702);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 59);
             this.btnCancelar.TabIndex = 154;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -307,9 +313,9 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(579, 252);
+            this.btnEditar.Location = new System.Drawing.Point(579, 422);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(80, 65);
+            this.btnEditar.Size = new System.Drawing.Size(80, 59);
             this.btnEditar.TabIndex = 153;
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -327,9 +333,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(579, 183);
+            this.btnNuevo.Location = new System.Drawing.Point(579, 353);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.Size = new System.Drawing.Size(75, 57);
             this.btnNuevo.TabIndex = 152;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -347,9 +353,9 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(575, 392);
+            this.btnGrabar.Location = new System.Drawing.Point(575, 562);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(94, 64);
+            this.btnGrabar.Size = new System.Drawing.Size(94, 58);
             this.btnGrabar.TabIndex = 151;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -359,7 +365,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(431, 143);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(447, 251);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarProducto.TabIndex = 4;
@@ -378,9 +384,9 @@
             this.btnObservacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObservacion.Image = ((System.Drawing.Image)(resources.GetObject("btnObservacion.Image")));
             this.btnObservacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnObservacion.Location = new System.Drawing.Point(569, 323);
+            this.btnObservacion.Location = new System.Drawing.Point(569, 493);
             this.btnObservacion.Name = "btnObservacion";
-            this.btnObservacion.Size = new System.Drawing.Size(100, 63);
+            this.btnObservacion.Size = new System.Drawing.Size(100, 57);
             this.btnObservacion.TabIndex = 158;
             this.btnObservacion.Text = "Observación";
             this.btnObservacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -398,21 +404,87 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(594, 460);
+            this.btnAnular.Location = new System.Drawing.Point(594, 630);
             this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(60, 66);
+            this.btnAnular.Size = new System.Drawing.Size(60, 60);
             this.btnAnular.TabIndex = 159;
             this.btnAnular.Text = "Anular";
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAnular.UseVisualStyleBackColor = false;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 16);
+            this.label2.TabIndex = 160;
+            this.label2.Text = "A que SEDE vuelve?";
+            // 
+            // cmbSede
+            // 
+            this.cmbSede.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSede.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSede.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbSede.FormattingEnabled = true;
+            this.cmbSede.Location = new System.Drawing.Point(187, 293);
+            this.cmbSede.Name = "cmbSede";
+            this.cmbSede.Size = new System.Drawing.Size(193, 21);
+            this.cmbSede.TabIndex = 161;
+            // 
+            // pnlD
+            // 
+            this.pnlD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlD.Controls.Add(this.label5);
+            this.pnlD.Controls.Add(this.button1);
+            this.pnlD.Location = new System.Drawing.Point(0, 3);
+            this.pnlD.Name = "pnlD";
+            this.pnlD.Size = new System.Drawing.Size(678, 91);
+            this.pnlD.TabIndex = 162;
+            this.pnlD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlD_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(594, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 57);
+            this.button1.TabIndex = 163;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(222, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(205, 31);
+            this.label5.TabIndex = 164;
+            this.label5.Text = "DEVOLUCION";
+            // 
             // frmProcesoDevolucion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(681, 674);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(681, 838);
+            this.Controls.Add(this.pnlD);
+            this.Controls.Add(this.cmbSede);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnObservacion);
             this.Controls.Add(this.btnAgregarProducto);
@@ -433,6 +505,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.txtNroGuia);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoDevolucion";
@@ -441,6 +514,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Devolución";
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
+            this.pnlD.ResumeLayout(false);
+            this.pnlD.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,5 +542,10 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnObservacion;
         private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbSede;
+        private System.Windows.Forms.Panel pnlD;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

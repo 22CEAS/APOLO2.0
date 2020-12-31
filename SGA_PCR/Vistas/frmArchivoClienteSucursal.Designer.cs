@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoClienteSucursal));
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -56,6 +56,10 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.pnlCS = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlCS.SuspendLayout();
             this.SuspendLayout();
             // 
             // chbActivo
@@ -65,7 +69,7 @@
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(608, 103);
+            this.chbActivo.Location = new System.Drawing.Point(603, 214);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 126;
@@ -81,7 +85,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(329, 45);
+            this.labelX5.Location = new System.Drawing.Point(324, 156);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(87, 16);
             this.labelX5.TabIndex = 124;
@@ -96,7 +100,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(30, 15);
+            this.labelX4.Location = new System.Drawing.Point(25, 126);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(42, 16);
             this.labelX4.TabIndex = 123;
@@ -111,7 +115,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(28, 101);
+            this.labelX3.Location = new System.Drawing.Point(23, 212);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(37, 16);
             this.labelX3.TabIndex = 122;
@@ -126,7 +130,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(352, 102);
+            this.labelX2.Location = new System.Drawing.Point(347, 213);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(55, 16);
             this.labelX2.TabIndex = 121;
@@ -140,63 +144,63 @@
             this.dgvSucursalCliente.BackColor = System.Drawing.Color.White;
             this.dgvSucursalCliente.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvSucursalCliente.ForeColor = System.Drawing.Color.Black;
-            this.dgvSucursalCliente.Location = new System.Drawing.Point(21, 145);
+            this.dgvSucursalCliente.Location = new System.Drawing.Point(21, 246);
             this.dgvSucursalCliente.Name = "dgvSucursalCliente";
             this.dgvSucursalCliente.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvSucursalCliente.PrimaryGrid.AllowRowResize = true;
             this.dgvSucursalCliente.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "idSucursal";
-            gridColumn1.MinimumWidth = 50;
-            gridColumn1.Name = "Id";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 50;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "nroDocumento";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Nro Documento";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
-            gridColumn3.DataPropertyName = "nombreContacto";
-            gridColumn3.MinimumWidth = 250;
-            gridColumn3.Name = "Nombre";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.Width = 250;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-            gridColumn4.DataPropertyName = "direccion";
-            gridColumn4.MinimumWidth = 150;
-            gridColumn4.Name = "Direccion";
-            gridColumn4.Width = 150;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "estado";
-            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "Activo";
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "telefono";
-            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn6.MinimumWidth = 100;
-            gridColumn6.Name = "Telefono";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.Visible = false;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "email";
-            gridColumn7.Name = "Email";
-            gridColumn7.Visible = false;
-            gridColumn8.AllowEdit = false;
-            gridColumn8.DataPropertyName = "idCliente";
-            gridColumn8.Name = "Id Cliente";
-            gridColumn8.Visible = false;
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn8);
+            gridColumn25.AllowEdit = false;
+            gridColumn25.DataPropertyName = "idSucursal";
+            gridColumn25.MinimumWidth = 50;
+            gridColumn25.Name = "Id";
+            gridColumn25.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn25.Width = 50;
+            gridColumn26.AllowEdit = false;
+            gridColumn26.DataPropertyName = "nroDocumento";
+            gridColumn26.MinimumWidth = 100;
+            gridColumn26.Name = "Nro Documento";
+            gridColumn26.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn27.AllowEdit = false;
+            gridColumn27.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
+            gridColumn27.DataPropertyName = "nombreContacto";
+            gridColumn27.MinimumWidth = 250;
+            gridColumn27.Name = "Nombre";
+            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn27.Width = 250;
+            gridColumn28.AllowEdit = false;
+            gridColumn28.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+            gridColumn28.DataPropertyName = "direccion";
+            gridColumn28.MinimumWidth = 150;
+            gridColumn28.Name = "Direccion";
+            gridColumn28.Width = 150;
+            gridColumn29.AllowEdit = false;
+            gridColumn29.DataPropertyName = "estado";
+            gridColumn29.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn29.MinimumWidth = 100;
+            gridColumn29.Name = "Activo";
+            gridColumn30.AllowEdit = false;
+            gridColumn30.DataPropertyName = "telefono";
+            gridColumn30.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn30.MinimumWidth = 100;
+            gridColumn30.Name = "Telefono";
+            gridColumn30.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn30.Visible = false;
+            gridColumn31.AllowEdit = false;
+            gridColumn31.DataPropertyName = "email";
+            gridColumn31.Name = "Email";
+            gridColumn31.Visible = false;
+            gridColumn32.AllowEdit = false;
+            gridColumn32.DataPropertyName = "idCliente";
+            gridColumn32.Name = "Id Cliente";
+            gridColumn32.Visible = false;
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn25);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn26);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn27);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn28);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn29);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn30);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn31);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn32);
             this.dgvSucursalCliente.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvSucursalCliente.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvSucursalCliente.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -210,7 +214,7 @@
             this.dgvSucursalCliente.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvSucursalCliente.PrimaryGrid.ShowRowHeaders = false;
             this.dgvSucursalCliente.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvSucursalCliente.Size = new System.Drawing.Size(650, 350);
+            this.dgvSucursalCliente.Size = new System.Drawing.Size(650, 349);
             this.dgvSucursalCliente.TabIndex = 117;
             this.dgvSucursalCliente.Text = "Tabla Cliente Sucursal";
             this.dgvSucursalCliente.Click += new System.EventHandler(this.dgvSucursalCliente_Click);
@@ -226,7 +230,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(697, 432);
+            this.btnImprimir.Location = new System.Drawing.Point(697, 532);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 116;
@@ -245,7 +249,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(692, 361);
+            this.btnCancelar.Location = new System.Drawing.Point(692, 461);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 115;
@@ -264,7 +268,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(692, 213);
+            this.btnEditar.Location = new System.Drawing.Point(692, 313);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 114;
@@ -284,7 +288,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(692, 146);
+            this.btnNuevo.Location = new System.Drawing.Point(692, 246);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 113;
@@ -304,7 +308,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(692, 292);
+            this.btnGrabar.Location = new System.Drawing.Point(692, 392);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 112;
@@ -315,7 +319,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(413, 101);
+            this.txtTelefono.Location = new System.Drawing.Point(408, 212);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 20);
@@ -323,7 +327,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(71, 100);
+            this.txtEmail.Location = new System.Drawing.Point(66, 211);
             this.txtEmail.MaxLength = 250;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(248, 20);
@@ -331,7 +335,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(329, 64);
+            this.txtNroDocumento.Location = new System.Drawing.Point(324, 175);
             this.txtNroDocumento.MaxLength = 11;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(152, 20);
@@ -347,7 +351,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(518, 45);
+            this.labelX6.Location = new System.Drawing.Point(513, 156);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(100, 16);
             this.labelX6.TabIndex = 128;
@@ -355,7 +359,7 @@
             // 
             // txtNombreContacto
             // 
-            this.txtNombreContacto.Location = new System.Drawing.Point(518, 64);
+            this.txtNombreContacto.Location = new System.Drawing.Point(513, 175);
             this.txtNombreContacto.MaxLength = 250;
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(225, 20);
@@ -370,7 +374,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(26, 45);
+            this.labelX7.Location = new System.Drawing.Point(21, 156);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(55, 16);
             this.labelX7.TabIndex = 130;
@@ -378,7 +382,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(26, 64);
+            this.txtDireccion.Location = new System.Drawing.Point(21, 175);
             this.txtDireccion.MaxLength = 255;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(290, 20);
@@ -390,17 +394,61 @@
             this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(78, 12);
+            this.cmbCliente.Location = new System.Drawing.Point(73, 123);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(366, 21);
             this.cmbCliente.TabIndex = 131;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
+            // pnlCS
+            // 
+            this.pnlCS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlCS.Controls.Add(this.label1);
+            this.pnlCS.Controls.Add(this.button1);
+            this.pnlCS.Location = new System.Drawing.Point(1, 0);
+            this.pnlCS.Name = "pnlCS";
+            this.pnlCS.Size = new System.Drawing.Size(797, 106);
+            this.pnlCS.TabIndex = 132;
+            this.pnlCS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCS_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(712, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.TabIndex = 133;
+            this.button1.Text = "CERRAR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(201, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(452, 31);
+            this.label1.TabIndex = 134;
+            this.label1.Text = "MAESTRO CLIENTE/SUCURSAL";
+            // 
             // frmArchivoClienteSucursal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 527);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(800, 627);
+            this.Controls.Add(this.pnlCS);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.txtDireccion);
@@ -420,6 +468,7 @@
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNroDocumento);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmArchivoClienteSucursal";
@@ -427,6 +476,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente Sucursal";
+            this.pnlCS.ResumeLayout(false);
+            this.pnlCS.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,5 +504,8 @@
         internal DevComponents.DotNetBar.LabelX labelX7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.Panel pnlCS;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

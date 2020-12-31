@@ -71,18 +71,20 @@ namespace AccesoDatos
                 {
                     foreach (DevolucionDetalle det in devolucion.Detalles)
                     {
-                        parametrosEntrada = new MySqlParameter[4];
+                        parametrosEntrada = new MySqlParameter[5];
                         parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                         parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                        parametrosEntrada[4] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = det.IdLC;
                         parametrosEntrada[1].Value = det.EstadoLC;
                         parametrosEntrada[2].Value = "ALMACEN";
                         parametrosEntrada[3].Value = usuario;
+                        parametrosEntrada[4].Value = devolucion.IdSede;
 
-                        objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+                        objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad_dev_cam");
 
 
                         parametrosEntrada = new MySqlParameter[3];
@@ -284,18 +286,20 @@ namespace AccesoDatos
                     {
                         foreach (DevolucionDetalle det in devolucion.Detalles)
                         {
-                            parametrosEntrada = new MySqlParameter[4];
+                            parametrosEntrada = new MySqlParameter[5];
                             parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
                             parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                             parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                             parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                            parametrosEntrada[4] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
 
                             parametrosEntrada[0].Value = det.IdLC;
                             parametrosEntrada[1].Value = det.EstadoLC;
                             parametrosEntrada[2].Value = "ALMACEN";
                             parametrosEntrada[3].Value = usuario;
+                            parametrosEntrada[4].Value = devolucion.IdSede;
 
-                            objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+                            objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad_dev_cam");
 
 
                             parametrosEntrada = new MySqlParameter[3];
@@ -369,11 +373,13 @@ namespace AccesoDatos
                     parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                     parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                     parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                    
 
                     parametrosEntrada[0].Value = det.IdLC;
                     parametrosEntrada[1].Value = 4;
                     parametrosEntrada[2].Value = det.IdSucursal;
                     parametrosEntrada[3].Value = usuario;
+                    
 
                     objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
 

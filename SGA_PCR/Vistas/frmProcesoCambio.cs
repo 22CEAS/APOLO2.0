@@ -25,6 +25,10 @@ namespace Apolo
         Cambio cambioOld;
         LC artTemp;
         DataTable tablaDatosLaptop;
+        DataTable tablaSede;
+
+        Ingreso ingreso;
+        IngresoDA ingresoDA;
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -48,6 +52,8 @@ namespace Apolo
 
         public void Inicializado()
         {
+            ingresoDA = new IngresoDA();
+            ingreso = new Ingreso();
 
             clienteDA = new ClienteDA();
             cambioDA = new CambioDA();
@@ -63,6 +69,12 @@ namespace Apolo
             cambios.Add(cambio);
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
             dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
+
+            tablaSede = ingresoDA.ListarSede();
+            cmbSede.DataSource = tablaSede;
+            cmbSede.DisplayMember = "nombreSede";
+            cmbSede.ValueMember = "idSede";
+            
 
         }
 
@@ -85,6 +97,18 @@ namespace Apolo
             cambio.PagaraCliente = (chbPagaraCliente.Checked) ? 1 : 0;
             cambio.FueDevuelto = (chbEquipoDevuelto.Checked) ? 1 : 0;
             cambio.EstadoLCAntiguo = (chbEquipoDanado.Checked) ? 3 : 2;
+
+            //OBTENER DATOS DE LA SEDE
+            int i = cmbSede.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                cambio.TipoSede = tablaSede.Rows[i]["nombreSede"].ToString();
+                cambio.IdSede = Convert.ToInt32(cmbSede.SelectedValue.ToString());
+            }
+            
+
+            
+
         }
 
         public void estadoComponentes(TipoVista estado)
@@ -111,6 +135,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = false;
+                    cmbSede.Enabled = false;
                     limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -134,6 +159,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
+                    cmbSede.Enabled = true;
                     limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -157,6 +183,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
+                    cmbSede.Enabled = false;
                     //limpiarComponentes();
                     //alquiler = new Alquiler();
                     //limpiarComponentes();
@@ -181,6 +208,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
+                    cmbSede.Enabled = true;
                     //limpiarComponentes();
                     //alquiler = new Alquiler();
                     break;
@@ -204,6 +232,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
+                    cmbSede.Enabled = false;
                     //limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -227,6 +256,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = false;
+                    cmbSede.Enabled = false;
                     limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -248,6 +278,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
+                    cmbSede.Enabled = false;
                     limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -271,6 +302,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = false;
+                    cmbSede.Enabled = false;
                     //limpiarComponentes();
                     //alquiler = new Alquiler();
                     break;
@@ -288,6 +320,7 @@ namespace Apolo
             txtObservacion.Text = "";
             dtpFechaCambio.Value = DateTime.Now;
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+            cmbSede.SelectedValue = -1;
         }
 
 
@@ -466,6 +499,15 @@ namespace Apolo
             if (observacion.Length == 0)
             {
                 MessageBox.Show("No se puede grabar un Cambio si no\nexiste una observacion.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
+
+            int i = cmbSede.SelectedIndex;
+
+            if (i <0 ) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                MessageBox.Show("No se puede grabar un Cambio si no\nselecciona una sede.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -763,6 +805,32 @@ namespace Apolo
                 
             }
 
+        }
+
+        private void frmProcesoCambio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        int posY = 0;
+        int posX = 0;
+        private void pnlC_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }

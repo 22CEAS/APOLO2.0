@@ -1799,5 +1799,31 @@ namespace Apolo
                 vistaEquipos.SetRowCellValue(i, "Seleccionar", false);
             }
         }
+
+        private void frmProcesoAlquiler_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlD_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
     }
 }

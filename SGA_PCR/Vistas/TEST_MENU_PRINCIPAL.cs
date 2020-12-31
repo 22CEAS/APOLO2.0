@@ -1392,6 +1392,7 @@ namespace Apolo
                 laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
                 laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
                 laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
+                laptop.IdSede = tablaLaptops.Rows[rec]["idSede"].ToString();
 
                 viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
                 viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
@@ -1452,7 +1453,7 @@ namespace Apolo
                 laptop.Discos = null;
                 laptop.Memorias = null;
 
-                laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
+                //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
 
                 laptops.Add(laptop);
                 rec++;

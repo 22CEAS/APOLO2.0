@@ -117,7 +117,7 @@ namespace AccesoDatos
         public int InsertarCambio(Cambio cambio, string usuario)
         {
 
-            bool error = false;
+                bool error = false;
 
             parametrosEntrada = new MySqlParameter[23];
             parametrosEntrada[0] = new MySqlParameter("@_idLCAntiguo", MySqlDbType.Int32);
@@ -194,18 +194,20 @@ namespace AccesoDatos
                 if (cambio.FueDevuelto == 1)
                 {
 
-                    parametrosEntrada = new MySqlParameter[4];
+                    parametrosEntrada = new MySqlParameter[5];
                     parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
                     parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                     parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                     parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                    parametrosEntrada[4] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
 
                     parametrosEntrada[0].Value = cambio.IdLCAntiguo;
                     parametrosEntrada[1].Value = cambio.EstadoLCAntiguo;
                     parametrosEntrada[2].Value = "ALMACEN";
                     parametrosEntrada[3].Value = usuario;
+                    parametrosEntrada[4].Value = cambio.IdSede;
 
-                    objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+                    objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad_dev_cam");
 
 
                     parametrosEntrada = new MySqlParameter[3];
@@ -354,7 +356,9 @@ namespace AccesoDatos
         {
 
             bool error = false;
+            
 
+            //HACE REGRESAR LA LAP EQUIVOCADA A ALMACEN
             parametrosEntrada = new MySqlParameter[1];
             parametrosEntrada[0] = new MySqlParameter("@_idCambio", MySqlDbType.Int32);
 
@@ -362,7 +366,7 @@ namespace AccesoDatos
 
             error = objManager.EjecutarProcedure(parametrosEntrada, "delete_salida_detalle_idDetalle");
 
-
+        
             parametrosEntrada = new MySqlParameter[3];
             parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_estadoDet", MySqlDbType.Int32);
@@ -374,18 +378,19 @@ namespace AccesoDatos
 
             objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_estado_cambiado");
 
-
+            //HACE VOLVER LA LAP DEL CLIENE AL CLIENTE
             parametrosEntrada = new MySqlParameter[4];
             parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
             parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
             parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
 
+
             parametrosEntrada[0].Value = cambioOld.IdLCAntiguo;
             parametrosEntrada[1].Value = 4;
             parametrosEntrada[2].Value = cambioOld.IdSucursal;
             parametrosEntrada[3].Value = usuario;
-
+ 
             objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
 
 
@@ -463,8 +468,8 @@ namespace AccesoDatos
 
             if (okey)
             {
-                
-
+             
+                //ACTUALIZA LA LAP CORRECTA
                 bool aux = InsertarAlquilerDetalle(cambio, usuario);
                 if (!aux) return aux;
 
@@ -483,18 +488,21 @@ namespace AccesoDatos
                 if (cambio.FueDevuelto == 1)
                 {
 
-                    parametrosEntrada = new MySqlParameter[4];
+                    parametrosEntrada = new MySqlParameter[5];
                     parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
                     parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                     parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                     parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                    parametrosEntrada[4] = new MySqlParameter("@_idSede", MySqlDbType.Int32);
 
                     parametrosEntrada[0].Value = cambio.IdLCAntiguo;
                     parametrosEntrada[1].Value = cambio.EstadoLCAntiguo;
                     parametrosEntrada[2].Value = "ALMACEN";
                     parametrosEntrada[3].Value = usuario;
+                    parametrosEntrada[4].Value = cambio.IdSede;
 
-                    objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+
+                    objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad_dev_cam");
 
 
                     parametrosEntrada = new MySqlParameter[3];
@@ -548,6 +556,10 @@ namespace AccesoDatos
                     objManager.EjecutarProcedure(parametrosEntrada, "insert_observacion_deudas_cambio");
                 }
 
+         
+
+
+
             }
             return error;
         }
@@ -572,13 +584,16 @@ namespace AccesoDatos
 
             if (okey)
             {
-
+                
                 parametrosEntrada = new MySqlParameter[1];
                 parametrosEntrada[0] = new MySqlParameter("@_idCambio", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = cambio.IdCambio;
 
                 error = objManager.EjecutarProcedure(parametrosEntrada, "delete_salida_detalle_idDetalle");
+
+
+
 
 
                 parametrosEntrada = new MySqlParameter[3];
@@ -598,6 +613,7 @@ namespace AccesoDatos
                 parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
                 parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+       
 
                 parametrosEntrada[0].Value = cambio.IdLCAntiguo;
                 parametrosEntrada[1].Value = 4;
@@ -627,6 +643,7 @@ namespace AccesoDatos
 
                 objManager.EjecutarProcedure(parametrosEntrada, "delete_observacion_deudas_cambio");
 
+ 
             }
             return error;
         }
