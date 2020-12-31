@@ -990,3 +990,16 @@ CREATE TABLE factura_transito(
 	usuario_mod NVARCHAR(255)
 )ENGINE=INNODB;
 
+
+
+--======================STEVEN=======================================	
+
+DROP TABLE IF EXISTS `sede`;
+CREATE TABLE `sede`  (
+  `idSede` INT  NOT NULL PRIMARY KEY,
+  `nombreSede` varchar(255) NOT NULL,
+  `estado` TINYINT NOT NULL
+) ENGINE = InnoDB;
+
+
+

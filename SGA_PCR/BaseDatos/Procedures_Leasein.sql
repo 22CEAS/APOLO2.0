@@ -3450,3 +3450,183 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+
+
+--======================STEVEN=======================================
+
+ALTER TABLE `laptop_cpu` 
+ADD COLUMN `idSede` int NULL AFTER `ubicacion`;
+
+ALTER TABLE `ingreso` 
+ADD COLUMN `idSede` int NULL AFTER `tipoMoneda`;
+
+ALTER TABLE `ingreso` 
+ADD COLUMN `nombreSede` varchar(255) NULL AFTER `idSede`;
+
+
+DROP PROCEDURE IF EXISTS `insert_laptop_cpu`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _descripcion NVARCHAR(250),
+	IN _tamanoPantalla DOUBLE,
+	IN _idProcesador INT,
+	IN _idVideo INT,
+	IN _partNumber NVARCHAR(80),
+	IN _serieFabrica NVARCHAR(80),
+	IN _garantia TINYINT,
+	IN _fecInicioSeguro DATETIME,
+	IN _fecFinSeguro DATETIME,
+	IN _ubicacion NVARCHAR(80),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100), 
+	IN _compraSubarriendo TINYINT,
+	IN _codigo NVARCHAR(80),
+	IN _idTipoEquipoLC INT,
+	IN _nombreTipoEquipoLC NVARCHAR(255), 
+	IN _idSede int,
+	OUT _idLC INT
+)
+BEGIN
+	#SET @codigo=(SELECT CONCAT("PCR-LAP",IFNULL( MAX( idLC ) , 0 )+1) from laptop_cpu);
+	SET _idLC=(SELECT IFNULL( MAX( idLC ) , 0 )+1 FROM laptop_cpu);
+	INSERT INTO laptop_cpu (idLC,codigo,idIngreso,idIngresoDet,idTipoEquipoLC,nombreTipoEquipoLC,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins,compraSubarriendo,idSede) values
+	(_idLC,_codigo,_idIngreso,_idIngresoDet,_idTipoEquipoLC,_nombreTipoEquipoLC,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins,_compraSubarriendo,_idSede);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
+	IN _idOC INT,
+	IN _idTipoIngreso INT,
+	IN _tipoIngreso NVARCHAR(255),
+	IN _idProveedor INT,
+	IN _razonSocial NVARCHAR(255),
+	IN _ruc NVARCHAR(11),
+	IN _facturaIngreso NVARCHAR(255),
+	IN _guiaIngreso NVARCHAR(255),
+	IN _fecIngresa DATETIME,
+	IN _idTipoMoneda INT,
+	IN _tipoMoneda NVARCHAR(255),
+	IN _montoCambio DOUBLE ,
+	IN _total DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	IN _idSede int,
+	IN _nombreSede NVARCHAR(255),
+	OUT _idIngreso INT
+)
+BEGIN
+	SET @_idIngreso=(SELECT IFNULL( MAX(idIngreso) , 0 )+1 FROM ingreso);
+	INSERT INTO ingreso (idIngreso,idOC,idTipoIngreso,tipoIngreso,idProveedor,razonSocial,ruc,facturaIngreso,guiaIngreso,fecIngresa,idTipoMoneda,tipoMoneda,montoCambio,total,observacion,estado,usuario_ins,idSede,nombreSede) values
+	(@_idIngreso,_idOC,_idTipoIngreso,_tipoIngreso,_idProveedor,_razonSocial,_ruc,_facturaIngreso,_guiaIngreso,_fecIngresa,_idTipoMoneda,_tipoMoneda,_montoCambio,_total,_observacion,_estado,_usuario_ins,_idSede,_nombreSede);
+	COMMIT;
+    SET _idIngreso = @_idIngreso;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_ingreso`(
+	IN _idOC INT,
+	IN _idTipoIngreso INT,
+	IN _tipoIngreso NVARCHAR(255),
+	IN _idProveedor INT,
+	IN _razonSocial NVARCHAR(255),
+	IN _ruc NVARCHAR(11),
+	IN _facturaIngreso NVARCHAR(255),
+	IN _guiaIngreso NVARCHAR(255),
+	IN _fecIngresa DATETIME,
+	IN _idTipoMoneda INT,
+	IN _tipoMoneda NVARCHAR(255),
+	IN _montoCambio DOUBLE ,
+	IN _total DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idIngreso INT,
+	IN _idSede int,
+	IN _nombreSede NVARCHAR(255)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso 
+	SET idOC=_idOC,
+	idTipoIngreso=_idTipoIngreso,
+	tipoIngreso=_tipoIngreso,
+	idProveedor=_idProveedor,
+	razonSocial=_razonSocial,
+	ruc=_ruc,
+	facturaIngreso=_facturaIngreso,
+	fecIngresa=_fecIngresa,
+	idTipoMoneda=_idTipoMoneda,
+	tipoMoneda=_tipoMoneda,
+	montoCambio=_montoCambio,
+	total=_total,
+	observacion=_observacion,
+	estado=_estado,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod,
+	idSede=_idSede,
+	nombreSede=_nombreSede
+	where idIngreso=_idIngreso;
+	commit;
+END
+$$
+DELIMITER ;
+
+--///////////////////////////////////////////
+DROP PROCEDURE IF EXISTS `update_laptop_disponibilidad_dev_cam`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad_dev_cam`(
+	IN _idLC INT,
+	IN _estado INT,
+	IN _ubicacion NVARCHAR(250),
+	IN _usuario_mod NVARCHAR(100),
+	IN _idSede int
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE laptop_cpu 
+	SET estado=_estado,
+		ubicacion=_ubicacion,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod,
+		idSede=_idSede
+	WHERE idLC=_idLC; 
+	commit;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento`(
+	IN _idIngresoAntiguo int,
+	IN _idIngresoNuevo int,
+	IN _idLC int,
+	IN _idSede int
+)
+BEGIN
+	
+	update laptop_cpu 
+	set idIngreso=_idIngresoNuevo,
+		idSede=_idSede 
+	where idLC=_idLC;
+	commit;
+END
+$$
+DELIMITER ;
+
+
