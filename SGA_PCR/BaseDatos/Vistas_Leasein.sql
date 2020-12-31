@@ -1,74 +1,74 @@
-DROP VIEW IF EXISTS `bd_leasein`.`vista_datos_laptop_por_cambiar`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_tamano`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_documento_tipo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_factura_cv`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_facturas_por_vencer`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_ingreso_tipo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_ingresos_detalles_accesorios_modificable`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_ingresos_detalles_modificable`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_inventario_discos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_inventario_laptops`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_inventario_memoria`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_kam_activos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_almacen_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_almacen_lista_sin_filtro`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_danados`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_detalle_alquiler_cliente_estado_alquilado`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_detalle_alquiler_plazo_alquiler`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_discos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_marca`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_memorias`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_por_vencer`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_ingresos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_lc_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_office_tipos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_windows_tipos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_alquileres`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_cambios`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_devoluciones`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_ingresos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_observaciones`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_lista_reparaciones`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_disco`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_laptops`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_licencias`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_memoria`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_procesador`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_sucursal_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_video`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_categoria`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_frecuencia`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_moneda_tipo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_generacion`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_marca`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad_maxima`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_facturar`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_recoger`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_proveedor_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_almacen`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_almacen`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_disco_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_licencia_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_memoria_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_usuario_perfil`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_marca`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_tipo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_ConSinstockDisponible_memoria_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_ConSinstockDisponible_disco_libre`;
+DROP VIEW IF EXISTS bd_leasein.vista_datos_laptop_por_cambiar;
+DROP VIEW IF EXISTS bd_leasein.vista_disco_capacidad;
+DROP VIEW IF EXISTS bd_leasein.vista_disco_modelo;
+DROP VIEW IF EXISTS bd_leasein.vista_disco_tamano;
+DROP VIEW IF EXISTS bd_leasein.vista_documento_tipo;
+DROP VIEW IF EXISTS bd_leasein.vista_factura_cv;
+DROP VIEW IF EXISTS bd_leasein.vista_facturas_por_vencer;
+DROP VIEW IF EXISTS bd_leasein.vista_ingreso_tipo;
+DROP VIEW IF EXISTS bd_leasein.vista_ingresos_detalles_accesorios_modificable;
+DROP VIEW IF EXISTS bd_leasein.vista_ingresos_detalles_modificable;
+DROP VIEW IF EXISTS bd_leasein.vista_inventario_discos;
+DROP VIEW IF EXISTS bd_leasein.vista_inventario_laptops;
+DROP VIEW IF EXISTS bd_leasein.vista_inventario_memoria;
+DROP VIEW IF EXISTS bd_leasein.vista_kam_activos;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_almacen_lista;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_almacen_lista_sin_filtro;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_danados;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_detalle_alquiler_cliente_estado_alquilado;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_detalle_alquiler_plazo_alquiler;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_discos;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_marca;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_memorias;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_modelo;
+DROP VIEW IF EXISTS bd_leasein.vista_laptops_por_vencer;
+DROP VIEW IF EXISTS bd_leasein.vista_licencia_ingresos;
+DROP VIEW IF EXISTS bd_leasein.vista_licencia_lc_lista;
+DROP VIEW IF EXISTS bd_leasein.vista_licencia_lista;
+DROP VIEW IF EXISTS bd_leasein.vista_licencia_office_tipos;
+DROP VIEW IF EXISTS bd_leasein.vista_licencia_windows_tipos;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_alquileres;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_cambios;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_devoluciones;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_ingresos;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_observaciones;
+DROP VIEW IF EXISTS bd_leasein.vista_lista_reparaciones;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_cliente;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_disco;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_laptops;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_licencias;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_memoria;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_procesador;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_sucursal_cliente;
+DROP VIEW IF EXISTS bd_leasein.vista_maestro_video;
+DROP VIEW IF EXISTS bd_leasein.vista_memoria_capacidad;
+DROP VIEW IF EXISTS bd_leasein.vista_memoria_categoria;
+DROP VIEW IF EXISTS bd_leasein.vista_memoria_frecuencia;
+DROP VIEW IF EXISTS bd_leasein.vista_memoria_modelo;
+DROP VIEW IF EXISTS bd_leasein.vista_moneda_tipo;
+DROP VIEW IF EXISTS bd_leasein.vista_procesador_generacion;
+DROP VIEW IF EXISTS bd_leasein.vista_procesador_marca;
+DROP VIEW IF EXISTS bd_leasein.vista_procesador_velocidad;
+DROP VIEW IF EXISTS bd_leasein.vista_procesador_velocidad_maxima;
+DROP VIEW IF EXISTS bd_leasein.vista_productos_por_facturar;
+DROP VIEW IF EXISTS bd_leasein.vista_productos_por_recoger;
+DROP VIEW IF EXISTS bd_leasein.vista_proveedor_lista;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_disco_lc_almacen;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_disco_lc_cliente;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_disco_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_memoria_lc_almacen;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_memoria_lc_cliente;
+DROP VIEW IF EXISTS bd_leasein.vista_stock_memoria_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_stockdisponible_disco_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_stockdisponible_licencia_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_stockdisponible_memoria_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_usuario_perfil;
+DROP VIEW IF EXISTS bd_leasein.vista_video_capacidad;
+DROP VIEW IF EXISTS bd_leasein.vista_video_marca;
+DROP VIEW IF EXISTS bd_leasein.vista_video_modelo;
+DROP VIEW IF EXISTS bd_leasein.vista_video_tipo;
+DROP VIEW IF EXISTS bd_leasein.vista_ConSinstockDisponible_memoria_libre;
+DROP VIEW IF EXISTS bd_leasein.vista_ConSinstockDisponible_disco_libre;
 
 /*Se mostrará la tabla de discos duros en el maestro de discos*/
 create view vista_maestro_disco as
@@ -1283,7 +1283,7 @@ FROM
 	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo ;
 	
 	
-DROP view IF EXISTS `vista_factura_CV`;
+DROP view IF EXISTS vista_factura_CV;
 create view vista_factura_CV as
 SELECT
 	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
@@ -1676,7 +1676,7 @@ ORDER BY lc.idLC ;
 
 
 
-DROP view IF EXISTS `vista_inventario_laptops`;
+DROP view IF EXISTS vista_inventario_laptops;
 create view vista_inventario_laptops as
 SELECT lc.idLC as idLC,
 		lc.idMarca as idMarca,
@@ -1714,7 +1714,7 @@ ORDER BY lc.idLC;
 
 
 
-DROP view IF EXISTS `vista_inventario_memoria`;
+DROP view IF EXISTS vista_inventario_memoria;
 create view vista_inventario_memoria as
 Select 	me.idMemoria as IdMemoria,
 		ma.nombre as categoria,
@@ -1729,7 +1729,7 @@ From memoria me
 	inner join marca ma on m.idMarca = ma.idMarca;
 
 
-DROP view IF EXISTS `vista_inventario_discos`;
+DROP view IF EXISTS vista_inventario_discos;
 create view vista_inventario_discos as
 Select 	d.idDisco as IdDisco,
 		m.nombre as TipoDisco,
@@ -1741,7 +1741,7 @@ From disco_duro d
 	inner join modelo m on m.idModelo = d.idModelo ;
 
 
-DROP view IF EXISTS `vista_laptops_danados`;
+DROP view IF EXISTS vista_laptops_danados;
 create view vista_laptops_danados as
 SELECT  lc.codigo as codigo,
 		lc.idLC as idLC,
@@ -1756,7 +1756,7 @@ ORDER BY lc.idLC;
 
 
 
-DROP view IF EXISTS `vista_lista_reparaciones`;
+DROP view IF EXISTS vista_lista_reparaciones;
 create view vista_lista_reparaciones as
 SELECT r.idReparacion AS IdReparacion,
 			 r.idLC AS IdLC,
@@ -1774,7 +1774,7 @@ SELECT r.idReparacion AS IdReparacion,
 FROM reparacion r ;
 
 
-DROP view IF EXISTS `vista_lista_observaciones`;
+DROP view IF EXISTS vista_lista_observaciones;
 create view vista_lista_observaciones as
 Select o.idObservacionDeudas as IdObservacion,
 			o.idCliente as IdCliente,
@@ -1793,7 +1793,7 @@ Select o.idObservacionDeudas as IdObservacion,
 From observacion_deudas o ;
 
 
-DROP view IF EXISTS `vista_procesador_marca`;
+DROP view IF EXISTS vista_procesador_marca;
 create view vista_procesador_marca as
 SELECT
 	m.idMarca as IdMarca,
@@ -1804,7 +1804,7 @@ FROM marca m
 WHERE m.idCategoria = 9  
 	AND m.estado = 1 ;
 
-DROP view IF EXISTS `vista_salida_tipo`;
+DROP view IF EXISTS vista_salida_tipo;
 create view vista_salida_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
@@ -1813,7 +1813,7 @@ where cod_tabla="SALIDA_TIPO" and activo=1;
 
 
 
-DROP view IF EXISTS `vista_laptops_disponibles_danados`;
+DROP view IF EXISTS vista_laptops_disponibles_danados;
 create view vista_laptops_disponibles_danados as
 SELECT
 	lc.codigo AS codigo,
@@ -1830,7 +1830,7 @@ WHERE
 ORDER BY
 	lc.codigo;
 	
-DROP view IF EXISTS `vista_laptops_personal_prestamo`;
+DROP view IF EXISTS vista_laptops_personal_prestamo;
 create view vista_laptops_personal_prestamo as
 SELECT
 	lc.codigo AS codigo,
@@ -1847,7 +1847,7 @@ WHERE
 ORDER BY
 	lc.codigo;
 
-DROP view IF EXISTS `vista_estados_Venta_Personal_Prestamo`;
+DROP view IF EXISTS vista_estados_Venta_Personal_Prestamo;
 create view vista_estados_Venta_Personal_Prestamo as
 SELECT *
 FROM
@@ -1857,7 +1857,7 @@ WHERE
 ORDER BY
 	nombreEstado;
 
-DROP view IF EXISTS `vista_estados_Disponible_Danado`;
+DROP view IF EXISTS vista_estados_Disponible_Danado;
 create view vista_estados_Disponible_Danado as
 SELECT *
 FROM
@@ -1873,141 +1873,141 @@ ORDER BY
 
 
 
-DROP view IF EXISTS `vista_tablet_procesador`;
+DROP view IF EXISTS vista_tablet_procesador;
 create view vista_tablet_procesador as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="TABLET_PROCESADOR" and activo=1;
 
-DROP view IF EXISTS `vista_tablet_sistema`;
+DROP view IF EXISTS vista_tablet_sistema;
 create view vista_tablet_sistema as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="TABLET_SISTEMA" and activo=1;
 
-DROP view IF EXISTS `vista_tablet_ram`;
+DROP view IF EXISTS vista_tablet_ram;
 create view vista_tablet_ram as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="TABLET_RAM" and activo=1;
 
-DROP view IF EXISTS `vista_tablet_rom`;
+DROP view IF EXISTS vista_tablet_rom;
 create view vista_tablet_rom as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="TABLET_ROM" and activo=1;
 
-DROP view IF EXISTS `vista_tablets_marca`;
+DROP view IF EXISTS vista_tablets_marca;
 create view vista_tablets_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=3 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_tablets_modelo`;
+DROP view IF EXISTS vista_tablets_modelo;
 create view vista_tablets_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
 where m.idCategoria=3 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_monitores_marca`;
+DROP view IF EXISTS vista_monitores_marca;
 create view vista_monitores_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=4 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_monitores_modelo`;
+DROP view IF EXISTS vista_monitores_modelo;
 create view vista_monitores_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
 where m.idCategoria=4 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_monitor_tipo`;
+DROP view IF EXISTS vista_monitor_tipo;
 create view vista_monitor_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="MONITOR_TIPO" and activo=1;
 
-DROP view IF EXISTS `vista_impresoras_marca`;
+DROP view IF EXISTS vista_impresoras_marca;
 create view vista_impresoras_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=5 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_impresoras_modelo`;
+DROP view IF EXISTS vista_impresoras_modelo;
 create view vista_impresoras_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
 where m.idCategoria=5 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_impresora_tipo`;
+DROP view IF EXISTS vista_impresora_tipo;
 create view vista_impresora_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="IMPRESORA_TIPO" and activo=1;
 
-DROP view IF EXISTS `vista_proyectores_marca`;
+DROP view IF EXISTS vista_proyectores_marca;
 create view vista_proyectores_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=6 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_proyectores_modelo`;
+DROP view IF EXISTS vista_proyectores_modelo;
 create view vista_proyectores_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
 where m.idCategoria=6 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_proyectores_tipo`;
+DROP view IF EXISTS vista_proyectores_tipo;
 create view vista_proyectores_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="PROYECTOR_TIPO" and activo=1;
 
-DROP view IF EXISTS `vista_proyectores_resolucion`;
+DROP view IF EXISTS vista_proyectores_resolucion;
 create view vista_proyectores_resolucion as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="PROYECTOR_RESOLUCION" and activo=1;
 
-DROP view IF EXISTS `vista_proyectores_luminen`;
+DROP view IF EXISTS vista_proyectores_luminen;
 create view vista_proyectores_luminen as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="PROYECTOR_LUMINEN" and activo=1;
 
-DROP view IF EXISTS `vista_ecram_marca`;
+DROP view IF EXISTS vista_ecram_marca;
 create view vista_ecram_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=7 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_ecram_modelo`;
+DROP view IF EXISTS vista_ecram_modelo;
 create view vista_ecram_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
 where m.idCategoria=7 and m.estado=1 ;
 
-DROP view IF EXISTS `vista_ecram_tipo`;
+DROP view IF EXISTS vista_ecram_tipo;
 create view vista_ecram_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="ECRAM_TIPO" and activo=1;
 
-DROP view IF EXISTS `vista_proyector_ecram_categoria`;
+DROP view IF EXISTS vista_proyector_ecram_categoria;
 create view vista_proyector_ecram_categoria as
 Select idCategoria as idAuxiliar, nombre as descripcion
 From categoria
 where idCategoria=6 or idCategoria=7 ;
 
 
-DROP view IF EXISTS `vista_laptop_cpu_categoria`;
+DROP view IF EXISTS vista_laptop_cpu_categoria;
 create view vista_laptop_cpu_categoria as
 Select idCategoria as idAuxiliar, nombre as descripcion
 From categoria
 where idCategoria=1 or idCategoria=2 ;
 
 
-DROP view IF EXISTS `vista_ingresos_detalles_tablet_modificable`;
+DROP view IF EXISTS vista_ingresos_detalles_tablet_modificable;
 create view vista_ingresos_detalles_tablet_modificable as
 SELECT
 	d.*,
@@ -2027,7 +2027,7 @@ FROM
 	INNER join auxiliar vtra ON d.idRam=vtra.idAuxiliar and vtra.cod_tabla="TABLET_RAM";
 
 
-DROP view IF EXISTS `vista_ingresos_detalles_impresora_modificable`;
+DROP view IF EXISTS vista_ingresos_detalles_impresora_modificable;
 create view vista_ingresos_detalles_impresora_modificable as
 SELECT
 	d.*,
@@ -2039,7 +2039,7 @@ FROM
 	INNER JOIN modelo mo ON d.idModelo = mo.idModelo;
 
 
-DROP view IF EXISTS `vista_ingresos_detalles_monitor_modificable`;
+DROP view IF EXISTS vista_ingresos_detalles_monitor_modificable;
 create view vista_ingresos_detalles_monitor_modificable as
 SELECT
 	d.*,
@@ -2051,7 +2051,7 @@ FROM
 	INNER JOIN modelo mo ON d.idModelo = mo.idModelo;
 
 
-DROP view IF EXISTS `vista_ingresos_detalles_proyector_modificable`;
+DROP view IF EXISTS vista_ingresos_detalles_proyector_modificable;
 create view vista_ingresos_detalles_proyector_modificable as
 SELECT
 	d.*,
@@ -2066,14 +2066,14 @@ FROM
 
 
 
-DROP view IF EXISTS `vista_cpus_marca`;
+DROP view IF EXISTS vista_cpus_marca;
 create view vista_cpus_marca as
 Select m.idMarca, m.nombre
 from marca m 
 where m.idCategoria=2 and m.estado=1 ;
 
 
-DROP view IF EXISTS `vista_cpus_modelo`;
+DROP view IF EXISTS vista_cpus_modelo;
 create view vista_cpus_modelo as
 Select m.idMarca, mo.idModelo, mo.nombre
 from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
@@ -2081,7 +2081,7 @@ where m.idCategoria=2 and m.estado=1 ;
 
 
 
-DROP view IF EXISTS `vista_ingresos_detalles_modificable`;
+DROP view IF EXISTS vista_ingresos_detalles_modificable;
 create view vista_ingresos_detalles_modificable as
 SELECT
 	d.*,
@@ -2237,4 +2237,352 @@ create view vista_equipos_por_factura_generico as
 Select *
 From factura_transito
 where estado=1 and codigoEquipo='001'
-Order By codigoEquipo;
+Order By codigoEquipo
+
+
+
+--======================STEVEN=======================================
+
+
+
+DROP view IF EXISTS vista_sedes;
+create view vista_sedes as
+SELECT s.idSede AS idSede,
+		s.nombreSede AS nombreSede 
+FROM sede s
+WHERE s.estado = 1;
+	
+
+CREATE OR REPLACE VIEW vista_maestro_laptops AS SELECT
+	l.idLC AS idLC,
+	ma.idMarca AS idMarca,
+	ma.nombre AS marca,
+	m.idModelo AS idModelo,
+	m.nombre AS nombreModelo,
+	l.codigo AS codigo,
+	l.tamanoPantalla AS tamanoPantalla,
+	l.idProcesador AS idProcesador,
+	l.idSede AS idSede,
+	IF(l.idVideo IS NULL , 0, l.idVideo ) AS idVideo,
+	l.partNumber AS partNumber,
+	l.serieFabrica AS serieFabrica,
+	l.garantia AS garantia,
+	l.fecInicioSeguro AS fecInicioSeguro,
+	l.fecFinSeguro AS fecFinSeguro,
+	l.ubicacion AS ubicacion,
+	l.observacion AS observacion,
+	l.estado AS estado,
+	ifnull( li.Version, '' ) AS VersionOffice 
+From laptop_cpu l
+	inner join modelo m on m.idModelo = l.idModelo
+	inner join marca ma on m.idMarca = ma.idMarca
+	left join vista_licencia_lista li on l.idLC = li.IdLC and li.IdCategoria = 13 ;
+	
+	
+CREATE OR REPLACE VIEW vista_inventario_laptops AS SELECT
+	lc.idLC AS idLC,
+	lc.idMarca AS idMarca,
+	lc.marca AS marcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS nombreModeloLC,
+	lc.codigo AS codigo,
+	lc.tamanoPantalla AS tamanoPantalla,
+	lc.idSede AS idSede,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.idTipo AS idTipoProcesador,
+	p.tipo AS tipoProcesador,
+	p.idGeneracion AS idGeneracionProcesador,
+	p.generacion AS generacionProcesador,
+	IF (( v.idVideo IS NULL ), 0, v.idVideo ) AS idVideo,
+	IF (( v.marca IS NULL ), '', v.marca ) AS marcaVideo,
+	IF (( v.nombreModelo IS NULL ), '', v.nombreModelo ) AS nombreModeloVideo,
+	IF (( v.capacidad IS NULL ), 0, v.capacidad ) AS capacidadVideo,
+	IF (( v.tipo IS NULL ), '', v.tipo ) AS tipoVideo,
+	lc.partNumber AS partNumber,
+	lc.serieFabrica AS serieFabrica,
+	lc.garantia AS garantia,
+	lc.fecInicioSeguro AS fecInicioSeguro,
+	lc.fecFinSeguro AS fecFinSeguro,
+	lc.ubicacion AS idUbicacionSucursal,
+	lc.observacion AS observacion,
+	lc.estado AS idEstado,(
+	SELECT e.nombreEstado 
+	FROM estados e  WHERE ( lc.estado = e.idEstado )) AS estado,
+	ifnull(( SELECT cs.direccion FROM cliente_sucursal cs WHERE ( lc.ubicacion = cs.idSucursal )), lc.ubicacion ) AS ubicacion,
+	ifnull(( SELECT ct.nombre_razonSocial 
+		FROM
+			(
+				cliente ct
+				JOIN cliente_sucursal cs ON ((
+						ct.idCliente = cs.idCliente 
+					))) 
+		WHERE
+			( lc.ubicacion = cs.idSucursal )),
+		'' 
+	) AS cliente,
+	ifnull((
+		SELECT
+			ct.nroDocumento 
+		FROM
+			(
+				cliente ct
+				JOIN cliente_sucursal cs ON ((
+						ct.idCliente = cs.idCliente 
+					))) 
+		WHERE
+			( lc.ubicacion = cs.idSucursal )),
+		'' 
+	) AS rucCliente,
+IF
+	((
+			lc.estado = 4 
+			),(
+		SELECT
+			salida_det.idSalida 
+		FROM
+			salida_det 
+		WHERE
+			( salida_det.idLC = lc.idLC ) 
+		ORDER BY
+			salida_det.fecIniContrato DESC 
+			LIMIT 1 
+			),
+	NULL 
+	) AS idSalidaAlquilado,
+IF
+	((
+			d.idSalida IS NOT NULL 
+			),(
+		SELECT
+			cast( salida.fecSalida AS date ) 
+		FROM
+			salida 
+		WHERE
+			( salida.idSalida = idSalidaAlquilado )),
+	NULL 
+	) AS fecTraslado,
+	sd.nombreSede AS Sede 
+FROM
+	((((
+					vista_maestro_laptops lc
+					LEFT JOIN vista_maestro_procesador p ON ((
+							lc.idProcesador = p.idProcesador 
+						)))
+				LEFT JOIN vista_maestro_video v ON ((
+						lc.idVideo = v.idVideo 
+					)))
+			LEFT JOIN salida_det d ON (((
+						lc.idLC = d.idLC 
+						) 
+					AND (
+					d.estado IN ( 4, 6 )) 
+				AND ( d.fueDevuelto = 0 ))))
+		LEFT JOIN sede sd ON ((
+				lc.idSede = sd.idSede 
+			))) 
+ORDER BY
+	lc.idLC;
+
+
+CREATE OR REPLACE VIEW vista_laptops_cuadro_vencimiento AS SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	s.idSalida AS IdSalida,
+	cast( s.fecSalida AS date ) AS FecPrimerTraslado,
+	d.idLC AS IdLC,
+	cast( d.fecIniContrato AS date ) AS fecIniContrato,
+	cast( d.fecFinContrato AS date ) AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nroDocumento AS ruc,
+	sc.nombreCliente AS Cliente,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	lc.VersionOffice AS VersionOffice,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+IF
+	(( v.idVideo IS NULL ), 0, v.idVideo ) AS idVideo,
+IF
+	(( v.marca IS NULL ), '', v.marca ) AS marcaVideo,
+IF
+	(( v.nombreModelo IS NULL ), '', v.nombreModelo ) AS NombreModeloVideo,
+IF
+	(( v.capacidad IS NULL ), 0, v.capacidad ) AS CapacidadVideo,
+IF
+	(( v.tipo IS NULL ), '', v.tipo ) AS tipoVideo,
+	d.guiaSalida AS guia,
+	'' AS factura,
+	'' AS fecInicioFactura,
+	'' AS fecFinFactura,
+	0 AS MontoSoles,
+	0 AS MontoDolares,
+	0 AS TotalDolares,
+	0 AS CostoSoles,
+	0 AS CostoDolares,
+	0 AS UBSoles,(
+		to_days(
+		curdate()) - to_days( d.fecIniContrato )) AS diasVencidos,
+IF
+	(( d.observacion IS NULL ), '', d.observacion ) AS CodigoAntiguo,(
+	SELECT
+		c.nombreKam 
+	FROM
+		cliente c 
+	WHERE
+	( c.idCliente = s.idCliente )) AS KAM,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua 
+FROM
+	((((((
+							salida s
+							JOIN salida_det d ON ((
+									s.idSalida = d.idSalida 
+								)))
+						LEFT JOIN vista_maestro_sucursal_cliente sc ON ((
+								s.idSucursal = sc.idSucursal 
+							)))
+					LEFT JOIN vista_maestro_laptops lc ON ((
+							d.idLC = lc.idLC 
+						)))
+				LEFT JOIN vista_maestro_procesador p ON ((
+						d.idProcesador = p.idProcesador 
+					)))
+			LEFT JOIN vista_maestro_video v ON ((
+					d.idVideo = v.idVideo 
+				)))
+		JOIN cuota cu 
+	) 
+WHERE
+	((
+			d.fueDevuelto = 0 
+			) 
+		AND ( d.estado = 4 ) 
+		AND (( to_days( d.fecFinContrato ) - to_days( curdate())) >= 0 ) 
+		AND (
+			0 <> (
+			CASE
+					
+					WHEN ( d.caracteristicas = '' ) THEN
+					concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) ELSE (
+						concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+						AND (
+						SELECT
+							concat( ca.idLCAntiguo, '-', d.idSalida ) 
+						FROM
+							cambio ca 
+						WHERE
+						( ca.idCambio = d.caracteristicas )) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c )) 
+				END 
+				))) UNION
+	SELECT
+		d.idSalidaDet AS IdSalidaDetalle,
+		s.idSucursal AS IdSucursal,
+		s.idSalida AS IdSalida,
+		cast( s.fecSalida AS date ) AS FecPrimerTraslado,
+		d.idLC AS IdLC,
+		cast( d.fecIniContrato AS date ) AS fecIniContrato,
+		cast( d.fecFinContrato AS date ) AS fecFinContrato,
+		s.idCliente AS IdCliente,
+		sc.nroDocumento AS ruc,
+		sc.nombreCliente AS Cliente,
+		sc.nombreContacto AS Contacto,
+		sc.direccion AS DireccionCliente,
+		sc.telefono AS TelefonoContacto,
+		lc.idMarca AS idMarca,
+		lc.marca AS MarcaLC,
+		lc.idModelo AS idModelo,
+		lc.nombreModelo AS NombreModeloLC,
+		lc.codigo AS Codigo,
+		lc.tamanoPantalla AS TamanoPantalla,
+		lc.VersionOffice AS VersionOffice,
+		p.idProcesador AS idProcesador,
+		p.marca AS marcaProcesador,
+		p.tipo AS TipoProcesador,
+		p.generacion AS GeneracionProcesador,
+	IF
+		(( v.idVideo IS NULL ), 0, v.idVideo ) AS idVideo,
+	IF
+		(( v.marca IS NULL ), '', v.marca ) AS marcaVideo,
+	IF
+		(( v.nombreModelo IS NULL ), '', v.nombreModelo ) AS NombreModeloVideo,
+	IF
+		(( v.capacidad IS NULL ), 0, v.capacidad ) AS CapacidadVideo,
+	IF
+		(( v.tipo IS NULL ), '', v.tipo ) AS tipoVideo,
+		d.guiaSalida AS guia,
+		cu.numFactura AS factura,
+		cast( cu.fecInicioPago AS date ) AS fecInicioFactura,
+		cast( cu.fecFinPago AS date ) AS fecFinFactura,
+		cu.totalSoles AS MontoSoles,
+		cu.totalDolares AS MontoDolares,
+		round(( cu.totalDolares + ( cu.totalSoles / 3.5 )), 2 ) AS TotalDolares,
+		cu.costoSoles AS CostoSoles,
+		cu.costoDolares AS CostoDolares,((
+				3.5 * ( cu.totalDolares - cu.costoDolares )) + ( cu.totalSoles - cu.costoSoles )) AS UBSoles,(
+			to_days(
+			curdate()) - to_days( cu.fecFinPago )) AS diasVencidos,
+	IF
+		(( d.observacion IS NULL ), '', d.observacion ) AS CodigoAntiguo,(
+		SELECT
+			c.nombreKam 
+		FROM
+			cliente c 
+		WHERE
+		( c.idCliente = s.idCliente )) AS KAM,
+		'' AS GuiaAntigua,
+		0 AS IdSalidaDetAntigua 
+	FROM
+		((((((
+								salida s
+								JOIN salida_det d ON ((
+										s.idSalida = d.idSalida 
+									)))
+							LEFT JOIN vista_maestro_sucursal_cliente sc ON ((
+									s.idSucursal = sc.idSucursal 
+								)))
+						LEFT JOIN vista_maestro_laptops lc ON ((
+								d.idLC = lc.idLC 
+							)))
+					LEFT JOIN vista_maestro_procesador p ON ((
+							d.idProcesador = p.idProcesador 
+						)))
+				LEFT JOIN vista_maestro_video v ON ((
+						d.idVideo = v.idVideo 
+					)))
+			JOIN cuota cu 
+		) 
+	WHERE
+		((
+				d.fueDevuelto = 0 
+				) 
+			AND ( d.estado = 4 ) 
+			AND (( to_days( d.fecFinContrato ) - to_days( curdate())) >= 0 ) 
+			AND (
+				0 <> (
+				CASE
+						
+						WHEN ( d.caracteristicas = '' ) THEN
+						(
+							concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) ELSE ((
+							concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) 
+							OR ((
+								SELECT
+									concat( ca.idLCAntiguo, '-', d.idSalida ) 
+								FROM
+									cambio ca 
+								WHERE
+								( ca.idCambio = d.caracteristicas )) = concat( cu.idLC, '-', cu.idSalida ))) 
+					END 
+					))) 
+	ORDER BY
+	IdCliente;
