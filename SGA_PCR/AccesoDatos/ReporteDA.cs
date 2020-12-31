@@ -168,5 +168,9 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * From auxiliar where cod_tabla = '"+ descripcion+"' order by (0 + descripcion);");  
         }
 
+        public DataTable ListarFacturasTransito()
+        {
+            return objManager.MostrarTablaDatos("Select * From factura_transito where estado = 1 ;");
+        }
     }
 }

@@ -1,6 +1,5 @@
 DROP TRIGGER IF EXISTS `after_alquiler_detalle_delete`;
 DELIMITER $$
-
 CREATE TRIGGER after_alquiler_detalle_delete
 AFTER DELETE
 ON salida_det FOR EACH ROW
@@ -14,7 +13,6 @@ DELIMITER ;
 
 DROP TRIGGER IF EXISTS `after_devolucion_detalle_delete`;
 DELIMITER $$
-
 CREATE TRIGGER after_devolucion_detalle_delete
 AFTER DELETE
 ON devolucion_det FOR EACH ROW
@@ -25,5 +23,86 @@ BEGIN
 	DELETE FROM observacion_deudas where idDevolucion=old.idDevolucion;
 
 END$$    
+
+DELIMITER ;
+
+
+--======================FACTURAS TRANSITO=======================================	
+
+
+DROP TRIGGER IF EXISTS `after_alquiler_detalle_insert`;
+DELIMITER $$
+CREATE TRIGGER after_alquiler_detalle_insert
+AFTER INSERT
+ON salida_det FOR EACH ROW
+BEGIN
+	IF NEW.estado=4 THEN
+	
+		(SELECT CONCAT(s.rucDni,'-',lc.codigo),
+				CAST(d.fecIniContrato as Date),
+				CAST(d.fecFinContrato as DATE),
+				d.idSalida, 
+				d.idLC, 
+				d.guiaSalida,
+				lc.codigo INTO 
+				@RucCodigo, @FecIniContrato, @FecFinContrato, @IdSalida, @IdLC, @GuiaSalida, @Codigo 
+		FROM salida_det d INNER JOIN salida s on d.idSalida=s.idSalida
+						  INNER JOIN laptop_cpu lc on d.idLC=lc.idLC
+		WHERE d.idSalidaDet=NEW.idSalidaDet);
+		
+		(SELECT  Count(f.idFacturaTransito), 
+				f.idFacturaTransito, 
+				CAST(f.fecIniPago as Date), 
+				CAST(f.fecFinPago as Date) INTO 
+				@Cantidad,@IdFacturaTransito,@FecIniPago,@FecFinPago
+		FROM factura_transito f
+		WHERE CONCAT(f.ruc,'-',f.codigoEquipo)=@RucCodigo and f.estado=1
+		ORDER BY codigoEquipo desc LIMIT 1);
+		
+		
+		IF @FecIniPago IS NULL THEN
+		
+			UPDATE factura_transito 
+			SET observacion = "Error en las fechas de las facturas, no pueden estar vacias"
+			where idFacturaTransito=@IdFacturaTransito;
+			
+		ELSE
+			IF (( to_days( @FecIniPago )-  to_days(@FecIniContrato))>3 OR ( to_days( @FecIniPago )-  to_days(@FecIniContrato))<-1) THEN
+			
+				UPDATE factura_transito 
+				SET observacion = CONCAT("Esta factura tiene errores en la fecha. Hay un Salto de fechas de ", to_days( @FecIniPago )-  to_days(@FecIniContrato))
+				where idFacturaTransito=@IdFacturaTransito;
+				
+			ELSE
+				
+				(SELECT IFNULL( MAX(idFactura) , 0 )+1 INTO @idFactura FROM factura);
+				INSERT INTO factura (idFactura,idFacturaTransito,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado,usuario_ins) 				
+				SELECT @idFactura AS idFactura,f.idFacturaTransito,@IdSalida AS idSalida, f.numFacturaTransito AS numFactura,f.fecIniPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoEquipo AS codigoLC, @GuiaSalida AS guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, 1 AS estado, f.usuario_ins
+				FROM factura_transito f 
+				WHERE f.idFacturaTransito=@IdFacturaTransito and f.estado=1;
+				
+							
+						
+				INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado) 
+
+				SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, f.estado
+				FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
+				WHERE f.codigoLC=@Codigo AND f.guiaSalida=@GuiaSalida and f.estado=1 
+				ORDER BY fecFinPago desc LIMIT 1;
+				
+				
+				SET @fechaModificacion=(SELECT now());
+				UPDATE factura_transito
+				SET estado=14,
+					idSalida=@IdSalida,
+					fec_mod=@fechaModificacion
+				WHERE idFacturaTransito=@IdFacturaTransito;
+				
+			END IF;
+		END IF;
+    END IF;
+
+END
+$$    
 
 DELIMITER ;

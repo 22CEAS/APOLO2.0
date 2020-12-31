@@ -74,6 +74,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -86,6 +87,7 @@ namespace Apolo
                     dgvFacturas.Enabled = true;
                     cmbFactura.Enabled = true;
                     txtReferencia.Enabled = true;
+                    txtObservación.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
                     btnDeseleccionarFilas.Enabled = true;
                     btnNuevo.Enabled = false;
@@ -99,6 +101,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -109,6 +112,7 @@ namespace Apolo
                     dgvFacturas.Enabled = true;
                     cmbFactura.Enabled = true;
                     txtReferencia.Enabled = true;
+                    txtObservación.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
                     btnDeseleccionarFilas.Enabled = true;
                     btnNuevo.Enabled = false;
@@ -119,6 +123,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -130,6 +135,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -142,6 +148,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -154,6 +161,7 @@ namespace Apolo
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
+                    txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -174,6 +182,7 @@ namespace Apolo
             cmbFactura.SelectedIndex = -1;
             
             txtReferencia.Text = "";
+            txtObservación.Text = "";
             facturas = new BindingList<Factura>();
         }
 
@@ -195,6 +204,17 @@ namespace Apolo
                                 MessageBoxIcon.Error);
                 return false;
             }
+
+            aux = "";
+            aux = txtObservación.Text;
+            aux = aux.Trim();
+            if (aux.Length == 0)
+            {
+                MessageBox.Show("No se puede realizar el proceso\n si no se a escrito una observación.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+
 
             bool flag = true;
             vistaFacturas.ClearColumnsFilter();
@@ -221,12 +241,18 @@ namespace Apolo
         {
             string aux = "";
             aux = txtReferencia.Text;
+            aux = aux.Trim();
+            aux = aux.ToUpper();
+            string aux2 = "";
+            aux2 = txtObservación.Text;
+            aux2 = aux2.Trim();
+            aux2 = aux2.ToUpper();
             facturas = new BindingList<Factura>();
             vistaFacturas.ClearColumnsFilter();
             for (int i = 0; i < vistaFacturas.RowCount; i++)
             {
-                bool aux2 = bool.Parse(vistaFacturas.GetRowCellValue(i, "Seleccionar").ToString());
-                if (aux2)
+                bool aux3 = bool.Parse(vistaFacturas.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux3)
                 {
                     Factura factura = new Factura();
                     factura.IdFactura = int.Parse(vistaFacturas.GetRowCellValue(i, "idFactura").ToString());
@@ -234,16 +260,24 @@ namespace Apolo
                     factura.IdLC = int.Parse(vistaFacturas.GetRowCellValue(i, "idLC").ToString());
                     factura.GuiaSalida = vistaFacturas.GetRowCellValue(i, "guiaSalida").ToString();
                     factura.Codigo = vistaFacturas.GetRowCellValue(i, "codigoLC").ToString();
+                    factura.RucDni = vistaFacturas.GetRowCellValue(i, "ruc").ToString();
+                    factura.NumeroFactura = vistaFacturas.GetRowCellValue(i, "numFactura").ToString();
+                    factura.FechaIniPago = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecIniPago").ToString());
+                    factura.FechaFinPago = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecFinPago").ToString());
                     factura.TotalSoles = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalSoles").ToString());
                     factura.TotalDolares = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalDolares").ToString());
                     factura.CostoSoles = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoSoles").ToString());
                     factura.CostoDolares = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoDolares").ToString());
-                    factura.RucDni = vistaFacturas.GetRowCellValue(i, "ruc").ToString();
-                    factura.FechaIniPago = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecIniPago").ToString());
-                    factura.FechaFinPago = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecFinPago").ToString());
 
-                    aux = aux.Trim();
+                    factura.FechaIniPagoAntiguo = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecIniPagoAntiguo").ToString());
+                    factura.FechaFinPagoAntiguo = DateTime.Parse(vistaFacturas.GetRowCellValue(i, "fecFinPagoAntiguo").ToString());
+                    factura.TotalSolesAntiguo = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalSolesAntiguo").ToString());
+                    factura.TotalDolaresAntiguo = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalDolaresAntiguo").ToString());
+                    factura.CostoSolesAntiguo = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoSolesAntiguo").ToString());
+                    factura.CostoDolaresAntiguo = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoDolaresAntiguo").ToString());
+
                     factura.NroNotaCredito = aux;
+                    factura.ObservacionXLevantar = aux2;
                     facturas.Add(factura);
                 }
             }

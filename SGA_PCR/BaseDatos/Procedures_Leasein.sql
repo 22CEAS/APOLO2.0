@@ -2091,10 +2091,10 @@ DELIMITER $$
 CREATE PROCEDURE update_salida_det_fechaFinalPlazoEvento(
 	)
 BEGIN
-		SET @fechaModificacion=(SELECT now());
-		UPDATE salida_det 
-		SET fecFinContrato=DATE(DATE_ADD(fecFinContrato, INTERVAL 1 MONTH))
-		WHERE corteAlquiler=0 and fueDevuelto=0 and estado=4 and cast(fecFinContrato as date)<cast(@fechaModificacion as date); 
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det 
+	SET fecFinContrato=DATE(DATE_ADD(fecFinContrato, INTERVAL 1 MONTH))
+	WHERE corteAlquiler=0 and fueDevuelto=0 and estado=4 and cast(fecFinContrato as date)<cast(@fechaModificacion as date); 
 END
 $$
 DELIMITER ;
@@ -2698,7 +2698,7 @@ DELIMITER ;
 
 
 ALTER TABLE `ingreso_det` 
-ADD COLUMN `idTipoEquipoLC` int(0) ZEROFILL NULL AFTER `idIngreso`;
+ADD COLUMN `idTipoEquipoLC` int NULL AFTER `idIngreso`;
 ALTER TABLE `ingreso_det` 
 ADD COLUMN `nombreTipoEquipoLC` varchar(255) NULL AFTER `idTipoEquipoLC`;
 
@@ -3296,7 +3296,7 @@ DELIMITER ;
 
 
 
---===========================================================================	
+--========================NOTA CREDITO======================================
 
 DROP PROCEDURE IF EXISTS `anular_factura`;
 DELIMITER $$
@@ -3305,14 +3305,28 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
 	IN _idSalida int,
 	IN _idTipoEquipo int,
 	IN _idEquipo int,
+	IN _codigo NVARCHAR(255),
 	IN _guiaSalida NVARCHAR(255),
 	IN _nroNotaCredito NVARCHAR(255),
-	IN _codigo NVARCHAR(255),
+	IN _numFactura NVARCHAR(255),
+	IN _fecIniPagoActual DATE,
+	IN _fecFinPagoActual DATE,
+	IN _totalSolesActual DOUBLE,
+	IN _totalDolaresActual DOUBLE,
+	IN _costoSolesActual DOUBLE,
+	IN _costoDolaresActual DOUBLE,
+	IN _fecIniPagoAntiguo DATE,
+	IN _fecFinPagoAntiguo DATE,
+	IN _totalSolesAntiguo DOUBLE,
+	IN _totalDolaresAntiguo DOUBLE,
+	IN _costoSolesAntiguo DOUBLE,
+	IN _costoDolaresAntiguo DOUBLE,
+	IN _observacion NVARCHAR(1000),
 	IN _usuario_mod NVARCHAR(255), 
 	OUT _idNotaCredito INT
 )
 BEGIN
-	
+
 	(select count(*) INTO @cantidad from cuota WHERE idFactura=_idFactura);
 	
 	SET @fechaModificacion=(SELECT now());
@@ -3351,8 +3365,8 @@ BEGIN
 	
 	
 	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
-	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,observacion,estado,usuario_ins) values
-	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,"",1,_usuario_mod);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
 	
 	
 	COMMIT;
@@ -3361,3 +3375,78 @@ END
 $$
 DELIMITER ;
 
+--======================FACTURAS TRANSITO=======================================	
+
+INSERT INTO `bd_leasein`.`estados`(`idEstado`, `nombreEstado`, `descripcion`) VALUES (14, 'TRANSFERIDO', NULL);
+
+ALTER TABLE `factura` 
+ADD COLUMN `idFacturaTransito` int NULL AFTER `idSalida`;
+
+DROP PROCEDURE IF EXISTS `insert_facturaTransito`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_facturaTransito`(
+	IN _idSalida INT,
+	IN _numFacturaTransito NVARCHAR(255),
+	IN _numeroOC NVARCHAR(255),
+	IN _fecIniPago DATE,
+	IN _fecFinPago DATE,
+	IN _fecEmisiom DATE,
+	IN _ruc NVARCHAR(11),
+	IN _razonSocial NVARCHAR(1000),
+	IN _idEquipo INT,
+	IN _codigoEquipo NVARCHAR(255),
+	IN _guiaSalida NVARCHAR(255),
+	IN _cantidadEquipos INT,
+	IN _totalSoles DOUBLE,
+	IN _totalDolares DOUBLE,
+	IN _costoSoles DOUBLE,
+	IN _costoDolares DOUBLE,
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(255),
+	OUT _idFacturaTransito INT
+)
+BEGIN
+	SET _idFacturaTransito=(SELECT IFNULL( MAX(idFacturaTransito) , 0 )+1 FROM factura_transito);
+	INSERT INTO factura_transito (idFacturaTransito,idSalida,numFacturaTransito,numeroOC,fecIniPago,fecFinPago,fecEmisiom,ruc,razonSocial,idEquipo,codigoEquipo,guiaSalida,cantidadEquipos,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado,usuario_ins) values
+	(_idFacturaTransito,_idSalida,_numFacturaTransito,_numeroOC,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_razonSocial,_idEquipo,_codigoEquipo,_guiaSalida,_cantidadEquipos,_totalSoles,_totalDolares,_costoSoles,_costoDolares,_observacion,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_facturaTransito`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_facturaTransito`(
+	IN _estado int,
+	IN _idSalida int,
+	IN _idFacturaTransito int
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE factura_transito
+	SET estado=_estado,
+		idSalida=_idSalida,
+		fec_mod=@fechaModificacion
+	WHERE idFacturaTransito=_idFacturaTransito;
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `update_facturaIdFacturaTransito`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_facturaIdFacturaTransito`(
+	IN _idFacturaTransito int,
+	IN _idFactura int
+)
+BEGIN
+
+	UPDATE factura
+	SET idFacturaTransito=_idFacturaTransito
+	WHERE idFactura=_idFactura;
+	COMMIT;
+END
+$$
+DELIMITER ;
