@@ -40,27 +40,33 @@
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecIniPagoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecFinPagoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.totalSolesAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.totalDolaresAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.costoSolesAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.costoDolaresAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.numFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.pnlNC = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtObservación = new DevExpress.XtraEditors.MemoEdit();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            this.pnlNC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservación.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbFactura
@@ -69,7 +75,7 @@
             this.cmbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFactura.FormattingEnabled = true;
-            this.cmbFactura.Location = new System.Drawing.Point(21, 150);
+            this.cmbFactura.Location = new System.Drawing.Point(30, 44);
             this.cmbFactura.Name = "cmbFactura";
             this.cmbFactura.Size = new System.Drawing.Size(177, 21);
             this.cmbFactura.TabIndex = 57;
@@ -79,7 +85,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(18, 129);
+            this.label15.Location = new System.Drawing.Point(27, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 16);
             this.label15.TabIndex = 58;
@@ -96,7 +102,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(573, 121);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(169, 178);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 140;
@@ -116,7 +122,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(451, 121);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(47, 178);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 139;
@@ -127,7 +133,7 @@
             // 
             // dgvFacturas
             // 
-            this.dgvFacturas.Location = new System.Drawing.Point(38, 186);
+            this.dgvFacturas.Location = new System.Drawing.Point(42, 234);
             this.dgvFacturas.MainView = this.vistaFacturas;
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -155,15 +161,22 @@
             this.Codigo,
             this.GuiaSalida,
             this.ruc,
+            this.fecIniPago,
+            this.fecFinPago,
             this.VentaSoles,
             this.VentaDolares,
             this.CostoSoles,
             this.CostoDolares,
-            this.fecIniPago,
-            this.fecFinPago,
             this.idFactura,
             this.idSalida,
-            this.idLC});
+            this.idLC,
+            this.fecIniPagoAntiguo,
+            this.fecFinPagoAntiguo,
+            this.totalSolesAntiguo,
+            this.totalDolaresAntiguo,
+            this.costoSolesAntiguo,
+            this.costoDolaresAntiguo,
+            this.numFactura});
             this.vistaFacturas.GridControl = this.dgvFacturas;
             this.vistaFacturas.Name = "vistaFacturas";
             this.vistaFacturas.OptionsCustomization.AllowColumnMoving = false;
@@ -227,6 +240,26 @@
             this.ruc.Visible = true;
             this.ruc.VisibleIndex = 3;
             // 
+            // fecIniPago
+            // 
+            this.fecIniPago.Caption = "Fecha Inicio Pago";
+            this.fecIniPago.FieldName = "fecIniPago";
+            this.fecIniPago.Name = "fecIniPago";
+            this.fecIniPago.OptionsColumn.AllowEdit = false;
+            this.fecIniPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecIniPago.Visible = true;
+            this.fecIniPago.VisibleIndex = 4;
+            // 
+            // fecFinPago
+            // 
+            this.fecFinPago.Caption = "Fecha Fin Pago";
+            this.fecFinPago.FieldName = "fecFinPago";
+            this.fecFinPago.Name = "fecFinPago";
+            this.fecFinPago.OptionsColumn.AllowEdit = false;
+            this.fecFinPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecFinPago.Visible = true;
+            this.fecFinPago.VisibleIndex = 5;
+            // 
             // VentaSoles
             // 
             this.VentaSoles.Caption = "Venta Soles";
@@ -236,7 +269,7 @@
             this.VentaSoles.OptionsColumn.AllowEdit = false;
             this.VentaSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.VentaSoles.Visible = true;
-            this.VentaSoles.VisibleIndex = 4;
+            this.VentaSoles.VisibleIndex = 6;
             this.VentaSoles.Width = 100;
             // 
             // VentaDolares
@@ -248,7 +281,7 @@
             this.VentaDolares.OptionsColumn.AllowEdit = false;
             this.VentaDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.VentaDolares.Visible = true;
-            this.VentaDolares.VisibleIndex = 5;
+            this.VentaDolares.VisibleIndex = 7;
             this.VentaDolares.Width = 100;
             // 
             // CostoSoles
@@ -260,7 +293,7 @@
             this.CostoSoles.OptionsColumn.AllowEdit = false;
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 6;
+            this.CostoSoles.VisibleIndex = 8;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -272,28 +305,8 @@
             this.CostoDolares.OptionsColumn.AllowEdit = false;
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 7;
+            this.CostoDolares.VisibleIndex = 9;
             this.CostoDolares.Width = 100;
-            // 
-            // fecIniPago
-            // 
-            this.fecIniPago.Caption = "Fecha Inicio Pago";
-            this.fecIniPago.FieldName = "fecIniPago";
-            this.fecIniPago.Name = "fecIniPago";
-            this.fecIniPago.OptionsColumn.AllowEdit = false;
-            this.fecIniPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecIniPago.Visible = true;
-            this.fecIniPago.VisibleIndex = 8;
-            // 
-            // fecFinPago
-            // 
-            this.fecFinPago.Caption = "Fecha Fin Pago";
-            this.fecFinPago.FieldName = "fecFinPago";
-            this.fecFinPago.Name = "fecFinPago";
-            this.fecFinPago.OptionsColumn.AllowEdit = false;
-            this.fecFinPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecFinPago.Visible = true;
-            this.fecFinPago.VisibleIndex = 9;
             // 
             // idFactura
             // 
@@ -321,9 +334,65 @@
             this.idLC.OptionsColumn.AllowEdit = false;
             this.idLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
+            // fecIniPagoAntiguo
+            // 
+            this.fecIniPagoAntiguo.Caption = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.FieldName = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.Name = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.OptionsColumn.AllowEdit = false;
+            this.fecIniPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // fecFinPagoAntiguo
+            // 
+            this.fecFinPagoAntiguo.Caption = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.FieldName = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.Name = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.OptionsColumn.AllowEdit = false;
+            this.fecFinPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // totalSolesAntiguo
+            // 
+            this.totalSolesAntiguo.Caption = "totalSolesAntiguo";
+            this.totalSolesAntiguo.FieldName = "totalSolesAntiguo";
+            this.totalSolesAntiguo.Name = "totalSolesAntiguo";
+            this.totalSolesAntiguo.OptionsColumn.AllowEdit = false;
+            this.totalSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // totalDolaresAntiguo
+            // 
+            this.totalDolaresAntiguo.Caption = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.FieldName = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.Name = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.OptionsColumn.AllowEdit = false;
+            this.totalDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // costoSolesAntiguo
+            // 
+            this.costoSolesAntiguo.Caption = "costoSolesAntiguo";
+            this.costoSolesAntiguo.FieldName = "costoSolesAntiguo";
+            this.costoSolesAntiguo.Name = "costoSolesAntiguo";
+            this.costoSolesAntiguo.OptionsColumn.AllowEdit = false;
+            this.costoSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // costoDolaresAntiguo
+            // 
+            this.costoDolaresAntiguo.Caption = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.FieldName = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.Name = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.OptionsColumn.AllowEdit = false;
+            this.costoDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // numFactura
+            // 
+            this.numFactura.Caption = "numFactura";
+            this.numFactura.FieldName = "numFactura";
+            this.numFactura.Name = "numFactura";
+            this.numFactura.OptionsColumn.AllowEdit = false;
+            this.numFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(234, 150);
+            this.txtReferencia.Location = new System.Drawing.Point(243, 44);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 20);
             this.txtReferencia.TabIndex = 164;
@@ -332,7 +401,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 129);
+            this.label1.Location = new System.Drawing.Point(240, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 166;
@@ -348,7 +417,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(954, 431);
+            this.btnCancelar.Location = new System.Drawing.Point(954, 479);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 214;
@@ -368,7 +437,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(773, 433);
+            this.btnNuevo.Location = new System.Drawing.Point(773, 481);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 213;
@@ -388,7 +457,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(854, 433);
+            this.btnGrabar.Location = new System.Drawing.Point(854, 481);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 212;
@@ -397,55 +466,33 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // pnlNC
+            // txtObservación
             // 
-            this.pnlNC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pnlNC.Controls.Add(this.label2);
-            this.pnlNC.Controls.Add(this.button1);
-            this.pnlNC.Location = new System.Drawing.Point(2, 3);
-            this.pnlNC.Name = "pnlNC";
-            this.pnlNC.Size = new System.Drawing.Size(1095, 104);
-            this.pnlNC.TabIndex = 215;
-            this.pnlNC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1011, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
-            this.button1.TabIndex = 216;
-            this.button1.Text = "CERRAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtObservación.Location = new System.Drawing.Point(33, 102);
+            this.txtObservación.Name = "txtObservación";
+            this.txtObservación.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservación.Properties.Appearance.Options.UseFont = true;
+            this.txtObservación.Size = new System.Drawing.Size(1040, 59);
+            this.txtObservación.TabIndex = 215;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(405, 51);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 31);
-            this.label2.TabIndex = 217;
-            this.label2.Text = "NOTA DE CREDITO";
+            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.TabIndex = 216;
+            this.label2.Text = "Observación";
             // 
             // frmProcesoNotaCredito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1100, 508);
-            this.Controls.Add(this.pnlNC);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1100, 556);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtObservación);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
@@ -456,7 +503,6 @@
             this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.cmbFactura);
             this.Controls.Add(this.label15);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoNotaCredito";
@@ -467,8 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            this.pnlNC.ResumeLayout(false);
-            this.pnlNC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservación.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,8 +546,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn fecFinPago;
         private DevExpress.XtraGrid.Columns.GridColumn idSalida;
         private DevExpress.XtraGrid.Columns.GridColumn idLC;
-        private System.Windows.Forms.Panel pnlNC;
-        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraGrid.Columns.GridColumn fecIniPagoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn fecFinPagoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn totalSolesAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn totalDolaresAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn costoSolesAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn costoDolaresAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn numFactura;
+        private DevExpress.XtraEditors.MemoEdit txtObservación;
         private System.Windows.Forms.Label label2;
     }
 }
