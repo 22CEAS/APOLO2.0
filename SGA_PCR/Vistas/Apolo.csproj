@@ -184,6 +184,12 @@
     <Compile Include="frmProcesoDevolucionBuscar.Designer.cs">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoFacturaTransito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoFacturaTransito.Designer.cs">
+      <DependentUpon>frmProcesoFacturaTransito.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoIngresoBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,12 @@
     <Compile Include="frmReporteDisco.Designer.cs">
       <DependentUpon>frmReporteDisco.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteFacturaTransito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteFacturaTransito.Designer.cs">
+      <DependentUpon>frmReporteFacturaTransito.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -582,6 +594,9 @@
     <EmbeddedResource Include="frmProcesoDevolucionBuscar.resx">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoFacturaTransito.resx">
+      <DependentUpon>frmProcesoFacturaTransito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoIngresoBuscar.resx">
       <DependentUpon>frmProcesoIngresoBuscar.cs</DependentUpon>
     </EmbeddedResource>
@@ -659,6 +674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteDisco.resx">
       <DependentUpon>frmReporteDisco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteFacturaTransito.resx">
+      <DependentUpon>frmReporteFacturaTransito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteInventario.resx">
       <DependentUpon>frmReporteInventario.cs</DependentUpon>

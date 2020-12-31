@@ -46,7 +46,15 @@ namespace Modelo
         private Double costoSolesAntiguo;
         private Double costoDolaresAntiguo;
 
+        private int cantidadEquipos;
+        private int error;
+        private int tipoFacturaTransito;//0 Factura Normal 1 FacturaTransito
+        private int idFacturaTransito;
 
+        public Factura()
+        {
+            this.TipoFacturaTransito = 0;
+        }
 
         public int IdFactura { get => idFactura; set => idFactura = value; }
         public DateTime FechaPago { get => fechaPago; set => fechaPago = value; }
@@ -85,5 +93,10 @@ namespace Modelo
         public double TotalDolaresAntiguo { get => totalDolaresAntiguo; set => totalDolaresAntiguo = value; }
         public double CostoSolesAntiguo { get => costoSolesAntiguo; set => costoSolesAntiguo = value; }
         public double CostoDolaresAntiguo { get => costoDolaresAntiguo; set => costoDolaresAntiguo = value; }
+
+        public int CantidadEquipos { get => cantidadEquipos; set => cantidadEquipos = value; }
+        public int Error { get => error; set => error = value; }
+        public int TipoFacturaTransito { get => tipoFacturaTransito; set => tipoFacturaTransito = value; }
+        public int IdFacturaTransito { get => idFacturaTransito; set => idFacturaTransito = value; }
     }
 }

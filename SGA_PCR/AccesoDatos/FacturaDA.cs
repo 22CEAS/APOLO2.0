@@ -26,6 +26,31 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_factura_CV ;");
         }
 
+        public DataTable ListarEquiposDisponiblesPreAlquiler()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_equipos_disponible_preAlquiler ;");
+        }
+
+        public DataTable ListarFacturasTransito()
+        {
+            return objManager.MostrarTablaDatos("Select * from factura_transito where estado=1 ;");
+        }
+
+        public DataTable BuscarFacturasTransitoActivas()
+        {
+            return objManager.MostrarTablaDatos("Select DISTINCT numFacturaTransito from factura_transito where estado=1 ;");
+        }
+
+        public DataTable CargarEquiposFacturaConCodigo(string numFactura)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_equipos_por_factura_codigo where numFacturaTransito='" + numFactura + "' ; ");
+        }
+
+        public DataTable CargarEquiposFacturaConCodigoGenerico(string numFactura)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_equipos_por_factura_generico where numFacturaTransito='" + numFactura + "' ; ");
+        }
+
         public DataTable BuscarV()
         {
             return objManager.MostrarTablaDatos("Select * from vista_buscarV ;");
@@ -33,12 +58,12 @@ namespace AccesoDatos
 
         public DataTable BuscarFacturasActivas()
         {
-            return objManager.MostrarTablaDatos("Select * from facturas_activas ;");
+            return objManager.MostrarTablaDatos("Select * from vista_facturas_activas ;");
         }
 
         public DataTable CargarEquiposFactura(string numFactura)
         {
-            return objManager.MostrarTablaDatos("Select * from equipos_por_factura where numFactura='" + numFactura + "' ; " );
+            return objManager.MostrarTablaDatos("Select * from vista_equipos_por_factura where numFactura='" + numFactura + "' ; " );
         }
 
         public int InsertarFacturas(BindingList<Factura> facturas, string usuario)
@@ -107,7 +132,7 @@ namespace AccesoDatos
 
             MySqlDataReader reader;
             string sql = "";
-            sql = "SELECT DISTINCT s.idSalida FROM salida s INNER JOIN salida_det d ON s.idSalida = d.idSalida WHERE d.guiaSalida = '" + factura.NumeroDocRef + "' ;";
+            sql = "SELECT DISTINCT s.idSalida FROM salida s INNER JOIN salida_det d ON s.idSalida = d.idSalida WHERE d.guiaSalida = '" + factura.NumeroDocRef + "' and d.idLC in ( " + idLCAct + " , " + idLCAnt + " )" + " ;";
             reader = objManager.MostrarInformacion(sql);
 
             while (reader.Read())
@@ -233,6 +258,33 @@ namespace AccesoDatos
 
             okey = objManager.EjecutarProcedure(parametrosEntrada, "insert_cuota");
 
+
+
+            if (factura.TipoFacturaTransito == 1)
+            {
+                parametrosEntrada = new MySqlParameter[3];
+                parametrosEntrada[0] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idFacturaTransito", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = 14;
+                parametrosEntrada[1].Value = factura.IdSalida;
+                parametrosEntrada[2].Value = factura.IdFacturaTransito;
+
+                objManager.EjecutarProcedure(parametrosEntrada, "update_facturaTransito");
+
+
+                parametrosEntrada = new MySqlParameter[2];
+                parametrosEntrada[0] = new MySqlParameter("@_idFacturaTransito", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = factura.IdFacturaTransito;
+                parametrosEntrada[1].Value = factura.IdFactura;
+
+                objManager.EjecutarProcedure(parametrosEntrada, "update_facturaIdFacturaTransito");
+            }
+
+
             return 1;
         }
 
@@ -268,11 +320,6 @@ namespace AccesoDatos
 
         public int RegistrarNC(BindingList<Factura> facturas, string usuario)
         {
-
-            MySqlDataReader reader;
-            string sql = "";
-
-
             foreach (Factura f in facturas)
             {
                 parametrosEntrada = new MySqlParameter[23];
@@ -323,28 +370,102 @@ namespace AccesoDatos
                 parametrosEntrada[20].Value = f.ObservacionXLevantar;
                 parametrosEntrada[21].Value = usuario;
 
-
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
                     22, 23, out datosSalida, 1);
 
-                if (datosSalida != null)
-                {
-                    int idNotaCredito = Convert.ToInt32(datosSalida[0]);
-                }
-                else
-                {
-                    return 0;
-                }
+                int idNotaCredito;
 
-                //bool aux = objManager.EjecutarProcedure(parametrosEntrada, "anular_factura");
-                //if (!aux) return 0;
+                if (datosSalida != null)
+                    idNotaCredito = Convert.ToInt32(datosSalida[0]);
+                else
+                    return 0;
+            }
+            return 1;
+        }
+
+        public int InsertarFacturaTransito(Factura factura, string usuario)
+        {
+
+            MySqlDataReader reader;
+            string sql = "";
+            sql = "SELECT * FROM laptop_cpu  WHERE codigo = '" + factura.CodigoLC + "' ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                factura.IdLC = reader.GetInt32("idLC");
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+            parametrosEntrada = new MySqlParameter[20];
+            parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_numFacturaTransito", MySqlDbType.VarChar, 255);
+            parametrosEntrada[2] = new MySqlParameter("@_numeroOC", MySqlDbType.VarChar, 255);
+            parametrosEntrada[3] = new MySqlParameter("@_fecIniPago", MySqlDbType.Date);
+            parametrosEntrada[4] = new MySqlParameter("@_fecFinPago", MySqlDbType.Date);
+            parametrosEntrada[5] = new MySqlParameter("@_fecEmisiom", MySqlDbType.Date);
+            parametrosEntrada[6] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 11);
+            parametrosEntrada[7] = new MySqlParameter("@_razonSocial", MySqlDbType.VarChar, 1000);
+            parametrosEntrada[8] = new MySqlParameter("@_idEquipo", MySqlDbType.Int32);
+            parametrosEntrada[9] = new MySqlParameter("@_codigoEquipo", MySqlDbType.VarChar, 255);
+            parametrosEntrada[10] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
+            parametrosEntrada[11] = new MySqlParameter("@_cantidadEquipos", MySqlDbType.Int32);
+            parametrosEntrada[12] = new MySqlParameter("@_totalSoles", MySqlDbType.Double);
+            parametrosEntrada[13] = new MySqlParameter("@_totalDolares", MySqlDbType.Double);
+            parametrosEntrada[14] = new MySqlParameter("@_costoSoles", MySqlDbType.Double);
+            parametrosEntrada[15] = new MySqlParameter("@_costoDolares", MySqlDbType.Double);
+            parametrosEntrada[16] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+            parametrosEntrada[17] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[18] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 255);
+            parametrosEntrada[19] = new MySqlParameter("@_idFacturaTransito", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = factura.IdSalida;
+            parametrosEntrada[1].Value = factura.NumeroFactura;
+            parametrosEntrada[2].Value = factura.NumeroOC;
+
+            if (factura.FechaIniPago.ToString() == "1/01/1900 00:00:00")
+                parametrosEntrada[3].Value = null;
+            else
+                parametrosEntrada[3].Value = factura.FechaIniPago;
+
+            if (factura.FechaFinPago.ToString() == "1/01/1900 00:00:00")
+                parametrosEntrada[4].Value = null;
+            else
+                parametrosEntrada[4].Value = factura.FechaFinPago;
+
+            parametrosEntrada[5].Value = factura.FechaPago;
+            parametrosEntrada[6].Value = factura.RucDni;
+            parametrosEntrada[7].Value = factura.RazonSocial;
+            parametrosEntrada[8].Value = factura.IdLC;
+            parametrosEntrada[9].Value = factura.CodigoLC;
+            parametrosEntrada[10].Value = factura.NumeroDocRef;
+            parametrosEntrada[11].Value = factura.CantidadEquipos;
+            parametrosEntrada[12].Value = factura.TotalSoles;
+            parametrosEntrada[13].Value = factura.TotalDolares;
+            parametrosEntrada[14].Value = factura.CostoSoles;
+            parametrosEntrada[15].Value = factura.CostoDolares;
+            parametrosEntrada[16].Value = "";
+            parametrosEntrada[17].Value = 1;
+            parametrosEntrada[18].Value = usuario;
+
+            string[] datosSalida = new string[1];
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_facturaTransito",
+                19, 20, out datosSalida, 1);
+
+            if (datosSalida != null)
+            {
+                factura.IdFactura = Convert.ToInt32(datosSalida[0]);
             }
 
             return 1;
         }
-
 
 
 

@@ -927,9 +927,7 @@ CREATE TABLE ingreso_det_proyectorEcram(
 
 
 
---===========================================================================	
-
-
+--========================NOTA CREDITO======================================	
 
 DROP TABLE IF EXISTS `nota_credito`;
 CREATE TABLE nota_credito(
@@ -963,4 +961,32 @@ CREATE TABLE nota_credito(
 )ENGINE=INNODB;
 
 
+--======================FACTURAS TRANSITO=======================================	
+
+DROP TABLE IF EXISTS `factura_transito`;
+CREATE TABLE factura_transito(
+	idFacturaTransito INT  NOT NULL PRIMARY KEY,
+	idSalida INT,
+	numFacturaTransito NVARCHAR(255) NOT NULL,
+	numeroOC NVARCHAR(255) ,
+	fecIniPago DATE ,
+	fecFinPago DATE ,
+	fecEmisiom DATE NOT NULL,
+	ruc NVARCHAR(11) NOT NULL,
+	razonSocial NVARCHAR(1000),
+	idEquipo INT ,
+	codigoEquipo NVARCHAR(255) ,
+	guiaSalida NVARCHAR(255),
+	cantidadEquipos INT ,
+	totalSoles DOUBLE,
+	totalDolares DOUBLE,
+	costoSoles DOUBLE,
+	costoDolares DOUBLE,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255)
+)ENGINE=INNODB;
 

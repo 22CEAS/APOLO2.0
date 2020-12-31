@@ -2127,7 +2127,7 @@ FROM
 	LEFT JOIN vista_maestro_licencias l2 ON d.idModeloOffice = l2.IdModelo
 	LEFT JOIN vista_maestro_licencias l3 ON d.idModeloAntivirus = l3.IdModelo ;
 
-
+--===========================================================================	
 
 DROP VIEW IF EXISTS vista_buscarV;
 create view vista_buscarV as
@@ -2191,17 +2191,17 @@ WHERE
 			(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
 		END;
 		
---===========================================================================	
+--========================NOTA CREDITO======================================	
 
-DROP VIEW IF EXISTS facturas_activas;
-create view facturas_activas as
+DROP VIEW IF EXISTS vista_facturas_activas;
+create view vista_facturas_activas as
 Select Distinct numFactura
 from factura
 where estado=1
 order by numFactura;
 
-DROP VIEW IF EXISTS equipos_por_factura;
-create view equipos_por_factura as
+DROP VIEW IF EXISTS vista_equipos_por_factura;
+create view vista_equipos_por_factura as
 Select f.*,
 lc.idLC,
 f.fecIniPago as fecIniPagoAntiguo,
@@ -2214,4 +2214,27 @@ from factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo
 where f.estado=1
 Order By codigoLC;
 
+		
+--======================FACTURAS TRANSITO=======================================	
 
+
+DROP VIEW IF EXISTS vista_equipos_disponible_preAlquiler;
+create view vista_equipos_disponible_preAlquiler as
+Select *
+From laptop_cpu
+where estado=2 or estado=6
+ORDER BY codigo;
+
+DROP VIEW IF EXISTS vista_equipos_por_factura_codigo;
+create view vista_equipos_por_factura_codigo as
+Select *
+From factura_transito
+where estado=1 and codigoEquipo<>'001'
+Order By codigoEquipo;
+
+DROP VIEW IF EXISTS vista_equipos_por_factura_generico;
+create view vista_equipos_por_factura_generico as
+Select *
+From factura_transito
+where estado=1 and codigoEquipo='001'
+Order By codigoEquipo;

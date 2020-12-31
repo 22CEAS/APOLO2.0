@@ -40,20 +40,15 @@
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VentaDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.fecIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.fecFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtReferencia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
             this.fecIniPagoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinPagoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.totalSolesAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,6 +56,11 @@
             this.costoSolesAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.costoDolaresAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.numFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtReferencia = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             this.txtObservación = new DevExpress.XtraEditors.MemoEdit();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
@@ -240,6 +240,26 @@
             this.ruc.Visible = true;
             this.ruc.VisibleIndex = 3;
             // 
+            // fecIniPago
+            // 
+            this.fecIniPago.Caption = "Fecha Inicio Pago";
+            this.fecIniPago.FieldName = "fecIniPago";
+            this.fecIniPago.Name = "fecIniPago";
+            this.fecIniPago.OptionsColumn.AllowEdit = false;
+            this.fecIniPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecIniPago.Visible = true;
+            this.fecIniPago.VisibleIndex = 4;
+            // 
+            // fecFinPago
+            // 
+            this.fecFinPago.Caption = "Fecha Fin Pago";
+            this.fecFinPago.FieldName = "fecFinPago";
+            this.fecFinPago.Name = "fecFinPago";
+            this.fecFinPago.OptionsColumn.AllowEdit = false;
+            this.fecFinPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecFinPago.Visible = true;
+            this.fecFinPago.VisibleIndex = 5;
+            // 
             // VentaSoles
             // 
             this.VentaSoles.Caption = "Venta Soles";
@@ -288,26 +308,6 @@
             this.CostoDolares.VisibleIndex = 9;
             this.CostoDolares.Width = 100;
             // 
-            // fecIniPago
-            // 
-            this.fecIniPago.Caption = "Fecha Inicio Pago";
-            this.fecIniPago.FieldName = "fecIniPago";
-            this.fecIniPago.Name = "fecIniPago";
-            this.fecIniPago.OptionsColumn.AllowEdit = false;
-            this.fecIniPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecIniPago.Visible = true;
-            this.fecIniPago.VisibleIndex = 4;
-            // 
-            // fecFinPago
-            // 
-            this.fecFinPago.Caption = "Fecha Fin Pago";
-            this.fecFinPago.FieldName = "fecFinPago";
-            this.fecFinPago.Name = "fecFinPago";
-            this.fecFinPago.OptionsColumn.AllowEdit = false;
-            this.fecFinPago.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecFinPago.Visible = true;
-            this.fecFinPago.VisibleIndex = 5;
-            // 
             // idFactura
             // 
             this.idFactura.Caption = "idFactura";
@@ -333,6 +333,62 @@
             this.idLC.Name = "idLC";
             this.idLC.OptionsColumn.AllowEdit = false;
             this.idLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // fecIniPagoAntiguo
+            // 
+            this.fecIniPagoAntiguo.Caption = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.FieldName = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.Name = "fecIniPagoAntiguo";
+            this.fecIniPagoAntiguo.OptionsColumn.AllowEdit = false;
+            this.fecIniPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // fecFinPagoAntiguo
+            // 
+            this.fecFinPagoAntiguo.Caption = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.FieldName = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.Name = "fecFinPagoAntiguo";
+            this.fecFinPagoAntiguo.OptionsColumn.AllowEdit = false;
+            this.fecFinPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // totalSolesAntiguo
+            // 
+            this.totalSolesAntiguo.Caption = "totalSolesAntiguo";
+            this.totalSolesAntiguo.FieldName = "totalSolesAntiguo";
+            this.totalSolesAntiguo.Name = "totalSolesAntiguo";
+            this.totalSolesAntiguo.OptionsColumn.AllowEdit = false;
+            this.totalSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // totalDolaresAntiguo
+            // 
+            this.totalDolaresAntiguo.Caption = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.FieldName = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.Name = "totalDolaresAntiguo";
+            this.totalDolaresAntiguo.OptionsColumn.AllowEdit = false;
+            this.totalDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // costoSolesAntiguo
+            // 
+            this.costoSolesAntiguo.Caption = "costoSolesAntiguo";
+            this.costoSolesAntiguo.FieldName = "costoSolesAntiguo";
+            this.costoSolesAntiguo.Name = "costoSolesAntiguo";
+            this.costoSolesAntiguo.OptionsColumn.AllowEdit = false;
+            this.costoSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // costoDolaresAntiguo
+            // 
+            this.costoDolaresAntiguo.Caption = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.FieldName = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.Name = "costoDolaresAntiguo";
+            this.costoDolaresAntiguo.OptionsColumn.AllowEdit = false;
+            this.costoDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            // 
+            // numFactura
+            // 
+            this.numFactura.Caption = "numFactura";
+            this.numFactura.FieldName = "numFactura";
+            this.numFactura.Name = "numFactura";
+            this.numFactura.OptionsColumn.AllowEdit = false;
+            this.numFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             // 
             // txtReferencia
             // 
@@ -409,55 +465,6 @@
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // fecIniPagoAntiguo
-            // 
-            this.fecIniPagoAntiguo.Caption = "fecIniPagoAntiguo";
-            this.fecIniPagoAntiguo.FieldName = "fecIniPagoAntiguo";
-            this.fecIniPagoAntiguo.Name = "fecIniPagoAntiguo";
-            this.fecIniPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            // 
-            // fecFinPagoAntiguo
-            // 
-            this.fecFinPagoAntiguo.Caption = "fecFinPagoAntiguo";
-            this.fecFinPagoAntiguo.FieldName = "fecFinPagoAntiguo";
-            this.fecFinPagoAntiguo.Name = "fecFinPagoAntiguo";
-            this.fecFinPagoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            // 
-            // totalSolesAntiguo
-            // 
-            this.totalSolesAntiguo.Caption = "totalSolesAntiguo";
-            this.totalSolesAntiguo.FieldName = "totalSolesAntiguo";
-            this.totalSolesAntiguo.Name = "totalSolesAntiguo";
-            this.totalSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            // 
-            // totalDolaresAntiguo
-            // 
-            this.totalDolaresAntiguo.Caption = "totalDolaresAntiguo";
-            this.totalDolaresAntiguo.FieldName = "totalDolaresAntiguo";
-            this.totalDolaresAntiguo.Name = "totalDolaresAntiguo";
-            this.totalDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            // 
-            // costoSolesAntiguo
-            // 
-            this.costoSolesAntiguo.Caption = "costoSolesAntiguo";
-            this.costoSolesAntiguo.FieldName = "costoSolesAntiguo";
-            this.costoSolesAntiguo.Name = "costoSolesAntiguo";
-            this.costoSolesAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            // 
-            // costoDolaresAntiguo
-            // 
-            this.costoDolaresAntiguo.Caption = "costoDolaresAntiguo";
-            this.costoDolaresAntiguo.FieldName = "costoDolaresAntiguo";
-            this.costoDolaresAntiguo.Name = "costoDolaresAntiguo";
-            this.costoDolaresAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            // 
-            // numFactura
-            // 
-            this.numFactura.Caption = "numFactura";
-            this.numFactura.FieldName = "numFactura";
-            this.numFactura.Name = "numFactura";
-            this.numFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             // 
             // txtObservación
             // 
