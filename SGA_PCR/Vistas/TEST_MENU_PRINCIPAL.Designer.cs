@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TEST_MENU_PRINCIPAL));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue5 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule6 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue6 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule7 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue7 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule8 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue8 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule9 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue9 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule10 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue10 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule11 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue11 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule12 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue12 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,9 +51,8 @@
             this.btnConfiguracionClientes = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.REPORTES = new System.Windows.Forms.Panel();
+            this.btnReporteFT = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -61,11 +60,11 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.PROCESOS = new System.Windows.Forms.Panel();
+            this.btnFacturasTransito = new System.Windows.Forms.Button();
             this.btnNotaDeCredito = new System.Windows.Forms.Button();
             this.btnCorteAlquiler = new System.Windows.Forms.Button();
             this.btnMovimientosInternos = new System.Windows.Forms.Button();
@@ -173,8 +172,6 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnFacturasTransito = new System.Windows.Forms.Button();
-            this.btnReporteFT = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -285,7 +282,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2051);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1903);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -340,7 +337,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 2011);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1863);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -353,8 +350,6 @@
             this.REPORTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.REPORTES.Controls.Add(this.btnReporteFT);
             this.REPORTES.Controls.Add(this.button33);
-            this.REPORTES.Controls.Add(this.button32);
-            this.REPORTES.Controls.Add(this.button31);
             this.REPORTES.Controls.Add(this.button21);
             this.REPORTES.Controls.Add(this.button22);
             this.REPORTES.Controls.Add(this.button23);
@@ -362,15 +357,33 @@
             this.REPORTES.Controls.Add(this.button25);
             this.REPORTES.Controls.Add(this.button26);
             this.REPORTES.Controls.Add(this.button27);
-            this.REPORTES.Controls.Add(this.button28);
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
             this.REPORTES.Location = new System.Drawing.Point(0, 1295);
             this.REPORTES.Name = "REPORTES";
-            this.REPORTES.Size = new System.Drawing.Size(327, 716);
+            this.REPORTES.Size = new System.Drawing.Size(327, 568);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
+            // 
+            // btnReporteFT
+            // 
+            this.btnReporteFT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReporteFT.FlatAppearance.BorderSize = 0;
+            this.btnReporteFT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnReporteFT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteFT.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteFT.ForeColor = System.Drawing.Color.Black;
+            this.btnReporteFT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteFT.Location = new System.Drawing.Point(0, 511);
+            this.btnReporteFT.Name = "btnReporteFT";
+            this.btnReporteFT.Size = new System.Drawing.Size(319, 45);
+            this.btnReporteFT.TabIndex = 23;
+            this.btnReporteFT.Text = "> FACTURAS TRANSITO";
+            this.btnReporteFT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteFT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteFT.UseVisualStyleBackColor = false;
+            this.btnReporteFT.Click += new System.EventHandler(this.btnReporteFT_Click);
             // 
             // button33
             // 
@@ -381,7 +394,7 @@
             this.button33.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button33.ForeColor = System.Drawing.Color.Black;
             this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button33.Location = new System.Drawing.Point(3, 615);
+            this.button33.Location = new System.Drawing.Point(0, 461);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(319, 45);
             this.button33.TabIndex = 22;
@@ -390,46 +403,6 @@
             this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button33.UseVisualStyleBackColor = false;
             this.button33.Click += new System.EventHandler(this.button33_Click);
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button32.FlatAppearance.BorderSize = 0;
-            this.button32.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button32.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button32.ForeColor = System.Drawing.Color.Black;
-            this.button32.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button32.Location = new System.Drawing.Point(3, 564);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(319, 45);
-            this.button32.TabIndex = 21;
-            this.button32.Text = "> COMPRAS";
-            this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button32.UseVisualStyleBackColor = false;
-            this.button32.Visible = false;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button31.FlatAppearance.BorderSize = 0;
-            this.button31.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button31.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.ForeColor = System.Drawing.Color.Black;
-            this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button31.Location = new System.Drawing.Point(3, 513);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(319, 45);
-            this.button31.TabIndex = 20;
-            this.button31.Text = "> ALQUILER";
-            this.button31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button31.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button31.UseVisualStyleBackColor = false;
-            this.button31.Visible = false;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button21
             // 
@@ -440,7 +413,7 @@
             this.button21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.Black;
             this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(3, 462);
+            this.button21.Location = new System.Drawing.Point(3, 411);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(319, 45);
             this.button21.TabIndex = 19;
@@ -459,7 +432,7 @@
             this.button22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.Black;
             this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(3, 411);
+            this.button22.Location = new System.Drawing.Point(3, 360);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(319, 45);
             this.button22.TabIndex = 18;
@@ -478,7 +451,7 @@
             this.button23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.Black;
             this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(3, 360);
+            this.button23.Location = new System.Drawing.Point(3, 309);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(319, 45);
             this.button23.TabIndex = 17;
@@ -497,7 +470,7 @@
             this.button24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.ForeColor = System.Drawing.Color.Black;
             this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(3, 309);
+            this.button24.Location = new System.Drawing.Point(3, 258);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(319, 45);
             this.button24.TabIndex = 16;
@@ -516,7 +489,7 @@
             this.button25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ForeColor = System.Drawing.Color.Black;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(3, 258);
+            this.button25.Location = new System.Drawing.Point(3, 207);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(319, 45);
             this.button25.TabIndex = 15;
@@ -535,7 +508,7 @@
             this.button26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button26.ForeColor = System.Drawing.Color.Black;
             this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.Location = new System.Drawing.Point(3, 105);
+            this.button26.Location = new System.Drawing.Point(3, 54);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(319, 45);
             this.button26.TabIndex = 14;
@@ -554,7 +527,7 @@
             this.button27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button27.ForeColor = System.Drawing.Color.Black;
             this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button27.Location = new System.Drawing.Point(3, 207);
+            this.button27.Location = new System.Drawing.Point(3, 156);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(319, 45);
             this.button27.TabIndex = 13;
@@ -563,26 +536,6 @@
             this.button27.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button27.UseVisualStyleBackColor = false;
             this.button27.Click += new System.EventHandler(this.button27_Click);
-            // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button28.FlatAppearance.BorderSize = 0;
-            this.button28.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.ForeColor = System.Drawing.Color.Black;
-            this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button28.Location = new System.Drawing.Point(3, 54);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(316, 45);
-            this.button28.TabIndex = 12;
-            this.button28.Text = "> FACTURAS POR VENCER";
-            this.button28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button28.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button28.UseVisualStyleBackColor = false;
-            this.button28.Visible = false;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button29
             // 
@@ -593,7 +546,7 @@
             this.button29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button29.ForeColor = System.Drawing.Color.Black;
             this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button29.Location = new System.Drawing.Point(3, 156);
+            this.button29.Location = new System.Drawing.Point(3, 105);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(319, 45);
             this.button29.TabIndex = 11;
@@ -664,6 +617,25 @@
             this.PROCESOS.Size = new System.Drawing.Size(327, 718);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
+            // 
+            // btnFacturasTransito
+            // 
+            this.btnFacturasTransito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFacturasTransito.FlatAppearance.BorderSize = 0;
+            this.btnFacturasTransito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnFacturasTransito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturasTransito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturasTransito.ForeColor = System.Drawing.Color.Black;
+            this.btnFacturasTransito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturasTransito.Location = new System.Drawing.Point(0, 661);
+            this.btnFacturasTransito.Name = "btnFacturasTransito";
+            this.btnFacturasTransito.Size = new System.Drawing.Size(319, 45);
+            this.btnFacturasTransito.TabIndex = 23;
+            this.btnFacturasTransito.Text = "> FACTURAS TRANSITO";
+            this.btnFacturasTransito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturasTransito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFacturasTransito.UseVisualStyleBackColor = false;
+            this.btnFacturasTransito.Click += new System.EventHandler(this.btnFacturasTransito_Click);
             // 
             // btnNotaDeCredito
             // 
@@ -1392,9 +1364,9 @@
             this.lblCantidadTotal.ForeColor = System.Drawing.Color.White;
             this.lblCantidadTotal.Location = new System.Drawing.Point(63, 123);
             this.lblCantidadTotal.Name = "lblCantidadTotal";
-            this.lblCantidadTotal.Size = new System.Drawing.Size(143, 73);
+            this.lblCantidadTotal.Size = new System.Drawing.Size(69, 73);
             this.lblCantidadTotal.TabIndex = 2;
-            this.lblCantidadTotal.Text = "267";
+            this.lblCantidadTotal.Text = "0";
             // 
             // lblFecPronosticador
             // 
@@ -1404,9 +1376,9 @@
             this.lblFecPronosticador.ForeColor = System.Drawing.Color.White;
             this.lblFecPronosticador.Location = new System.Drawing.Point(7, 99);
             this.lblFecPronosticador.Name = "lblFecPronosticador";
-            this.lblFecPronosticador.Size = new System.Drawing.Size(159, 24);
+            this.lblFecPronosticador.Size = new System.Drawing.Size(74, 24);
             this.lblFecPronosticador.TabIndex = 1;
-            this.lblFecPronosticador.Text = "Fecha 01/01/2020";
+            this.lblFecPronosticador.Text = "Fecha: ";
             // 
             // label19
             // 
@@ -1945,60 +1917,60 @@
             this.gridColumn38,
             this.gridColumn39,
             this.gridColumn40});
-            gridFormatRule1.Column = this.gridColumn40;
-            gridFormatRule1.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule1.Name = "Menor a 15 dias";
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue1.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            gridFormatRule2.Column = this.gridColumn40;
-            gridFormatRule2.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule2.Name = "De 15 a 45 dias";
-            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue2.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            gridFormatRule3.Column = this.gridColumn40;
-            gridFormatRule3.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule3.Name = "Mas de 45";
-            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue3.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            gridFormatRule4.Column = this.gridColumn40;
-            gridFormatRule4.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule4.Name = "Meno a 15 dias (2)";
-            formatConditionRuleValue4.Appearance.ForeColor = System.Drawing.Color.Lime;
-            formatConditionRuleValue4.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue4.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule4.Rule = formatConditionRuleValue4;
-            gridFormatRule5.Column = this.gridColumn40;
-            gridFormatRule5.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule5.Name = "De 15 a 45 dias (2)";
-            formatConditionRuleValue5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue5.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue5.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue5.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule5.Rule = formatConditionRuleValue5;
-            gridFormatRule6.Column = this.gridColumn40;
-            gridFormatRule6.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule6.Name = "Mas de 45 (2)";
-            formatConditionRuleValue6.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue6.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue6.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue6.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule6.Rule = formatConditionRuleValue6;
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule1);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule2);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule3);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule4);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule5);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule6);
+            gridFormatRule7.Column = this.gridColumn40;
+            gridFormatRule7.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule7.Name = "Menor a 15 dias";
+            formatConditionRuleValue7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRuleValue7.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue7.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue7.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule7.Rule = formatConditionRuleValue7;
+            gridFormatRule8.Column = this.gridColumn40;
+            gridFormatRule8.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule8.Name = "De 15 a 45 dias";
+            formatConditionRuleValue8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue8.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue8.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue8.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule8.Rule = formatConditionRuleValue8;
+            gridFormatRule9.Column = this.gridColumn40;
+            gridFormatRule9.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule9.Name = "Mas de 45";
+            formatConditionRuleValue9.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue9.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue9.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue9.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule9.Rule = formatConditionRuleValue9;
+            gridFormatRule10.Column = this.gridColumn40;
+            gridFormatRule10.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule10.Name = "Meno a 15 dias (2)";
+            formatConditionRuleValue10.Appearance.ForeColor = System.Drawing.Color.Lime;
+            formatConditionRuleValue10.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue10.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue10.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule10.Rule = formatConditionRuleValue10;
+            gridFormatRule11.Column = this.gridColumn40;
+            gridFormatRule11.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule11.Name = "De 15 a 45 dias (2)";
+            formatConditionRuleValue11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue11.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue11.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue11.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule11.Rule = formatConditionRuleValue11;
+            gridFormatRule12.Column = this.gridColumn40;
+            gridFormatRule12.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule12.Name = "Mas de 45 (2)";
+            formatConditionRuleValue12.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue12.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue12.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue12.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule12.Rule = formatConditionRuleValue12;
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule7);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule8);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule9);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule10);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule11);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule12);
             this.vistaFacturacionDash.GridControl = this.dgvFacturacionDash;
             this.vistaFacturacionDash.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PendienteFacturarSoles", null, "| Tot. Pendientes Soles = {0:c2}"),
@@ -2315,44 +2287,6 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
-            // btnFacturasTransito
-            // 
-            this.btnFacturasTransito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnFacturasTransito.FlatAppearance.BorderSize = 0;
-            this.btnFacturasTransito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnFacturasTransito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacturasTransito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturasTransito.ForeColor = System.Drawing.Color.Black;
-            this.btnFacturasTransito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturasTransito.Location = new System.Drawing.Point(0, 661);
-            this.btnFacturasTransito.Name = "btnFacturasTransito";
-            this.btnFacturasTransito.Size = new System.Drawing.Size(319, 45);
-            this.btnFacturasTransito.TabIndex = 23;
-            this.btnFacturasTransito.Text = "> FACTURAS TRANSITO";
-            this.btnFacturasTransito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturasTransito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFacturasTransito.UseVisualStyleBackColor = false;
-            this.btnFacturasTransito.Click += new System.EventHandler(this.btnFacturasTransito_Click);
-            // 
-            // btnReporteFT
-            // 
-            this.btnReporteFT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReporteFT.FlatAppearance.BorderSize = 0;
-            this.btnReporteFT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnReporteFT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteFT.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteFT.ForeColor = System.Drawing.Color.Black;
-            this.btnReporteFT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteFT.Location = new System.Drawing.Point(3, 665);
-            this.btnReporteFT.Name = "btnReporteFT";
-            this.btnReporteFT.Size = new System.Drawing.Size(319, 45);
-            this.btnReporteFT.TabIndex = 23;
-            this.btnReporteFT.Text = "> FACTURAS TRANSITO";
-            this.btnReporteFT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteFT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReporteFT.UseVisualStyleBackColor = false;
-            this.btnReporteFT.Click += new System.EventHandler(this.btnReporteFT_Click);
-            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2456,12 +2390,9 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
         public System.Windows.Forms.TextBox usuarioConectado;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;

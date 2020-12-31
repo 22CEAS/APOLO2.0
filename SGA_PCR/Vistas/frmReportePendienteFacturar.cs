@@ -269,6 +269,7 @@ namespace Apolo
                 dgvFacturas.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
+                dgvFacturas.Refresh();
             }
             catch (Exception e)
             {

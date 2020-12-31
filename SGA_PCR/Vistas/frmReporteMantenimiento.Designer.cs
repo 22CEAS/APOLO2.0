@@ -265,10 +265,10 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(382, 296);
+            this.giftCarga.BackColor = System.Drawing.Color.Silver;
+            this.giftCarga.Location = new System.Drawing.Point(389, 487);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(281, 152);
+            this.giftCarga.Size = new System.Drawing.Size(187, 74);
             this.giftCarga.TabIndex = 154;
             this.giftCarga.TabStop = false;
             // 

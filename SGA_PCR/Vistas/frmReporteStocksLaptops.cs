@@ -624,7 +624,7 @@ namespace Apolo
                 vista.OptionsSelection.MultiSelect = true;
 
 
- 
+                dgvLaptops.Refresh();
 
             }
             catch (Exception e)
