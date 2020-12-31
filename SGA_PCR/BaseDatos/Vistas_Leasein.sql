@@ -2237,7 +2237,7 @@ create view vista_equipos_por_factura_generico as
 Select *
 From factura_transito
 where estado=1 and codigoEquipo='001'
-Order By codigoEquipo
+Order By codigoEquipo;
 
 
 
