@@ -137,8 +137,8 @@ namespace Apolo
         private void verificandoPermisosProcesos()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19,btnMovimientosInternos,btnCorteAlquiler,btnNotaDeCredito};
-            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b" };
+            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19,btnMovimientosInternos,btnCorteAlquiler,btnNotaDeCredito,btnFacturasTransito};
+            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b" };
 
             foreach (Button btn in botones_procesos)
             {
@@ -160,8 +160,8 @@ namespace Apolo
         private void verificandoPermisosReportes()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33 };
-            string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c" };
+            Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33,btnReporteFT };
+            string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c","14c" };
 
             foreach (Button btn in botones_reportes)
             {
@@ -1823,6 +1823,48 @@ namespace Apolo
             if (IsOpen == false)
             {
                 frmProcesoNotaCredito f2 = new frmProcesoNotaCredito(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnFacturasTransito_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoFacturaTransito")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmProcesoFacturaTransito f2 = new frmProcesoFacturaTransito(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnReporteFT_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteFacturaTransito")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmReporteFacturaTransito f2 = new frmReporteFacturaTransito(this.idUser, this.nameUser);
                 f2.MdiParent = this;
                 CerrarDash();
                 f2.Show();

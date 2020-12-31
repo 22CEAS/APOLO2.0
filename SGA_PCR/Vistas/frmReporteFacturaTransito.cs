@@ -104,15 +104,15 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: 0";
             Task<bool> task = new Task<bool>(cargarDataTabla);
             task.Start();
-            //giftCarga.Image = Image.FromFile(@"C:\Users\User\Desktop\VERSIONES DE APOLO\progress.gif");
             giftCarga.Image = Image.FromFile(@".\progress.gif");
             giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
-            bool resultado = await task;
+            bool resultado = await task; //#
             giftCarga.Enabled = false;
             giftCarga.Visible = false;
             cargarData.Text = "DATA CARGADA";
             label1.Text = $"CANTIDAD REGISTRO: {vistaCodigo.RowCount.ToString()}";
             cargarData.Visible = false;
+
         }
 
         public bool cargarDataTabla()
@@ -156,7 +156,7 @@ namespace Apolo
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
 
             return true;

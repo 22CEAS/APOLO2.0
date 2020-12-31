@@ -173,6 +173,8 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnFacturasTransito = new System.Windows.Forms.Button();
+            this.btnReporteFT = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -283,7 +285,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1947);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2051);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -338,7 +340,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1907);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 2011);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -349,6 +351,7 @@
             // REPORTES
             // 
             this.REPORTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.REPORTES.Controls.Add(this.btnReporteFT);
             this.REPORTES.Controls.Add(this.button33);
             this.REPORTES.Controls.Add(this.button32);
             this.REPORTES.Controls.Add(this.button31);
@@ -363,9 +366,9 @@
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1237);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1295);
             this.REPORTES.Name = "REPORTES";
-            this.REPORTES.Size = new System.Drawing.Size(327, 670);
+            this.REPORTES.Size = new System.Drawing.Size(327, 716);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
             // 
@@ -405,6 +408,7 @@
             this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button32.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button32.UseVisualStyleBackColor = false;
+            this.button32.Visible = false;
             this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button31
@@ -424,6 +428,7 @@
             this.button31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button31.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button31.UseVisualStyleBackColor = false;
+            this.button31.Visible = false;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button21
@@ -628,7 +633,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 1197);
+            this.button20.Location = new System.Drawing.Point(0, 1255);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(327, 40);
             this.button20.TabIndex = 18;
@@ -639,6 +644,7 @@
             // PROCESOS
             // 
             this.PROCESOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PROCESOS.Controls.Add(this.btnFacturasTransito);
             this.PROCESOS.Controls.Add(this.btnNotaDeCredito);
             this.PROCESOS.Controls.Add(this.btnCorteAlquiler);
             this.PROCESOS.Controls.Add(this.btnMovimientosInternos);
@@ -655,7 +661,7 @@
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(327, 660);
+            this.PROCESOS.Size = new System.Drawing.Size(327, 718);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
@@ -2309,6 +2315,44 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
+            // btnFacturasTransito
+            // 
+            this.btnFacturasTransito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFacturasTransito.FlatAppearance.BorderSize = 0;
+            this.btnFacturasTransito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnFacturasTransito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturasTransito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturasTransito.ForeColor = System.Drawing.Color.Black;
+            this.btnFacturasTransito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturasTransito.Location = new System.Drawing.Point(0, 661);
+            this.btnFacturasTransito.Name = "btnFacturasTransito";
+            this.btnFacturasTransito.Size = new System.Drawing.Size(319, 45);
+            this.btnFacturasTransito.TabIndex = 23;
+            this.btnFacturasTransito.Text = "> FACTURAS TRANSITO";
+            this.btnFacturasTransito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturasTransito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFacturasTransito.UseVisualStyleBackColor = false;
+            this.btnFacturasTransito.Click += new System.EventHandler(this.btnFacturasTransito_Click);
+            // 
+            // btnReporteFT
+            // 
+            this.btnReporteFT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReporteFT.FlatAppearance.BorderSize = 0;
+            this.btnReporteFT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnReporteFT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteFT.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteFT.ForeColor = System.Drawing.Color.Black;
+            this.btnReporteFT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteFT.Location = new System.Drawing.Point(3, 665);
+            this.btnReporteFT.Name = "btnReporteFT";
+            this.btnReporteFT.Size = new System.Drawing.Size(319, 45);
+            this.btnReporteFT.TabIndex = 23;
+            this.btnReporteFT.Text = "> FACTURAS TRANSITO";
+            this.btnReporteFT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteFT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteFT.UseVisualStyleBackColor = false;
+            this.btnReporteFT.Click += new System.EventHandler(this.btnReporteFT_Click);
+            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2318,10 +2362,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1581, 734);
-            this.Controls.Add(this.pnlFacturacionOfi);
             this.Controls.Add(this.pnlInventarioOfi);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
+            this.Controls.Add(this.pnlFacturacionOfi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -2504,5 +2548,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblFecPF;
         private System.Windows.Forms.Button btnNotaDeCredito;
+        private System.Windows.Forms.Button btnReporteFT;
+        private System.Windows.Forms.Button btnFacturasTransito;
     }
 }
