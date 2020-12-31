@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoSubirFacturas));
             this.btnSubirFactura = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnValidar = new System.Windows.Forms.Button();
@@ -54,22 +53,19 @@
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UtilidadDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CantidadEquipos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.btnBuscarV = new System.Windows.Forms.Button();
-            this.pnlSF = new System.Windows.Forms.Panel();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
-            this.pnlSF.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSubirFactura
             // 
             this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirFactura.Location = new System.Drawing.Point(883, 81);
+            this.btnSubirFactura.Location = new System.Drawing.Point(883, 12);
             this.btnSubirFactura.Name = "btnSubirFactura";
             this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
             this.btnSubirFactura.TabIndex = 0;
@@ -80,7 +76,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.Location = new System.Drawing.Point(1182, 81);
+            this.btnGrabar.Location = new System.Drawing.Point(1182, 12);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 41);
             this.btnGrabar.TabIndex = 1;
@@ -91,7 +87,7 @@
             // btnValidar
             // 
             this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Location = new System.Drawing.Point(1083, 81);
+            this.btnValidar.Location = new System.Drawing.Point(1083, 12);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 41);
             this.btnValidar.TabIndex = 2;
@@ -101,7 +97,7 @@
             // 
             // dgvLaptops
             // 
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 138);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 69);
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
             this.dgvLaptops.Size = new System.Drawing.Size(1291, 452);
@@ -143,6 +139,7 @@
             this.CostoDolares,
             this.UtilidadSoles,
             this.UtilidadDolares,
+            this.CantidadEquipos,
             this.ObservacionXLevantar});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
@@ -156,7 +153,7 @@
             // 
             // FechaPago
             // 
-            this.FechaPago.Caption = "FechaPago";
+            this.FechaPago.Caption = "Fecha Pago";
             this.FechaPago.FieldName = "FechaPago";
             this.FechaPago.MinWidth = 40;
             this.FechaPago.Name = "FechaPago";
@@ -167,7 +164,7 @@
             // 
             // TipoPago
             // 
-            this.TipoPago.Caption = "TipoPago";
+            this.TipoPago.Caption = "Tipo Pago";
             this.TipoPago.FieldName = "TipoPago";
             this.TipoPago.MinWidth = 40;
             this.TipoPago.Name = "TipoPago";
@@ -178,7 +175,7 @@
             // 
             // CodigoLC
             // 
-            this.CodigoLC.Caption = "CodigoLC";
+            this.CodigoLC.Caption = "Código Equipo";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
@@ -200,7 +197,7 @@
             // 
             // FechaIniPago
             // 
-            this.FechaIniPago.Caption = "FechaIniPago";
+            this.FechaIniPago.Caption = "Fecha Inicio Pago";
             this.FechaIniPago.FieldName = "FechaIniPago";
             this.FechaIniPago.MinWidth = 40;
             this.FechaIniPago.Name = "FechaIniPago";
@@ -211,7 +208,7 @@
             // 
             // FechaFinPago
             // 
-            this.FechaFinPago.Caption = "FechaFinPago";
+            this.FechaFinPago.Caption = "Fecha Fin Pago";
             this.FechaFinPago.FieldName = "FechaFinPago";
             this.FechaFinPago.MinWidth = 40;
             this.FechaFinPago.Name = "FechaFinPago";
@@ -222,7 +219,7 @@
             // 
             // RucDni
             // 
-            this.RucDni.Caption = "RucDni";
+            this.RucDni.Caption = "Ruc Dni";
             this.RucDni.FieldName = "RucDni";
             this.RucDni.MinWidth = 40;
             this.RucDni.Name = "RucDni";
@@ -233,7 +230,7 @@
             // 
             // RazonSocial
             // 
-            this.RazonSocial.Caption = "RazonSocial";
+            this.RazonSocial.Caption = "Razon Social";
             this.RazonSocial.FieldName = "RazonSocial";
             this.RazonSocial.MinWidth = 40;
             this.RazonSocial.Name = "RazonSocial";
@@ -244,7 +241,7 @@
             // 
             // NumeroOC
             // 
-            this.NumeroOC.Caption = "NumeroOC";
+            this.NumeroOC.Caption = "Número OC";
             this.NumeroOC.FieldName = "NumeroOC";
             this.NumeroOC.MinWidth = 40;
             this.NumeroOC.Name = "NumeroOC";
@@ -255,7 +252,7 @@
             // 
             // NumeroDocRef
             // 
-            this.NumeroDocRef.Caption = "NumeroDocRef";
+            this.NumeroDocRef.Caption = "Guía Salida";
             this.NumeroDocRef.FieldName = "NumeroDocRef";
             this.NumeroDocRef.MinWidth = 40;
             this.NumeroDocRef.Name = "NumeroDocRef";
@@ -266,7 +263,7 @@
             // 
             // NumeroFactura
             // 
-            this.NumeroFactura.Caption = "NumeroFactura";
+            this.NumeroFactura.Caption = "Número Factura";
             this.NumeroFactura.FieldName = "NumeroFactura";
             this.NumeroFactura.MinWidth = 40;
             this.NumeroFactura.Name = "NumeroFactura";
@@ -277,7 +274,7 @@
             // 
             // TotalSoles
             // 
-            this.TotalSoles.Caption = "TotalSoles";
+            this.TotalSoles.Caption = "Total Soles";
             this.TotalSoles.FieldName = "TotalSoles";
             this.TotalSoles.MinWidth = 40;
             this.TotalSoles.Name = "TotalSoles";
@@ -288,7 +285,7 @@
             // 
             // TotalDolares
             // 
-            this.TotalDolares.Caption = "TotalDolares";
+            this.TotalDolares.Caption = "Total Dolares";
             this.TotalDolares.FieldName = "TotalDolares";
             this.TotalDolares.MinWidth = 40;
             this.TotalDolares.Name = "TotalDolares";
@@ -299,7 +296,7 @@
             // 
             // TipoCambio
             // 
-            this.TipoCambio.Caption = "TipoCambio";
+            this.TipoCambio.Caption = "Tipo Cambio";
             this.TipoCambio.FieldName = "TipoCambio";
             this.TipoCambio.MinWidth = 40;
             this.TipoCambio.Name = "TipoCambio";
@@ -310,7 +307,7 @@
             // 
             // VentaSoles
             // 
-            this.VentaSoles.Caption = "VentaSoles";
+            this.VentaSoles.Caption = "Venta Soles";
             this.VentaSoles.FieldName = "VentaSoles";
             this.VentaSoles.MinWidth = 40;
             this.VentaSoles.Name = "VentaSoles";
@@ -332,7 +329,7 @@
             // 
             // CostoSoles
             // 
-            this.CostoSoles.Caption = "CostoSoles";
+            this.CostoSoles.Caption = "Costo Soles";
             this.CostoSoles.FieldName = "CostoSoles";
             this.CostoSoles.MinWidth = 40;
             this.CostoSoles.Name = "CostoSoles";
@@ -343,7 +340,7 @@
             // 
             // CostoDolares
             // 
-            this.CostoDolares.Caption = "CostoDolares";
+            this.CostoDolares.Caption = "Costo Dolares";
             this.CostoDolares.FieldName = "CostoDolares";
             this.CostoDolares.MinWidth = 40;
             this.CostoDolares.Name = "CostoDolares";
@@ -354,7 +351,7 @@
             // 
             // UtilidadSoles
             // 
-            this.UtilidadSoles.Caption = "UtilidadSoles";
+            this.UtilidadSoles.Caption = "Utilidad Soles";
             this.UtilidadSoles.FieldName = "UtilidadSoles";
             this.UtilidadSoles.MinWidth = 40;
             this.UtilidadSoles.Name = "UtilidadSoles";
@@ -365,7 +362,7 @@
             // 
             // UtilidadDolares
             // 
-            this.UtilidadDolares.Caption = "UtilidadDolares";
+            this.UtilidadDolares.Caption = "Utilidad Dolares";
             this.UtilidadDolares.FieldName = "UtilidadDolares";
             this.UtilidadDolares.MinWidth = 40;
             this.UtilidadDolares.Name = "UtilidadDolares";
@@ -374,21 +371,31 @@
             this.UtilidadDolares.VisibleIndex = 19;
             this.UtilidadDolares.Width = 100;
             // 
+            // CantidadEquipos
+            // 
+            this.CantidadEquipos.Caption = "Cantidad Equipos";
+            this.CantidadEquipos.FieldName = "CantidadEquipos";
+            this.CantidadEquipos.MinWidth = 40;
+            this.CantidadEquipos.Name = "CantidadEquipos";
+            this.CantidadEquipos.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.CantidadEquipos.Visible = true;
+            this.CantidadEquipos.VisibleIndex = 20;
+            this.CantidadEquipos.Width = 100;
+            // 
             // ObservacionXLevantar
             // 
-            this.ObservacionXLevantar.Caption = "ObservacionXLevantar";
+            this.ObservacionXLevantar.Caption = "Observación por levantar";
             this.ObservacionXLevantar.FieldName = "ObservacionXLevantar";
             this.ObservacionXLevantar.MinWidth = 40;
             this.ObservacionXLevantar.Name = "ObservacionXLevantar";
             this.ObservacionXLevantar.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ObservacionXLevantar.Visible = true;
-            this.ObservacionXLevantar.VisibleIndex = 20;
+            this.ObservacionXLevantar.VisibleIndex = 21;
             this.ObservacionXLevantar.Width = 300;
             // 
             // giftCarga
             // 
-            this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(456, 240);
+            this.giftCarga.Location = new System.Drawing.Point(456, 171);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(413, 310);
             this.giftCarga.TabIndex = 141;
@@ -397,7 +404,7 @@
             // btnBuscarV
             // 
             this.btnBuscarV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarV.Location = new System.Drawing.Point(985, 81);
+            this.btnBuscarV.Location = new System.Drawing.Point(985, 12);
             this.btnBuscarV.Name = "btnBuscarV";
             this.btnBuscarV.Size = new System.Drawing.Size(75, 41);
             this.btnBuscarV.TabIndex = 142;
@@ -405,62 +412,18 @@
             this.btnBuscarV.UseVisualStyleBackColor = true;
             this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
             // 
-            // pnlSF
-            // 
-            this.pnlSF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pnlSF.Controls.Add(this.label1);
-            this.pnlSF.Controls.Add(this.btnNuevo);
-            this.pnlSF.Location = new System.Drawing.Point(4, 3);
-            this.pnlSF.Name = "pnlSF";
-            this.pnlSF.Size = new System.Drawing.Size(1308, 65);
-            this.pnlSF.TabIndex = 143;
-            this.pnlSF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSF_MouseMove);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.AutoSize = true;
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(1233, 0);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
-            this.btnNuevo.TabIndex = 183;
-            this.btnNuevo.Text = "CERRAR";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(548, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 31);
-            this.label1.TabIndex = 184;
-            this.label1.Text = "SUBIR FACTURA";
-            // 
             // frmProcesoSubirFacturas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1315, 602);
-            this.Controls.Add(this.pnlSF);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1315, 533);
             this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnSubirFactura);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoSubirFacturas";
@@ -472,8 +435,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
-            this.pnlSF.ResumeLayout(false);
-            this.pnlSF.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -508,8 +469,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Proveedor;
         public System.Windows.Forms.PictureBox giftCarga;
         private System.Windows.Forms.Button btnBuscarV;
-        private System.Windows.Forms.Panel pnlSF;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn CantidadEquipos;
     }
 }
