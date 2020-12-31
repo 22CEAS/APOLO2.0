@@ -174,7 +174,8 @@ namespace Apolo
 
         private void frmReporteFacturaTransito_Load(object sender, EventArgs e)
         {
-            cargarData.PerformClick();
+            cargarDataTabla();
+            //cargarData.PerformClick();
         }
     }
 }

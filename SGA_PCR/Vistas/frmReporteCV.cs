@@ -374,6 +374,8 @@ namespace Apolo
                 dgvLaptops.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
+
+                dgvLaptops.Refresh();
             }
             catch (Exception e)
             {

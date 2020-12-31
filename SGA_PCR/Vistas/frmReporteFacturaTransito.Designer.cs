@@ -91,7 +91,7 @@
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(550, 269);
+            this.cargarData.Location = new System.Drawing.Point(288, 294);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 234;
@@ -103,7 +103,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(650, 269);
+            this.verResumen.Location = new System.Drawing.Point(286, 350);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 235;
@@ -113,15 +113,19 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(503, 238);
+            this.giftCarga.Location = new System.Drawing.Point(25, 416);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(190, 138);
+            this.giftCarga.Size = new System.Drawing.Size(204, 116);
             this.giftCarga.TabIndex = 241;
             this.giftCarga.TabStop = false;
             // 
             // dgvEquiposCodigos
             // 
-            this.dgvEquiposCodigos.Location = new System.Drawing.Point(43, 102);
+            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 57);
+            this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvEquiposCodigos.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvEquiposCodigos.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvEquiposCodigos.MainView = this.vistaCodigo;
             this.dgvEquiposCodigos.Name = "dgvEquiposCodigos";
             this.dgvEquiposCodigos.Size = new System.Drawing.Size(1228, 353);

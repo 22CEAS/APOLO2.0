@@ -160,8 +160,8 @@ namespace Apolo
         private void verificandoPermisosReportes()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33,btnReporteFT };
-            string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c","14c" };
+            Button[] botones_reportes = { button30,  button26, button29, button27, button25, button24, button23, button22, button21, button33,btnReporteFT };
+            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c",  "13c","14c" };
 
             foreach (Button btn in botones_reportes)
             {

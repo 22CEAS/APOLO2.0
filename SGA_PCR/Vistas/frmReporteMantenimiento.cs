@@ -247,7 +247,8 @@ namespace Apolo
 
         private void frmReporteMantenimiento_Load(object sender, EventArgs e)
         {
-            cargarData.PerformClick();
+            cargarDataTabla();
+            //cargarData.PerformClick();
         }
 
         private void dgvReparaciones_MouseHover(object sender, EventArgs e)
