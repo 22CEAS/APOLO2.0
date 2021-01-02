@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoFacturaTransito));
             this.cmbFactura = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvEquiposCodigos = new DevExpress.XtraGrid.GridControl();
@@ -52,9 +53,13 @@
             this.btnValidar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.pnlFT = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
+            this.pnlFT.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbFactura
@@ -63,7 +68,7 @@
             this.cmbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFactura.FormattingEnabled = true;
-            this.cmbFactura.Location = new System.Drawing.Point(25, 40);
+            this.cmbFactura.Location = new System.Drawing.Point(24, 169);
             this.cmbFactura.Name = "cmbFactura";
             this.cmbFactura.Size = new System.Drawing.Size(177, 21);
             this.cmbFactura.TabIndex = 217;
@@ -73,7 +78,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(22, 19);
+            this.label15.Location = new System.Drawing.Point(21, 148);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 16);
             this.label15.TabIndex = 218;
@@ -81,7 +86,7 @@
             // 
             // dgvEquiposCodigos
             // 
-            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 111);
+            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 225);
             this.dgvEquiposCodigos.MainView = this.vistaCodigo;
             this.dgvEquiposCodigos.Name = "dgvEquiposCodigos";
             this.dgvEquiposCodigos.Size = new System.Drawing.Size(1228, 392);
@@ -315,7 +320,7 @@
             // btnBuscarV
             // 
             this.btnBuscarV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarV.Location = new System.Drawing.Point(981, 29);
+            this.btnBuscarV.Location = new System.Drawing.Point(980, 158);
             this.btnBuscarV.Name = "btnBuscarV";
             this.btnBuscarV.Size = new System.Drawing.Size(75, 41);
             this.btnBuscarV.TabIndex = 233;
@@ -326,7 +331,7 @@
             // btnValidar
             // 
             this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Location = new System.Drawing.Point(1079, 29);
+            this.btnValidar.Location = new System.Drawing.Point(1077, 158);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 41);
             this.btnValidar.TabIndex = 232;
@@ -337,7 +342,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.Location = new System.Drawing.Point(1178, 29);
+            this.btnGrabar.Location = new System.Drawing.Point(1176, 158);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 41);
             this.btnGrabar.TabIndex = 231;
@@ -347,18 +352,61 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(577, 19);
+            this.giftCarga.Location = new System.Drawing.Point(576, 148);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(74, 67);
             this.giftCarga.TabIndex = 234;
             this.giftCarga.TabStop = false;
             // 
+            // pnlFT
+            // 
+            this.pnlFT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlFT.Controls.Add(this.label1);
+            this.pnlFT.Controls.Add(this.btnNuevo);
+            this.pnlFT.Location = new System.Drawing.Point(1, 2);
+            this.pnlFT.Name = "pnlFT";
+            this.pnlFT.Size = new System.Drawing.Size(1311, 109);
+            this.pnlFT.TabIndex = 235;
+            this.pnlFT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFT_MouseMove);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(1217, 22);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 177;
+            this.btnNuevo.Text = "CERRAR";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(497, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 31);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "FACTURAS EN TRANSITO";
+            // 
             // frmProcesoFacturaTransito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1315, 556);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1315, 655);
+            this.Controls.Add(this.pnlFT);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.btnValidar);
@@ -366,6 +414,7 @@
             this.Controls.Add(this.dgvEquiposCodigos);
             this.Controls.Add(this.cmbFactura);
             this.Controls.Add(this.label15);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoFacturaTransito";
@@ -377,6 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
+            this.pnlFT.ResumeLayout(false);
+            this.pnlFT.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +458,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn CantidadEquipos;
         private DevExpress.XtraGrid.Columns.GridColumn NumeroOC;
         private DevExpress.XtraGrid.Columns.GridColumn Error;
+        private System.Windows.Forms.Panel pnlFT;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label1;
     }
 }

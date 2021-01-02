@@ -51,18 +51,22 @@
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CantidadEquipos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pnlFTr = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).BeginInit();
+            this.pnlFTr.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(1039, 485);
+            this.label1.Location = new System.Drawing.Point(990, 557);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 233;
@@ -79,7 +83,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1178, 12);
+            this.btnExportar.Location = new System.Drawing.Point(25, 560);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 231;
@@ -112,16 +116,16 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(25, 416);
+            this.giftCarga.BackColor = System.Drawing.Color.Silver;
+            this.giftCarga.Location = new System.Drawing.Point(821, 557);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(204, 116);
+            this.giftCarga.Size = new System.Drawing.Size(41, 66);
             this.giftCarga.TabIndex = 241;
             this.giftCarga.TabStop = false;
             // 
             // dgvEquiposCodigos
             // 
-            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 57);
+            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 198);
             this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvEquiposCodigos.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -375,18 +379,62 @@
             this.ObservacionXLevantar.VisibleIndex = 14;
             this.ObservacionXLevantar.Width = 300;
             // 
+            // pnlFTr
+            // 
+            this.pnlFTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlFTr.Controls.Add(this.label2);
+            this.pnlFTr.Controls.Add(this.btnNuevo);
+            this.pnlFTr.Location = new System.Drawing.Point(2, 2);
+            this.pnlFTr.Name = "pnlFTr";
+            this.pnlFTr.Size = new System.Drawing.Size(1312, 110);
+            this.pnlFTr.TabIndex = 242;
+            this.pnlFTr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(1226, 22);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 177;
+            this.btnNuevo.Text = "CERRAR";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(527, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(373, 31);
+            this.label2.TabIndex = 178;
+            this.label2.Text = "FACTURAS EN TRANSITO";
+            // 
             // frmReporteFacturaTransito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1315, 556);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1315, 635);
+            this.Controls.Add(this.pnlFTr);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.dgvEquiposCodigos);
             this.Controls.Add(this.cargarData);
             this.Controls.Add(this.verResumen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmReporteFacturaTransito";
@@ -398,6 +446,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).EndInit();
+            this.pnlFTr.ResumeLayout(false);
+            this.pnlFTr.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +476,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
         private DevExpress.XtraGrid.Columns.GridColumn CantidadEquipos;
         private DevExpress.XtraGrid.Columns.GridColumn ObservacionXLevantar;
+        private System.Windows.Forms.Panel pnlFTr;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label2;
     }
 }
