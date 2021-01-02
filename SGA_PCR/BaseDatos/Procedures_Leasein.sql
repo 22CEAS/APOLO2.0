@@ -3585,7 +3585,7 @@ END
 $$
 DELIMITER ;
 
---///////////////////////////////////////////
+
 DROP PROCEDURE IF EXISTS `update_laptop_disponibilidad_dev_cam`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad_dev_cam`(
