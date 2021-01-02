@@ -1541,6 +1541,7 @@ namespace Apolo
         private void label23_Click(object sender, EventArgs e)
         {
             CalendarioDash.Visible = true;
+            
         }
 
         private void pnlProsticar_Click(object sender, EventArgs e)

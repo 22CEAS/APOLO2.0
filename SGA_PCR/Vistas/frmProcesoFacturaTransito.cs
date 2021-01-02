@@ -611,5 +611,28 @@ namespace Apolo
             }
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlFT_MouseMove(object sender, MouseEventArgs e)
+        {
+
+
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+
+        }
     }
 }
