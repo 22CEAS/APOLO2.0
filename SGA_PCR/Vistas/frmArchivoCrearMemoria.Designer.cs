@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearMemoria));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn36 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.chbActivo = new System.Windows.Forms.CheckBox();
@@ -55,8 +55,8 @@
             this.btnAgregarCapacidadMemoria = new System.Windows.Forms.Button();
             this.btnAgregarTipoMemoria = new System.Windows.Forms.Button();
             this.pnlMM = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlMM.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -238,60 +238,60 @@
             this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
             this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn28.AllowEdit = false;
-            gridColumn28.DataPropertyName = "codigo";
-            gridColumn28.Name = "Código";
-            gridColumn29.AllowEdit = false;
-            gridColumn29.DataPropertyName = "tipo";
-            gridColumn29.FilterAutoScan = true;
-            gridColumn29.MinimumWidth = 100;
-            gridColumn29.Name = "Modelo";
-            gridColumn29.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn30.AllowEdit = false;
-            gridColumn30.DataPropertyName = "tipo2";
-            gridColumn30.Name = "Tipo";
-            gridColumn31.AllowEdit = false;
-            gridColumn31.DataPropertyName = "capacidad";
-            gridColumn31.MinimumWidth = 100;
-            gridColumn31.Name = "Capacidad";
-            gridColumn31.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn32.AllowEdit = false;
-            gridColumn32.DataPropertyName = "estado";
-            gridColumn32.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn32.MinimumWidth = 100;
-            gridColumn32.Name = "Activo";
-            gridColumn32.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn33.AllowEdit = false;
-            gridColumn33.DataPropertyName = "idMemoria";
-            gridColumn33.MinimumWidth = 50;
-            gridColumn33.Name = "Id";
-            gridColumn33.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn33.Visible = false;
-            gridColumn33.Width = 50;
-            gridColumn34.AllowEdit = false;
-            gridColumn34.DataPropertyName = "idTipo";
-            gridColumn34.MinimumWidth = 100;
-            gridColumn34.Name = "idModelo";
-            gridColumn34.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn34.Visible = false;
-            gridColumn35.DataPropertyName = "idTipo2";
-            gridColumn35.Name = "idTipo";
-            gridColumn35.Visible = false;
-            gridColumn36.AllowEdit = false;
-            gridColumn36.DataPropertyName = "idCapacidad";
-            gridColumn36.MinimumWidth = 100;
-            gridColumn36.Name = "idCapacidad";
-            gridColumn36.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn36.Visible = false;
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn28);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn29);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn30);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn31);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn32);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn33);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn34);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn35);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn36);
+            gridColumn10.AllowEdit = false;
+            gridColumn10.DataPropertyName = "codigo";
+            gridColumn10.Name = "Código";
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "tipo";
+            gridColumn11.FilterAutoScan = true;
+            gridColumn11.MinimumWidth = 100;
+            gridColumn11.Name = "Modelo";
+            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn12.AllowEdit = false;
+            gridColumn12.DataPropertyName = "tipo2";
+            gridColumn12.Name = "Tipo";
+            gridColumn13.AllowEdit = false;
+            gridColumn13.DataPropertyName = "capacidad";
+            gridColumn13.MinimumWidth = 100;
+            gridColumn13.Name = "Capacidad";
+            gridColumn13.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn14.AllowEdit = false;
+            gridColumn14.DataPropertyName = "estado";
+            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn14.MinimumWidth = 100;
+            gridColumn14.Name = "Activo";
+            gridColumn14.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn15.AllowEdit = false;
+            gridColumn15.DataPropertyName = "idMemoria";
+            gridColumn15.MinimumWidth = 50;
+            gridColumn15.Name = "Id";
+            gridColumn15.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn15.Visible = false;
+            gridColumn15.Width = 50;
+            gridColumn16.AllowEdit = false;
+            gridColumn16.DataPropertyName = "idTipo";
+            gridColumn16.MinimumWidth = 100;
+            gridColumn16.Name = "idModelo";
+            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn16.Visible = false;
+            gridColumn17.DataPropertyName = "idTipo2";
+            gridColumn17.Name = "idTipo";
+            gridColumn17.Visible = false;
+            gridColumn18.AllowEdit = false;
+            gridColumn18.DataPropertyName = "idCapacidad";
+            gridColumn18.MinimumWidth = 100;
+            gridColumn18.Name = "idCapacidad";
+            gridColumn18.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn18.Visible = false;
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn18);
             this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -398,9 +398,20 @@
             this.pnlMM.Controls.Add(this.button1);
             this.pnlMM.Location = new System.Drawing.Point(1, 2);
             this.pnlMM.Name = "pnlMM";
-            this.pnlMM.Size = new System.Drawing.Size(828, 106);
+            this.pnlMM.Size = new System.Drawing.Size(828, 68);
             this.pnlMM.TabIndex = 112;
             this.pnlMM.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMM_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(285, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 31);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "MAESTRO MEMORIA";
             // 
             // button1
             // 
@@ -413,7 +424,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(750, 25);
+            this.button1.Location = new System.Drawing.Point(746, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 113;
@@ -421,17 +432,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(270, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 31);
-            this.label1.TabIndex = 114;
-            this.label1.Text = "MAESTRO MEMORIA";
             // 
             // frmArchivoCrearMemoria
             // 

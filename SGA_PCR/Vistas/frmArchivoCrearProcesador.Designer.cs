@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearProcesador));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.chbActivo = new System.Windows.Forms.CheckBox();
@@ -54,8 +54,8 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.pnlP = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlP.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -237,58 +237,58 @@
             this.dgvProcesadores.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvProcesadores.PrimaryGrid.AllowRowResize = true;
             this.dgvProcesadores.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn17.AllowEdit = false;
-            gridColumn17.DataPropertyName = "codigo";
-            gridColumn17.Name = "Código";
-            gridColumn18.AllowEdit = false;
-            gridColumn18.DataPropertyName = "tipo";
-            gridColumn18.FilterAutoScan = true;
-            gridColumn18.MinimumWidth = 100;
-            gridColumn18.Name = "Tipo";
-            gridColumn18.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn19.AllowEdit = false;
-            gridColumn19.DataPropertyName = "generacion";
-            gridColumn19.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn19.MinimumWidth = 100;
-            gridColumn19.Name = "Generación";
-            gridColumn19.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn20.AllowEdit = false;
-            gridColumn20.DataPropertyName = "estado";
-            gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn20.MinimumWidth = 100;
-            gridColumn20.Name = "Activo";
-            gridColumn20.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn21.AllowEdit = false;
-            gridColumn21.DataPropertyName = "idProcesador";
-            gridColumn21.MinimumWidth = 50;
-            gridColumn21.Name = "Id";
-            gridColumn21.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn21.Visible = false;
-            gridColumn21.Width = 50;
-            gridColumn22.AllowEdit = false;
-            gridColumn22.DataPropertyName = "idTipo";
-            gridColumn22.MinimumWidth = 100;
-            gridColumn22.Name = "idTipo";
-            gridColumn22.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn22.Visible = false;
-            gridColumn23.AllowEdit = false;
-            gridColumn23.DataPropertyName = "idGeneracion";
-            gridColumn23.MinimumWidth = 100;
-            gridColumn23.Name = "idGeneracion";
-            gridColumn23.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn23.Visible = false;
-            gridColumn24.AllowEdit = false;
-            gridColumn24.DataPropertyName = "idMarca";
-            gridColumn24.Name = "idMarca";
-            gridColumn24.Visible = false;
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn17);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn20);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn21);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn22);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn23);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn24);
+            gridColumn1.AllowEdit = false;
+            gridColumn1.DataPropertyName = "codigo";
+            gridColumn1.Name = "Código";
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "tipo";
+            gridColumn2.FilterAutoScan = true;
+            gridColumn2.MinimumWidth = 100;
+            gridColumn2.Name = "Tipo";
+            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.AllowEdit = false;
+            gridColumn3.DataPropertyName = "generacion";
+            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn3.MinimumWidth = 100;
+            gridColumn3.Name = "Generación";
+            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn4.AllowEdit = false;
+            gridColumn4.DataPropertyName = "estado";
+            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn4.MinimumWidth = 100;
+            gridColumn4.Name = "Activo";
+            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn5.AllowEdit = false;
+            gridColumn5.DataPropertyName = "idProcesador";
+            gridColumn5.MinimumWidth = 50;
+            gridColumn5.Name = "Id";
+            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn5.Visible = false;
+            gridColumn5.Width = 50;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "idTipo";
+            gridColumn6.MinimumWidth = 100;
+            gridColumn6.Name = "idTipo";
+            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn6.Visible = false;
+            gridColumn7.AllowEdit = false;
+            gridColumn7.DataPropertyName = "idGeneracion";
+            gridColumn7.MinimumWidth = 100;
+            gridColumn7.Name = "idGeneracion";
+            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn7.Visible = false;
+            gridColumn8.AllowEdit = false;
+            gridColumn8.DataPropertyName = "idMarca";
+            gridColumn8.Name = "idMarca";
+            gridColumn8.Visible = false;
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvProcesadores.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvProcesadores.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvProcesadores.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -396,9 +396,20 @@
             this.pnlP.Controls.Add(this.button1);
             this.pnlP.Location = new System.Drawing.Point(4, 2);
             this.pnlP.Name = "pnlP";
-            this.pnlP.Size = new System.Drawing.Size(841, 98);
+            this.pnlP.Size = new System.Drawing.Size(841, 74);
             this.pnlP.TabIndex = 109;
             this.pnlP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlP_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(257, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(367, 31);
+            this.label1.TabIndex = 111;
+            this.label1.Text = "MAESTRO PROCESADOR";
             // 
             // button1
             // 
@@ -411,7 +422,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(763, 10);
+            this.button1.Location = new System.Drawing.Point(763, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 110;
@@ -419,17 +430,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(269, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 31);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "MAESTRO PROCESADOR";
             // 
             // frmArchivoCrearProcesador
             // 

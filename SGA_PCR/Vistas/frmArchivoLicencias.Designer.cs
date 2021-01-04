@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoLicencias));
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -44,8 +44,8 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pnlL = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlL.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,24 +94,24 @@
             this.dgvModelo.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvModelo.PrimaryGrid.AllowRowResize = true;
             this.dgvModelo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn13.AllowEdit = false;
-            gridColumn13.DataPropertyName = "nombre";
-            gridColumn13.Name = "Descripción";
-            gridColumn13.Width = 200;
-            gridColumn14.AllowEdit = false;
-            gridColumn14.DataPropertyName = "estado";
-            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn14.Name = "Activo";
-            gridColumn15.DataPropertyName = "idMarca";
-            gridColumn15.Name = "IdMarca";
-            gridColumn15.Visible = false;
-            gridColumn16.DataPropertyName = "idModelo";
-            gridColumn16.Name = "IdModelo";
-            gridColumn16.Visible = false;
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn16);
+            gridColumn5.AllowEdit = false;
+            gridColumn5.DataPropertyName = "nombre";
+            gridColumn5.Name = "Descripción";
+            gridColumn5.Width = 200;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "estado";
+            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn6.Name = "Activo";
+            gridColumn7.DataPropertyName = "idMarca";
+            gridColumn7.Name = "IdMarca";
+            gridColumn7.Visible = false;
+            gridColumn8.DataPropertyName = "idModelo";
+            gridColumn8.Name = "IdModelo";
+            gridColumn8.Visible = false;
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvModelo.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvModelo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvModelo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -236,9 +236,20 @@
             this.pnlL.Controls.Add(this.button1);
             this.pnlL.Location = new System.Drawing.Point(1, 0);
             this.pnlL.Name = "pnlL";
-            this.pnlL.Size = new System.Drawing.Size(509, 99);
+            this.pnlL.Size = new System.Drawing.Size(509, 71);
             this.pnlL.TabIndex = 170;
             this.pnlL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(96, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 31);
+            this.label1.TabIndex = 172;
+            this.label1.Text = "MAESTRO LICENCIA";
             // 
             // button1
             // 
@@ -251,7 +262,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(423, 16);
+            this.button1.Location = new System.Drawing.Point(431, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 171;
@@ -259,17 +270,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(100, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 31);
-            this.label1.TabIndex = 172;
-            this.label1.Text = "MAESTRO LICENCIA";
             // 
             // frmArchivoLicencias
             // 

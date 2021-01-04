@@ -107,6 +107,8 @@
             // 
             // TipoSede
             // 
+            this.TipoSede.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TipoSede.AppearanceHeader.Options.UseBackColor = true;
             this.TipoSede.Caption = "Sede";
             this.TipoSede.FieldName = "TipoSede";
             this.TipoSede.Name = "TipoSede";
@@ -178,9 +180,11 @@
             formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.White;
             formatConditionRuleValue1.Appearance.Options.HighPriority = true;
             formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseFont = true;
             formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseTextOptions = true;
             formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue1.Expression = "[Estado] = 4 Or [Estado] = 12 Or [Estado] = 5";
+            formatConditionRuleValue1.Expression = "[Estado] = 4 Or [Estado] = 12 Or [Estado] = 5 Or [Estado] = 13";
             gridFormatRule1.Rule = formatConditionRuleValue1;
             this.vista.FormatRules.Add(gridFormatRule1);
             this.vista.GridControl = this.dgvLaptops;
@@ -241,6 +245,8 @@
             // 
             // GeneracionProcesador
             // 
+            this.GeneracionProcesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GeneracionProcesador.AppearanceHeader.Options.UseBackColor = true;
             this.GeneracionProcesador.Caption = "Generacion Procesador";
             this.GeneracionProcesador.DisplayFormat.FormatString = "{0} GEN";
             this.GeneracionProcesador.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
@@ -408,6 +414,8 @@
             // 
             // fecTraslado
             // 
+            this.fecTraslado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.fecTraslado.AppearanceHeader.Options.UseBackColor = true;
             this.fecTraslado.Caption = "Fecha Traslado";
             this.fecTraslado.DisplayFormat.FormatString = "d";
             this.fecTraslado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;

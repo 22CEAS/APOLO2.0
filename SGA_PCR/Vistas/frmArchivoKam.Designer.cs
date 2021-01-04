@@ -41,8 +41,8 @@
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.pnlK = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteKam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -208,9 +208,20 @@
             this.pnlK.Controls.Add(this.button1);
             this.pnlK.Location = new System.Drawing.Point(0, 0);
             this.pnlK.Name = "pnlK";
-            this.pnlK.Size = new System.Drawing.Size(781, 115);
+            this.pnlK.Size = new System.Drawing.Size(781, 70);
             this.pnlK.TabIndex = 142;
             this.pnlK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlK_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(272, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(224, 31);
+            this.label2.TabIndex = 144;
+            this.label2.Text = "MAESTRO KAM";
             // 
             // button1
             // 
@@ -223,25 +234,14 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(659, 27);
+            this.button1.Location = new System.Drawing.Point(680, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 63);
+            this.button1.Size = new System.Drawing.Size(101, 63);
             this.button1.TabIndex = 143;
             this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(272, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 31);
-            this.label2.TabIndex = 144;
-            this.label2.Text = "MAESTRO KAM";
             // 
             // frmArchivoKam
             // 

@@ -1324,7 +1324,7 @@
             this.pnlInventarioOfi.Controls.Add(this.lblInfoInvenario);
             this.pnlInventarioOfi.Controls.Add(this.pnlPronosticadorInfo);
             this.pnlInventarioOfi.Controls.Add(this.pnlLaptopsDisponibles);
-            this.pnlInventarioOfi.Location = new System.Drawing.Point(360, 94);
+            this.pnlInventarioOfi.Location = new System.Drawing.Point(361, 61);
             this.pnlInventarioOfi.Name = "pnlInventarioOfi";
             this.pnlInventarioOfi.Size = new System.Drawing.Size(1123, 539);
             this.pnlInventarioOfi.TabIndex = 18;
@@ -1808,7 +1808,7 @@
             this.pnlFacturacionOfi.Controls.Add(this.lblFactToInv);
             this.pnlFacturacionOfi.Controls.Add(this.panel10);
             this.pnlFacturacionOfi.Controls.Add(this.panel9);
-            this.pnlFacturacionOfi.Location = new System.Drawing.Point(360, 95);
+            this.pnlFacturacionOfi.Location = new System.Drawing.Point(344, 61);
             this.pnlFacturacionOfi.Name = "pnlFacturacionOfi";
             this.pnlFacturacionOfi.Size = new System.Drawing.Size(1120, 648);
             this.pnlFacturacionOfi.TabIndex = 20;

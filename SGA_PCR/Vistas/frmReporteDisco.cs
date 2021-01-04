@@ -68,8 +68,7 @@ namespace Apolo
         private void btnExportar_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
+            
                 if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
@@ -92,7 +91,7 @@ namespace Apolo
 
                 }
 
-            }
+            
         }
 
         public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)

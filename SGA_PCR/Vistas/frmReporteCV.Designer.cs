@@ -522,6 +522,8 @@
             // 
             // FecPrimerTraslado
             // 
+            this.FecPrimerTraslado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecPrimerTraslado.AppearanceHeader.Options.UseBackColor = true;
             this.FecPrimerTraslado.Caption = "Fecha Primer Traslado";
             this.FecPrimerTraslado.FieldName = "FecPrimerTraslado";
             this.FecPrimerTraslado.Name = "FecPrimerTraslado";

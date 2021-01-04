@@ -55,8 +55,8 @@
             this.btnAgregarCapacidadDisco = new System.Windows.Forms.Button();
             this.btnAgregarTamanoDisco = new System.Windows.Forms.Button();
             this.pnlMDD = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlMDD.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -405,9 +405,20 @@
             this.pnlMDD.Controls.Add(this.button1);
             this.pnlMDD.Location = new System.Drawing.Point(2, 2);
             this.pnlMDD.Name = "pnlMDD";
-            this.pnlMDD.Size = new System.Drawing.Size(909, 109);
+            this.pnlMDD.Size = new System.Drawing.Size(909, 78);
             this.pnlMDD.TabIndex = 112;
             this.pnlMDD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMDD_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(346, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(255, 31);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "MAESTRO DISCO";
             // 
             // button1
             // 
@@ -420,7 +431,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(831, 19);
+            this.button1.Location = new System.Drawing.Point(831, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 113;
@@ -428,17 +439,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(350, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 31);
-            this.label1.TabIndex = 114;
-            this.label1.Text = "MAESTRO DISCO";
             // 
             // frmArchivoCrearDiscoDuro
             // 

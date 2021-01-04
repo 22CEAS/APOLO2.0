@@ -331,7 +331,11 @@ namespace Apolo
 
         private void TEST_MENU_PRINCIPAL_Load(object sender, EventArgs e)
         {
-            //btnDash.PerformClick();
+            lblFecPronosticador.Text = "<- Seleccione una fecha";
+            lblCantidadTotal.Text = "";
+            int DiaMinimo= DateTime.Now.Day;
+            CalendarioDash.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DiaMinimo);
+
             
         }
 

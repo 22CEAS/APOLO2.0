@@ -105,10 +105,10 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(15, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(18, 1)));
         }
 
-
+        
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
@@ -117,7 +117,7 @@ namespace Apolo
                 //Cursor.Current = Cursors.WaitCursor;
                 try
                 {
-                    DevExpress.Export.ExportSettings.DefaultExportType = ExportType.DataAware;
+                    DevExpress.Export.ExportSettings.DefaultExportType = ExportType.Default;
                     XlsxExportOptionsEx options = new XlsxExportOptionsEx();
                     options.CustomizeSheetHeader += options_CustomizeSheetHeader;
                     //options.CustomizeCell += op_CustomizeCell;
@@ -160,7 +160,7 @@ namespace Apolo
 
                         hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
                         hoja_pre_alquiler.Name = "Laptops";
-                        string cabecera = "Equipos Disponibles";
+                        string cabecera = "RESUMEN EQUIPOS DISPONIBLES/DESFASADOS";
                         ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
 
 
@@ -301,11 +301,11 @@ namespace Apolo
                 hoja.Cells[1, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
                 hoja.Cells[1, 2] = txtDisponibles.Text;
 
-                hoja.Cells[2, 1] = "ALQUILADOS";
+                hoja.Cells[2, 1] = "ALQUILADAS";
                 hoja.Cells[2, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
                 hoja.Cells[2, 2] = txtAlquilados.Text;
 
-                hoja.Cells[3, 1] = "INUTILIZABLES";
+                hoja.Cells[3, 1] = "RESERVADAS";
                 hoja.Cells[3, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
                 hoja.Cells[3, 2] = txtReservadas.Text;
 
@@ -313,13 +313,16 @@ namespace Apolo
                 hoja.Cells[4, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
                 hoja.Cells[4, 2] = txtPersonales.Text;
 
-                hoja.Cells[5, 1] = "DAÑADO";
+                hoja.Cells[5, 1] = "DESFASADAS";
                 hoja.Cells[5, 1].Interior.Color = Color.FromArgb(231, 177, 80);//FromArgb(255, 132, 0)
                 hoja.Cells[5, 2] = txtDesfasadas.Text;
 
-                hoja.Cells[6, 1] = "TOTAL";
+                /*
+                hoja.Cells[6, 1] = "TOTAL OFICINA";
                 hoja.Cells[6, 1].Interior.Color = Color.FromArgb(218, 152, 36);//FromArgb(255, 132, 0)
-                hoja.Cells[6, 2] = txtTotalLaptops.Text;
+                hoja.Cells[6, 2] = (int.Parse(txtReservadas.Text) + int.Parse(txtDisponibles.Text)+int.Parse(txtDesfasadas.Text)).ToString();
+                */
+
 
 
 
@@ -530,7 +533,11 @@ namespace Apolo
                     laptop.IdSede = tablaLaptops.Rows[rec]["idSede"].ToString();
                     laptop.IdSalida= tablaLaptops.Rows[rec]["idSalidaAlquilado"].ToString();
                     laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
-                    laptop.TipoSede= tablaLaptops.Rows[rec]["Sede"].ToString();
+
+                    if(laptop.EstadoNombre == "ALQUILADO" || laptop.EstadoNombre == "PERSONAL PCR" || laptop.EstadoNombre == "PRESTADO" || laptop.EstadoNombre == "VENDIDO")
+                        laptop.TipoSede = " ";
+                    else
+                        laptop.TipoSede= tablaLaptops.Rows[rec]["Sede"].ToString();
 
                     viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
                     viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();

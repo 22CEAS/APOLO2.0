@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoClienteSucursal));
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -57,8 +57,8 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.pnlCS = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlCS.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,58 +149,58 @@
             this.dgvSucursalCliente.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvSucursalCliente.PrimaryGrid.AllowRowResize = true;
             this.dgvSucursalCliente.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn25.AllowEdit = false;
-            gridColumn25.DataPropertyName = "idSucursal";
-            gridColumn25.MinimumWidth = 50;
-            gridColumn25.Name = "Id";
-            gridColumn25.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn25.Width = 50;
-            gridColumn26.AllowEdit = false;
-            gridColumn26.DataPropertyName = "nroDocumento";
-            gridColumn26.MinimumWidth = 100;
-            gridColumn26.Name = "Nro Documento";
-            gridColumn26.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn27.AllowEdit = false;
-            gridColumn27.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
-            gridColumn27.DataPropertyName = "nombreContacto";
-            gridColumn27.MinimumWidth = 250;
-            gridColumn27.Name = "Nombre";
-            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn27.Width = 250;
-            gridColumn28.AllowEdit = false;
-            gridColumn28.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-            gridColumn28.DataPropertyName = "direccion";
-            gridColumn28.MinimumWidth = 150;
-            gridColumn28.Name = "Direccion";
-            gridColumn28.Width = 150;
-            gridColumn29.AllowEdit = false;
-            gridColumn29.DataPropertyName = "estado";
-            gridColumn29.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn29.MinimumWidth = 100;
-            gridColumn29.Name = "Activo";
-            gridColumn30.AllowEdit = false;
-            gridColumn30.DataPropertyName = "telefono";
-            gridColumn30.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn30.MinimumWidth = 100;
-            gridColumn30.Name = "Telefono";
-            gridColumn30.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn30.Visible = false;
-            gridColumn31.AllowEdit = false;
-            gridColumn31.DataPropertyName = "email";
-            gridColumn31.Name = "Email";
-            gridColumn31.Visible = false;
-            gridColumn32.AllowEdit = false;
-            gridColumn32.DataPropertyName = "idCliente";
-            gridColumn32.Name = "Id Cliente";
-            gridColumn32.Visible = false;
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn25);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn26);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn27);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn28);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn29);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn30);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn31);
-            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn32);
+            gridColumn1.AllowEdit = false;
+            gridColumn1.DataPropertyName = "idSucursal";
+            gridColumn1.MinimumWidth = 50;
+            gridColumn1.Name = "Id";
+            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn1.Width = 50;
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "nroDocumento";
+            gridColumn2.MinimumWidth = 100;
+            gridColumn2.Name = "Nro Documento";
+            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.AllowEdit = false;
+            gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
+            gridColumn3.DataPropertyName = "nombreContacto";
+            gridColumn3.MinimumWidth = 250;
+            gridColumn3.Name = "Nombre";
+            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.Width = 250;
+            gridColumn4.AllowEdit = false;
+            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+            gridColumn4.DataPropertyName = "direccion";
+            gridColumn4.MinimumWidth = 150;
+            gridColumn4.Name = "Direccion";
+            gridColumn4.Width = 150;
+            gridColumn5.AllowEdit = false;
+            gridColumn5.DataPropertyName = "estado";
+            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn5.MinimumWidth = 100;
+            gridColumn5.Name = "Activo";
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "telefono";
+            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn6.MinimumWidth = 100;
+            gridColumn6.Name = "Telefono";
+            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn6.Visible = false;
+            gridColumn7.AllowEdit = false;
+            gridColumn7.DataPropertyName = "email";
+            gridColumn7.Name = "Email";
+            gridColumn7.Visible = false;
+            gridColumn8.AllowEdit = false;
+            gridColumn8.DataPropertyName = "idCliente";
+            gridColumn8.Name = "Id Cliente";
+            gridColumn8.Visible = false;
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvSucursalCliente.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvSucursalCliente.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvSucursalCliente.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvSucursalCliente.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -407,9 +407,20 @@
             this.pnlCS.Controls.Add(this.button1);
             this.pnlCS.Location = new System.Drawing.Point(1, 0);
             this.pnlCS.Name = "pnlCS";
-            this.pnlCS.Size = new System.Drawing.Size(797, 106);
+            this.pnlCS.Size = new System.Drawing.Size(797, 77);
             this.pnlCS.TabIndex = 132;
             this.pnlCS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCS_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(172, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(452, 31);
+            this.label1.TabIndex = 134;
+            this.label1.Text = "MAESTRO CLIENTE/SUCURSAL";
             // 
             // button1
             // 
@@ -422,7 +433,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(712, 24);
+            this.button1.Location = new System.Drawing.Point(712, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 133;
@@ -430,17 +441,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(201, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 31);
-            this.label1.TabIndex = 134;
-            this.label1.Text = "MAESTRO CLIENTE/SUCURSAL";
             // 
             // frmArchivoClienteSucursal
             // 
