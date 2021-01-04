@@ -64,8 +64,8 @@
             this.txtObservación = new DevExpress.XtraEditors.MemoEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlNC = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -79,7 +79,7 @@
             this.cmbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFactura.FormattingEnabled = true;
-            this.cmbFactura.Location = new System.Drawing.Point(42, 153);
+            this.cmbFactura.Location = new System.Drawing.Point(32, 86);
             this.cmbFactura.Name = "cmbFactura";
             this.cmbFactura.Size = new System.Drawing.Size(177, 21);
             this.cmbFactura.TabIndex = 57;
@@ -89,7 +89,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(39, 132);
+            this.label15.Location = new System.Drawing.Point(29, 65);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 16);
             this.label15.TabIndex = 58;
@@ -106,7 +106,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(169, 273);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(157, 204);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 140;
@@ -126,7 +126,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(47, 273);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(35, 204);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 139;
@@ -137,7 +137,7 @@
             // 
             // dgvFacturas
             // 
-            this.dgvFacturas.Location = new System.Drawing.Point(42, 329);
+            this.dgvFacturas.Location = new System.Drawing.Point(32, 260);
             this.dgvFacturas.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvFacturas.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvFacturas.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -400,7 +400,7 @@
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(255, 153);
+            this.txtReferencia.Location = new System.Drawing.Point(245, 86);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 20);
             this.txtReferencia.TabIndex = 164;
@@ -409,7 +409,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 132);
+            this.label1.Location = new System.Drawing.Point(242, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 166;
@@ -425,7 +425,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(954, 574);
+            this.btnCancelar.Location = new System.Drawing.Point(967, 507);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 214;
@@ -445,7 +445,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(773, 576);
+            this.btnNuevo.Location = new System.Drawing.Point(786, 509);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 213;
@@ -465,7 +465,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(854, 576);
+            this.btnGrabar.Location = new System.Drawing.Point(867, 509);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 212;
@@ -476,7 +476,7 @@
             // 
             // txtObservación
             // 
-            this.txtObservación.Location = new System.Drawing.Point(45, 211);
+            this.txtObservación.Location = new System.Drawing.Point(35, 144);
             this.txtObservación.Name = "txtObservación";
             this.txtObservación.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservación.Properties.Appearance.Options.UseFont = true;
@@ -487,7 +487,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 192);
+            this.label2.Location = new System.Drawing.Point(32, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 16);
             this.label2.TabIndex = 216;
@@ -500,9 +500,20 @@
             this.pnlNC.Controls.Add(this.button1);
             this.pnlNC.Location = new System.Drawing.Point(2, 1);
             this.pnlNC.Name = "pnlNC";
-            this.pnlNC.Size = new System.Drawing.Size(1098, 109);
+            this.pnlNC.Size = new System.Drawing.Size(1098, 52);
             this.pnlNC.TabIndex = 217;
             this.pnlNC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(377, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 31);
+            this.label3.TabIndex = 219;
+            this.label3.Text = "NOTA DE CREDITO";
             // 
             // button1
             // 
@@ -515,32 +526,20 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1008, 11);
+            this.button1.Location = new System.Drawing.Point(1042, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(53, 49);
             this.button1.TabIndex = 218;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(396, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(281, 31);
-            this.label3.TabIndex = 219;
-            this.label3.Text = "NOTA DE CREDITO";
             // 
             // frmProcesoNotaCredito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1100, 651);
+            this.ClientSize = new System.Drawing.Size(1100, 584);
             this.Controls.Add(this.pnlNC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtObservación);
