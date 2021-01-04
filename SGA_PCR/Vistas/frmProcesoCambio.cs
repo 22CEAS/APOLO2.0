@@ -159,7 +159,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    cmbSede.Enabled = true;
+                    cmbSede.Enabled = false;
                     limpiarComponentes();
                     cambio = new Cambio();
                     break;
@@ -503,13 +503,16 @@ namespace Apolo
                 return;
             }
 
-            int i = cmbSede.SelectedIndex;
-
-            if (i <0 ) //Esto verifica que se ha seleccionado algún item del comboBox
+            if (chbEquipoDevuelto.Checked)
             {
-                MessageBox.Show("No se puede grabar un Cambio si no\nselecciona una sede.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                return;
+                int i = cmbSede.SelectedIndex;
+
+                if (i < 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                {
+                    MessageBox.Show("No se puede grabar un Cambio si no\nselecciona una sede.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             if (cambio.LaptopNuevo == null)
@@ -830,6 +833,19 @@ namespace Apolo
             {
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void chbEquipoDevuelto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbEquipoDevuelto.Checked)
+            {
+                cmbSede.Enabled = true;
+            }
+            else
+            {
+                cmbSede.Enabled = false;
+                cmbSede.SelectedIndex = -1;
             }
         }
     }

@@ -70,8 +70,8 @@
             this.cmbSede = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlC = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaCambio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlC.SuspendLayout();
@@ -488,7 +488,7 @@
             // 
             this.chbEquipoDanado.AutoSize = true;
             this.chbEquipoDanado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEquipoDanado.Location = new System.Drawing.Point(177, 31);
+            this.chbEquipoDanado.Location = new System.Drawing.Point(164, 31);
             this.chbEquipoDanado.Name = "chbEquipoDanado";
             this.chbEquipoDanado.Size = new System.Drawing.Size(130, 21);
             this.chbEquipoDanado.TabIndex = 176;
@@ -499,18 +499,19 @@
             // 
             this.chbEquipoDevuelto.AutoSize = true;
             this.chbEquipoDevuelto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEquipoDevuelto.Location = new System.Drawing.Point(36, 31);
+            this.chbEquipoDevuelto.Location = new System.Drawing.Point(23, 31);
             this.chbEquipoDevuelto.Name = "chbEquipoDevuelto";
             this.chbEquipoDevuelto.Size = new System.Drawing.Size(135, 21);
             this.chbEquipoDevuelto.TabIndex = 177;
             this.chbEquipoDevuelto.Text = "Equipo Devuelto";
             this.chbEquipoDevuelto.UseVisualStyleBackColor = true;
+            this.chbEquipoDevuelto.CheckedChanged += new System.EventHandler(this.chbEquipoDevuelto_CheckedChanged);
             // 
             // chbPagaraCliente
             // 
             this.chbPagaraCliente.AutoSize = true;
             this.chbPagaraCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbPagaraCliente.Location = new System.Drawing.Point(314, 31);
+            this.chbPagaraCliente.Location = new System.Drawing.Point(301, 31);
             this.chbPagaraCliente.Name = "chbPagaraCliente";
             this.chbPagaraCliente.Size = new System.Drawing.Size(125, 21);
             this.chbPagaraCliente.TabIndex = 178;
@@ -552,20 +553,20 @@
             // cmbSede
             // 
             this.cmbSede.FormattingEnabled = true;
-            this.cmbSede.Location = new System.Drawing.Point(445, 51);
+            this.cmbSede.Location = new System.Drawing.Point(488, 28);
             this.cmbSede.Name = "cmbSede";
-            this.cmbSede.Size = new System.Drawing.Size(199, 24);
+            this.cmbSede.Size = new System.Drawing.Size(183, 24);
             this.cmbSede.TabIndex = 182;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(472, 32);
+            this.label5.Location = new System.Drawing.Point(441, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 16);
+            this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 181;
-            this.label5.Text = "A que SEDE vuelve?";
+            this.label5.Text = "Sede";
             // 
             // pnlC
             // 
@@ -577,6 +578,17 @@
             this.pnlC.Size = new System.Drawing.Size(777, 83);
             this.pnlC.TabIndex = 181;
             this.pnlC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(315, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 31);
+            this.label6.TabIndex = 183;
+            this.label6.Text = "CAMBIO";
             // 
             // button1
             // 
@@ -597,17 +609,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(315, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 31);
-            this.label6.TabIndex = 183;
-            this.label6.Text = "CAMBIO";
             // 
             // frmProcesoCambio
             // 

@@ -54,8 +54,8 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.pnlFT = new System.Windows.Forms.Panel();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -352,9 +352,10 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(576, 148);
+            this.giftCarga.BackColor = System.Drawing.Color.White;
+            this.giftCarga.Location = new System.Drawing.Point(537, 350);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(74, 67);
+            this.giftCarga.Size = new System.Drawing.Size(121, 116);
             this.giftCarga.TabIndex = 234;
             this.giftCarga.TabStop = false;
             // 
@@ -368,6 +369,17 @@
             this.pnlFT.Size = new System.Drawing.Size(1311, 109);
             this.pnlFT.TabIndex = 235;
             this.pnlFT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFT_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(497, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 31);
+            this.label1.TabIndex = 178;
+            this.label1.Text = "FACTURAS EN TRANSITO";
             // 
             // btnNuevo
             // 
@@ -388,17 +400,6 @@
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(497, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 31);
-            this.label1.TabIndex = 178;
-            this.label1.Text = "FACTURAS EN TRANSITO";
             // 
             // frmProcesoFacturaTransito
             // 
