@@ -55,14 +55,14 @@
             this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDiscos.Location = new System.Drawing.Point(28, 115);
+            this.dgvDiscos.Location = new System.Drawing.Point(26, 79);
             this.dgvDiscos.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvDiscos.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvDiscos.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvDiscos.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvDiscos.MainView = this.vista;
             this.dgvDiscos.Name = "dgvDiscos";
-            this.dgvDiscos.Size = new System.Drawing.Size(511, 311);
+            this.dgvDiscos.Size = new System.Drawing.Size(511, 320);
             this.dgvDiscos.TabIndex = 137;
             this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -170,7 +170,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(28, 442);
+            this.btnExportar.Location = new System.Drawing.Point(26, 413);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 138;
@@ -184,7 +184,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(278, 442);
+            this.label1.Location = new System.Drawing.Point(301, 402);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 148;
@@ -194,7 +194,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(49, 340);
+            this.verResumen.Location = new System.Drawing.Point(47, 300);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 147;
@@ -205,7 +205,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(38, 244);
+            this.giftCarga.Location = new System.Drawing.Point(36, 204);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(211, 157);
             this.giftCarga.TabIndex = 146;
@@ -214,7 +214,7 @@
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(51, 365);
+            this.cargarData.Location = new System.Drawing.Point(49, 325);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 145;
@@ -229,7 +229,7 @@
             this.pnlD.Controls.Add(this.button1);
             this.pnlD.Location = new System.Drawing.Point(2, 3);
             this.pnlD.Name = "pnlD";
-            this.pnlD.Size = new System.Drawing.Size(571, 93);
+            this.pnlD.Size = new System.Drawing.Size(571, 53);
             this.pnlD.TabIndex = 149;
             this.pnlD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlD_MouseMove);
             // 
@@ -238,7 +238,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(208, 41);
+            this.label2.Location = new System.Drawing.Point(216, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 31);
             this.label2.TabIndex = 151;
@@ -255,11 +255,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(486, 9);
+            this.button1.Location = new System.Drawing.Point(510, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(51, 46);
             this.button1.TabIndex = 150;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -268,7 +267,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(575, 517);
+            this.ClientSize = new System.Drawing.Size(575, 488);
             this.Controls.Add(this.pnlD);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);

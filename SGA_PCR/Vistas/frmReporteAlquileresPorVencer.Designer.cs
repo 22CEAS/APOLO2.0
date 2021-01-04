@@ -396,7 +396,7 @@
             this.pnlLV.Controls.Add(this.button1);
             this.pnlLV.Location = new System.Drawing.Point(2, 0);
             this.pnlLV.Name = "pnlLV";
-            this.pnlLV.Size = new System.Drawing.Size(1296, 95);
+            this.pnlLV.Size = new System.Drawing.Size(1296, 58);
             this.pnlLV.TabIndex = 161;
             this.pnlLV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLV_MouseMove);
             // 
@@ -405,7 +405,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(506, 40);
+            this.label2.Location = new System.Drawing.Point(519, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(344, 31);
             this.label2.TabIndex = 163;
@@ -422,11 +422,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1213, 12);
+            this.button1.Location = new System.Drawing.Point(1234, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(59, 42);
             this.button1.TabIndex = 162;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

@@ -62,7 +62,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(21, 475);
+            this.btnExportar.Location = new System.Drawing.Point(12, 449);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 138;
@@ -83,7 +83,7 @@
             this.dgvLicencias.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLicencias.MainView = this.vista;
             this.dgvLicencias.Name = "dgvLicencias";
-            this.dgvLicencias.Size = new System.Drawing.Size(1034, 321);
+            this.dgvLicencias.Size = new System.Drawing.Size(1034, 334);
             this.dgvLicencias.TabIndex = 137;
             this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -242,9 +242,9 @@
             this.pnlL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlL.Controls.Add(this.label2);
             this.pnlL.Controls.Add(this.button1);
-            this.pnlL.Location = new System.Drawing.Point(4, 5);
+            this.pnlL.Location = new System.Drawing.Point(1, 1);
             this.pnlL.Name = "pnlL";
-            this.pnlL.Size = new System.Drawing.Size(1060, 84);
+            this.pnlL.Size = new System.Drawing.Size(1063, 58);
             this.pnlL.TabIndex = 153;
             this.pnlL.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlL_Paint);
             this.pnlL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
@@ -254,7 +254,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(425, 35);
+            this.label2.Location = new System.Drawing.Point(424, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 31);
             this.label2.TabIndex = 155;
@@ -271,11 +271,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(976, 7);
+            this.button1.Location = new System.Drawing.Point(1000, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(60, 43);
             this.button1.TabIndex = 154;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -284,7 +283,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1067, 568);
+            this.ClientSize = new System.Drawing.Size(1067, 524);
             this.Controls.Add(this.pnlL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);

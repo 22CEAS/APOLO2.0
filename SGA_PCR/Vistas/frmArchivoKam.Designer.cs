@@ -52,7 +52,7 @@
             // cmbKAM
             // 
             this.cmbKAM.FormattingEnabled = true;
-            this.cmbKAM.Location = new System.Drawing.Point(87, 140);
+            this.cmbKAM.Location = new System.Drawing.Point(83, 86);
             this.cmbKAM.Name = "cmbKAM";
             this.cmbKAM.Size = new System.Drawing.Size(150, 21);
             this.cmbKAM.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 140);
+            this.label1.Location = new System.Drawing.Point(37, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 18);
             this.label1.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(395, 127);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(391, 73);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 139;
@@ -98,7 +98,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(261, 127);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(257, 73);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 138;
@@ -109,7 +109,7 @@
             // 
             // dgvClienteKam
             // 
-            this.dgvClienteKam.Location = new System.Drawing.Point(35, 183);
+            this.dgvClienteKam.Location = new System.Drawing.Point(31, 129);
             this.dgvClienteKam.MainView = this.vista;
             this.dgvClienteKam.Name = "dgvClienteKam";
             this.dgvClienteKam.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -192,7 +192,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(576, 115);
+            this.btnGrabar.Location = new System.Drawing.Point(572, 61);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(119, 63);
             this.btnGrabar.TabIndex = 141;
@@ -208,7 +208,7 @@
             this.pnlK.Controls.Add(this.button1);
             this.pnlK.Location = new System.Drawing.Point(0, 0);
             this.pnlK.Name = "pnlK";
-            this.pnlK.Size = new System.Drawing.Size(781, 70);
+            this.pnlK.Size = new System.Drawing.Size(781, 52);
             this.pnlK.TabIndex = 142;
             this.pnlK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlK_MouseMove);
             // 
@@ -217,7 +217,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(272, 30);
+            this.label2.Location = new System.Drawing.Point(273, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 31);
             this.label2.TabIndex = 144;
@@ -234,11 +234,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(680, 2);
+            this.button1.Location = new System.Drawing.Point(720, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 63);
+            this.button1.Size = new System.Drawing.Size(58, 42);
             this.button1.TabIndex = 143;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -248,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(783, 527);
+            this.ClientSize = new System.Drawing.Size(783, 481);
             this.Controls.Add(this.pnlK);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvClienteKam);

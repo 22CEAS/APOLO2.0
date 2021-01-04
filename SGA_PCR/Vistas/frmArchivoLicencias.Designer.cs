@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoLicencias));
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             // 
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelo.Location = new System.Drawing.Point(33, 156);
+            this.lblModelo.Location = new System.Drawing.Point(9, 115);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(113, 16);
             this.lblModelo.TabIndex = 169;
@@ -63,7 +63,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(36, 102);
+            this.lblMarca.Location = new System.Drawing.Point(12, 61);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(51, 16);
             this.lblMarca.TabIndex = 168;
@@ -74,7 +74,7 @@
             this.cmbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(36, 121);
+            this.cmbMarca.Location = new System.Drawing.Point(12, 80);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(287, 21);
             this.cmbMarca.TabIndex = 167;
@@ -88,30 +88,30 @@
             this.dgvModelo.BackColor = System.Drawing.Color.White;
             this.dgvModelo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvModelo.ForeColor = System.Drawing.Color.Black;
-            this.dgvModelo.Location = new System.Drawing.Point(36, 201);
+            this.dgvModelo.Location = new System.Drawing.Point(12, 160);
             this.dgvModelo.MaximumSize = new System.Drawing.Size(526, 352);
             this.dgvModelo.Name = "dgvModelo";
             this.dgvModelo.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvModelo.PrimaryGrid.AllowRowResize = true;
             this.dgvModelo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "nombre";
-            gridColumn5.Name = "Descripción";
-            gridColumn5.Width = 200;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "estado";
-            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn6.Name = "Activo";
-            gridColumn7.DataPropertyName = "idMarca";
-            gridColumn7.Name = "IdMarca";
-            gridColumn7.Visible = false;
-            gridColumn8.DataPropertyName = "idModelo";
-            gridColumn8.Name = "IdModelo";
-            gridColumn8.Visible = false;
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn8);
+            gridColumn1.AllowEdit = false;
+            gridColumn1.DataPropertyName = "nombre";
+            gridColumn1.Name = "Descripción";
+            gridColumn1.Width = 200;
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "estado";
+            gridColumn2.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn2.Name = "Activo";
+            gridColumn3.DataPropertyName = "idMarca";
+            gridColumn3.Name = "IdMarca";
+            gridColumn3.Visible = false;
+            gridColumn4.DataPropertyName = "idModelo";
+            gridColumn4.Name = "IdModelo";
+            gridColumn4.Visible = false;
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvModelo.PrimaryGrid.Columns.Add(gridColumn4);
             this.dgvModelo.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvModelo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvModelo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -124,7 +124,7 @@
             this.dgvModelo.PrimaryGrid.NullString = "<<null>>";
             this.dgvModelo.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvModelo.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvModelo.Size = new System.Drawing.Size(322, 280);
+            this.dgvModelo.Size = new System.Drawing.Size(322, 284);
             this.dgvModelo.TabIndex = 166;
             this.dgvModelo.Text = "Tabla Auxiliar";
             this.dgvModelo.Click += new System.EventHandler(this.dgvModelo_Click);
@@ -137,7 +137,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(370, 175);
+            this.chbActivo.Location = new System.Drawing.Point(346, 134);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 165;
@@ -154,7 +154,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(397, 416);
+            this.btnCancelar.Location = new System.Drawing.Point(368, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 164;
@@ -173,7 +173,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(397, 268);
+            this.btnEditar.Location = new System.Drawing.Point(368, 227);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 163;
@@ -193,7 +193,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(397, 201);
+            this.btnNuevo.Location = new System.Drawing.Point(368, 160);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 162;
@@ -213,7 +213,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(397, 347);
+            this.btnGrabar.Location = new System.Drawing.Point(368, 306);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 161;
@@ -224,7 +224,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(36, 175);
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 134);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(287, 20);
             this.txtDescripcion.TabIndex = 160;
@@ -236,7 +236,7 @@
             this.pnlL.Controls.Add(this.button1);
             this.pnlL.Location = new System.Drawing.Point(1, 0);
             this.pnlL.Name = "pnlL";
-            this.pnlL.Size = new System.Drawing.Size(509, 71);
+            this.pnlL.Size = new System.Drawing.Size(509, 53);
             this.pnlL.TabIndex = 170;
             this.pnlL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
             // 
@@ -245,7 +245,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(96, 33);
+            this.label1.Location = new System.Drawing.Point(92, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 31);
             this.label1.TabIndex = 172;
@@ -262,11 +262,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(431, 5);
+            this.button1.Location = new System.Drawing.Point(453, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(45, 43);
             this.button1.TabIndex = 171;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -276,7 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(511, 504);
+            this.ClientSize = new System.Drawing.Size(511, 456);
             this.Controls.Add(this.pnlL);
             this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.lblMarca);

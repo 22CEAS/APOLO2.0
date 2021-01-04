@@ -774,7 +774,7 @@
             this.pnlInv.Controls.Add(this.label4);
             this.pnlInv.Location = new System.Drawing.Point(2, 2);
             this.pnlInv.Name = "pnlInv";
-            this.pnlInv.Size = new System.Drawing.Size(1202, 65);
+            this.pnlInv.Size = new System.Drawing.Size(1202, 48);
             this.pnlInv.TabIndex = 194;
             this.pnlInv.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
             // 
@@ -790,11 +790,10 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(1110, 5);
+            this.button2.Location = new System.Drawing.Point(1134, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 57);
+            this.button2.Size = new System.Drawing.Size(58, 44);
             this.button2.TabIndex = 195;
-            this.button2.Text = "CERRAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -804,7 +803,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(490, 18);
+            this.label4.Location = new System.Drawing.Point(490, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 31);
             this.label4.TabIndex = 189;

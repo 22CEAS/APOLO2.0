@@ -331,6 +331,7 @@ namespace Apolo
 
         private void TEST_MENU_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            
             lblFecPronosticador.Text = "<- Seleccione una fecha";
             lblCantidadTotal.Text = "";
             int DiaMinimo= DateTime.Now.Day;
@@ -1110,6 +1111,7 @@ namespace Apolo
 
         private void button34_Click_1(object sender, EventArgs e)
         {
+            
             if (MenuVertical.Width == 350)
             {
                 pictureBox1.Visible = true;
@@ -1120,6 +1122,7 @@ namespace Apolo
                 pictureBox1.Visible = false;
                 MenuVertical.Width = 350;
             }
+            
         }
 
         private void btnConfiguracionPermisos_Click(object sender, EventArgs e)
@@ -1381,6 +1384,7 @@ namespace Apolo
             {
                 LC laptop = new LC();
                 laptop.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["idLC"].ToString());
+                
                 laptop.Codigo = tablaLaptops.Rows[rec]["codigo"].ToString();
                 laptop.IdMarca = int.Parse(tablaLaptops.Rows[rec]["idMarca"].ToString());
                 laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
@@ -1397,6 +1401,8 @@ namespace Apolo
                 laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
                 laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
                 laptop.IdSede = tablaLaptops.Rows[rec]["idSede"].ToString();
+
+                /*
 
                 viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
                 viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
@@ -1459,6 +1465,7 @@ namespace Apolo
 
                 //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
 
+                */
                 laptops.Add(laptop);
                 rec++;
 
@@ -1745,6 +1752,9 @@ namespace Apolo
 
 
             lblMontoFacturado.Text = string.Format("{0:C0}", MontoFacturadoMes.Rows[0]["total"]);//MONTO FACTURADO EN EL MES
+            if(lblMontoFacturado.Text=="")
+                lblMontoFacturado.Text = string.Format("{0:C0}", 0);
+
             lblFechaMF.Text= $"Desde el 01/{DateTime.Now.Month}/{DateTime.Now.Year} al { DateTime.Now.ToShortDateString()}";
 
             lblFecPF.Text = $"Al {DateTime.Now.ToShortDateString()}";

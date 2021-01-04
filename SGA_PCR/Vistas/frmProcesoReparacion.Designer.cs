@@ -342,7 +342,7 @@
             this.pnlR.Controls.Add(this.button1);
             this.pnlR.Location = new System.Drawing.Point(2, 0);
             this.pnlR.Name = "pnlR";
-            this.pnlR.Size = new System.Drawing.Size(698, 80);
+            this.pnlR.Size = new System.Drawing.Size(698, 55);
             this.pnlR.TabIndex = 194;
             this.pnlR.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlR_MouseMove);
             // 
@@ -351,7 +351,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(262, 31);
+            this.label4.Location = new System.Drawing.Point(250, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 31);
             this.label4.TabIndex = 196;
@@ -368,11 +368,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(620, 12);
+            this.button1.Location = new System.Drawing.Point(620, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(64, 50);
             this.button1.TabIndex = 195;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

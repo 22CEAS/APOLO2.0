@@ -74,7 +74,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(25, 294);
+            this.labelX3.Location = new System.Drawing.Point(25, 265);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(30, 16);
             this.labelX3.TabIndex = 117;
@@ -89,7 +89,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(25, 216);
+            this.labelX2.Location = new System.Drawing.Point(25, 187);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(47, 16);
             this.labelX2.TabIndex = 116;
@@ -104,7 +104,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(25, 137);
+            this.labelX1.Location = new System.Drawing.Point(25, 108);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(41, 16);
             this.labelX1.TabIndex = 115;
@@ -118,7 +118,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(25, 469);
+            this.chbActivo.Location = new System.Drawing.Point(29, 436);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 114;
@@ -136,7 +136,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(932, 423);
+            this.btnImprimir.Location = new System.Drawing.Point(932, 394);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 113;
@@ -155,7 +155,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(927, 352);
+            this.btnCancelar.Location = new System.Drawing.Point(927, 323);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 112;
@@ -174,7 +174,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(927, 204);
+            this.btnEditar.Location = new System.Drawing.Point(927, 175);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 111;
@@ -194,7 +194,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(927, 137);
+            this.btnNuevo.Location = new System.Drawing.Point(927, 108);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 110;
@@ -214,7 +214,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(927, 283);
+            this.btnGrabar.Location = new System.Drawing.Point(927, 254);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 109;
@@ -230,7 +230,7 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(25, 316);
+            this.cmbTipo.Location = new System.Drawing.Point(25, 287);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(163, 21);
             this.cmbTipo.TabIndex = 108;
@@ -240,7 +240,7 @@
             this.cmbModelo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(25, 238);
+            this.cmbModelo.Location = new System.Drawing.Point(25, 209);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(163, 21);
             this.cmbModelo.TabIndex = 107;
@@ -250,7 +250,7 @@
             this.cmbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(25, 159);
+            this.cmbMarca.Location = new System.Drawing.Point(25, 130);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(163, 21);
             this.cmbMarca.TabIndex = 106;
@@ -264,7 +264,7 @@
             this.dgvVideo.BackColor = System.Drawing.Color.White;
             this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvVideo.ForeColor = System.Drawing.Color.Black;
-            this.dgvVideo.Location = new System.Drawing.Point(285, 137);
+            this.dgvVideo.Location = new System.Drawing.Point(285, 115);
             this.dgvVideo.Name = "dgvVideo";
             this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvVideo.PrimaryGrid.AllowRowResize = true;
@@ -347,7 +347,7 @@
             this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
             this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvVideo.Size = new System.Drawing.Size(617, 352);
+            this.dgvVideo.Size = new System.Drawing.Size(617, 323);
             this.dgvVideo.TabIndex = 105;
             this.dgvVideo.Text = "Tabla Video";
             this.dgvVideo.Click += new System.EventHandler(this.dgvVideo_Click);
@@ -361,7 +361,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(25, 389);
+            this.labelX4.Location = new System.Drawing.Point(25, 360);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(66, 16);
             this.labelX4.TabIndex = 119;
@@ -374,7 +374,7 @@
             this.cmbCapacidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCapacidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCapacidad.FormattingEnabled = true;
-            this.cmbCapacidad.Location = new System.Drawing.Point(25, 411);
+            this.cmbCapacidad.Location = new System.Drawing.Point(25, 382);
             this.cmbCapacidad.Name = "cmbCapacidad";
             this.cmbCapacidad.Size = new System.Drawing.Size(163, 21);
             this.cmbCapacidad.TabIndex = 118;
@@ -390,7 +390,7 @@
             this.btnAgregarMarcaVideo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarMarcaVideo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMarcaVideo.Image")));
             this.btnAgregarMarcaVideo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarMarcaVideo.Location = new System.Drawing.Point(194, 144);
+            this.btnAgregarMarcaVideo.Location = new System.Drawing.Point(194, 115);
             this.btnAgregarMarcaVideo.Name = "btnAgregarMarcaVideo";
             this.btnAgregarMarcaVideo.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarMarcaVideo.TabIndex = 122;
@@ -409,7 +409,7 @@
             this.btnAgregarTipoVideo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTipoVideo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoVideo.Image")));
             this.btnAgregarTipoVideo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarTipoVideo.Location = new System.Drawing.Point(194, 302);
+            this.btnAgregarTipoVideo.Location = new System.Drawing.Point(194, 273);
             this.btnAgregarTipoVideo.Name = "btnAgregarTipoVideo";
             this.btnAgregarTipoVideo.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarTipoVideo.TabIndex = 121;
@@ -428,7 +428,7 @@
             this.btnAgregarModeloVideo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarModeloVideo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarModeloVideo.Image")));
             this.btnAgregarModeloVideo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarModeloVideo.Location = new System.Drawing.Point(194, 223);
+            this.btnAgregarModeloVideo.Location = new System.Drawing.Point(194, 194);
             this.btnAgregarModeloVideo.Name = "btnAgregarModeloVideo";
             this.btnAgregarModeloVideo.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarModeloVideo.TabIndex = 120;
@@ -447,7 +447,7 @@
             this.btnAgregarCapacidadVideo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCapacidadVideo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCapacidadVideo.Image")));
             this.btnAgregarCapacidadVideo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarCapacidadVideo.Location = new System.Drawing.Point(194, 397);
+            this.btnAgregarCapacidadVideo.Location = new System.Drawing.Point(194, 368);
             this.btnAgregarCapacidadVideo.Name = "btnAgregarCapacidadVideo";
             this.btnAgregarCapacidadVideo.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarCapacidadVideo.TabIndex = 123;
@@ -462,7 +462,7 @@
             this.pnlT.Controls.Add(this.button1);
             this.pnlT.Location = new System.Drawing.Point(2, 0);
             this.pnlT.Name = "pnlT";
-            this.pnlT.Size = new System.Drawing.Size(1033, 71);
+            this.pnlT.Size = new System.Drawing.Size(1033, 50);
             this.pnlT.TabIndex = 124;
             this.pnlT.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlT_MouseMove);
             // 
@@ -471,7 +471,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(338, 33);
+            this.label1.Location = new System.Drawing.Point(342, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(390, 31);
             this.label1.TabIndex = 126;
@@ -488,11 +488,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(938, 5);
+            this.button1.Location = new System.Drawing.Point(979, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 63);
+            this.button1.Size = new System.Drawing.Size(51, 43);
             this.button1.TabIndex = 125;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -502,7 +501,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1035, 521);
+            this.ClientSize = new System.Drawing.Size(1035, 492);
             this.Controls.Add(this.pnlT);
             this.Controls.Add(this.btnAgregarCapacidadVideo);
             this.Controls.Add(this.btnAgregarMarcaVideo);

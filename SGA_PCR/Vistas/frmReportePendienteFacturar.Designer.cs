@@ -69,8 +69,8 @@
             this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.pnlPF = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -543,9 +543,20 @@
             this.pnlPF.Controls.Add(this.button1);
             this.pnlPF.Location = new System.Drawing.Point(3, 1);
             this.pnlPF.Name = "pnlPF";
-            this.pnlPF.Size = new System.Drawing.Size(1212, 82);
+            this.pnlPF.Size = new System.Drawing.Size(1212, 57);
             this.pnlPF.TabIndex = 163;
             this.pnlPF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPF_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(404, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(416, 31);
+            this.label2.TabIndex = 165;
+            this.label2.Text = "PENDIENTE POR FACTURAR";
             // 
             // button1
             // 
@@ -558,25 +569,13 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1129, 11);
+            this.button1.Location = new System.Drawing.Point(1143, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(61, 46);
             this.button1.TabIndex = 164;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(402, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(416, 31);
-            this.label2.TabIndex = 165;
-            this.label2.Text = "PENDIENTE POR FACTURAR";
             // 
             // frmReportePendienteFacturar
             // 

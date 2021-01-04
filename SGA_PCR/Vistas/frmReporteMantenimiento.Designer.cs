@@ -65,7 +65,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(25, 487);
+            this.btnExportar.Location = new System.Drawing.Point(25, 453);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 136;
@@ -79,14 +79,14 @@
             this.dgvReparaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvReparaciones.Location = new System.Drawing.Point(25, 134);
+            this.dgvReparaciones.Location = new System.Drawing.Point(25, 82);
             this.dgvReparaciones.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvReparaciones.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvReparaciones.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvReparaciones.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvReparaciones.MainView = this.vista;
             this.dgvReparaciones.Name = "dgvReparaciones";
-            this.dgvReparaciones.Size = new System.Drawing.Size(1000, 347);
+            this.dgvReparaciones.Size = new System.Drawing.Size(1000, 350);
             this.dgvReparaciones.TabIndex = 135;
             this.dgvReparaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -245,7 +245,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(765, 494);
+            this.label1.Location = new System.Drawing.Point(766, 453);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 156;
@@ -266,7 +266,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.Silver;
-            this.giftCarga.Location = new System.Drawing.Point(389, 487);
+            this.giftCarga.Location = new System.Drawing.Point(389, 453);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(187, 74);
             this.giftCarga.TabIndex = 154;
@@ -290,7 +290,7 @@
             this.lblR.Controls.Add(this.button1);
             this.lblR.Location = new System.Drawing.Point(2, 1);
             this.lblR.Name = "lblR";
-            this.lblR.Size = new System.Drawing.Size(1053, 99);
+            this.lblR.Size = new System.Drawing.Size(1053, 55);
             this.lblR.TabIndex = 157;
             this.lblR.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblR_MouseMove);
             // 
@@ -299,7 +299,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(381, 39);
+            this.label2.Location = new System.Drawing.Point(381, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(243, 31);
             this.label2.TabIndex = 159;
@@ -316,11 +316,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(975, 11);
+            this.button1.Location = new System.Drawing.Point(988, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(56, 46);
             this.button1.TabIndex = 158;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -329,7 +328,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1058, 568);
+            this.ClientSize = new System.Drawing.Size(1058, 549);
             this.Controls.Add(this.lblR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.giftCarga);

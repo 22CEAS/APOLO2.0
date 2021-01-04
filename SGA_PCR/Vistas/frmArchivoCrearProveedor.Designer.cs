@@ -85,7 +85,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(30, 102);
+            this.LabelX4.Location = new System.Drawing.Point(30, 79);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(33, 16);
             this.LabelX4.TabIndex = 36;
@@ -93,7 +93,7 @@
             // 
             // txtRuc
             // 
-            this.txtRuc.Location = new System.Drawing.Point(30, 124);
+            this.txtRuc.Location = new System.Drawing.Point(30, 101);
             this.txtRuc.MaxLength = 11;
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(128, 20);
@@ -109,7 +109,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(221, 102);
+            this.labelX1.Location = new System.Drawing.Point(221, 79);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(79, 16);
             this.labelX1.TabIndex = 37;
@@ -117,14 +117,14 @@
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(222, 124);
+            this.txtRazonSocial.Location = new System.Drawing.Point(222, 101);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(379, 20);
             this.txtRazonSocial.TabIndex = 38;
             // 
             // txtNombreComercial
             // 
-            this.txtNombreComercial.Location = new System.Drawing.Point(165, 157);
+            this.txtNombreComercial.Location = new System.Drawing.Point(165, 134);
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Size = new System.Drawing.Size(346, 20);
             this.txtNombreComercial.TabIndex = 40;
@@ -138,7 +138,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(30, 158);
+            this.labelX2.Location = new System.Drawing.Point(30, 135);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(110, 16);
             this.labelX2.TabIndex = 39;
@@ -153,7 +153,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(665, 102);
+            this.labelX3.Location = new System.Drawing.Point(665, 79);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(72, 16);
             this.labelX3.TabIndex = 42;
@@ -161,7 +161,7 @@
             // 
             // txtAbreviacion
             // 
-            this.txtAbreviacion.Location = new System.Drawing.Point(665, 124);
+            this.txtAbreviacion.Location = new System.Drawing.Point(665, 101);
             this.txtAbreviacion.MaxLength = 1;
             this.txtAbreviacion.Name = "txtAbreviacion";
             this.txtAbreviacion.Size = new System.Drawing.Size(103, 20);
@@ -170,7 +170,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(94, 190);
+            this.txtDireccion.Location = new System.Drawing.Point(94, 167);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(333, 20);
             this.txtDireccion.TabIndex = 44;
@@ -184,7 +184,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(30, 191);
+            this.labelX5.Location = new System.Drawing.Point(30, 168);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(58, 16);
             this.labelX5.TabIndex = 43;
@@ -199,7 +199,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(30, 226);
+            this.labelX7.Location = new System.Drawing.Point(30, 203);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(120, 16);
             this.labelX7.TabIndex = 48;
@@ -207,7 +207,7 @@
             // 
             // txtNombreContacto
             // 
-            this.txtNombreContacto.Location = new System.Drawing.Point(30, 248);
+            this.txtNombreContacto.Location = new System.Drawing.Point(30, 225);
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(224, 20);
             this.txtNombreContacto.TabIndex = 47;
@@ -221,7 +221,7 @@
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.ForeColor = System.Drawing.Color.Black;
-            this.labelX8.Location = new System.Drawing.Point(295, 226);
+            this.labelX8.Location = new System.Drawing.Point(295, 203);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(100, 16);
             this.labelX8.TabIndex = 50;
@@ -229,7 +229,7 @@
             // 
             // txtTelContacto
             // 
-            this.txtTelContacto.Location = new System.Drawing.Point(295, 248);
+            this.txtTelContacto.Location = new System.Drawing.Point(295, 225);
             this.txtTelContacto.MaxLength = 11;
             this.txtTelContacto.Name = "txtTelContacto";
             this.txtTelContacto.Size = new System.Drawing.Size(121, 20);
@@ -244,7 +244,7 @@
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.ForeColor = System.Drawing.Color.Black;
-            this.labelX9.Location = new System.Drawing.Point(456, 226);
+            this.labelX9.Location = new System.Drawing.Point(456, 203);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(108, 16);
             this.labelX9.TabIndex = 52;
@@ -252,7 +252,7 @@
             // 
             // txtEmailContacto
             // 
-            this.txtEmailContacto.Location = new System.Drawing.Point(456, 248);
+            this.txtEmailContacto.Location = new System.Drawing.Point(456, 225);
             this.txtEmailContacto.Name = "txtEmailContacto";
             this.txtEmailContacto.Size = new System.Drawing.Size(222, 20);
             this.txtEmailContacto.TabIndex = 51;
@@ -266,7 +266,7 @@
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.ForeColor = System.Drawing.Color.Black;
-            this.labelX10.Location = new System.Drawing.Point(562, 158);
+            this.labelX10.Location = new System.Drawing.Point(562, 135);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(55, 16);
             this.labelX10.TabIndex = 59;
@@ -274,7 +274,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(619, 158);
+            this.txtTelefono.Location = new System.Drawing.Point(619, 135);
             this.txtTelefono.MaxLength = 11;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(149, 20);
@@ -289,7 +289,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(463, 192);
+            this.labelX6.Location = new System.Drawing.Point(463, 169);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(37, 16);
             this.labelX6.TabIndex = 61;
@@ -297,7 +297,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(503, 191);
+            this.txtEmail.Location = new System.Drawing.Point(503, 168);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(265, 20);
             this.txtEmail.TabIndex = 60;
@@ -309,7 +309,7 @@
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(706, 248);
+            this.chbActivo.Location = new System.Drawing.Point(706, 225);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 62;
@@ -327,7 +327,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(714, 560);
+            this.btnImprimir.Location = new System.Drawing.Point(714, 537);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 92;
@@ -346,7 +346,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(709, 489);
+            this.btnCancelar.Location = new System.Drawing.Point(709, 466);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 91;
@@ -365,7 +365,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(709, 341);
+            this.btnEditar.Location = new System.Drawing.Point(709, 318);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 90;
@@ -385,7 +385,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(709, 274);
+            this.btnNuevo.Location = new System.Drawing.Point(709, 251);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 89;
@@ -405,7 +405,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(709, 420);
+            this.btnGrabar.Location = new System.Drawing.Point(709, 397);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 88;
@@ -422,7 +422,7 @@
             this.dgvProveedor.BackColor = System.Drawing.Color.White;
             this.dgvProveedor.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvProveedor.ForeColor = System.Drawing.Color.Black;
-            this.dgvProveedor.Location = new System.Drawing.Point(38, 274);
+            this.dgvProveedor.Location = new System.Drawing.Point(30, 251);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvProveedor.PrimaryGrid.AllowRowResize = true;
@@ -529,7 +529,7 @@
             this.pnlP.Controls.Add(this.button1);
             this.pnlP.Location = new System.Drawing.Point(2, 2);
             this.pnlP.Name = "pnlP";
-            this.pnlP.Size = new System.Drawing.Size(812, 75);
+            this.pnlP.Size = new System.Drawing.Size(812, 57);
             this.pnlP.TabIndex = 94;
             this.pnlP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlP_MouseMove);
             // 
@@ -538,7 +538,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(244, 33);
+            this.label1.Location = new System.Drawing.Point(233, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 31);
             this.label1.TabIndex = 96;
@@ -555,11 +555,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(727, 5);
+            this.button1.Location = new System.Drawing.Point(747, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(55, 46);
             this.button1.TabIndex = 95;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

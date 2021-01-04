@@ -102,14 +102,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLaptops.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.dgvLaptops.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 118);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 97);
             this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1128, 461);
+            this.dgvLaptops.Size = new System.Drawing.Size(1128, 458);
             this.dgvLaptops.TabIndex = 136;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -586,11 +586,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1063, 12);
+            this.button1.Location = new System.Drawing.Point(1080, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(65, 43);
             this.button1.TabIndex = 145;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -602,7 +601,7 @@
             this.pnlCV.Controls.Add(this.button1);
             this.pnlCV.Location = new System.Drawing.Point(2, 0);
             this.pnlCV.Name = "pnlCV";
-            this.pnlCV.Size = new System.Drawing.Size(1148, 80);
+            this.pnlCV.Size = new System.Drawing.Size(1148, 53);
             this.pnlCV.TabIndex = 146;
             this.pnlCV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCV_MouseMove);
             // 
@@ -611,7 +610,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(386, 24);
+            this.label2.Location = new System.Drawing.Point(387, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(396, 31);
             this.label2.TabIndex = 146;
@@ -621,7 +620,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1152, 660);
+            this.ClientSize = new System.Drawing.Size(1152, 657);
             this.Controls.Add(this.pnlCV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.giftCarga);

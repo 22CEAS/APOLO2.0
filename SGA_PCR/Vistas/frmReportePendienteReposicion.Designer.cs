@@ -46,8 +46,8 @@
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
             this.pnlOD = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -59,7 +59,7 @@
             this.dgvObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvObservaciones.Location = new System.Drawing.Point(12, 144);
+            this.dgvObservaciones.Location = new System.Drawing.Point(12, 121);
             this.dgvObservaciones.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvObservaciones.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvObservaciones.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -261,7 +261,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(404, 297);
+            this.giftCarga.Location = new System.Drawing.Point(408, 272);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(254, 171);
             this.giftCarga.TabIndex = 154;
@@ -285,9 +285,20 @@
             this.pnlOD.Controls.Add(this.button1);
             this.pnlOD.Location = new System.Drawing.Point(2, 0);
             this.pnlOD.Name = "pnlOD";
-            this.pnlOD.Size = new System.Drawing.Size(1071, 90);
+            this.pnlOD.Size = new System.Drawing.Size(1071, 58);
             this.pnlOD.TabIndex = 157;
             this.pnlOD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlOD_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(333, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(391, 31);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "OBSERVACIONES DEUDAS";
             // 
             // button1
             // 
@@ -300,25 +311,13 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(986, 12);
+            this.button1.Location = new System.Drawing.Point(1010, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(61, 48);
             this.button1.TabIndex = 158;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(333, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(391, 31);
-            this.label2.TabIndex = 159;
-            this.label2.Text = "OBSERVACIONES DEUDAS";
             // 
             // frmReportePendienteReposicion
             // 
