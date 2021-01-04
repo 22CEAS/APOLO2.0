@@ -67,7 +67,7 @@
             this.cmbCapacidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCapacidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCapacidad.FormattingEnabled = true;
-            this.cmbCapacidad.Location = new System.Drawing.Point(25, 353);
+            this.cmbCapacidad.Location = new System.Drawing.Point(12, 290);
             this.cmbCapacidad.Name = "cmbCapacidad";
             this.cmbCapacidad.Size = new System.Drawing.Size(143, 21);
             this.cmbCapacidad.TabIndex = 77;
@@ -77,7 +77,7 @@
             this.cmbTamano.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTamano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTamano.FormattingEnabled = true;
-            this.cmbTamano.Location = new System.Drawing.Point(25, 263);
+            this.cmbTamano.Location = new System.Drawing.Point(12, 200);
             this.cmbTamano.Name = "cmbTamano";
             this.cmbTamano.Size = new System.Drawing.Size(143, 21);
             this.cmbTamano.TabIndex = 73;
@@ -87,7 +87,7 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(25, 174);
+            this.cmbTipo.Location = new System.Drawing.Point(12, 111);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(143, 21);
             this.cmbTipo.TabIndex = 72;
@@ -100,7 +100,7 @@
             this.dgvDiscoDuro.BackColor = System.Drawing.Color.White;
             this.dgvDiscoDuro.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvDiscoDuro.ForeColor = System.Drawing.Color.Black;
-            this.dgvDiscoDuro.Location = new System.Drawing.Point(257, 123);
+            this.dgvDiscoDuro.Location = new System.Drawing.Point(269, 89);
             this.dgvDiscoDuro.MaximumSize = new System.Drawing.Size(526, 352);
             this.dgvDiscoDuro.MinimumSize = new System.Drawing.Size(526, 352);
             this.dgvDiscoDuro.Name = "dgvDiscoDuro";
@@ -193,7 +193,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(821, 190);
+            this.btnEditar.Location = new System.Drawing.Point(821, 163);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 85;
@@ -213,7 +213,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(821, 123);
+            this.btnNuevo.Location = new System.Drawing.Point(821, 96);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 84;
@@ -233,7 +233,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(821, 269);
+            this.btnGrabar.Location = new System.Drawing.Point(821, 242);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 83;
@@ -253,7 +253,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(826, 409);
+            this.btnImprimir.Location = new System.Drawing.Point(826, 382);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 87;
@@ -272,7 +272,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(821, 338);
+            this.btnCancelar.Location = new System.Drawing.Point(821, 311);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 86;
@@ -289,7 +289,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(25, 422);
+            this.chbActivo.Location = new System.Drawing.Point(12, 338);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 88;
@@ -305,7 +305,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(25, 152);
+            this.labelX1.Location = new System.Drawing.Point(12, 89);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(30, 16);
             this.labelX1.TabIndex = 89;
@@ -320,7 +320,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(25, 241);
+            this.labelX2.Location = new System.Drawing.Point(12, 178);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(52, 16);
             this.labelX2.TabIndex = 90;
@@ -335,7 +335,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(25, 331);
+            this.labelX3.Location = new System.Drawing.Point(12, 268);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(66, 16);
             this.labelX3.TabIndex = 91;
@@ -352,7 +352,7 @@
             this.btnAgregarTipoDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTipoDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoDisco.Image")));
             this.btnAgregarTipoDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarTipoDisco.Location = new System.Drawing.Point(206, 158);
+            this.btnAgregarTipoDisco.Location = new System.Drawing.Point(181, 96);
             this.btnAgregarTipoDisco.Name = "btnAgregarTipoDisco";
             this.btnAgregarTipoDisco.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarTipoDisco.TabIndex = 111;
@@ -371,7 +371,7 @@
             this.btnAgregarCapacidadDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCapacidadDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCapacidadDisco.Image")));
             this.btnAgregarCapacidadDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarCapacidadDisco.Location = new System.Drawing.Point(206, 338);
+            this.btnAgregarCapacidadDisco.Location = new System.Drawing.Point(181, 276);
             this.btnAgregarCapacidadDisco.Name = "btnAgregarCapacidadDisco";
             this.btnAgregarCapacidadDisco.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarCapacidadDisco.TabIndex = 110;
@@ -390,7 +390,7 @@
             this.btnAgregarTamanoDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTamanoDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTamanoDisco.Image")));
             this.btnAgregarTamanoDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarTamanoDisco.Location = new System.Drawing.Point(206, 248);
+            this.btnAgregarTamanoDisco.Location = new System.Drawing.Point(181, 186);
             this.btnAgregarTamanoDisco.Name = "btnAgregarTamanoDisco";
             this.btnAgregarTamanoDisco.Size = new System.Drawing.Size(42, 38);
             this.btnAgregarTamanoDisco.TabIndex = 109;
@@ -405,7 +405,7 @@
             this.pnlMDD.Controls.Add(this.button1);
             this.pnlMDD.Location = new System.Drawing.Point(2, 2);
             this.pnlMDD.Name = "pnlMDD";
-            this.pnlMDD.Size = new System.Drawing.Size(909, 78);
+            this.pnlMDD.Size = new System.Drawing.Size(909, 52);
             this.pnlMDD.TabIndex = 112;
             this.pnlMDD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMDD_MouseMove);
             // 
@@ -414,7 +414,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(346, 31);
+            this.label1.Location = new System.Drawing.Point(343, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 31);
             this.label1.TabIndex = 114;
@@ -431,11 +431,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(831, 3);
+            this.button1.Location = new System.Drawing.Point(857, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(52, 41);
             this.button1.TabIndex = 113;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -445,7 +444,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(913, 504);
+            this.ClientSize = new System.Drawing.Size(913, 477);
             this.Controls.Add(this.pnlMDD);
             this.Controls.Add(this.btnAgregarTipoDisco);
             this.Controls.Add(this.btnAgregarCapacidadDisco);

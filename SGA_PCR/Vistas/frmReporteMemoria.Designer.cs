@@ -56,7 +56,7 @@
             this.dgvMemorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMemorias.Location = new System.Drawing.Point(26, 125);
+            this.dgvMemorias.Location = new System.Drawing.Point(31, 74);
             this.dgvMemorias.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvMemorias.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvMemorias.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -183,7 +183,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(24, 424);
+            this.btnExportar.Location = new System.Drawing.Point(29, 373);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 136;
@@ -197,7 +197,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(280, 424);
+            this.label1.Location = new System.Drawing.Point(335, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 148;
@@ -207,7 +207,7 @@
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(26, 338);
+            this.verResumen.Location = new System.Drawing.Point(31, 287);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 147;
@@ -218,7 +218,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(39, 265);
+            this.giftCarga.Location = new System.Drawing.Point(44, 214);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(233, 140);
             this.giftCarga.TabIndex = 146;
@@ -227,7 +227,7 @@
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(28, 363);
+            this.cargarData.Location = new System.Drawing.Point(33, 312);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 145;
@@ -242,7 +242,7 @@
             this.pnlM.Controls.Add(this.button1);
             this.pnlM.Location = new System.Drawing.Point(2, 1);
             this.pnlM.Name = "pnlM";
-            this.pnlM.Size = new System.Drawing.Size(557, 92);
+            this.pnlM.Size = new System.Drawing.Size(557, 51);
             this.pnlM.TabIndex = 149;
             this.pnlM.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlM_MouseMove);
             // 
@@ -251,7 +251,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(185, 39);
+            this.label2.Location = new System.Drawing.Point(186, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 31);
             this.label2.TabIndex = 151;
@@ -268,11 +268,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(472, 11);
+            this.button1.Location = new System.Drawing.Point(503, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 63);
+            this.button1.Size = new System.Drawing.Size(51, 38);
             this.button1.TabIndex = 150;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -281,7 +280,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(561, 492);
+            this.ClientSize = new System.Drawing.Size(561, 436);
             this.Controls.Add(this.pnlM);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);

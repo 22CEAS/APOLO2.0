@@ -272,7 +272,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(344, 734);
+            this.MenuVertical.Size = new System.Drawing.Size(241, 734);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
@@ -284,7 +284,7 @@
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelConfiguracion.Location = new System.Drawing.Point(0, 1903);
             this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
+            this.panelConfiguracion.Size = new System.Drawing.Size(224, 107);
             this.panelConfiguracion.TabIndex = 22;
             this.panelConfiguracion.Visible = false;
             // 
@@ -339,7 +339,7 @@
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.Location = new System.Drawing.Point(0, 1863);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
+            this.btnConfiguracion.Size = new System.Drawing.Size(224, 40);
             this.btnConfiguracion.TabIndex = 21;
             this.btnConfiguracion.Text = "CONFIGURACIÓN";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
@@ -362,7 +362,7 @@
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
             this.REPORTES.Location = new System.Drawing.Point(0, 1295);
             this.REPORTES.Name = "REPORTES";
-            this.REPORTES.Size = new System.Drawing.Size(327, 568);
+            this.REPORTES.Size = new System.Drawing.Size(224, 568);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
             // 
@@ -588,7 +588,7 @@
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button20.Location = new System.Drawing.Point(0, 1255);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(327, 40);
+            this.button20.Size = new System.Drawing.Size(224, 40);
             this.button20.TabIndex = 18;
             this.button20.Text = "REPORTES";
             this.button20.UseVisualStyleBackColor = false;
@@ -614,7 +614,7 @@
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(327, 718);
+            this.PROCESOS.Size = new System.Drawing.Size(224, 718);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
@@ -897,7 +897,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 497);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(327, 40);
+            this.button1.Size = new System.Drawing.Size(224, 40);
             this.button1.TabIndex = 10;
             this.button1.Text = "PROCESOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -918,7 +918,7 @@
             this.ARCHIVO.Dock = System.Windows.Forms.DockStyle.Top;
             this.ARCHIVO.Location = new System.Drawing.Point(0, 40);
             this.ARCHIVO.Name = "ARCHIVO";
-            this.ARCHIVO.Size = new System.Drawing.Size(327, 457);
+            this.ARCHIVO.Size = new System.Drawing.Size(224, 457);
             this.ARCHIVO.TabIndex = 9;
             this.ARCHIVO.Visible = false;
             // 
@@ -1105,7 +1105,7 @@
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(0, 0);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(327, 40);
+            this.button7.Size = new System.Drawing.Size(224, 40);
             this.button7.TabIndex = 7;
             this.button7.Text = "MAESTRO";
             this.button7.UseVisualStyleBackColor = false;
@@ -1129,9 +1129,9 @@
             this.BarraTitulo.Controls.Add(this.pictureBox1);
             this.BarraTitulo.Controls.Add(this.pictureBox2);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(344, 0);
+            this.BarraTitulo.Location = new System.Drawing.Point(241, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1237, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1340, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             // 
@@ -1151,7 +1151,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblUser.Location = new System.Drawing.Point(1020, 9);
+            this.lblUser.Location = new System.Drawing.Point(1123, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(70, 25);
             this.lblUser.TabIndex = 13;
@@ -1164,7 +1164,7 @@
             this.usuarioConectado.Enabled = false;
             this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioConectado.ForeColor = System.Drawing.Color.Transparent;
-            this.usuarioConectado.Location = new System.Drawing.Point(880, 23);
+            this.usuarioConectado.Location = new System.Drawing.Point(983, 23);
             this.usuarioConectado.Name = "usuarioConectado";
             this.usuarioConectado.Size = new System.Drawing.Size(37, 19);
             this.usuarioConectado.TabIndex = 7;
@@ -1188,7 +1188,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(885, 7);
+            this.label3.Location = new System.Drawing.Point(988, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 25);
             this.label3.TabIndex = 9;
@@ -1201,7 +1201,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(656, 9);
+            this.lblHora.Location = new System.Drawing.Point(708, 9);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(72, 25);
             this.lblHora.TabIndex = 3;
@@ -1212,7 +1212,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1149, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(1252, 9);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1227,7 +1227,7 @@
             this.usuario.Enabled = false;
             this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.usuario.Location = new System.Drawing.Point(1096, 24);
+            this.usuario.Location = new System.Drawing.Point(1199, 24);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(13, 19);
             this.usuario.TabIndex = 11;
@@ -1239,7 +1239,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(577, 9);
+            this.label2.Location = new System.Drawing.Point(629, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 6;
@@ -1251,7 +1251,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(944, 9);
+            this.label4.Location = new System.Drawing.Point(1047, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 12;
@@ -1263,7 +1263,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(366, 9);
+            this.label1.Location = new System.Drawing.Point(418, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 5;
@@ -1275,7 +1275,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblFecha.Location = new System.Drawing.Point(449, 9);
+            this.lblFecha.Location = new System.Drawing.Point(501, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(83, 25);
             this.lblFecha.TabIndex = 4;
@@ -1296,7 +1296,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1190, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(1293, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1324,9 +1324,9 @@
             this.pnlInventarioOfi.Controls.Add(this.lblInfoInvenario);
             this.pnlInventarioOfi.Controls.Add(this.pnlPronosticadorInfo);
             this.pnlInventarioOfi.Controls.Add(this.pnlLaptopsDisponibles);
-            this.pnlInventarioOfi.Location = new System.Drawing.Point(361, 61);
+            this.pnlInventarioOfi.Location = new System.Drawing.Point(351, 73);
             this.pnlInventarioOfi.Name = "pnlInventarioOfi";
-            this.pnlInventarioOfi.Size = new System.Drawing.Size(1123, 539);
+            this.pnlInventarioOfi.Size = new System.Drawing.Size(1030, 539);
             this.pnlInventarioOfi.TabIndex = 18;
             this.pnlInventarioOfi.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInventarioOfi_Paint);
             // 
@@ -1336,7 +1336,7 @@
             this.lblInvtoFact.BackColor = System.Drawing.Color.White;
             this.lblInvtoFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvtoFact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            this.lblInvtoFact.Location = new System.Drawing.Point(931, 1);
+            this.lblInvtoFact.Location = new System.Drawing.Point(887, 8);
             this.lblInvtoFact.Name = "lblInvtoFact";
             this.lblInvtoFact.Size = new System.Drawing.Size(125, 24);
             this.lblInvtoFact.TabIndex = 5;
@@ -1350,7 +1350,7 @@
             this.pnlResumenInventario.Controls.Add(this.lblCantidadTotal);
             this.pnlResumenInventario.Controls.Add(this.lblFecPronosticador);
             this.pnlResumenInventario.Controls.Add(this.label19);
-            this.pnlResumenInventario.Location = new System.Drawing.Point(772, 33);
+            this.pnlResumenInventario.Location = new System.Drawing.Point(728, 40);
             this.pnlResumenInventario.Name = "pnlResumenInventario";
             this.pnlResumenInventario.Size = new System.Drawing.Size(284, 202);
             this.pnlResumenInventario.TabIndex = 3;
@@ -1396,7 +1396,7 @@
             // 
             this.lblInfoInvenario.AutoSize = true;
             this.lblInfoInvenario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoInvenario.Location = new System.Drawing.Point(772, 238);
+            this.lblInfoInvenario.Location = new System.Drawing.Point(728, 245);
             this.lblInfoInvenario.Name = "lblInfoInvenario";
             this.lblInfoInvenario.Size = new System.Drawing.Size(233, 72);
             this.lblInfoInvenario.TabIndex = 2;
@@ -1413,7 +1413,7 @@
             this.pnlPronosticadorInfo.Controls.Add(this.pnlProsticar);
             this.pnlPronosticadorInfo.Controls.Add(this.lblFecPron);
             this.pnlPronosticadorInfo.Controls.Add(this.label21);
-            this.pnlPronosticadorInfo.Location = new System.Drawing.Point(416, 33);
+            this.pnlPronosticadorInfo.Location = new System.Drawing.Point(372, 40);
             this.pnlPronosticadorInfo.Name = "pnlPronosticadorInfo";
             this.pnlPronosticadorInfo.Size = new System.Drawing.Size(325, 487);
             this.pnlPronosticadorInfo.TabIndex = 1;
@@ -1625,7 +1625,7 @@
             this.pnlLaptopsDisponibles.Controls.Add(this.dgvLapDispo);
             this.pnlLaptopsDisponibles.Controls.Add(this.lblFechaActual);
             this.pnlLaptopsDisponibles.Controls.Add(this.label20);
-            this.pnlLaptopsDisponibles.Location = new System.Drawing.Point(60, 33);
+            this.pnlLaptopsDisponibles.Location = new System.Drawing.Point(16, 40);
             this.pnlLaptopsDisponibles.Name = "pnlLaptopsDisponibles";
             this.pnlLaptopsDisponibles.Size = new System.Drawing.Size(325, 492);
             this.pnlLaptopsDisponibles.TabIndex = 0;
@@ -1808,9 +1808,9 @@
             this.pnlFacturacionOfi.Controls.Add(this.lblFactToInv);
             this.pnlFacturacionOfi.Controls.Add(this.panel10);
             this.pnlFacturacionOfi.Controls.Add(this.panel9);
-            this.pnlFacturacionOfi.Location = new System.Drawing.Point(344, 61);
+            this.pnlFacturacionOfi.Location = new System.Drawing.Point(365, 73);
             this.pnlFacturacionOfi.Name = "pnlFacturacionOfi";
-            this.pnlFacturacionOfi.Size = new System.Drawing.Size(1120, 648);
+            this.pnlFacturacionOfi.Size = new System.Drawing.Size(1133, 648);
             this.pnlFacturacionOfi.TabIndex = 20;
             this.pnlFacturacionOfi.Visible = false;
             this.pnlFacturacionOfi.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFacturacionOfi_Paint);
@@ -1872,7 +1872,7 @@
             this.dgvFacturacionDash.Location = new System.Drawing.Point(515, 40);
             this.dgvFacturacionDash.MainView = this.vistaFacturacionDash;
             this.dgvFacturacionDash.Name = "dgvFacturacionDash";
-            this.dgvFacturacionDash.Size = new System.Drawing.Size(508, 379);
+            this.dgvFacturacionDash.Size = new System.Drawing.Size(521, 379);
             this.dgvFacturacionDash.TabIndex = 146;
             this.dgvFacturacionDash.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaFacturacionDash,

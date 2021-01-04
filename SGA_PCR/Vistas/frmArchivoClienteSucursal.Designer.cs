@@ -69,7 +69,7 @@
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(603, 214);
+            this.chbActivo.Location = new System.Drawing.Point(594, 164);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 126;
@@ -85,7 +85,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(324, 156);
+            this.labelX5.Location = new System.Drawing.Point(315, 106);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(87, 16);
             this.labelX5.TabIndex = 124;
@@ -100,7 +100,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(25, 126);
+            this.labelX4.Location = new System.Drawing.Point(9, 73);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(42, 16);
             this.labelX4.TabIndex = 123;
@@ -115,7 +115,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(23, 212);
+            this.labelX3.Location = new System.Drawing.Point(14, 162);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(37, 16);
             this.labelX3.TabIndex = 122;
@@ -130,7 +130,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(347, 213);
+            this.labelX2.Location = new System.Drawing.Point(338, 163);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(55, 16);
             this.labelX2.TabIndex = 121;
@@ -144,7 +144,7 @@
             this.dgvSucursalCliente.BackColor = System.Drawing.Color.White;
             this.dgvSucursalCliente.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvSucursalCliente.ForeColor = System.Drawing.Color.Black;
-            this.dgvSucursalCliente.Location = new System.Drawing.Point(21, 246);
+            this.dgvSucursalCliente.Location = new System.Drawing.Point(12, 196);
             this.dgvSucursalCliente.Name = "dgvSucursalCliente";
             this.dgvSucursalCliente.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvSucursalCliente.PrimaryGrid.AllowRowResize = true;
@@ -214,7 +214,7 @@
             this.dgvSucursalCliente.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvSucursalCliente.PrimaryGrid.ShowRowHeaders = false;
             this.dgvSucursalCliente.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvSucursalCliente.Size = new System.Drawing.Size(650, 349);
+            this.dgvSucursalCliente.Size = new System.Drawing.Size(650, 348);
             this.dgvSucursalCliente.TabIndex = 117;
             this.dgvSucursalCliente.Text = "Tabla Cliente Sucursal";
             this.dgvSucursalCliente.Click += new System.EventHandler(this.dgvSucursalCliente_Click);
@@ -230,7 +230,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(697, 532);
+            this.btnImprimir.Location = new System.Drawing.Point(691, 481);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 116;
@@ -249,7 +249,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(692, 461);
+            this.btnCancelar.Location = new System.Drawing.Point(686, 410);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 115;
@@ -268,7 +268,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(692, 313);
+            this.btnEditar.Location = new System.Drawing.Point(686, 262);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 114;
@@ -288,7 +288,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(692, 246);
+            this.btnNuevo.Location = new System.Drawing.Point(686, 195);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 113;
@@ -308,7 +308,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(692, 392);
+            this.btnGrabar.Location = new System.Drawing.Point(686, 341);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 112;
@@ -319,7 +319,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(408, 212);
+            this.txtTelefono.Location = new System.Drawing.Point(399, 162);
             this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 20);
@@ -327,7 +327,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(66, 211);
+            this.txtEmail.Location = new System.Drawing.Point(57, 161);
             this.txtEmail.MaxLength = 250;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(248, 20);
@@ -335,7 +335,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(324, 175);
+            this.txtNroDocumento.Location = new System.Drawing.Point(315, 125);
             this.txtNroDocumento.MaxLength = 11;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(152, 20);
@@ -351,7 +351,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(513, 156);
+            this.labelX6.Location = new System.Drawing.Point(504, 106);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(100, 16);
             this.labelX6.TabIndex = 128;
@@ -359,7 +359,7 @@
             // 
             // txtNombreContacto
             // 
-            this.txtNombreContacto.Location = new System.Drawing.Point(513, 175);
+            this.txtNombreContacto.Location = new System.Drawing.Point(504, 125);
             this.txtNombreContacto.MaxLength = 250;
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(225, 20);
@@ -374,7 +374,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(21, 156);
+            this.labelX7.Location = new System.Drawing.Point(12, 106);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(55, 16);
             this.labelX7.TabIndex = 130;
@@ -382,7 +382,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(21, 175);
+            this.txtDireccion.Location = new System.Drawing.Point(12, 125);
             this.txtDireccion.MaxLength = 255;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(290, 20);
@@ -394,7 +394,7 @@
             this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(73, 123);
+            this.cmbCliente.Location = new System.Drawing.Point(57, 70);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(366, 21);
             this.cmbCliente.TabIndex = 131;
@@ -407,7 +407,7 @@
             this.pnlCS.Controls.Add(this.button1);
             this.pnlCS.Location = new System.Drawing.Point(1, 0);
             this.pnlCS.Name = "pnlCS";
-            this.pnlCS.Size = new System.Drawing.Size(797, 77);
+            this.pnlCS.Size = new System.Drawing.Size(797, 50);
             this.pnlCS.TabIndex = 132;
             this.pnlCS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCS_MouseMove);
             // 
@@ -416,7 +416,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(172, 19);
+            this.label1.Location = new System.Drawing.Point(172, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(452, 31);
             this.label1.TabIndex = 134;
@@ -433,11 +433,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(712, 3);
+            this.button1.Location = new System.Drawing.Point(735, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(59, 47);
             this.button1.TabIndex = 133;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -447,7 +446,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 627);
+            this.ClientSize = new System.Drawing.Size(800, 582);
             this.Controls.Add(this.pnlCS);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.labelX7);

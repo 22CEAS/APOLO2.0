@@ -61,8 +61,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.rbtnSalida = new System.Windows.Forms.RadioButton();
             this.pnlPS = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFecIngreso)).BeginInit();
             this.groupBoxIngreso.SuspendLayout();
             this.groupBoxSalida.SuspendLayout();
@@ -200,7 +200,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(758, 329);
+            this.btnCancelar.Location = new System.Drawing.Point(758, 316);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 211;
@@ -220,7 +220,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(758, 181);
+            this.btnNuevo.Location = new System.Drawing.Point(758, 168);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 210;
@@ -240,7 +240,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(749, 259);
+            this.btnGrabar.Location = new System.Drawing.Point(749, 246);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 209;
@@ -263,7 +263,7 @@
             this.groupBoxIngreso.Controls.Add(this.label1);
             this.groupBoxIngreso.Controls.Add(this.txtClienteIngreso);
             this.groupBoxIngreso.Controls.Add(this.label2);
-            this.groupBoxIngreso.Location = new System.Drawing.Point(27, 117);
+            this.groupBoxIngreso.Location = new System.Drawing.Point(27, 92);
             this.groupBoxIngreso.Name = "groupBoxIngreso";
             this.groupBoxIngreso.Size = new System.Drawing.Size(693, 175);
             this.groupBoxIngreso.TabIndex = 212;
@@ -290,7 +290,7 @@
             // 
             this.rbtnIngreso.AutoSize = true;
             this.rbtnIngreso.Checked = true;
-            this.rbtnIngreso.Location = new System.Drawing.Point(30, 101);
+            this.rbtnIngreso.Location = new System.Drawing.Point(30, 76);
             this.rbtnIngreso.Name = "rbtnIngreso";
             this.rbtnIngreso.Size = new System.Drawing.Size(150, 20);
             this.rbtnIngreso.TabIndex = 214;
@@ -313,7 +313,7 @@
             this.groupBoxSalida.Controls.Add(this.label8);
             this.groupBoxSalida.Controls.Add(this.txtClienteSalida);
             this.groupBoxSalida.Controls.Add(this.label9);
-            this.groupBoxSalida.Location = new System.Drawing.Point(27, 319);
+            this.groupBoxSalida.Location = new System.Drawing.Point(27, 294);
             this.groupBoxSalida.Name = "groupBoxSalida";
             this.groupBoxSalida.Size = new System.Drawing.Size(693, 175);
             this.groupBoxSalida.TabIndex = 213;
@@ -459,7 +459,7 @@
             // rbtnSalida
             // 
             this.rbtnSalida.AutoSize = true;
-            this.rbtnSalida.Location = new System.Drawing.Point(30, 303);
+            this.rbtnSalida.Location = new System.Drawing.Point(30, 278);
             this.rbtnSalida.Name = "rbtnSalida";
             this.rbtnSalida.Size = new System.Drawing.Size(152, 20);
             this.rbtnSalida.TabIndex = 215;
@@ -474,9 +474,20 @@
             this.pnlPS.Controls.Add(this.button1);
             this.pnlPS.Location = new System.Drawing.Point(2, 2);
             this.pnlPS.Name = "pnlPS";
-            this.pnlPS.Size = new System.Drawing.Size(867, 89);
+            this.pnlPS.Size = new System.Drawing.Size(867, 55);
             this.pnlPS.TabIndex = 216;
             this.pnlPS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPS_MouseMove);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(251, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(337, 32);
+            this.label12.TabIndex = 218;
+            this.label12.Text = "MOVIMIENTOS INTERNOS";
             // 
             // button1
             // 
@@ -489,32 +500,20 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(781, 10);
+            this.button1.Location = new System.Drawing.Point(804, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(60, 44);
             this.button1.TabIndex = 217;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(263, 38);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(337, 32);
-            this.label12.TabIndex = 218;
-            this.label12.Text = "MOVIMIENTOS INTERNOS";
             // 
             // frmProcesoSalida
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(870, 510);
+            this.ClientSize = new System.Drawing.Size(870, 480);
             this.Controls.Add(this.pnlPS);
             this.Controls.Add(this.rbtnSalida);
             this.Controls.Add(this.rbtnIngreso);

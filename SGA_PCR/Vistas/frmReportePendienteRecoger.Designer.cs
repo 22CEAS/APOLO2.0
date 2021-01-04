@@ -63,8 +63,8 @@
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
             this.pnlPR = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -539,9 +539,20 @@
             this.pnlPR.Controls.Add(this.button1);
             this.pnlPR.Location = new System.Drawing.Point(2, 2);
             this.pnlPR.Name = "pnlPR";
-            this.pnlPR.Size = new System.Drawing.Size(1291, 96);
+            this.pnlPR.Size = new System.Drawing.Size(1291, 51);
             this.pnlPR.TabIndex = 153;
             this.pnlPR.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPR_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(424, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(403, 31);
+            this.label2.TabIndex = 155;
+            this.label2.Text = "PENDIENTE POR RECOGER";
             // 
             // button1
             // 
@@ -554,25 +565,13 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1213, 10);
+            this.button1.Location = new System.Drawing.Point(1228, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(54, 38);
             this.button1.TabIndex = 154;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(449, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 31);
-            this.label2.TabIndex = 155;
-            this.label2.Text = "PENDIENTE POR RECOGER";
             // 
             // frmReportePendienteRecoger
             // 

@@ -164,8 +164,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbSede = new System.Windows.Forms.ComboBox();
             this.pnlC = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -201,7 +201,7 @@
             this.cmbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(370, 150);
+            this.cmbProveedor.Location = new System.Drawing.Point(369, 133);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(283, 24);
             this.cmbProveedor.TabIndex = 2;
@@ -210,14 +210,14 @@
             // txtRUC
             // 
             this.txtRUC.Enabled = false;
-            this.txtRUC.Location = new System.Drawing.Point(714, 151);
+            this.txtRUC.Location = new System.Drawing.Point(713, 134);
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(136, 23);
             this.txtRUC.TabIndex = 3;
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(83, 193);
+            this.txtFactura.Location = new System.Drawing.Point(82, 176);
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.Size = new System.Drawing.Size(193, 23);
             this.txtFactura.TabIndex = 5;
@@ -231,7 +231,7 @@
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(1015, 147);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(1014, 130);
             // 
             // 
             // 
@@ -261,7 +261,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 151);
+            this.label1.Location = new System.Drawing.Point(291, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 7;
@@ -271,7 +271,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 196);
+            this.label3.Location = new System.Drawing.Point(23, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 9;
@@ -281,7 +281,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(889, 151);
+            this.label4.Location = new System.Drawing.Point(888, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 16);
             this.label4.TabIndex = 10;
@@ -307,7 +307,7 @@
             this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabelX4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(670, 152);
+            this.LabelX4.Location = new System.Drawing.Point(669, 135);
             this.LabelX4.Name = "LabelX4";
             this.LabelX4.Size = new System.Drawing.Size(28, 18);
             this.LabelX4.TabIndex = 15;
@@ -318,7 +318,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(871, 642);
+            this.label2.Location = new System.Drawing.Point(850, 641);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 16;
@@ -328,7 +328,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(292, 198);
+            this.label8.Location = new System.Drawing.Point(291, 181);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 16);
             this.label8.TabIndex = 19;
@@ -336,7 +336,7 @@
             // 
             // txtGuia
             // 
-            this.txtGuia.Location = new System.Drawing.Point(425, 194);
+            this.txtGuia.Location = new System.Drawing.Point(424, 177);
             this.txtGuia.Name = "txtGuia";
             this.txtGuia.Size = new System.Drawing.Size(189, 23);
             this.txtGuia.TabIndex = 6;
@@ -352,7 +352,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(218, 83);
+            this.btnBuscar.Location = new System.Drawing.Point(217, 66);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -365,7 +365,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 107);
+            this.label5.Location = new System.Drawing.Point(26, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 149;
@@ -373,7 +373,7 @@
             // 
             // txtNroIngreso
             // 
-            this.txtNroIngreso.Location = new System.Drawing.Point(106, 106);
+            this.txtNroIngreso.Location = new System.Drawing.Point(105, 89);
             this.txtNroIngreso.Name = "txtNroIngreso";
             this.txtNroIngreso.ReadOnly = true;
             this.txtNroIngreso.Size = new System.Drawing.Size(106, 23);
@@ -383,7 +383,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 151);
+            this.label7.Location = new System.Drawing.Point(22, 134);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 16);
             this.label7.TabIndex = 152;
@@ -394,7 +394,7 @@
             this.cmbTipoIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipoIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoIngreso.FormattingEnabled = true;
-            this.cmbTipoIngreso.Location = new System.Drawing.Point(83, 151);
+            this.cmbTipoIngreso.Location = new System.Drawing.Point(82, 134);
             this.cmbTipoIngreso.Name = "cmbTipoIngreso";
             this.cmbTipoIngreso.Size = new System.Drawing.Size(193, 24);
             this.cmbTipoIngreso.TabIndex = 1;
@@ -574,7 +574,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(667, 200);
+            this.label9.Location = new System.Drawing.Point(666, 183);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 16);
             this.label9.TabIndex = 183;
@@ -585,7 +585,7 @@
             this.cmbMonedaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMonedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonedaTipo.FormattingEnabled = true;
-            this.cmbMonedaTipo.Location = new System.Drawing.Point(731, 198);
+            this.cmbMonedaTipo.Location = new System.Drawing.Point(730, 181);
             this.cmbMonedaTipo.Name = "cmbMonedaTipo";
             this.cmbMonedaTipo.Size = new System.Drawing.Size(119, 24);
             this.cmbMonedaTipo.TabIndex = 7;
@@ -594,7 +594,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(892, 201);
+            this.label10.Location = new System.Drawing.Point(891, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 16);
             this.label10.TabIndex = 185;
@@ -602,7 +602,7 @@
             // 
             // txtMontoCambio
             // 
-            this.txtMontoCambio.Location = new System.Drawing.Point(997, 198);
+            this.txtMontoCambio.Location = new System.Drawing.Point(996, 181);
             this.txtMontoCambio.Name = "txtMontoCambio";
             this.txtMontoCambio.Size = new System.Drawing.Size(119, 23);
             this.txtMontoCambio.TabIndex = 8;
@@ -612,7 +612,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(745, 222);
+            this.label14.Location = new System.Drawing.Point(744, 205);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 16);
             this.label14.TabIndex = 186;
@@ -1988,7 +1988,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(310, 123);
+            this.label6.Location = new System.Drawing.Point(313, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 188;
@@ -1997,7 +1997,7 @@
             // cmbSede
             // 
             this.cmbSede.FormattingEnabled = true;
-            this.cmbSede.Location = new System.Drawing.Point(370, 118);
+            this.cmbSede.Location = new System.Drawing.Point(369, 92);
             this.cmbSede.Name = "cmbSede";
             this.cmbSede.Size = new System.Drawing.Size(251, 24);
             this.cmbSede.TabIndex = 189;
@@ -2009,9 +2009,20 @@
             this.pnlC.Controls.Add(this.button1);
             this.pnlC.Location = new System.Drawing.Point(1, 2);
             this.pnlC.Name = "pnlC";
-            this.pnlC.Size = new System.Drawing.Size(1246, 83);
+            this.pnlC.Size = new System.Drawing.Size(1246, 57);
             this.pnlC.TabIndex = 190;
             this.pnlC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(499, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(134, 32);
+            this.label11.TabIndex = 192;
+            this.label11.Text = "COMPRA";
             // 
             // button1
             // 
@@ -2024,25 +2035,13 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1160, 10);
+            this.button1.Location = new System.Drawing.Point(1184, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(51, 49);
             this.button1.TabIndex = 191;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(497, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 32);
-            this.label11.TabIndex = 192;
-            this.label11.Text = "COMPRA";
             // 
             // frmProcesoIngreso
             // 

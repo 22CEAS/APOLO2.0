@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearCliente));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(181, 139);
+            this.txtNroDocumento.Location = new System.Drawing.Point(182, 111);
             this.txtNroDocumento.MaxLength = 12;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(152, 20);
@@ -75,21 +75,21 @@
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(371, 139);
+            this.txtRazonSocial.Location = new System.Drawing.Point(372, 111);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(400, 20);
             this.txtRazonSocial.TabIndex = 84;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(66, 171);
+            this.txtEmail.Location = new System.Drawing.Point(67, 143);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(188, 20);
             this.txtEmail.TabIndex = 85;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(340, 170);
+            this.txtTelefono.Location = new System.Drawing.Point(341, 142);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 20);
             this.txtTelefono.TabIndex = 87;
@@ -105,7 +105,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(701, 497);
+            this.btnImprimir.Location = new System.Drawing.Point(702, 455);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 97;
@@ -124,7 +124,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(696, 426);
+            this.btnCancelar.Location = new System.Drawing.Point(697, 384);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 96;
@@ -143,7 +143,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(696, 278);
+            this.btnEditar.Location = new System.Drawing.Point(697, 236);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 95;
@@ -163,7 +163,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(696, 211);
+            this.btnNuevo.Location = new System.Drawing.Point(697, 169);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 94;
@@ -183,7 +183,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(696, 357);
+            this.btnGrabar.Location = new System.Drawing.Point(697, 315);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 93;
@@ -200,78 +200,78 @@
             this.dgvCliente.BackColor = System.Drawing.Color.White;
             this.dgvCliente.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvCliente.ForeColor = System.Drawing.Color.Black;
-            this.dgvCliente.Location = new System.Drawing.Point(23, 211);
+            this.dgvCliente.Location = new System.Drawing.Point(24, 183);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvCliente.PrimaryGrid.AllowRowResize = true;
             this.dgvCliente.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "idCliente";
-            gridColumn1.MinimumWidth = 50;
-            gridColumn1.Name = "Id";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 50;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn2.DataPropertyName = "nroDocumento";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Nro Documento";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
-            gridColumn3.DataPropertyName = "nombre_razonSocial";
-            gridColumn3.MinimumWidth = 120;
-            gridColumn3.Name = "Nombre";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.Width = 250;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-            gridColumn4.DataPropertyName = "nombreKam";
-            gridColumn4.MinimumWidth = 150;
-            gridColumn4.Name = "Nombre KAM";
-            gridColumn4.Width = 150;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-            gridColumn5.DataPropertyName = "estado";
-            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "Activo";
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "tipoDocumento";
-            gridColumn6.FilterAutoScan = true;
-            gridColumn6.MinimumWidth = 140;
-            gridColumn6.Name = "Tipo Documento";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.Visible = false;
-            gridColumn6.Width = 140;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "telefono";
-            gridColumn7.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn7.MinimumWidth = 100;
-            gridColumn7.Name = "Telefono";
-            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.Visible = false;
-            gridColumn8.AllowEdit = false;
-            gridColumn8.DataPropertyName = "email";
-            gridColumn8.Name = "Email";
-            gridColumn8.Visible = false;
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "idKAM";
-            gridColumn9.Name = "Id Kam";
-            gridColumn9.Visible = false;
-            gridColumn10.DataPropertyName = "nombreTipoDocumento";
-            gridColumn10.Name = "Nombre Tipo Documento";
-            gridColumn10.Visible = false;
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn10);
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "idCliente";
+            gridColumn11.MinimumWidth = 50;
+            gridColumn11.Name = "Id";
+            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn11.Width = 50;
+            gridColumn12.AllowEdit = false;
+            gridColumn12.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn12.DataPropertyName = "nroDocumento";
+            gridColumn12.MinimumWidth = 100;
+            gridColumn12.Name = "Nro Documento";
+            gridColumn12.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn13.AllowEdit = false;
+            gridColumn13.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
+            gridColumn13.DataPropertyName = "nombre_razonSocial";
+            gridColumn13.MinimumWidth = 120;
+            gridColumn13.Name = "Nombre";
+            gridColumn13.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn13.Width = 250;
+            gridColumn14.AllowEdit = false;
+            gridColumn14.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+            gridColumn14.DataPropertyName = "nombreKam";
+            gridColumn14.MinimumWidth = 150;
+            gridColumn14.Name = "Nombre KAM";
+            gridColumn14.Width = 150;
+            gridColumn15.AllowEdit = false;
+            gridColumn15.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+            gridColumn15.DataPropertyName = "estado";
+            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn15.MinimumWidth = 100;
+            gridColumn15.Name = "Activo";
+            gridColumn16.AllowEdit = false;
+            gridColumn16.DataPropertyName = "tipoDocumento";
+            gridColumn16.FilterAutoScan = true;
+            gridColumn16.MinimumWidth = 140;
+            gridColumn16.Name = "Tipo Documento";
+            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn16.Visible = false;
+            gridColumn16.Width = 140;
+            gridColumn17.AllowEdit = false;
+            gridColumn17.DataPropertyName = "telefono";
+            gridColumn17.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn17.MinimumWidth = 100;
+            gridColumn17.Name = "Telefono";
+            gridColumn17.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn17.Visible = false;
+            gridColumn18.AllowEdit = false;
+            gridColumn18.DataPropertyName = "email";
+            gridColumn18.Name = "Email";
+            gridColumn18.Visible = false;
+            gridColumn19.AllowEdit = false;
+            gridColumn19.DataPropertyName = "idKAM";
+            gridColumn19.Name = "Id Kam";
+            gridColumn19.Visible = false;
+            gridColumn20.DataPropertyName = "nombreTipoDocumento";
+            gridColumn20.Name = "Nombre Tipo Documento";
+            gridColumn20.Visible = false;
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn18);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn19);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn20);
             this.dgvCliente.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvCliente.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvCliente.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -284,7 +284,7 @@
             this.dgvCliente.PrimaryGrid.NullString = "<<null>>";
             this.dgvCliente.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvCliente.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvCliente.Size = new System.Drawing.Size(650, 350);
+            this.dgvCliente.Size = new System.Drawing.Size(650, 335);
             this.dgvCliente.TabIndex = 98;
             this.dgvCliente.Text = "Tabla Sucursal Clientes";
             this.dgvCliente.Click += new System.EventHandler(this.dgvCliente_Click);
@@ -298,7 +298,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(510, 171);
+            this.labelX1.Location = new System.Drawing.Point(511, 143);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(40, 16);
             this.labelX1.TabIndex = 100;
@@ -308,7 +308,7 @@
             // 
             this.cmbKam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKam.FormattingEnabled = true;
-            this.cmbKam.Location = new System.Drawing.Point(556, 170);
+            this.cmbKam.Location = new System.Drawing.Point(557, 142);
             this.cmbKam.Name = "cmbKam";
             this.cmbKam.Size = new System.Drawing.Size(117, 21);
             this.cmbKam.TabIndex = 99;
@@ -317,7 +317,7 @@
             // 
             this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(23, 139);
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(24, 111);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(127, 21);
             this.cmbTipoDocumento.TabIndex = 101;
@@ -331,7 +331,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(279, 171);
+            this.labelX2.Location = new System.Drawing.Point(280, 143);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(55, 16);
             this.labelX2.TabIndex = 102;
@@ -346,7 +346,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(23, 172);
+            this.labelX3.Location = new System.Drawing.Point(24, 144);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(37, 16);
             this.labelX3.TabIndex = 103;
@@ -361,7 +361,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(371, 117);
+            this.labelX4.Location = new System.Drawing.Point(372, 89);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(127, 16);
             this.labelX4.TabIndex = 104;
@@ -376,7 +376,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(181, 120);
+            this.labelX5.Location = new System.Drawing.Point(182, 92);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(87, 16);
             this.labelX5.TabIndex = 105;
@@ -391,7 +391,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(23, 120);
+            this.labelX6.Location = new System.Drawing.Point(24, 92);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(95, 16);
             this.labelX6.TabIndex = 106;
@@ -404,7 +404,7 @@
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(709, 174);
+            this.chbActivo.Location = new System.Drawing.Point(710, 146);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 107;
@@ -418,7 +418,7 @@
             this.pnlMCC.Controls.Add(this.button1);
             this.pnlMCC.Location = new System.Drawing.Point(4, 3);
             this.pnlMCC.Name = "pnlMCC";
-            this.pnlMCC.Size = new System.Drawing.Size(798, 74);
+            this.pnlMCC.Size = new System.Drawing.Size(794, 51);
             this.pnlMCC.TabIndex = 108;
             this.pnlMCC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMCC_MouseMove);
             // 
@@ -427,7 +427,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(260, 31);
+            this.label1.Location = new System.Drawing.Point(261, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(286, 31);
             this.label1.TabIndex = 110;
@@ -444,11 +444,10 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(709, 3);
+            this.button1.Location = new System.Drawing.Point(733, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 63);
+            this.button1.Size = new System.Drawing.Size(58, 43);
             this.button1.TabIndex = 109;
-            this.button1.Text = "CERRAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -458,7 +457,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 584);
+            this.ClientSize = new System.Drawing.Size(800, 530);
             this.Controls.Add(this.pnlMCC);
             this.Controls.Add(this.chbActivo);
             this.Controls.Add(this.labelX6);
