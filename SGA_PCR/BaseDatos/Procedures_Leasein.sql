@@ -3375,6 +3375,74 @@ END
 $$
 DELIMITER ;
 
+
+
+DROP PROCEDURE IF EXISTS `update_factura`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_factura`(
+	IN _idFactura int,
+	IN _idSalida int,
+	IN _idTipoEquipo int,
+	IN _idEquipo int,
+	IN _codigo NVARCHAR(255),
+	IN _guiaSalida NVARCHAR(255),
+	IN _nroNotaCredito NVARCHAR(255),
+	IN _numFactura NVARCHAR(255),
+	IN _fecIniPagoActual DATE,
+	IN _fecFinPagoActual DATE,
+	IN _totalSolesActual DOUBLE,
+	IN _totalDolaresActual DOUBLE,
+	IN _costoSolesActual DOUBLE,
+	IN _costoDolaresActual DOUBLE,
+	IN _fecIniPagoAntiguo DATE,
+	IN _fecFinPagoAntiguo DATE,
+	IN _totalSolesAntiguo DOUBLE,
+	IN _totalDolaresAntiguo DOUBLE,
+	IN _costoSolesAntiguo DOUBLE,
+	IN _costoDolaresAntiguo DOUBLE,
+	IN _observacion NVARCHAR(1000),
+	IN _usuario_mod NVARCHAR(255), 
+	OUT _idNotaCredito INT
+)
+BEGIN
+
+	SET @fechaModificacion=(SELECT now());
+
+	UPDATE factura 
+	SET 
+	totalSoles=_totalSolesActual, 
+	totalDolares=_totalDolaresActual, 
+	costoSoles=_costoSolesActual, 
+	costoDolares=_costoDolaresActual, 
+	fecIniPago=_fecIniPagoActual, 
+	fecFinPago=_fecFinPagoActual,
+	fec_mod=@fechaModificacion, 
+	usuario_mod=_usuario_mod
+	WHERE idFactura=_idFactura;
+
+
+	UPDATE cuota 
+	SET 
+	totalSoles=_totalSolesActual, 
+	totalDolares=_totalDolaresActual, 
+	costoSoles=_costoSolesActual, 
+	costoDolares=_costoDolaresActual, 
+	fecInicioPago=_fecIniPagoActual, 
+	fecFinPago=_fecFinPagoActual
+	WHERE idFactura=_idFactura;
+	
+	
+	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
+	
+	COMMIT;
+	
+END
+$$
+DELIMITER ;
+
+
 --======================FACTURAS TRANSITO=======================================	
 
 INSERT INTO `bd_leasein`.`estados`(`idEstado`, `nombreEstado`, `descripcion`) VALUES (14, 'TRANSFERIDO', NULL);

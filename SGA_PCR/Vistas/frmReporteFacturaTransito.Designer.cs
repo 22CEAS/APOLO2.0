@@ -170,6 +170,7 @@
             this.ObservacionXLevantar});
             this.vistaCodigo.GridControl = this.dgvEquiposCodigos;
             this.vistaCodigo.Name = "vistaCodigo";
+            this.vistaCodigo.OptionsBehavior.Editable = false;
             this.vistaCodigo.OptionsCustomization.AllowColumnMoving = false;
             this.vistaCodigo.OptionsMenu.EnableColumnMenu = false;
             this.vistaCodigo.OptionsView.ColumnAutoWidth = false;

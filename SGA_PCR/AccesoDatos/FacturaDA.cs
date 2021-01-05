@@ -318,7 +318,7 @@ namespace AccesoDatos
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
         }
 
-        public int RegistrarNC(BindingList<Factura> facturas, string usuario)
+        public int RegistrarNC(BindingList<Factura> facturas, string usuario, int accion)
         {
             foreach (Factura f in facturas)
             {
@@ -372,8 +372,14 @@ namespace AccesoDatos
 
                 string[] datosSalida = new string[1];
 
-                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
+
+                if (accion == 1)//ANULAR
+                    objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
                     22, 23, out datosSalida, 1);
+                else if (accion == 2)//MODIFICAR
+                    objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "update_factura",
+                    22, 23, out datosSalida, 1);
+
 
                 int idNotaCredito;
 
@@ -382,6 +388,7 @@ namespace AccesoDatos
                 else
                     return 0;
             }
+
             return 1;
         }
 
