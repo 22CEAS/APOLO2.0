@@ -249,15 +249,7 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pnlL_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+   
 
         int posY = 0;
         int posX = 0;
@@ -273,6 +265,11 @@ namespace Apolo
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

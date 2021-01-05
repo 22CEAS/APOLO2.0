@@ -62,13 +62,13 @@
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FecPrimerTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cargarData = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
-            this.verResumen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.pnlCV = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.verResumen = new System.Windows.Forms.Button();
+            this.cargarData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -102,7 +102,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLaptops.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.dgvLaptops.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 97);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 82);
             this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -531,37 +531,14 @@
             this.FecPrimerTraslado.Visible = true;
             this.FecPrimerTraslado.VisibleIndex = 25;
             // 
-            // cargarData
-            // 
-            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(528, 329);
-            this.cargarData.Name = "cargarData";
-            this.cargarData.Size = new System.Drawing.Size(113, 19);
-            this.cargarData.TabIndex = 138;
-            this.cargarData.Text = "CARGANDO DATA";
-            this.cargarData.UseVisualStyleBackColor = true;
-            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
-            // 
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(432, 329);
+            this.giftCarga.Location = new System.Drawing.Point(477, 320);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(190, 138);
             this.giftCarga.TabIndex = 140;
             this.giftCarga.TabStop = false;
-            // 
-            // verResumen
-            // 
-            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(628, 329);
-            this.verResumen.Name = "verResumen";
-            this.verResumen.Size = new System.Drawing.Size(115, 19);
-            this.verResumen.TabIndex = 143;
-            this.verResumen.Text = "VER RESUMEN";
-            this.verResumen.UseVisualStyleBackColor = false;
-            this.verResumen.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label1
             // 
@@ -575,30 +552,30 @@
             this.label1.TabIndex = 144;
             this.label1.Text = "CANTIDAD REGISTROS:";
             // 
-            // button1
+            // btnCerrar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1080, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 43);
-            this.button1.TabIndex = 145;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(1080, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(65, 43);
+            this.btnCerrar.TabIndex = 145;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pnlCV
             // 
             this.pnlCV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlCV.Controls.Add(this.label2);
-            this.pnlCV.Controls.Add(this.button1);
+            this.pnlCV.Controls.Add(this.btnCerrar);
             this.pnlCV.Location = new System.Drawing.Point(2, 0);
             this.pnlCV.Name = "pnlCV";
             this.pnlCV.Size = new System.Drawing.Size(1148, 53);
@@ -615,6 +592,28 @@
             this.label2.Size = new System.Drawing.Size(396, 31);
             this.label2.TabIndex = 146;
             this.label2.Text = "CUADRO DE VENCIMIENTO";
+            // 
+            // verResumen
+            // 
+            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.verResumen.Location = new System.Drawing.Point(628, 329);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 143;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = false;
+            // 
+            // cargarData
+            // 
+            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cargarData.Location = new System.Drawing.Point(528, 329);
+            this.cargarData.Name = "cargarData";
+            this.cargarData.Size = new System.Drawing.Size(113, 19);
+            this.cargarData.TabIndex = 138;
+            this.cargarData.Text = "CARGANDO DATA";
+            this.cargarData.UseVisualStyleBackColor = true;
+            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
             // frmReporteCV
             // 
@@ -678,17 +677,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn VersionOffice;
         private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
         private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
-        public System.Windows.Forms.Button cargarData;
         public System.Windows.Forms.PictureBox giftCarga;
-        private System.Windows.Forms.Button verResumen;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn ruc;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private DevExpress.XtraGrid.Columns.GridColumn UBSoles;
         private DevExpress.XtraGrid.Columns.GridColumn RAM;
         private DevExpress.XtraGrid.Columns.GridColumn FecPrimerTraslado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel pnlCV;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button verResumen;
+        public System.Windows.Forms.Button cargarData;
     }
 }

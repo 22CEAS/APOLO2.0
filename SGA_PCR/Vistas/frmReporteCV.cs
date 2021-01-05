@@ -368,9 +368,6 @@ namespace Apolo
                     
                 }
 
-
-
-
                 dgvLaptops.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
@@ -392,11 +389,7 @@ namespace Apolo
             cargarData.PerformClick();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
-            
-        }
+     
 
 
         private void dgvLaptops_MouseLeave(object sender, EventArgs e)
@@ -409,15 +402,7 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
 
-        private void DashPastel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+      
 
         int posY = 0;
         int posX = 0;
@@ -434,5 +419,12 @@ namespace Apolo
                 Top= Top+ (e.Y - posY);
             }
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }

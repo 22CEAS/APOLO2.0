@@ -243,22 +243,6 @@ namespace Apolo
             }
         }
 
-        private void verResumen_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cantidadTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         public bool cargarDataTabla()
         {
             try
@@ -317,16 +301,7 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
 
-        private void giftCarga_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+     
         int posY = 0;
         int posX = 0;
         private void pnlPF_MouseMove(object sender, MouseEventArgs e)
@@ -341,6 +316,11 @@ namespace Apolo
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
