@@ -2586,3 +2586,26 @@ WHERE
 					))) 
 	ORDER BY
 	IdCliente;
+
+
+DROP view IF EXISTS `vista_reporte_facturas`;
+create view vista_reporte_facturas as
+SELECT
+	f.numFactura AS NumeroFactura,
+	f.fecIniPago AS FechaInicioFactura,
+	f.fecFinPago AS FechaFinFactura,
+	f.fecEmisiom AS FechaEmisionFactura,
+	c.nombre_razonSocial AS Cliente,
+	f.ruc AS RucCliente,
+	f.codigoLC AS CodigoEquipo, 
+	f.guiaSalida AS GuiaSalida, 
+	f.totalSoles AS TotalSoles, 
+	f.totalDolares AS TotalDolares, 
+	f.costoSoles AS CostoSoles, 
+	f.costoDolares AS CostoDolares,
+	ROUND((3.6*(f.totalDolares-f.costoDolares))+(f.totalSoles-f.costoSoles),2)	as UBSoles,
+	IF(f.estado=1,"VIGENTE","ANULADA") AS EstadoFactura
+FROM
+	factura f
+LEFT JOIN cliente c on f.ruc=c.nroDocumento
+ORDER BY fecEmisiom DESC;

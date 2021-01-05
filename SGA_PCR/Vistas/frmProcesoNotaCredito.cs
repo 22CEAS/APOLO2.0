@@ -33,6 +33,9 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private int accion=0;
+        private string accion1 = "ANULAR";
+        private string accion2 = "MODIFICAR";
 
         public frmProcesoNotaCredito()
         {
@@ -61,6 +64,10 @@ namespace Apolo
             cmbFactura.DisplayMember = "numFactura";
             cmbFactura.SelectedIndex = -1;
 
+            cmbAccion.Items.Add(accion1);
+            cmbAccion.Items.Add(accion2);
+            cmbAccion.SelectedIndex = -1;
+
             vistaFacturas.OptionsBehavior.AutoPopulateColumns = false;
             vistaFacturas.OptionsSelection.MultiSelect = true;
 
@@ -73,6 +80,7 @@ namespace Apolo
                 case TipoVista.Inicial:
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
+                    cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
@@ -86,6 +94,7 @@ namespace Apolo
                 case TipoVista.Nuevo:
                     dgvFacturas.Enabled = true;
                     cmbFactura.Enabled = true;
+                    cmbAccion.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtObservación.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
@@ -100,6 +109,7 @@ namespace Apolo
                 case TipoVista.Guardar:
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
+                    cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
@@ -111,6 +121,7 @@ namespace Apolo
                 case TipoVista.Modificar:
                     dgvFacturas.Enabled = true;
                     cmbFactura.Enabled = true;
+                    cmbAccion.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtObservación.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
@@ -134,6 +145,7 @@ namespace Apolo
                 case TipoVista.Limpiar:
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
+                    cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
@@ -147,6 +159,7 @@ namespace Apolo
                 case TipoVista.Duplicar:
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
+                    cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
@@ -160,6 +173,7 @@ namespace Apolo
                 case TipoVista.Anular:
                     dgvFacturas.Enabled = false;
                     cmbFactura.Enabled = false;
+                    cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
@@ -180,7 +194,9 @@ namespace Apolo
             cmbFactura.DataSource = tablaFacturas;
             cmbFactura.DisplayMember = "numFactura";
             cmbFactura.SelectedIndex = -1;
-            
+
+            cmbAccion.SelectedIndex = -1;
+
             txtReferencia.Text = "";
             txtObservación.Text = "";
             facturas = new BindingList<Factura>();
@@ -191,6 +207,13 @@ namespace Apolo
             if (cmbFactura.SelectedValue == null)
             {
                 MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cmbAccion.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una acción a realizar.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -281,6 +304,18 @@ namespace Apolo
                     facturas.Add(factura);
                 }
             }
+
+            int j = cmbAccion.SelectedIndex;
+            if (j != -1)
+            {
+                string nombreAccion = cmbAccion.Text; 
+                if (nombreAccion == accion1)//ANULAR
+                    accion = 1;
+                else if (nombreAccion == accion2)//MODIFICAR
+                    accion = 2;
+            }
+            else
+                this.accion = 0;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -293,7 +328,7 @@ namespace Apolo
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int error = 0;
-                    error = facturaDA.RegistrarNC(facturas, this.nombreUsuario);
+                    error = facturaDA.RegistrarNC(facturas, this.nombreUsuario, accion);
 
                     if (error == 0)
                     {
@@ -355,8 +390,10 @@ namespace Apolo
         {
             this.Close();
         }
+
         int posY = 0;
         int posX = 0;
+
         private void pnlNC_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -370,6 +407,31 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
 
+        }
+
+        private void cmbAccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nombreAccion = cmbAccion.Text;
+            if (nombreAccion == accion1)//ANULAR
+            {
+                accion = 1;
+                this.fecIniPago.OptionsColumn.AllowEdit = false;
+                this.fecFinPago.OptionsColumn.AllowEdit = false;
+                this.VentaSoles.OptionsColumn.AllowEdit = false;
+                this.VentaDolares.OptionsColumn.AllowEdit = false;
+                this.CostoSoles.OptionsColumn.AllowEdit = false;
+                this.CostoDolares.OptionsColumn.AllowEdit = false;
+            }
+            else if (nombreAccion == accion2)//MODIFICAR
+            {
+                accion = 2;
+                this.fecIniPago.OptionsColumn.AllowEdit = true;
+                this.fecFinPago.OptionsColumn.AllowEdit = true;
+                this.VentaSoles.OptionsColumn.AllowEdit = true;
+                this.VentaDolares.OptionsColumn.AllowEdit = true;
+                this.CostoSoles.OptionsColumn.AllowEdit = true;
+                this.CostoDolares.OptionsColumn.AllowEdit = true;
+            }
         }
     }
 }

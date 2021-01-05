@@ -382,6 +382,25 @@ namespace Apolo
                         f.ObservacionXLevantar = "";
                     }
                 }
+
+
+            foreach (Factura f in facturas)
+            {
+                if (f.IdFacturaTransito != IdFacturaTransito)
+                {
+                    if (f.CostoDolares != f.CostoDolaresAntiguo || f.CostoSoles != f.CostoSolesAntiguo
+                   || f.TotalSoles != f.TotalSolesAntiguo || f.TotalDolares != f.TotalDolaresAntiguo)
+                    {
+                        f.Error = 1;
+                        f.ObservacionXLevantar = " Hay un error en uno de los montos, no coincide con el monto original actual de la factura";
+                    }
+                    else
+                    {
+                        f.Error = 0;
+                        f.ObservacionXLevantar = "";
+                    }
+                }
+            }
         }
 
         public bool GrabarFactura()
@@ -558,6 +577,11 @@ namespace Apolo
                     fact.CostoSoles = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoSoles"].ToString());
                     fact.CostoDolares = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoDolares"].ToString());
                     fact.CantidadEquipos = Convert.ToInt32(equiposFacturaTransito.Rows[rec]["cantidadEquipos"].ToString());
+
+                    fact.TotalSolesAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["totalSoles"].ToString());
+                    fact.TotalDolaresAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["totalDolares"].ToString());
+                    fact.CostoSolesAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoSoles"].ToString());
+                    fact.CostoDolaresAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoDolares"].ToString());
 
                     fact.TipoFacturaTransito = 1;
 
