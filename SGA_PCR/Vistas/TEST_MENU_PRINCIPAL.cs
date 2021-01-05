@@ -113,7 +113,7 @@ namespace Apolo
         private void verificandoPermisosMaestro()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9,btnKAM,btnLicencias };
+            Button[] botones_archivo = { btnMProcesador, btnMDisco, btnMMemoria, btnMTarjetaVideo, btnMCliente, btnMSucursal, btnMProveedor,btnMKAM,btnMLicencias };
             string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a" };
 
             foreach (Button btn in botones_archivo)
@@ -137,7 +137,7 @@ namespace Apolo
         private void verificandoPermisosProcesos()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19,btnMovimientosInternos,btnCorteAlquiler,btnNotaDeCredito,btnFacturasTransito};
+            Button[] botones_procesos = { btnPCompra, btnPDevolucion, btnPAlquiler, btnPRenovacion, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans};
             string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b" };
 
             foreach (Button btn in botones_procesos)
@@ -160,8 +160,8 @@ namespace Apolo
         private void verificandoPermisosReportes()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_reportes = { button30,  button26, button29, button27, button25, button24, button23, button22, button21, button33,btnReporteFT };
-            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c",  "13c","14c" };
+            Button[] botones_reportes = { brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRLapVencer, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas };
+            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c","13c","14c","15c" };
 
             foreach (Button btn in botones_reportes)
             {
@@ -224,7 +224,7 @@ namespace Apolo
                 panelConfiguracion.Visible = false;
         }
 
-        private void showSubMenu(Panel subMenu)
+        private void showSubMenu(Panel subMenu) //! MOVIMIENTO SUB-MENUS
         {
             if (subMenu.Visible == false)
             {
@@ -242,14 +242,12 @@ namespace Apolo
         {
             accesos_usuarioDA = new AccesosUsuarioDA();
             accesos_usuarios = new Accesos_usuarios();
-
-            
         }
 
 
 
 
-        private void btnSlideMenu_Click(object sender, EventArgs e)
+        private void btnSlideMenu_Click(object sender, EventArgs e) //! MOVIMIENTO SLIDER IZQUIERDA/DERECHA
         {
             if (MenuVertical.Width == 350)
             {
@@ -259,52 +257,17 @@ namespace Apolo
             {
                 MenuVertical.Width = 350;
             }
-
-            
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e) //! BOTON SALIR DE APOLO
         {
             DialogResult dialogResult = MessageBox.Show("DESEAS SALIR DE APOLO?", "◄ AVISO | LEASEIN S.A.C. ►",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                //frmLogueo log = new frmLogueo();
                 this.Hide();
-                //log.Show();
-                
-
             }
         }
 
-        private void button7_MouseClick(object sender, MouseEventArgs e)
-        {
-            //MessageBox.Show("aa");
-        }
-
-        private void ARCHIVO_MouseHover(object sender, EventArgs e)
-        {
-            //MessageBox.Show("sss");
-        }
-
-        private void button7_MouseHover(object sender, EventArgs e)
-        {
-            ARCHIVO.Visible = true;
-        }
-
-        private void button2_MouseHover(object sender, EventArgs e)
-        {
-            ARCHIVO.Visible = true;
-        }
-
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            ARCHIVO.Visible = false;
-        }
-
-        private void button7_MouseClick_1(object sender, MouseEventArgs e)
-        {
-            
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -340,69 +303,11 @@ namespace Apolo
             
         }
 
-        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            /*
-            if (PROCESOS.Visible == true)
-            { 
-                PROCESOS.Visible = false;
-
-                button20.Location = new Point(3, button1.Location.Y + button1.Height);
-                REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
-
-                btnConfiguracion.Location = new Point(3, button20.Location.Y + button20.Height);
-                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
-            }
-            else
-            {
-                //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-                Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19 };
-                string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b" };
-
-                foreach (Button btn in botones_procesos)
-                {
-                    btn.Enabled = false;
-                }
-                List<string> accesos = new List<string>();
-                accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 2);
-                int index = 0;
-
-                
-
-                foreach (string codigo in accesos)
-                {
-                    index = Array.IndexOf(idSubmodulo_procesos, codigo);
-                    botones_procesos[index].Enabled = true;
-                }
-                //FIN LOGICA-------------------
-
-
-                PROCESOS.Location = new Point(3, button1.Location.Y +button1.Height+5);
-                PROCESOS.Visible = true;
-                
-                //REPORTE
-                button20.Location = new Point(3, PROCESOS.Location.Y + PROCESOS.Height+5);
-                REPORTES.Location = new Point(3, button20.Location.Y + button20.Height+5);
-
-                //REPORTE
-                btnConfiguracion.Location = new Point(3, REPORTES.Location.Y + REPORTES.Height + 5);
-                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
-            }
-            */
-
-           
-
             showSubMenu(PROCESOS);
-        }
-
-        private void MenuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
@@ -749,47 +654,7 @@ namespace Apolo
         }
 
         private void button20_Click(object sender, EventArgs e)
-        {
-            /*
-            if (REPORTES.Visible == true)
-            { 
-                REPORTES.Visible = false;
-
-            btnConfiguracion.Location = new Point(3, button20.Location.Y + button20.Height);
-            panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
-            }
-
-            else
-            {
-                //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-                Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33};
-                string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c" };
-
-                foreach (Button btn in botones_reportes)
-                {
-                    btn.Enabled = false;
-                }
-                List<string> accesos = new List<string>();
-                accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 3);
-                int index = 0;
-
-                foreach (string codigo in accesos)
-                {
-                    index = Array.IndexOf(idSubmodulo_reportes, codigo);
-                    botones_reportes[index].Enabled = true;
-                }
-                //FIN LOGICA-------------------
-
-
-                REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
-                REPORTES.Visible = true;
-
-                //CONFIGURACION
-                btnConfiguracion.Location = new Point(3, REPORTES.Location.Y + REPORTES.Height);
-                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
-            }
-            */
-            
+        { 
             showSubMenu(REPORTES);
         }
 
@@ -876,9 +741,7 @@ namespace Apolo
                 CerrarDash();
                 f2.Show();
             }
-            //frmReportePendienteRecoger frm = new frmReportePendienteRecoger();
-            //frm.MdiParent = this;
-            //frm.Show();
+     
         }
 
         private void button27_Click(object sender, EventArgs e)
@@ -1070,9 +933,6 @@ namespace Apolo
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -1084,15 +944,6 @@ namespace Apolo
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void usuarioConectado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
@@ -1104,10 +955,6 @@ namespace Apolo
             showSubMenu(panelConfiguracion);
         }
 
-        private void button34_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void button34_Click_1(object sender, EventArgs e)
         {
@@ -1373,99 +1220,18 @@ namespace Apolo
             tablaLaptops = reporteDA.ListarLaptopsInventario();
             tablaProcesadoresModelos = reporteDA.tablaProcesadoresModelos(idCategoriaProcesador);
             tablaProcesadoresGeneracion = reporteDA.tablaProcesadoresGeneracion(codTablaProcesadorGeneracion);
-
             laptops = new BindingList<LC>();
-            DataView viewDisco = new DataView(tablaDisco);
-            DataView viewMemoria = new DataView(tablaMemoria);
-            DataView viewLicencia = new DataView(tablaLicencia);
+   
 
             int rec = 0;
             while (rec < tablaLaptops.Rows.Count)
             {
                 LC laptop = new LC();
-                laptop.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["idLC"].ToString());
-                
-                laptop.Codigo = tablaLaptops.Rows[rec]["codigo"].ToString();
                 laptop.IdMarca = int.Parse(tablaLaptops.Rows[rec]["idMarca"].ToString());
-                laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
-                laptop.NombreModeloLC = tablaLaptops.Rows[rec]["nombreModeloLC"].ToString();
-                laptop.TipoProcesador = tablaLaptops.Rows[rec]["tipoProcesador"].ToString();
                 laptop.IdGeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["idGeneracionProcesador"].ToString());
                 laptop.GeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["generacionProcesador"].ToString()); 
                 laptop.IdTipoProcesador = int.Parse(tablaLaptops.Rows[rec]["idTipoProcesador"].ToString());
-                laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
-                laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
-                laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
                 laptop.Estado = int.Parse(tablaLaptops.Rows[rec]["idEstado"].ToString());
-                laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
-                laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
-                laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
-                laptop.IdSede = tablaLaptops.Rows[rec]["idSede"].ToString();
-
-                /*
-
-                viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
-                viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
-                viewLicencia.RowFilter = "idLC = " + laptop.IdLC.ToString();
-                laptop.SetDisco(viewDisco);
-                laptop.SetMemoria(viewMemoria);
-                laptop.SetLicencia(viewLicencia);
-
-                if (laptop.Discos.Count > 0)
-                {
-                    if (laptop.Discos.Count == 1)
-                    {
-                        laptop.Disco1 = laptop.Discos[0].TipoDisco;
-                        laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
-                        laptop.Disco2 = "";
-                        laptop.CapacidadDisco2 = "";
-                    }
-                    else if (laptop.Discos.Count >= 2)
-                    {
-                        laptop.Disco1 = laptop.Discos[0].TipoDisco;
-                        laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
-
-                        laptop.Disco2 = laptop.Discos[1].TipoDisco;
-                        laptop.CapacidadDisco2 = (laptop.Discos[1].Cantidad * laptop.Discos[1].Capacidad).ToString() + " GB";
-                    }
-                }
-                else if (laptop.Discos.Count == 0)
-                {
-                    laptop.Disco1 = "";
-                    laptop.CapacidadDisco1 = "";
-                    laptop.Disco2 = "";
-                    laptop.CapacidadDisco2 = "";
-                }
-
-                int capacidadMem = 0;
-                foreach (Memoria mem in laptop.Memorias)
-                {
-                    capacidadMem += mem.Capacidad * mem.Cantidad;
-                }
-                laptop.CapacidadMemoria = capacidadMem.ToString() + " GB";
-
-                Licencia windows = null; Licencia office = null; Licencia antivirus = null;
-
-
-                if (laptop.Licencias.Count > 0)
-                {
-                    windows = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
-                    office = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
-                    antivirus = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
-
-                }
-
-                laptop.LicenciaWindows = (windows != null) ? windows.Version : "";
-                laptop.LicenciaOffice = (office != null) ? office.Version : "";
-                laptop.LicenciaAntivirus = (antivirus != null) ? antivirus.Version : "";
-
-                laptop.Licencias = null;
-                laptop.Discos = null;
-                laptop.Memorias = null;
-
-                //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
-
-                */
                 laptops.Add(laptop);
                 rec++;
 
@@ -1525,8 +1291,6 @@ namespace Apolo
                 dr["MACdash"] = cantProLCApple.ToString();
                 totalDispo = totalDispo + cantProLCGeneral + cantProLCApple;
                 resumen.Rows.Add(dr);
-
-                //MessageBox.Show($"{cantProLCGeneral} {cantProLCApple}");
             }
 
 
@@ -1549,11 +1313,7 @@ namespace Apolo
                  pnlProsticar.Height, 20, 20));
         }
 
-        private void label23_Click(object sender, EventArgs e)
-        {
-            CalendarioDash.Visible = true;
-            
-        }
+       
 
         private void pnlProsticar_Click(object sender, EventArgs e)
         {
@@ -1784,10 +1544,7 @@ namespace Apolo
             }
         }
 
-        private void pnlFacturacionOfi_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void lblFactToInv_Click(object sender, EventArgs e)
         {
@@ -1884,6 +1641,32 @@ namespace Apolo
                 CerrarDash();
                 f2.Show();
             }
+        }
+
+        private void btnRFacturas_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteFacturas")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmReporteFacturas f2 = new frmReporteFacturas(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void lblPronosticar_Click(object sender, EventArgs e)
+        {
+            CalendarioDash.Visible = true;
         }
     }
 }

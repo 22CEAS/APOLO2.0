@@ -178,10 +178,6 @@ namespace Apolo
             //cargarData.PerformClick();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         int posY = 0;
         int posX = 0;
 
@@ -198,6 +194,11 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

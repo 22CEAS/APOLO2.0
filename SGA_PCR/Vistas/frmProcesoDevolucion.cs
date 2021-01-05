@@ -386,7 +386,13 @@ namespace Apolo
                             MessageBoxIcon.Error);
                 return;
             }
-            
+            if (cmbSede.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado una sede correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
             if (numDevolucion.Length == 0)
             {
                 if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -723,6 +729,11 @@ namespace Apolo
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void frmProcesoDevolucion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

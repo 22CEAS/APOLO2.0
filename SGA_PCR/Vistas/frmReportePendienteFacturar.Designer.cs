@@ -70,7 +70,7 @@
             this.button36 = new System.Windows.Forms.Button();
             this.pnlPF = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -453,7 +453,6 @@
             this.giftCarga.Size = new System.Drawing.Size(215, 148);
             this.giftCarga.TabIndex = 146;
             this.giftCarga.TabStop = false;
-            this.giftCarga.Click += new System.EventHandler(this.giftCarga_Click);
             // 
             // cargarData
             // 
@@ -540,7 +539,7 @@
             // 
             this.pnlPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlPF.Controls.Add(this.label2);
-            this.pnlPF.Controls.Add(this.button1);
+            this.pnlPF.Controls.Add(this.btnCerrar);
             this.pnlPF.Location = new System.Drawing.Point(3, 1);
             this.pnlPF.Name = "pnlPF";
             this.pnlPF.Size = new System.Drawing.Size(1212, 57);
@@ -558,24 +557,24 @@
             this.label2.TabIndex = 165;
             this.label2.Text = "PENDIENTE POR FACTURAR";
             // 
-            // button1
+            // btnCerrar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1143, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 46);
-            this.button1.TabIndex = 164;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(1143, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(61, 46);
+            this.btnCerrar.TabIndex = 164;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmReportePendienteFacturar
             // 
@@ -651,7 +650,7 @@
         private System.Windows.Forms.Button button36;
         private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarUtilidadSoles;
         private System.Windows.Forms.Panel pnlPF;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;
     }
 }

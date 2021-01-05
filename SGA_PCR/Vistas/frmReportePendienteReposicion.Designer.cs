@@ -47,7 +47,7 @@
             this.cargarData = new System.Windows.Forms.Button();
             this.pnlOD = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -282,7 +282,7 @@
             // 
             this.pnlOD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlOD.Controls.Add(this.label2);
-            this.pnlOD.Controls.Add(this.button1);
+            this.pnlOD.Controls.Add(this.btnCerrar);
             this.pnlOD.Location = new System.Drawing.Point(2, 0);
             this.pnlOD.Name = "pnlOD";
             this.pnlOD.Size = new System.Drawing.Size(1071, 58);
@@ -300,24 +300,24 @@
             this.label2.TabIndex = 159;
             this.label2.Text = "OBSERVACIONES DEUDAS";
             // 
-            // button1
+            // btnCerrar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1010, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 48);
-            this.button1.TabIndex = 158;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(1010, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(61, 48);
+            this.btnCerrar.TabIndex = 158;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmReportePendienteReposicion
             // 
@@ -369,7 +369,7 @@
         public System.Windows.Forms.Button cargarData;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private System.Windows.Forms.Panel pnlOD;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -386,8 +386,6 @@ namespace Apolo
 
         private void verResumen_Click(object sender, EventArgs e)
         {
-
-            //label1.Text = $"CANTIDAD FILTRADA: {vista.RowCount.ToString()}";
             txtCantidadFiltrada.Text = vista.RowCount.ToString();
 
         }
@@ -662,60 +660,14 @@ namespace Apolo
             txtCantidadFiltrada.Text = vista.RowCount.ToString();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtAlquilados_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtInutilizables_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPersonales_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtActivos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDanados_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDesactivos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtVendido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void vista_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             txtCantidadFiltrada.Text = vista.RowCount.ToString();
         }
 
-        private void DashInventario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvLaptops_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
@@ -739,7 +691,7 @@ namespace Apolo
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

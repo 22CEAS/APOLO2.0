@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TEST_MENU_PRINCIPAL));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule7 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue7 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule8 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue8 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule9 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue9 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule10 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue10 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule11 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue11 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule12 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue12 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue5 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule6 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue6 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,44 +51,45 @@
             this.btnConfiguracionClientes = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.REPORTES = new System.Windows.Forms.Panel();
-            this.btnReporteFT = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
+            this.btnRFacturas = new System.Windows.Forms.Button();
+            this.btnRFacturasTrans = new System.Windows.Forms.Button();
+            this.btnRReparacion = new System.Windows.Forms.Button();
+            this.btnRLicencias = new System.Windows.Forms.Button();
+            this.btnRDiscos = new System.Windows.Forms.Button();
+            this.btnRMemorias = new System.Windows.Forms.Button();
+            this.btnRInventario = new System.Windows.Forms.Button();
+            this.btnRLapVencer = new System.Windows.Forms.Button();
+            this.btnRPendienteFact = new System.Windows.Forms.Button();
+            this.btnRObservacionDeu = new System.Windows.Forms.Button();
+            this.btnRPendienteRec = new System.Windows.Forms.Button();
+            this.brnRCuadroVenc = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.PROCESOS = new System.Windows.Forms.Panel();
-            this.btnFacturasTransito = new System.Windows.Forms.Button();
-            this.btnNotaDeCredito = new System.Windows.Forms.Button();
-            this.btnCorteAlquiler = new System.Windows.Forms.Button();
-            this.btnMovimientosInternos = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.btnPFacturasTrans = new System.Windows.Forms.Button();
+            this.btnPNotaCredito = new System.Windows.Forms.Button();
+            this.btnPCorteAlquiler = new System.Windows.Forms.Button();
+            this.btnPMovInternos = new System.Windows.Forms.Button();
+            this.btnPLevantarObser = new System.Windows.Forms.Button();
+            this.btnPCambioDescr = new System.Windows.Forms.Button();
+            this.btnPCambioComp = new System.Windows.Forms.Button();
+            this.btnPReparacion = new System.Windows.Forms.Button();
+            this.btnPSubirFactura = new System.Windows.Forms.Button();
+            this.btnPAlquiler = new System.Windows.Forms.Button();
+            this.btnPCambio = new System.Windows.Forms.Button();
+            this.btnPDevolucion = new System.Windows.Forms.Button();
+            this.btnPRenovacion = new System.Windows.Forms.Button();
+            this.btnPCompra = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ARCHIVO = new System.Windows.Forms.Panel();
-            this.btnLicencias = new System.Windows.Forms.Button();
-            this.btnKAM = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMLicencias = new System.Windows.Forms.Button();
+            this.btnMKAM = new System.Windows.Forms.Button();
+            this.btnMProveedor = new System.Windows.Forms.Button();
+            this.btnMSucursal = new System.Windows.Forms.Button();
+            this.btnMMemoria = new System.Windows.Forms.Button();
+            this.btnMCliente = new System.Windows.Forms.Button();
+            this.btnMDisco = new System.Windows.Forms.Button();
+            this.btnMTarjetaVideo = new System.Windows.Forms.Button();
+            this.btnMProcesador = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.btnOCDash = new System.Windows.Forms.Button();
@@ -104,7 +105,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbSalir = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -125,7 +126,7 @@
             this.MACprono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnlProsticar = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblPronosticar = new System.Windows.Forms.Label();
             this.lblFecPron = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pnlLaptopsDisponibles = new System.Windows.Forms.Panel();
@@ -180,7 +181,7 @@
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.pnlInventarioOfi.SuspendLayout();
@@ -272,9 +273,8 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(241, 734);
+            this.MenuVertical.Size = new System.Drawing.Size(345, 734);
             this.MenuVertical.TabIndex = 0;
-            this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
             // panelConfiguracion
             // 
@@ -282,9 +282,9 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1903);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1953);
             this.panelConfiguracion.Name = "panelConfiguracion";
-            this.panelConfiguracion.Size = new System.Drawing.Size(224, 107);
+            this.panelConfiguracion.Size = new System.Drawing.Size(328, 107);
             this.panelConfiguracion.TabIndex = 22;
             this.panelConfiguracion.Visible = false;
             // 
@@ -337,9 +337,9 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1863);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1913);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(224, 40);
+            this.btnConfiguracion.Size = new System.Drawing.Size(328, 40);
             this.btnConfiguracion.TabIndex = 21;
             this.btnConfiguracion.Text = "CONFIGURACIÓN";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
@@ -348,232 +348,252 @@
             // REPORTES
             // 
             this.REPORTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.REPORTES.Controls.Add(this.btnReporteFT);
-            this.REPORTES.Controls.Add(this.button33);
-            this.REPORTES.Controls.Add(this.button21);
-            this.REPORTES.Controls.Add(this.button22);
-            this.REPORTES.Controls.Add(this.button23);
-            this.REPORTES.Controls.Add(this.button24);
-            this.REPORTES.Controls.Add(this.button25);
-            this.REPORTES.Controls.Add(this.button26);
-            this.REPORTES.Controls.Add(this.button27);
-            this.REPORTES.Controls.Add(this.button29);
-            this.REPORTES.Controls.Add(this.button30);
+            this.REPORTES.Controls.Add(this.btnRFacturas);
+            this.REPORTES.Controls.Add(this.btnRFacturasTrans);
+            this.REPORTES.Controls.Add(this.btnRReparacion);
+            this.REPORTES.Controls.Add(this.btnRLicencias);
+            this.REPORTES.Controls.Add(this.btnRDiscos);
+            this.REPORTES.Controls.Add(this.btnRMemorias);
+            this.REPORTES.Controls.Add(this.btnRInventario);
+            this.REPORTES.Controls.Add(this.btnRLapVencer);
+            this.REPORTES.Controls.Add(this.btnRPendienteFact);
+            this.REPORTES.Controls.Add(this.btnRObservacionDeu);
+            this.REPORTES.Controls.Add(this.btnRPendienteRec);
+            this.REPORTES.Controls.Add(this.brnRCuadroVenc);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
             this.REPORTES.Location = new System.Drawing.Point(0, 1295);
             this.REPORTES.Name = "REPORTES";
-            this.REPORTES.Size = new System.Drawing.Size(224, 568);
+            this.REPORTES.Size = new System.Drawing.Size(328, 618);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
             // 
-            // btnReporteFT
+            // btnRFacturas
             // 
-            this.btnReporteFT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnReporteFT.FlatAppearance.BorderSize = 0;
-            this.btnReporteFT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnReporteFT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteFT.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteFT.ForeColor = System.Drawing.Color.Black;
-            this.btnReporteFT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteFT.Location = new System.Drawing.Point(0, 511);
-            this.btnReporteFT.Name = "btnReporteFT";
-            this.btnReporteFT.Size = new System.Drawing.Size(319, 45);
-            this.btnReporteFT.TabIndex = 23;
-            this.btnReporteFT.Text = "> FACTURAS TRANSITO";
-            this.btnReporteFT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteFT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReporteFT.UseVisualStyleBackColor = false;
-            this.btnReporteFT.Click += new System.EventHandler(this.btnReporteFT_Click);
+            this.btnRFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRFacturas.FlatAppearance.BorderSize = 0;
+            this.btnRFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRFacturas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRFacturas.ForeColor = System.Drawing.Color.Black;
+            this.btnRFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRFacturas.Location = new System.Drawing.Point(3, 562);
+            this.btnRFacturas.Name = "btnRFacturas";
+            this.btnRFacturas.Size = new System.Drawing.Size(319, 45);
+            this.btnRFacturas.TabIndex = 24;
+            this.btnRFacturas.Text = "> FACTURAS";
+            this.btnRFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRFacturas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRFacturas.UseVisualStyleBackColor = false;
+            this.btnRFacturas.Click += new System.EventHandler(this.btnRFacturas_Click);
             // 
-            // button33
+            // btnRFacturasTrans
             // 
-            this.button33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button33.FlatAppearance.BorderSize = 0;
-            this.button33.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button33.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button33.ForeColor = System.Drawing.Color.Black;
-            this.button33.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button33.Location = new System.Drawing.Point(0, 461);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(319, 45);
-            this.button33.TabIndex = 22;
-            this.button33.Text = "> REPARACION";
-            this.button33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button33.UseVisualStyleBackColor = false;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
+            this.btnRFacturasTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRFacturasTrans.FlatAppearance.BorderSize = 0;
+            this.btnRFacturasTrans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRFacturasTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRFacturasTrans.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRFacturasTrans.ForeColor = System.Drawing.Color.Black;
+            this.btnRFacturasTrans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRFacturasTrans.Location = new System.Drawing.Point(0, 511);
+            this.btnRFacturasTrans.Name = "btnRFacturasTrans";
+            this.btnRFacturasTrans.Size = new System.Drawing.Size(319, 45);
+            this.btnRFacturasTrans.TabIndex = 23;
+            this.btnRFacturasTrans.Text = "> FACTURAS TRANSITO";
+            this.btnRFacturasTrans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRFacturasTrans.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRFacturasTrans.UseVisualStyleBackColor = false;
+            this.btnRFacturasTrans.Click += new System.EventHandler(this.btnReporteFT_Click);
             // 
-            // button21
+            // btnRReparacion
             // 
-            this.button21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.ForeColor = System.Drawing.Color.Black;
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.Location = new System.Drawing.Point(3, 411);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(319, 45);
-            this.button21.TabIndex = 19;
-            this.button21.Text = "> LICENCIAS";
-            this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button21.UseVisualStyleBackColor = false;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.btnRReparacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRReparacion.FlatAppearance.BorderSize = 0;
+            this.btnRReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRReparacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRReparacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRReparacion.ForeColor = System.Drawing.Color.Black;
+            this.btnRReparacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRReparacion.Location = new System.Drawing.Point(0, 461);
+            this.btnRReparacion.Name = "btnRReparacion";
+            this.btnRReparacion.Size = new System.Drawing.Size(319, 45);
+            this.btnRReparacion.TabIndex = 22;
+            this.btnRReparacion.Text = "> REPARACION";
+            this.btnRReparacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRReparacion.UseVisualStyleBackColor = false;
+            this.btnRReparacion.Click += new System.EventHandler(this.button33_Click);
             // 
-            // button22
+            // btnRLicencias
             // 
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.Color.Black;
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(3, 360);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(319, 45);
-            this.button22.TabIndex = 18;
-            this.button22.Text = "> DISCOS";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.btnRLicencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRLicencias.FlatAppearance.BorderSize = 0;
+            this.btnRLicencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRLicencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRLicencias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRLicencias.ForeColor = System.Drawing.Color.Black;
+            this.btnRLicencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRLicencias.Location = new System.Drawing.Point(3, 411);
+            this.btnRLicencias.Name = "btnRLicencias";
+            this.btnRLicencias.Size = new System.Drawing.Size(319, 45);
+            this.btnRLicencias.TabIndex = 19;
+            this.btnRLicencias.Text = "> LICENCIAS";
+            this.btnRLicencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRLicencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRLicencias.UseVisualStyleBackColor = false;
+            this.btnRLicencias.Click += new System.EventHandler(this.button21_Click);
             // 
-            // button23
+            // btnRDiscos
             // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.Color.Black;
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(3, 309);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(319, 45);
-            this.button23.TabIndex = 17;
-            this.button23.Text = "> MEMORIAS";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
+            this.btnRDiscos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRDiscos.FlatAppearance.BorderSize = 0;
+            this.btnRDiscos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRDiscos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRDiscos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRDiscos.ForeColor = System.Drawing.Color.Black;
+            this.btnRDiscos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRDiscos.Location = new System.Drawing.Point(3, 360);
+            this.btnRDiscos.Name = "btnRDiscos";
+            this.btnRDiscos.Size = new System.Drawing.Size(319, 45);
+            this.btnRDiscos.TabIndex = 18;
+            this.btnRDiscos.Text = "> DISCOS";
+            this.btnRDiscos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRDiscos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRDiscos.UseVisualStyleBackColor = false;
+            this.btnRDiscos.Click += new System.EventHandler(this.button22_Click);
             // 
-            // button24
+            // btnRMemorias
             // 
-            this.button24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button24.FlatAppearance.BorderSize = 0;
-            this.button24.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.Color.Black;
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(3, 258);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(319, 45);
-            this.button24.TabIndex = 16;
-            this.button24.Text = "> INVENTARIO LAPTOPS";
-            this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.btnRMemorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRMemorias.FlatAppearance.BorderSize = 0;
+            this.btnRMemorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRMemorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRMemorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRMemorias.ForeColor = System.Drawing.Color.Black;
+            this.btnRMemorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRMemorias.Location = new System.Drawing.Point(3, 309);
+            this.btnRMemorias.Name = "btnRMemorias";
+            this.btnRMemorias.Size = new System.Drawing.Size(319, 45);
+            this.btnRMemorias.TabIndex = 17;
+            this.btnRMemorias.Text = "> MEMORIAS";
+            this.btnRMemorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRMemorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRMemorias.UseVisualStyleBackColor = false;
+            this.btnRMemorias.Click += new System.EventHandler(this.button23_Click);
             // 
-            // button25
+            // btnRInventario
             // 
-            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button25.FlatAppearance.BorderSize = 0;
-            this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.ForeColor = System.Drawing.Color.Black;
-            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.Location = new System.Drawing.Point(3, 207);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(319, 45);
-            this.button25.TabIndex = 15;
-            this.button25.Text = "> LAPTOPS POR VENCER";
-            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button25.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.btnRInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRInventario.FlatAppearance.BorderSize = 0;
+            this.btnRInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRInventario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRInventario.ForeColor = System.Drawing.Color.Black;
+            this.btnRInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRInventario.Location = new System.Drawing.Point(3, 258);
+            this.btnRInventario.Name = "btnRInventario";
+            this.btnRInventario.Size = new System.Drawing.Size(319, 45);
+            this.btnRInventario.TabIndex = 16;
+            this.btnRInventario.Text = "> INVENTARIO LAPTOPS";
+            this.btnRInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRInventario.UseVisualStyleBackColor = false;
+            this.btnRInventario.Click += new System.EventHandler(this.button24_Click);
             // 
-            // button26
+            // btnRLapVencer
             // 
-            this.button26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button26.FlatAppearance.BorderSize = 0;
-            this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ForeColor = System.Drawing.Color.Black;
-            this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.Location = new System.Drawing.Point(3, 54);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(319, 45);
-            this.button26.TabIndex = 14;
-            this.button26.Text = "> PENDIENTE FACTURAR";
-            this.button26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button26.UseVisualStyleBackColor = false;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
+            this.btnRLapVencer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRLapVencer.FlatAppearance.BorderSize = 0;
+            this.btnRLapVencer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRLapVencer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRLapVencer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRLapVencer.ForeColor = System.Drawing.Color.Black;
+            this.btnRLapVencer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRLapVencer.Location = new System.Drawing.Point(3, 207);
+            this.btnRLapVencer.Name = "btnRLapVencer";
+            this.btnRLapVencer.Size = new System.Drawing.Size(319, 45);
+            this.btnRLapVencer.TabIndex = 15;
+            this.btnRLapVencer.Text = "> LAPTOPS POR VENCER";
+            this.btnRLapVencer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRLapVencer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRLapVencer.UseVisualStyleBackColor = false;
+            this.btnRLapVencer.Click += new System.EventHandler(this.button25_Click);
             // 
-            // button27
+            // btnRPendienteFact
             // 
-            this.button27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button27.FlatAppearance.BorderSize = 0;
-            this.button27.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.ForeColor = System.Drawing.Color.Black;
-            this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button27.Location = new System.Drawing.Point(3, 156);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(319, 45);
-            this.button27.TabIndex = 13;
-            this.button27.Text = "> OBSERVACIONES DEUDAS";
-            this.button27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button27.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button27.UseVisualStyleBackColor = false;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
+            this.btnRPendienteFact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRPendienteFact.FlatAppearance.BorderSize = 0;
+            this.btnRPendienteFact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRPendienteFact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRPendienteFact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRPendienteFact.ForeColor = System.Drawing.Color.Black;
+            this.btnRPendienteFact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRPendienteFact.Location = new System.Drawing.Point(3, 54);
+            this.btnRPendienteFact.Name = "btnRPendienteFact";
+            this.btnRPendienteFact.Size = new System.Drawing.Size(319, 45);
+            this.btnRPendienteFact.TabIndex = 14;
+            this.btnRPendienteFact.Text = "> PENDIENTE FACTURAR";
+            this.btnRPendienteFact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRPendienteFact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRPendienteFact.UseVisualStyleBackColor = false;
+            this.btnRPendienteFact.Click += new System.EventHandler(this.button26_Click);
             // 
-            // button29
+            // btnRObservacionDeu
             // 
-            this.button29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button29.FlatAppearance.BorderSize = 0;
-            this.button29.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.ForeColor = System.Drawing.Color.Black;
-            this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button29.Location = new System.Drawing.Point(3, 105);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(319, 45);
-            this.button29.TabIndex = 11;
-            this.button29.Text = "> PENDIENTE RECOGER";
-            this.button29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button29.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button29.UseVisualStyleBackColor = false;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.btnRObservacionDeu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRObservacionDeu.FlatAppearance.BorderSize = 0;
+            this.btnRObservacionDeu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRObservacionDeu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRObservacionDeu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRObservacionDeu.ForeColor = System.Drawing.Color.Black;
+            this.btnRObservacionDeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRObservacionDeu.Location = new System.Drawing.Point(3, 156);
+            this.btnRObservacionDeu.Name = "btnRObservacionDeu";
+            this.btnRObservacionDeu.Size = new System.Drawing.Size(319, 45);
+            this.btnRObservacionDeu.TabIndex = 13;
+            this.btnRObservacionDeu.Text = "> OBSERVACIONES DEUDAS";
+            this.btnRObservacionDeu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRObservacionDeu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRObservacionDeu.UseVisualStyleBackColor = false;
+            this.btnRObservacionDeu.Click += new System.EventHandler(this.button27_Click);
             // 
-            // button30
+            // btnRPendienteRec
             // 
-            this.button30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button30.FlatAppearance.BorderSize = 0;
-            this.button30.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button30.ForeColor = System.Drawing.Color.Black;
-            this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button30.Location = new System.Drawing.Point(3, 3);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(319, 45);
-            this.button30.TabIndex = 10;
-            this.button30.Text = "> CUADRO VENCIMIENTO";
-            this.button30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button30.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button30.UseVisualStyleBackColor = false;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
+            this.btnRPendienteRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRPendienteRec.FlatAppearance.BorderSize = 0;
+            this.btnRPendienteRec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRPendienteRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRPendienteRec.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRPendienteRec.ForeColor = System.Drawing.Color.Black;
+            this.btnRPendienteRec.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRPendienteRec.Location = new System.Drawing.Point(3, 105);
+            this.btnRPendienteRec.Name = "btnRPendienteRec";
+            this.btnRPendienteRec.Size = new System.Drawing.Size(319, 45);
+            this.btnRPendienteRec.TabIndex = 11;
+            this.btnRPendienteRec.Text = "> PENDIENTE RECOGER";
+            this.btnRPendienteRec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRPendienteRec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRPendienteRec.UseVisualStyleBackColor = false;
+            this.btnRPendienteRec.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // brnRCuadroVenc
+            // 
+            this.brnRCuadroVenc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.brnRCuadroVenc.FlatAppearance.BorderSize = 0;
+            this.brnRCuadroVenc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.brnRCuadroVenc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnRCuadroVenc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnRCuadroVenc.ForeColor = System.Drawing.Color.Black;
+            this.brnRCuadroVenc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.brnRCuadroVenc.Location = new System.Drawing.Point(3, 3);
+            this.brnRCuadroVenc.Name = "brnRCuadroVenc";
+            this.brnRCuadroVenc.Size = new System.Drawing.Size(319, 45);
+            this.brnRCuadroVenc.TabIndex = 10;
+            this.brnRCuadroVenc.Text = "> CUADRO VENCIMIENTO";
+            this.brnRCuadroVenc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.brnRCuadroVenc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.brnRCuadroVenc.UseVisualStyleBackColor = false;
+            this.brnRCuadroVenc.Click += new System.EventHandler(this.button30_Click);
             // 
             // button20
             // 
@@ -588,7 +608,7 @@
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button20.Location = new System.Drawing.Point(0, 1255);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(224, 40);
+            this.button20.Size = new System.Drawing.Size(328, 40);
             this.button20.TabIndex = 18;
             this.button20.Text = "REPORTES";
             this.button20.UseVisualStyleBackColor = false;
@@ -597,292 +617,292 @@
             // PROCESOS
             // 
             this.PROCESOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PROCESOS.Controls.Add(this.btnFacturasTransito);
-            this.PROCESOS.Controls.Add(this.btnNotaDeCredito);
-            this.PROCESOS.Controls.Add(this.btnCorteAlquiler);
-            this.PROCESOS.Controls.Add(this.btnMovimientosInternos);
-            this.PROCESOS.Controls.Add(this.button19);
-            this.PROCESOS.Controls.Add(this.button18);
-            this.PROCESOS.Controls.Add(this.button17);
-            this.PROCESOS.Controls.Add(this.button10);
-            this.PROCESOS.Controls.Add(this.button11);
-            this.PROCESOS.Controls.Add(this.button12);
-            this.PROCESOS.Controls.Add(this.button13);
-            this.PROCESOS.Controls.Add(this.button14);
-            this.PROCESOS.Controls.Add(this.button15);
-            this.PROCESOS.Controls.Add(this.button16);
+            this.PROCESOS.Controls.Add(this.btnPFacturasTrans);
+            this.PROCESOS.Controls.Add(this.btnPNotaCredito);
+            this.PROCESOS.Controls.Add(this.btnPCorteAlquiler);
+            this.PROCESOS.Controls.Add(this.btnPMovInternos);
+            this.PROCESOS.Controls.Add(this.btnPLevantarObser);
+            this.PROCESOS.Controls.Add(this.btnPCambioDescr);
+            this.PROCESOS.Controls.Add(this.btnPCambioComp);
+            this.PROCESOS.Controls.Add(this.btnPReparacion);
+            this.PROCESOS.Controls.Add(this.btnPSubirFactura);
+            this.PROCESOS.Controls.Add(this.btnPAlquiler);
+            this.PROCESOS.Controls.Add(this.btnPCambio);
+            this.PROCESOS.Controls.Add(this.btnPDevolucion);
+            this.PROCESOS.Controls.Add(this.btnPRenovacion);
+            this.PROCESOS.Controls.Add(this.btnPCompra);
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(224, 718);
+            this.PROCESOS.Size = new System.Drawing.Size(328, 718);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
-            // btnFacturasTransito
+            // btnPFacturasTrans
             // 
-            this.btnFacturasTransito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnFacturasTransito.FlatAppearance.BorderSize = 0;
-            this.btnFacturasTransito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnFacturasTransito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacturasTransito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturasTransito.ForeColor = System.Drawing.Color.Black;
-            this.btnFacturasTransito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturasTransito.Location = new System.Drawing.Point(0, 661);
-            this.btnFacturasTransito.Name = "btnFacturasTransito";
-            this.btnFacturasTransito.Size = new System.Drawing.Size(319, 45);
-            this.btnFacturasTransito.TabIndex = 23;
-            this.btnFacturasTransito.Text = "> FACTURAS TRANSITO";
-            this.btnFacturasTransito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturasTransito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFacturasTransito.UseVisualStyleBackColor = false;
-            this.btnFacturasTransito.Click += new System.EventHandler(this.btnFacturasTransito_Click);
+            this.btnPFacturasTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPFacturasTrans.FlatAppearance.BorderSize = 0;
+            this.btnPFacturasTrans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPFacturasTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPFacturasTrans.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPFacturasTrans.ForeColor = System.Drawing.Color.Black;
+            this.btnPFacturasTrans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPFacturasTrans.Location = new System.Drawing.Point(0, 661);
+            this.btnPFacturasTrans.Name = "btnPFacturasTrans";
+            this.btnPFacturasTrans.Size = new System.Drawing.Size(319, 45);
+            this.btnPFacturasTrans.TabIndex = 23;
+            this.btnPFacturasTrans.Text = "> FACTURAS TRANSITO";
+            this.btnPFacturasTrans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPFacturasTrans.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPFacturasTrans.UseVisualStyleBackColor = false;
+            this.btnPFacturasTrans.Click += new System.EventHandler(this.btnFacturasTransito_Click);
             // 
-            // btnNotaDeCredito
+            // btnPNotaCredito
             // 
-            this.btnNotaDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnNotaDeCredito.FlatAppearance.BorderSize = 0;
-            this.btnNotaDeCredito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnNotaDeCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotaDeCredito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotaDeCredito.ForeColor = System.Drawing.Color.Black;
-            this.btnNotaDeCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaDeCredito.Location = new System.Drawing.Point(3, 610);
-            this.btnNotaDeCredito.Name = "btnNotaDeCredito";
-            this.btnNotaDeCredito.Size = new System.Drawing.Size(319, 45);
-            this.btnNotaDeCredito.TabIndex = 22;
-            this.btnNotaDeCredito.Text = "> NOTA DE CREDITO";
-            this.btnNotaDeCredito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaDeCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotaDeCredito.UseVisualStyleBackColor = false;
-            this.btnNotaDeCredito.Click += new System.EventHandler(this.btnNotaDeCredito_Click);
+            this.btnPNotaCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPNotaCredito.FlatAppearance.BorderSize = 0;
+            this.btnPNotaCredito.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPNotaCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPNotaCredito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNotaCredito.ForeColor = System.Drawing.Color.Black;
+            this.btnPNotaCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPNotaCredito.Location = new System.Drawing.Point(3, 610);
+            this.btnPNotaCredito.Name = "btnPNotaCredito";
+            this.btnPNotaCredito.Size = new System.Drawing.Size(319, 45);
+            this.btnPNotaCredito.TabIndex = 22;
+            this.btnPNotaCredito.Text = "> NOTA DE CREDITO";
+            this.btnPNotaCredito.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPNotaCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPNotaCredito.UseVisualStyleBackColor = false;
+            this.btnPNotaCredito.Click += new System.EventHandler(this.btnNotaDeCredito_Click);
             // 
-            // btnCorteAlquiler
+            // btnPCorteAlquiler
             // 
-            this.btnCorteAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCorteAlquiler.FlatAppearance.BorderSize = 0;
-            this.btnCorteAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnCorteAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorteAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorteAlquiler.ForeColor = System.Drawing.Color.Black;
-            this.btnCorteAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCorteAlquiler.Location = new System.Drawing.Point(0, 564);
-            this.btnCorteAlquiler.Name = "btnCorteAlquiler";
-            this.btnCorteAlquiler.Size = new System.Drawing.Size(319, 45);
-            this.btnCorteAlquiler.TabIndex = 21;
-            this.btnCorteAlquiler.Text = "> CORTE ALQUILER";
-            this.btnCorteAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCorteAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCorteAlquiler.UseVisualStyleBackColor = false;
-            this.btnCorteAlquiler.Click += new System.EventHandler(this.btnCorteAlquiler_Click);
+            this.btnPCorteAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPCorteAlquiler.FlatAppearance.BorderSize = 0;
+            this.btnPCorteAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPCorteAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPCorteAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPCorteAlquiler.ForeColor = System.Drawing.Color.Black;
+            this.btnPCorteAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCorteAlquiler.Location = new System.Drawing.Point(0, 564);
+            this.btnPCorteAlquiler.Name = "btnPCorteAlquiler";
+            this.btnPCorteAlquiler.Size = new System.Drawing.Size(319, 45);
+            this.btnPCorteAlquiler.TabIndex = 21;
+            this.btnPCorteAlquiler.Text = "> CORTE ALQUILER";
+            this.btnPCorteAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCorteAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPCorteAlquiler.UseVisualStyleBackColor = false;
+            this.btnPCorteAlquiler.Click += new System.EventHandler(this.btnCorteAlquiler_Click);
             // 
-            // btnMovimientosInternos
+            // btnPMovInternos
             // 
-            this.btnMovimientosInternos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnMovimientosInternos.FlatAppearance.BorderSize = 0;
-            this.btnMovimientosInternos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnMovimientosInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimientosInternos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMovimientosInternos.ForeColor = System.Drawing.Color.Black;
-            this.btnMovimientosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimientosInternos.Location = new System.Drawing.Point(3, 513);
-            this.btnMovimientosInternos.Name = "btnMovimientosInternos";
-            this.btnMovimientosInternos.Size = new System.Drawing.Size(319, 45);
-            this.btnMovimientosInternos.TabIndex = 20;
-            this.btnMovimientosInternos.Text = "> MOVIMIENTOS INTERNOS";
-            this.btnMovimientosInternos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimientosInternos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMovimientosInternos.UseVisualStyleBackColor = false;
-            this.btnMovimientosInternos.Click += new System.EventHandler(this.button35_Click_1);
+            this.btnPMovInternos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPMovInternos.FlatAppearance.BorderSize = 0;
+            this.btnPMovInternos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPMovInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPMovInternos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPMovInternos.ForeColor = System.Drawing.Color.Black;
+            this.btnPMovInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPMovInternos.Location = new System.Drawing.Point(3, 513);
+            this.btnPMovInternos.Name = "btnPMovInternos";
+            this.btnPMovInternos.Size = new System.Drawing.Size(319, 45);
+            this.btnPMovInternos.TabIndex = 20;
+            this.btnPMovInternos.Text = "> MOVIMIENTOS INTERNOS";
+            this.btnPMovInternos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPMovInternos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPMovInternos.UseVisualStyleBackColor = false;
+            this.btnPMovInternos.Click += new System.EventHandler(this.button35_Click_1);
             // 
-            // button19
+            // btnPLevantarObser
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.Black;
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.Location = new System.Drawing.Point(3, 462);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(319, 45);
-            this.button19.TabIndex = 19;
-            this.button19.Text = "> LEVANTAR OBSERVACIONES";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.btnPLevantarObser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPLevantarObser.FlatAppearance.BorderSize = 0;
+            this.btnPLevantarObser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPLevantarObser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPLevantarObser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPLevantarObser.ForeColor = System.Drawing.Color.Black;
+            this.btnPLevantarObser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPLevantarObser.Location = new System.Drawing.Point(3, 462);
+            this.btnPLevantarObser.Name = "btnPLevantarObser";
+            this.btnPLevantarObser.Size = new System.Drawing.Size(319, 45);
+            this.btnPLevantarObser.TabIndex = 19;
+            this.btnPLevantarObser.Text = "> LEVANTAR OBSERVACIONES";
+            this.btnPLevantarObser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPLevantarObser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPLevantarObser.UseVisualStyleBackColor = false;
+            this.btnPLevantarObser.Click += new System.EventHandler(this.button19_Click);
             // 
-            // button18
+            // btnPCambioDescr
             // 
-            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.Black;
-            this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.Location = new System.Drawing.Point(3, 411);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(319, 45);
-            this.button18.TabIndex = 18;
-            this.button18.Text = "> CAMBIO DESCRIPCIÓN";
-            this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.btnPCambioDescr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPCambioDescr.FlatAppearance.BorderSize = 0;
+            this.btnPCambioDescr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPCambioDescr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPCambioDescr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPCambioDescr.ForeColor = System.Drawing.Color.Black;
+            this.btnPCambioDescr.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambioDescr.Location = new System.Drawing.Point(3, 411);
+            this.btnPCambioDescr.Name = "btnPCambioDescr";
+            this.btnPCambioDescr.Size = new System.Drawing.Size(319, 45);
+            this.btnPCambioDescr.TabIndex = 18;
+            this.btnPCambioDescr.Text = "> CAMBIO DESCRIPCIÓN";
+            this.btnPCambioDescr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambioDescr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPCambioDescr.UseVisualStyleBackColor = false;
+            this.btnPCambioDescr.Click += new System.EventHandler(this.button18_Click);
             // 
-            // button17
+            // btnPCambioComp
             // 
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.Black;
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(3, 360);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(319, 45);
-            this.button17.TabIndex = 17;
-            this.button17.Text = "> CAMBIO COMPONENTES\r\n\r\n";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.btnPCambioComp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPCambioComp.FlatAppearance.BorderSize = 0;
+            this.btnPCambioComp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPCambioComp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPCambioComp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPCambioComp.ForeColor = System.Drawing.Color.Black;
+            this.btnPCambioComp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambioComp.Location = new System.Drawing.Point(3, 360);
+            this.btnPCambioComp.Name = "btnPCambioComp";
+            this.btnPCambioComp.Size = new System.Drawing.Size(319, 45);
+            this.btnPCambioComp.TabIndex = 17;
+            this.btnPCambioComp.Text = "> CAMBIO COMPONENTES\r\n\r\n";
+            this.btnPCambioComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambioComp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPCambioComp.UseVisualStyleBackColor = false;
+            this.btnPCambioComp.Click += new System.EventHandler(this.button17_Click);
             // 
-            // button10
+            // btnPReparacion
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(3, 309);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(319, 45);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "> REPARACIÓN";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.btnPReparacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPReparacion.FlatAppearance.BorderSize = 0;
+            this.btnPReparacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPReparacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPReparacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPReparacion.ForeColor = System.Drawing.Color.Black;
+            this.btnPReparacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPReparacion.Location = new System.Drawing.Point(3, 309);
+            this.btnPReparacion.Name = "btnPReparacion";
+            this.btnPReparacion.Size = new System.Drawing.Size(319, 45);
+            this.btnPReparacion.TabIndex = 16;
+            this.btnPReparacion.Text = "> REPARACIÓN";
+            this.btnPReparacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPReparacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPReparacion.UseVisualStyleBackColor = false;
+            this.btnPReparacion.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
+            // btnPSubirFactura
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(3, 258);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(319, 45);
-            this.button11.TabIndex = 15;
-            this.button11.Text = "> SUBIR FACTURA";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.btnPSubirFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPSubirFactura.FlatAppearance.BorderSize = 0;
+            this.btnPSubirFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPSubirFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPSubirFactura.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPSubirFactura.ForeColor = System.Drawing.Color.Black;
+            this.btnPSubirFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPSubirFactura.Location = new System.Drawing.Point(3, 258);
+            this.btnPSubirFactura.Name = "btnPSubirFactura";
+            this.btnPSubirFactura.Size = new System.Drawing.Size(319, 45);
+            this.btnPSubirFactura.TabIndex = 15;
+            this.btnPSubirFactura.Text = "> SUBIR FACTURA";
+            this.btnPSubirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPSubirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPSubirFactura.UseVisualStyleBackColor = false;
+            this.btnPSubirFactura.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button12
+            // btnPAlquiler
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(3, 105);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(319, 45);
-            this.button12.TabIndex = 14;
-            this.button12.Text = "> ALQUILER";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btnPAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPAlquiler.FlatAppearance.BorderSize = 0;
+            this.btnPAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPAlquiler.ForeColor = System.Drawing.Color.Black;
+            this.btnPAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPAlquiler.Location = new System.Drawing.Point(3, 105);
+            this.btnPAlquiler.Name = "btnPAlquiler";
+            this.btnPAlquiler.Size = new System.Drawing.Size(319, 45);
+            this.btnPAlquiler.TabIndex = 14;
+            this.btnPAlquiler.Text = "> ALQUILER";
+            this.btnPAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPAlquiler.UseVisualStyleBackColor = false;
+            this.btnPAlquiler.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // btnPCambio
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(3, 207);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(319, 45);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "> CAMBIO";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.btnPCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPCambio.FlatAppearance.BorderSize = 0;
+            this.btnPCambio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPCambio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPCambio.ForeColor = System.Drawing.Color.Black;
+            this.btnPCambio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambio.Location = new System.Drawing.Point(3, 207);
+            this.btnPCambio.Name = "btnPCambio";
+            this.btnPCambio.Size = new System.Drawing.Size(319, 45);
+            this.btnPCambio.TabIndex = 13;
+            this.btnPCambio.Text = "> CAMBIO";
+            this.btnPCambio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCambio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPCambio.UseVisualStyleBackColor = false;
+            this.btnPCambio.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button14
+            // btnPDevolucion
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(3, 54);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(316, 45);
-            this.button14.TabIndex = 12;
-            this.button14.Text = "> DEVOLUCIÓN";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnPDevolucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPDevolucion.FlatAppearance.BorderSize = 0;
+            this.btnPDevolucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDevolucion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDevolucion.ForeColor = System.Drawing.Color.Black;
+            this.btnPDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPDevolucion.Location = new System.Drawing.Point(3, 54);
+            this.btnPDevolucion.Name = "btnPDevolucion";
+            this.btnPDevolucion.Size = new System.Drawing.Size(316, 45);
+            this.btnPDevolucion.TabIndex = 12;
+            this.btnPDevolucion.Text = "> DEVOLUCIÓN";
+            this.btnPDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPDevolucion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPDevolucion.UseVisualStyleBackColor = false;
+            this.btnPDevolucion.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button15
+            // btnPRenovacion
             // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(3, 156);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(319, 45);
-            this.button15.TabIndex = 11;
-            this.button15.Text = "> RENOVACIÓN";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.btnPRenovacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPRenovacion.FlatAppearance.BorderSize = 0;
+            this.btnPRenovacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPRenovacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPRenovacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPRenovacion.ForeColor = System.Drawing.Color.Black;
+            this.btnPRenovacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPRenovacion.Location = new System.Drawing.Point(3, 156);
+            this.btnPRenovacion.Name = "btnPRenovacion";
+            this.btnPRenovacion.Size = new System.Drawing.Size(319, 45);
+            this.btnPRenovacion.TabIndex = 11;
+            this.btnPRenovacion.Text = "> RENOVACIÓN";
+            this.btnPRenovacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPRenovacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPRenovacion.UseVisualStyleBackColor = false;
+            this.btnPRenovacion.Click += new System.EventHandler(this.button15_Click);
             // 
-            // button16
+            // btnPCompra
             // 
-            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.Black;
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.Location = new System.Drawing.Point(3, 3);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(319, 45);
-            this.button16.TabIndex = 10;
-            this.button16.Text = "> COMPRA";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.btnPCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPCompra.FlatAppearance.BorderSize = 0;
+            this.btnPCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnPCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPCompra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPCompra.ForeColor = System.Drawing.Color.Black;
+            this.btnPCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCompra.Location = new System.Drawing.Point(3, 3);
+            this.btnPCompra.Name = "btnPCompra";
+            this.btnPCompra.Size = new System.Drawing.Size(319, 45);
+            this.btnPCompra.TabIndex = 10;
+            this.btnPCompra.Text = "> COMPRA";
+            this.btnPCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPCompra.UseVisualStyleBackColor = false;
+            this.btnPCompra.Click += new System.EventHandler(this.button16_Click);
             // 
             // button1
             // 
@@ -897,7 +917,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 497);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 40);
+            this.button1.Size = new System.Drawing.Size(328, 40);
             this.button1.TabIndex = 10;
             this.button1.Text = "PROCESOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -906,191 +926,191 @@
             // ARCHIVO
             // 
             this.ARCHIVO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ARCHIVO.Controls.Add(this.btnLicencias);
-            this.ARCHIVO.Controls.Add(this.btnKAM);
-            this.ARCHIVO.Controls.Add(this.button9);
-            this.ARCHIVO.Controls.Add(this.button8);
-            this.ARCHIVO.Controls.Add(this.button6);
-            this.ARCHIVO.Controls.Add(this.button5);
-            this.ARCHIVO.Controls.Add(this.button4);
-            this.ARCHIVO.Controls.Add(this.button3);
-            this.ARCHIVO.Controls.Add(this.button2);
+            this.ARCHIVO.Controls.Add(this.btnMLicencias);
+            this.ARCHIVO.Controls.Add(this.btnMKAM);
+            this.ARCHIVO.Controls.Add(this.btnMProveedor);
+            this.ARCHIVO.Controls.Add(this.btnMSucursal);
+            this.ARCHIVO.Controls.Add(this.btnMMemoria);
+            this.ARCHIVO.Controls.Add(this.btnMCliente);
+            this.ARCHIVO.Controls.Add(this.btnMDisco);
+            this.ARCHIVO.Controls.Add(this.btnMTarjetaVideo);
+            this.ARCHIVO.Controls.Add(this.btnMProcesador);
             this.ARCHIVO.Dock = System.Windows.Forms.DockStyle.Top;
             this.ARCHIVO.Location = new System.Drawing.Point(0, 40);
             this.ARCHIVO.Name = "ARCHIVO";
-            this.ARCHIVO.Size = new System.Drawing.Size(224, 457);
+            this.ARCHIVO.Size = new System.Drawing.Size(328, 457);
             this.ARCHIVO.TabIndex = 9;
             this.ARCHIVO.Visible = false;
             // 
-            // btnLicencias
+            // btnMLicencias
             // 
-            this.btnLicencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnLicencias.FlatAppearance.BorderSize = 0;
-            this.btnLicencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnLicencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLicencias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLicencias.ForeColor = System.Drawing.Color.Black;
-            this.btnLicencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLicencias.Location = new System.Drawing.Point(3, 406);
-            this.btnLicencias.Name = "btnLicencias";
-            this.btnLicencias.Size = new System.Drawing.Size(316, 45);
-            this.btnLicencias.TabIndex = 18;
-            this.btnLicencias.Text = "> LICENCIAS";
-            this.btnLicencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLicencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLicencias.UseVisualStyleBackColor = false;
-            this.btnLicencias.Click += new System.EventHandler(this.btnLicencias_Click);
+            this.btnMLicencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMLicencias.FlatAppearance.BorderSize = 0;
+            this.btnMLicencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMLicencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMLicencias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMLicencias.ForeColor = System.Drawing.Color.Black;
+            this.btnMLicencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMLicencias.Location = new System.Drawing.Point(3, 406);
+            this.btnMLicencias.Name = "btnMLicencias";
+            this.btnMLicencias.Size = new System.Drawing.Size(316, 45);
+            this.btnMLicencias.TabIndex = 18;
+            this.btnMLicencias.Text = "> LICENCIAS";
+            this.btnMLicencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMLicencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMLicencias.UseVisualStyleBackColor = false;
+            this.btnMLicencias.Click += new System.EventHandler(this.btnLicencias_Click);
             // 
-            // btnKAM
+            // btnMKAM
             // 
-            this.btnKAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnKAM.FlatAppearance.BorderSize = 0;
-            this.btnKAM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnKAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKAM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKAM.ForeColor = System.Drawing.Color.Black;
-            this.btnKAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKAM.Location = new System.Drawing.Point(6, 356);
-            this.btnKAM.Name = "btnKAM";
-            this.btnKAM.Size = new System.Drawing.Size(316, 45);
-            this.btnKAM.TabIndex = 17;
-            this.btnKAM.Text = "> KAM";
-            this.btnKAM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKAM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKAM.UseVisualStyleBackColor = false;
-            this.btnKAM.Click += new System.EventHandler(this.button35_Click);
+            this.btnMKAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMKAM.FlatAppearance.BorderSize = 0;
+            this.btnMKAM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMKAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMKAM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMKAM.ForeColor = System.Drawing.Color.Black;
+            this.btnMKAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMKAM.Location = new System.Drawing.Point(6, 356);
+            this.btnMKAM.Name = "btnMKAM";
+            this.btnMKAM.Size = new System.Drawing.Size(316, 45);
+            this.btnMKAM.TabIndex = 17;
+            this.btnMKAM.Text = "> KAM";
+            this.btnMKAM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMKAM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMKAM.UseVisualStyleBackColor = false;
+            this.btnMKAM.Click += new System.EventHandler(this.button35_Click);
             // 
-            // button9
+            // btnMProveedor
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(6, 309);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(316, 45);
-            this.button9.TabIndex = 16;
-            this.button9.Text = "> PROVEEDOR";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnMProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMProveedor.FlatAppearance.BorderSize = 0;
+            this.btnMProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMProveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMProveedor.ForeColor = System.Drawing.Color.Black;
+            this.btnMProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMProveedor.Location = new System.Drawing.Point(6, 309);
+            this.btnMProveedor.Name = "btnMProveedor";
+            this.btnMProveedor.Size = new System.Drawing.Size(316, 45);
+            this.btnMProveedor.TabIndex = 16;
+            this.btnMProveedor.Text = "> PROVEEDOR";
+            this.btnMProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMProveedor.UseVisualStyleBackColor = false;
+            this.btnMProveedor.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button8
+            // btnMSucursal
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(6, 258);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(316, 45);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "> SUCURSAL";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnMSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMSucursal.FlatAppearance.BorderSize = 0;
+            this.btnMSucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMSucursal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMSucursal.ForeColor = System.Drawing.Color.Black;
+            this.btnMSucursal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMSucursal.Location = new System.Drawing.Point(6, 258);
+            this.btnMSucursal.Name = "btnMSucursal";
+            this.btnMSucursal.Size = new System.Drawing.Size(316, 45);
+            this.btnMSucursal.TabIndex = 15;
+            this.btnMSucursal.Text = "> SUCURSAL";
+            this.btnMSucursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMSucursal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMSucursal.UseVisualStyleBackColor = false;
+            this.btnMSucursal.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button6
+            // btnMMemoria
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(3, 105);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(319, 45);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "> MEMORIA";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnMMemoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMMemoria.FlatAppearance.BorderSize = 0;
+            this.btnMMemoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMMemoria.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMMemoria.ForeColor = System.Drawing.Color.Black;
+            this.btnMMemoria.Location = new System.Drawing.Point(3, 105);
+            this.btnMMemoria.Name = "btnMMemoria";
+            this.btnMMemoria.Size = new System.Drawing.Size(319, 45);
+            this.btnMMemoria.TabIndex = 14;
+            this.btnMMemoria.Text = "> MEMORIA";
+            this.btnMMemoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMMemoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMMemoria.UseVisualStyleBackColor = false;
+            this.btnMMemoria.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // btnMCliente
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(6, 207);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(316, 45);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "> CLIENTE";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnMCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMCliente.FlatAppearance.BorderSize = 0;
+            this.btnMCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnMCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMCliente.Location = new System.Drawing.Point(6, 207);
+            this.btnMCliente.Name = "btnMCliente";
+            this.btnMCliente.Size = new System.Drawing.Size(316, 45);
+            this.btnMCliente.TabIndex = 13;
+            this.btnMCliente.Text = "> CLIENTE";
+            this.btnMCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMCliente.UseVisualStyleBackColor = false;
+            this.btnMCliente.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnMDisco
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 54);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(319, 45);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "> DISCO";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.btnMDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMDisco.FlatAppearance.BorderSize = 0;
+            this.btnMDisco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMDisco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMDisco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMDisco.ForeColor = System.Drawing.Color.Black;
+            this.btnMDisco.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMDisco.Location = new System.Drawing.Point(3, 54);
+            this.btnMDisco.Name = "btnMDisco";
+            this.btnMDisco.Size = new System.Drawing.Size(319, 45);
+            this.btnMDisco.TabIndex = 12;
+            this.btnMDisco.Text = "> DISCO";
+            this.btnMDisco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMDisco.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMDisco.UseVisualStyleBackColor = false;
+            this.btnMDisco.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // button3
+            // btnMTarjetaVideo
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(6, 156);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(316, 45);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "> TARJETA VIDEO";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnMTarjetaVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMTarjetaVideo.FlatAppearance.BorderSize = 0;
+            this.btnMTarjetaVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMTarjetaVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMTarjetaVideo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMTarjetaVideo.ForeColor = System.Drawing.Color.Black;
+            this.btnMTarjetaVideo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMTarjetaVideo.Location = new System.Drawing.Point(6, 156);
+            this.btnMTarjetaVideo.Name = "btnMTarjetaVideo";
+            this.btnMTarjetaVideo.Size = new System.Drawing.Size(316, 45);
+            this.btnMTarjetaVideo.TabIndex = 11;
+            this.btnMTarjetaVideo.Text = "> TARJETA VIDEO";
+            this.btnMTarjetaVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMTarjetaVideo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMTarjetaVideo.UseVisualStyleBackColor = false;
+            this.btnMTarjetaVideo.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnMProcesador
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(319, 45);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "> PROCESADOR";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMProcesador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMProcesador.FlatAppearance.BorderSize = 0;
+            this.btnMProcesador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMProcesador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMProcesador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMProcesador.ForeColor = System.Drawing.Color.Black;
+            this.btnMProcesador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMProcesador.Location = new System.Drawing.Point(3, 0);
+            this.btnMProcesador.Name = "btnMProcesador";
+            this.btnMProcesador.Size = new System.Drawing.Size(319, 45);
+            this.btnMProcesador.TabIndex = 10;
+            this.btnMProcesador.Text = "> PROCESADOR";
+            this.btnMProcesador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMProcesador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMProcesador.UseVisualStyleBackColor = false;
+            this.btnMProcesador.Click += new System.EventHandler(this.button2_Click);
             // 
             // button7
             // 
@@ -1105,12 +1125,11 @@
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(0, 0);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(224, 40);
+            this.button7.Size = new System.Drawing.Size(328, 40);
             this.button7.TabIndex = 7;
             this.button7.Text = "MAESTRO";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            this.button7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button7_MouseClick_1);
             // 
             // BarraTitulo
             // 
@@ -1127,13 +1146,12 @@
             this.BarraTitulo.Controls.Add(this.label1);
             this.BarraTitulo.Controls.Add(this.lblFecha);
             this.BarraTitulo.Controls.Add(this.pictureBox1);
-            this.BarraTitulo.Controls.Add(this.pictureBox2);
+            this.BarraTitulo.Controls.Add(this.pbSalir);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(241, 0);
+            this.BarraTitulo.Location = new System.Drawing.Point(345, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1340, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1236, 50);
             this.BarraTitulo.TabIndex = 1;
-            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             // 
             // btnOCDash
             // 
@@ -1151,7 +1169,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblUser.Location = new System.Drawing.Point(1123, 9);
+            this.lblUser.Location = new System.Drawing.Point(1019, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(70, 25);
             this.lblUser.TabIndex = 13;
@@ -1164,12 +1182,11 @@
             this.usuarioConectado.Enabled = false;
             this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioConectado.ForeColor = System.Drawing.Color.Transparent;
-            this.usuarioConectado.Location = new System.Drawing.Point(983, 23);
+            this.usuarioConectado.Location = new System.Drawing.Point(879, 23);
             this.usuarioConectado.Name = "usuarioConectado";
             this.usuarioConectado.Size = new System.Drawing.Size(37, 19);
             this.usuarioConectado.TabIndex = 7;
             this.usuarioConectado.Visible = false;
-            this.usuarioConectado.TextChanged += new System.EventHandler(this.usuarioConectado_TextChanged);
             // 
             // button34
             // 
@@ -1188,7 +1205,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(988, 7);
+            this.label3.Location = new System.Drawing.Point(884, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 25);
             this.label3.TabIndex = 9;
@@ -1201,7 +1218,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(708, 9);
+            this.lblHora.Location = new System.Drawing.Point(656, 9);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(72, 25);
             this.lblHora.TabIndex = 3;
@@ -1212,7 +1229,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1252, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(1148, 9);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1227,7 +1244,7 @@
             this.usuario.Enabled = false;
             this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.usuario.Location = new System.Drawing.Point(1199, 24);
+            this.usuario.Location = new System.Drawing.Point(1095, 24);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(13, 19);
             this.usuario.TabIndex = 11;
@@ -1239,7 +1256,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(629, 9);
+            this.label2.Location = new System.Drawing.Point(577, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 6;
@@ -1251,7 +1268,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1047, 9);
+            this.label4.Location = new System.Drawing.Point(943, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 12;
@@ -1263,7 +1280,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(418, 9);
+            this.label1.Location = new System.Drawing.Point(366, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 5;
@@ -1275,7 +1292,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblFecha.Location = new System.Drawing.Point(501, 9);
+            this.lblFecha.Location = new System.Drawing.Point(449, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(83, 25);
             this.lblFecha.TabIndex = 4;
@@ -1291,18 +1308,18 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pbSalir
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1293, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
+            this.pbSalir.Location = new System.Drawing.Point(1189, 9);
+            this.pbSalir.Name = "pbSalir";
+            this.pbSalir.Size = new System.Drawing.Size(35, 35);
+            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSalir.TabIndex = 1;
+            this.pbSalir.TabStop = false;
+            this.pbSalir.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // horafecha
             // 
@@ -1573,7 +1590,7 @@
             // pnlProsticar
             // 
             this.pnlProsticar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            this.pnlProsticar.Controls.Add(this.label23);
+            this.pnlProsticar.Controls.Add(this.lblPronosticar);
             this.pnlProsticar.Location = new System.Drawing.Point(174, 98);
             this.pnlProsticar.Name = "pnlProsticar";
             this.pnlProsticar.Size = new System.Drawing.Size(144, 27);
@@ -1581,17 +1598,17 @@
             this.pnlProsticar.Click += new System.EventHandler(this.pnlProsticar_Click);
             this.pnlProsticar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProsticar_Paint);
             // 
-            // label23
+            // lblPronosticar
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(21, 1);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(98, 24);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Pronostica";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
+            this.lblPronosticar.AutoSize = true;
+            this.lblPronosticar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPronosticar.ForeColor = System.Drawing.Color.White;
+            this.lblPronosticar.Location = new System.Drawing.Point(21, 1);
+            this.lblPronosticar.Name = "lblPronosticar";
+            this.lblPronosticar.Size = new System.Drawing.Size(98, 24);
+            this.lblPronosticar.TabIndex = 0;
+            this.lblPronosticar.Text = "Pronostica";
+            this.lblPronosticar.Click += new System.EventHandler(this.lblPronosticar_Click);
             // 
             // lblFecPron
             // 
@@ -1813,7 +1830,7 @@
             this.pnlFacturacionOfi.Size = new System.Drawing.Size(1133, 648);
             this.pnlFacturacionOfi.TabIndex = 20;
             this.pnlFacturacionOfi.Visible = false;
-            this.pnlFacturacionOfi.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFacturacionOfi_Paint);
+  
             // 
             // label5
             // 
@@ -1917,60 +1934,60 @@
             this.gridColumn38,
             this.gridColumn39,
             this.gridColumn40});
-            gridFormatRule7.Column = this.gridColumn40;
-            gridFormatRule7.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule7.Name = "Menor a 15 dias";
-            formatConditionRuleValue7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            formatConditionRuleValue7.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue7.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue7.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule7.Rule = formatConditionRuleValue7;
-            gridFormatRule8.Column = this.gridColumn40;
-            gridFormatRule8.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule8.Name = "De 15 a 45 dias";
-            formatConditionRuleValue8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue8.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue8.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue8.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule8.Rule = formatConditionRuleValue8;
-            gridFormatRule9.Column = this.gridColumn40;
-            gridFormatRule9.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule9.Name = "Mas de 45";
-            formatConditionRuleValue9.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue9.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue9.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue9.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule9.Rule = formatConditionRuleValue9;
-            gridFormatRule10.Column = this.gridColumn40;
-            gridFormatRule10.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule10.Name = "Meno a 15 dias (2)";
-            formatConditionRuleValue10.Appearance.ForeColor = System.Drawing.Color.Lime;
-            formatConditionRuleValue10.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue10.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue10.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule10.Rule = formatConditionRuleValue10;
-            gridFormatRule11.Column = this.gridColumn40;
-            gridFormatRule11.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule11.Name = "De 15 a 45 dias (2)";
-            formatConditionRuleValue11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue11.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue11.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue11.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule11.Rule = formatConditionRuleValue11;
-            gridFormatRule12.Column = this.gridColumn40;
-            gridFormatRule12.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule12.Name = "Mas de 45 (2)";
-            formatConditionRuleValue12.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue12.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue12.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue12.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule12.Rule = formatConditionRuleValue12;
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule7);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule8);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule9);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule10);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule11);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule12);
+            gridFormatRule1.Column = this.gridColumn40;
+            gridFormatRule1.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule1.Name = "Menor a 15 dias";
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue1.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            gridFormatRule2.Column = this.gridColumn40;
+            gridFormatRule2.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule2.Name = "De 15 a 45 dias";
+            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue2.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            gridFormatRule3.Column = this.gridColumn40;
+            gridFormatRule3.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule3.Name = "Mas de 45";
+            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue3.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            gridFormatRule4.Column = this.gridColumn40;
+            gridFormatRule4.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule4.Name = "Meno a 15 dias (2)";
+            formatConditionRuleValue4.Appearance.ForeColor = System.Drawing.Color.Lime;
+            formatConditionRuleValue4.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue4.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule4.Rule = formatConditionRuleValue4;
+            gridFormatRule5.Column = this.gridColumn40;
+            gridFormatRule5.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule5.Name = "De 15 a 45 dias (2)";
+            formatConditionRuleValue5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue5.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue5.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue5.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule5.Rule = formatConditionRuleValue5;
+            gridFormatRule6.Column = this.gridColumn40;
+            gridFormatRule6.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule6.Name = "Mas de 45 (2)";
+            formatConditionRuleValue6.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue6.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue6.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue6.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule6.Rule = formatConditionRuleValue6;
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule1);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule2);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule3);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule4);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule5);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule6);
             this.vistaFacturacionDash.GridControl = this.dgvFacturacionDash;
             this.vistaFacturacionDash.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PendienteFacturarSoles", null, "| Tot. Pendientes Soles = {0:c2}"),
@@ -2317,7 +2334,7 @@
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.pnlInventarioOfi.ResumeLayout(false);
@@ -2353,29 +2370,29 @@
 
         private System.Windows.Forms.Panel MenuVertical;
         private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbSalir;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel ARCHIVO;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnMProcesador;
+        private System.Windows.Forms.Button btnMTarjetaVideo;
+        private System.Windows.Forms.Button btnMProveedor;
+        private System.Windows.Forms.Button btnMSucursal;
+        private System.Windows.Forms.Button btnMMemoria;
+        private System.Windows.Forms.Button btnMCliente;
+        private System.Windows.Forms.Button btnMDisco;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PROCESOS;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnPReparacion;
+        private System.Windows.Forms.Button btnPSubirFactura;
+        private System.Windows.Forms.Button btnPAlquiler;
+        private System.Windows.Forms.Button btnPCambio;
+        private System.Windows.Forms.Button btnPDevolucion;
+        private System.Windows.Forms.Button btnPRenovacion;
+        private System.Windows.Forms.Button btnPCompra;
+        private System.Windows.Forms.Button btnPLevantarObser;
+        private System.Windows.Forms.Button btnPCambioDescr;
+        private System.Windows.Forms.Button btnPCambioComp;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Timer horafecha;
@@ -2383,16 +2400,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Panel REPORTES;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button btnRLicencias;
+        private System.Windows.Forms.Button btnRDiscos;
+        private System.Windows.Forms.Button btnRMemorias;
+        private System.Windows.Forms.Button btnRInventario;
+        private System.Windows.Forms.Button btnRLapVencer;
+        private System.Windows.Forms.Button btnRPendienteFact;
+        private System.Windows.Forms.Button btnRObservacionDeu;
+        private System.Windows.Forms.Button btnRPendienteRec;
+        private System.Windows.Forms.Button brnRCuadroVenc;
+        private System.Windows.Forms.Button btnRReparacion;
         public System.Windows.Forms.TextBox usuarioConectado;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
@@ -2404,10 +2421,10 @@
         public System.Windows.Forms.TextBox usuario;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Button btnKAM;
-        private System.Windows.Forms.Button btnLicencias;
-        private System.Windows.Forms.Button btnMovimientosInternos;
-        private System.Windows.Forms.Button btnCorteAlquiler;
+        private System.Windows.Forms.Button btnMKAM;
+        private System.Windows.Forms.Button btnMLicencias;
+        private System.Windows.Forms.Button btnPMovInternos;
+        private System.Windows.Forms.Button btnPCorteAlquiler;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private System.Windows.Forms.Panel pnlInventarioOfi;
@@ -2426,7 +2443,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn LAPprono;
         private DevExpress.XtraGrid.Columns.GridColumn MACprono;
         private System.Windows.Forms.Panel pnlProsticar;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblPronosticar;
         private System.Windows.Forms.Label lblFecPron;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel pnlLaptopsDisponibles;
@@ -2478,8 +2495,9 @@
         private System.Windows.Forms.Button btnOCDash;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblFecPF;
-        private System.Windows.Forms.Button btnNotaDeCredito;
-        private System.Windows.Forms.Button btnReporteFT;
-        private System.Windows.Forms.Button btnFacturasTransito;
+        private System.Windows.Forms.Button btnPNotaCredito;
+        private System.Windows.Forms.Button btnRFacturasTrans;
+        private System.Windows.Forms.Button btnPFacturasTrans;
+        private System.Windows.Forms.Button btnRFacturas;
     }
 }
