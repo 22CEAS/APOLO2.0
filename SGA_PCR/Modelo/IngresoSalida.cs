@@ -18,6 +18,7 @@ namespace Modelo
         private int idEstado;
         private string nombreEstado;
         private DateTime fechaIngresoSalida;
+        private int idSalidaDet;
 
         public int IdLC { get => idLC; set => idLC = value; }
         public string CodigoLC { get => codigoLC; set => codigoLC = value; }
@@ -29,5 +30,6 @@ namespace Modelo
         public string NombreEstado { get => nombreEstado; set => nombreEstado = value; }
         public DateTime FechaIngresoSalida { get => fechaIngresoSalida; set => fechaIngresoSalida = value; }
         public int IdEstadoAnt { get => idEstadoAnt; set => idEstadoAnt = value; }
+        public int IdSalidaDet { get => idSalidaDet; set => idSalidaDet = value; }
     }
 }

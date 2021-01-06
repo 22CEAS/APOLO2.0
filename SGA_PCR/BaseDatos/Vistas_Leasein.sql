@@ -1815,7 +1815,9 @@ where cod_tabla="SALIDA_TIPO" and activo=1;
 
 DROP view IF EXISTS vista_laptops_disponibles_danados;
 create view vista_laptops_disponibles_danados as
+
 SELECT
+	0 as IdSalidaDet,
 	lc.codigo AS codigo,
 	lc.idLC AS idLC,
 	lc.marca AS marcaLC,
@@ -1827,8 +1829,26 @@ FROM
 	vista_maestro_laptops lc 
 WHERE
 		lc.estado = 2 or lc.estado = 3
+
+UNION
+
+SELECT 
+		d.idSalidaDet as IdSalidaDet,
+		lc.codigo AS codigo,
+		lc.idLC AS idLC,
+		lc.marca AS marcaLC,
+		lc.nombreModelo AS nombreModeloLC,
+		lc.observacion AS observacion,
+		lc.estado AS idEstado,
+		(	SELECT e.nombreEstado FROM	estados e WHERE	( e.idEstado = lc.estado )) AS nombreEstado 
+FROM salida_det d 
+		INNER JOIN vista_maestro_laptops lc on d.idLC=lc.idLC 
+where (d.estado=4 or d.estado=9) and d.fueDevuelto=0
+
 ORDER BY
-	lc.codigo;
+	codigo;
+	
+	
 	
 DROP view IF EXISTS vista_laptops_personal_prestamo;
 create view vista_laptops_personal_prestamo as
@@ -2609,3 +2629,42 @@ FROM
 	factura f
 LEFT JOIN cliente c on f.ruc=c.nroDocumento
 ORDER BY fecEmisiom DESC;
+
+--============================Movimientos Internos Ventas==================================================================
+
+DROP view IF EXISTS vista_laptops_disponibles_danados;
+create view vista_laptops_disponibles_danados as
+
+SELECT
+	0 as IdSalidaDet,
+	lc.codigo AS codigo,
+	lc.idLC AS idLC,
+	lc.marca AS marcaLC,
+	lc.nombreModelo AS nombreModeloLC,
+	lc.observacion AS observacion,
+	lc.estado AS idEstado,
+	(	SELECT e.nombreEstado FROM	estados e WHERE	( e.idEstado = lc.estado )) AS nombreEstado 
+FROM
+	vista_maestro_laptops lc 
+WHERE
+		lc.estado = 2 or lc.estado = 3
+
+UNION
+
+SELECT 
+		d.idSalidaDet as IdSalidaDet,
+		lc.codigo AS codigo,
+		lc.idLC AS idLC,
+		lc.marca AS marcaLC,
+		lc.nombreModelo AS nombreModeloLC,
+		lc.observacion AS observacion,
+		lc.estado AS idEstado,
+		(	SELECT e.nombreEstado FROM	estados e WHERE	( e.idEstado = lc.estado )) AS nombreEstado 
+FROM salida_det d 
+		INNER JOIN vista_maestro_laptops lc on d.idLC=lc.idLC 
+where (d.estado=4 or d.estado=9) and d.fueDevuelto=0
+
+ORDER BY
+	codigo;
+	
+	

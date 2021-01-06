@@ -15,6 +15,7 @@ namespace AccesoDatos
         DBManager objManager;
         MySqlParameter[] parametrosEntrada = null;
 
+        private int idEstadoVenta = 5;
 
         public IngresoSalidaDA()
         {
@@ -80,6 +81,21 @@ namespace AccesoDatos
             if (datosSalida != null)
             {
                 int idSalidaDet = Convert.ToInt32(datosSalida[0]);
+
+                if (proceso.IdEstado== idEstadoVenta)//Solo se deberá ejecutar si es una venta
+                {
+                    parametrosEntrada = new MySqlParameter[3];
+                    parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+                    parametrosEntrada[1] = new MySqlParameter("@_fueDevuelto", MySqlDbType.Int32);
+                    parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+                    parametrosEntrada[0].Value = proceso.IdSalidaDet;
+                    parametrosEntrada[1].Value = 1;
+                    parametrosEntrada[2].Value = usuario;
+
+                    objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_devuelto");
+                }
+
                 error = true;
                 return 1;
             }
@@ -87,9 +103,7 @@ namespace AccesoDatos
             {
                 return 0;
             }
-
-        
-
+            
             return 1;
 
         }
