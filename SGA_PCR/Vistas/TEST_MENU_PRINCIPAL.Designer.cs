@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TEST_MENU_PRINCIPAL));
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
@@ -106,7 +105,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbSalir = new System.Windows.Forms.PictureBox();
-            this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.horafecha = new System.Windows.Forms.Timer();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnlInventarioOfi = new System.Windows.Forms.Panel();
@@ -1341,7 +1340,7 @@
             this.pnlInventarioOfi.Controls.Add(this.lblInfoInvenario);
             this.pnlInventarioOfi.Controls.Add(this.pnlPronosticadorInfo);
             this.pnlInventarioOfi.Controls.Add(this.pnlLaptopsDisponibles);
-            this.pnlInventarioOfi.Location = new System.Drawing.Point(276, 73);
+            this.pnlInventarioOfi.Location = new System.Drawing.Point(255, 73);
             this.pnlInventarioOfi.Name = "pnlInventarioOfi";
             this.pnlInventarioOfi.Size = new System.Drawing.Size(1030, 539);
             this.pnlInventarioOfi.TabIndex = 18;
@@ -1825,7 +1824,7 @@
             this.pnlFacturacionOfi.Controls.Add(this.lblFactToInv);
             this.pnlFacturacionOfi.Controls.Add(this.panel10);
             this.pnlFacturacionOfi.Controls.Add(this.panel9);
-            this.pnlFacturacionOfi.Location = new System.Drawing.Point(276, 73);
+            this.pnlFacturacionOfi.Location = new System.Drawing.Point(255, 73);
             this.pnlFacturacionOfi.Name = "pnlFacturacionOfi";
             this.pnlFacturacionOfi.Size = new System.Drawing.Size(1007, 648);
             this.pnlFacturacionOfi.TabIndex = 20;
