@@ -160,6 +160,12 @@
     <Compile Include="frmProcesoCambioDescripcion.Designer.cs">
       <DependentUpon>frmProcesoCambioDescripcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoCambioRazonSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoCambioRazonSocial.Designer.cs">
+      <DependentUpon>frmProcesoCambioRazonSocial.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoCorteAlquiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoCambioDescripcion.resx">
       <DependentUpon>frmProcesoCambioDescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoCambioRazonSocial.resx">
+      <DependentUpon>frmProcesoCambioRazonSocial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoCorteAlquiler.resx">
       <DependentUpon>frmProcesoCorteAlquiler.cs</DependentUpon>
