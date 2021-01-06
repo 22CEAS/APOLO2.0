@@ -1152,6 +1152,7 @@
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.Size = new System.Drawing.Size(1236, 50);
             this.BarraTitulo.TabIndex = 1;
+            
             // 
             // btnOCDash
             // 
@@ -1830,7 +1831,6 @@
             this.pnlFacturacionOfi.Size = new System.Drawing.Size(1133, 648);
             this.pnlFacturacionOfi.TabIndex = 20;
             this.pnlFacturacionOfi.Visible = false;
-  
             // 
             // label5
             // 

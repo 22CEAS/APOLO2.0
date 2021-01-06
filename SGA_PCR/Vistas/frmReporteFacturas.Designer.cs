@@ -38,17 +38,17 @@
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RucCliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EstadoFactura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.pnlFacturas = new System.Windows.Forms.Panel();
-            this.lblFacturas = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UBSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EstadoFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.pnlFacturas = new System.Windows.Forms.Panel();
+            this.lblFacturas = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             this.pnlFacturas.SuspendLayout();
@@ -184,6 +184,72 @@
             this.CodigoEquipo.VisibleIndex = 6;
             this.CodigoEquipo.Width = 150;
             // 
+            // GuiaSalida
+            // 
+            this.GuiaSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuiaSalida.AppearanceHeader.Options.UseBackColor = true;
+            this.GuiaSalida.Caption = "Guia Salida";
+            this.GuiaSalida.FieldName = "GuiaSalida";
+            this.GuiaSalida.Name = "GuiaSalida";
+            this.GuiaSalida.Visible = true;
+            this.GuiaSalida.VisibleIndex = 7;
+            this.GuiaSalida.Width = 100;
+            // 
+            // TotalSoles
+            // 
+            this.TotalSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TotalSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.TotalSoles.Caption = "Venta Soles";
+            this.TotalSoles.FieldName = "TotalSoles";
+            this.TotalSoles.Name = "TotalSoles";
+            this.TotalSoles.Visible = true;
+            this.TotalSoles.VisibleIndex = 8;
+            this.TotalSoles.Width = 100;
+            // 
+            // TotalDolares
+            // 
+            this.TotalDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TotalDolares.AppearanceHeader.Options.UseBackColor = true;
+            this.TotalDolares.Caption = "Venta Dolares";
+            this.TotalDolares.FieldName = "TotalDolares";
+            this.TotalDolares.Name = "TotalDolares";
+            this.TotalDolares.Visible = true;
+            this.TotalDolares.VisibleIndex = 9;
+            this.TotalDolares.Width = 100;
+            // 
+            // CostoSoles
+            // 
+            this.CostoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoSoles.Caption = "Costo Soles";
+            this.CostoSoles.FieldName = "CostoSoles";
+            this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.Visible = true;
+            this.CostoSoles.VisibleIndex = 10;
+            this.CostoSoles.Width = 100;
+            // 
+            // CostoDolares
+            // 
+            this.CostoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoDolares.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoDolares.Caption = "Costo Dolares";
+            this.CostoDolares.FieldName = "CostoDolares";
+            this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.Visible = true;
+            this.CostoDolares.VisibleIndex = 11;
+            this.CostoDolares.Width = 100;
+            // 
+            // UBSoles
+            // 
+            this.UBSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.UBSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.UBSoles.Caption = "Utilidad Bruta Soles";
+            this.UBSoles.FieldName = "UBSoles";
+            this.UBSoles.Name = "UBSoles";
+            this.UBSoles.Visible = true;
+            this.UBSoles.VisibleIndex = 12;
+            this.UBSoles.Width = 150;
+            // 
             // EstadoFactura
             // 
             this.EstadoFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -255,60 +321,6 @@
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // GuiaSalida
-            // 
-            this.GuiaSalida.Caption = "Guia Salida";
-            this.GuiaSalida.FieldName = "GuiaSalida";
-            this.GuiaSalida.Name = "GuiaSalida";
-            this.GuiaSalida.Visible = true;
-            this.GuiaSalida.VisibleIndex = 7;
-            this.GuiaSalida.Width = 100;
-            // 
-            // TotalSoles
-            // 
-            this.TotalSoles.Caption = "Venta Soles";
-            this.TotalSoles.FieldName = "TotalSoles";
-            this.TotalSoles.Name = "TotalSoles";
-            this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 8;
-            this.TotalSoles.Width = 100;
-            // 
-            // TotalDolares
-            // 
-            this.TotalDolares.Caption = "Venta Dolares";
-            this.TotalDolares.FieldName = "TotalDolares";
-            this.TotalDolares.Name = "TotalDolares";
-            this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 9;
-            this.TotalDolares.Width = 100;
-            // 
-            // CostoSoles
-            // 
-            this.CostoSoles.Caption = "Costo Soles";
-            this.CostoSoles.FieldName = "CostoSoles";
-            this.CostoSoles.Name = "CostoSoles";
-            this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 10;
-            this.CostoSoles.Width = 100;
-            // 
-            // CostoDolares
-            // 
-            this.CostoDolares.Caption = "Costo Dolares";
-            this.CostoDolares.FieldName = "CostoDolares";
-            this.CostoDolares.Name = "CostoDolares";
-            this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 11;
-            this.CostoDolares.Width = 100;
-            // 
-            // UBSoles
-            // 
-            this.UBSoles.Caption = "Utilidad Bruta Soles";
-            this.UBSoles.FieldName = "UBSoles";
-            this.UBSoles.Name = "UBSoles";
-            this.UBSoles.Visible = true;
-            this.UBSoles.VisibleIndex = 12;
-            this.UBSoles.Width = 150;
             // 
             // frmReporteFacturas
             // 
