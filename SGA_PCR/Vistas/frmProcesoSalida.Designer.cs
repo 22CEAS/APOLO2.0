@@ -79,7 +79,7 @@
             this.cmbEquipoIngreso.Location = new System.Drawing.Point(16, 53);
             this.cmbEquipoIngreso.Name = "cmbEquipoIngreso";
             this.cmbEquipoIngreso.Size = new System.Drawing.Size(177, 24);
-            this.cmbEquipoIngreso.TabIndex = 189;
+            this.cmbEquipoIngreso.TabIndex = 0;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.cmbEstadoIngreso.Location = new System.Drawing.Point(232, 115);
             this.cmbEstadoIngreso.Name = "cmbEstadoIngreso";
             this.cmbEstadoIngreso.Size = new System.Drawing.Size(185, 24);
-            this.cmbEstadoIngreso.TabIndex = 191;
+            this.cmbEstadoIngreso.TabIndex = 4;
             // 
             // label15
             // 
@@ -154,14 +154,14 @@
             this.dtpFecIngreso.Name = "dtpFecIngreso";
             this.dtpFecIngreso.Size = new System.Drawing.Size(177, 23);
             this.dtpFecIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFecIngreso.TabIndex = 190;
+            this.dtpFecIngreso.TabIndex = 3;
             // 
             // txtDocumentoIngreso
             // 
             this.txtDocumentoIngreso.Location = new System.Drawing.Point(442, 116);
             this.txtDocumentoIngreso.Name = "txtDocumentoIngreso";
             this.txtDocumentoIngreso.Size = new System.Drawing.Size(222, 23);
-            this.txtDocumentoIngreso.TabIndex = 195;
+            this.txtDocumentoIngreso.TabIndex = 5;
             // 
             // label1
             // 
@@ -188,7 +188,7 @@
             this.txtClienteIngreso.Location = new System.Drawing.Point(442, 53);
             this.txtClienteIngreso.Name = "txtClienteIngreso";
             this.txtClienteIngreso.Size = new System.Drawing.Size(220, 23);
-            this.txtClienteIngreso.TabIndex = 197;
+            this.txtClienteIngreso.TabIndex = 2;
             // 
             // btnCancelar
             // 
@@ -274,7 +274,7 @@
             this.txtDniIngreso.Location = new System.Drawing.Point(232, 53);
             this.txtDniIngreso.Name = "txtDniIngreso";
             this.txtDniIngreso.Size = new System.Drawing.Size(185, 23);
-            this.txtDniIngreso.TabIndex = 199;
+            this.txtDniIngreso.TabIndex = 1;
             // 
             // label10
             // 
@@ -324,7 +324,7 @@
             this.txtDniSalida.Location = new System.Drawing.Point(232, 54);
             this.txtDniSalida.Name = "txtDniSalida";
             this.txtDniSalida.Size = new System.Drawing.Size(185, 23);
-            this.txtDniSalida.TabIndex = 201;
+            this.txtDniSalida.TabIndex = 7;
             // 
             // label11
             // 
@@ -379,7 +379,7 @@
             this.dtpFecSalida.Name = "dtpFecSalida";
             this.dtpFecSalida.Size = new System.Drawing.Size(177, 23);
             this.dtpFecSalida.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFecSalida.TabIndex = 190;
+            this.dtpFecSalida.TabIndex = 9;
             // 
             // label5
             // 
@@ -399,7 +399,7 @@
             this.cmbEstadoSalida.Location = new System.Drawing.Point(232, 115);
             this.cmbEstadoSalida.Name = "cmbEstadoSalida";
             this.cmbEstadoSalida.Size = new System.Drawing.Size(185, 24);
-            this.cmbEstadoSalida.TabIndex = 191;
+            this.cmbEstadoSalida.TabIndex = 10;
             // 
             // label6
             // 
@@ -420,14 +420,14 @@
             this.cmbEquipoSalida.Location = new System.Drawing.Point(16, 53);
             this.cmbEquipoSalida.Name = "cmbEquipoSalida";
             this.cmbEquipoSalida.Size = new System.Drawing.Size(177, 24);
-            this.cmbEquipoSalida.TabIndex = 189;
+            this.cmbEquipoSalida.TabIndex = 6;
             // 
             // txtDocumentoSalida
             // 
             this.txtDocumentoSalida.Location = new System.Drawing.Point(442, 116);
             this.txtDocumentoSalida.Name = "txtDocumentoSalida";
             this.txtDocumentoSalida.Size = new System.Drawing.Size(222, 23);
-            this.txtDocumentoSalida.TabIndex = 195;
+            this.txtDocumentoSalida.TabIndex = 11;
             // 
             // label8
             // 
@@ -444,7 +444,7 @@
             this.txtClienteSalida.Location = new System.Drawing.Point(442, 53);
             this.txtClienteSalida.Name = "txtClienteSalida";
             this.txtClienteSalida.Size = new System.Drawing.Size(220, 23);
-            this.txtClienteSalida.TabIndex = 197;
+            this.txtClienteSalida.TabIndex = 8;
             // 
             // label9
             // 
