@@ -32,6 +32,8 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private int idEstadoVenta = 5;
+
         public frmProcesoSalida()
         {
             InitializeComponent();
@@ -333,6 +335,7 @@ namespace Apolo
                     proceso.IdLC = Convert.ToInt32(tablaLaptopsIngreso.Rows[i]["idLC"].ToString());
                     proceso.CodigoLC = tablaLaptopsIngreso.Rows[i]["codigo"].ToString();
                     proceso.IdEstadoAnt = Convert.ToInt32(tablaLaptopsIngreso.Rows[i]["idEstado"].ToString());
+                    proceso.IdSalidaDet = 0;
                 }
                 else
                 {
@@ -374,6 +377,7 @@ namespace Apolo
                     proceso.IdLC = Convert.ToInt32(tablaLaptopsSalida.Rows[i]["idLC"].ToString());
                     proceso.CodigoLC = tablaLaptopsSalida.Rows[i]["codigo"].ToString();
                     proceso.IdEstadoAnt = Convert.ToInt32(tablaLaptopsSalida.Rows[i]["idEstado"].ToString());
+                    proceso.IdSalidaDet = Convert.ToInt32(tablaLaptopsSalida.Rows[i]["IdSalidaDet"].ToString());
                 }
                 else
                 {
@@ -505,6 +509,16 @@ namespace Apolo
             if (validarDatos())
             {
                 ObtenerDatos();
+
+                if (rbtnSalida.Checked)
+                {
+                    if (proceso.IdEstado != idEstadoVenta && proceso.IdSalidaDet!=0)
+                    {
+                        MessageBox.Show("No se puede registrar esta acción porque el equipo está en un cliente.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                }
+
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int aux = (rbtnIngreso.Checked) ? 1 : 2;
