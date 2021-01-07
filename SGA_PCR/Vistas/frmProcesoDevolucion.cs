@@ -92,6 +92,7 @@ namespace Apolo
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = tablaLaptops;
             dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
 
+            lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
         }
 
         public void ObtenerDatosDevolucion()
@@ -347,6 +348,8 @@ namespace Apolo
             {
                 estadoComponentes(TipoVista.Inicial);
             }
+
+            lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -463,6 +466,8 @@ namespace Apolo
             {
                 btnObservacion.Enabled = true;
             }
+
+            lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
         }
 
         private void btnObservacion_Click(object sender, EventArgs e)
@@ -523,6 +528,8 @@ namespace Apolo
                     dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
                 }
             }
+
+            lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
 
         }
 

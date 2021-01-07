@@ -59,6 +59,7 @@
             this.pnlD = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblContador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             this.pnlD.SuspendLayout();
             this.SuspendLayout();
@@ -475,12 +476,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblContador
+            // 
+            this.lblContador.AutoSize = true;
+            this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContador.Location = new System.Drawing.Point(12, 729);
+            this.lblContador.Name = "lblContador";
+            this.lblContador.Size = new System.Drawing.Size(162, 16);
+            this.lblContador.TabIndex = 163;
+            this.lblContador.Text = "CANTIDAD REGISTROS:";
+            // 
             // frmProcesoDevolucion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(681, 752);
+            this.Controls.Add(this.lblContador);
             this.Controls.Add(this.pnlD);
             this.Controls.Add(this.cmbSede);
             this.Controls.Add(this.label2);
@@ -547,5 +559,6 @@
         private System.Windows.Forms.Panel pnlD;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblContador;
     }
 }
