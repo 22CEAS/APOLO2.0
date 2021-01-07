@@ -127,5 +127,9 @@ namespace Apolo
             }
         }
 
+        private void frmReporteFacturas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,6 +67,9 @@ namespace Apolo
                         detalle.CodigoLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 1))).Value.ToString();
                         detalle.MarcaLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 2))).Value.ToString();
                         detalle.ModeloLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
+
+                        detalle.Observacion = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
+
                         detalle.IdSalidaDetalle = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 12))).Value.ToString());
                         detalle.IdSucursal = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 13))).Value.ToString());
                         detalles.Add(detalle);
@@ -91,5 +94,7 @@ namespace Apolo
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
+
+       
     }
 }
