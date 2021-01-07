@@ -47,6 +47,7 @@
     <Compile Include="Area.cs" />
     <Compile Include="Auxiliar.cs" />
     <Compile Include="Cambio.cs" />
+    <Compile Include="CambioRazonSocial.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CorteAlquiler.cs" />
     <Compile Include="Estados.cs" />

@@ -2667,4 +2667,22 @@ where (d.estado=4 or d.estado=9) and d.fueDevuelto=0
 ORDER BY
 	codigo;
 	
-	
+--==========================Cambio Razon Social==============================
+DROP view IF EXISTS vista_equipos_en_alquiler;
+create view vista_equipos_en_alquiler as
+Select 
+		d.idSalida as IdSalida,
+		d.idSalidaDet as IdSalidaDetalle,
+		d.guiaSalida AS GuiaSalida,
+		s.idSucursal as IdSucursal,
+		d.idLC as IdEquipo,
+		lc.codigo as CodigoEquipo,
+		d.fecIniContrato as FechaPlazoInicial,
+		d.fecFinContrato as FechaPlazoFinal,
+		s.idCliente as IdCliente,
+		lc.marca as Marca,
+		lc.nombreModelo as Modelo
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+where d.fueDevuelto=0 and d.estado=4
+ORDER BY CodigoEquipo ;
