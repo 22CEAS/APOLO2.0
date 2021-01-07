@@ -58,7 +58,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(624, 298);
+            this.btnCancelar.Location = new System.Drawing.Point(624, 319);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 123;
@@ -78,7 +78,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(701, 300);
+            this.btnGrabar.Location = new System.Drawing.Point(701, 321);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 122;
@@ -187,7 +187,7 @@
             this.dgvLaptops.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvLaptops.PrimaryGrid.ShowRowHeaders = false;
             this.dgvLaptops.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptops.Size = new System.Drawing.Size(750, 269);
+            this.dgvLaptops.Size = new System.Drawing.Size(750, 270);
             this.dgvLaptops.TabIndex = 121;
             this.dgvLaptops.Text = "Tabla Laptops";
             // 
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(821, 388);
+            this.ClientSize = new System.Drawing.Size(821, 409);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvLaptops);

@@ -160,8 +160,8 @@ namespace Apolo
         private void verificandoPermisosReportes()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_reportes = { brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRLapVencer, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas };
-            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c","13c","14c","15c" };
+            Button[] botones_reportes = { brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRLapVencer, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas,btnAlquileres };
+            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c","13c","14c","15c","16c" };
 
             foreach (Button btn in botones_reportes)
             {
@@ -1669,6 +1669,26 @@ namespace Apolo
             CalendarioDash.Visible = true;
         }
 
+        private void btnAlquileres_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteAlquiler")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmReporteAlquiler f2 = new frmReporteAlquiler(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
     }
 }
 

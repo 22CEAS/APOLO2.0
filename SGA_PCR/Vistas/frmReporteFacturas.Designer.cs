@@ -335,6 +335,7 @@
             this.Name = "frmReporteFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReporteFacturas";
+            this.Load += new System.EventHandler(this.frmReporteFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).EndInit();
             this.pnlFacturas.ResumeLayout(false);

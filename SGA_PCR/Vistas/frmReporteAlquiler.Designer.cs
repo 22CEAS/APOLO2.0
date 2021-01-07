@@ -28,454 +28,311 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimeInput3 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dgv = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteAlquiler));
             this.dgvAlquiler = new DevExpress.XtraGrid.GridControl();
-            this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Tipo2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            this.vistaAlquiler = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdCliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdSucursal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RucDni = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FecSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FueDevuelto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GuiaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.pnlAlquileres = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblAlquileres = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaAlquiler)).BeginInit();
+            this.pnlAlquileres.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(568, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 79;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(673, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Exportar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(32, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 16);
-            this.label15.TabIndex = 77;
-            this.label15.Text = "Código Equipo";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(35, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(167, 21);
-            this.comboBox2.TabIndex = 76;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(257, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 16);
-            this.label7.TabIndex = 75;
-            this.label7.Text = "Fechas de Alquiler";
-            // 
-            // dateTimeInput3
-            // 
-            this.dateTimeInput3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.dateTimeInput3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput3.ButtonDropDown.Visible = true;
-            this.dateTimeInput3.IsPopupCalendarOpen = false;
-            this.dateTimeInput3.Location = new System.Drawing.Point(260, 46);
-            // 
-            // 
-            // 
-            this.dateTimeInput3.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput3.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput3.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput3.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput3.Name = "dateTimeInput3";
-            this.dateTimeInput3.Size = new System.Drawing.Size(117, 20);
-            this.dateTimeInput3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput3.TabIndex = 74;
-            // 
-            // dgv
-            // 
-            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv.BackColor = System.Drawing.Color.White;
-            this.dgv.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgv.ForeColor = System.Drawing.Color.Black;
-            this.dgv.Location = new System.Drawing.Point(60, 140);
-            this.dgv.Name = "dgv";
-            this.dgv.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgv.PrimaryGrid.AllowRowResize = true;
-            this.dgv.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn18.DataPropertyName = "Tipo2";
-            gridColumn18.Name = "";
-            gridColumn19.DataPropertyName = "Capacidad";
-            gridColumn19.Name = "";
-            gridColumn20.DataPropertyName = "TipoMemoria";
-            gridColumn20.Name = "";
-            gridColumn21.Name = "Cliente";
-            gridColumn22.Name = "Equipo";
-            gridColumn23.Name = "Código";
-            gridColumn24.Name = "Guía";
-            gridColumn25.Name = "KAM";
-            gridColumn26.Name = "FechaAlquiler";
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn20);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn21);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn22);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn23);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn24);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn25);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn26);
-            this.dgv.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgv.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgv.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgv.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgv.PrimaryGrid.EnableFiltering = true;
-            this.dgv.PrimaryGrid.EnableRowFiltering = true;
-            this.dgv.PrimaryGrid.Filter.Visible = true;
-            this.dgv.PrimaryGrid.NullString = "<<null>>";
-            this.dgv.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgv.PrimaryGrid.ShowRowGridIndex = true;
-            this.dgv.Size = new System.Drawing.Size(645, 88);
-            this.dgv.TabIndex = 73;
-            this.dgv.Text = "superGridControl5";
-            // 
-            // dateTimeInput1
-            // 
-            this.dateTimeInput1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(406, 46);
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(117, 20);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 80;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(565, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Cliente";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(568, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 81;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
-            this.label2.TabIndex = 84;
-            this.label2.Text = "KAM";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(35, 97);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(167, 21);
-            this.comboBox3.TabIndex = 83;
             // 
             // dgvAlquiler
             // 
             this.dgvAlquiler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAlquiler.Location = new System.Drawing.Point(60, 238);
-            this.dgvAlquiler.MainView = this.vista;
+            this.dgvAlquiler.Location = new System.Drawing.Point(12, 119);
+            this.dgvAlquiler.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvAlquiler.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvAlquiler.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvAlquiler.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvAlquiler.MainView = this.vistaAlquiler;
             this.dgvAlquiler.Name = "dgvAlquiler";
-            this.dgvAlquiler.Size = new System.Drawing.Size(645, 189);
-            this.dgvAlquiler.TabIndex = 85;
+            this.dgvAlquiler.Size = new System.Drawing.Size(915, 378);
+            this.dgvAlquiler.TabIndex = 137;
             this.dgvAlquiler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vista});
+            this.vistaAlquiler});
             // 
-            // vista
+            // vistaAlquiler
             // 
-            this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.TipoMemoria,
-            this.Tipo2,
-            this.Capacidad,
-            this.estado,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8});
-            this.vista.GridControl = this.dgvAlquiler;
-            this.vista.Name = "vista";
-            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vistaAlquiler.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaAlquiler.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaAlquiler.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaAlquiler.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaAlquiler.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaAlquiler.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaAlquiler.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaAlquiler.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaAlquiler.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaAlquiler.Appearance.Row.Options.UseFont = true;
+            this.vistaAlquiler.Appearance.Row.Options.UseForeColor = true;
+            this.vistaAlquiler.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.IdSalida,
+            this.IdCliente,
+            this.IdSucursal,
+            this.RucDni,
+            this.Cliente,
+            this.IdLC,
+            this.Codigo,
+            this.FecSalida,
+            this.FecIniContrato,
+            this.FecFinContrato,
+            this.GuiaSalida,
+            this.Estado,
+            this.NombreEstado,
+            this.FueDevuelto,
+            this.FechaDevolucion,
+            this.GuiaDevolucion,
+            this.CorteAlquiler});
+            this.vistaAlquiler.GridControl = this.dgvAlquiler;
+            this.vistaAlquiler.Name = "vistaAlquiler";
+            this.vistaAlquiler.OptionsBehavior.Editable = false;
+            this.vistaAlquiler.OptionsView.ColumnAutoWidth = false;
+            this.vistaAlquiler.OptionsView.ShowAutoFilterRow = true;
+            this.vistaAlquiler.OptionsView.ShowIndicator = false;
             // 
-            // TipoMemoria
+            // IdSalida
             // 
-            this.TipoMemoria.Caption = "gridColumn1";
-            this.TipoMemoria.FieldName = "TipoMemoria";
-            this.TipoMemoria.MinWidth = 100;
-            this.TipoMemoria.Name = "TipoMemoria";
-            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.TipoMemoria.Visible = true;
-            this.TipoMemoria.VisibleIndex = 0;
-            this.TipoMemoria.Width = 100;
+            this.IdSalida.Caption = "Id Salida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.Width = 150;
             // 
-            // Tipo2
+            // IdCliente
             // 
-            this.Tipo2.Caption = "gridColumn1";
-            this.Tipo2.FieldName = "Tipo2";
-            this.Tipo2.MinWidth = 100;
-            this.Tipo2.Name = "Tipo2";
-            this.Tipo2.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Tipo2.Visible = true;
-            this.Tipo2.VisibleIndex = 1;
-            this.Tipo2.Width = 100;
+            this.IdCliente.Caption = "IdCliente";
+            this.IdCliente.FieldName = "IdCliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.Width = 150;
             // 
-            // Capacidad
+            // IdSucursal
             // 
-            this.Capacidad.Caption = "gridColumn1";
-            this.Capacidad.FieldName = "Capacidad";
-            this.Capacidad.MinWidth = 100;
-            this.Capacidad.Name = "Capacidad";
-            this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Capacidad.Visible = true;
-            this.Capacidad.VisibleIndex = 2;
-            this.Capacidad.Width = 100;
+            this.IdSucursal.Caption = "IdSucursal";
+            this.IdSucursal.FieldName = "IdSucursal";
+            this.IdSucursal.Name = "IdSucursal";
+            this.IdSucursal.Width = 150;
             // 
-            // estado
+            // RucDni
             // 
-            this.estado.Caption = "gridColumn1";
-            this.estado.FieldName = "estado";
-            this.estado.MinWidth = 100;
-            this.estado.Name = "estado";
-            this.estado.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.estado.Visible = true;
-            this.estado.VisibleIndex = 3;
-            this.estado.Width = 100;
+            this.RucDni.Caption = "Ruc Cliente";
+            this.RucDni.FieldName = "RucDni";
+            this.RucDni.Name = "RucDni";
+            this.RucDni.Visible = true;
+            this.RucDni.VisibleIndex = 0;
+            this.RucDni.Width = 150;
             // 
-            // gridColumn1
+            // Cliente
             // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.FieldName = "TipoMemoria";
-            this.gridColumn1.MinWidth = 100;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 100;
+            this.Cliente.Caption = "Cliente";
+            this.Cliente.FieldName = "Cliente";
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Visible = true;
+            this.Cliente.VisibleIndex = 1;
+            this.Cliente.Width = 150;
             // 
-            // gridColumn2
+            // IdLC
             // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.FieldName = "TipoMemoria";
-            this.gridColumn2.MinWidth = 100;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
-            this.gridColumn2.Width = 100;
+            this.IdLC.Caption = "IdLC";
+            this.IdLC.FieldName = "IdLC";
+            this.IdLC.Name = "IdLC";
+            this.IdLC.Width = 150;
             // 
-            // gridColumn3
+            // Codigo
             // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.FieldName = "Tipo2";
-            this.gridColumn3.MinWidth = 100;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
-            this.gridColumn3.Width = 100;
+            this.Codigo.Caption = "Codigo";
+            this.Codigo.FieldName = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Visible = true;
+            this.Codigo.VisibleIndex = 2;
+            this.Codigo.Width = 150;
             // 
-            // gridColumn4
+            // FecSalida
             // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.FieldName = "Tipo2";
-            this.gridColumn4.MinWidth = 100;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
-            this.gridColumn4.Width = 100;
+            this.FecSalida.Caption = "Fecha Traslado";
+            this.FecSalida.FieldName = "FecSalida";
+            this.FecSalida.Name = "FecSalida";
+            this.FecSalida.Visible = true;
+            this.FecSalida.VisibleIndex = 3;
+            this.FecSalida.Width = 150;
             // 
-            // gridColumn5
+            // FecIniContrato
             // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.FieldName = "Capacidad";
-            this.gridColumn5.MinWidth = 100;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
-            this.gridColumn5.Width = 100;
+            this.FecIniContrato.Caption = "Inicio Plazo Alquiler";
+            this.FecIniContrato.FieldName = "FecIniContrato";
+            this.FecIniContrato.Name = "FecIniContrato";
+            this.FecIniContrato.Visible = true;
+            this.FecIniContrato.VisibleIndex = 4;
+            this.FecIniContrato.Width = 150;
             // 
-            // gridColumn6
+            // FecFinContrato
             // 
-            this.gridColumn6.Caption = "gridColumn6";
-            this.gridColumn6.FieldName = "Capacidad";
-            this.gridColumn6.MinWidth = 100;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 9;
-            this.gridColumn6.Width = 100;
+            this.FecFinContrato.Caption = "Fin Plazo Alquiler";
+            this.FecFinContrato.FieldName = "FecFinContrato";
+            this.FecFinContrato.Name = "FecFinContrato";
+            this.FecFinContrato.Visible = true;
+            this.FecFinContrato.VisibleIndex = 5;
+            this.FecFinContrato.Width = 150;
             // 
-            // gridColumn7
+            // GuiaSalida
             // 
-            this.gridColumn7.Caption = "gridColumn7";
-            this.gridColumn7.FieldName = "estado";
-            this.gridColumn7.MinWidth = 100;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 10;
-            this.gridColumn7.Width = 100;
+            this.GuiaSalida.Caption = "Guia Salida";
+            this.GuiaSalida.FieldName = "GuiaSalida";
+            this.GuiaSalida.Name = "GuiaSalida";
+            this.GuiaSalida.Visible = true;
+            this.GuiaSalida.VisibleIndex = 6;
+            this.GuiaSalida.Width = 150;
             // 
-            // gridColumn8
+            // Estado
             // 
-            this.gridColumn8.Caption = "gridColumn8";
-            this.gridColumn8.FieldName = "estado";
-            this.gridColumn8.MinWidth = 100;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 11;
-            this.gridColumn8.Width = 100;
+            this.Estado.Caption = "Id Estado";
+            this.Estado.FieldName = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 150;
             // 
-            // label3
+            // NombreEstado
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 16);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "Código Equipo";
+            this.NombreEstado.Caption = "Estado";
+            this.NombreEstado.FieldName = "NombreEstado";
+            this.NombreEstado.Name = "NombreEstado";
+            this.NombreEstado.Visible = true;
+            this.NombreEstado.VisibleIndex = 7;
+            this.NombreEstado.Width = 150;
+            // 
+            // FueDevuelto
+            // 
+            this.FueDevuelto.Caption = "Fue Devuelto";
+            this.FueDevuelto.FieldName = "FueDevuelto";
+            this.FueDevuelto.Name = "FueDevuelto";
+            this.FueDevuelto.Visible = true;
+            this.FueDevuelto.VisibleIndex = 8;
+            this.FueDevuelto.Width = 150;
+            // 
+            // FechaDevolucion
+            // 
+            this.FechaDevolucion.Caption = "Fecha Devolucion";
+            this.FechaDevolucion.FieldName = "FechaDevolucion";
+            this.FechaDevolucion.Name = "FechaDevolucion";
+            this.FechaDevolucion.Visible = true;
+            this.FechaDevolucion.VisibleIndex = 9;
+            this.FechaDevolucion.Width = 150;
+            // 
+            // GuiaDevolucion
+            // 
+            this.GuiaDevolucion.Caption = "Guia Devolucion";
+            this.GuiaDevolucion.FieldName = "GuiaDevolucion";
+            this.GuiaDevolucion.Name = "GuiaDevolucion";
+            this.GuiaDevolucion.Visible = true;
+            this.GuiaDevolucion.VisibleIndex = 10;
+            this.GuiaDevolucion.Width = 150;
+            // 
+            // CorteAlquiler
+            // 
+            this.CorteAlquiler.Caption = "Corte Alquiler";
+            this.CorteAlquiler.FieldName = "CorteAlquiler";
+            this.CorteAlquiler.Name = "CorteAlquiler";
+            this.CorteAlquiler.Visible = true;
+            this.CorteAlquiler.VisibleIndex = 11;
+            this.CorteAlquiler.Width = 150;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.AutoSize = true;
+            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExportar.Location = new System.Drawing.Point(12, 525);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 63);
+            this.btnExportar.TabIndex = 138;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            // 
+            // pnlAlquileres
+            // 
+            this.pnlAlquileres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlAlquileres.Controls.Add(this.btnCerrar);
+            this.pnlAlquileres.Controls.Add(this.lblAlquileres);
+            this.pnlAlquileres.Location = new System.Drawing.Point(2, 2);
+            this.pnlAlquileres.Name = "pnlAlquileres";
+            this.pnlAlquileres.Size = new System.Drawing.Size(939, 49);
+            this.pnlAlquileres.TabIndex = 139;
+            this.pnlAlquileres.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAlquileres_MouseMove);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(885, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(51, 38);
+            this.btnCerrar.TabIndex = 153;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblAlquileres
+            // 
+            this.lblAlquileres.AutoSize = true;
+            this.lblAlquileres.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlquileres.ForeColor = System.Drawing.Color.White;
+            this.lblAlquileres.Location = new System.Drawing.Point(383, 7);
+            this.lblAlquileres.Name = "lblAlquileres";
+            this.lblAlquileres.Size = new System.Drawing.Size(195, 31);
+            this.lblAlquileres.TabIndex = 152;
+            this.lblAlquileres.Text = "ALQUILERES";
             // 
             // frmReporteAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 450);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(939, 623);
+            this.Controls.Add(this.pnlAlquileres);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvAlquiler);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimeInput1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimeInput3);
-            this.Controls.Add(this.dgv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReporteAlquiler";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Alquiler";
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            this.Load += new System.EventHandler(this.frmReporteAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaAlquiler)).EndInit();
+            this.pnlAlquileres.ResumeLayout(false);
+            this.pnlAlquileres.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,32 +340,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput3;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgv;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private DevExpress.XtraGrid.GridControl dgvAlquiler;
-        private DevExpress.XtraGrid.Views.Grid.GridView vista;
-        private DevExpress.XtraGrid.Columns.GridColumn TipoMemoria;
-        private DevExpress.XtraGrid.Columns.GridColumn Tipo2;
-        private DevExpress.XtraGrid.Columns.GridColumn Capacidad;
-        private DevExpress.XtraGrid.Columns.GridColumn estado;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaAlquiler;
+        private System.Windows.Forms.Button btnExportar;
+        private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn IdCliente;
+        private DevExpress.XtraGrid.Columns.GridColumn IdSucursal;
+        private DevExpress.XtraGrid.Columns.GridColumn RucDni;
+        private DevExpress.XtraGrid.Columns.GridColumn Cliente;
+        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
+        private DevExpress.XtraGrid.Columns.GridColumn Codigo;
+        private DevExpress.XtraGrid.Columns.GridColumn FecSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn FecIniContrato;
+        private DevExpress.XtraGrid.Columns.GridColumn FecFinContrato;
+        private DevExpress.XtraGrid.Columns.GridColumn GuiaSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn Estado;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreEstado;
+        private DevExpress.XtraGrid.Columns.GridColumn FueDevuelto;
+        private DevExpress.XtraGrid.Columns.GridColumn CorteAlquiler;
+        private System.Windows.Forms.Panel pnlAlquileres;
+        private System.Windows.Forms.Label lblAlquileres;
+        private System.Windows.Forms.Button btnCerrar;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaDevolucion;
+        private DevExpress.XtraGrid.Columns.GridColumn GuiaDevolucion;
     }
 }

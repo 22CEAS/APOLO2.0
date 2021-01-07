@@ -172,6 +172,7 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnAlquileres = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -281,7 +282,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1953);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2008);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(232, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -336,7 +337,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1913);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1968);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(232, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -347,6 +348,7 @@
             // REPORTES
             // 
             this.REPORTES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.REPORTES.Controls.Add(this.btnAlquileres);
             this.REPORTES.Controls.Add(this.btnRFacturas);
             this.REPORTES.Controls.Add(this.btnRFacturasTrans);
             this.REPORTES.Controls.Add(this.btnRReparacion);
@@ -362,7 +364,7 @@
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
             this.REPORTES.Location = new System.Drawing.Point(0, 1295);
             this.REPORTES.Name = "REPORTES";
-            this.REPORTES.Size = new System.Drawing.Size(232, 618);
+            this.REPORTES.Size = new System.Drawing.Size(232, 673);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
             // 
@@ -2302,6 +2304,25 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
+            // btnAlquileres
+            // 
+            this.btnAlquileres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAlquileres.FlatAppearance.BorderSize = 0;
+            this.btnAlquileres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnAlquileres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlquileres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlquileres.ForeColor = System.Drawing.Color.Black;
+            this.btnAlquileres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlquileres.Location = new System.Drawing.Point(0, 613);
+            this.btnAlquileres.Name = "btnAlquileres";
+            this.btnAlquileres.Size = new System.Drawing.Size(319, 45);
+            this.btnAlquileres.TabIndex = 25;
+            this.btnAlquileres.Text = "> ALQUILERES";
+            this.btnAlquileres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlquileres.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlquileres.UseVisualStyleBackColor = false;
+            this.btnAlquileres.Click += new System.EventHandler(this.btnAlquileres_Click);
+            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2497,5 +2518,6 @@
         private System.Windows.Forms.Button btnRFacturasTrans;
         private System.Windows.Forms.Button btnPFacturasTrans;
         private System.Windows.Forms.Button btnRFacturas;
+        private System.Windows.Forms.Button btnAlquileres;
     }
 }
