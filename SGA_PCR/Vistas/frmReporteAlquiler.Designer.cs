@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteAlquiler));
             this.dgvAlquiler = new DevExpress.XtraGrid.GridControl();
             this.vistaAlquiler = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,6 +58,8 @@
             this.pnlAlquileres = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblAlquileres = new System.Windows.Forms.Label();
+            this.FechaCambio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FueDevueltoEnCambio = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaAlquiler)).BeginInit();
             this.pnlAlquileres.SuspendLayout();
@@ -104,7 +112,40 @@
             this.FueDevuelto,
             this.FechaDevolucion,
             this.GuiaDevolucion,
-            this.CorteAlquiler});
+            this.CorteAlquiler,
+            this.FechaCambio,
+            this.FueDevueltoEnCambio});
+            gridFormatRule1.Column = this.Estado;
+            gridFormatRule1.ColumnApplyTo = this.FueDevuelto;
+            gridFormatRule1.Name = "Cambiado";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.White;
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.White;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue1.Expression = "[Estado] = 9";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            gridFormatRule2.Column = this.Estado;
+            gridFormatRule2.ColumnApplyTo = this.FechaDevolucion;
+            gridFormatRule2.Name = "Cambiado1";
+            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.White;
+            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.White;
+            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue2.Expression = "[Estado] = 9";
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            gridFormatRule3.Column = this.Estado;
+            gridFormatRule3.ColumnApplyTo = this.GuiaDevolucion;
+            gridFormatRule3.Name = "Cambiado2";
+            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.White;
+            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.Color.White;
+            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue3.Expression = "[Estado] = 9";
+            gridFormatRule3.Rule = formatConditionRuleValue3;
+            this.vistaAlquiler.FormatRules.Add(gridFormatRule1);
+            this.vistaAlquiler.FormatRules.Add(gridFormatRule2);
+            this.vistaAlquiler.FormatRules.Add(gridFormatRule3);
             this.vistaAlquiler.GridControl = this.dgvAlquiler;
             this.vistaAlquiler.Name = "vistaAlquiler";
             this.vistaAlquiler.OptionsBehavior.Editable = false;
@@ -208,6 +249,8 @@
             this.Estado.Caption = "Id Estado";
             this.Estado.FieldName = "Estado";
             this.Estado.Name = "Estado";
+            this.Estado.Visible = true;
+            this.Estado.VisibleIndex = 14;
             this.Estado.Width = 150;
             // 
             // NombreEstado
@@ -315,6 +358,24 @@
             this.lblAlquileres.TabIndex = 152;
             this.lblAlquileres.Text = "ALQUILERES";
             // 
+            // FechaCambio
+            // 
+            this.FechaCambio.Caption = "Fecha Cambio";
+            this.FechaCambio.FieldName = "FechaCambio";
+            this.FechaCambio.Name = "FechaCambio";
+            this.FechaCambio.Visible = true;
+            this.FechaCambio.VisibleIndex = 12;
+            this.FechaCambio.Width = 150;
+            // 
+            // FueDevueltoEnCambio
+            // 
+            this.FueDevueltoEnCambio.Caption = "Fue Devuelto en Cambio";
+            this.FueDevueltoEnCambio.FieldName = "FueDevueltoEnCambio";
+            this.FueDevueltoEnCambio.Name = "FueDevueltoEnCambio";
+            this.FueDevueltoEnCambio.Visible = true;
+            this.FueDevueltoEnCambio.VisibleIndex = 13;
+            this.FueDevueltoEnCambio.Width = 150;
+            // 
             // frmReporteAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +424,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private DevExpress.XtraGrid.Columns.GridColumn FechaDevolucion;
         private DevExpress.XtraGrid.Columns.GridColumn GuiaDevolucion;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaCambio;
+        private DevExpress.XtraGrid.Columns.GridColumn FueDevueltoEnCambio;
     }
 }
