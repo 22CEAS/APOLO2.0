@@ -143,11 +143,11 @@ namespace Apolo
 
                     }
                 }
-                MessageBox.Show("Meses agregados", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Meses agregados", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Tiene que ingresar un número", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Tiene que ingresar un número", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

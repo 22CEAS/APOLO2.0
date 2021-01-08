@@ -121,7 +121,7 @@ namespace Apolo
             }
             else
             {
-                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -151,7 +151,7 @@ namespace Apolo
             }
             else
             {
-                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

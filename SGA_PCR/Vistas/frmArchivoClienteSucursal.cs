@@ -244,7 +244,7 @@ namespace Apolo
 
             if (validarCampos()) //Esto verifica que se ha seleccionado algún item del comboBox
             {
-                MessageBox.Show("No se puede crear una Sucursal si no\ntiene todos sus datos completos.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede crear una Sucursal si no\ntiene todos sus datos completos.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Cursor.Current = Cursors.Default;
                 return;
             }
@@ -252,42 +252,42 @@ namespace Apolo
             llenar_Datos_Clientes();
             if (sucursalCliente.IdSucursal == 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Crear este Sucursal", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Crear este Sucursal", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idSucursal = clienteDA.GuardarNuevoSucursal(sucursalCliente, this.nombreUsuario);
 
                     if (idSucursal > 0)
                     {
-                        MessageBox.Show("Se guardó éxitosamente el Sucural con ID: " + idSucursal, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se guardó éxitosamente el Sucural con ID: " + idSucursal, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         dgvSucursalCliente.PrimaryGrid.DataSource = null;
                         tablaSucursalCliente = clienteDA.ListarSucursalCliente(sucursalCliente.IdCliente);
                         dgvSucursalCliente.PrimaryGrid.DataSource = tablaSucursalCliente;
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else
-                        MessageBox.Show("No se pudo guardar el Sucursal", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("No se pudo guardar el Sucursal", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
             {
                 sucursalCliente.Estado = (chbActivo.Checked) ? 1 : 0;
 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idSucursal = clienteDA.ModificarSucursal(sucursalCliente, this.nombreUsuario);
 
                     if (idSucursal > 0)
                     {
-                        MessageBox.Show("Se Modificó la sucursal con ID : " + sucursalCliente.IdSucursal + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modificó la sucursal con ID : " + sucursalCliente.IdSucursal + " con exito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         dgvSucursalCliente.PrimaryGrid.DataSource = null;
                         tablaSucursalCliente = clienteDA.ListarSucursalCliente(sucursalCliente.IdCliente);
                         dgvSucursalCliente.PrimaryGrid.DataSource = tablaSucursalCliente;
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idSucursal == 0)
-                        MessageBox.Show("Ya existe un Sucursal con las mismas características", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Ya existe un Sucursal con las mismas características", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     else
-                        MessageBox.Show("No se pudo guardar los cambios del Sucursal del Cliente", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("No se pudo guardar los cambios del Sucursal del Cliente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             Cursor.Current = Cursors.Default;
@@ -353,7 +353,7 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Sucursal del cliente", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Sucursal del cliente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 MessageBox.Show("Se imprimio la lista de Sucursales del cliente");
             }

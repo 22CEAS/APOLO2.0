@@ -110,7 +110,7 @@ namespace Apolo
                 {
                     if (cmbProveedor.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -123,7 +123,7 @@ namespace Apolo
                 {
                     if (cmbUsuario.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un usuario correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un usuario correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -149,7 +149,7 @@ namespace Apolo
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de ingreso no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de ingreso no es valido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -183,7 +183,7 @@ namespace Apolo
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }

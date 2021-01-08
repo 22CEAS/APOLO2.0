@@ -73,7 +73,7 @@ namespace Apolo
         public BindingList<Licencia> LICENCIAS { get => licencias; set => licencias = value; }
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Agregar estas licencias", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Agregar estas licencias", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 if (llenarListaLicencias())//Si entra es porque se ha seleccionado almenos solo
                 {

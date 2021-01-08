@@ -255,13 +255,13 @@ namespace Apolo
 
             if (cmbEquipo.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una laptop correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una laptop correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
             if (cmbEstado.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una estado correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una estado correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -270,7 +270,7 @@ namespace Apolo
 
             if (observacion.Length == 0)
             {
-                MessageBox.Show("No se puede grabar una Reparacion si no\nllena el campo de observacion.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Reparacion si no\nllena el campo de observacion.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -279,7 +279,7 @@ namespace Apolo
             descripcion = descripcion.Trim();
             if (descripcion.Length == 0)
             {
-                MessageBox.Show("No se puede grabar una Reparacion si no\nllena el campo de descripcion.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Reparacion si no\nllena el campo de descripcion.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -288,15 +288,15 @@ namespace Apolo
 
             if (numReparacion.Length == 0)
             {
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Reparacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idReparacion = reparacionDA.InsertarReparacion(reparacion, this.nombreUsuario);
                     if (idReparacion == 0)
                     {
-                        MessageBox.Show("Hubo error en Registrar la Reparacion, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en Registrar la Reparacion, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    MessageBox.Show("Se guardó la Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó la Reparacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     reparacion.IdReparacion = idReparacion;
                     reparacionOld = new Reparacion(reparacion);
                     txtNroReparacion.Text = idReparacion.ToString();
@@ -305,13 +305,13 @@ namespace Apolo
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     bool okey=reparacionDA.ModificarReparacion(reparacion, this.nombreUsuario, reparacionOld);
                     if (okey)
-                        MessageBox.Show("Se Modifico la Reparacion N° :" + txtNroReparacion.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modifico la Reparacion N° :" + txtNroReparacion.Text + " con exito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     else
-                        MessageBox.Show("No se Modifico la Reparacion N° :" + txtNroReparacion.Text + ", comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("No se Modifico la Reparacion N° :" + txtNroReparacion.Text + ", comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                     estadoComponentes(TipoVista.Guardar);
                 }
@@ -325,12 +325,12 @@ namespace Apolo
 
             if (reparacion.Estado == 0)//
             {
-                MessageBox.Show("Esta reparacion ya no se puede modificar", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esta reparacion ya no se puede modificar", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Reparacion N° :" + txtNroReparacion.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Reparacion N° :" + txtNroReparacion.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                     estadoComponentes(TipoVista.Modificar);
             }
 
@@ -347,16 +347,16 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (reparacion.Estado == 0)
             {
-                MessageBox.Show("Esta reparacion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esta reparacion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular esta reaparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular esta reaparacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     reparacion.Estado = 0;
                     reparacionDA.AnularReparacion(reparacion, this.nombreUsuario);
-                    MessageBox.Show("Se anulo la Reparacion N° :" + reparacion.IdReparacion, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se anulo la Reparacion N° :" + reparacion.IdReparacion, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     estadoComponentes(TipoVista.Anular);
                 }
             }
@@ -365,7 +365,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 reparacion = new Reparacion();
@@ -375,7 +375,7 @@ namespace Apolo
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro que desea Imprimir la Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir la Reparacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -408,13 +408,13 @@ namespace Apolo
                         releaseObject(libros_trabajo);
                         aplicacion.Quit();
                         releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }
@@ -518,7 +518,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {

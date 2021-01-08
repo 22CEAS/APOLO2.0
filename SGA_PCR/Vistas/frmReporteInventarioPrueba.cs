@@ -313,7 +313,7 @@ namespace Apolo
             cadena += "</table> </ body > </ html > ";
             body += cadena;
             EnviarCodigo("c.arango@pucp.pe",body, out codigo, out idUsuario);
-            //if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            //if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             //{
             //    Cursor.Current = Cursors.WaitCursor;
             //    try
@@ -345,13 +345,13 @@ namespace Apolo
             //            releaseObject(libros_trabajo);
             //            aplicacion.Quit();
             //            releaseObject(aplicacion);
-            //            MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //        }
 
             //    }
             //    catch (Exception ex)
             //    {
-            //        MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            //        MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             //    }
             //    Cursor.Current = Cursors.Default;
             //}
@@ -509,7 +509,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {

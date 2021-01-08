@@ -87,7 +87,7 @@ namespace Apolo
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Agregar estas Licencias, los cambios son permanentes", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Agregar estas Licencias, los cambios son permanentes", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 if (llenarListaLicencia())//Si entra es porque se ha seleccionado almenos solo
                 {

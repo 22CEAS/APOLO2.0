@@ -270,7 +270,7 @@ namespace Apolo
 
             if (validarCampos()) //Esto verifica que se ha seleccionado algún item del comboBox
             {
-                MessageBox.Show("No se puede crear un Cliente si no\ntiene todos sus datos completos.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede crear un Cliente si no\ntiene todos sus datos completos.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Cursor.Current = Cursors.Default;
                 return;
             }
@@ -278,17 +278,17 @@ namespace Apolo
             llenar_Datos_Clientes();
             if (cliente.IdCliente == 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Crear este Cliente", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Crear este Cliente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idCliente = clienteDA.GuardarNuevoCliente(cliente, this.nombreUsuario);
 
                     if (idCliente > 0)
                     {
-                        MessageBox.Show("Se guardó éxitosamente el Cliente con ID: " + idCliente, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se guardó éxitosamente el Cliente con ID: " + idCliente, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else
-                        MessageBox.Show("No se pudo guardar el Cliente", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("No se pudo guardar el Cliente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -297,7 +297,7 @@ namespace Apolo
                 cliente.Estado = (chbActivo.Checked) ? 1 : 0;
 
 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idCliente;
 
@@ -306,13 +306,13 @@ namespace Apolo
 
                     if (idCliente > 0)
                     {
-                        MessageBox.Show("Se Modificó el cliente con ID : " + cliente.IdCliente + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modificó el cliente con ID : " + cliente.IdCliente + " con exito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idCliente == 0)
-                        MessageBox.Show("Ya existe un Cliente con las mismas características", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Ya existe un Cliente con las mismas características", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     else
-                        MessageBox.Show("No se pudo guardar los cambios del Cliente", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("No se pudo guardar los cambios del Cliente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                 }
             }
@@ -421,7 +421,7 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Clientes", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Clientes", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 MessageBox.Show("Se imprimio la lista de Clientes");
             }

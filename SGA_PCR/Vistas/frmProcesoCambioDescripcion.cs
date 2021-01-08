@@ -128,11 +128,11 @@ namespace Apolo
 
                         if (!error)
                         {
-                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
 
-                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         tablaMemoria = laptopDA.ListarLaptopMemoria(laptop.IdLC);
                         dgvMemorias.PrimaryGrid.DataSource = tablaMemoria;
                     }
@@ -144,7 +144,7 @@ namespace Apolo
         private void btnGuardarMemoria_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
@@ -164,11 +164,11 @@ namespace Apolo
                     error = laptopDA.ActualizarLaptopMemoriaSinAfectarCantidad(laptop.IdLC, memorias, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     laptop.Memorias = memorias;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
             }
         }
@@ -176,7 +176,7 @@ namespace Apolo
         private void dgvMemorias_DoubleClick(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
@@ -200,11 +200,11 @@ namespace Apolo
                     error = laptopDA.ActualizarLaptopMemoriaSinAfectarCantidad(laptop.IdLC, memorias, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     laptop.Memorias = memorias;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaMemoria = laptopDA.ListarLaptopMemoria(laptop.IdLC);
                     dgvMemorias.PrimaryGrid.DataSource = tablaMemoria;
                 }
@@ -249,12 +249,12 @@ namespace Apolo
 
                             if (!error)
                             {
-                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 return;
                             }
 
 
-                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                             tablaDisco = laptopDA.ListarLaptopDisco(laptop.IdLC);
                             dgvDisco.PrimaryGrid.DataSource = tablaDisco;
                         }
@@ -262,7 +262,7 @@ namespace Apolo
                 }
                 else
                 {
-                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
 
@@ -271,7 +271,7 @@ namespace Apolo
         private void dgvDisco_DoubleClick(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvDisco.PrimaryGrid.Rows.Count > 0)
@@ -294,11 +294,11 @@ namespace Apolo
                     error = laptopDA.ActualizarLaptopDiscoSinAfectarCantidad(laptop.IdLC, discos, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     laptop.Discos = discos;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaDisco = laptopDA.ListarLaptopDisco(laptop.IdLC);
                     dgvDisco.PrimaryGrid.DataSource = tablaDisco;
                 }
@@ -308,7 +308,7 @@ namespace Apolo
         private void btnGuardarDisco_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvDisco.PrimaryGrid.Rows.Count > 0)
@@ -326,11 +326,11 @@ namespace Apolo
                     error = laptopDA.ActualizarLaptopDiscoSinAfectarCantidad(laptop.IdLC, discos, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     laptop.Discos = discos;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
             }
         }
@@ -338,7 +338,7 @@ namespace Apolo
         //private void btnCaducidadLicencia_Click(object sender, EventArgs e)
         //{
 
-        //    if (MessageBox.Show("Estas seguro deseas Poner en caducidad esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+        //    if (MessageBox.Show("Estas seguro deseas Poner en caducidad esta licencia", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
         //    {
         //        bool error;
         //        if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
@@ -348,7 +348,7 @@ namespace Apolo
         //            error = laptopDA.ActualizarLaptopLicencia(laptop.IdLC, licTempId, this.nombreUsuario, 0);
         //            if (!error)
         //            {
-        //                MessageBox.Show("Hubo error en poner en caducidad esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        //                MessageBox.Show("Hubo error en poner en caducidad esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         //                return;
         //            }
 
@@ -366,7 +366,7 @@ namespace Apolo
 
         //            laptop.Licencias.RemoveAt(indiceLic);
 
-        //            MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        //            MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         //            tablaLicencia = laptopDA.ListarLaptopLicencia(laptop.IdLC);
         //            dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
         //        }
@@ -407,7 +407,7 @@ namespace Apolo
 
                         if (!error)
                         {
-                            MessageBox.Show("Hubo error en agregar las licencias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Hubo error en agregar las licencias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
 
@@ -416,7 +416,7 @@ namespace Apolo
                             laptop.Licencias.Add(licenciaTraido);
                         }
 
-                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         tablaLicencia = laptopDA.ListarLaptopLicencia(laptop.IdLC);
                         dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
                     }
@@ -428,7 +428,7 @@ namespace Apolo
         private void btnEliminarLicencia_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
@@ -438,7 +438,7 @@ namespace Apolo
                     error = laptopDA.ActualizarLaptopLicencia(laptop.IdLC, licTempId, this.nombreUsuario, 1);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en eliminar esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en eliminar esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     //Hasta aqui ya se encontro la licencia del ID y el indice de donde se ubica en el detalle
@@ -455,7 +455,7 @@ namespace Apolo
 
                     laptop.Licencias.RemoveAt(indiceLic);
 
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaLicencia = laptopDA.ListarLaptopLicencia(laptop.IdLC);
                     dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
                 }

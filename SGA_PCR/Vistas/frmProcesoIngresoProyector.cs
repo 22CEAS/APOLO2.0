@@ -207,7 +207,7 @@ namespace Apolo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
 
@@ -314,7 +314,7 @@ namespace Apolo
             //==============================================================================================
             if (cmbMarca.SelectedValue == null || cmbMarca.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado una marca correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado una marca correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
@@ -322,7 +322,7 @@ namespace Apolo
             //==============================================================================================
             if (cmbModelo.SelectedValue == null || cmbModelo.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
@@ -330,7 +330,7 @@ namespace Apolo
             //==============================================================================================
             if (cmbCaracteristica.SelectedValue == null || cmbCaracteristica.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado una caracteristica correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado una caracteristica correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
@@ -339,7 +339,7 @@ namespace Apolo
             //==============================================================================================
             if (cmbTipo.SelectedValue == null || cmbTipo.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado un tipo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un tipo correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
@@ -349,7 +349,7 @@ namespace Apolo
             precio = precio.Trim();
             if (!(precio.Length > 0))
             {
-                MessageBox.Show("Ingrese un precio válido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Ingrese un precio válido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
 
@@ -358,7 +358,7 @@ namespace Apolo
             cantidad = cantidad.Trim();
             if (!(cantidad.Length > 0))
             {
-                MessageBox.Show("Ingrese una cantidad válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Ingrese una cantidad válida", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
 
@@ -375,7 +375,7 @@ namespace Apolo
                     pantalla = pantalla.Trim();
                     if (!(pantalla.Length > 0))
                     {
-                        MessageBox.Show("Ingrese un tamaño válido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Ingrese un tamaño válido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return false;
                     }
                 }
@@ -383,13 +383,13 @@ namespace Apolo
                 {
                     if (cmbLuminen.SelectedValue == null || cmbLuminen.SelectedIndex == -1)
                     {
-                        MessageBox.Show("No se puede grabar si no\nha seleccionado un Luminen correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede grabar si no\nha seleccionado un Luminen correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return false;
                     }
                     if (cmbResolucion.SelectedValue == null || cmbResolucion.SelectedIndex == -1)
                     {
-                        MessageBox.Show("No se puede grabar si no\nha seleccionado una Resolución correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede grabar si no\nha seleccionado una Resolución correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return false;
                     }
@@ -415,12 +415,12 @@ namespace Apolo
 
             if (filasDgv < aux)
             {
-                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             else if (filasDgv > aux)
             {
-                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             //==============================================================================================

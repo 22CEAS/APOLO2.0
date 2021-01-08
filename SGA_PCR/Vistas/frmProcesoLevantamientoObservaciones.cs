@@ -251,7 +251,7 @@ namespace Apolo
         
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar el Levantamiento de Observacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar el Levantamiento de Observacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -261,7 +261,7 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Observacion N° :" + txtNroObservacion.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Observacion N° :" + txtNroObservacion.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Modificar);
             }
@@ -275,7 +275,7 @@ namespace Apolo
 
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar el Levantamiento de Observacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar el Levantamiento de Observacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -284,19 +284,19 @@ namespace Apolo
 
             if (observacion.ObservacionLevantamiento.Length == 0)
             {
-                MessageBox.Show("No se puede grabar un Levantamiento de Observacion si no\nse ha llenado el motivo del levantamiento.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Levantamiento de Observacion si no\nse ha llenado el motivo del levantamiento.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             if (observacion.GuiaLevantamiento.Length == 0)
             {
-                MessageBox.Show("No se puede grabar este Levantamiento de Observacion,\nnecesita ingresar una guia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar este Levantamiento de Observacion,\nnecesita ingresar una guia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
-            if (MessageBox.Show("Estas seguro que deseas Guardar este Levantamiento de Observación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas Guardar este Levantamiento de Observación", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error=0;
                 observacion.IdEstado = 11;
@@ -304,11 +304,11 @@ namespace Apolo
 
                 if (error==0)
                 {
-                    MessageBox.Show("Hubo error en Registrar el Levantamiento, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hubo error en Registrar el Levantamiento, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
 
-                MessageBox.Show("Se guardó el Levantamiento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Se guardó el Levantamiento", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
 
@@ -319,18 +319,18 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (observacion.IdEstado == 0)
             {
-                MessageBox.Show("Este Levantamiento de Observacion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este Levantamiento de Observacion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular este Levantamiento de Observacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular este Levantamiento de Observacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     observacion.IdEstado = 1;
                     int error=observacionDA.AnularLevantamiento(observacion, this.nombreUsuario);
                     if (error == 0)
                     {
-                        MessageBox.Show("Hubo error en Anular el Levantamiento, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en Anular el Levantamiento, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     MessageBox.Show("Se anulo la Levantamiento de la Observación N° :" + observacion.IdObervacion);
@@ -342,7 +342,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 observacion = new Observacion();
@@ -351,7 +351,7 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir el Levantamiento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir el Levantamiento", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -384,13 +384,13 @@ namespace Apolo
                         releaseObject(libros_trabajo);
                         aplicacion.Quit();
                         releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }
@@ -491,7 +491,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {
@@ -504,7 +504,7 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede agregar una observacion\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede agregar una observacion\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }

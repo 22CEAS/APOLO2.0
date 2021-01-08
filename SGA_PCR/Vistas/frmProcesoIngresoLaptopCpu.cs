@@ -430,7 +430,7 @@ namespace Apolo
             //==============================================================================================
             if (cmbTipo.SelectedValue == null || cmbTipo.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado un tipo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un tipo correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
@@ -439,7 +439,7 @@ namespace Apolo
 
             if (cmbMarca.SelectedValue == null || cmbMarca.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado una marca correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado una marca correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
@@ -449,7 +449,7 @@ namespace Apolo
 
             if (cmbModelo.SelectedValue == null || cmbModelo.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
@@ -467,7 +467,7 @@ namespace Apolo
             }
             if (cantVideos > 1)
             {
-                MessageBox.Show("Solo seleccione una tarjeta de video", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Solo seleccione una tarjeta de video", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabVideo;
                 return false;
             }
@@ -484,13 +484,13 @@ namespace Apolo
             }
             if (cantProcesadores > 1)
             {
-                MessageBox.Show("Solo seleccione un procesador", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Solo seleccione un procesador", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabProcesador;
                 return false;
             }
             else if (cantProcesadores == 0)
             {
-                MessageBox.Show("Debe seleccionar un procesador", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Debe seleccionar un procesador", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabProcesador;
                 return false;
             }
@@ -507,13 +507,13 @@ namespace Apolo
             }
             if (cantDiscos > 2)
             {
-                MessageBox.Show("Solo puede seleccionar 2 discos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Solo puede seleccionar 2 discos", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabDiscoDuro;
                 return false;
             }
             else if (cantDiscos == 0)
             {
-                MessageBox.Show("Debe seleccionar almenos un disco duro", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Debe seleccionar almenos un disco duro", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabDiscoDuro;
                 return false;
             }
@@ -530,13 +530,13 @@ namespace Apolo
             }
             if (cantMemorias > 4)
             {
-                MessageBox.Show("Solo puede seleccionar 4 memorias", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Solo puede seleccionar 4 memorias", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabMemoria;
                 return false;
             }
             else if (cantMemorias == 0)
             {
-                MessageBox.Show("Debe seleccionar almenos una memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Debe seleccionar almenos una memoria", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabMemoria;
                 return false;
             }
@@ -555,7 +555,7 @@ namespace Apolo
             }
             if (cantWindows > 1) //! AQUI SE VALIDA QUE SOLO SE PUEDA INGRESAR 1 LICENCIA O NIGUNA, PERO NUNCA MAS DE 1
             {
-                MessageBox.Show($"Solo puede seleccionar una licencia. Usted seleccionó {cantWindows}", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show($"Solo puede seleccionar una licencia. Usted seleccionó {cantWindows}", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
@@ -584,13 +584,13 @@ namespace Apolo
 
                 if (filasDgv < aux)
                 {
-                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Windows", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     tabControl1.SelectedTab = tabClavesLicencias;
                     return false;
                 }
                 else if (filasDgv > aux)
                 {
-                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Windows", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     tabControl1.SelectedTab = tabClavesLicencias;
                     return false;
                 }
@@ -629,7 +629,7 @@ namespace Apolo
                     partNumber = partNumber.Trim();
                     if (!(partNumber.Length > 0))
                     {
-                        MessageBox.Show("Ingrese un part number", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Ingrese un part number", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tabControl1.SelectedTab = tabDetalle;
                         return false;
                     }
@@ -640,7 +640,7 @@ namespace Apolo
                     pantalla = pantalla.Trim();
                     if (!(pantalla.Length > 0))
                     {
-                        MessageBox.Show("Ingrese un tamaño de pantalla válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Ingrese un tamaño de pantalla válida", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tabControl1.SelectedTab = tabDetalle;
                         return false;
                     }
@@ -649,13 +649,13 @@ namespace Apolo
                     
                     if (filasDgv < aux)
                     {
-                        MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tabControl1.SelectedTab = tabDetalle;
                         return false;
                     }
                     else if (filasDgv > aux)
                     {
-                        MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         tabControl1.SelectedTab = tabDetalle;
                         return false;
                     }
@@ -669,13 +669,13 @@ namespace Apolo
                     {
                         if (filasDgv < aux)
                         {
-                            MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             tabControl1.SelectedTab = tabDetalle;
                             return false;
                         }
                         else if (filasDgv > aux)
                         {
-                            MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             tabControl1.SelectedTab = tabDetalle;
                             return false;
                         }
@@ -690,7 +690,7 @@ namespace Apolo
             precio = precio.Trim();
             if (!(precio.Length > 0))
             {
-                MessageBox.Show("Ingrese un precio válido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Ingrese un precio válido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
@@ -768,7 +768,7 @@ namespace Apolo
        {
             if (dgvSerieFabrica.CurrentRow == null)
                 return;
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta serie", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta serie", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.CurrentRow);
             }
@@ -778,7 +778,7 @@ namespace Apolo
         {
             if (dgvWindows.CurrentRow == null)
                 return;
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de windows", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 dgvWindows.Rows.Remove(dgvWindows.CurrentRow);
             }
@@ -868,7 +868,7 @@ namespace Apolo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
 
@@ -914,7 +914,7 @@ namespace Apolo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
         }

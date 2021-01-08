@@ -406,13 +406,13 @@ namespace Apolo
             {
                 if (cmbEquipoIngreso.SelectedValue == null)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una laptop correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una laptop correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
                 if (cmbEstadoIngreso.SelectedValue == null)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado un estado correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado un estado correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -423,7 +423,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el nombre de la persona.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el nombre de la persona.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -433,7 +433,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de identidad.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de identidad.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -443,7 +443,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de referencia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de referencia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -453,13 +453,13 @@ namespace Apolo
             {
                 if (cmbEquipoSalida.SelectedValue == null)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una laptop correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una laptop correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
                 if (cmbEstadoSalida.SelectedValue == null)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado un estado correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado un estado correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -469,7 +469,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el nombre de la persona.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el nombre de la persona.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -479,7 +479,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de identidad.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de identidad.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -489,7 +489,7 @@ namespace Apolo
 
                 if (aux.Length == 0)
                 {
-                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de referencia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de referencia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                     return false;
                 }
@@ -514,12 +514,12 @@ namespace Apolo
                 {
                     if (proceso.IdEstado != idEstadoVenta && proceso.IdSalidaDet!=0)
                     {
-                        MessageBox.Show("No se puede registrar esta acción porque el equipo está en un cliente.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("No se puede registrar esta acción porque el equipo está en un cliente.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                 }
 
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int aux = (rbtnIngreso.Checked) ? 1 : 2;
                     int error = 0;
@@ -527,11 +527,11 @@ namespace Apolo
 
                     if (error == 0)
                     {
-                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
 
-                    MessageBox.Show("Se guradó el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guradó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     
                     estadoComponentes(TipoVista.Guardar);
                 }
@@ -540,7 +540,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 proceso = new IngresoSalida();

@@ -426,36 +426,36 @@ namespace Apolo
             string numAlquiler = txtNroAlquiler.Text;
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
             if (cmbSucursal.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado una sucursal correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado una sucursal correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
             ObtenerDatosAlquiler();
             if (alquiler.Detalles.Count == 0)
             {
-                MessageBox.Show("No se puede grabar un Alquiler si no\nexisten laptops seleccionados.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Alquiler si no\nexisten laptops seleccionados.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             if (numAlquiler.Length == 0)
             {
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Pre-Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Pre-Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idAlquiler = alquilerDA.InsertarPreAlquiler(alquiler, this.nombreUsuario);
 
                     if (idAlquiler==0)
                     {
-                        MessageBox.Show("Hubo error en Registrar el Pre-Alquiler, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en Registrar el Pre-Alquiler, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    MessageBox.Show("Se guardó el Pre-Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó el Pre-Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     alquiler.IdAlquiler = idAlquiler;
                     txtNroAlquiler.Text = idAlquiler.ToString();
                     estadoComponentes(TipoVista.Guardar);
@@ -476,16 +476,16 @@ namespace Apolo
                 }
                 if (cambioEstado && alquiler.Estado==6)
                 {
-                    if (MessageBox.Show("Deseas Cambiar el estado de Pre-Alquiler a Alquilado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                    if (MessageBox.Show("Deseas Cambiar el estado de Pre-Alquiler a Alquilado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                     {
                         alquiler.Estado = 4;
                     }
                 }
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     //ObtenerDatosPedido();
                     alquilerDA.ModificarAlquiler(alquiler, this.nombreUsuario);
-                    MessageBox.Show("Se Modifico el Alquiler N° :" + txtNroAlquiler.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Se Modifico el Alquiler N° :" + txtNroAlquiler.Text + " con exito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
@@ -494,7 +494,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 alquiler = new Alquiler();
@@ -621,12 +621,12 @@ namespace Apolo
         {
             if (alquiler.Estado == 7 || alquiler.Estado == 0)//en teoría 7 debería ser finalizado
             {
-                MessageBox.Show("Este alquiler ya no se puede modificar", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este alquiler ya no se puede modificar", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Alquiler N° :" + txtNroAlquiler.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Alquiler N° :" + txtNroAlquiler.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     estadoComponentes(TipoVista.Modificar);
                 }
@@ -638,21 +638,21 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (alquiler.Estado == 0)
             {
-                MessageBox.Show("Este alquiler ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este alquiler ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (alquiler.Estado == 8 || alquiler.Estado == 9)//los estados de aqui todavía están por definir
             {
-                MessageBox.Show("Este alquiler no se puede anular", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este alquiler no se puede anular", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular este alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular este alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     alquiler.Estado = 0;
                     alquilerDA.AnularAlquiler(alquiler,this.nombreUsuario);
-                    MessageBox.Show("Se anulo el Alquiler N° :" + alquiler.IdAlquiler, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se anulo el Alquiler N° :" + alquiler.IdAlquiler, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     estadoComponentes(TipoVista.Anular);
                 }
             }
@@ -758,7 +758,7 @@ namespace Apolo
 
                         if (!error)
                         {
-                            MessageBox.Show("Hubo error en agregar las licencias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Hubo error en agregar las licencias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
 
@@ -767,7 +767,7 @@ namespace Apolo
                             alquiler.Detalles[indice].Laptop.Licencias.Add(licenciaTraido);
                         }
 
-                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
                         //dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
                         dgvLicencias.DataSource = tablaLicencia;
@@ -780,7 +780,7 @@ namespace Apolo
         private void btnCaducidadLicencia_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Poner en caducidad esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Poner en caducidad esta licencia", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int licTempId = -1;
                 vistaLicencias.ClearColumnsFilter();
@@ -805,7 +805,7 @@ namespace Apolo
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario, 0);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en poner en caducidad esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en poner en caducidad esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     int indiceLC = 0;
@@ -831,7 +831,7 @@ namespace Apolo
 
                     alquiler.Detalles[indiceLC].Laptop.Licencias.RemoveAt(indiceLic);
 
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
                     //dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
                     dgvLicencias.DataSource = tablaLicencia;
@@ -842,7 +842,7 @@ namespace Apolo
         private void btnEliminarLicencia_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
 
                 int licTempId = -1;
@@ -869,7 +869,7 @@ namespace Apolo
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario, 1);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en eliminar esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en eliminar esta licencia, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     int indiceLC = 0;
@@ -895,7 +895,7 @@ namespace Apolo
 
                     alquiler.Detalles[indiceLC].Laptop.Licencias.RemoveAt(indiceLic);
 
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaLicencia = alquilerDA.ListarLaptopLicencia(artTemp.IdLC);
                     //dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
                     dgvLicencias.DataSource = tablaLicencia;
@@ -906,7 +906,7 @@ namespace Apolo
         
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir el Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir el Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -939,13 +939,13 @@ namespace Apolo
                         releaseObject(libros_trabajo);
                         aplicacion.Quit();
                         releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }
@@ -1122,7 +1122,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {
@@ -1191,7 +1191,7 @@ namespace Apolo
 
         private void dgvDiscos_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
 
@@ -1243,11 +1243,11 @@ namespace Apolo
                     error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error, no se pudo eliminar este disco, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     alquiler.Detalles[indice].Laptop.Discos = discos;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
                     dgvDiscos.DataSource = tablaDisco;
                 }
@@ -1309,11 +1309,11 @@ namespace Apolo
 
                             if (!error)
                             {
-                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                MessageBox.Show("Hubo error en agregar los discos seleccionados, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                                 return;
                             }
 
-                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                             tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
                             dgvDiscos.DataSource = tablaDisco;
                         }
@@ -1321,7 +1321,7 @@ namespace Apolo
                 }
                 else
                 {
-                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("No puedes agregar más de " + this.maxCantidadDiscos + " discos duros", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
 
@@ -1330,7 +1330,7 @@ namespace Apolo
         private void btnGuardarDisco_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus discos actuales", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
 
@@ -1373,18 +1373,18 @@ namespace Apolo
                     int maxCant = alquilerDA.ValidarCantidadLaptopDiscos(artTemp.IdLC, discos);
                     if (maxCant == -1)
                     {
-                        MessageBox.Show("Uno de los discos tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Uno de los discos tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
 
                     error = alquilerDA.ActualizarLaptopDisco(artTemp.IdLC, discos, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     alquiler.Detalles[indice].Laptop.Discos = discos;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
             }
         }
@@ -1454,7 +1454,7 @@ namespace Apolo
 
         private void dgvMemoria_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
 
@@ -1512,11 +1512,11 @@ namespace Apolo
                     error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error, no se pudo eliminar esta memoria, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     alquiler.Detalles[indice].Laptop.Memorias = memorias;
-                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se eliminó la pieza seleccionada", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
                     dgvMemoria.DataSource = tablaMemoria;
                 }
@@ -1578,11 +1578,11 @@ namespace Apolo
 
                         if (!error)
                         {
-                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Hubo error en agregar las memorias seleccionadas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                             return;
                         }
 
-                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         tablaMemoria = alquilerDA.ListarLaptopMemoria(artTemp.IdLC);
                         dgvMemoria.DataSource = tablaMemoria;
                     }
@@ -1594,7 +1594,7 @@ namespace Apolo
         private void btnGuardarMemoria_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Guardar los cambios hechos en tus memorias actuales", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 vistaMemorias.ClearColumnsFilter();
@@ -1636,18 +1636,18 @@ namespace Apolo
                     int maxCant = alquilerDA.ValidarCantidadLaptopMemoria(artTemp.IdLC, memorias);
                     if (maxCant == -1)
                     {
-                        MessageBox.Show("Uno de las memorias tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Uno de las memorias tiene una cantidad mayor al stock actual", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
 
                     error = alquilerDA.ActualizarLaptopMemoria(artTemp.IdLC, memorias, this.nombreUsuario);
                     if (!error)
                     {
-                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el cambio de piezas, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     alquiler.Detalles[indice].Laptop.Memorias = memorias;
-                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se realizó el cambio de piezas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
             }
         }
@@ -1745,7 +1745,7 @@ namespace Apolo
 
         private void dgvEquipos_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 vistaEquipos.ClearColumnsFilter();

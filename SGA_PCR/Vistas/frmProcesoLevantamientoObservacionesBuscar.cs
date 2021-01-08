@@ -91,7 +91,7 @@ namespace Apolo
                 {
                     if (cmbCliente.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar un Levantamiento de Observacion si no\nha seleccionado un Cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Levantamiento de Observacion si no\nha seleccionado un Cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -109,7 +109,7 @@ namespace Apolo
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de Levantamiento no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de Levantamiento no es valido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -145,7 +145,7 @@ namespace Apolo
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun Levantamiento de Observacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun Levantamiento de Observacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }

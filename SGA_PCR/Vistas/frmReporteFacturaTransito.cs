@@ -78,7 +78,7 @@ namespace Apolo
         private void btnExportar_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -93,7 +93,7 @@ namespace Apolo
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion | Si tiene un reporte de FACTURAS EN TRANSITO ya abierto, cierrelo.", " ◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion | Si tiene un reporte de FACTURAS EN TRANSITO ya abierto, cierrelo.", " ◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }

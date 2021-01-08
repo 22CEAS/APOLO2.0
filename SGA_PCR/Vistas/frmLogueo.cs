@@ -56,7 +56,7 @@ namespace Apolo
             
             if (txtUsername.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
             {
-                MessageBox.Show("EL USUARIO Y CONTRASEÑA NO PUEDEN SER VACIOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("EL USUARIO Y CONTRASEÑA NO PUEDEN SER VACIOS", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -66,7 +66,7 @@ namespace Apolo
                 }
                 else
                 {
-                    MessageBox.Show("USUARIO O CONTRASEÑA ERRONEOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("USUARIO O CONTRASEÑA ERRONEOS", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
                         

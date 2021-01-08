@@ -255,7 +255,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 cambios = new BindingList<CambioRazonSocial>();
@@ -267,26 +267,26 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
             if (cmbClienteNuevo.SelectedValue == null)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
             if (cmbSucursalNuevo.SelectedValue == null)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return false;
             }
 
             if (cambios.Count == 0)
             {
-                MessageBox.Show("No se puede grabar si no hay ningun equipo.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no hay ningun equipo.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return false;
             }
@@ -314,18 +314,18 @@ namespace Apolo
             {
                 ObtenerDatos();
 
-                if (MessageBox.Show("Estas seguro que deseas guardar este proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas guardar este proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int error = 0;
                     error = cambioRazonSocialDA.InsertarCambioRazonSocial(cambios,IdClienteActual,IdClienteNuevo,IdClienteSucursal,NumeroDniRucActual,NumeroDniRucNuevo, this.nombreUsuario);
 
                     if (error == 0)
                     {
-                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
 
-                    MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
@@ -335,7 +335,7 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -369,7 +369,7 @@ namespace Apolo
             vistaLaptops.ClearColumnsFilter();
             if (vistaLaptops.RowCount > 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Eliminar este equipo de tu detalle", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Eliminar este equipo de tu detalle", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int equipoID = -1;
                     int h = 0;

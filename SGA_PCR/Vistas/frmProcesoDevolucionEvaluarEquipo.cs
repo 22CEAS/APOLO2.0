@@ -46,7 +46,7 @@ namespace Apolo
             this.observacion = this.observacion.Trim();
             if ((rbtnCobrarSi.Checked || rbtnDanoSi.Checked) && this.observacion.Length==0)//Si entra es porque se ha seleccionado almenos solo
             {
-                MessageBox.Show("Debe escribir una referencia en el cuadro de observación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe escribir una referencia en el cuadro de observación", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (rbtnCobrarSi.Checked) this.cobrado = 1;

@@ -269,7 +269,7 @@ namespace Apolo
 
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -280,7 +280,7 @@ namespace Apolo
             {
                 if (rev.FechaIniContrato > rev.FechaFinContrato)
                 {
-                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return;
                 }
@@ -289,7 +289,7 @@ namespace Apolo
 
             if (renovaciones.Count == 0)
             {
-                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -297,29 +297,29 @@ namespace Apolo
             
             if (cmbTipoSalida.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un tipo de renovación.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un tipo de renovación.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
             else if (Convert.ToInt32(cmbTipoSalida.SelectedValue.ToString()) != this.idPalabra && DocumentoReferencia.Length == 0)
             {
-                MessageBox.Show("Si se ha seleccionado Orden de Compra o Contrato ingrese un documento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("Si se ha seleccionado Orden de Compra o Contrato ingrese un documento", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
 
 
-            if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Renovación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Renovación", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error = 0;
                 error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario,DocumentoReferencia,IdSalidaTipo, NombreSalidaTipo);
 
                 if (error == 0)
                 {
-                    MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
-                MessageBox.Show("Se guradó las renovaciones", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Se guradó las renovaciones", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
 
@@ -327,7 +327,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 renovaciones = new BindingList<Renovacion>();
@@ -339,7 +339,7 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -374,7 +374,7 @@ namespace Apolo
         {
             if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     bool error;
                     renovacionTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[5])).Value.ToString());

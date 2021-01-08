@@ -323,7 +323,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 devolucion = new Devolucion();
@@ -354,7 +354,7 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Devolución N° :" + txtNroDevolucion.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Modificar\n" + "la Devolución N° :" + txtNroDevolucion.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Modificar);
             }
@@ -368,7 +368,7 @@ namespace Apolo
 
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -379,37 +379,37 @@ namespace Apolo
 
             if (devolucion.Detalles.Count == 0)
             {
-                MessageBox.Show("No se puede grabar un Devolución si no\nseleccionas ninguna laptop.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Devolución si no\nseleccionas ninguna laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             if (devolucion.GuiaDevolucion.Length == 0)
             {
-                MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar una guia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar una guia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
             if (cmbSede.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado una sede correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado una sede correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
 
             if (numDevolucion.Length == 0)
             {
-                if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Devolución", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idDevolucion=0;
                     idDevolucion = devolucionDA.InsertarDevolucion(devolucion, this.nombreUsuario);
 
                     if (idDevolucion == 0)
                     {
-                        MessageBox.Show("Hubo error en Registrar la Devolución, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en Registrar la Devolución, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    MessageBox.Show("Se guardó la devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó la devolución", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     devolucion.IdDevolucion = idDevolucion;
                     txtNroDevolucion.Text = idDevolucion.ToString();
                     estadoComponentes(TipoVista.Guardar);
@@ -418,7 +418,7 @@ namespace Apolo
             else
             {
                 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     devolucionDA.ModificarDevolucion(devolucion, this.nombreUsuario);
                     MessageBox.Show("Se Modifico la Devolución N° :" + txtNroDevolucion.Text + " con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -433,7 +433,7 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -506,7 +506,7 @@ namespace Apolo
 
         private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Devolución", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
                 if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
@@ -539,12 +539,12 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (devolucion.Estado == 0)
             {
-                MessageBox.Show("Esta devolucion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esta devolucion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular esta devolucion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular esta devolucion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     devolucion.Estado = 0;
                     devolucionDA.AnularDevolucion(devolucion, this.nombreUsuario);
@@ -558,7 +558,7 @@ namespace Apolo
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro que desea Imprimir la Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir la Devolución", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -591,13 +591,13 @@ namespace Apolo
                         releaseObject(libros_trabajo);
                         aplicacion.Quit();
                         releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }
@@ -711,7 +711,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {

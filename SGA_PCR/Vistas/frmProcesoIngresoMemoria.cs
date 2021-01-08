@@ -72,7 +72,7 @@ namespace Apolo
         public BindingList<Memoria> MEMORIAS { get => memorias; set => memorias = value; }
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Agregar estas memorias", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Agregar estas memorias", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 if (llenarListaMemorias())//Si entra es porque se ha seleccionado almenos solo
                 {

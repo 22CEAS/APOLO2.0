@@ -105,7 +105,7 @@ namespace Apolo
                 {
                     if (cmbCodigoLC.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un codigo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un codigo correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -118,7 +118,7 @@ namespace Apolo
                 {
                     if (cmbResponsable.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un responsable correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un responsable correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -144,7 +144,7 @@ namespace Apolo
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de Reparacion no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de Reparacion no es valido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -181,7 +181,7 @@ namespace Apolo
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ninguna Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ninguna Reparacion", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }

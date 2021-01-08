@@ -206,14 +206,14 @@ namespace Apolo
         {
             if (cmbFactura.SelectedValue == null)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
 
             if (cmbAccion.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una acción a realizar.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una acción a realizar.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -223,7 +223,7 @@ namespace Apolo
             aux = aux.Trim();
             if (aux.Length == 0)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de la Nota de Crédito.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se a escrito el documento de la Nota de Crédito.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -233,7 +233,7 @@ namespace Apolo
             aux = aux.Trim();
             if (aux.Length == 0)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se a escrito una observación.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se a escrito una observación.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -252,7 +252,7 @@ namespace Apolo
             }
             if (flag)
             {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado al menos una laptop.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado al menos una laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -325,18 +325,18 @@ namespace Apolo
             if (validarDatos())
             {
                 ObtenerDatos();
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int error = 0;
                     error = facturaDA.RegistrarNC(facturas, this.nombreUsuario, accion);
 
                     if (error == 0)
                     {
-                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
 
-                    MessageBox.Show("Se registró la nota de crédito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se registró la nota de crédito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
                     estadoComponentes(TipoVista.Guardar);
                 }
@@ -350,7 +350,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 estadoComponentes(TipoVista.Limpiar);
         }
 

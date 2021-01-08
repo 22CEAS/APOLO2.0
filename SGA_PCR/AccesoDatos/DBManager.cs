@@ -35,7 +35,7 @@ namespace AccesoDatos
         //PRUEBAS SERVIDOR 16gb
         //public static string cadena = "server=" + "154.16.171.82" + "; user=root; password=leasein1; port=16258; database=" + "leasein_16gb" + "; SslMode=None;Connect Timeout=300000";
 
-        public static string cadena = "server=" + "209.45.53.41" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=300000";
+        //public static string cadena = "server=" + "209.45.53.41" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=300000";
         public MySqlConnection conexion = null;
         public MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
@@ -57,7 +57,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             finally
@@ -94,7 +94,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
             finally
@@ -126,7 +126,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             finally
@@ -151,7 +151,7 @@ namespace AccesoDatos
             catch (Exception ex)
             {
                 //throw new Exception(ex.Message);
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return null;
             }
             finally
@@ -174,7 +174,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return null;
             }
             finally
@@ -203,7 +203,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return tabla;
             }
             finally
@@ -225,7 +225,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
             finally

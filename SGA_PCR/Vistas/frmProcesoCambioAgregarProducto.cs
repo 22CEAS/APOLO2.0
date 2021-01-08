@@ -87,8 +87,8 @@ namespace Apolo
             }
             else
             {
-                if (cant == 0) MessageBox.Show("Tiene que seleccionar una laptop", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (cant > 0) MessageBox.Show("No puedes seleccionar más de una laptop", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cant == 0) MessageBox.Show("Tiene que seleccionar una laptop", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cant > 0) MessageBox.Show("No puedes seleccionar más de una laptop", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -237,7 +237,7 @@ namespace Apolo
 
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar una Corte de Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar una Corte de Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -248,7 +248,7 @@ namespace Apolo
             {
                 if (rev.FechaIniContrato > rev.FechaFinContrato)
                 {
-                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return;
                 }
@@ -257,30 +257,30 @@ namespace Apolo
 
             if (renovaciones.Count == 0)
             {
-                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             //if (DocumentoReferencia.Length == 0)
             //{
-            //    MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar un documento de referencia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+            //    MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar un documento de referencia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
             //                MessageBoxIcon.Error);
             //    return;
             //}
 
-            if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Corte de Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Corte de Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error = 0;
                 error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario, DocumentoReferencia);
 
                 if (error == 0)
                 {
-                    MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
                 //enviarCorreo();
-                MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
 
@@ -419,7 +419,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 renovaciones = new BindingList<CorteAlquiler>();
@@ -436,7 +436,7 @@ namespace Apolo
         {
             if (cmbCliente.SelectedValue == null)
             {
-                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
@@ -474,7 +474,7 @@ namespace Apolo
         {
             if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     bool error;
                     renovacionTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[5])).Value.ToString());

@@ -223,7 +223,7 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (ingreso.MonedaTipo == "DOLARES" && ingreso.MontoCambio == 0)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica cuanto es el tipo de cambio.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica cuanto es el tipo de cambio.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return true;
             }
@@ -232,14 +232,14 @@ namespace Apolo
                 && ingreso.DetallesTablets.Count == 0 && ingreso.DetallesMonitores.Count == 0
                 && ingreso.DetallesImpresoras.Count == 0 && ingreso.DetallesProyectores.Count == 0)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nexisten laptops, memorias, disco o licencias seleccionadas.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nexisten laptops, memorias, disco o licencias seleccionadas.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return true;
             }
 
             if (ingreso.Factura.Length == 0)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si\nel número de factura está vacia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si\nel número de factura está vacia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return true;
             }
@@ -248,7 +248,7 @@ namespace Apolo
             {
                 if (ingreso.Discos[i].Precio == 0.00)
                 {
-                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de los Discos es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de los Discos es 0", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return true;
                 }
@@ -259,7 +259,7 @@ namespace Apolo
             {
                 if (ingreso.Memorias[i].Precio == 0.00)
                 {
-                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Memorias es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Memorias es 0", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return true;
                 }
@@ -270,13 +270,13 @@ namespace Apolo
             {
                 if (ingreso.Licencias[i].Precio == 0.00)
                 {
-                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Licencias es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Licencias es 0", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return true;
                 }
                 if (ingreso.Licencias[i].Clave.Length == 0)
                 {
-                    MessageBox.Show("No se puede grabar un Ingreso si una de las claves de las Licencias está vacía.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                    MessageBox.Show("No se puede grabar un Ingreso si una de las claves de las Licencias está vacía.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                     return true;
                 }
@@ -689,7 +689,7 @@ namespace Apolo
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que deseas cancelar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 estadoComponentes(TipoVista.Limpiar);
                 ingreso = new Ingreso();
@@ -708,12 +708,12 @@ namespace Apolo
         {
             if (ingreso.Estado == 7 || ingreso.Estado == 0)//en teoría 7 debería ser finalizado
             {
-                MessageBox.Show("Este ingreso ya no se puede modificar", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este ingreso ya no se puede modificar", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Ingreso N° :" + txtNroIngreso.Text, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Ingreso N° :" + txtNroIngreso.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     estadoComponentes(TipoVista.Modificar);
                 }
@@ -725,27 +725,27 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             if (ingreso.Estado == 0)
             {
-                MessageBox.Show("Este ingreso ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este ingreso ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (ingreso.Estado == 8 || ingreso.Estado == 9)//los estados de aqui todavía están por definir
             {
-                MessageBox.Show("Este ingreso no se puede anular", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este ingreso no se puede anular", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular este ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular este ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     ingreso.Estado = 0;
                     int error = ingresoDA.AnularIngreso(ingreso, this.nombreUsuario);
                     if (error == 0)
                     {
-                        MessageBox.Show("Se anulo el Ingreso N° :" + ingreso.IdIngreso, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se anulo el Ingreso N° :" + ingreso.IdIngreso, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Este ingreso no se puede anular. Contactese con el área de soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Este ingreso no se puede anular. Contactese con el área de soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     estadoComponentes(TipoVista.Anular);
                 }
@@ -755,7 +755,7 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir el Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
@@ -788,13 +788,13 @@ namespace Apolo
                         releaseObject(libros_trabajo);
                         aplicacion.Quit();
                         releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 Cursor.Current = Cursors.Default;
             }
@@ -1510,7 +1510,7 @@ namespace Apolo
             catch (Exception ex)
             {
                 obj = null;
-                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
             {
@@ -1565,7 +1565,7 @@ namespace Apolo
 
         private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int detTempId = -1;
                 vistaLaptops.ClearColumnsFilter();
@@ -1608,28 +1608,28 @@ namespace Apolo
             string numIngreso = txtNroIngreso.Text;
             if (cmbProveedor.SelectedValue == null)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }
 
             if (cmbTipoIngreso.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de ingreso.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de ingreso.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             if (cmbMonedaTipo.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de moneda.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de moneda.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
 
             if (cmbSede.SelectedIndex == -1)
             {
-                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica la sede.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica la sede.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 return;
             }
@@ -1649,7 +1649,7 @@ namespace Apolo
 
             if (numIngreso.Length == 0)
             {
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
 
                     int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
@@ -1657,7 +1657,7 @@ namespace Apolo
 
                     if (idIngreso == -1)
                     {
-                        MessageBox.Show("Hubo error en Registrar el Ingreso, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Hubo error en Registrar el Ingreso, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
                     for (int i = 0; i < ingreso.Detalles.Count; i++)
@@ -1695,7 +1695,7 @@ namespace Apolo
                     dgvProyectores.DataSource = ingreso.DetallesProyectores;
 
 
-                    MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     ingreso.IdIngreso = idIngreso;
                     txtNroIngreso.Text = idIngreso.ToString();
                     estadoComponentes(TipoVista.Guardar);
@@ -1703,7 +1703,7 @@ namespace Apolo
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     ingresoDA.ModificarIngreso(ingreso, this.nombreUsuario);
                     for (int i = 0; i < ingreso.Detalles.Count; i++)
@@ -1740,7 +1740,7 @@ namespace Apolo
                     }
                     dgvProyectores.DataSource = ingreso.DetallesProyectores;
 
-                    MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
@@ -1900,7 +1900,7 @@ namespace Apolo
         {
             try
             {
-                if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     vistaLicencias.ClearColumnsFilter();
                     int detTempId = -1;
@@ -2055,7 +2055,7 @@ namespace Apolo
 
         private void dgvMemoria_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta memoria", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
 
                 vistaMemoria.ClearColumnsFilter();
@@ -2187,7 +2187,7 @@ namespace Apolo
         private void dgvDiscos_DoubleClick(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar este disco", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 vistaDiscos.ClearColumnsFilter();
 
@@ -2333,7 +2333,7 @@ namespace Apolo
 
         private void dgvTablets_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int detTempId = -1;
                 vistaTablets.ClearColumnsFilter();
@@ -2492,7 +2492,7 @@ namespace Apolo
 
         private void dgvMonitores_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
 
                 int detTempId = -1;
@@ -2638,7 +2638,7 @@ namespace Apolo
 
         private void dgvImpresoras_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int detTempId = -1;
                 vistaImpresoras.ClearColumnsFilter();
@@ -2784,7 +2784,7 @@ namespace Apolo
 
         private void dgvProyectores_DoubleClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta detalle de Ingreso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int detTempId = -1;
                 vistaProyectores.ClearColumnsFilter();

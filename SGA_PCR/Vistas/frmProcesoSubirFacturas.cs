@@ -123,7 +123,7 @@ namespace Apolo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
         }
@@ -551,7 +551,7 @@ namespace Apolo
         public bool GrabarFactura()
         {
             Validar(2);
-            MessageBox.Show("Se guardó las listas de facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Se guardó las listas de facturas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             return true;
         }
 
@@ -559,7 +559,7 @@ namespace Apolo
         {
             if (facturas.Count > 0)
             {
-                if (MessageBox.Show("Estas seguro que desea Guardar las facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Guardar las facturas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     giftCarga.Enabled = true;
                     giftCarga.Visible = true;
@@ -586,7 +586,7 @@ namespace Apolo
         public bool ValidarFactura()
         {
             Validar(1);
-            MessageBox.Show("Se terminó la validación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Se terminó la validación", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             return true;
         }
 
@@ -594,7 +594,7 @@ namespace Apolo
         {
             if (facturas.Count > 0)
             {
-                if (MessageBox.Show("Estas seguro que desea Validar las facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Validar las facturas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
 
                     giftCarga.Enabled = true;
@@ -648,7 +648,7 @@ namespace Apolo
             vista.OptionsSelection.MultiSelect = true;
             vista.RefreshData();
 
-            MessageBox.Show("Se realizó la busquedad", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Se realizó la busquedad", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             return true;
         }
 
@@ -657,7 +657,7 @@ namespace Apolo
 
             if (facturas.Count > 0)
             {
-                if (MessageBox.Show("Estas seguro que desea realizar el Buscar V en estas facturas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea realizar el Buscar V en estas facturas", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     giftCarga.Enabled = true;
                     giftCarga.Visible = true;

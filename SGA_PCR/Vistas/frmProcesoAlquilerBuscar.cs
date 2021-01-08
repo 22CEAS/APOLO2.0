@@ -108,7 +108,7 @@ namespace Apolo
                 {
                     if (cmbCliente.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -120,7 +120,7 @@ namespace Apolo
                 {
                     if (cmbKam.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un KAM correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un KAM correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -146,7 +146,7 @@ namespace Apolo
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de alquiler no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de alquiler no es valido", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -180,7 +180,7 @@ namespace Apolo
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }
