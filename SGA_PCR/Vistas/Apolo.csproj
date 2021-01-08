@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActuaizarCortesAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActuaizarCortesAlquiler.Designer.cs">
+      <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="await.cs" />
     <Compile Include="frmArchivoAuxiliar.cs">
       <SubType>Form</SubType>
@@ -534,6 +540,9 @@
     <Compile Include="TEST_MENU_PRINCIPAL.Designer.cs">
       <DependentUpon>TEST_MENU_PRINCIPAL.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActuaizarCortesAlquiler.resx">
+      <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
