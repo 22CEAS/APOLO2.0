@@ -191,7 +191,7 @@ namespace Apolo
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        public void EnviarCodigo(string correo, out string codigo, out int idUsuario)
+        public void EnviarCodigo(string correo, string body, out string codigo, out int idUsuario)
         {
             
             idUsuario = 1;
@@ -204,24 +204,18 @@ namespace Apolo
 
             //Direccion de correo electronico a la que queremos enviar el mensaje
             mmsg.To.Add(correo);
+            mmsg.CC.Add("carlos.arango@leasein.pe");
 
             //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
 
             //Asunto
-            mmsg.Subject = "Recuperación de la contraseña";
+            mmsg.Subject = "Corte de Alquiler";
             mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
 
             //Direccion de correo electronico que queremos que reciba una copia del mensaje
             //mmsg.Bcc.Add("lucet.lp2@gmail.com"); //Opcional
 
             //Cuerpo del Mensaje
-            string body = @"<style>
-                        h1{color:dodgerblue;}
-                        h2{color:darkorange;}
-                        </style>
-                        <h1>Este es el body del correo</h1></br>
-                        <h2>Este es el segundo parrafo</h2>
-                        ";
             mmsg.Body = body;
             mmsg.BodyEncoding = System.Text.Encoding.UTF8;
             mmsg.IsBodyHtml = true; //Si no queremos que se envíe como HTML
@@ -270,8 +264,55 @@ namespace Apolo
         {
             int idUsuario;
             string codigo;
+            string body = @"<html>
+                            <head>
+                            <style>
+                            table {
+                              width:100%;
+                            }
+                            table, th, td {
+                              border: 1px solid black;
+                              border-collapse: collapse;
+                            }
+                            th, td {
+                              padding: 15px;
+                              text-align: left;
+                            }
+                            #t01 tr:nth-child(even) {
+                              background-color: #eee;
+                            }
+                            #t01 tr:nth-child(odd) {
+                             background-color: #fff;
+                            }
+                            #t01 th {
+                              background-color: orange;
+                              color: white;
+                            }
+                            </style>
+                            </head>
+                            <body>
 
-            EnviarCodigo("carlos.arango@leasein.pe", out codigo, out idUsuario);
+                        <h1>Datalle sobre el recojo de los equipos</h1></br>
+
+                        <table id='t01'>
+                          <tr>
+                            <th>Código Equipo</th>
+                            <th>Tipo Equipo</th>
+                            <th>Fecha Corte</th>
+                          </tr>
+                        ";
+            string cadena = "";
+            foreach(LC laptop in laptops)
+            {
+                cadena += "<tr>";
+                cadena += "<td>" + laptop.Codigo + "</td>";
+                cadena += "<td>" + "LAPTOP" + "</td>";
+                cadena += "<td>" + "2021/01/08" + "</td>";
+                cadena += "</tr>";
+            }
+            cadena += "</table> </ body > </ html > ";
+            body += cadena;
+            EnviarCodigo("c.arango@pucp.pe",body, out codigo, out idUsuario);
             //if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             //{
             //    Cursor.Current = Cursors.WaitCursor;

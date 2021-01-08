@@ -279,10 +279,142 @@ namespace Apolo
                     MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
+                //enviarCorreo();
                 MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
 
+        }
+        public void EnviarCodigo(string correo, string body, out string codigo, out int idUsuario)
+        {
+
+            idUsuario = 1;
+            codigo = "123456";
+
+            /*-------------------------MENSAJE DE CORREO----------------------*/
+
+            //Creamos un nuevo Objeto de mensaje
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
+
+            //Direccion de correo electronico a la que queremos enviar el mensaje
+            mmsg.To.Add(correo);
+            mmsg.CC.Add("carlos.arango@leasein.pe");
+            mmsg.CC.Add("steven.mignardi@leasein.pe ");
+
+            //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
+
+            //Asunto
+            mmsg.Subject = "Corte de Alquiler";
+            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            //Direccion de correo electronico que queremos que reciba una copia del mensaje
+            //mmsg.Bcc.Add("lucet.lp2@gmail.com"); //Opcional
+
+            //Cuerpo del Mensaje
+            mmsg.Body = body;
+            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+            mmsg.IsBodyHtml = true; //Si no queremos que se envíe como HTML
+
+            //Correo electronico desde la que enviamos el mensaje
+            mmsg.From = new System.Net.Mail.MailAddress("apolo.leasein@gmail.com");
+
+            /*-------------------------CLIENTE DE CORREO----------------------*/
+
+            //Creamos un objeto de cliente de correo
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+
+            //Hay que crear las credenciales del correo emisor
+            cliente.UseDefaultCredentials = false;
+            cliente.Credentials =
+                new System.Net.NetworkCredential("apolo.leasein@gmail.com", "Apolo2021");
+            //https://www.google.com/settings/security/lesssecureapps
+            //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
+
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+
+
+            cliente.Host = "smtp.gmail.com"; //Para Gmail "smtp.gmail.com";
+
+            cliente.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+
+            /*-------------------------ENVIO DE CORREO----------------------*/
+
+            try
+            {
+                //Enviamos el mensaje      
+                cliente.Send(mmsg);
+                return;
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                MessageBox.Show(ex.Message);
+                //Aquí gestionamos los errores al intentar enviar el correo
+                return;
+
+            }
+        }
+        private void enviarCorreo()
+        {
+            int i = cmbCliente.SelectedIndex;
+            string razonSocial = tablaCliente.Rows[i]["nombre_razonSocial"].ToString();
+
+            int idUsuario;
+            string codigo;
+            string body = @"<html>
+                            <head>
+                            <style>
+                            table {
+                              width:75%;
+                            }
+                            table, th, td {
+                              border: 1px solid black;
+                              border-collapse: collapse;
+                            }
+                            th, td {
+                              padding: 15px;
+                              text-align: center;
+                            }
+                            #t01 tr:nth-child(even) {
+                              background-color: #eee;
+                            }
+                            #t01 tr:nth-child(odd) {
+                             background-color: #fff;
+                            }
+                            #t01 th {
+                              background-color: orange;
+                              color: white;
+                            }
+                            </style>
+                            </head>
+                            <body>
+
+                        <h3>Buenas estimad@,</h3></br>
+                        <h3>A continuación se detalla la información sobre el corte de los equipos.</h3></br>
+                        <h3>Cliente: "
+                        + razonSocial +
+                        @"</h3></br>
+                        <table id='t01'>
+                          <tr>
+                            <th>Código Equipo</th>
+                            <th>Tipo Equipo</th>
+                            <th>Fecha Corte</th>
+                          </tr>
+                        ";
+            string cadena = "";
+            foreach (CorteAlquiler renovacion in renovaciones)
+            {
+                cadena += "<tr>";
+                cadena += "<td>" + renovacion.CodigoLC + "</td>";
+                cadena += "<td>" + "LAPTOP" + "</td>";
+                cadena += "<td>" + renovacion.FechaFinContrato.ToShortDateString() + "</td>";
+                cadena += "</tr>";
+            }
+            cadena += @"</table> 
+                        </ body > 
+                        </ html > ";
+            body += cadena;
+            EnviarCodigo("andree.garcia@leasein.pe", body, out codigo, out idUsuario);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

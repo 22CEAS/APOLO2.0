@@ -17,7 +17,7 @@ namespace Apolo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmProcesoDevolucion());
-            Application.Run(new frmReporteInventarioPrueba());
+            Application.Run(new frmLogueo());
         }
     }
 }
