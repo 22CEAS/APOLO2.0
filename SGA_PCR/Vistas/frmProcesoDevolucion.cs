@@ -719,12 +719,9 @@ namespace Apolo
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         int posY = 0;
         int posX = 0;
+
         private void pnlD_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -739,11 +736,10 @@ namespace Apolo
             }
         }
 
-        private void frmProcesoDevolucion_Load(object sender, EventArgs e)
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-      
     }
 }
