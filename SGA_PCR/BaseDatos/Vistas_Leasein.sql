@@ -2686,3 +2686,33 @@ From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
 		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
 where d.fueDevuelto=0 and d.estado=4
 ORDER BY CodigoEquipo ;
+	
+--==========================Steven Reporte de Alquiler==============================
+
+DROP view IF EXISTS `vista_reportes_alquileres`;
+create view vista_reportes_alquileres as
+SELECT 
+sd.idSalida as IdSalida,
+s.idCliente as IdCliente,
+s.IdSucursal as IdSucursal,
+s.rucDni as RucDni,
+c.nombre_razonSocial as Cliente,
+sd.IdLC as IdLC,
+lc.codigo as Codigo,
+s.fecSalida as FecSalida,
+sd.fecIniContrato as FecIniContrato,
+sd.fecFinContrato as FecFinContrato,
+sd.guiaSalida as GuiaSalida,
+sd.estado as Estado,
+e.nombreEstado as NombreEstado,
+if(sd.fueDevuelto=1,"SI","NO") as FueDevuelto,
+d.fechaDevolucion as FechaDevolucion,
+d.guiaDevolucion as GuiaDevolucion,
+if(sd.corteAlquiler=1,"SI","NO") as CorteAlquiler
+FROM salida_det sd
+LEFT JOIN salida s ON s.idSalida=sd.idSalida
+LEFT JOIN estados e ON e.idEstado=sd.estado
+LEFT JOIN laptop_cpu lc ON lc.idLC=sd.IdLC
+LEFT JOIN cliente c ON c.idCliente=s.idCliente
+LEFT JOIN devolucion_det dd ON dd.idSalidaDet=sd.idSalidaDet and dd.idLC=sd.idLC
+LEFT JOIN devolucion d ON d.idDevolucion=dd.idDevolucion;

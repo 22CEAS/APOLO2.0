@@ -153,11 +153,13 @@ namespace Apolo
                 laptop.Discos = null;
                 laptop.Memorias = null;
 
-                laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
+                //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
 
                 laptops.Add(laptop);
                 rec++;
             }
+
+            dgvLaptops.DataSource = laptops;
 
             this.cantGeneraciones = tablaProcesadoresGeneracion.Rows.Count;
             this.cantModeloProcesador = tablaProcesadoresModelos.Rows.Count;
