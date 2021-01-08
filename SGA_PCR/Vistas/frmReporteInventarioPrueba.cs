@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace Apolo
 {
@@ -185,51 +186,134 @@ namespace Apolo
 
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        public void EnviarCodigo(string correo, out string codigo, out int idUsuario)
+        {
+            
+            idUsuario = 1;
+            codigo = "123456";
+
+            /*-------------------------MENSAJE DE CORREO----------------------*/
+
+            //Creamos un nuevo Objeto de mensaje
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
+
+            //Direccion de correo electronico a la que queremos enviar el mensaje
+            mmsg.To.Add(correo);
+
+            //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
+
+            //Asunto
+            mmsg.Subject = "Recuperación de la contraseña";
+            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            //Direccion de correo electronico que queremos que reciba una copia del mensaje
+            //mmsg.Bcc.Add("lucet.lp2@gmail.com"); //Opcional
+
+            //Cuerpo del Mensaje
+            string body = @"<style>
+                        h1{color:dodgerblue;}
+                        h2{color:darkorange;}
+                        </style>
+                        <h1>Este es el body del correo</h1></br>
+                        <h2>Este es el segundo parrafo</h2>
+                        ";
+            mmsg.Body = body;
+            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+            mmsg.IsBodyHtml = true; //Si no queremos que se envíe como HTML
+
+            //Correo electronico desde la que enviamos el mensaje
+            mmsg.From = new System.Net.Mail.MailAddress("apolo.leasein@gmail.com");
+
+            /*-------------------------CLIENTE DE CORREO----------------------*/
+
+            //Creamos un objeto de cliente de correo
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+
+            //Hay que crear las credenciales del correo emisor
+            cliente.UseDefaultCredentials = false;
+            cliente.Credentials =
+                new System.Net.NetworkCredential("apolo.leasein@gmail.com", "Apolo2021");
+            //https://www.google.com/settings/security/lesssecureapps
+            //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
+
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+
+
+            cliente.Host = "smtp.gmail.com"; //Para Gmail "smtp.gmail.com";
+
+            cliente.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+
+            /*-------------------------ENVIO DE CORREO----------------------*/
+
+            try
+            {
+                //Enviamos el mensaje      
+                cliente.Send(mmsg);
+                return;
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                MessageBox.Show(ex.Message);
+                //Aquí gestionamos los errores al intentar enviar el correo
+                return;
+
+            }
+        }
+
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            int idUsuario;
+            string codigo;
 
-            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                try
-                {
+            EnviarCodigo("carlos.arango@leasein.pe", out codigo, out idUsuario);
+            //if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            //{
+            //    Cursor.Current = Cursors.WaitCursor;
+            //    try
+            //    {
 
-                    SaveFileDialog fichero = new SaveFileDialog();
-                    //fichero.Filter = "Excel (*.xls)|*.xls";
-                    fichero.Filter = "Excel(*.xlsx) | *.xlsx";
-                    fichero.FileName = "Laptops";
-                    if (fichero.ShowDialog() == DialogResult.OK)
-                    {
-                        Excel.Application aplicacion;
-                        Excel.Workbook libros_trabajo;
-                        Excel.Worksheet hoja_pre_alquiler;
+            //        SaveFileDialog fichero = new SaveFileDialog();
+            //        //fichero.Filter = "Excel (*.xls)|*.xls";
+            //        fichero.Filter = "Excel(*.xlsx) | *.xlsx";
+            //        fichero.FileName = "Laptops";
+            //        if (fichero.ShowDialog() == DialogResult.OK)
+            //        {
+            //            Excel.Application aplicacion;
+            //            Excel.Workbook libros_trabajo;
+            //            Excel.Worksheet hoja_pre_alquiler;
 
-                        aplicacion = new Excel.Application();
-                        libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            //            aplicacion = new Excel.Application();
+            //            libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
 
-                        hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
-                        hoja_pre_alquiler.Name = "Laptops";
-                        string cabecera = "Equipos Disponibles";
-                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
+            //            hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
+            //            hoja_pre_alquiler.Name = "Laptops";
+            //            string cabecera = "Equipos Disponibles";
+            //            ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
 
 
-                        ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
+            //            ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
 
-                        libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
-                        libros_trabajo.Close(true);
-                        releaseObject(libros_trabajo);
-                        aplicacion.Quit();
-                        releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+            //            libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
+            //            libros_trabajo.Close(true);
+            //            releaseObject(libros_trabajo);
+            //            aplicacion.Quit();
+            //            releaseObject(aplicacion);
+            //            MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                }
-                Cursor.Current = Cursors.Default;
-            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            //    }
+            //    Cursor.Current = Cursors.Default;
+            //}
         }
 
         public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)
