@@ -204,20 +204,21 @@ namespace Apolo
 
         public bool validarDatos()
         {
+            vistaFacturas.ClearColumnsFilter();
             if (cmbFactura.SelectedValue == null)
             {
                 MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
-
+            //====================================================================================================
             if (cmbAccion.SelectedIndex == -1)
             {
                 MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una acción a realizar.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
-
+            //====================================================================================================
             string aux = "";
             aux = txtReferencia.Text;
             aux = aux.Trim();
@@ -227,7 +228,7 @@ namespace Apolo
                                 MessageBoxIcon.Error);
                 return false;
             }
-
+            //====================================================================================================
             aux = "";
             aux = txtObservación.Text;
             aux = aux.Trim();
@@ -237,10 +238,8 @@ namespace Apolo
                                 MessageBoxIcon.Error);
                 return false;
             }
-
-
+            //====================================================================================================
             bool flag = true;
-            vistaFacturas.ClearColumnsFilter();
             for (int i = 0; i < vistaFacturas.RowCount; i++)
             {
                 bool aux2 = bool.Parse(vistaFacturas.GetRowCellValue(i, "Seleccionar").ToString());
@@ -256,7 +255,46 @@ namespace Apolo
                                 MessageBoxIcon.Error);
                 return false;
             }
+            //====================================================================================================
+            int j = cmbAccion.SelectedIndex;
+            if (j != -1)
+            {
+                string nombreAccion = cmbAccion.Text;
+                if (nombreAccion == accion1)//ANULAR
+                    accion = 1;
+                else if (nombreAccion == accion2)//MODIFICAR
+                    accion = 2;
+            }
+            else
+                this.accion = 0;
+            if (this.accion==2)
+            {
+                for (int i = 0; i < vistaFacturas.RowCount; i++)
+                {
+                    bool aux2 = bool.Parse(vistaFacturas.GetRowCellValue(i, "Seleccionar").ToString());
+                    if (aux2)
+                    {
+                        double TotalSoles = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalSoles").ToString());
+                        double TotalDolares = Double.Parse(vistaFacturas.GetRowCellValue(i, "totalDolares").ToString());
+                        double CostoSoles = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoSoles").ToString());
+                        double CostoDolares = Double.Parse(vistaFacturas.GetRowCellValue(i, "costoDolares").ToString());
 
+                        if (TotalDolares < 0 || TotalSoles < 0 || CostoDolares < 0 || CostoSoles < 0)
+                        {
+                            MessageBox.Show("No se puede realizar el proceso\n si hay un monto negativo.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                        if (TotalDolares == 0 && TotalSoles == 0 && CostoDolares == 0 && CostoSoles == 0)
+                        {
+                            MessageBox.Show("No se puede realizar el proceso\n si todos los montos son 0.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                }
+            }
+            
             return true;
         }
 
@@ -415,8 +453,6 @@ namespace Apolo
             if (nombreAccion == accion1)//ANULAR
             {
                 accion = 1;
-                this.fecIniPago.OptionsColumn.AllowEdit = false;
-                this.fecFinPago.OptionsColumn.AllowEdit = false;
                 this.VentaSoles.OptionsColumn.AllowEdit = false;
                 this.VentaDolares.OptionsColumn.AllowEdit = false;
                 this.CostoSoles.OptionsColumn.AllowEdit = false;
@@ -425,8 +461,6 @@ namespace Apolo
             else if (nombreAccion == accion2)//MODIFICAR
             {
                 accion = 2;
-                this.fecIniPago.OptionsColumn.AllowEdit = true;
-                this.fecFinPago.OptionsColumn.AllowEdit = true;
                 this.VentaSoles.OptionsColumn.AllowEdit = true;
                 this.VentaDolares.OptionsColumn.AllowEdit = true;
                 this.CostoSoles.OptionsColumn.AllowEdit = true;
