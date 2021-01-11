@@ -60,6 +60,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Id Estado";
             this.Estado.FieldName = "Estado";
             this.Estado.Name = "Estado";
@@ -67,6 +69,8 @@
             // 
             // FueDevuelto
             // 
+            this.FueDevuelto.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FueDevuelto.AppearanceHeader.Options.UseBackColor = true;
             this.FueDevuelto.Caption = "Fue Devuelto";
             this.FueDevuelto.FieldName = "FueDevuelto";
             this.FueDevuelto.Name = "FueDevuelto";
@@ -76,6 +80,8 @@
             // 
             // FechaDevolucion
             // 
+            this.FechaDevolucion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaDevolucion.AppearanceHeader.Options.UseBackColor = true;
             this.FechaDevolucion.Caption = "Fecha Devolucion";
             this.FechaDevolucion.FieldName = "FechaDevolucion";
             this.FechaDevolucion.Name = "FechaDevolucion";
@@ -85,6 +91,8 @@
             // 
             // GuiaDevolucion
             // 
+            this.GuiaDevolucion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuiaDevolucion.AppearanceHeader.Options.UseBackColor = true;
             this.GuiaDevolucion.Caption = "Guia Devolucion";
             this.GuiaDevolucion.FieldName = "GuiaDevolucion";
             this.GuiaDevolucion.Name = "GuiaDevolucion";
@@ -150,6 +158,8 @@
             // 
             // IdSalida
             // 
+            this.IdSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdSalida.AppearanceHeader.Options.UseBackColor = true;
             this.IdSalida.Caption = "Id Salida";
             this.IdSalida.FieldName = "IdSalida";
             this.IdSalida.Name = "IdSalida";
@@ -157,6 +167,8 @@
             // 
             // IdCliente
             // 
+            this.IdCliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdCliente.AppearanceHeader.Options.UseBackColor = true;
             this.IdCliente.Caption = "IdCliente";
             this.IdCliente.FieldName = "IdCliente";
             this.IdCliente.Name = "IdCliente";
@@ -164,6 +176,8 @@
             // 
             // IdSucursal
             // 
+            this.IdSucursal.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdSucursal.AppearanceHeader.Options.UseBackColor = true;
             this.IdSucursal.Caption = "IdSucursal";
             this.IdSucursal.FieldName = "IdSucursal";
             this.IdSucursal.Name = "IdSucursal";
@@ -171,6 +185,8 @@
             // 
             // RucDni
             // 
+            this.RucDni.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RucDni.AppearanceHeader.Options.UseBackColor = true;
             this.RucDni.Caption = "Ruc Cliente";
             this.RucDni.FieldName = "RucDni";
             this.RucDni.Name = "RucDni";
@@ -180,6 +196,8 @@
             // 
             // Cliente
             // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
             this.Cliente.Name = "Cliente";
@@ -189,6 +207,8 @@
             // 
             // IdLC
             // 
+            this.IdLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdLC.AppearanceHeader.Options.UseBackColor = true;
             this.IdLC.Caption = "IdLC";
             this.IdLC.FieldName = "IdLC";
             this.IdLC.Name = "IdLC";
@@ -196,6 +216,8 @@
             // 
             // Codigo
             // 
+            this.Codigo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Codigo.AppearanceHeader.Options.UseBackColor = true;
             this.Codigo.Caption = "Codigo";
             this.Codigo.FieldName = "Codigo";
             this.Codigo.Name = "Codigo";
@@ -205,6 +227,8 @@
             // 
             // FecSalida
             // 
+            this.FecSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecSalida.AppearanceHeader.Options.UseBackColor = true;
             this.FecSalida.Caption = "Fecha Traslado";
             this.FecSalida.FieldName = "FecSalida";
             this.FecSalida.Name = "FecSalida";
@@ -214,6 +238,8 @@
             // 
             // FecIniContrato
             // 
+            this.FecIniContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecIniContrato.AppearanceHeader.Options.UseBackColor = true;
             this.FecIniContrato.Caption = "Inicio Plazo Alquiler";
             this.FecIniContrato.FieldName = "FecIniContrato";
             this.FecIniContrato.Name = "FecIniContrato";
@@ -223,6 +249,8 @@
             // 
             // FecFinContrato
             // 
+            this.FecFinContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecFinContrato.AppearanceHeader.Options.UseBackColor = true;
             this.FecFinContrato.Caption = "Fin Plazo Alquiler";
             this.FecFinContrato.FieldName = "FecFinContrato";
             this.FecFinContrato.Name = "FecFinContrato";
@@ -232,6 +260,8 @@
             // 
             // GuiaSalida
             // 
+            this.GuiaSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuiaSalida.AppearanceHeader.Options.UseBackColor = true;
             this.GuiaSalida.Caption = "Guia Salida";
             this.GuiaSalida.FieldName = "GuiaSalida";
             this.GuiaSalida.Name = "GuiaSalida";
@@ -241,6 +271,8 @@
             // 
             // NombreEstado
             // 
+            this.NombreEstado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.NombreEstado.AppearanceHeader.Options.UseBackColor = true;
             this.NombreEstado.Caption = "Estado";
             this.NombreEstado.FieldName = "NombreEstado";
             this.NombreEstado.Name = "NombreEstado";
@@ -250,6 +282,8 @@
             // 
             // CorteAlquiler
             // 
+            this.CorteAlquiler.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CorteAlquiler.AppearanceHeader.Options.UseBackColor = true;
             this.CorteAlquiler.Caption = "Corte Alquiler";
             this.CorteAlquiler.FieldName = "CorteAlquiler";
             this.CorteAlquiler.Name = "CorteAlquiler";
@@ -259,6 +293,8 @@
             // 
             // FechaCambio
             // 
+            this.FechaCambio.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaCambio.AppearanceHeader.Options.UseBackColor = true;
             this.FechaCambio.Caption = "Fecha Cambio";
             this.FechaCambio.FieldName = "FechaCambio";
             this.FechaCambio.Name = "FechaCambio";
@@ -284,6 +320,7 @@
             this.btnExportar.Text = "Exportar";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // pnlAlquileres
             // 
