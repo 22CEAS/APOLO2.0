@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TEST_MENU_PRINCIPAL));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue4 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue5 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule6 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue6 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule7 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue7 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule8 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue8 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule9 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue9 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule10 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue10 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule11 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue11 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule12 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue12 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,6 +51,7 @@
             this.btnConfiguracionClientes = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.REPORTES = new System.Windows.Forms.Panel();
+            this.btnAlquileres = new System.Windows.Forms.Button();
             this.btnRFacturas = new System.Windows.Forms.Button();
             this.btnRFacturasTrans = new System.Windows.Forms.Button();
             this.btnRReparacion = new System.Windows.Forms.Button();
@@ -105,7 +107,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbSalir = new System.Windows.Forms.PictureBox();
-            this.horafecha = new System.Windows.Forms.Timer();
+            this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnlInventarioOfi = new System.Windows.Forms.Panel();
@@ -172,7 +174,6 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnAlquileres = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -367,6 +368,25 @@
             this.REPORTES.Size = new System.Drawing.Size(232, 673);
             this.REPORTES.TabIndex = 20;
             this.REPORTES.Visible = false;
+            // 
+            // btnAlquileres
+            // 
+            this.btnAlquileres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAlquileres.FlatAppearance.BorderSize = 0;
+            this.btnAlquileres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnAlquileres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlquileres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlquileres.ForeColor = System.Drawing.Color.Black;
+            this.btnAlquileres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlquileres.Location = new System.Drawing.Point(0, 613);
+            this.btnAlquileres.Name = "btnAlquileres";
+            this.btnAlquileres.Size = new System.Drawing.Size(319, 45);
+            this.btnAlquileres.TabIndex = 25;
+            this.btnAlquileres.Text = "> ALQUILERES";
+            this.btnAlquileres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlquileres.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlquileres.UseVisualStyleBackColor = false;
+            this.btnAlquileres.Click += new System.EventHandler(this.btnAlquileres_Click);
             // 
             // btnRFacturas
             // 
@@ -1151,7 +1171,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(249, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1332, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1137, 50);
             this.BarraTitulo.TabIndex = 1;
             // 
             // btnOCDash
@@ -1170,7 +1190,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblUser.Location = new System.Drawing.Point(1115, 9);
+            this.lblUser.Location = new System.Drawing.Point(920, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(70, 25);
             this.lblUser.TabIndex = 13;
@@ -1183,7 +1203,7 @@
             this.usuarioConectado.Enabled = false;
             this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioConectado.ForeColor = System.Drawing.Color.Transparent;
-            this.usuarioConectado.Location = new System.Drawing.Point(975, 23);
+            this.usuarioConectado.Location = new System.Drawing.Point(780, 23);
             this.usuarioConectado.Name = "usuarioConectado";
             this.usuarioConectado.Size = new System.Drawing.Size(37, 19);
             this.usuarioConectado.TabIndex = 7;
@@ -1206,7 +1226,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(980, 7);
+            this.label3.Location = new System.Drawing.Point(785, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 25);
             this.label3.TabIndex = 9;
@@ -1219,7 +1239,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(704, 9);
+            this.lblHora.Location = new System.Drawing.Point(606, 9);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(72, 25);
             this.lblHora.TabIndex = 3;
@@ -1230,7 +1250,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1244, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(1049, 9);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1245,7 +1265,7 @@
             this.usuario.Enabled = false;
             this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.usuario.Location = new System.Drawing.Point(1191, 24);
+            this.usuario.Location = new System.Drawing.Point(996, 24);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(13, 19);
             this.usuario.TabIndex = 11;
@@ -1257,7 +1277,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(625, 9);
+            this.label2.Location = new System.Drawing.Point(527, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 6;
@@ -1269,7 +1289,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1039, 9);
+            this.label4.Location = new System.Drawing.Point(844, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 12;
@@ -1281,7 +1301,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(414, 9);
+            this.label1.Location = new System.Drawing.Point(316, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 5;
@@ -1293,7 +1313,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblFecha.Location = new System.Drawing.Point(497, 9);
+            this.lblFecha.Location = new System.Drawing.Point(399, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(83, 25);
             this.lblFecha.TabIndex = 4;
@@ -1314,7 +1334,7 @@
             this.pbSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
-            this.pbSalir.Location = new System.Drawing.Point(1285, 9);
+            this.pbSalir.Location = new System.Drawing.Point(1090, 9);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(35, 35);
             this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1934,60 +1954,60 @@
             this.gridColumn38,
             this.gridColumn39,
             this.gridColumn40});
-            gridFormatRule1.Column = this.gridColumn40;
-            gridFormatRule1.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule1.Name = "Menor a 15 dias";
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue1.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            gridFormatRule2.Column = this.gridColumn40;
-            gridFormatRule2.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule2.Name = "De 15 a 45 dias";
-            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue2.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            gridFormatRule3.Column = this.gridColumn40;
-            gridFormatRule3.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule3.Name = "Mas de 45";
-            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue3.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue3.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            gridFormatRule4.Column = this.gridColumn40;
-            gridFormatRule4.ColumnApplyTo = this.gridColumn36;
-            gridFormatRule4.Name = "Meno a 15 dias (2)";
-            formatConditionRuleValue4.Appearance.ForeColor = System.Drawing.Color.Lime;
-            formatConditionRuleValue4.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue4.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue4.Expression = "[maxDiasVencidos] < 15";
-            gridFormatRule4.Rule = formatConditionRuleValue4;
-            gridFormatRule5.Column = this.gridColumn40;
-            gridFormatRule5.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule5.Name = "De 15 a 45 dias (2)";
-            formatConditionRuleValue5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
-            formatConditionRuleValue5.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue5.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue5.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
-            gridFormatRule5.Rule = formatConditionRuleValue5;
-            gridFormatRule6.Column = this.gridColumn40;
-            gridFormatRule6.ColumnApplyTo = this.gridColumn2;
-            gridFormatRule6.Name = "Mas de 45 (2)";
-            formatConditionRuleValue6.Appearance.ForeColor = System.Drawing.Color.Red;
-            formatConditionRuleValue6.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue6.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue6.Expression = "[maxDiasVencidos] > 45";
-            gridFormatRule6.Rule = formatConditionRuleValue6;
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule1);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule2);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule3);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule4);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule5);
-            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule6);
+            gridFormatRule7.Column = this.gridColumn40;
+            gridFormatRule7.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule7.Name = "Menor a 15 dias";
+            formatConditionRuleValue7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRuleValue7.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue7.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue7.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule7.Rule = formatConditionRuleValue7;
+            gridFormatRule8.Column = this.gridColumn40;
+            gridFormatRule8.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule8.Name = "De 15 a 45 dias";
+            formatConditionRuleValue8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue8.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue8.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue8.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule8.Rule = formatConditionRuleValue8;
+            gridFormatRule9.Column = this.gridColumn40;
+            gridFormatRule9.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule9.Name = "Mas de 45";
+            formatConditionRuleValue9.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue9.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue9.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue9.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule9.Rule = formatConditionRuleValue9;
+            gridFormatRule10.Column = this.gridColumn40;
+            gridFormatRule10.ColumnApplyTo = this.gridColumn36;
+            gridFormatRule10.Name = "Meno a 15 dias (2)";
+            formatConditionRuleValue10.Appearance.ForeColor = System.Drawing.Color.Lime;
+            formatConditionRuleValue10.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue10.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue10.Expression = "[maxDiasVencidos] < 15";
+            gridFormatRule10.Rule = formatConditionRuleValue10;
+            gridFormatRule11.Column = this.gridColumn40;
+            gridFormatRule11.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule11.Name = "De 15 a 45 dias (2)";
+            formatConditionRuleValue11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(92)))), ((int)(((byte)(5)))));
+            formatConditionRuleValue11.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue11.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue11.Expression = "[maxDiasVencidos] >= 15 And [maxDiasVencidos] <= 45";
+            gridFormatRule11.Rule = formatConditionRuleValue11;
+            gridFormatRule12.Column = this.gridColumn40;
+            gridFormatRule12.ColumnApplyTo = this.gridColumn2;
+            gridFormatRule12.Name = "Mas de 45 (2)";
+            formatConditionRuleValue12.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue12.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue12.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue12.Expression = "[maxDiasVencidos] > 45";
+            gridFormatRule12.Rule = formatConditionRuleValue12;
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule7);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule8);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule9);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule10);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule11);
+            this.vistaFacturacionDash.FormatRules.Add(gridFormatRule12);
             this.vistaFacturacionDash.GridControl = this.dgvFacturacionDash;
             this.vistaFacturacionDash.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PendienteFacturarSoles", null, "| Tot. Pendientes Soles = {0:c2}"),
@@ -2304,25 +2324,6 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
-            // btnAlquileres
-            // 
-            this.btnAlquileres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAlquileres.FlatAppearance.BorderSize = 0;
-            this.btnAlquileres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnAlquileres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlquileres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlquileres.ForeColor = System.Drawing.Color.Black;
-            this.btnAlquileres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlquileres.Location = new System.Drawing.Point(0, 613);
-            this.btnAlquileres.Name = "btnAlquileres";
-            this.btnAlquileres.Size = new System.Drawing.Size(319, 45);
-            this.btnAlquileres.TabIndex = 25;
-            this.btnAlquileres.Text = "> ALQUILERES";
-            this.btnAlquileres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlquileres.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAlquileres.UseVisualStyleBackColor = false;
-            this.btnAlquileres.Click += new System.EventHandler(this.btnAlquileres_Click);
-            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2331,7 +2332,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1581, 734);
+            this.ClientSize = new System.Drawing.Size(1386, 734);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.pnlInventarioOfi);

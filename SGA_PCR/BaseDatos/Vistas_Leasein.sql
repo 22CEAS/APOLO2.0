@@ -2717,4 +2717,24 @@ LEFT JOIN laptop_cpu lc ON lc.idLC=sd.IdLC
 LEFT JOIN cliente c ON c.idCliente=s.idCliente
 LEFT JOIN devolucion_det dd ON dd.idSalidaDet=sd.idSalidaDet and dd.idLC=sd.idLC
 LEFT JOIN devolucion d ON d.idDevolucion=dd.idDevolucion 
-LEFT JOIN cambio ca ON ca.idSalidaDet=sd.idSalidaDet
+LEFT JOIN cambio ca ON ca.idSalidaDet=sd.idSalidaDet;
+
+--===================================Tipo de Cambio=================================
+
+DROP VIEW IF EXISTS vista_equipos_por_factura_codigo;
+create view vista_equipos_por_factura_codigo as
+Select *
+From factura_transito
+where estado=1 and codigoEquipo<>'001'
+Order By codigoEquipo;
+
+DROP VIEW IF EXISTS vista_equipos_por_factura_generico;
+create view vista_equipos_por_factura_generico as
+Select *
+From factura_transito
+where estado=1 and codigoEquipo='001'
+Order By codigoEquipo;
+
+Select * from vista_factura_CV ;
+,
+	`d`.`corteAlquiler` AS `CorteAlquiler`;

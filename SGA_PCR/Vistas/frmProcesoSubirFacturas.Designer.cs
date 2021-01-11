@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoSubirFacturas));
-            this.btnSubirFactura = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
-            this.btnValidar = new System.Windows.Forms.Button();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.FechaPago = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,59 +54,30 @@
             this.CantidadEquipos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.giftCarga = new System.Windows.Forms.PictureBox();
-            this.btnBuscarV = new System.Windows.Forms.Button();
             this.pnlSF = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnValidar = new System.Windows.Forms.Button();
+            this.btnBuscarV = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnSubirFactura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             this.pnlSF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSubirFactura
-            // 
-            this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirFactura.Location = new System.Drawing.Point(929, 124);
-            this.btnSubirFactura.Name = "btnSubirFactura";
-            this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
-            this.btnSubirFactura.TabIndex = 0;
-            this.btnSubirFactura.Text = "Subir Factura";
-            this.btnSubirFactura.UseVisualStyleBackColor = true;
-            this.btnSubirFactura.Click += new System.EventHandler(this.btnSubirFactura_Click);
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.Location = new System.Drawing.Point(1228, 124);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 41);
-            this.btnGrabar.TabIndex = 1;
-            this.btnGrabar.Text = "Grabar Factura";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // btnValidar
-            // 
-            this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Location = new System.Drawing.Point(1129, 124);
-            this.btnValidar.Name = "btnValidar";
-            this.btnValidar.Size = new System.Drawing.Size(75, 41);
-            this.btnValidar.TabIndex = 2;
-            this.btnValidar.Text = "Validar Factura";
-            this.btnValidar.UseVisualStyleBackColor = true;
-            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // dgvLaptops
             // 
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 171);
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 136);
             this.dgvLaptops.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvLaptops.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvLaptops.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1291, 452);
+            this.dgvLaptops.Size = new System.Drawing.Size(1291, 328);
             this.dgvLaptops.TabIndex = 137;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -405,78 +373,141 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(359, 292);
+            this.giftCarga.Location = new System.Drawing.Point(506, 209);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(413, 310);
+            this.giftCarga.Size = new System.Drawing.Size(228, 181);
             this.giftCarga.TabIndex = 141;
             this.giftCarga.TabStop = false;
-            // 
-            // btnBuscarV
-            // 
-            this.btnBuscarV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarV.Location = new System.Drawing.Point(1031, 124);
-            this.btnBuscarV.Name = "btnBuscarV";
-            this.btnBuscarV.Size = new System.Drawing.Size(75, 41);
-            this.btnBuscarV.TabIndex = 142;
-            this.btnBuscarV.Text = "Buscar V";
-            this.btnBuscarV.UseVisualStyleBackColor = true;
-            this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
             // 
             // pnlSF
             // 
             this.pnlSF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlSF.Controls.Add(this.btnCerrar);
             this.pnlSF.Controls.Add(this.label1);
-            this.pnlSF.Controls.Add(this.btnNuevo);
-            this.pnlSF.Location = new System.Drawing.Point(2, 0);
+            this.pnlSF.Location = new System.Drawing.Point(0, 0);
             this.pnlSF.Name = "pnlSF";
-            this.pnlSF.Size = new System.Drawing.Size(1313, 105);
+            this.pnlSF.Size = new System.Drawing.Size(1316, 31);
             this.pnlSF.TabIndex = 143;
             this.pnlSF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSF_MouseMove);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1285, 1);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 27);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 193;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(522, 44);
+            this.label1.Location = new System.Drawing.Point(563, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 31);
+            this.label1.Size = new System.Drawing.Size(149, 23);
             this.label1.TabIndex = 178;
             this.label1.Text = "SUBIR FACTURA";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSF_MouseMove);
             // 
-            // btnNuevo
+            // btnValidar
             // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.AutoSize = true;
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(1226, 12);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
-            this.btnNuevo.TabIndex = 177;
-            this.btnNuevo.Text = "CERRAR";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnValidar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnValidar.AutoSize = true;
+            this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnValidar.FlatAppearance.BorderSize = 0;
+            this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.Image = ((System.Drawing.Image)(resources.GetObject("btnValidar.Image")));
+            this.btnValidar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnValidar.Location = new System.Drawing.Point(1139, 37);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(67, 83);
+            this.btnValidar.TabIndex = 241;
+            this.btnValidar.Text = "Validar\r\nFactura";
+            this.btnValidar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
+            // 
+            // btnBuscarV
+            // 
+            this.btnBuscarV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarV.AutoSize = true;
+            this.btnBuscarV.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscarV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarV.FlatAppearance.BorderSize = 0;
+            this.btnBuscarV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarV.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarV.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarV.Image")));
+            this.btnBuscarV.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscarV.Location = new System.Drawing.Point(1064, 37);
+            this.btnBuscarV.Name = "btnBuscarV";
+            this.btnBuscarV.Size = new System.Drawing.Size(69, 83);
+            this.btnBuscarV.TabIndex = 240;
+            this.btnBuscarV.Text = "Asignar\r\nGuía";
+            this.btnBuscarV.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscarV.UseVisualStyleBackColor = false;
+            this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(1212, 40);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(67, 80);
+            this.btnGrabar.TabIndex = 239;
+            this.btnGrabar.Text = "Grabar\r\nFactura";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnSubirFactura
+            // 
+            this.btnSubirFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubirFactura.AutoSize = true;
+            this.btnSubirFactura.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubirFactura.FlatAppearance.BorderSize = 0;
+            this.btnSubirFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubirFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirFactura.Image")));
+            this.btnSubirFactura.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSubirFactura.Location = new System.Drawing.Point(995, 37);
+            this.btnSubirFactura.Name = "btnSubirFactura";
+            this.btnSubirFactura.Size = new System.Drawing.Size(67, 83);
+            this.btnSubirFactura.TabIndex = 242;
+            this.btnSubirFactura.Text = "Subir\r\nFactura";
+            this.btnSubirFactura.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSubirFactura.UseVisualStyleBackColor = false;
+            this.btnSubirFactura.Click += new System.EventHandler(this.btnSubirFactura_Click);
             // 
             // frmProcesoSubirFacturas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1315, 637);
+            this.ClientSize = new System.Drawing.Size(1315, 476);
+            this.Controls.Add(this.btnSubirFactura);
+            this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.pnlSF);
             this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.giftCarga);
-            this.Controls.Add(this.dgvLaptops);
-            this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.btnSubirFactura);
+            this.Controls.Add(this.dgvLaptops);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -491,15 +522,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
             this.pnlSF.ResumeLayout(false);
             this.pnlSF.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSubirFactura;
-        private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.Button btnValidar;
         private DevExpress.XtraGrid.GridControl dgvLaptops;
         private DevExpress.XtraGrid.Views.Grid.GridView vista;
         private DevExpress.XtraGrid.Columns.GridColumn FechaPago;
@@ -524,10 +553,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn Descripcion;
         private DevExpress.XtraGrid.Columns.GridColumn Proveedor;
         public System.Windows.Forms.PictureBox giftCarga;
-        private System.Windows.Forms.Button btnBuscarV;
         private DevExpress.XtraGrid.Columns.GridColumn CantidadEquipos;
         private System.Windows.Forms.Panel pnlSF;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.Button btnBuscarV;
+        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnSubirFactura;
     }
 }

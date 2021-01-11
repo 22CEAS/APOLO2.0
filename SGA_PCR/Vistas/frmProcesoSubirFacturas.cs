@@ -151,6 +151,7 @@ namespace Apolo
                         int idLcAntigua = 0, idLcActual = 0;
                         int IdSalidaDetActual = 0, IdSalidaDetAntigua = 0;
                         String concatCodSis = f.RucDni + "-" + f.CodigoLC;
+                        int corteAlquiler = 0;
 
                         String codigoEquipo = "";
                         String numFacturaTransito = "";
@@ -179,6 +180,8 @@ namespace Apolo
                                 IdSalidaDetActual = int.Parse(cuadroVencimiento.Rows[i]["IdSalidaDetActual"].ToString());
                                 IdSalidaDetAntigua = int.Parse(cuadroVencimiento.Rows[i]["IdSalidaDetAntigua"].ToString());
 
+                                corteAlquiler= int.Parse(cuadroVencimiento.Rows[i]["CorteAlquiler"].ToString());
+
                                 if ((concatCodSis == concatCodActCV && f.NumeroDocRef == guiaSalidaCV) || (concatCodSis == concatCodAntCV && f.NumeroDocRef == guiaSalidaAntCV))
                                 {
                                     if (guiaSalidaAntCV.Length == 0)//no ha habido cambio
@@ -203,7 +206,7 @@ namespace Apolo
                                                         facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                         f.ObservacionXLevantar = "Se grabo correctamente la factura.";
                                                         //if (fecFinContrato < f.FechaFinPago)
-                                                        if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                        if (fecFinContrato != f.FechaFinPago && corteAlquiler==0)//&& tipoContrato==Palabra
                                                         {
                                                             facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                             f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -213,7 +216,7 @@ namespace Apolo
                                                     else
                                                     {
                                                         f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                        if (fecFinContrato < f.FechaFinPago)
+                                                        if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                         {
                                                             f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                         }
@@ -241,7 +244,7 @@ namespace Apolo
                                                             facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                             f.ObservacionXLevantar = "Se grabo correctamente la factura.";
                                                             //if (fecFinContrato < f.FechaFinPago)
-                                                            if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                            if (fecFinContrato != f.FechaFinPago && corteAlquiler == 0)//&& tipoContrato==Palabra
                                                             {
                                                                 facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -250,7 +253,7 @@ namespace Apolo
                                                         else
                                                         {
                                                             f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                             {
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                             }
@@ -274,7 +277,7 @@ namespace Apolo
                                                         {
                                                             facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                             f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                             {
                                                                 facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -283,7 +286,7 @@ namespace Apolo
                                                         else
                                                         {
                                                             f.ObservacionXLevantar = "Todo Bien.";
-                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                             {
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                             }
@@ -326,7 +329,7 @@ namespace Apolo
                                                         facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                         f.ObservacionXLevantar = "Se grabo correctamente la factura.";
                                                         //if (fecFinContrato < f.FechaFinPago)
-                                                        if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                        if (fecFinContrato != f.FechaFinPago && corteAlquiler == 0)//&& tipoContrato==Palabra
                                                         {
                                                             facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                             f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -335,7 +338,7 @@ namespace Apolo
                                                     else
                                                     {
                                                         f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                        if (fecFinContrato < f.FechaFinPago)
+                                                        if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                         {
                                                             f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                         }
@@ -363,7 +366,7 @@ namespace Apolo
                                                             {
                                                                 facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                                 f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                                if (fecFinContrato < f.FechaFinPago)
+                                                                if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                                 {
                                                                     facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                                     f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -372,7 +375,7 @@ namespace Apolo
                                                             else
                                                             {
                                                                 f.ObservacionXLevantar = "Todo Bien.";
-                                                                if (fecFinContrato < f.FechaFinPago)
+                                                                if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                                 {
                                                                     f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                                 }
@@ -414,7 +417,7 @@ namespace Apolo
                                                         {
                                                             facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                             f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                             {
                                                                 facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -423,7 +426,7 @@ namespace Apolo
                                                         else
                                                         {
                                                             f.ObservacionXLevantar = "Todo Bien.";
-                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                             {
                                                                 f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                             }
@@ -689,17 +692,17 @@ namespace Apolo
             giftCarga.Enabled = false;
             giftCarga.Visible = false;
         }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
+        
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         int posY = 0;
         int posX = 0;
+
         private void pnlSF_MouseMove(object sender, MouseEventArgs e)
         {
-
-
             if (e.Button != MouseButtons.Left)
             {
                 posX = e.X;
