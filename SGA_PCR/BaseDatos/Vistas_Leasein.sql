@@ -2705,14 +2705,16 @@ sd.fecFinContrato as FecFinContrato,
 sd.guiaSalida as GuiaSalida,
 sd.estado as Estado,
 e.nombreEstado as NombreEstado,
-if(sd.fueDevuelto=1,"SI","NO") as FueDevuelto,
-d.fechaDevolucion as FechaDevolucion,
-d.guiaDevolucion as GuiaDevolucion,
-if(sd.corteAlquiler=1,"SI","NO") as CorteAlquiler
+if(sd.estado=4,if(sd.fueDevuelto=1,"SI","NO"),if(ca.fueDevuelto=1,"SI","NO")) as FueDevuelto,
+if(sd.estado=9 and ca.fueDevuelto=1,ca.fechaCambio,"") as FechaCambio,
+if(sd.estado=4 and sd.fueDevuelto=1,d.fechaDevolucion,"") as FechaDevolucion,
+if(sd.estado=4 and sd.fueDevuelto=1,d.guiaDevolucion,"") as GuiaDevolucion,
+if(sd.estado=4 and sd.corteAlquiler=1,"SI",if(sd.estado=9,"","NO")) as CorteAlquiler
 FROM salida_det sd
 LEFT JOIN salida s ON s.idSalida=sd.idSalida
 LEFT JOIN estados e ON e.idEstado=sd.estado
 LEFT JOIN laptop_cpu lc ON lc.idLC=sd.IdLC
 LEFT JOIN cliente c ON c.idCliente=s.idCliente
 LEFT JOIN devolucion_det dd ON dd.idSalidaDet=sd.idSalidaDet and dd.idLC=sd.idLC
-LEFT JOIN devolucion d ON d.idDevolucion=dd.idDevolucion;
+LEFT JOIN devolucion d ON d.idDevolucion=dd.idDevolucion 
+LEFT JOIN cambio ca ON ca.idSalidaDet=sd.idSalidaDet

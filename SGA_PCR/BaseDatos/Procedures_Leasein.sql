@@ -3697,3 +3697,13 @@ END
 $$
 DELIMITER ;
 
+					
+--===================================Tipo de Cambio=================================
+ALTER TABLE `bd_leasein`.`factura` 
+ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
+ALTER TABLE `bd_leasein`.`cuota` 
+ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
+ALTER TABLE `bd_leasein`.`factura_transito` 
+ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
+
+                    
