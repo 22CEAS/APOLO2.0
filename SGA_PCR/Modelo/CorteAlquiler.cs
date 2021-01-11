@@ -29,6 +29,9 @@ namespace Modelo
         private DateTime _fecIniContrato;
         private DateTime _fecFinContrato;
 
+        private string RucCliente;
+
+
         public CorteAlquiler()
         {
 
@@ -54,5 +57,7 @@ namespace Modelo
         public string NombreModeloLC { get => nombreModeloLC; set => nombreModeloLC = value; }
         public DateTime fecIniContrato { get => _fecIniContrato; set => _fecIniContrato = value; }
         public DateTime fecFinContrato { get => _fecFinContrato; set => _fecFinContrato = value; }
+        public string RucCliente1 { get => RucCliente; set => RucCliente = value; }
+   
     }
 }

@@ -32,8 +32,10 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.dgvCA = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSalidaDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GuiaSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCA)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(352, 149);
+            this.btnEditar.Location = new System.Drawing.Point(105, 371);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 65);
             this.btnEditar.TabIndex = 100;
@@ -67,7 +69,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(372, 228);
+            this.btnGrabar.Location = new System.Drawing.Point(211, 373);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 99;
@@ -78,31 +80,49 @@
             // 
             // dgvCA
             // 
+            this.dgvCA.AllowUserToAddRows = false;
+            this.dgvCA.AllowUserToDeleteRows = false;
             this.dgvCA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.codigo});
-            this.dgvCA.Location = new System.Drawing.Point(56, 74);
+            this.IdSalidaDet,
+            this.codigo,
+            this.Ruc,
+            this.GuiaSalida});
+            this.dgvCA.Location = new System.Drawing.Point(12, 12);
             this.dgvCA.Name = "dgvCA";
+            this.dgvCA.ReadOnly = true;
             this.dgvCA.RowHeadersVisible = false;
-            this.dgvCA.Size = new System.Drawing.Size(254, 302);
+            this.dgvCA.Size = new System.Drawing.Size(454, 334);
             this.dgvCA.TabIndex = 101;
             // 
-            // id
+            // IdSalidaDet
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IdSalidaDet.DataPropertyName = "IdSalidaDet";
+            this.IdSalidaDet.HeaderText = "IdSalidaDet";
+            this.IdSalidaDet.Name = "IdSalidaDet";
+            this.IdSalidaDet.ReadOnly = true;
             // 
             // codigo
             // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "codigo";
+            this.codigo.DataPropertyName = "Codigo";
+            this.codigo.HeaderText = "Codigo";
             this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
             this.codigo.Width = 150;
+            // 
+            // Ruc
+            // 
+            this.Ruc.DataPropertyName = "Ruc";
+            this.Ruc.HeaderText = "Ruc";
+            this.Ruc.Name = "Ruc";
+            this.Ruc.ReadOnly = true;
+            // 
+            // GuiaSalida
+            // 
+            this.GuiaSalida.DataPropertyName = "GuiaSalida";
+            this.GuiaSalida.HeaderText = "GuiaSalida";
+            this.GuiaSalida.Name = "GuiaSalida";
+            this.GuiaSalida.ReadOnly = true;
             // 
             // ActuaizarCortesAlquiler
             // 
@@ -124,7 +144,9 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.DataGridView dgvCA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSalidaDet;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ruc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GuiaSalida;
     }
 }

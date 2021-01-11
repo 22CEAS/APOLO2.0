@@ -108,5 +108,34 @@ namespace AccesoDatos
             return 1;
 
         }
+
+
+        public int ActualizarFechaFinContrato(BindingList<CorteAlquiler> cortes)
+        {
+            int resultado = 0; // 1: bien 0:mal
+            foreach (CorteAlquiler corte in cortes)
+            {
+                parametrosEntrada = new MySqlParameter[4];
+                parametrosEntrada[0] = new MySqlParameter("@_IdSalidaDet", MySqlDbType.VarChar, 255);
+                parametrosEntrada[1] = new MySqlParameter("@_Codigo", MySqlDbType.VarChar, 255);
+                parametrosEntrada[2] = new MySqlParameter("@_Ruc", MySqlDbType.VarChar, 255);
+                parametrosEntrada[3] = new MySqlParameter("@_GuiaSalida", MySqlDbType.VarChar, 255);
+
+                parametrosEntrada[0].Value = corte.IdSalidaDetalle;
+                parametrosEntrada[1].Value = corte.CodigoLC;
+                parametrosEntrada[2].Value = corte.RucCliente1;
+                parametrosEntrada[3].Value = corte.GuiaSalida;
+                
+                bool okey = objManager.EjecutarProcedure(parametrosEntrada, "TEST_ACTUALIZAR_FECHAFINCONTRATO");
+
+                if (okey)
+                {
+                    resultado = 1;
+                }
+            }
+
+            return resultado;
+
+        }
     }
 }
