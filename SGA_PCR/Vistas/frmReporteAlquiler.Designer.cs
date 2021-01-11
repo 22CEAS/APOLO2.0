@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue3 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteAlquiler));
+            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FueDevuelto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GuiaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dgvAlquiler = new DevExpress.XtraGrid.GridControl();
             this.vistaAlquiler = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,22 +46,51 @@
             this.FecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NombreEstado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FueDevuelto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FechaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaDevolucion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaCambio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.pnlAlquileres = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblAlquileres = new System.Windows.Forms.Label();
-            this.FechaCambio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FueDevueltoEnCambio = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaAlquiler)).BeginInit();
             this.pnlAlquileres.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Estado
+            // 
+            this.Estado.Caption = "Id Estado";
+            this.Estado.FieldName = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 150;
+            // 
+            // FueDevuelto
+            // 
+            this.FueDevuelto.Caption = "Fue Devuelto";
+            this.FueDevuelto.FieldName = "FueDevuelto";
+            this.FueDevuelto.Name = "FueDevuelto";
+            this.FueDevuelto.Visible = true;
+            this.FueDevuelto.VisibleIndex = 8;
+            this.FueDevuelto.Width = 150;
+            // 
+            // FechaDevolucion
+            // 
+            this.FechaDevolucion.Caption = "Fecha Devolucion";
+            this.FechaDevolucion.FieldName = "FechaDevolucion";
+            this.FechaDevolucion.Name = "FechaDevolucion";
+            this.FechaDevolucion.Visible = true;
+            this.FechaDevolucion.VisibleIndex = 10;
+            this.FechaDevolucion.Width = 150;
+            // 
+            // GuiaDevolucion
+            // 
+            this.GuiaDevolucion.Caption = "Guia Devolucion";
+            this.GuiaDevolucion.FieldName = "GuiaDevolucion";
+            this.GuiaDevolucion.Name = "GuiaDevolucion";
+            this.GuiaDevolucion.Visible = true;
+            this.GuiaDevolucion.VisibleIndex = 11;
+            this.GuiaDevolucion.Width = 150;
             // 
             // dgvAlquiler
             // 
@@ -113,39 +140,7 @@
             this.FechaDevolucion,
             this.GuiaDevolucion,
             this.CorteAlquiler,
-            this.FechaCambio,
-            this.FueDevueltoEnCambio});
-            gridFormatRule1.Column = this.Estado;
-            gridFormatRule1.ColumnApplyTo = this.FueDevuelto;
-            gridFormatRule1.Name = "Cambiado";
-            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.White;
-            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.White;
-            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
-            formatConditionRuleValue1.Expression = "[Estado] = 9";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            gridFormatRule2.Column = this.Estado;
-            gridFormatRule2.ColumnApplyTo = this.FechaDevolucion;
-            gridFormatRule2.Name = "Cambiado1";
-            formatConditionRuleValue2.Appearance.BackColor = System.Drawing.Color.White;
-            formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.White;
-            formatConditionRuleValue2.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue2.Expression = "[Estado] = 9";
-            gridFormatRule2.Rule = formatConditionRuleValue2;
-            gridFormatRule3.Column = this.Estado;
-            gridFormatRule3.ColumnApplyTo = this.GuiaDevolucion;
-            gridFormatRule3.Name = "Cambiado2";
-            formatConditionRuleValue3.Appearance.BackColor = System.Drawing.Color.White;
-            formatConditionRuleValue3.Appearance.ForeColor = System.Drawing.Color.White;
-            formatConditionRuleValue3.Appearance.Options.UseBackColor = true;
-            formatConditionRuleValue3.Appearance.Options.UseForeColor = true;
-            formatConditionRuleValue3.Expression = "[Estado] = 9";
-            gridFormatRule3.Rule = formatConditionRuleValue3;
-            this.vistaAlquiler.FormatRules.Add(gridFormatRule1);
-            this.vistaAlquiler.FormatRules.Add(gridFormatRule2);
-            this.vistaAlquiler.FormatRules.Add(gridFormatRule3);
+            this.FechaCambio});
             this.vistaAlquiler.GridControl = this.dgvAlquiler;
             this.vistaAlquiler.Name = "vistaAlquiler";
             this.vistaAlquiler.OptionsBehavior.Editable = false;
@@ -244,15 +239,6 @@
             this.GuiaSalida.VisibleIndex = 6;
             this.GuiaSalida.Width = 150;
             // 
-            // Estado
-            // 
-            this.Estado.Caption = "Id Estado";
-            this.Estado.FieldName = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 14;
-            this.Estado.Width = 150;
-            // 
             // NombreEstado
             // 
             this.NombreEstado.Caption = "Estado";
@@ -262,41 +248,23 @@
             this.NombreEstado.VisibleIndex = 7;
             this.NombreEstado.Width = 150;
             // 
-            // FueDevuelto
-            // 
-            this.FueDevuelto.Caption = "Fue Devuelto";
-            this.FueDevuelto.FieldName = "FueDevuelto";
-            this.FueDevuelto.Name = "FueDevuelto";
-            this.FueDevuelto.Visible = true;
-            this.FueDevuelto.VisibleIndex = 8;
-            this.FueDevuelto.Width = 150;
-            // 
-            // FechaDevolucion
-            // 
-            this.FechaDevolucion.Caption = "Fecha Devolucion";
-            this.FechaDevolucion.FieldName = "FechaDevolucion";
-            this.FechaDevolucion.Name = "FechaDevolucion";
-            this.FechaDevolucion.Visible = true;
-            this.FechaDevolucion.VisibleIndex = 9;
-            this.FechaDevolucion.Width = 150;
-            // 
-            // GuiaDevolucion
-            // 
-            this.GuiaDevolucion.Caption = "Guia Devolucion";
-            this.GuiaDevolucion.FieldName = "GuiaDevolucion";
-            this.GuiaDevolucion.Name = "GuiaDevolucion";
-            this.GuiaDevolucion.Visible = true;
-            this.GuiaDevolucion.VisibleIndex = 10;
-            this.GuiaDevolucion.Width = 150;
-            // 
             // CorteAlquiler
             // 
             this.CorteAlquiler.Caption = "Corte Alquiler";
             this.CorteAlquiler.FieldName = "CorteAlquiler";
             this.CorteAlquiler.Name = "CorteAlquiler";
             this.CorteAlquiler.Visible = true;
-            this.CorteAlquiler.VisibleIndex = 11;
+            this.CorteAlquiler.VisibleIndex = 12;
             this.CorteAlquiler.Width = 150;
+            // 
+            // FechaCambio
+            // 
+            this.FechaCambio.Caption = "Fecha Cambio";
+            this.FechaCambio.FieldName = "FechaCambio";
+            this.FechaCambio.Name = "FechaCambio";
+            this.FechaCambio.Visible = true;
+            this.FechaCambio.VisibleIndex = 9;
+            this.FechaCambio.Width = 150;
             // 
             // btnExportar
             // 
@@ -358,24 +326,6 @@
             this.lblAlquileres.TabIndex = 152;
             this.lblAlquileres.Text = "ALQUILERES";
             // 
-            // FechaCambio
-            // 
-            this.FechaCambio.Caption = "Fecha Cambio";
-            this.FechaCambio.FieldName = "FechaCambio";
-            this.FechaCambio.Name = "FechaCambio";
-            this.FechaCambio.Visible = true;
-            this.FechaCambio.VisibleIndex = 12;
-            this.FechaCambio.Width = 150;
-            // 
-            // FueDevueltoEnCambio
-            // 
-            this.FueDevueltoEnCambio.Caption = "Fue Devuelto en Cambio";
-            this.FueDevueltoEnCambio.FieldName = "FueDevueltoEnCambio";
-            this.FueDevueltoEnCambio.Name = "FueDevueltoEnCambio";
-            this.FueDevueltoEnCambio.Visible = true;
-            this.FueDevueltoEnCambio.VisibleIndex = 13;
-            this.FueDevueltoEnCambio.Width = 150;
-            // 
             // frmReporteAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +375,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaDevolucion;
         private DevExpress.XtraGrid.Columns.GridColumn GuiaDevolucion;
         private DevExpress.XtraGrid.Columns.GridColumn FechaCambio;
-        private DevExpress.XtraGrid.Columns.GridColumn FueDevueltoEnCambio;
     }
 }
