@@ -424,7 +424,7 @@ namespace Apolo
                 vistaFacturas.SetRowCellValue(i, "Seleccionar", false);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

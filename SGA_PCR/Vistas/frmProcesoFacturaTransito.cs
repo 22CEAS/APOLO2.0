@@ -88,6 +88,7 @@ namespace Apolo
                             int idLcAntigua = 0, idLcActual = 0;
                             int IdSalidaDetActual = 0, IdSalidaDetAntigua = 0;
                             String concatCodSis = f.RucDni + "-" + f.CodigoLC;
+                            int corteAlquiler = 0;
 
                             String codigoEquipo = "";
                             String numFacturaTransito = "";
@@ -114,6 +115,8 @@ namespace Apolo
                                 IdSalidaDetActual = int.Parse(cuadroVencimiento.Rows[i]["IdSalidaDetActual"].ToString());
                                 IdSalidaDetAntigua = int.Parse(cuadroVencimiento.Rows[i]["IdSalidaDetAntigua"].ToString());
 
+                                corteAlquiler = int.Parse(cuadroVencimiento.Rows[i]["CorteAlquiler"].ToString());
+
                                 if ((concatCodSis == concatCodActCV && f.NumeroDocRef == guiaSalidaCV))
                                 {
                                     if (facturaCV != f.NumeroFactura)
@@ -135,7 +138,7 @@ namespace Apolo
                                                     facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                     f.ObservacionXLevantar = "Se grabo correctamente la factura.";
                                                     //if (fecFinContrato < f.FechaFinPago)
-                                                    if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                    if (fecFinContrato != f.FechaFinPago && corteAlquiler == 0)//&& tipoContrato==Palabra
                                                     {
                                                         facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                         f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -145,7 +148,7 @@ namespace Apolo
                                                 else
                                                 {
                                                     f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                    if (fecFinContrato < f.FechaFinPago)
+                                                    if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                     {
                                                         f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                     }
@@ -169,7 +172,7 @@ namespace Apolo
                                                 {
                                                     facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                     f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                    if (fecFinContrato < f.FechaFinPago)
+                                                    if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                     {
                                                         facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                         f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -178,7 +181,7 @@ namespace Apolo
                                                 else
                                                 {
                                                     f.ObservacionXLevantar = "Todo Bien.";
-                                                    if (fecFinContrato < f.FechaFinPago)
+                                                    if (fecFinContrato < f.FechaFinPago && corteAlquiler == 0)
                                                     {
                                                         f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
                                                     }
@@ -577,6 +580,7 @@ namespace Apolo
                     fact.CostoSoles = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoSoles"].ToString());
                     fact.CostoDolares = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["costoDolares"].ToString());
                     fact.CantidadEquipos = Convert.ToInt32(equiposFacturaTransito.Rows[rec]["cantidadEquipos"].ToString());
+                    fact.TipoCambio = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["tipoCambio"].ToString());
 
                     fact.TotalSolesAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["totalSoles"].ToString());
                     fact.TotalDolaresAntiguo = Convert.ToDouble(equiposFacturaTransito.Rows[rec]["totalDolares"].ToString());
@@ -613,9 +617,10 @@ namespace Apolo
                         fact.TotalDolares = Convert.ToDouble(equiposFacturaTransito.Rows[0]["totalDolares"].ToString()) / auxCantidad;
                         fact.CostoSoles = Convert.ToDouble(equiposFacturaTransito.Rows[0]["costoSoles"].ToString()) / auxCantidad;
                         fact.CostoDolares = Convert.ToDouble(equiposFacturaTransito.Rows[0]["costoDolares"].ToString()) / auxCantidad;
+                        fact.TipoCambio = Convert.ToDouble(equiposFacturaTransito.Rows[0]["tipoCambio"].ToString());
                         fact.CantidadEquipos = 1;
 
-                        fact.TipoFacturaTransito = 1;
+                        fact.TipoFacturaTransito = 1;//Esto es para cuando se use la funcion de InsertarFactura se ejecute solo en esta parte
 
                         rec++;
                         facturas.Add(fact);
@@ -636,16 +641,16 @@ namespace Apolo
 
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         int posY = 0;
         int posX = 0;
+
         private void pnlFT_MouseMove(object sender, MouseEventArgs e)
         {
-
-
             if (e.Button != MouseButtons.Left)
             {
                 posX = e.X;
@@ -656,7 +661,7 @@ namespace Apolo
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-
         }
+
     }
 }

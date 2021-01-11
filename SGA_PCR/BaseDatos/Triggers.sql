@@ -76,16 +76,16 @@ BEGIN
 			ELSE
 				
 				(SELECT IFNULL( MAX(idFactura) , 0 )+1 INTO @idFactura FROM factura);
-				INSERT INTO factura (idFactura,idFacturaTransito,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado,usuario_ins) 				
-				SELECT @idFactura AS idFactura,f.idFacturaTransito,@IdSalida AS idSalida, f.numFacturaTransito AS numFactura,f.fecIniPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoEquipo AS codigoLC, @GuiaSalida AS guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, 1 AS estado, f.usuario_ins
+				INSERT INTO factura (idFactura,idFacturaTransito,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,tipoCambio,observacion,estado,usuario_ins) 				
+				SELECT @idFactura AS idFactura,f.idFacturaTransito,@IdSalida AS idSalida, f.numFacturaTransito AS numFactura,f.fecIniPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoEquipo AS codigoLC, @GuiaSalida AS guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.tipoCambio, f.observacion, 1 AS estado, f.usuario_ins
 				FROM factura_transito f 
 				WHERE f.idFacturaTransito=@IdFacturaTransito and f.estado=1;
 				
 							
 						
-				INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado) 
+				INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,tipoCambio,observacion,estado) 
 
-				SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.observacion, f.estado
+				SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.tipoCambio, f.observacion, f.estado
 				FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
 				WHERE f.codigoLC=@Codigo AND f.guiaSalida=@GuiaSalida and f.estado=1 
 				ORDER BY fecFinPago desc LIMIT 1;

@@ -53,11 +53,12 @@
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlFTr = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).BeginInit();
             this.pnlFTr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +67,7 @@
             this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(991, 488);
+            this.label1.Location = new System.Drawing.Point(892, 421);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 20);
             this.label1.TabIndex = 233;
@@ -83,7 +84,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(25, 488);
+            this.btnExportar.Location = new System.Drawing.Point(43, 408);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 231;
@@ -117,7 +118,7 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.Silver;
-            this.giftCarga.Location = new System.Drawing.Point(594, 494);
+            this.giftCarga.Location = new System.Drawing.Point(571, 408);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(41, 66);
             this.giftCarga.TabIndex = 241;
@@ -125,7 +126,7 @@
             // 
             // dgvEquiposCodigos
             // 
-            this.dgvEquiposCodigos.Location = new System.Drawing.Point(25, 114);
+            this.dgvEquiposCodigos.Location = new System.Drawing.Point(11, 52);
             this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvEquiposCodigos.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvEquiposCodigos.LookAndFeel.SkinName = "Office 2010 Silver";
@@ -383,42 +384,38 @@
             // pnlFTr
             // 
             this.pnlFTr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pnlFTr.Controls.Add(this.label2);
             this.pnlFTr.Controls.Add(this.btnCerrar);
-            this.pnlFTr.Location = new System.Drawing.Point(2, 2);
+            this.pnlFTr.Controls.Add(this.label2);
+            this.pnlFTr.Location = new System.Drawing.Point(0, 0);
             this.pnlFTr.Name = "pnlFTr";
-            this.pnlFTr.Size = new System.Drawing.Size(1312, 51);
+            this.pnlFTr.Size = new System.Drawing.Size(1312, 30);
             this.pnlFTr.TabIndex = 242;
             this.pnlFTr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(513, 13);
+            this.label2.Location = new System.Drawing.Point(514, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(373, 31);
+            this.label2.Size = new System.Drawing.Size(224, 23);
             this.label2.TabIndex = 178;
             this.label2.Text = "FACTURAS EN TRANSITO";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCerrar.Location = new System.Drawing.Point(1254, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1214, 1);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(47, 38);
-            this.btnCerrar.TabIndex = 177;
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Size = new System.Drawing.Size(25, 27);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 243;
+            this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmReporteFacturaTransito
@@ -426,7 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1315, 572);
+            this.ClientSize = new System.Drawing.Size(1255, 475);
             this.Controls.Add(this.pnlFTr);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.dgvEquiposCodigos);
@@ -448,6 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).EndInit();
             this.pnlFTr.ResumeLayout(false);
             this.pnlFTr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,7 +475,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn CantidadEquipos;
         private DevExpress.XtraGrid.Columns.GridColumn ObservacionXLevantar;
         private System.Windows.Forms.Panel pnlFTr;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox btnCerrar;
     }
 }
