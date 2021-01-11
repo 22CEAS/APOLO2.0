@@ -1,5 +1,8 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
+using DevExpress.Export;
+using DevExpress.Printing.ExportHelpers;
+using DevExpress.XtraPrinting;
 using Modelo;
 using SpreadsheetLight;
 using System;
@@ -86,6 +89,49 @@ namespace Apolo
                     Top = Top + (e.Y - posY);
                 }
             
+        }
+
+        void options_CustomizeSheetHeader(DevExpress.Export.ContextEventArgs e)
+        {
+            // Create a new row.
+            CellObject row = new CellObject();
+            XlFormattingObject rowFormatting = new XlFormattingObject();
+            // Specify row values.
+            row.Value = "REPORTE ALQUILERES";
+            rowFormatting.Font = new XlCellFont { Bold = true, Size = 14 };
+            rowFormatting.BackColor = Color.Orange;
+            rowFormatting.Alignment = new DevExpress.Export.Xl.XlCellAlignment { HorizontalAlignment = DevExpress.Export.Xl.XlHorizontalAlignment.Center, VerticalAlignment = DevExpress.Export.Xl.XlVerticalAlignment.Top };
+            row.Formatting = rowFormatting;
+            // Add the created row to the output document.
+            e.ExportContext.AddRow(new[] { row });
+            // Add an empty row to the output document.
+            e.ExportContext.AddRow();
+            // Merge cells of two new rows. 
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(12, 1)));
+        }
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                try
+                {
+                    DevExpress.Export.ExportSettings.DefaultExportType = ExportType.DataAware;
+                    XlsxExportOptionsEx options = new XlsxExportOptionsEx();
+                    options.CustomizeSheetHeader += options_CustomizeSheetHeader;
+                    //options.CustomizeCell += op_CustomizeCell;
+                    string file = "REPORTE ALQUILERES.xlsx";
+                    dgvAlquiler.ExportToXlsx(file, options);
+                    System.Diagnostics.Process.Start(file);
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Error al exportar la informacion | Si tiene un reporte de ALQUILERES ya abierto, cierrelo.", " ◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                Cursor.Current = Cursors.Default;
+
+            }
         }
     }
 }
