@@ -64,16 +64,21 @@
             this.txtObservación = new DevExpress.XtraEditors.MemoEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlNC = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbAccion = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.dtpFechaEmision = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMontoCambio = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservación.Properties)).BeginInit();
             this.pnlNC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaEmision)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbFactura
@@ -85,7 +90,7 @@
             this.cmbFactura.FormattingEnabled = true;
             this.cmbFactura.Location = new System.Drawing.Point(230, 56);
             this.cmbFactura.Name = "cmbFactura";
-            this.cmbFactura.Size = new System.Drawing.Size(177, 25);
+            this.cmbFactura.Size = new System.Drawing.Size(177, 29);
             this.cmbFactura.TabIndex = 1;
             this.cmbFactura.SelectedIndexChanged += new System.EventHandler(this.cmbFactura_SelectedIndexChanged);
             // 
@@ -95,7 +100,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(234, 35);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 16);
+            this.label15.Size = new System.Drawing.Size(144, 20);
             this.label15.TabIndex = 58;
             this.label15.Text = "Número Factura";
             // 
@@ -110,9 +115,9 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(148, 174);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(113, 174);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
-            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
+            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(179, 50);
             this.btnDeseleccionarFilas.TabIndex = 140;
             this.btnDeseleccionarFilas.Text = "Deseleccionar Filas";
             this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -130,9 +135,9 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(14, 174);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(-15, 174);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
-            this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
+            this.btnSeleccionarFilas.Size = new System.Drawing.Size(157, 50);
             this.btnSeleccionarFilas.TabIndex = 139;
             this.btnSeleccionarFilas.Text = "Seleccionar Filas";
             this.btnSeleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -407,7 +412,7 @@
             this.txtReferencia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferencia.Location = new System.Drawing.Point(443, 56);
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(170, 23);
+            this.txtReferencia.Size = new System.Drawing.Size(170, 27);
             this.txtReferencia.TabIndex = 2;
             // 
             // label1
@@ -416,7 +421,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(447, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 16);
+            this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 166;
             this.label1.Text = "Doc. Nota Crédito";
             // 
@@ -430,9 +435,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(959, 474);
+            this.btnCancelar.Location = new System.Drawing.Point(941, 474);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 65);
             this.btnCancelar.TabIndex = 214;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -450,9 +455,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(778, 476);
+            this.btnNuevo.Location = new System.Drawing.Point(777, 476);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.Size = new System.Drawing.Size(76, 63);
             this.btnNuevo.TabIndex = 213;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -494,7 +499,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 216;
             this.label2.Text = "Observación";
             // 
@@ -508,41 +513,6 @@
             this.pnlNC.Size = new System.Drawing.Size(1080, 29);
             this.pnlNC.TabIndex = 217;
             this.pnlNC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(458, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 23);
-            this.label3.TabIndex = 219;
-            this.label3.Text = "NOTA DE CRÉDITO";
-            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
-            // 
-            // cmbAccion
-            // 
-            this.cmbAccion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbAccion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbAccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbAccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAccion.FormattingEnabled = true;
-            this.cmbAccion.Location = new System.Drawing.Point(15, 56);
-            this.cmbAccion.Name = "cmbAccion";
-            this.cmbAccion.Size = new System.Drawing.Size(177, 25);
-            this.cmbAccion.TabIndex = 0;
-            this.cmbAccion.SelectedIndexChanged += new System.EventHandler(this.cmbAccion_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 16);
-            this.label5.TabIndex = 220;
-            this.label5.Text = "Acción";
             // 
             // btnCerrar
             // 
@@ -558,12 +528,116 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(458, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(220, 28);
+            this.label3.TabIndex = 219;
+            this.label3.Text = "NOTA DE CRÉDITO";
+            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlNC_MouseMove);
+            // 
+            // cmbAccion
+            // 
+            this.cmbAccion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbAccion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbAccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbAccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccion.FormattingEnabled = true;
+            this.cmbAccion.Location = new System.Drawing.Point(15, 56);
+            this.cmbAccion.Name = "cmbAccion";
+            this.cmbAccion.Size = new System.Drawing.Size(177, 29);
+            this.cmbAccion.TabIndex = 0;
+            this.cmbAccion.SelectedIndexChanged += new System.EventHandler(this.cmbAccion_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 20);
+            this.label5.TabIndex = 220;
+            this.label5.Text = "Acción";
+            // 
+            // dtpFechaEmision
+            // 
+            // 
+            // 
+            // 
+            this.dtpFechaEmision.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaEmision.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpFechaEmision.ButtonDropDown.Visible = true;
+            this.dtpFechaEmision.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.dtpFechaEmision.IsPopupCalendarOpen = false;
+            this.dtpFechaEmision.Location = new System.Drawing.Point(644, 56);
+            // 
+            // 
+            // 
+            this.dtpFechaEmision.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpFechaEmision.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.dtpFechaEmision.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaEmision.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpFechaEmision.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpFechaEmision.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpFechaEmision.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaEmision.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpFechaEmision.Name = "dtpFechaEmision";
+            this.dtpFechaEmision.Size = new System.Drawing.Size(141, 27);
+            this.dtpFechaEmision.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpFechaEmision.TabIndex = 221;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(640, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 20);
+            this.label4.TabIndex = 222;
+            this.label4.Text = "Fecha Emisión";
+            // 
+            // txtMontoCambio
+            // 
+            this.txtMontoCambio.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtMontoCambio.Location = new System.Drawing.Point(815, 56);
+            this.txtMontoCambio.Name = "txtMontoCambio";
+            this.txtMontoCambio.Size = new System.Drawing.Size(119, 27);
+            this.txtMontoCambio.TabIndex = 223;
+            this.txtMontoCambio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoCambio_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(811, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.TabIndex = 224;
+            this.label6.Text = "Tipo Cambio";
+            // 
             // frmProcesoNotaCredito
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1061, 544);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMontoCambio);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtpFechaEmision);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbAccion);
             this.Controls.Add(this.pnlNC);
@@ -594,6 +668,7 @@
             this.pnlNC.ResumeLayout(false);
             this.pnlNC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaEmision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,5 +715,9 @@
         private System.Windows.Forms.ComboBox cmbAccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaEmision;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMontoCambio;
+        private System.Windows.Forms.Label label6;
     }
 }

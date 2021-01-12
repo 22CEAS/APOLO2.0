@@ -3881,3 +3881,157 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+--===========================Modificar nota credito, fechaEmisiom y tipoCambio=======
+ALTER TABLE `bd_leasein`.`nota_credito` 
+ADD COLUMN `fecEmisiom` date NULL AFTER `numFactura`;
+ALTER TABLE `bd_leasein`.`nota_credito` 
+ADD COLUMN `tipoCambio` double NULL AFTER `costoDolaresActual`;
+
+DROP PROCEDURE IF EXISTS `anular_factura`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
+	IN _idFactura int,
+	IN _idSalida int,
+	IN _idTipoEquipo int,
+	IN _idEquipo int,
+	IN _codigo NVARCHAR(255),
+	IN _guiaSalida NVARCHAR(255),
+	IN _nroNotaCredito NVARCHAR(255),
+	IN _numFactura NVARCHAR(255),
+	IN _fecIniPagoActual DATE,
+	IN _fecFinPagoActual DATE,
+	IN _totalSolesActual DOUBLE,
+	IN _totalDolaresActual DOUBLE,
+	IN _costoSolesActual DOUBLE,
+	IN _costoDolaresActual DOUBLE,
+	IN _fecIniPagoAntiguo DATE,
+	IN _fecFinPagoAntiguo DATE,
+	IN _totalSolesAntiguo DOUBLE,
+	IN _totalDolaresAntiguo DOUBLE,
+	IN _costoSolesAntiguo DOUBLE,
+	IN _costoDolaresAntiguo DOUBLE,
+	IN _fecEmisiom DATE,
+	IN _tipoCambio DOUBLE,
+	IN _observacion NVARCHAR(1000),
+	IN _usuario_mod NVARCHAR(255), 
+	OUT _idNotaCredito INT
+)
+BEGIN
+
+	(select count(*) INTO @cantidad from cuota WHERE idFactura=_idFactura);
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE factura SET usuario_mod=_usuario_mod, estado=0, fec_mod=@fechaModificacion WHERE idFactura=_idFactura;
+	
+	
+	if  @cantidad>0 then
+	
+		DELETE FROM cuota WHERE idFactura=_idFactura; 
+		
+		
+		(SELECT d.observacion  INTO @codigoAntiguo
+		FROM salida_det d INNER JOIN laptop_cpu lc ON d.idLC=lc.idLC 
+		WHERE d.idSalida=_idSalida AND d.guiaSalida=_guiaSalida AND lc.codigo=_codigo);
+								
+		(SELECT d.guiaSalida INTO @guiaAntigua
+		FROM salida_det d INNER JOIN laptop_cpu lc ON d.idLC=lc.idLC
+		WHERE d.IdSalida=_idSalida AND lc.codigo=@codigoAntiguo);
+
+
+		INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,tipoCambio,observacion,estado) 
+
+		SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.tipoCambio, f.observacion, f.estado
+		FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
+		WHERE f.codigoLC=_codigo AND f.guiaSalida=_guiaSalida and f.estado=1 
+
+		UNION
+
+		SELECT f.idFactura, f.idSalida,lc.idLC,f.numFactura,f.fecIniPago AS fecInicioPago, f.fecFinPago, f.fecEmisiom, f.ruc, f.codigoLC, f.guiaSalida, f.totalSoles, f.totalDolares, f.costoSoles, f.costoDolares, f.tipoCambio, f.observacion, f.estado
+		FROM factura f INNER JOIN laptop_cpu lc ON f.codigoLC=lc.codigo 
+		WHERE f.codigoLC=@codigoAntiguo AND f.guiaSalida=@guiaAntigua AND f.estado=1 
+
+		ORDER BY fecFinPago desc LIMIT 1;
+			
+	End if;
+	
+	
+	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
+	
+	
+	COMMIT;
+	
+END
+$$
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `update_factura`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_factura`(
+	IN _idFactura int,
+	IN _idSalida int,
+	IN _idTipoEquipo int,
+	IN _idEquipo int,
+	IN _codigo NVARCHAR(255),
+	IN _guiaSalida NVARCHAR(255),
+	IN _nroNotaCredito NVARCHAR(255),
+	IN _numFactura NVARCHAR(255),
+	IN _fecIniPagoActual DATE,
+	IN _fecFinPagoActual DATE,
+	IN _totalSolesActual DOUBLE,
+	IN _totalDolaresActual DOUBLE,
+	IN _costoSolesActual DOUBLE,
+	IN _costoDolaresActual DOUBLE,
+	IN _fecIniPagoAntiguo DATE,
+	IN _fecFinPagoAntiguo DATE,
+	IN _totalSolesAntiguo DOUBLE,
+	IN _totalDolaresAntiguo DOUBLE,
+	IN _costoSolesAntiguo DOUBLE,
+	IN _costoDolaresAntiguo DOUBLE,
+	IN _fecEmisiom DATE,
+	IN _tipoCambio DOUBLE,
+	IN _observacion NVARCHAR(1000),
+	IN _usuario_mod NVARCHAR(255), 
+	OUT _idNotaCredito INT
+)
+BEGIN
+
+	SET @fechaModificacion=(SELECT now());
+
+	UPDATE factura 
+	SET 
+	totalSoles=_totalSolesActual, 
+	totalDolares=_totalDolaresActual, 
+	costoSoles=_costoSolesActual, 
+	costoDolares=_costoDolaresActual, 
+	fecIniPago=_fecIniPagoActual, 
+	fecFinPago=_fecFinPagoActual,
+	fec_mod=@fechaModificacion, 
+	usuario_mod=_usuario_mod
+	WHERE idFactura=_idFactura;
+
+
+	UPDATE cuota 
+	SET 
+	totalSoles=_totalSolesActual, 
+	totalDolares=_totalDolaresActual, 
+	costoSoles=_costoSolesActual, 
+	costoDolares=_costoDolaresActual, 
+	fecInicioPago=_fecIniPagoActual, 
+	fecFinPago=_fecFinPagoActual
+	WHERE idFactura=_idFactura;
+	
+	
+	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
+	
+	COMMIT;
+	
+END
+$$
+DELIMITER ;
