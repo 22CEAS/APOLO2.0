@@ -495,6 +495,7 @@
             this.label9.Size = new System.Drawing.Size(337, 31);
             this.label9.TabIndex = 175;
             this.label9.Text = "CAMBIO DESCRIPCION";
+            this.label9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCD_MouseMove);
             // 
             // btnNuevo
             // 

@@ -2023,6 +2023,7 @@
             this.label11.Size = new System.Drawing.Size(134, 32);
             this.label11.TabIndex = 192;
             this.label11.Text = "COMPRA";
+            this.label11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
             // 
             // button1
             // 

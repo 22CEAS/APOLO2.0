@@ -589,6 +589,7 @@
             this.label6.Size = new System.Drawing.Size(127, 31);
             this.label6.TabIndex = 183;
             this.label6.Text = "CAMBIO";
+            this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
             // 
             // button1
             // 

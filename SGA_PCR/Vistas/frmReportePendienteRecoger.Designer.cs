@@ -553,6 +553,7 @@
             this.label2.Size = new System.Drawing.Size(403, 31);
             this.label2.TabIndex = 155;
             this.label2.Text = "PENDIENTE POR RECOGER";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPR_MouseMove);
             // 
             // btnCerrar
             // 

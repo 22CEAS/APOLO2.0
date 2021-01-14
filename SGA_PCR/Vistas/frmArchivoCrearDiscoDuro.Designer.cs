@@ -419,6 +419,7 @@
             this.label1.Size = new System.Drawing.Size(255, 31);
             this.label1.TabIndex = 114;
             this.label1.Text = "MAESTRO DISCO";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMDD_MouseMove);
             // 
             // button1
             // 

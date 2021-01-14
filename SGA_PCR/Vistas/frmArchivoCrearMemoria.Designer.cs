@@ -412,6 +412,7 @@
             this.label1.Size = new System.Drawing.Size(299, 31);
             this.label1.TabIndex = 114;
             this.label1.Text = "MAESTRO MEMORIA";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMM_MouseMove);
             // 
             // button1
             // 

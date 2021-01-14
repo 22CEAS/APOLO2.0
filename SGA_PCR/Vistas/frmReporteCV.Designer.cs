@@ -592,6 +592,7 @@
             this.label2.Size = new System.Drawing.Size(396, 31);
             this.label2.TabIndex = 146;
             this.label2.Text = "CUADRO DE VENCIMIENTO";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCV_MouseMove);
             // 
             // verResumen
             // 

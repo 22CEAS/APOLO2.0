@@ -476,6 +476,7 @@
             this.label1.Size = new System.Drawing.Size(390, 31);
             this.label1.TabIndex = 126;
             this.label1.Text = "MAESTRO TARJETA VIDEO";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlT_MouseMove);
             // 
             // button1
             // 

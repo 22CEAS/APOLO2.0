@@ -362,6 +362,7 @@
             this.lblAlquileres.Size = new System.Drawing.Size(195, 31);
             this.lblAlquileres.TabIndex = 152;
             this.lblAlquileres.Text = "ALQUILERES";
+            this.lblAlquileres.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAlquileres_MouseMove);
             // 
             // frmReporteAlquiler
             // 

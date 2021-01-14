@@ -246,7 +246,6 @@
             this.pnlL.Name = "pnlL";
             this.pnlL.Size = new System.Drawing.Size(1063, 58);
             this.pnlL.TabIndex = 153;
-   
             this.pnlL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
             // 
             // label2
@@ -259,6 +258,7 @@
             this.label2.Size = new System.Drawing.Size(168, 31);
             this.label2.TabIndex = 155;
             this.label2.Text = "LICENCIAS";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
             // 
             // btnCerrar
             // 

@@ -414,6 +414,7 @@
             this.label7.Size = new System.Drawing.Size(423, 31);
             this.label7.TabIndex = 200;
             this.label7.Text = "LEVANTAR OBSERVACIONES";
+            this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLO_MouseMove);
             // 
             // button1
             // 
