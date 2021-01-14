@@ -519,6 +519,7 @@
             this.label9.Size = new System.Drawing.Size(359, 31);
             this.label9.TabIndex = 175;
             this.label9.Text = "CAMBIO COMPONENTES";
+            this.label9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCC_MouseMove);
             // 
             // btnNuevo
             // 

@@ -256,6 +256,7 @@
             this.label2.Size = new System.Drawing.Size(169, 31);
             this.label2.TabIndex = 151;
             this.label2.Text = "MEMORIAS";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlM_MouseMove);
             // 
             // btnCerrar
             // 

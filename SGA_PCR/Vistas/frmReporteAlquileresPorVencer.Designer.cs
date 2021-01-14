@@ -410,6 +410,7 @@
             this.label2.Size = new System.Drawing.Size(344, 31);
             this.label2.TabIndex = 163;
             this.label2.Text = "LAPTOPS POR VENCER";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLV_MouseMove);
             // 
             // btnCerrar
             // 

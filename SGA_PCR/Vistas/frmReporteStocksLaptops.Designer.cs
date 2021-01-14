@@ -132,7 +132,6 @@
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
-            
             this.dgvLaptops.MouseLeave += new System.EventHandler(this.dgvLaptops_MouseLeave);
             this.dgvLaptops.MouseHover += new System.EventHandler(this.dgvLaptops_MouseHover);
             // 
@@ -808,6 +807,7 @@
             this.label4.Size = new System.Drawing.Size(192, 31);
             this.label4.TabIndex = 189;
             this.label4.Text = "INVENTARIO";
+            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
             // 
             // frmReporteStocksLaptops
             // 

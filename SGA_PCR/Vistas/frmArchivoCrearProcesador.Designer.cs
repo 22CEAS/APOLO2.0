@@ -410,6 +410,7 @@
             this.label1.Size = new System.Drawing.Size(367, 31);
             this.label1.TabIndex = 111;
             this.label1.Text = "MAESTRO PROCESADOR";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlP_MouseMove);
             // 
             // button1
             // 

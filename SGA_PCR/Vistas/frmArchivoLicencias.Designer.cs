@@ -250,6 +250,7 @@
             this.label1.Size = new System.Drawing.Size(298, 31);
             this.label1.TabIndex = 172;
             this.label1.Text = "MAESTRO LICENCIA";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlL_MouseMove);
             // 
             // button1
             // 

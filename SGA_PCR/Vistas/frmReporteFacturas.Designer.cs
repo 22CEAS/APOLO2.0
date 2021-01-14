@@ -302,6 +302,7 @@
             this.lblFacturas.Size = new System.Drawing.Size(170, 31);
             this.lblFacturas.TabIndex = 140;
             this.lblFacturas.Text = "FACTURAS";
+            this.lblFacturas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFacturas_MouseMove);
             // 
             // btnCerrar
             // 

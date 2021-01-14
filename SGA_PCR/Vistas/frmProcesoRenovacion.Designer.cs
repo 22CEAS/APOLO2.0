@@ -310,6 +310,7 @@
             this.label2.Size = new System.Drawing.Size(208, 31);
             this.label2.TabIndex = 183;
             this.label2.Text = "RENOVACION";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlR_MouseMove);
             // 
             // button1
             // 

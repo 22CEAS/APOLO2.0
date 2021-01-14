@@ -304,6 +304,7 @@
             this.label2.Size = new System.Drawing.Size(243, 31);
             this.label2.TabIndex = 159;
             this.label2.Text = "REPARACIONES";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblR_MouseMove);
             // 
             // btnCerrar
             // 

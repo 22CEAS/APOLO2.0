@@ -1150,6 +1150,7 @@
             this.label2.Size = new System.Drawing.Size(157, 31);
             this.label2.TabIndex = 202;
             this.label2.Text = "ALQUILER";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlD_MouseMove);
             // 
             // button1
             // 

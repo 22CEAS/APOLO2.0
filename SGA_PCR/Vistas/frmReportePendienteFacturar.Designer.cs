@@ -556,6 +556,7 @@
             this.label2.Size = new System.Drawing.Size(416, 31);
             this.label2.TabIndex = 165;
             this.label2.Text = "PENDIENTE POR FACTURAR";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPF_MouseMove);
             // 
             // btnCerrar
             // 

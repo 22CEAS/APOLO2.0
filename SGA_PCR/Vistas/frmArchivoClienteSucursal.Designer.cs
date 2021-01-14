@@ -421,6 +421,7 @@
             this.label1.Size = new System.Drawing.Size(452, 31);
             this.label1.TabIndex = 134;
             this.label1.Text = "MAESTRO CLIENTE/SUCURSAL";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCS_MouseMove);
             // 
             // button1
             // 

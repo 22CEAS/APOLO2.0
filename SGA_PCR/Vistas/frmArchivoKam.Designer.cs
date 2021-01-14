@@ -222,6 +222,7 @@
             this.label2.Size = new System.Drawing.Size(224, 31);
             this.label2.TabIndex = 144;
             this.label2.Text = "MAESTRO KAM";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlK_MouseMove);
             // 
             // button1
             // 

@@ -289,6 +289,7 @@
             this.label2.Size = new System.Drawing.Size(266, 31);
             this.label2.TabIndex = 195;
             this.label2.Text = "CORTE ALQUILER";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCA_MouseMove);
             // 
             // button1
             // 

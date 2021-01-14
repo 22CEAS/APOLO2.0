@@ -356,6 +356,7 @@
             this.label4.Size = new System.Drawing.Size(205, 31);
             this.label4.TabIndex = 196;
             this.label4.Text = "REPARACION";
+            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlR_MouseMove);
             // 
             // button1
             // 
