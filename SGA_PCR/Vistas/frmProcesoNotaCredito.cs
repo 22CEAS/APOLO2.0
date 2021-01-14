@@ -30,6 +30,10 @@ namespace Apolo
         DataTable tablaFacturas;
         DataTable tablaEquipos;
 
+        DateTime FechaEmision;
+        Double TipoCambio;
+        Boolean permitir = true;
+
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
@@ -58,6 +62,8 @@ namespace Apolo
             facturaDA = new FacturaDA();
             facturas = new BindingList<Factura>();
 
+            dtpFechaEmision.Value = DateTime.Now;
+
             tablaFacturas = facturaDA.BuscarFacturasActivas();
 
             cmbFactura.DataSource = tablaLaptopsIngreso;
@@ -83,6 +89,8 @@ namespace Apolo
                     cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -97,6 +105,8 @@ namespace Apolo
                     cmbAccion.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtObservación.Enabled = true;
+                    txtMontoCambio.Enabled = true;
+                    dtpFechaEmision.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
                     btnDeseleccionarFilas.Enabled = true;
                     btnNuevo.Enabled = false;
@@ -112,6 +122,8 @@ namespace Apolo
                     cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -124,6 +136,8 @@ namespace Apolo
                     cmbAccion.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtObservación.Enabled = true;
+                    txtMontoCambio.Enabled = true;
+                    dtpFechaEmision.Enabled = true;
                     btnSeleccionarFilas.Enabled = true;
                     btnDeseleccionarFilas.Enabled = true;
                     btnNuevo.Enabled = false;
@@ -135,6 +149,8 @@ namespace Apolo
                     cmbFactura.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -148,6 +164,8 @@ namespace Apolo
                     cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -162,6 +180,8 @@ namespace Apolo
                     cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -176,6 +196,8 @@ namespace Apolo
                     cmbAccion.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtObservación.Enabled = false;
+                    txtMontoCambio.Enabled = false;
+                    dtpFechaEmision.Enabled = false;
                     btnSeleccionarFilas.Enabled = false;
                     btnDeseleccionarFilas.Enabled = false;
                     btnNuevo.Enabled = true;
@@ -200,21 +222,28 @@ namespace Apolo
             txtReferencia.Text = "";
             txtObservación.Text = "";
             facturas = new BindingList<Factura>();
+
+
+            txtMontoCambio.Text = "";
+            dtpFechaEmision.Value = DateTime.Now;
         }
 
         public bool validarDatos()
         {
             vistaFacturas.ClearColumnsFilter();
-            if (cmbFactura.SelectedValue == null)
-            {
-                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return false;
-            }
+
+            
             //====================================================================================================
             if (cmbAccion.SelectedIndex == -1)
             {
                 MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una acción a realizar.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+            //====================================================================================================
+            if (cmbFactura.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado una factura correcta.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -235,6 +264,14 @@ namespace Apolo
             if (aux.Length == 0)
             {
                 MessageBox.Show("No se puede realizar el proceso\n si no se a escrito una observación.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return false;
+            }
+            //====================================================================================================
+            string aux3 = txtMontoCambio.Text;
+            if (aux3.Trim().Length == 0)
+            {
+                MessageBox.Show("No se puede realizar el proceso\n si no se ha seleccionado un tipo de cambio correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return false;
             }
@@ -308,6 +345,9 @@ namespace Apolo
             aux2 = txtObservación.Text;
             aux2 = aux2.Trim();
             aux2 = aux2.ToUpper();
+            string aux4 = txtMontoCambio.Text;
+            TipoCambio = (aux4.Trim().Length == 0) ? 0 : Double.Parse(aux4);
+            FechaEmision = dtpFechaEmision.Value;
             facturas = new BindingList<Factura>();
             vistaFacturas.ClearColumnsFilter();
             for (int i = 0; i < vistaFacturas.RowCount; i++)
@@ -366,7 +406,7 @@ namespace Apolo
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int error = 0;
-                    error = facturaDA.RegistrarNC(facturas, this.nombreUsuario, accion);
+                    error = facturaDA.RegistrarNC(facturas, this.nombreUsuario, accion, FechaEmision, TipoCambio);
 
                     if (error == 0)
                     {
@@ -466,6 +506,36 @@ namespace Apolo
                 this.CostoSoles.OptionsColumn.AllowEdit = true;
                 this.CostoDolares.OptionsColumn.AllowEdit = true;
             }
+        }
+
+
+        private void txtMontoCambio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = solonumeros(Convert.ToInt32(e.KeyChar));
+        }
+
+        public bool solonumeros(int code)
+        {
+            bool resultado;
+
+            if (code == 46 && txtMontoCambio.Text.Contains("."))//se evalua si es punto y si es punto se rebiza si ya existe en el textbox
+            {
+                resultado = true;
+            }
+            else if ((((code >= 48) && (code <= 57)) || (code == 8) || code == 46)) //se evaluan las teclas validas
+            {
+                resultado = false;
+            }
+            else if (!permitir)
+            {
+                resultado = permitir;
+            }
+            else
+            {
+                resultado = true;
+            }
+
+            return resultado;
         }
     }
 }

@@ -322,11 +322,11 @@ namespace AccesoDatos
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
         }
 
-        public int RegistrarNC(BindingList<Factura> facturas, string usuario, int accion)
+        public int RegistrarNC(BindingList<Factura> facturas, string usuario, int accion, DateTime FechaEmision, Double TipoCambio)
         {
             foreach (Factura f in facturas)
             {
-                parametrosEntrada = new MySqlParameter[23];
+                parametrosEntrada = new MySqlParameter[25];
                 parametrosEntrada[0] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
@@ -347,9 +347,11 @@ namespace AccesoDatos
                 parametrosEntrada[17] = new MySqlParameter("@_totalDolaresAntiguo", MySqlDbType.Decimal);
                 parametrosEntrada[18] = new MySqlParameter("@_costoSolesAntiguo", MySqlDbType.Decimal);
                 parametrosEntrada[19] = new MySqlParameter("@_costoDolaresAntiguo", MySqlDbType.Decimal);
-                parametrosEntrada[20] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 1000);
-                parametrosEntrada[21] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 255);
-                parametrosEntrada[22] = new MySqlParameter("@_idNotaCredito", MySqlDbType.Int32);
+                parametrosEntrada[20] = new MySqlParameter("@_fecEmisiom", MySqlDbType.Date);
+                parametrosEntrada[21] = new MySqlParameter("@_tipoCambio", MySqlDbType.Decimal);
+                parametrosEntrada[22] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 1000);
+                parametrosEntrada[23] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 255);
+                parametrosEntrada[24] = new MySqlParameter("@_idNotaCredito", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = f.IdFactura;
                 parametrosEntrada[1].Value = f.IdSalida;
@@ -371,18 +373,20 @@ namespace AccesoDatos
                 parametrosEntrada[17].Value = f.TotalDolaresAntiguo;
                 parametrosEntrada[18].Value = f.CostoSolesAntiguo;
                 parametrosEntrada[19].Value = f.CostoDolaresAntiguo;
-                parametrosEntrada[20].Value = f.ObservacionXLevantar;
-                parametrosEntrada[21].Value = usuario;
+                parametrosEntrada[20].Value = FechaEmision;
+                parametrosEntrada[21].Value = TipoCambio;
+                parametrosEntrada[22].Value = f.ObservacionXLevantar;
+                parametrosEntrada[23].Value = usuario;
 
                 string[] datosSalida = new string[1];
 
 
                 if (accion == 1)//ANULAR
                     objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "anular_factura",
-                    22, 23, out datosSalida, 1);
+                    24, 25, out datosSalida, 1);
                 else if (accion == 2)//MODIFICAR
                     objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "update_factura",
-                    22, 23, out datosSalida, 1);
+                    24, 25, out datosSalida, 1);
 
 
                 int idNotaCredito;
