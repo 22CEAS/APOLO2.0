@@ -2693,6 +2693,7 @@ DROP view IF EXISTS `vista_reportes_alquileres`;
 create view vista_reportes_alquileres as
 SELECT 
 sd.idSalida as IdSalida,
+sd.idSalidaDet as idSalidaDet,
 s.idCliente as IdCliente,
 s.IdSucursal as IdSucursal,
 s.rucDni as RucDni,
@@ -2709,7 +2710,11 @@ if(sd.estado=4,if(sd.fueDevuelto=1,"SI","NO"),if(ca.fueDevuelto=1,"SI","NO")) as
 if(sd.estado=9 and ca.fueDevuelto=1,ca.fechaCambio,"") as FechaCambio,
 if(sd.estado=4 and sd.fueDevuelto=1,d.fechaDevolucion,"") as FechaDevolucion,
 if(sd.estado=4 and sd.fueDevuelto=1,d.guiaDevolucion,"") as GuiaDevolucion,
-if(sd.estado=4 and sd.corteAlquiler=1,"SI",if(sd.estado=9,"","NO")) as CorteAlquiler
+if(sd.estado=4 and sd.corteAlquiler=1,"SI",if(sd.estado=9,"","NO")) as CorteAlquiler,
+cu.numFactura AS UltimaFactura,
+cu.fecInicioPago as FecInicioFactura,
+cu.fecFinPago as FecFinFactura,
+cu.fecEmisiom as FechaEmisionFactura
 FROM salida_det sd
 LEFT JOIN salida s ON s.idSalida=sd.idSalida
 LEFT JOIN estados e ON e.idEstado=sd.estado
@@ -2717,7 +2722,8 @@ LEFT JOIN laptop_cpu lc ON lc.idLC=sd.IdLC
 LEFT JOIN cliente c ON c.idCliente=s.idCliente
 LEFT JOIN devolucion_det dd ON dd.idSalidaDet=sd.idSalidaDet and dd.idLC=sd.idLC
 LEFT JOIN devolucion d ON d.idDevolucion=dd.idDevolucion 
-LEFT JOIN cambio ca ON ca.idSalidaDet=sd.idSalidaDet;
+LEFT JOIN cambio ca ON ca.idSalidaDet=sd.idSalidaDet
+LEFT JOIN cuota cu ON cu.idSalida=sd.idSalida and cu.ruc=s.rucDni and cu.codigoLC=lc.codigo and cu.guiaSalida=sd.guiaSalida;
 
 --===================================Tipo de Cambio=================================
 

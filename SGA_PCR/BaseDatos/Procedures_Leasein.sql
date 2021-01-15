@@ -3887,6 +3887,8 @@ ALTER TABLE `bd_leasein`.`nota_credito`
 ADD COLUMN `fecEmisiom` date NULL AFTER `numFactura`;
 ALTER TABLE `bd_leasein`.`nota_credito` 
 ADD COLUMN `tipoCambio` double NULL AFTER `costoDolaresActual`;
+ALTER TABLE `bd_leasein`.`nota_credito` 
+ADD COLUMN `accion` int NULL AFTER `guiaSalida`;
 
 DROP PROCEDURE IF EXISTS `anular_factura`;
 DELIMITER $$
@@ -3957,8 +3959,8 @@ BEGIN
 	
 	
 	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
-	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
-	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,accion,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,1,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
 	
 	
 	COMMIT;
@@ -4027,8 +4029,8 @@ BEGIN
 	
 	
 	SET _idNotaCredito=(SELECT IFNULL( MAX(idNotaCredito) , 0 )+1 FROM nota_credito);
-	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
-	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
+	INSERT INTO nota_credito (idNotaCredito,idFactura,idSalida,idTipoEquipo,idEquipo,codigo,guiaSalida,accion,nroNotaCredito,numFactura,fecEmisiom,fecIniPagoActual,fecFinPagoActual,totalSolesActual,totalDolaresActual,costoSolesActual,costoDolaresActual,tipoCambio,fecIniPagoAntiguo,fecFinPagoAntiguo,totalSolesAntiguo,totalDolaresAntiguo,costoSolesAntiguo,costoDolaresAntiguo,observacion,estado,usuario_ins) values
+	(_idNotaCredito,_idFactura,_idSalida,_idTipoEquipo,_idEquipo,_codigo,_guiaSalida,2,_nroNotaCredito,_numFactura,_fecEmisiom,_fecIniPagoActual,_fecFinPagoActual,_totalSolesActual,_totalDolaresActual,_costoSolesActual,_costoDolaresActual,_tipoCambio,_fecIniPagoAntiguo,_fecFinPagoAntiguo,_totalSolesAntiguo,_totalDolaresAntiguo,_costoSolesAntiguo,_costoDolaresAntiguo,_observacion,1,_usuario_mod);
 	
 	COMMIT;
 	
