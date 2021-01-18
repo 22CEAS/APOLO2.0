@@ -223,7 +223,32 @@ namespace Apolo
 
         private void frmConfiguracionPermisos_Load(object sender, EventArgs e)
         {
+            button3.PerformClick();
+        }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlPermisos_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button3.PerformClick();
         }
     }
 }

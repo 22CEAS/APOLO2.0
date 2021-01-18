@@ -17,6 +17,13 @@ namespace Modelo
         private string email;
         private int estado;
 
+        
+        private string NombrePerfil;
+        private string NombreEstado;
+        private int idArea;
+        private string NombreArea;
+
+
         public Usuario()
         {
 
@@ -42,5 +49,9 @@ namespace Modelo
         public int IdPerfil { get => idPerfil; set => idPerfil = value; }
         public string Email { get => email; set => email = value; }
         public int Estado { get => estado; set => estado = value; }
+        public string NombrePerfil1 { get => NombrePerfil; set => NombrePerfil = value; }
+        public string NombreEstado1 { get => NombreEstado; set => NombreEstado = value; }
+        public int IdArea { get => idArea; set => idArea = value; }
+        public string NombreArea1 { get => NombreArea; set => NombreArea = value; }
     }
 }

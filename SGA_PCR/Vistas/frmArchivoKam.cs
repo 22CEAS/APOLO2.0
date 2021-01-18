@@ -139,5 +139,10 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void frmArchivoKam_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
