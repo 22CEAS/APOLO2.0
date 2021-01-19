@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
 using Modelo;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,6 +143,117 @@ namespace Apolo
 
         private void frmArchivoKam_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCambiarForma_Click(object sender, EventArgs e)
+        {
+            if (btnCambiarForma.Text == "MASIVO") //CAMBIAR A MASIVO
+            {
+                label1.Visible = false;
+                cmbKAM.Visible = false;
+                btnSeleccionarFilas.Visible = false;
+                btnDeseleccionarFilas.Visible = false;
+                dgvClienteKam.Visible = false;
+                btnGrabar.Visible = false;
+                btnCambiarForma.Text = "MANUAL";
+                btnCargarData.Visible = true;
+                btnRelacionKAMmas.Visible = true;
+                dgvKAMmas.Visible = true;
+            }
+            else
+            {
+                label1.Visible = true;
+                cmbKAM.Visible = true;
+                btnSeleccionarFilas.Visible = true;
+                btnDeseleccionarFilas.Visible = true;
+                dgvClienteKam.Visible = true;
+                btnGrabar.Visible = true;
+                btnCambiarForma.Text = "MASIVO";
+                btnCargarData.Visible = false;
+                btnRelacionKAMmas.Visible = false;
+                dgvKAMmas.Visible = false;
+
+            }
+        }
+
+        private void btnCargarData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    //DE ESTA MANERA FILTRAMOS TODOS LOS ARCHIVOS EXCEL EN EL NAVEGADOR DE ARCHIVOS
+                    Filter = "Excel | *.xls;*.xlsx;",
+
+                    //AQUÍ INDICAMOS QUE NOMBRE TENDRÁ EL NAVEGADOR DE ARCHIVOS COMO TITULO
+                    Title = "Seleccionar Archivo"
+                };
+
+                //EN CASO DE SELECCIONAR EL ARCHIVO, ENTONCES PROCEDEMOS A ABRIR EL ARCHIVO CORRESPONDIENTE
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable miDataTable = new DataTable();
+                    miDataTable.Columns.Add("rucCliente");
+                    miDataTable.Columns.Add("razonSocialCliente");
+                    miDataTable.Columns.Add("dniKam");
+                    miDataTable.Columns.Add("nombreKam");
+
+                    path = openFileDialog.FileName;
+                    SLDocument sl = new SLDocument(path);
+
+                    int iRow = 2;
+                    while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
+                    {
+                        DataRow Renglon = miDataTable.NewRow();
+                        Renglon["rucCliente"] = sl.GetCellValueAsString(iRow, 1);
+                        Renglon["razonSocialCliente"] = sl.GetCellValueAsString(iRow, 2);
+                        Renglon["dniKam"] = sl.GetCellValueAsString(iRow, 3);
+                        Renglon["nombreKam"] = sl.GetCellValueAsString(iRow, 4);
+                        iRow++;
+                        miDataTable.Rows.Add(Renglon);
+                    }
+
+                    dgvKAMmas.DataSource = miDataTable;
+                    
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+        }
+
+        private void btnRelacionKAMmas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaKAMmas.RowCount;
+
+            string RucCliente="";
+            string razonSocialCliente = "";
+            int DniKam= 0;
+            string NombreKam = "";
+
+            for (int i = 0; i < filas; i++)
+            {
+                RucCliente = (vistaKAMmas.GetRowCellValue(i, "rucCliente").ToString());
+                razonSocialCliente = (vistaKAMmas.GetRowCellValue(i, "razonSocialCliente").ToString());
+                DniKam = int.Parse((vistaKAMmas.GetRowCellValue(i, "dniKam").ToString()));
+                NombreKam = (vistaKAMmas.GetRowCellValue(i, "nombreKam").ToString());
+
+                //PROCEDURE PARA RELACIONAR KAMS DE FORMA MASIVA
+                int resultado = clienteDA.RelacionKAMmasivo(RucCliente, razonSocialCliente, DniKam, NombreKam);
+
+                if(resultado==-1) goto error;
+            }
+            MessageBox.Show("SE RELACIONARON LOS KAMS MASIVAMENTE DE FORMA CORRECTA");
+            dgvKAMmas.DataSource = null;
+            return;
+
+        error: MessageBox.Show("HUBO UN ERROR");
 
         }
     }

@@ -382,8 +382,9 @@ namespace Apolo
 
         private void dgvUsu_Click(object sender, EventArgs e)
         {
-
+            
             int fila = vistaUsu.GetFocusedDataSourceRowIndex();
+            vistaUsu.ClearColumnsFilter();
 
             txtDni.Text = vistaUsu.GetRowCellValue(fila, "Dni").ToString();
             txtNombre.Text = vistaUsu.GetRowCellValue(fila, "Nombre").ToString();

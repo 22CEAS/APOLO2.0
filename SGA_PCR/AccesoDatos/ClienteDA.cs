@@ -101,6 +101,26 @@ namespace AccesoDatos
 
         }
 
+        public int RelacionKAMmasivo(string ruc, string razonSocial, int dniKam,string nombreKam)
+        {
+
+            parametrosEntrada = new MySqlParameter[4];
+            parametrosEntrada[0] = new MySqlParameter("@_rucCliente", MySqlDbType.VarChar, 200);
+            parametrosEntrada[1] = new MySqlParameter("@_razonSocialCliente", MySqlDbType.VarChar, 200);
+            parametrosEntrada[2] = new MySqlParameter("@_dniKam", MySqlDbType.Int32);
+            parametrosEntrada[3] = new MySqlParameter("@_nombreKam", MySqlDbType.VarChar, 200);
+
+            parametrosEntrada[0].Value = ruc;
+            parametrosEntrada[1].Value = razonSocial;
+            parametrosEntrada[2].Value = dniKam;
+            parametrosEntrada[3].Value = nombreKam;
+
+
+            bool aux = objManager.EjecutarProcedure(parametrosEntrada, "relacionarKAMmasivo");
+            return ((aux) ? 1 : -1);
+
+        }
+
 
         public int ModificarCliente(Cliente cliente, string usuario)
         {
