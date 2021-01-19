@@ -101,13 +101,67 @@ namespace AccesoDatos
 
         }
 
-        public int RelacionKAMmasivo(string ruc, string razonSocial, int dniKam,string nombreKam)
+        public int RelacionKAMmasivo(string ruc, string razonSocial, string dniKam,string nombreKam)
         {
 
+            //! PRIMERO VERIFICAR QUE EL CLIENTE EXISTE
+            parametrosEntrada = new MySqlParameter[2];
+            parametrosEntrada[0] = new MySqlParameter("@_rucCliente", MySqlDbType.VarChar, 200);
+            parametrosEntrada[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = ruc;
+            
+            string[] cantidadRucCliente = new string[1];
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "VerificarRucCliente",
+                1, 2, out cantidadRucCliente, 1);
+
+            if (cantidadRucCliente != null)
+            {
+                int existeCliente = Convert.ToInt32(cantidadRucCliente[0]);
+                if (existeCliente == 1)
+                {
+                    //TODO OK -> seguir con la verificacion
+                }
+                else 
+                {
+                    return 3; //NO EXISTE
+                }    
+            }
+
+            //! SEGUNDO VERIFICAR QUE EL KAM EXISTE
+            parametrosEntrada = new MySqlParameter[2];
+            parametrosEntrada[0] = new MySqlParameter("@_dniKam", MySqlDbType.VarChar, 200);
+            parametrosEntrada[1] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = dniKam;
+
+            string[] cantidadKam = new string[1];
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "VerificarDniKam",
+                1, 2, out cantidadKam, 1);
+
+            if (cantidadKam != null)
+            {
+                int existeKam = Convert.ToInt32(cantidadKam[0]);
+                if (existeKam == 1)
+                {
+                    //TODO OK -> seguir con la verificacion
+                }
+                else
+                {
+                    return 5; //NO EXISTE
+                }
+            }
+
+
+
+
+            //SI EN CASO EXISTA SE PROCEDE A LA RELACION
             parametrosEntrada = new MySqlParameter[4];
             parametrosEntrada[0] = new MySqlParameter("@_rucCliente", MySqlDbType.VarChar, 200);
             parametrosEntrada[1] = new MySqlParameter("@_razonSocialCliente", MySqlDbType.VarChar, 200);
-            parametrosEntrada[2] = new MySqlParameter("@_dniKam", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_dniKam", MySqlDbType.VarChar, 200);
             parametrosEntrada[3] = new MySqlParameter("@_nombreKam", MySqlDbType.VarChar, 200);
 
             parametrosEntrada[0].Value = ruc;
