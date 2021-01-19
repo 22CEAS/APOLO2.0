@@ -200,6 +200,7 @@ namespace Apolo
                     miDataTable.Columns.Add("razonSocialCliente");
                     miDataTable.Columns.Add("dniKam");
                     miDataTable.Columns.Add("nombreKam");
+                    miDataTable.Columns.Add("obs");
 
                     path = openFileDialog.FileName;
                     SLDocument sl = new SLDocument(path);
@@ -212,6 +213,7 @@ namespace Apolo
                         Renglon["razonSocialCliente"] = sl.GetCellValueAsString(iRow, 2);
                         Renglon["dniKam"] = sl.GetCellValueAsString(iRow, 3);
                         Renglon["nombreKam"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["obs"] = "";
                         iRow++;
                         miDataTable.Rows.Add(Renglon);
                     }
@@ -235,26 +237,42 @@ namespace Apolo
 
             string RucCliente="";
             string razonSocialCliente = "";
-            int DniKam= 0;
+            string DniKam = "";
             string NombreKam = "";
 
             for (int i = 0; i < filas; i++)
             {
                 RucCliente = (vistaKAMmas.GetRowCellValue(i, "rucCliente").ToString());
                 razonSocialCliente = (vistaKAMmas.GetRowCellValue(i, "razonSocialCliente").ToString());
-                DniKam = int.Parse((vistaKAMmas.GetRowCellValue(i, "dniKam").ToString()));
+                DniKam = (vistaKAMmas.GetRowCellValue(i, "dniKam").ToString());
                 NombreKam = (vistaKAMmas.GetRowCellValue(i, "nombreKam").ToString());
 
                 //PROCEDURE PARA RELACIONAR KAMS DE FORMA MASIVA
                 int resultado = clienteDA.RelacionKAMmasivo(RucCliente, razonSocialCliente, DniKam, NombreKam);
 
-                if(resultado==-1) goto error;
+                
+                //ERRORES
+                if (resultado == -1)
+                {
+                    vistaKAMmas.SetRowCellValue(i, "obs","HUBO UN ERROR");
+                }
+                else if (resultado == 3)
+                {
+                    vistaKAMmas.SetRowCellValue(i, "obs", "EL CLIENTE NO EXISTE");
+                }
+                else if (resultado == 5)
+                {
+                    vistaKAMmas.SetRowCellValue(i, "obs", "EL KAM NO EXISTE");
+                }
+                else 
+                {
+                    vistaKAMmas.SetRowCellValue(i, "obs", "Todo ok");
+                }
             }
-            MessageBox.Show("SE RELACIONARON LOS KAMS MASIVAMENTE DE FORMA CORRECTA");
-            dgvKAMmas.DataSource = null;
+            MessageBox.Show("SE COMPLETÓ LA OPERACION | REVISÉ LAS OBSERVACIONES");
             return;
 
-        error: MessageBox.Show("HUBO UN ERROR");
+        
 
         }
     }
