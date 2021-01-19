@@ -17,12 +17,13 @@ namespace Apolo
     public partial class frmConfiguracionUsuarios : Form
     {
 
-        public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular , Cancelar}
+        public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular, Cancelar }
 
         DataTable tablaAreas;
         DataTable tablaPerfiles;
         DataTable tablaEstados;
         DataTable tablaUsuarios;
+        DataTable auxiliar;
 
         Area area;
         AreaDA areaDA;
@@ -35,6 +36,11 @@ namespace Apolo
 
         Usuario usuario;
         UsuarioDA usuarioDA;
+
+        
+        BindingList<Usuario> usu;
+
+
 
         public frmConfiguracionUsuarios()
         {
@@ -52,7 +58,7 @@ namespace Apolo
             perfilDA = new PerfilDA();
             perfil = new Perfil();
 
-            estadosDA= new EstadosDA();
+            estadosDA = new EstadosDA();
             estados = new Estados();
 
             usuarioDA = new UsuarioDA();
@@ -87,10 +93,35 @@ namespace Apolo
 
         public void llenadoTablaUsuarios()
         {
-            //RELLENAR TABLA DE USUARIOS
-            tablaUsuarios = usuarioDA.ListarUsuario();
-            dgvUsuarios.PrimaryGrid.AutoGenerateColumns = false;
-            dgvUsuarios.PrimaryGrid.DataSource = tablaUsuarios;
+          
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+
+            auxiliar = usuarioDA.ListarUsuario();
+            usu = new BindingList<Usuario>();
+            int rec = 0;
+            while (rec < auxiliar.Rows.Count)
+            {
+                Usuario usuario= new Usuario();
+                usuario.IdUsuario = int.Parse(auxiliar.Rows[rec]["idUsuario"].ToString());
+                usuario.Dni = auxiliar.Rows[rec]["dni"].ToString();
+                usuario.Nombre = auxiliar.Rows[rec]["nombre"].ToString();
+                usuario.User = auxiliar.Rows[rec]["usuario"].ToString();
+                usuario.IdPerfil = int.Parse(auxiliar.Rows[rec]["perfil"].ToString());
+                usuario.NombrePerfil1 = auxiliar.Rows[rec]["descripcionPerfil"].ToString();
+                usuario.Email = auxiliar.Rows[rec]["email"].ToString();
+                usuario.Estado = int.Parse(auxiliar.Rows[rec]["estado"].ToString());
+                usuario.NombreEstado1 = auxiliar.Rows[rec]["descripcionEstado"].ToString();
+                usuario.IdArea = int.Parse(auxiliar.Rows[rec]["idArea"].ToString());
+                usuario.NombreArea1 = auxiliar.Rows[rec]["descripcionArea"].ToString();
+                usu.Add(usuario);
+                rec++;
+            }
+
+            dgvUsu.DataSource = usu;
+            vistaUsu.OptionsBehavior.AutoPopulateColumns = false;
+            vistaUsu.OptionsSelection.MultiSelect = true;
+
         }
 
 
@@ -114,7 +145,7 @@ namespace Apolo
                     cmbEstado.Enabled = false;
                     cmbPerfil.Enabled = false;
 
-                    dgvUsuarios.Enabled = true;
+                    dgvUsu.Enabled = true;
                     break;
                 case TipoVista.Nuevo: //ya esta
                     //Inicializado(idUsuario, nombreUsuario);
@@ -132,21 +163,21 @@ namespace Apolo
                     cmbArea.Enabled = true;
                     cmbEstado.Enabled = true;
                     cmbPerfil.Enabled = true;
-                    dgvUsuarios.Enabled = false;
+                    dgvUsu.Enabled = false;
                     break;
                 case TipoVista.Guardar: //ya esta listo
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    dgvUsuarios.Enabled = false;
+                    dgvUsu.Enabled = false;
                     break;
                 case TipoVista.Modificar://ya esta //Inicializado(idUsuario, nombreUsuario);
                     btnNuevo.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    dgvUsuarios.Enabled = false;
+                    dgvUsu.Enabled = false;
 
                     txtDni.Enabled = false;
                     txtNombre.Enabled = true;
@@ -156,7 +187,7 @@ namespace Apolo
                     cmbArea.Enabled = true;
                     cmbEstado.Enabled = true;
                     cmbPerfil.Enabled = true;
-                    dgvUsuarios.Enabled = false;
+                    dgvUsu.Enabled = false;
                     break;
                 case TipoVista.Cancelar://ya esta //Inicializado(idUsuario, nombreUsuario);
                     btnNuevo.Enabled = true;
@@ -172,7 +203,7 @@ namespace Apolo
                     cmbArea.Enabled = false;
                     cmbEstado.Enabled = false;
                     cmbPerfil.Enabled = false;
-                    dgvUsuarios.Enabled = true;
+                    dgvUsu.Enabled = true;
                     limpiar_componentes();
                     break;
                 case TipoVista.Limpiar: //ya esta
@@ -220,15 +251,15 @@ namespace Apolo
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtDni.Text.Trim().Length ==8 && validacionSoloNumeros(txtDni.Text.Trim()) == true) //VALIDACION DNI
+            if (txtDni.Text.Trim().Length == 8 && validacionSoloNumeros(txtDni.Text.Trim()) == true) //VALIDACION DNI
             {
                 if (txtNombre.Text.Trim().Length > 0 && validacionSoloLetras(txtNombre.Text.Trim()) == true)
                 {
                     if (txtUsuario.Text.Trim().Length > 0)
                     {
-                        if (txtClaveUsuario.Text.Trim().Length >4)
+                        if (txtClaveUsuario.Text.Trim().Length > 4)
                         {
-                            if (txtEmail.Text.Trim().Length > 0 && validacionCorreoLeasein(txtEmail.Text.Trim())==true)
+                            if (txtEmail.Text.Trim().Length > 0 && validacionCorreoLeasein(txtEmail.Text.Trim()) == true)
                             {
                                 //VALIDACION DE COMBOBOXS
                                 if (cmbArea.SelectedIndex != -1)
@@ -314,7 +345,7 @@ namespace Apolo
         private bool validacionSoloLetras(string palabra) //PROBADO
         {
             return Regex.IsMatch(palabra, "^[a-zA-Z ]+$") ? true : false;
-            
+
         }
 
         private bool validacionCorreoLeasein(string correo) //PROBADO
@@ -323,64 +354,52 @@ namespace Apolo
             return Regex.IsMatch(correo, expresion) ? true : false;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+      
+
+    
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            //VER PRIMERO SI HAY UN REGISTOR SELECCIONADO
-            GridRow aux = (GridRow)dgvUsuarios.PrimaryGrid.ActiveRow;
-
-            if (aux != null)
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlConfguracionUsuario_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
             {
-                
-                string dni = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                txtDni.Text = dni;
-
-                string nombre = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                txtNombre.Text = nombre;
-
-                string usuario = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                txtUsuario.Text = usuario;
-
-                string claveUsuario = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[4])).Value.ToString();
-                txtClaveUsuario.Text = claveUsuario;
-
-                string email = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[7])).Value.ToString();
-                txtEmail.Text=email;
-
-                string idArea = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[14])).Value.ToString();
-                cmbArea.SelectedValue = idArea;
-
-                string idPerfil = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[5])).Value.ToString();
-                cmbPerfil.SelectedValue = idPerfil;
-
-                string idEstado = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[8])).Value.ToString();
-                cmbEstado.SelectedValue = idEstado;
-
-
+                posX = e.X;
+                posY = e.Y;
             }
-            estadoComponentes(TipoVista.Modificar);
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
 
-        private void dgvUsuarios_Click(object sender, EventArgs e)
+    
+
+        private void dgvUsu_Click(object sender, EventArgs e)
         {
-         
-            
-            GridRow aux = (GridRow)dgvUsuarios.PrimaryGrid.ActiveRow;
-            
-            
-            if (aux != null)
-            {
 
-                txtDni.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                txtNombre.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                txtUsuario.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                txtClaveUsuario.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[4])).Value.ToString();
-                txtEmail.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[7])).Value.ToString();
-                cmbArea.SelectedIndex= int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[14])).Value.ToString())-1;
+            int fila = vistaUsu.GetFocusedDataSourceRowIndex();
 
-                cmbEstado.SelectedIndex = int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                cmbPerfil.SelectedIndex = int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[5])).Value.ToString())-1;
-            }
+            txtDni.Text = vistaUsu.GetRowCellValue(fila, "Dni").ToString();
+            txtNombre.Text = vistaUsu.GetRowCellValue(fila, "Nombre").ToString();
+            txtUsuario.Text = vistaUsu.GetRowCellValue(fila, "User").ToString();
+            txtClaveUsuario.Text = vistaUsu.GetRowCellValue(fila, "Dni").ToString();
+            txtEmail.Text = vistaUsu.GetRowCellValue(fila, "Email").ToString();
             
+            cmbArea.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "IdArea").ToString())-1;
+            cmbEstado.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "Estado").ToString());
+            cmbPerfil.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "IdPerfil").ToString())-1;
+            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            estadoComponentes(TipoVista.Modificar);
         }
     }
 }

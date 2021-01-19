@@ -260,6 +260,7 @@
             this.Name = "frmArchivoKam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KAM";
+            this.Load += new System.EventHandler(this.frmArchivoKam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteKam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
