@@ -350,6 +350,7 @@
             this.obs});
             this.vistaKAMmas.GridControl = this.dgvKAMmas;
             this.vistaKAMmas.Name = "vistaKAMmas";
+            this.vistaKAMmas.OptionsBehavior.Editable = false;
             this.vistaKAMmas.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
             this.vistaKAMmas.OptionsSelection.MultiSelect = true;
             this.vistaKAMmas.OptionsView.ColumnAutoWidth = false;
