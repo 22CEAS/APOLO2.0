@@ -230,6 +230,7 @@ namespace Apolo
 
         private void btnRelacionKAMmas_Click(object sender, EventArgs e)
         {
+            vistaKAMmas.ClearColumnsFilter();
             int filas = vistaKAMmas.RowCount;
 
             string RucCliente="";

@@ -4037,3 +4037,74 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+--=========================================================================================================
+DROP PROCEDURE IF EXISTS `relacionarKAMmasivo`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `relacionarKAMmasivo`(
+	IN _rucCliente NVARCHAR(200),
+	IN _razonSocialCliente NVARCHAR(200),
+	IN _dniKam int,
+	IN _nombreKam NVARCHAR(200)
+)
+BEGIN
+
+	#SE ACTUALIZA EL IDKAM EN LA TABLA DE CLIENTES
+	update cliente c
+	set c.idKAM=(SELECT u.idUsuario from usuario u where u.dni=_dniKam and u.perfil=2)
+	where c.nroDocumento=_rucCliente;
+	
+	#SE ACTUALIZA EL NOMBRE DEL KAM EN LA TABLA CLIENTE PARA QUE PUEDA FIGURAR EN EL CV
+	update cliente c
+	set c.nombreKam=(SELECT u.nombre from usuario u where u.idUsuario=c.idKAM and u.perfil=2)
+	where c.nroDocumento=_rucCliente;
+	
+END
+$$
+DELIMITER ;
+DROP PROCEDURE IF EXISTS `relacion_KAM`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `relacion_KAM`(
+	IN _Nombre_razonSocial NVARCHAR(200),
+	IN _idKam int
+)
+BEGIN
+	
+	#HACER UPDATE DE CLIENTE CON SU NUEVO ID KAM
+	update cliente set idKAM=_idKam where nombre_razonSocial=_Nombre_razonSocial;
+	
+	#HACER UPDATE DEL NOMBRE DEL KAM EN LA TABLA CLIENTE
+	update cliente c
+	set c.nombreKam=(SELECT u.nombre from usuario u where u.idUsuario=c.idKAM and u.perfil=2)
+	where c.nombre_razonSocial=_Nombre_razonSocial;
+	
+	
+END
+$$
+DELIMITER ;
+DROP PROCEDURE IF EXISTS `insert_usuario`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_usuario`(
+	IN _dni NVARCHAR(8),
+	IN _nombre NVARCHAR(255),
+	IN _usuario NVARCHAR(20),
+	IN _claveUsuario NVARCHAR(255),
+	IN _email NVARCHAR(255),
+	IN _idArea int,
+	IN _idPerfil int,
+	IN _idEstado int
+)
+BEGIN
+	set @fecha = (CURDATE());
+	set @newId = (select max(idUsuario)+1 from usuario);
+	
+	if (select count(*) from usuario u where u.dni=_dni)<=0 then 	
+		INSERT INTO usuario (idUsuario,dni,nombre,usuario,claveUsuario,perfil,email,estado,fec_ins,idArea) values
+		(@newID,_dni,_nombre,_usuario,_claveUsuario,_idPerfil,_email,_idEstado,@fecha,_idArea);
+	else 
+		update usuario set nombre=_nombre, claveUsuario=_claveUsuario, email=_email,perfil=_idPerfil,estado=_idEstado,idArea=_idArea where dni=_dni;
+	end if;
+	COMMIT;
+END
+$$
+DELIMITER ;
