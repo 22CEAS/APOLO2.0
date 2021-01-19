@@ -27,8 +27,7 @@ namespace Apolo
         DevolucionDA devolucionDA;
         Devolucion devolucion;
         DevolucionDetalle detalleTemp;
-
-
+        
         Ingreso ingreso;
         IngresoDA ingresoDA;
 
@@ -53,7 +52,6 @@ namespace Apolo
 
         public void Inicializado()
         {
-
             clienteDA = new ClienteDA();
             alquilerDA = new AlquilerDA();
             devolucionDA = new DevolucionDA();
@@ -97,7 +95,6 @@ namespace Apolo
 
         public void ObtenerDatosDevolucion()
         {
-
             devolucion.IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
             devolucion.FechaDevolucion = dtpFechaIngreso.Value;
             string aux1 = "";
@@ -106,8 +103,7 @@ namespace Apolo
             string aux2 = "";
             aux2 = txtNroDocumento.Text;
             devolucion.RucDni = aux2.Trim();
-
-            
+                        
             int i = cmbSede.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
@@ -288,7 +284,6 @@ namespace Apolo
         
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             int i = cmbCliente.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
@@ -333,7 +328,6 @@ namespace Apolo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
             estadoComponentes(TipoVista.Vista);
             frmProcesoDevolucionBuscar frmBP = new frmProcesoDevolucionBuscar(this.idUsuario);
             if (frmBP.ShowDialog() == DialogResult.OK)
@@ -362,7 +356,6 @@ namespace Apolo
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-
             Cursor.Current = Cursors.WaitCursor;
             string numDevolucion = txtNroDevolucion.Text;
 
@@ -372,9 +365,7 @@ namespace Apolo
                                MessageBoxIcon.Error);
                 return;
             }
-
-           
-
+            
             ObtenerDatosDevolucion();
 
             if (devolucion.Detalles.Count == 0)
@@ -417,7 +408,6 @@ namespace Apolo
             }
             else
             {
-                
                 if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     devolucionDA.ModificarDevolucion(devolucion, this.nombreUsuario);
@@ -425,8 +415,6 @@ namespace Apolo
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
-
-
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -535,7 +523,6 @@ namespace Apolo
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
             Cursor.Current = Cursors.WaitCursor;
             if (devolucion.Estado == 0)
             {
@@ -602,8 +589,6 @@ namespace Apolo
                 Cursor.Current = Cursors.Default;
             }
         }
-
-
 
         public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
         {
@@ -735,7 +720,6 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
         }
-
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
