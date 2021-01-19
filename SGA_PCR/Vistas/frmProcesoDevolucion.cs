@@ -87,8 +87,9 @@ namespace Apolo
 
             ObtenerDatosDevolucion();
             devolucion.LlenarDatos(tablaLaptops);
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = tablaLaptops;
-            dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
+            dgvLaptopsSeleccionados.DataSource = tablaLaptops;
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
 
             lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
         }
@@ -279,7 +280,7 @@ namespace Apolo
             txtNroDevolucion.Text = "";
             txtNroGuia.Text = "";
             dtpFechaIngreso.Value = DateTime.Now;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+            dgvLaptopsSeleccionados.DataSource = null;
         }
         
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -292,7 +293,7 @@ namespace Apolo
                 txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
                 devolucion.IdCliente = idCliente;
                 tablaLaptops = null;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvLaptopsSeleccionados.DataSource = null;
             }
             else
             {
@@ -322,7 +323,7 @@ namespace Apolo
             {
                 estadoComponentes(TipoVista.Limpiar);
                 devolucion = new Devolucion();
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvLaptopsSeleccionados.DataSource = null;
             }
         }
 
@@ -336,7 +337,7 @@ namespace Apolo
                 txtNroDevolucion.Text = devolucion.IdDevolucion.ToString();
                 LlenarDatosDevolucion();
                 devolucion = frmBP.ObjSeleccionado;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
+                dgvLaptopsSeleccionados.DataSource = devolucion.Detalles;
             }
             else
             {
@@ -449,22 +450,31 @@ namespace Apolo
                 }
             }
 
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
+            dgvLaptopsSeleccionados.DataSource = devolucion.Detalles;
             if (devolucion.Detalles.Count > 0)
             {
                 btnObservacion.Enabled = true;
             }
-
             lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
         }
 
         private void btnObservacion_Click(object sender, EventArgs e)
         {
+            bool error;
+            vistaEquipos.ClearColumnsFilter();
 
-            if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+            int equipoID = -1;
+            int h = 0;
+            for (h = 0; h < vistaEquipos.RowCount; h++)
+                if (vistaEquipos.IsRowSelected(h) == true)
+                {
+                    equipoID = int.Parse(vistaEquipos.GetRowCellValue(h, "IdLC").ToString());
+                    break;
+                }
+
+            if (equipoID != -1)
             {
-                detalleTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[4])).Value.ToString());
-
+                detalleTemp.IdLC = equipoID;
                 int indice = 0;
                 foreach (DevolucionDetalle detalle in devolucion.Detalles)
                 {
@@ -485,11 +495,11 @@ namespace Apolo
                         devolucion.Detalles[indice].Danado = frm.Dano;
                         devolucion.Detalles[indice].EstadoLC = (frm.Dano == 1) ? 3 : 2;
                         devolucion.Detalles[indice].Observacion = frm.Observacion;
-                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
+                        dgvLaptopsSeleccionados.DataSource = devolucion.Detalles;
+                        vistaEquipos.RefreshData();
                     }
                 }
             }
-
         }
 
         private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
@@ -497,9 +507,20 @@ namespace Apolo
             if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Devolución", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool error;
-                if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+                vistaEquipos.ClearColumnsFilter();
+
+                int equipoID = -1;
+                int h = 0;
+                for (h = 0; h < vistaEquipos.RowCount; h++)
+                    if (vistaEquipos.IsRowSelected(h) == true)
+                    {
+                        equipoID = int.Parse(vistaEquipos.GetRowCellValue(h, "IdLC").ToString());
+                        break;
+                    }
+
+                if (equipoID != -1)
                 {
-                    detalleTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[4])).Value.ToString());
+                    detalleTemp.IdLC = equipoID;
 
                     int indiceLC = 0;
                     foreach (DevolucionDetalle detalle in devolucion.Detalles)
@@ -510,15 +531,11 @@ namespace Apolo
                         }
                         indiceLC++;
                     }
-
                     devolucion.Detalles.RemoveAt(indiceLC);
-
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
+                    dgvLaptopsSeleccionados.DataSource = devolucion.Detalles;
                 }
             }
-
             lblContador.Text = $"CANTIDAD REGISTRO: {devolucion.Detalles.Count.ToString()}";
-
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -567,7 +584,7 @@ namespace Apolo
                         hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
                         hoja_pre_alquiler.Name = "Devolución";
                         string cabecera = "Reporte de Devolución";
-                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, dgvLaptopsSeleccionados, cabecera);
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
 
 
                         ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
@@ -590,7 +607,7 @@ namespace Apolo
             }
         }
 
-        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)
         {
             Excel.Range rango;
             int i = 0;
@@ -616,10 +633,10 @@ namespace Apolo
                 hoja_trabajo.Cells[i + 8, 6] = (det.Danado == 1) ? "Equipo Dañado" : "Equipo Sin Daño";
                 i++;
             }
-            montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera);
+            montaCabeceras(1, ref hoja_trabajo,nombreCabecera);
         }
 
-        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, SuperGridControl grd, string nombreCabecera)
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera)
         {
             try
             {

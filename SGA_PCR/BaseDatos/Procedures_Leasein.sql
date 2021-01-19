@@ -4044,7 +4044,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `relacionarKAMmasivo`(
 	IN _rucCliente NVARCHAR(200),
 	IN _razonSocialCliente NVARCHAR(200),
-	IN _dniKam int,
+	IN _dniKam NVARCHAR(200),
 	IN _nombreKam NVARCHAR(200)
 )
 BEGIN
@@ -4062,6 +4062,7 @@ BEGIN
 END
 $$
 DELIMITER ;
+
 DROP PROCEDURE IF EXISTS `relacion_KAM`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `relacion_KAM`(
@@ -4082,6 +4083,34 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `VerificarDniKam`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerificarDniKam`(
+	IN _dniKam  NVARCHAR(200),
+	OUT _cantidad INT
+)
+BEGIN
+	SET _cantidad=(select count(*) from usuario where dni=_dniKam and perfil=2);
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `VerificarRucCliente`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerificarRucCliente`(
+	IN _rucCliente NVARCHAR(255),
+	OUT _cantidad INT
+)
+BEGIN
+	SET _cantidad=(select count(*) from cliente where nroDocumento=_rucCliente);
+END
+$$
+DELIMITER ;
+
+
+
 DROP PROCEDURE IF EXISTS `insert_usuario`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_usuario`(
@@ -4108,3 +4137,4 @@ BEGIN
 END
 $$
 DELIMITER ;
+

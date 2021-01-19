@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoDevolucion));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtNroGuia = new System.Windows.Forms.TextBox();
-            this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -60,9 +54,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblContador = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.dgvLaptopsSeleccionados = new DevExpress.XtraGrid.GridControl();
+            this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.CodigoEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             this.pnlD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -136,62 +139,6 @@
             this.txtNroGuia.Name = "txtNroGuia";
             this.txtNroGuia.Size = new System.Drawing.Size(170, 20);
             this.txtNroGuia.TabIndex = 2;
-            // 
-            // dgvLaptopsSeleccionados
-            // 
-            this.dgvLaptopsSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
-            this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
-            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(25, 196);
-            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "CodigoLC";
-            gridColumn1.MinimumWidth = 100;
-            gridColumn1.Name = "Código";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "MarcaLC";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Marca";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "ModeloLC";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Modelo";
-            gridColumn4.DataPropertyName = "Observacion";
-            gridColumn4.Name = "Observación";
-            gridColumn4.Width = 220;
-            gridColumn5.DataPropertyName = "IdLC";
-            gridColumn5.Name = "Id LC";
-            gridColumn5.Visible = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableFiltering = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Filter.Visible = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.MultiSelect = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.NoRowsText = "No hay ninguna laptop seleccionada";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.NullString = "<<null>>";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(534, 480);
-            this.dgvLaptopsSeleccionados.TabIndex = 135;
-            this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
-            this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
             // 
             // labelX1
             // 
@@ -492,12 +439,108 @@
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
+            // dgvLaptopsSeleccionados
+            // 
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(29, 200);
+            this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvLaptopsSeleccionados.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvLaptopsSeleccionados.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvLaptopsSeleccionados.MainView = this.vistaEquipos;
+            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(530, 409);
+            this.dgvLaptopsSeleccionados.TabIndex = 230;
+            this.dgvLaptopsSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaEquipos});
+            this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
+            // 
+            // vistaEquipos
+            // 
+            this.vistaEquipos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaEquipos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.Row.Options.UseFont = true;
+            this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CodigoEquipo,
+            this.MarcaLC,
+            this.ModeloLC,
+            this.Observacion,
+            this.IdLC});
+            this.vistaEquipos.GridControl = this.dgvLaptopsSeleccionados;
+            this.vistaEquipos.Name = "vistaEquipos";
+            this.vistaEquipos.OptionsBehavior.Editable = false;
+            this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
+            this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
+            this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaEquipos.OptionsView.ShowGroupPanel = false;
+            // 
+            // CodigoEquipo
+            // 
+            this.CodigoEquipo.Caption = "Código Equipo";
+            this.CodigoEquipo.FieldName = "CodigoLC";
+            this.CodigoEquipo.MinWidth = 40;
+            this.CodigoEquipo.Name = "CodigoEquipo";
+            this.CodigoEquipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoEquipo.Visible = true;
+            this.CodigoEquipo.VisibleIndex = 0;
+            this.CodigoEquipo.Width = 140;
+            // 
+            // MarcaLC
+            // 
+            this.MarcaLC.Caption = "Marca";
+            this.MarcaLC.FieldName = "MarcaLC";
+            this.MarcaLC.MinWidth = 40;
+            this.MarcaLC.Name = "MarcaLC";
+            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MarcaLC.Visible = true;
+            this.MarcaLC.VisibleIndex = 1;
+            this.MarcaLC.Width = 100;
+            // 
+            // ModeloLC
+            // 
+            this.ModeloLC.Caption = "Modelo";
+            this.ModeloLC.FieldName = "ModeloLC";
+            this.ModeloLC.MinWidth = 40;
+            this.ModeloLC.Name = "ModeloLC";
+            this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ModeloLC.Visible = true;
+            this.ModeloLC.VisibleIndex = 2;
+            this.ModeloLC.Width = 100;
+            // 
+            // Observacion
+            // 
+            this.Observacion.Caption = "Observación";
+            this.Observacion.FieldName = "Observacion";
+            this.Observacion.MinWidth = 40;
+            this.Observacion.Name = "Observacion";
+            this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Observacion.Visible = true;
+            this.Observacion.VisibleIndex = 3;
+            this.Observacion.Width = 150;
+            // 
+            // IdLC
+            // 
+            this.IdLC.Caption = "IdLC";
+            this.IdLC.FieldName = "IdLC";
+            this.IdLC.Name = "IdLC";
+            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
             // frmProcesoDevolucion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(681, 732);
+            this.Controls.Add(this.dgvLaptopsSeleccionados);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.lblContador);
             this.Controls.Add(this.pnlD);
@@ -516,7 +559,6 @@
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.txtNroDocumento);
-            this.Controls.Add(this.dgvLaptopsSeleccionados);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -534,6 +576,8 @@
             this.pnlD.ResumeLayout(false);
             this.pnlD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,7 +589,6 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaIngreso;
         private System.Windows.Forms.TextBox txtNroGuia;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
         internal DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.ComboBox cmbCliente;
@@ -566,5 +609,12 @@
         private System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private DevExpress.XtraGrid.GridControl dgvLaptopsSeleccionados;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoEquipo;
+        private DevExpress.XtraGrid.Columns.GridColumn MarcaLC;
+        private DevExpress.XtraGrid.Columns.GridColumn ModeloLC;
+        private DevExpress.XtraGrid.Columns.GridColumn Observacion;
+        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
     }
 }
