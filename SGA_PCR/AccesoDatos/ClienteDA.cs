@@ -104,6 +104,12 @@ namespace AccesoDatos
         public int RelacionKAMmasivo(string ruc, string razonSocial, int dniKam,string nombreKam)
         {
 
+            //PRIMERO VERIFICAR QUE EL KAM EXISTA
+
+
+
+
+            //SI EN CASO EXISTA SE PROCEDE A LA RELACION
             parametrosEntrada = new MySqlParameter[4];
             parametrosEntrada[0] = new MySqlParameter("@_rucCliente", MySqlDbType.VarChar, 200);
             parametrosEntrada[1] = new MySqlParameter("@_razonSocialCliente", MySqlDbType.VarChar, 200);
