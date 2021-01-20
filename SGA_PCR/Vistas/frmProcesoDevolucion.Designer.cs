@@ -442,9 +442,9 @@
             // dgvLaptopsSeleccionados
             // 
             this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(29, 200);
-            this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvLaptopsSeleccionados.LookAndFeel.SkinName = "Office 2010 Silver";
+            //this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            //this.dgvLaptopsSeleccionados.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            //this.dgvLaptopsSeleccionados.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvLaptopsSeleccionados.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvLaptopsSeleccionados.MainView = this.vistaEquipos;
             this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";

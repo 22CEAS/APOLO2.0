@@ -67,15 +67,15 @@ namespace Apolo
 
             BindingList<Cambio> cambios = new BindingList<Cambio>();
             cambios.Add(cambio);
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
-            dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
+            dgvLaptopsSeleccionados.DataSource = cambios;
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
 
             tablaSede = ingresoDA.ListarSede();
             cmbSede.DataSource = tablaSede;
             cmbSede.DisplayMember = "nombreSede";
             cmbSede.ValueMember = "idSede";
             
-
         }
 
         public void ObtenerDatosCambio()
@@ -105,10 +105,6 @@ namespace Apolo
                 cambio.TipoSede = tablaSede.Rows[i]["nombreSede"].ToString();
                 cambio.IdSede = Convert.ToInt32(cmbSede.SelectedValue.ToString());
             }
-            
-
-            
-
         }
 
         public void estadoComponentes(TipoVista estado)
@@ -319,10 +315,9 @@ namespace Apolo
             txtRucDni.Text = "";
             txtObservacion.Text = "";
             dtpFechaCambio.Value = DateTime.Now;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+            dgvLaptopsSeleccionados.DataSource = null;
             cmbSede.SelectedValue = -1;
         }
-
 
         public void LlenarDatosCambio()
         {
@@ -338,13 +333,11 @@ namespace Apolo
             chbPagaraCliente.Checked = (cambio.PagaraCliente == 1) ? true : false;
             BindingList<Cambio> cambios = new BindingList<Cambio>();
             cambios.Add(cambio);
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
+            dgvLaptopsSeleccionados.DataSource = cambios;
         }
-
-
+        
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-
             string cliente = txtCliente.Text;
             cliente = cliente.Trim();
 
@@ -362,7 +355,7 @@ namespace Apolo
                     cambio.LaptopNuevo = frm.LAPTOP;
                     BindingList<Cambio> cambios = new BindingList<Cambio>();
                     cambios.Add(cambio);
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
+                    dgvLaptopsSeleccionados.DataSource = cambios;
                 }
             }
         }
@@ -380,7 +373,7 @@ namespace Apolo
                 flagModificar = 0;
                 estadoComponentes(TipoVista.Limpiar);
                 cambio = new Cambio();
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvLaptopsSeleccionados.DataSource = null;
             }
         }
 
@@ -395,11 +388,8 @@ namespace Apolo
             {
                 if (MessageBox.Show("Estas seguro que desea Modificar\n" + "el Cambio N° :" + txtNroCambio.Text, "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-
                     estadoComponentes(TipoVista.Modificar);
-
                 }
-
             }
         }
 
@@ -408,9 +398,8 @@ namespace Apolo
             if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle de Cambio", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 cambio.LaptopNuevo = null;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvLaptopsSeleccionados.DataSource = null;
             }
-
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -434,42 +423,8 @@ namespace Apolo
             Cursor.Current = Cursors.Default;
         }
 
-        private void txtCodigoLaptop_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            /*if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                string aux = txtCodigoLaptop.Text;
-                tablaDatosLaptop=cambioDA.DatosLaptopPorCambiar(aux.Trim());
-                if (tablaDatosLaptop.Rows.Count == 1)
-                {
-                    cambio.IdLCAntiguo = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdLCAntiguo"].ToString());
-                    cambio.IdCliente = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdCliente"].ToString());
-                    cambio.NombreCliente = tablaDatosLaptop.Rows[0]["NombreCliente"].ToString();
-                    cambio.RucDni =tablaDatosLaptop.Rows[0]["RucDni"].ToString();
-                    cambio.IdSalida = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSalida"].ToString());
-                    cambio.IdSalidaDet = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSalidaDet"].ToString());
-                    cambio.IdSucursal = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSucursal"].ToString());
-
-                    txtCliente.Text = cambio.NombreCliente;
-                    txtRucDni.Text = cambio.RucDni;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ningun cliente relacionado a esta laptop, verifique que el código sea correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cambio.IdLCAntiguo = 0;
-                    cambio.IdCliente = 0;
-                    cambio.NombreCliente = "";
-                    cambio.RucDni = "";
-
-                    txtCliente.Text = "";
-                    txtRucDni.Text = "";
-                }
-            }*/
-        }
-
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-
             Cursor.Current = Cursors.WaitCursor;
             string numCambio = txtNroCambio.Text;
             ObtenerDatosCambio();
@@ -549,8 +504,6 @@ namespace Apolo
                     estadoComponentes(TipoVista.Guardar);
                 }
             }
-
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -568,15 +521,14 @@ namespace Apolo
 
                 BindingList<Cambio> cambios = new BindingList<Cambio>();
                 cambios.Add(cambio);
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
+                dgvLaptopsSeleccionados.DataSource = cambios;
             }
             else
             {
                 estadoComponentes(TipoVista.Inicial);
             }
         }
-
-
+        
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro que desea Imprimir el Cambio", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -601,7 +553,7 @@ namespace Apolo
                         hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
                         hoja_pre_alquiler.Name = "Cambio";
                         string cabecera = "Reporte de Cambio";
-                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, dgvLaptopsSeleccionados, cabecera);
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
 
 
                         ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
@@ -624,7 +576,7 @@ namespace Apolo
             }
         }
 
-        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo,  string nombreCabecera)
         {
             Excel.Range rango;
             int i = 0;
@@ -649,10 +601,10 @@ namespace Apolo
             hoja_trabajo.Cells[8, 5] = cambio.LaptopNuevo.Video.Capacidad.ToString() + " GB";
             hoja_trabajo.Cells[8, 6] = cambio.LaptopNuevo.TamanoPantalla.ToString();
 
-            montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera);
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
         }
 
-        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, SuperGridControl grd, string nombreCabecera)
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, string nombreCabecera)
         {
             try
             {
@@ -740,8 +692,7 @@ namespace Apolo
                 GC.Collect();
             }
         }
-
-
+        
         private void txtCodigoLaptop_TextChanged(object sender, EventArgs e)
         {
             string aux = txtCodigoLaptop.Text;
@@ -809,19 +760,28 @@ namespace Apolo
             }
 
         }
-
-        private void frmProcesoCambio_Load(object sender, EventArgs e)
+        
+        private void chbEquipoDevuelto_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chbEquipoDevuelto.Checked)
+            {
+                cmbSede.Enabled = true;
+            }
+            else
+            {
+                cmbSede.Enabled = false;
+                cmbSede.SelectedIndex = -1;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         int posY = 0;
         int posX = 0;
+
         private void pnlC_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -836,17 +796,5 @@ namespace Apolo
             }
         }
 
-        private void chbEquipoDevuelto_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbEquipoDevuelto.Checked)
-            {
-                cmbSede.Enabled = true;
-            }
-            else
-            {
-                cmbSede.Enabled = false;
-                cmbSede.SelectedIndex = -1;
-            }
-        }
     }
 }

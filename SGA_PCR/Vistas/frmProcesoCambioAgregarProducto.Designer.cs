@@ -29,21 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoCambioAgregarProducto));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.dgvLaptops = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dgvEquipos = new DevExpress.XtraGrid.GridControl();
+            this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Código = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ModeloEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Procesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
+            this.btnSeleccionarFilas = new System.Windows.Forms.Button();
+            this.generacionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.nombreModeloVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.capacidadVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -56,7 +61,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(626, 239);
+            this.btnCancelar.Location = new System.Drawing.Point(745, 303);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 123;
@@ -76,7 +81,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(703, 241);
+            this.btnGrabar.Location = new System.Drawing.Point(822, 305);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 122;
@@ -85,110 +90,232 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // dgvLaptops
+            // dgvEquipos
             // 
-            this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.BackColor = System.Drawing.Color.White;
-            this.dgvLaptops.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvLaptops.ForeColor = System.Drawing.Color.Black;
-            this.dgvLaptops.Location = new System.Drawing.Point(27, 12);
-            this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvLaptops.PrimaryGrid.AllowRowResize = true;
-            this.dgvLaptops.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.DataPropertyName = "";
-            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn1.MinimumWidth = 80;
-            gridColumn1.Name = "Seleccionar";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 80;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "codigo";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Código";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "marcaLC";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Marca";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "nombreModeloLC";
-            gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "Modelo";
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "tamanoPantalla";
-            gridColumn5.MinimumWidth = 60;
-            gridColumn5.Name = "Pantalla";
-            gridColumn5.Width = 60;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "tipoProcesador";
-            gridColumn6.MinimumWidth = 70;
-            gridColumn6.Name = "Procesador";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.Width = 70;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "generacionProcesador";
-            gridColumn7.MinimumWidth = 70;
-            gridColumn7.Name = "Generacion";
-            gridColumn7.Width = 70;
-            gridColumn8.AllowEdit = false;
-            gridColumn8.DataPropertyName = "nombreModeloVideo";
-            gridColumn8.Name = "Video";
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "capacidadVideo";
-            gridColumn9.MinimumWidth = 70;
-            gridColumn9.Name = "Capacidad";
-            gridColumn9.Width = 70;
-            gridColumn10.DataPropertyName = "idLC";
-            gridColumn10.Name = "Id LC";
-            gridColumn10.Visible = false;
-            gridColumn11.DataPropertyName = "idVideo";
-            gridColumn11.Name = "IdVideo";
-            gridColumn11.Visible = false;
-            gridColumn12.DataPropertyName = "idProcesador";
-            gridColumn12.Name = "IdProcesador";
-            gridColumn12.Visible = false;
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvLaptops.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvLaptops.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptops.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptops.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvLaptops.PrimaryGrid.EnableFiltering = true;
-            this.dgvLaptops.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvLaptops.PrimaryGrid.Filter.Visible = true;
-            this.dgvLaptops.PrimaryGrid.MultiSelect = false;
-            this.dgvLaptops.PrimaryGrid.NoRowsText = "No hay ninguna laptop disponible";
-            this.dgvLaptops.PrimaryGrid.NullString = "<<null>>";
-            this.dgvLaptops.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvLaptops.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLaptops.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptops.Size = new System.Drawing.Size(750, 221);
-            this.dgvLaptops.TabIndex = 121;
-            this.dgvLaptops.Text = "Tabla Laptops";
+            this.dgvEquipos.Location = new System.Drawing.Point(23, 79);
+            //this.dgvEquipos.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            //this.dgvEquipos.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            //this.dgvEquipos.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.dgvEquipos.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvEquipos.MainView = this.vistaEquipos;
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.Size = new System.Drawing.Size(863, 218);
+            this.dgvEquipos.TabIndex = 209;
+            this.dgvEquipos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaEquipos});
+            // 
+            // vistaEquipos
+            // 
+            this.vistaEquipos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaEquipos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.Row.Options.UseFont = true;
+            this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar,
+            this.Código,
+            this.Marca,
+            this.ModeloEquipo,
+            this.Pantalla,
+            this.Procesador,
+            this.generacionProcesador,
+            this.nombreModeloVideo,
+            this.capacidadVideo,
+            this.idLC,
+            this.idVideo,
+            this.idProcesador});
+            this.vistaEquipos.GridControl = this.dgvEquipos;
+            this.vistaEquipos.Name = "vistaEquipos";
+            this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaEquipos.OptionsCustomization.AllowGroup = false;
+            this.vistaEquipos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
+            this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
+            this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaEquipos.OptionsView.ShowGroupPanel = false;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.Caption = "Seleccionar";
+            this.Seleccionar.FieldName = "Seleccionar";
+            this.Seleccionar.MinWidth = 40;
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar.Visible = true;
+            this.Seleccionar.VisibleIndex = 0;
+            this.Seleccionar.Width = 80;
+            // 
+            // Código
+            // 
+            this.Código.Caption = "Código";
+            this.Código.FieldName = "codigo";
+            this.Código.MinWidth = 40;
+            this.Código.Name = "Código";
+            this.Código.OptionsColumn.AllowEdit = false;
+            this.Código.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Código.Visible = true;
+            this.Código.VisibleIndex = 1;
+            this.Código.Width = 140;
+            // 
+            // Marca
+            // 
+            this.Marca.Caption = "Marca";
+            this.Marca.FieldName = "marcaLC";
+            this.Marca.MinWidth = 40;
+            this.Marca.Name = "Marca";
+            this.Marca.OptionsColumn.AllowEdit = false;
+            this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Marca.Visible = true;
+            this.Marca.VisibleIndex = 2;
+            this.Marca.Width = 100;
+            // 
+            // ModeloEquipo
+            // 
+            this.ModeloEquipo.Caption = "Modelo";
+            this.ModeloEquipo.FieldName = "nombreModeloLC";
+            this.ModeloEquipo.MinWidth = 40;
+            this.ModeloEquipo.Name = "ModeloEquipo";
+            this.ModeloEquipo.OptionsColumn.AllowEdit = false;
+            this.ModeloEquipo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ModeloEquipo.Visible = true;
+            this.ModeloEquipo.VisibleIndex = 3;
+            this.ModeloEquipo.Width = 100;
+            // 
+            // Pantalla
+            // 
+            this.Pantalla.Caption = "Pantalla";
+            this.Pantalla.FieldName = "tamanoPantalla";
+            this.Pantalla.MinWidth = 40;
+            this.Pantalla.Name = "Pantalla";
+            this.Pantalla.OptionsColumn.AllowEdit = false;
+            this.Pantalla.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Pantalla.Visible = true;
+            this.Pantalla.VisibleIndex = 4;
+            this.Pantalla.Width = 100;
+            // 
+            // Procesador
+            // 
+            this.Procesador.Caption = "Procesador";
+            this.Procesador.FieldName = "tipoProcesador";
+            this.Procesador.MinWidth = 40;
+            this.Procesador.Name = "Procesador";
+            this.Procesador.OptionsColumn.AllowEdit = false;
+            this.Procesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Procesador.Visible = true;
+            this.Procesador.VisibleIndex = 5;
+            this.Procesador.Width = 100;
+            // 
+            // btnDeseleccionarFilas
+            // 
+            this.btnDeseleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeseleccionarFilas.AutoSize = true;
+            this.btnDeseleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeseleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeseleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnDeseleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
+            this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(157, 12);
+            this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
+            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
+            this.btnDeseleccionarFilas.TabIndex = 208;
+            this.btnDeseleccionarFilas.Text = "Deseleccionar Filas";
+            this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
+            this.btnDeseleccionarFilas.Click += new System.EventHandler(this.btnDeseleccionarFilas_Click);
+            // 
+            // btnSeleccionarFilas
+            // 
+            this.btnSeleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionarFilas.AutoSize = true;
+            this.btnSeleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
+            this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(23, 12);
+            this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
+            this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
+            this.btnSeleccionarFilas.TabIndex = 207;
+            this.btnSeleccionarFilas.Text = "Seleccionar Filas";
+            this.btnSeleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSeleccionarFilas.UseVisualStyleBackColor = false;
+            this.btnSeleccionarFilas.Click += new System.EventHandler(this.btnSeleccionarFilas_Click);
+            // 
+            // generacionProcesador
+            // 
+            this.generacionProcesador.Caption = "Generación";
+            this.generacionProcesador.FieldName = "generacionProcesador";
+            this.generacionProcesador.MinWidth = 40;
+            this.generacionProcesador.Name = "generacionProcesador";
+            this.generacionProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.generacionProcesador.Visible = true;
+            this.generacionProcesador.VisibleIndex = 6;
+            this.generacionProcesador.Width = 100;
+            // 
+            // nombreModeloVideo
+            // 
+            this.nombreModeloVideo.Caption = "Video";
+            this.nombreModeloVideo.FieldName = "nombreModeloVideo";
+            this.nombreModeloVideo.Name = "nombreModeloVideo";
+            this.nombreModeloVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // capacidadVideo
+            // 
+            this.capacidadVideo.Caption = "Capacidad Video";
+            this.capacidadVideo.FieldName = "capacidadVideo";
+            this.capacidadVideo.MinWidth = 40;
+            this.capacidadVideo.Name = "capacidadVideo";
+            this.capacidadVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.capacidadVideo.Visible = true;
+            this.capacidadVideo.VisibleIndex = 7;
+            this.capacidadVideo.Width = 100;
+            // 
+            // idLC
+            // 
+            this.idLC.Caption = "gridColumn1";
+            this.idLC.FieldName = "idLC";
+            this.idLC.Name = "idLC";
+            this.idLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idVideo
+            // 
+            this.idVideo.Caption = "gridColumn1";
+            this.idVideo.FieldName = "idVideo";
+            this.idVideo.Name = "idVideo";
+            this.idVideo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // idProcesador
+            // 
+            this.idProcesador.Caption = "gridColumn1";
+            this.idProcesador.FieldName = "idProcesador";
+            this.idProcesador.Name = "idProcesador";
+            this.idProcesador.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
             // frmProcesoCambioAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(798, 304);
+            this.ClientSize = new System.Drawing.Size(917, 368);
+            this.Controls.Add(this.dgvEquipos);
+            this.Controls.Add(this.btnDeseleccionarFilas);
+            this.Controls.Add(this.btnSeleccionarFilas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.dgvLaptops);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProcesoCambioAgregarProducto";
@@ -196,6 +323,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +334,21 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptops;
+        public DevExpress.XtraGrid.GridControl dgvEquipos;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn Código;
+        private DevExpress.XtraGrid.Columns.GridColumn Marca;
+        private DevExpress.XtraGrid.Columns.GridColumn ModeloEquipo;
+        private DevExpress.XtraGrid.Columns.GridColumn Pantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn Procesador;
+        private System.Windows.Forms.Button btnDeseleccionarFilas;
+        private System.Windows.Forms.Button btnSeleccionarFilas;
+        private DevExpress.XtraGrid.Columns.GridColumn generacionProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn nombreModeloVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn capacidadVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn idLC;
+        private DevExpress.XtraGrid.Columns.GridColumn idVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn idProcesador;
     }
 }
