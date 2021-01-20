@@ -105,7 +105,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(18, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(19, 1)));
         }
 
         
@@ -495,6 +495,7 @@ namespace Apolo
                     laptop.IdMarca = int.Parse(tablaLaptops.Rows[rec]["idMarca"].ToString());
                     laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
                     laptop.NombreModeloLC = tablaLaptops.Rows[rec]["nombreModeloLC"].ToString();
+                    laptop.TamanoPantalla = double.Parse(tablaLaptops.Rows[rec]["tamanoPantalla"].ToString());
                     laptop.TipoProcesador = tablaLaptops.Rows[rec]["tipoProcesador"].ToString();
                     laptop.IdGeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["idGeneracionProcesador"].ToString());
                     laptop.GeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["generacionProcesador"].ToString());

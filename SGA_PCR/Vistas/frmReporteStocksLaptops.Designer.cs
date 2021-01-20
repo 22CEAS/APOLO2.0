@@ -85,6 +85,7 @@
             this.pnlInv = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.tamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -113,7 +114,7 @@
             this.TipoSede.FieldName = "TipoSede";
             this.TipoSede.Name = "TipoSede";
             this.TipoSede.Visible = true;
-            this.TipoSede.VisibleIndex = 18;
+            this.TipoSede.VisibleIndex = 19;
             this.TipoSede.Width = 150;
             // 
             // dgvLaptops
@@ -170,7 +171,8 @@
             this.fecTraslado,
             this.idSede,
             this.TipoSede,
-            this.IdEstado});
+            this.IdEstado,
+            this.tamanoPantalla});
             gridFormatRule1.Column = this.IdEstado;
             gridFormatRule1.ColumnApplyTo = this.TipoSede;
             gridFormatRule1.Name = "5555";
@@ -274,7 +276,7 @@
             this.CapacidadVideo.MinWidth = 40;
             this.CapacidadVideo.Name = "CapacidadVideo";
             this.CapacidadVideo.Visible = true;
-            this.CapacidadVideo.VisibleIndex = 5;
+            this.CapacidadVideo.VisibleIndex = 6;
             this.CapacidadVideo.Width = 130;
             // 
             // Disco1
@@ -286,7 +288,7 @@
             this.Disco1.MinWidth = 40;
             this.Disco1.Name = "Disco1";
             this.Disco1.Visible = true;
-            this.Disco1.VisibleIndex = 6;
+            this.Disco1.VisibleIndex = 7;
             this.Disco1.Width = 70;
             // 
             // CapacidadDisco1
@@ -298,7 +300,7 @@
             this.CapacidadDisco1.MinWidth = 40;
             this.CapacidadDisco1.Name = "CapacidadDisco1";
             this.CapacidadDisco1.Visible = true;
-            this.CapacidadDisco1.VisibleIndex = 7;
+            this.CapacidadDisco1.VisibleIndex = 8;
             this.CapacidadDisco1.Width = 130;
             // 
             // Disco2
@@ -310,7 +312,7 @@
             this.Disco2.MinWidth = 40;
             this.Disco2.Name = "Disco2";
             this.Disco2.Visible = true;
-            this.Disco2.VisibleIndex = 8;
+            this.Disco2.VisibleIndex = 9;
             this.Disco2.Width = 70;
             // 
             // CapacidadDisco2
@@ -322,7 +324,7 @@
             this.CapacidadDisco2.MinWidth = 40;
             this.CapacidadDisco2.Name = "CapacidadDisco2";
             this.CapacidadDisco2.Visible = true;
-            this.CapacidadDisco2.VisibleIndex = 9;
+            this.CapacidadDisco2.VisibleIndex = 10;
             this.CapacidadDisco2.Width = 130;
             // 
             // MemoriaRam
@@ -334,7 +336,7 @@
             this.MemoriaRam.MinWidth = 40;
             this.MemoriaRam.Name = "MemoriaRam";
             this.MemoriaRam.Visible = true;
-            this.MemoriaRam.VisibleIndex = 10;
+            this.MemoriaRam.VisibleIndex = 11;
             this.MemoriaRam.Width = 100;
             // 
             // Estado
@@ -346,7 +348,7 @@
             this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 11;
+            this.Estado.VisibleIndex = 12;
             this.Estado.Width = 130;
             // 
             // Cliente
@@ -358,7 +360,7 @@
             this.Cliente.MinWidth = 40;
             this.Cliente.Name = "Cliente";
             this.Cliente.Visible = true;
-            this.Cliente.VisibleIndex = 12;
+            this.Cliente.VisibleIndex = 13;
             this.Cliente.Width = 150;
             // 
             // RucCliente
@@ -371,7 +373,7 @@
             this.RucCliente.Name = "RucCliente";
             this.RucCliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RucCliente.Visible = true;
-            this.RucCliente.VisibleIndex = 13;
+            this.RucCliente.VisibleIndex = 14;
             this.RucCliente.Width = 140;
             // 
             // Ubicacion
@@ -383,7 +385,7 @@
             this.Ubicacion.MinWidth = 40;
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.Visible = true;
-            this.Ubicacion.VisibleIndex = 14;
+            this.Ubicacion.VisibleIndex = 15;
             this.Ubicacion.Width = 150;
             // 
             // SerieFabrica
@@ -395,7 +397,7 @@
             this.SerieFabrica.MinWidth = 40;
             this.SerieFabrica.Name = "SerieFabrica";
             this.SerieFabrica.Visible = true;
-            this.SerieFabrica.VisibleIndex = 15;
+            this.SerieFabrica.VisibleIndex = 16;
             this.SerieFabrica.Width = 150;
             // 
             // idSalidaAlquilado
@@ -408,7 +410,7 @@
             this.idSalidaAlquilado.Name = "idSalidaAlquilado";
             this.idSalidaAlquilado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.idSalidaAlquilado.Visible = true;
-            this.idSalidaAlquilado.VisibleIndex = 16;
+            this.idSalidaAlquilado.VisibleIndex = 17;
             this.idSalidaAlquilado.Width = 80;
             // 
             // fecTraslado
@@ -422,7 +424,7 @@
             this.fecTraslado.Name = "fecTraslado";
             this.fecTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.fecTraslado.Visible = true;
-            this.fecTraslado.VisibleIndex = 17;
+            this.fecTraslado.VisibleIndex = 18;
             this.fecTraslado.Width = 120;
             // 
             // idSede
@@ -809,6 +811,16 @@
             this.label4.Text = "INVENTARIO";
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
             // 
+            // tamanoPantalla
+            // 
+            this.tamanoPantalla.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tamanoPantalla.AppearanceHeader.Options.UseBackColor = true;
+            this.tamanoPantalla.Caption = "Tamaño Pantalla";
+            this.tamanoPantalla.FieldName = "TamanoPantalla";
+            this.tamanoPantalla.Name = "tamanoPantalla";
+            this.tamanoPantalla.Visible = true;
+            this.tamanoPantalla.VisibleIndex = 5;
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -919,5 +931,6 @@
         private System.Windows.Forms.Panel pnlInv;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraGrid.Columns.GridColumn tamanoPantalla;
     }
 }
