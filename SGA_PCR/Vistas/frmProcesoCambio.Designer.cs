@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoCambio));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,14 +44,12 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.txtRucDni = new System.Windows.Forms.TextBox();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.chbEquipoDanado = new System.Windows.Forms.CheckBox();
             this.chbEquipoDevuelto = new System.Windows.Forms.CheckBox();
@@ -70,40 +59,55 @@
             this.cmbSede = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlC = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvLaptopsSeleccionados = new DevExpress.XtraGrid.GridControl();
+            this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GeneracionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreModeloVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaCambio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 194);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(207, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 16);
+            this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 48;
             this.label4.Text = "Fecha Cambio";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 194);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(10, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 16);
+            this.label3.Size = new System.Drawing.Size(122, 16);
             this.label3.TabIndex = 47;
             this.label3.Text = "Guía de Remisión";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(226, 134);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(207, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 46;
             this.label1.Text = "Cliente";
             // 
@@ -116,7 +120,7 @@
             this.dtpFechaCambio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaCambio.ButtonDropDown.Visible = true;
             this.dtpFechaCambio.IsPopupCalendarOpen = false;
-            this.dtpFechaCambio.Location = new System.Drawing.Point(229, 213);
+            this.dtpFechaCambio.Location = new System.Drawing.Point(210, 174);
             // 
             // 
             // 
@@ -144,7 +148,7 @@
             // 
             // txtGuiaRemision
             // 
-            this.txtGuiaRemision.Location = new System.Drawing.Point(32, 213);
+            this.txtGuiaRemision.Location = new System.Drawing.Point(13, 174);
             this.txtGuiaRemision.Name = "txtGuiaRemision";
             this.txtGuiaRemision.Size = new System.Drawing.Size(148, 20);
             this.txtGuiaRemision.TabIndex = 4;
@@ -152,37 +156,36 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 134);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(11, 95);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 16);
+            this.label8.Size = new System.Drawing.Size(166, 16);
             this.label8.TabIndex = 79;
             this.label8.Text = "Código Laptop a Buscar";
             // 
             // txtCodigoLaptop
             // 
-            this.txtCodigoLaptop.Location = new System.Drawing.Point(32, 155);
+            this.txtCodigoLaptop.Location = new System.Drawing.Point(13, 116);
             this.txtCodigoLaptop.Name = "txtCodigoLaptop";
             this.txtCodigoLaptop.Size = new System.Drawing.Size(148, 20);
             this.txtCodigoLaptop.TabIndex = 1;
             this.txtCodigoLaptop.TextChanged += new System.EventHandler(this.txtCodigoLaptop_TextChanged);
-            this.txtCodigoLaptop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoLaptop_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(386, 192);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(367, 153);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 16);
+            this.label9.Size = new System.Drawing.Size(119, 16);
             this.label9.TabIndex = 81;
             this.label9.Text = "N° Ticket Técnico";
             // 
             // txtNroTicket
             // 
-            this.txtNroTicket.Location = new System.Drawing.Point(388, 213);
+            this.txtNroTicket.Location = new System.Drawing.Point(369, 174);
             this.txtNroTicket.Name = "txtNroTicket";
-            this.txtNroTicket.Size = new System.Drawing.Size(110, 20);
+            this.txtNroTicket.Size = new System.Drawing.Size(117, 20);
             this.txtNroTicket.TabIndex = 6;
             // 
             // btnBuscar
@@ -193,12 +196,12 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(263, 63);
+            this.btnBuscar.Location = new System.Drawing.Point(162, 31);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(59, 56);
+            this.btnBuscar.Size = new System.Drawing.Size(62, 56);
             this.btnBuscar.TabIndex = 153;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -208,19 +211,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 88);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(12, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 152;
             this.label2.Text = "Cambio N°:";
             // 
             // txtNroCambio
             // 
-            this.txtNroCambio.Location = new System.Drawing.Point(111, 87);
+            this.txtNroCambio.Location = new System.Drawing.Point(12, 59);
             this.txtNroCambio.Name = "txtNroCambio";
             this.txtNroCambio.ReadOnly = true;
-            this.txtNroCambio.Size = new System.Drawing.Size(123, 20);
+            this.txtNroCambio.Size = new System.Drawing.Size(149, 20);
             this.txtNroCambio.TabIndex = 151;
             // 
             // labelX1
@@ -230,17 +233,17 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(550, 134);
+            this.labelX1.Location = new System.Drawing.Point(531, 95);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(64, 16);
+            this.labelX1.Size = new System.Drawing.Size(68, 18);
             this.labelX1.TabIndex = 155;
             this.labelX1.Text = "RUC / DNI:";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(229, 155);
+            this.txtCliente.Location = new System.Drawing.Point(210, 116);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(269, 20);
@@ -248,22 +251,11 @@
             // 
             // txtRucDni
             // 
-            this.txtRucDni.Location = new System.Drawing.Point(550, 155);
+            this.txtRucDni.Location = new System.Drawing.Point(531, 116);
             this.txtRucDni.Name = "txtRucDni";
             this.txtRucDni.ReadOnly = true;
             this.txtRucDni.Size = new System.Drawing.Size(124, 20);
             this.txtRucDni.TabIndex = 3;
-            // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(550, 208);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
-            this.btnAgregarProducto.TabIndex = 7;
-            this.btnAgregarProducto.Text = "Agregar Producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnAnular
             // 
@@ -276,7 +268,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(369, 559);
+            this.btnAnular.Location = new System.Drawing.Point(445, 506);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(60, 66);
             this.btnAnular.TabIndex = 174;
@@ -296,7 +288,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(521, 559);
+            this.btnImprimir.Location = new System.Drawing.Point(597, 506);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 66);
             this.btnImprimir.TabIndex = 173;
@@ -315,7 +307,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(435, 560);
+            this.btnCancelar.Location = new System.Drawing.Point(511, 507);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 172;
@@ -334,7 +326,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(210, 559);
+            this.btnEditar.Location = new System.Drawing.Point(286, 506);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 171;
@@ -354,7 +346,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(142, 561);
+            this.btnNuevo.Location = new System.Drawing.Point(218, 508);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 170;
@@ -374,7 +366,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(283, 561);
+            this.btnGrabar.Location = new System.Drawing.Point(359, 508);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 169;
@@ -383,114 +375,21 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // dgvLaptopsSeleccionados
-            // 
-            this.dgvLaptopsSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
-            this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
-            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(32, 261);
-            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn1.DataPropertyName = "Codigo";
-            gridColumn1.MinimumWidth = 100;
-            gridColumn1.Name = "Código";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn2.AllowEdit = false;
-            gridColumn2.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn2.DataPropertyName = "MarcaLC";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Marca";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn3.DataPropertyName = "NombreModeloLC";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Modelo";
-            gridColumn3.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn4.DataPropertyName = "TamanoPantalla";
-            gridColumn4.MinimumWidth = 60;
-            gridColumn4.Name = "Pantalla";
-            gridColumn4.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn4.Width = 60;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn5.DataPropertyName = "TipoProcesador";
-            gridColumn5.MinimumWidth = 70;
-            gridColumn5.Name = "Procesador";
-            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn5.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn5.Width = 70;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn6.DataPropertyName = "GeneracionProcesador";
-            gridColumn6.MinimumWidth = 70;
-            gridColumn6.Name = "Generacion";
-            gridColumn6.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn6.Width = 70;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn7.DataPropertyName = "NombreModeloVideo";
-            gridColumn7.Name = "Video";
-            gridColumn7.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn8.AllowEdit = false;
-            gridColumn8.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
-            gridColumn8.DataPropertyName = "CapacidadVideo";
-            gridColumn8.MinimumWidth = 70;
-            gridColumn8.Name = "Capacidad";
-            gridColumn8.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
-            gridColumn8.Width = 70;
-            gridColumn9.DataPropertyName = "IdLC";
-            gridColumn9.Name = "Id LC";
-            gridColumn9.Visible = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.MultiSelect = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.NoRowsText = "No hay ninguna laptop seleccionada";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.NullString = "<<null>>";
-            this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(693, 98);
-            this.dgvLaptopsSeleccionados.TabIndex = 168;
-            this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
-            this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
-            // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(23, 84);
+            this.txtObservacion.Location = new System.Drawing.Point(17, 80);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(648, 87);
+            this.txtObservacion.Size = new System.Drawing.Size(623, 87);
             this.txtObservacion.TabIndex = 175;
             // 
             // chbEquipoDanado
             // 
             this.chbEquipoDanado.AutoSize = true;
-            this.chbEquipoDanado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEquipoDanado.Location = new System.Drawing.Point(164, 31);
+            this.chbEquipoDanado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chbEquipoDanado.Location = new System.Drawing.Point(158, 30);
             this.chbEquipoDanado.Name = "chbEquipoDanado";
-            this.chbEquipoDanado.Size = new System.Drawing.Size(130, 21);
+            this.chbEquipoDanado.Size = new System.Drawing.Size(128, 20);
             this.chbEquipoDanado.TabIndex = 176;
             this.chbEquipoDanado.Text = "Equipo Dañado";
             this.chbEquipoDanado.UseVisualStyleBackColor = true;
@@ -498,10 +397,10 @@
             // chbEquipoDevuelto
             // 
             this.chbEquipoDevuelto.AutoSize = true;
-            this.chbEquipoDevuelto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEquipoDevuelto.Location = new System.Drawing.Point(23, 31);
+            this.chbEquipoDevuelto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chbEquipoDevuelto.Location = new System.Drawing.Point(17, 30);
             this.chbEquipoDevuelto.Name = "chbEquipoDevuelto";
-            this.chbEquipoDevuelto.Size = new System.Drawing.Size(135, 21);
+            this.chbEquipoDevuelto.Size = new System.Drawing.Size(132, 20);
             this.chbEquipoDevuelto.TabIndex = 177;
             this.chbEquipoDevuelto.Text = "Equipo Devuelto";
             this.chbEquipoDevuelto.UseVisualStyleBackColor = true;
@@ -510,10 +409,10 @@
             // chbPagaraCliente
             // 
             this.chbPagaraCliente.AutoSize = true;
-            this.chbPagaraCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbPagaraCliente.Location = new System.Drawing.Point(301, 31);
+            this.chbPagaraCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.chbPagaraCliente.Location = new System.Drawing.Point(292, 30);
             this.chbPagaraCliente.Name = "chbPagaraCliente";
-            this.chbPagaraCliente.Size = new System.Drawing.Size(125, 21);
+            this.chbPagaraCliente.Size = new System.Drawing.Size(125, 20);
             this.chbPagaraCliente.TabIndex = 178;
             this.chbPagaraCliente.Text = "Pagará Cliente";
             this.chbPagaraCliente.UseVisualStyleBackColor = true;
@@ -525,11 +424,11 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(36, 58);
+            this.labelX2.Location = new System.Drawing.Point(21, 56);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(96, 20);
+            this.labelX2.Size = new System.Drawing.Size(84, 18);
             this.labelX2.TabIndex = 179;
             this.labelX2.Text = "Observación";
             // 
@@ -543,9 +442,9 @@
             this.groupBox1.Controls.Add(this.chbPagaraCliente);
             this.groupBox1.Controls.Add(this.chbEquipoDevuelto);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(32, 365);
+            this.groupBox1.Location = new System.Drawing.Point(15, 320);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 190);
+            this.groupBox1.Size = new System.Drawing.Size(657, 180);
             this.groupBox1.TabIndex = 180;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Observaciones del Cambio";
@@ -553,69 +452,221 @@
             // cmbSede
             // 
             this.cmbSede.FormattingEnabled = true;
-            this.cmbSede.Location = new System.Drawing.Point(488, 28);
+            this.cmbSede.Location = new System.Drawing.Point(474, 26);
             this.cmbSede.Name = "cmbSede";
-            this.cmbSede.Size = new System.Drawing.Size(183, 24);
+            this.cmbSede.Size = new System.Drawing.Size(166, 24);
             this.cmbSede.TabIndex = 182;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(441, 32);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(424, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 181;
             this.label5.Text = "Sede";
             // 
             // pnlC
             // 
             this.pnlC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlC.Controls.Add(this.btnCerrar);
             this.pnlC.Controls.Add(this.label6);
-            this.pnlC.Controls.Add(this.button1);
-            this.pnlC.Location = new System.Drawing.Point(3, 4);
+            this.pnlC.Location = new System.Drawing.Point(0, 0);
             this.pnlC.Name = "pnlC";
-            this.pnlC.Size = new System.Drawing.Size(777, 49);
+            this.pnlC.Size = new System.Drawing.Size(785, 33);
             this.pnlC.TabIndex = 181;
             this.pnlC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(660, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 27);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 197;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(315, 11);
+            this.label6.Location = new System.Drawing.Point(282, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 31);
+            this.label6.Size = new System.Drawing.Size(88, 23);
             this.label6.TabIndex = 183;
             this.label6.Text = "CAMBIO";
             this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlC_MouseMove);
             // 
-            // button1
+            // dgvLaptopsSeleccionados
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(711, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 43);
-            this.button1.TabIndex = 182;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgvLaptopsSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(13, 213);
+            this.dgvLaptopsSeleccionados.MainView = this.vistaEquipos;
+            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(659, 82);
+            this.dgvLaptopsSeleccionados.TabIndex = 196;
+            this.dgvLaptopsSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaEquipos});
+            // 
+            // vistaEquipos
+            // 
+            this.vistaEquipos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaEquipos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaEquipos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaEquipos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaEquipos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaEquipos.Appearance.Row.Options.UseFont = true;
+            this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Codigo,
+            this.MarcaLC,
+            this.NombreModeloLC,
+            this.TamanoPantalla,
+            this.TipoProcesador,
+            this.GeneracionProcesador,
+            this.NombreModeloVideo,
+            this.CapacidadVideo,
+            this.IdLC});
+            this.vistaEquipos.GridControl = this.dgvLaptopsSeleccionados;
+            this.vistaEquipos.Name = "vistaEquipos";
+            this.vistaEquipos.OptionsBehavior.Editable = false;
+            this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaEquipos.OptionsDetail.EnableMasterViewMode = false;
+            this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
+            this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
+            this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaEquipos.OptionsView.ShowGroupPanel = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.Caption = "Código";
+            this.Codigo.FieldName = "Codigo";
+            this.Codigo.MinWidth = 40;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Codigo.Visible = true;
+            this.Codigo.VisibleIndex = 0;
+            this.Codigo.Width = 140;
+            // 
+            // MarcaLC
+            // 
+            this.MarcaLC.Caption = "Marca";
+            this.MarcaLC.FieldName = "MarcaLC";
+            this.MarcaLC.MinWidth = 40;
+            this.MarcaLC.Name = "MarcaLC";
+            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MarcaLC.Visible = true;
+            this.MarcaLC.VisibleIndex = 1;
+            this.MarcaLC.Width = 100;
+            // 
+            // NombreModeloLC
+            // 
+            this.NombreModeloLC.Caption = "Modelo";
+            this.NombreModeloLC.FieldName = "NombreModeloLC";
+            this.NombreModeloLC.MinWidth = 40;
+            this.NombreModeloLC.Name = "NombreModeloLC";
+            this.NombreModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreModeloLC.Visible = true;
+            this.NombreModeloLC.VisibleIndex = 2;
+            this.NombreModeloLC.Width = 100;
+            // 
+            // TamanoPantalla
+            // 
+            this.TamanoPantalla.Caption = "Pantalla";
+            this.TamanoPantalla.FieldName = "TamanoPantalla";
+            this.TamanoPantalla.MinWidth = 40;
+            this.TamanoPantalla.Name = "TamanoPantalla";
+            this.TamanoPantalla.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TamanoPantalla.Width = 100;
+            // 
+            // TipoProcesador
+            // 
+            this.TipoProcesador.Caption = "Procesador";
+            this.TipoProcesador.FieldName = "TipoProcesador";
+            this.TipoProcesador.MinWidth = 40;
+            this.TipoProcesador.Name = "TipoProcesador";
+            this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoProcesador.Visible = true;
+            this.TipoProcesador.VisibleIndex = 4;
+            this.TipoProcesador.Width = 100;
+            // 
+            // GeneracionProcesador
+            // 
+            this.GeneracionProcesador.Caption = "Generación";
+            this.GeneracionProcesador.FieldName = "GeneracionProcesador";
+            this.GeneracionProcesador.MinWidth = 40;
+            this.GeneracionProcesador.Name = "GeneracionProcesador";
+            this.GeneracionProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.GeneracionProcesador.Visible = true;
+            this.GeneracionProcesador.VisibleIndex = 5;
+            this.GeneracionProcesador.Width = 100;
+            // 
+            // NombreModeloVideo
+            // 
+            this.NombreModeloVideo.Caption = "Video";
+            this.NombreModeloVideo.FieldName = "NombreModeloVideo";
+            this.NombreModeloVideo.Name = "NombreModeloVideo";
+            this.NombreModeloVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
+            // CapacidadVideo
+            // 
+            this.CapacidadVideo.Caption = "Capacidad Video";
+            this.CapacidadVideo.FieldName = "CapacidadVideo";
+            this.CapacidadVideo.MinWidth = 40;
+            this.CapacidadVideo.Name = "CapacidadVideo";
+            this.CapacidadVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CapacidadVideo.Visible = true;
+            this.CapacidadVideo.VisibleIndex = 6;
+            this.CapacidadVideo.Width = 100;
+            // 
+            // IdLC
+            // 
+            this.IdLC.Caption = "gridColumn1";
+            this.IdLC.FieldName = "IdLC";
+            this.IdLC.Name = "IdLC";
+            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProducto.AutoSize = true;
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProducto.Image")));
+            this.btnAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(549, 139);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(75, 71);
+            this.btnAgregarProducto.TabIndex = 197;
+            this.btnAgregarProducto.Text = "Agregar\r\nEquipos";
+            this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // frmProcesoCambio
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(785, 664);
+            this.ClientSize = new System.Drawing.Size(697, 580);
+            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.dgvLaptopsSeleccionados);
             this.Controls.Add(this.pnlC);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAnular);
@@ -624,8 +675,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.dgvLaptopsSeleccionados);
-            this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.txtRucDni);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.labelX1);
@@ -649,12 +698,14 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio";
-            this.Load += new System.EventHandler(this.frmProcesoCambio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaCambio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlC.ResumeLayout(false);
             this.pnlC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,14 +727,12 @@
         internal DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.TextBox txtRucDni;
-        private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGrabar;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.CheckBox chbEquipoDanado;
         private System.Windows.Forms.CheckBox chbEquipoDevuelto;
@@ -694,6 +743,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlC;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        public DevExpress.XtraGrid.GridControl dgvLaptopsSeleccionados;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
+        private DevExpress.XtraGrid.Columns.GridColumn Codigo;
+        private DevExpress.XtraGrid.Columns.GridColumn MarcaLC;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreModeloLC;
+        private DevExpress.XtraGrid.Columns.GridColumn TamanoPantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn GeneracionProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreModeloVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn CapacidadVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Button btnAgregarProducto;
     }
 }

@@ -22,7 +22,6 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
-
         public frmProcesoCambioAgregarProducto()
         {
             InitializeComponent();
@@ -39,44 +38,52 @@ namespace Apolo
 
         public void Inicializado()
         {
-
             alquilerDA = new AlquilerDA();
 
             tablaLaptops = alquilerDA.ListarLaptopsAlmacenSinMemoriaDisco();
 
-            dgvLaptops.PrimaryGrid.AutoGenerateColumns = false;
-            dgvLaptops.PrimaryGrid.DataSource = tablaLaptops; ;
+            tablaLaptops.Columns.Add("Seleccionar", typeof(bool));
+            for (int h = 0; h < tablaLaptops.Rows.Count; h++)
+            {
+                tablaLaptops.Rows[h]["Seleccionar"] = false;
+            }
+
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
+            dgvEquipos.DataSource = tablaLaptops;
         }
 
         public int llenarListaLaptops()
         {
+            vistaEquipos.ClearColumnsFilter();
+
             int flag = 0;
-            int filas = tablaLaptops.Rows.Count;
+            int filas = vistaEquipos.RowCount;
             for (int i = 0; i < filas; i++)
             {
-                if (((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value != null)
+                bool aux2 = bool.Parse(vistaEquipos.GetRowCellValue(i, "Seleccionar").ToString());
+                if (aux2)
                 {
-                    if (Convert.ToBoolean(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
-                    {
-                        laptop = new LC();
-                        laptop.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-                        laptop.Codigo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        laptop.Modelo.NombreMarca = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        laptop.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                        laptop.TamanoPantalla = Double.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                        laptop.Procesador.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 5))).Value.ToString();
-                        laptop.Procesador.Generacion = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                        laptop.Video.IdVideo = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 10))).Value.ToString());
-                        laptop.Video.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 7))).Value.ToString();
-                        laptop.Video.Capacidad = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 8))).Value.ToString());
-                        laptop.Procesador.IdProcesador = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 11))).Value.ToString());
-                        flag++;
-                    }
+                    laptop = new LC();
+                    laptop.IdLC = int.Parse(vistaEquipos.GetRowCellValue(i, "idLC").ToString());
+                    laptop.Codigo = vistaEquipos.GetRowCellValue(i, "codigo").ToString();
+                    laptop.Modelo.NombreMarca = vistaEquipos.GetRowCellValue(i, "marcaLC").ToString();
+                    laptop.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "nombreModeloLC").ToString();
+                    laptop.TamanoPantalla = Double.Parse(vistaEquipos.GetRowCellValue(i, "tamanoPantalla").ToString());
+                    laptop.Procesador.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "tipoProcesador").ToString();
+                    laptop.Procesador.Generacion = int.Parse(vistaEquipos.GetRowCellValue(i, "generacionProcesador").ToString());
+                    laptop.Video.IdVideo = int.Parse(vistaEquipos.GetRowCellValue(i, "idVideo").ToString());
+                    laptop.Video.Modelo.NombreModelo = vistaEquipos.GetRowCellValue(i, "nombreModeloVideo").ToString();
+                    laptop.Video.Capacidad = int.Parse(vistaEquipos.GetRowCellValue(i, "capacidadVideo").ToString());
+                    laptop.Procesador.IdProcesador = int.Parse(vistaEquipos.GetRowCellValue(i, "idProcesador").ToString());
+                    flag++;
                 }
             }
             return flag;
         }
+
         public LC LAPTOP { get => laptop; set => laptop = value; }
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             int cant = llenarListaLaptops();
@@ -97,5 +104,24 @@ namespace Apolo
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
+
+        private void btnSeleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", true);
+            }
+        }
+
+        private void btnDeseleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vistaEquipos.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vistaEquipos.SetRowCellValue(i, "Seleccionar", false);
+            }
+        }
+
     }
 }
