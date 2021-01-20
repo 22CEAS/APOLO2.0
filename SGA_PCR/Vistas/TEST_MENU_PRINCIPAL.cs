@@ -996,6 +996,8 @@ namespace Apolo
             }
             else
             {
+                pnlFacturacionOfi.Visible = false;
+                pnlInventarioOfi.Visible = false;
                 pictureBox1.Visible = false;
                 MenuVertical.Width = 350;
             }
