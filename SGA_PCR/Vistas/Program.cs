@@ -16,8 +16,8 @@ namespace Apolo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmConfiguracionUsuarios());
-            //Application.Run(new frmArchivoKam());
+            //Application.Run(new frmReportePendienteFacturar());
+            //Application.Run(new TEST_MENU_PRINCIPAL(1,"a"));
             Application.Run(new frmLogueo());
         }
     }
