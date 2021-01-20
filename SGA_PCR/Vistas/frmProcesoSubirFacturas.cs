@@ -91,10 +91,12 @@ namespace Apolo
                             fact.FechaIniPago = sl.GetCellValueAsDateTime(iRow, 5);
                             fact.FechaFinPago = sl.GetCellValueAsDateTime(iRow, 6);
                             fact.RucDni = sl.GetCellValueAsString(iRow, 7);
+                            fact.RucDni = fact.RucDni.Trim();
                             fact.RazonSocial = sl.GetCellValueAsString(iRow, 8);
                             fact.NumeroOC = sl.GetCellValueAsString(iRow, 9);
                             fact.NumeroDocRef = sl.GetCellValueAsString(iRow, 10);
                             fact.NumeroFactura = sl.GetCellValueAsString(iRow, 11);
+                            fact.NumeroFactura = fact.NumeroFactura.Trim();
                             fact.TotalSoles = sl.GetCellValueAsDouble(iRow, 12);
                             fact.TotalDolares = sl.GetCellValueAsDouble(iRow, 13);
                             fact.TipoCambio = sl.GetCellValueAsDouble(iRow, 14);
