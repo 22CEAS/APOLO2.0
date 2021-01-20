@@ -187,13 +187,13 @@
             // 
             this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Cliente.AppearanceHeader.Options.UseBackColor = true;
-            this.Cliente.Caption = "Cliente";
+            this.Cliente.Caption = "Razon Social";
             this.Cliente.FieldName = "Cliente";
             this.Cliente.MinWidth = 40;
             this.Cliente.Name = "Cliente";
             this.Cliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Cliente.Visible = true;
-            this.Cliente.VisibleIndex = 2;
+            this.Cliente.VisibleIndex = 3;
             this.Cliente.Width = 250;
             // 
             // ruc
@@ -204,7 +204,7 @@
             this.ruc.FieldName = "ruc";
             this.ruc.Name = "ruc";
             this.ruc.Visible = true;
-            this.ruc.VisibleIndex = 1;
+            this.ruc.VisibleIndex = 2;
             // 
             // Contacto
             // 
@@ -234,7 +234,7 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 3;
+            this.Codigo.VisibleIndex = 4;
             this.Codigo.Width = 150;
             // 
             // Guia
@@ -247,7 +247,7 @@
             this.Guia.Name = "Guia";
             this.Guia.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guia.Visible = true;
-            this.Guia.VisibleIndex = 4;
+            this.Guia.VisibleIndex = 6;
             this.Guia.Width = 100;
             // 
             // Marca
@@ -260,7 +260,7 @@
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 5;
+            this.Marca.VisibleIndex = 7;
             this.Marca.Width = 100;
             // 
             // Modelo
@@ -272,7 +272,7 @@
             this.Modelo.MinWidth = 40;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 6;
+            this.Modelo.VisibleIndex = 8;
             this.Modelo.Width = 100;
             // 
             // Pantalla
@@ -285,7 +285,7 @@
             this.Pantalla.Name = "Pantalla";
             this.Pantalla.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Pantalla.Visible = true;
-            this.Pantalla.VisibleIndex = 7;
+            this.Pantalla.VisibleIndex = 9;
             this.Pantalla.Width = 100;
             // 
             // Procesador
@@ -298,7 +298,7 @@
             this.Procesador.Name = "Procesador";
             this.Procesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Procesador.Visible = true;
-            this.Procesador.VisibleIndex = 8;
+            this.Procesador.VisibleIndex = 10;
             this.Procesador.Width = 100;
             // 
             // Generacion
@@ -310,7 +310,7 @@
             this.Generacion.MinWidth = 40;
             this.Generacion.Name = "Generacion";
             this.Generacion.Visible = true;
-            this.Generacion.VisibleIndex = 9;
+            this.Generacion.VisibleIndex = 11;
             this.Generacion.Width = 100;
             // 
             // Video
@@ -332,7 +332,7 @@
             this.Capacidad.MinWidth = 40;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.Visible = true;
-            this.Capacidad.VisibleIndex = 10;
+            this.Capacidad.VisibleIndex = 12;
             this.Capacidad.Width = 100;
             // 
             // CodigoAntiguo
@@ -345,7 +345,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 12;
+            this.CodigoAntiguo.VisibleIndex = 5;
             this.CodigoAntiguo.Width = 120;
             // 
             // fecIniContrato
@@ -358,7 +358,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 13;
+            this.fecIniContrato.VisibleIndex = 14;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -371,7 +371,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 14;
+            this.fecFinContrato.VisibleIndex = 15;
             this.fecFinContrato.Width = 100;
             // 
             // factura
@@ -384,7 +384,7 @@
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 15;
+            this.factura.VisibleIndex = 16;
             this.factura.Width = 100;
             // 
             // fecInicioFactura
@@ -397,7 +397,7 @@
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 16;
+            this.fecInicioFactura.VisibleIndex = 17;
             this.fecInicioFactura.Width = 100;
             // 
             // fecFinFactura
@@ -410,7 +410,7 @@
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 17;
+            this.fecFinFactura.VisibleIndex = 18;
             this.fecFinFactura.Width = 100;
             // 
             // MontoSoles
@@ -423,7 +423,7 @@
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 18;
+            this.MontoSoles.VisibleIndex = 19;
             this.MontoSoles.Width = 100;
             // 
             // MontoDolares
@@ -436,7 +436,7 @@
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 19;
+            this.MontoDolares.VisibleIndex = 20;
             this.MontoDolares.Width = 100;
             // 
             // TotalDolares
@@ -460,7 +460,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 20;
+            this.CostoSoles.VisibleIndex = 21;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -473,7 +473,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 21;
+            this.CostoDolares.VisibleIndex = 22;
             this.CostoDolares.Width = 100;
             // 
             // UBSoles
@@ -484,7 +484,7 @@
             this.UBSoles.FieldName = "UBSoles";
             this.UBSoles.Name = "UBSoles";
             this.UBSoles.Visible = true;
-            this.UBSoles.VisibleIndex = 22;
+            this.UBSoles.VisibleIndex = 23;
             // 
             // VersionOffice
             // 
@@ -496,7 +496,7 @@
             this.VersionOffice.Name = "VersionOffice";
             this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.VersionOffice.Visible = true;
-            this.VersionOffice.VisibleIndex = 23;
+            this.VersionOffice.VisibleIndex = 24;
             this.VersionOffice.Width = 100;
             // 
             // KAM
@@ -508,7 +508,8 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 24;
+            this.KAM.VisibleIndex = 1;
+            this.KAM.Width = 150;
             // 
             // RAM
             // 
@@ -518,7 +519,7 @@
             this.RAM.FieldName = "RAM";
             this.RAM.Name = "RAM";
             this.RAM.Visible = true;
-            this.RAM.VisibleIndex = 11;
+            this.RAM.VisibleIndex = 13;
             // 
             // FecPrimerTraslado
             // 
