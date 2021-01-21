@@ -30,7 +30,7 @@ namespace AccesoDatos
         public static string cadena = "server=" + "localhost" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=300000";
 
         //local steven
-        //static string cadena = "server=" + "localhost" + "; user=root; password=ROOT; port=3305; database=" + "test_leasein" + "; SslMode=None;Connect Timeout=300000";
+        static string cadena = "server=" + "localhost" + "; user=root; password=ROOT; port=3305; database=" + "test_leasein" + "; SslMode=None;Connect Timeout=300000";
 
         //PRUEBAS SERVIDOR 16gb
         //public static string cadena = "server=" + "154.16.171.82" + "; user=root; password=leasein1; port=16258; database=" + "leasein_16gb" + "; SslMode=None;Connect Timeout=300000";

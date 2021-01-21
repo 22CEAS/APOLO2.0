@@ -82,6 +82,12 @@
       <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
     </Compile>
     <Compile Include="await.cs" />
+    <Compile Include="frmCargaMasivaTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargaMasivaTarifas.Designer.cs">
+      <DependentUpon>frmCargaMasivaTarifas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArchivoAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -557,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoModelo.resx">
       <DependentUpon>frmArchivoModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCargaMasivaTarifas.resx">
+      <DependentUpon>frmCargaMasivaTarifas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracionUsuarios.resx">
       <DependentUpon>frmConfiguracionUsuarios.cs</DependentUpon>
