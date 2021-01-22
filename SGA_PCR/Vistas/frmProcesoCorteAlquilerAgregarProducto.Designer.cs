@@ -402,6 +402,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Producto";
+            this.Load += new System.EventHandler(this.frmProcesoCorteAlquilerAgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();

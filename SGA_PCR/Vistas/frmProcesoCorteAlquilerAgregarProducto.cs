@@ -138,5 +138,9 @@ namespace Apolo
             }
         }
 
+        private void frmProcesoCorteAlquilerAgregarProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

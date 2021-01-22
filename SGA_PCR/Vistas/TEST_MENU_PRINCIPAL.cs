@@ -1542,7 +1542,7 @@ namespace Apolo
             float MontoPendienteFacturar = 0;
             for (int i = 0; i < vistaFacturacionDash.RowCount; i++)
             {
-                MontoPendienteFacturar = MontoPendienteFacturar + float.Parse(tablaLaptops.Rows[i]["PendienteFacturarSoles"].ToString());
+                MontoPendienteFacturar = MontoPendienteFacturar + float.Parse(tablaLaptops.Rows[i]["DeudaSoles"].ToString());
             }
             
             lblPendientePorFacturar.Text = string.Format("{0:C0}", MontoPendienteFacturar);

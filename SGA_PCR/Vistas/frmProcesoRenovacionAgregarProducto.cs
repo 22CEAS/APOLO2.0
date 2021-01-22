@@ -194,5 +194,9 @@ namespace Apolo
             }
         }
 
+        private void frmProcesoRenovacionAgregarProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
