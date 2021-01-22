@@ -16,21 +16,29 @@ using AccesoDatos;
 
 namespace Apolo
 {
-    public partial class frmCargaMasivaTarifas : Form
+    public partial class frmProcesoTarifa : Form
     {
         BindingList<Factura> facturas;
         FacturaDA facturaDA;
         TarifaDA tarifaDA;
-        DataTable cuadroVencimiento;
-        DataTable equiposDisponiblesPreAlquiler;
-        DataTable facturasTransito;
         DataTable buscarV;
-
-        public frmCargaMasivaTarifas()
+        private int idUsuario;
+        private string nombreUsuario = "CEAS";
+        public frmProcesoTarifa()
         {
             InitializeComponent();
             Inicializado();
         }
+
+
+        public frmProcesoTarifa(int idUsuario, string nombreUsuario)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            Inicializado();
+        }
+
 
         public void Inicializado()
         {
@@ -39,6 +47,7 @@ namespace Apolo
             facturaDA = new FacturaDA();
             tarifaDA= new TarifaDA();
         }
+
 
         private void btnCargarData_Click(object sender, EventArgs e)
         {
@@ -62,6 +71,7 @@ namespace Apolo
                     miDataTable.Columns.Add("RucCliente");
                     miDataTable.Columns.Add("CodigoEquipo");
                     miDataTable.Columns.Add("Tarifa");
+                    miDataTable.Columns.Add("Moneda");
                     miDataTable.Columns.Add("IdSalidaDet");
                     miDataTable.Columns.Add("IdSalida");
                     miDataTable.Columns.Add("GuiaSalida");
@@ -77,6 +87,7 @@ namespace Apolo
                         Renglon["RucCliente"] = sl.GetCellValueAsString(iRow, 1);
                         Renglon["CodigoEquipo"] = sl.GetCellValueAsString(iRow, 2);
                         Renglon["Tarifa"] = sl.GetCellValueAsDouble(iRow, 3);
+                        Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 4);
                         Renglon["IdSalidaDet"] = "";
                         Renglon["IdSalida"] = "";
                         Renglon["GuiaSalida"] = "";
@@ -110,6 +121,7 @@ namespace Apolo
             string RucCliente = "";
             string CodigoEquipo = "";
             double Tarifa = 0;
+            string Moneda = "";
             int IdSalidaDet = 0;
             int IdSalida = 0;
             string GuiaSalida = "";
@@ -134,10 +146,16 @@ namespace Apolo
                 {
                     continue;
                 }
+                if ((vistaTarifas.GetRowCellValue(i, "Moneda").ToString()) != "SOLES" && (vistaTarifas.GetRowCellValue(i, "Moneda").ToString()) != "DOLARES")
+                {
+                    vistaTarifas.SetRowCellValue(i, "Observacion", "Ingrese una Moneda Correcta");
+                    continue;
+                }
 
                 RucCliente = (vistaTarifas.GetRowCellValue(i, "RucCliente").ToString());
                 CodigoEquipo = (vistaTarifas.GetRowCellValue(i, "CodigoEquipo").ToString());
                 Tarifa = double.Parse((vistaTarifas.GetRowCellValue(i, "Tarifa").ToString()));
+                Moneda = (vistaTarifas.GetRowCellValue(i, "Moneda").ToString());
                 IdSalidaDet = int.Parse((vistaTarifas.GetRowCellValue(i, "IdSalidaDet").ToString()));
                 IdSalida = int.Parse((vistaTarifas.GetRowCellValue(i, "IdSalida").ToString()));
                 GuiaSalida = (vistaTarifas.GetRowCellValue(i, "GuiaSalida").ToString());
@@ -147,7 +165,7 @@ namespace Apolo
 
                 //PROCEDURE PARA RELACIONAR KAMS DE FORMA MASIVA
 
-                int resultado = tarifaDA.SubirTarifas(RucCliente, CodigoEquipo, Tarifa, IdSalidaDet, IdSalida, GuiaSalida);
+                int resultado = tarifaDA.SubirTarifas(RucCliente, CodigoEquipo, Tarifa, IdSalidaDet, IdSalida, GuiaSalida,Moneda,this.nombreUsuario);
 
 
                 //ERRORES
@@ -207,6 +225,40 @@ namespace Apolo
 
             
             MessageBox.Show("Se realizó la busquedad", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        int posY = 0;
+        int posX = 0;
+        private void pnlTarifas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void lblTarifas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }
