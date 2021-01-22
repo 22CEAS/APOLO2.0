@@ -1,6 +1,6 @@
 ﻿namespace Apolo
 {
-    partial class frmCargaMasivaTarifas
+    partial class frmProcesoTarifa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaMasivaTarifas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoTarifa));
             this.dgvTarifas = new DevExpress.XtraGrid.GridControl();
             this.vistaTarifas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnSubirGuias = new System.Windows.Forms.Button();
             this.btnCargarData = new System.Windows.Forms.Button();
             this.btnBuscarV = new System.Windows.Forms.Button();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pnlTarifas = new System.Windows.Forms.Panel();
+            this.lblTarifas = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaTarifas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
+            this.pnlTarifas.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTarifas
             // 
-            this.dgvTarifas.Location = new System.Drawing.Point(12, 21);
+            this.dgvTarifas.Location = new System.Drawing.Point(2, 78);
             this.dgvTarifas.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvTarifas.LookAndFeel.SkinName = "Office 2010 Silver";
             this.dgvTarifas.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -57,7 +62,7 @@
             this.dgvTarifas.Name = "dgvTarifas";
             this.dgvTarifas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
-            this.dgvTarifas.Size = new System.Drawing.Size(1060, 321);
+            this.dgvTarifas.Size = new System.Drawing.Size(1158, 321);
             this.dgvTarifas.TabIndex = 149;
             this.dgvTarifas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaTarifas});
@@ -82,7 +87,8 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn8});
             this.vistaTarifas.GridControl = this.dgvTarifas;
             this.vistaTarifas.Name = "vistaTarifas";
             this.vistaTarifas.OptionsBehavior.Editable = false;
@@ -127,8 +133,44 @@
             this.gridColumn4.FieldName = "Observacion";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
+            this.gridColumn4.VisibleIndex = 7;
             this.gridColumn4.Width = 150;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "ID SALIDA DET";
+            this.gridColumn5.FieldName = "IdSalidaDet";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 150;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "ID SALIDA";
+            this.gridColumn6.FieldName = "IdSalida";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 150;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "GUIA SALIDA";
+            this.gridColumn7.FieldName = "GuiaSalida";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 150;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "MONEDA";
+            this.gridColumn8.FieldName = "Moneda";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.Width = 100;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -146,7 +188,7 @@
             this.btnSubirGuias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubirGuias.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirGuias.Image")));
             this.btnSubirGuias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSubirGuias.Location = new System.Drawing.Point(286, 364);
+            this.btnSubirGuias.Location = new System.Drawing.Point(276, 419);
             this.btnSubirGuias.Name = "btnSubirGuias";
             this.btnSubirGuias.Size = new System.Drawing.Size(119, 74);
             this.btnSubirGuias.TabIndex = 148;
@@ -166,7 +208,7 @@
             this.btnCargarData.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarData.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarData.Image")));
             this.btnCargarData.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCargarData.Location = new System.Drawing.Point(12, 364);
+            this.btnCargarData.Location = new System.Drawing.Point(2, 419);
             this.btnCargarData.Name = "btnCargarData";
             this.btnCargarData.Size = new System.Drawing.Size(106, 74);
             this.btnCargarData.TabIndex = 147;
@@ -186,7 +228,7 @@
             this.btnBuscarV.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarV.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarV.Image")));
             this.btnBuscarV.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscarV.Location = new System.Drawing.Point(139, 364);
+            this.btnBuscarV.Location = new System.Drawing.Point(129, 419);
             this.btnBuscarV.Name = "btnBuscarV";
             this.btnBuscarV.Size = new System.Drawing.Size(110, 58);
             this.btnBuscarV.TabIndex = 242;
@@ -195,47 +237,68 @@
             this.btnBuscarV.UseVisualStyleBackColor = false;
             this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
             // 
-            // gridColumn5
+            // pnlTarifas
             // 
-            this.gridColumn5.Caption = "ID SALIDA DET";
-            this.gridColumn5.FieldName = "IdSalidaDet";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 150;
+            this.pnlTarifas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnlTarifas.Controls.Add(this.lblTarifas);
+            this.pnlTarifas.Controls.Add(this.btnCerrar);
+            this.pnlTarifas.Location = new System.Drawing.Point(2, 1);
+            this.pnlTarifas.Name = "pnlTarifas";
+            this.pnlTarifas.Size = new System.Drawing.Size(1180, 41);
+            this.pnlTarifas.TabIndex = 243;
+            this.pnlTarifas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTarifas_MouseMove);
             // 
-            // gridColumn6
+            // lblTarifas
             // 
-            this.gridColumn6.Caption = "ID SALIDA";
-            this.gridColumn6.FieldName = "IdSalida";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 150;
+            this.lblTarifas.AutoSize = true;
+            this.lblTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarifas.ForeColor = System.Drawing.Color.White;
+            this.lblTarifas.Location = new System.Drawing.Point(531, 3);
+            this.lblTarifas.Name = "lblTarifas";
+            this.lblTarifas.Size = new System.Drawing.Size(137, 31);
+            this.lblTarifas.TabIndex = 144;
+            this.lblTarifas.Text = "TARIFAS";
+            this.lblTarifas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTarifas_MouseMove);
             // 
-            // gridColumn7
+            // btnCerrar
             // 
-            this.gridColumn7.Caption = "GUIA SALIDA";
-            this.gridColumn7.FieldName = "GuiaSalida";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 150;
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.AutoSize = true;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCerrar.Location = new System.Drawing.Point(1135, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(42, 38);
+            this.btnCerrar.TabIndex = 143;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // frmCargaMasivaTarifas
+            // frmProcesoTarifa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 450);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1182, 505);
+            this.Controls.Add(this.pnlTarifas);
             this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.dgvTarifas);
             this.Controls.Add(this.btnSubirGuias);
             this.Controls.Add(this.btnCargarData);
-            this.Name = "frmCargaMasivaTarifas";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmProcesoTarifa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CARGA MASIVA TARIFAS";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaTarifas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
+            this.pnlTarifas.ResumeLayout(false);
+            this.pnlTarifas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +319,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.Panel pnlTarifas;
+        private System.Windows.Forms.Label lblTarifas;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

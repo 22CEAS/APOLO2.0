@@ -137,8 +137,8 @@ namespace Apolo
         private void verificandoPermisosProcesos()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_procesos = { btnPCompra, btnPDevolucion, btnPAlquiler, btnPRenovacion, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans};
-            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b" };
+            Button[] botones_procesos = { btnPCompra, btnPDevolucion, btnPAlquiler, btnPRenovacion, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans,btnTarifas};
+            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b","15b" };
 
             foreach (Button btn in botones_procesos)
             {
@@ -1733,6 +1733,27 @@ namespace Apolo
             }
         }
 
+        private void btnTarifas_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoTarifa")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoTarifa f2 = new frmProcesoTarifa(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
     }
 }
 

@@ -82,11 +82,17 @@
       <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
     </Compile>
     <Compile Include="await.cs" />
-    <Compile Include="frmCargaMasivaTarifas.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCargaMasivaTarifas.Designer.cs">
-      <DependentUpon>frmCargaMasivaTarifas.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoTarifa.Designer.cs">
+      <DependentUpon>frmProcesoTarifa.cs</DependentUpon>
     </Compile>
     <Compile Include="frmArchivoAuxiliar.cs">
       <SubType>Form</SubType>
@@ -549,6 +555,9 @@
     <EmbeddedResource Include="ActuaizarCortesAlquiler.resx">
       <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,8 +573,8 @@
     <EmbeddedResource Include="frmArchivoModelo.resx">
       <DependentUpon>frmArchivoModelo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCargaMasivaTarifas.resx">
-      <DependentUpon>frmCargaMasivaTarifas.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcesoTarifa.resx">
+      <DependentUpon>frmProcesoTarifa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracionUsuarios.resx">
       <DependentUpon>frmConfiguracionUsuarios.cs</DependentUpon>

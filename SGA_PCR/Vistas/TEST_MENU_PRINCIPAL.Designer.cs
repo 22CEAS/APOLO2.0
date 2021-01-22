@@ -174,6 +174,7 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnTarifas = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -283,7 +284,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2008);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2061);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(232, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -338,7 +339,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1968);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 2021);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(232, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -363,7 +364,7 @@
             this.REPORTES.Controls.Add(this.btnRPendienteRec);
             this.REPORTES.Controls.Add(this.brnRCuadroVenc);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1295);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1348);
             this.REPORTES.Name = "REPORTES";
             this.REPORTES.Size = new System.Drawing.Size(232, 673);
             this.REPORTES.TabIndex = 20;
@@ -627,7 +628,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 1255);
+            this.button20.Location = new System.Drawing.Point(0, 1308);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(232, 40);
             this.button20.TabIndex = 18;
@@ -638,6 +639,7 @@
             // PROCESOS
             // 
             this.PROCESOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PROCESOS.Controls.Add(this.btnTarifas);
             this.PROCESOS.Controls.Add(this.btnPFacturasTrans);
             this.PROCESOS.Controls.Add(this.btnPNotaCredito);
             this.PROCESOS.Controls.Add(this.btnPCorteAlquiler);
@@ -655,7 +657,7 @@
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(232, 718);
+            this.PROCESOS.Size = new System.Drawing.Size(232, 771);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
@@ -2324,6 +2326,25 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
+            // btnTarifas
+            // 
+            this.btnTarifas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTarifas.FlatAppearance.BorderSize = 0;
+            this.btnTarifas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnTarifas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTarifas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarifas.ForeColor = System.Drawing.Color.Black;
+            this.btnTarifas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTarifas.Location = new System.Drawing.Point(0, 712);
+            this.btnTarifas.Name = "btnTarifas";
+            this.btnTarifas.Size = new System.Drawing.Size(319, 45);
+            this.btnTarifas.TabIndex = 24;
+            this.btnTarifas.Text = "> TARIFAS";
+            this.btnTarifas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTarifas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTarifas.UseVisualStyleBackColor = false;
+            this.btnTarifas.Click += new System.EventHandler(this.btnTarifas_Click);
+            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2520,5 +2541,6 @@
         private System.Windows.Forms.Button btnPFacturasTrans;
         private System.Windows.Forms.Button btnRFacturas;
         private System.Windows.Forms.Button btnAlquileres;
+        private System.Windows.Forms.Button btnTarifas;
     }
 }

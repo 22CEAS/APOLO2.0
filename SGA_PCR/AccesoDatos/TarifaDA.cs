@@ -22,23 +22,27 @@ namespace AccesoDatos
         }
 
 
-        public int SubirTarifas(string ruc,string codigo,double tarifa,int idSalidaDet, int idSalida,string guia)
+        public int SubirTarifas(string ruc,string codigo,double tarifa,int idSalidaDet, int idSalida,string guia,string Moneda,string usuario)
         {
 
-            parametrosEntrada = new MySqlParameter[6];
+            parametrosEntrada = new MySqlParameter[8];
             parametrosEntrada[0] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 200);
             parametrosEntrada[1] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 200);
             parametrosEntrada[2] = new MySqlParameter("@_tarifa", MySqlDbType.Double);
-            parametrosEntrada[3] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
-            parametrosEntrada[4] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
-            parametrosEntrada[5] = new MySqlParameter("@_guia", MySqlDbType.VarChar, 200);
+            parametrosEntrada[3] = new MySqlParameter("@_moneda", MySqlDbType.VarChar, 200);
+            parametrosEntrada[4] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+            parametrosEntrada[5] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+            parametrosEntrada[6] = new MySqlParameter("@_guia", MySqlDbType.VarChar, 200);
+            parametrosEntrada[7] = new MySqlParameter("@_usuario", MySqlDbType.VarChar, 200);
 
             parametrosEntrada[0].Value = ruc;
             parametrosEntrada[1].Value = codigo;
             parametrosEntrada[2].Value = tarifa;
-            parametrosEntrada[3].Value = idSalidaDet;
-            parametrosEntrada[4].Value = idSalida;
-            parametrosEntrada[5].Value = guia;
+            parametrosEntrada[3].Value = Moneda;
+            parametrosEntrada[4].Value = idSalidaDet;
+            parametrosEntrada[5].Value = idSalida;
+            parametrosEntrada[6].Value = guia;
+            parametrosEntrada[7].Value = usuario;
 
 
             bool aux = objManager.EjecutarProcedure(parametrosEntrada, "insertTarifas");
