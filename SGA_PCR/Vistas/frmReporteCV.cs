@@ -23,6 +23,7 @@ namespace Apolo
     {
 
         DataTable tablaLaptops;
+        DataTable DiscosDuros;
         DataTable memoriaLC;
         DataTable memoria;
         ReporteDA reporteDA;
@@ -312,12 +313,15 @@ namespace Apolo
                 
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarCuadroVencimiento();
+                DiscosDuros = reporteDA.ListaDiscosDuros();
                 memoriaLC = reporteDA.ListarMemoriasLC();
                 memoria = reporteDA.ListarMemoriasMaestro();
 
   
 
                 tablaLaptops.Columns.Add("RAM");
+                tablaLaptops.Columns.Add("DiscoDuro1");
+                tablaLaptops.Columns.Add("DiscoDuro2");
 
                 //PONER MEMORIA
                 for (int i = 0; i < tablaLaptops.Rows.Count; i++)
@@ -366,7 +370,28 @@ namespace Apolo
                     //MessageBox.Show(suma+"GB");
                     tablaLaptops.Rows[i]["RAM"] = suma + " GB";
 
-                    
+
+
+                    //DISCO DURO 
+                    int capacidadSSD = 0;
+                    int capacidadHDD = 0;
+
+                        for (int m = 0; m < DiscosDuros.Rows.Count; m++)
+                        {
+                            if (tablaLaptops.Rows[i]["IdLC"].ToString() == DiscosDuros.Rows[m]["IdLC"].ToString() && DiscosDuros.Rows[m]["TipoDisco"].ToString()=="HDD")
+                            {
+                                capacidadHDD = int.Parse(DiscosDuros.Rows[m]["Capacidad"].ToString())* int.Parse(DiscosDuros.Rows[m]["Cantidad"].ToString());
+                            }
+                            if (tablaLaptops.Rows[i]["IdLC"].ToString() == DiscosDuros.Rows[m]["IdLC"].ToString() && DiscosDuros.Rows[m]["TipoDisco"].ToString() == "SSD")
+                            {
+                                capacidadSSD = int.Parse(DiscosDuros.Rows[m]["Capacidad"].ToString()) * int.Parse(DiscosDuros.Rows[m]["Cantidad"].ToString());
+                            }
+                        }
+                        tablaLaptops.Rows[i]["DiscoDuro1"] = capacidadHDD;
+                        tablaLaptops.Rows[i]["DiscoDuro2"] = capacidadSSD;
+
+
+
                 }
 
                 dgvLaptops.DataSource = tablaLaptops;

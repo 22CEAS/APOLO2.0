@@ -24,6 +24,12 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_cuadro_vencimiento ;");
         }
 
+
+        public DataTable ListaDiscosDuros()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_discos;");
+        }
+
         public DataTable ListarMemoriasMaestro()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_memoria ;");
