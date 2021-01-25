@@ -82,11 +82,17 @@
       <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
     </Compile>
     <Compile Include="await.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmProcesoOIAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmProcesoOIAgregarProducto.Designer.cs">
+      <DependentUpon>frmProcesoOIAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoOrdenInterna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoOrdenInterna.Designer.cs">
+      <DependentUpon>frmProcesoOrdenInterna.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcesoTarifa.cs">
       <SubType>Form</SubType>
@@ -555,8 +561,11 @@
     <EmbeddedResource Include="ActuaizarCortesAlquiler.resx">
       <DependentUpon>ActuaizarCortesAlquiler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcesoOIAgregarProducto.resx">
+      <DependentUpon>frmProcesoOIAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoOrdenInterna.resx">
+      <DependentUpon>frmProcesoOrdenInterna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
