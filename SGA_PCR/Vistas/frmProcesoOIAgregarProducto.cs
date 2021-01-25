@@ -19,6 +19,7 @@ namespace Apolo
         Renovacion detalle;
         BindingList<Renovacion> detalles;
         BindingList<Renovacion> auxiliares;
+        BindingList<Renovacion> renovaciones;
         RenovacionDA renovacionDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -36,14 +37,14 @@ namespace Apolo
             this.nombreUsuario = nombreUsuario;
             Inicializado(idCliente);
         }
-
+        public BindingList<Renovacion> DETALLES { get => detalles; set => detalles = value; }
         public void Inicializado(int idCliente)
         {
 
             renovacionDA = new RenovacionDA();
             detalles = new BindingList<Renovacion>();
 
-            tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
+            tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado_prealquiler(idCliente);
             auxiliares = new BindingList<Renovacion>();
             int rec = 0;
             while (rec < tablaLaptops.Rows.Count)
@@ -62,6 +63,41 @@ namespace Apolo
                 auxiliar.fecFinContrato = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecFinContrato"].ToString());
                 auxiliar.FechaIniContratoAntiguo = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecIniContrato"].ToString());
                 auxiliar.FechaFinContratoAntiguo = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecFinContrato"].ToString());
+
+                //CONCATENAR PARA LA DESCRIPCION
+                string procesador = "";
+                string generacionProcesador = "";
+                string tarjetaVideo = "";
+                string memoria=""; int cap1, can1, cap2, can2;
+                string disco = ""; int disco1, disco2;
+
+                procesador = tablaLaptops.Rows[rec]["TipoProcesador"].ToString();
+                generacionProcesador = tablaLaptops.Rows[rec]["GeneracionProcesador"].ToString() + " GENERACION ";
+                if (tablaLaptops.Rows[rec]["CapacidadVideo"].ToString() == "0")
+                {
+                    tarjetaVideo = "";
+                }
+                else
+                {
+                    tarjetaVideo = $"TARJETA DE VIDEO {tablaLaptops.Rows[rec]["CapacidadVideo"].ToString()}GB";
+                }
+
+                cap1 = int.Parse(tablaLaptops.Rows[rec]["CapacidadMem1"].ToString());
+                can1 = int.Parse(tablaLaptops.Rows[rec]["CantMem1"].ToString());
+                cap2 = int.Parse(tablaLaptops.Rows[rec]["CapacidadMem2"].ToString());
+                can2 = int.Parse(tablaLaptops.Rows[rec]["CantMem2"].ToString());
+                memoria = ((cap1 * can1) + (cap2 * can2)).ToString()+"GB RAM";
+                //if ((cap1 * can1) + (cap2 * can2) == 0) memoria = "";
+
+                disco1 = int.Parse(tablaLaptops.Rows[rec]["Disco1"].ToString());
+                disco2 = int.Parse(tablaLaptops.Rows[rec]["Disco2"].ToString());
+                disco = "DISCO DURO "+(disco1 + disco2).ToString()+"GB";
+                //if (disco1 + disco2 == 0) disco = "";
+
+                /////////////////////////////
+
+                auxiliar.NombreProcesador1 = procesador + "/" + generacionProcesador + "/"+memoria+"/"+disco+"/"+ tarjetaVideo;
+                auxiliar.DetalleAdicional1 = "Incluye: maletin, cargador y mouse";
 
                 auxiliares.Add(auxiliar);
                 rec++;
@@ -112,12 +148,17 @@ namespace Apolo
                     detalle.FechaFinContrato = DateTime.Parse(vista.GetRowCellValue(i, "fecFinContrato").ToString());
                     detalle.FechaIniContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaIniContratoAntiguo").ToString());
                     detalle.FechaFinContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaFinContratoAntiguo").ToString());
+
+                    detalle.NombreProcesador1= vista.GetRowCellValue(i, "NombreProcesador1").ToString();
+                    detalle.DetalleAdicional1 = vista.GetRowCellValue(i, "DetalleAdicional1").ToString();
+
                     detalles.Add(detalle);
                     flag = true;
                 }
             }
             return flag;
         }
+        
 
     }
 

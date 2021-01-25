@@ -69,6 +69,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
             this.cargarData = new System.Windows.Forms.Button();
+            this.DiscoDuro1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscoDuro2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Windows = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Office = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -161,7 +165,11 @@
             this.VersionOffice,
             this.KAM,
             this.RAM,
-            this.FecPrimerTraslado});
+            this.FecPrimerTraslado,
+            this.DiscoDuro1,
+            this.DiscoDuro2,
+            this.Windows,
+            this.Office});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -617,6 +625,50 @@
             this.cargarData.UseVisualStyleBackColor = true;
             this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
+            // DiscoDuro1
+            // 
+            this.DiscoDuro1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro1.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro1.Caption = "Disco Duro (HDD)";
+            this.DiscoDuro1.FieldName = "DiscoDuro1";
+            this.DiscoDuro1.Name = "DiscoDuro1";
+            this.DiscoDuro1.Visible = true;
+            this.DiscoDuro1.VisibleIndex = 26;
+            this.DiscoDuro1.Width = 100;
+            // 
+            // DiscoDuro2
+            // 
+            this.DiscoDuro2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro2.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro2.Caption = "Disco Duro (SSD)";
+            this.DiscoDuro2.FieldName = "DiscoDuro2";
+            this.DiscoDuro2.Name = "DiscoDuro2";
+            this.DiscoDuro2.Visible = true;
+            this.DiscoDuro2.VisibleIndex = 27;
+            this.DiscoDuro2.Width = 100;
+            // 
+            // Windows
+            // 
+            this.Windows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Windows.AppearanceHeader.Options.UseBackColor = true;
+            this.Windows.Caption = "Windows";
+            this.Windows.FieldName = "Windows";
+            this.Windows.Name = "Windows";
+            this.Windows.Visible = true;
+            this.Windows.VisibleIndex = 28;
+            this.Windows.Width = 150;
+            // 
+            // Office
+            // 
+            this.Office.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Office.AppearanceHeader.Options.UseBackColor = true;
+            this.Office.Caption = "Office";
+            this.Office.FieldName = "Office";
+            this.Office.Name = "Office";
+            this.Office.Visible = true;
+            this.Office.VisibleIndex = 29;
+            this.Office.Width = 150;
+            // 
             // frmReporteCV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -691,5 +743,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.Button cargarData;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro2;
+        private DevExpress.XtraGrid.Columns.GridColumn Windows;
+        private DevExpress.XtraGrid.Columns.GridColumn Office;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro1;
     }
 }

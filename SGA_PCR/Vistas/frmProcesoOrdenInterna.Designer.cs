@@ -39,17 +39,17 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.dgvLaptopsSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreProcesador1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DetalleAdicional1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -242,22 +242,21 @@
             this.vistaEquipos.Appearance.Row.Options.UseFont = true;
             this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
             this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MarcaLC,
-            this.ModeloLC,
-            this.Observacion,
-            this.IdLC,
+            this.CodigoLC,
+            this.NombreProcesador1,
+            this.DetalleAdicional1,
+            this.FechaIniContrato,
             this.gridColumn2,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
+            this.FechaFinContrato,
             this.gridColumn1,
             this.gridColumn3});
             this.vistaEquipos.GridControl = this.dgvLaptopsSeleccionados;
             this.vistaEquipos.Name = "vistaEquipos";
-            this.vistaEquipos.OptionsBehavior.Editable = false;
             this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
             this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
             this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
@@ -265,49 +264,51 @@
             this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
             this.vistaEquipos.OptionsView.ShowGroupPanel = false;
             // 
-            // MarcaLC
+            // CodigoLC
             // 
-            this.MarcaLC.Caption = "Codigo Equipo";
-            this.MarcaLC.FieldName = "MarcaLC";
-            this.MarcaLC.MinWidth = 40;
-            this.MarcaLC.Name = "MarcaLC";
-            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MarcaLC.Visible = true;
-            this.MarcaLC.VisibleIndex = 0;
-            this.MarcaLC.Width = 100;
+            this.CodigoLC.Caption = "Codigo Equipo";
+            this.CodigoLC.FieldName = "CodigoLC";
+            this.CodigoLC.MinWidth = 40;
+            this.CodigoLC.Name = "CodigoLC";
+            this.CodigoLC.OptionsColumn.AllowEdit = false;
+            this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoLC.Visible = true;
+            this.CodigoLC.VisibleIndex = 0;
+            this.CodigoLC.Width = 100;
             // 
-            // ModeloLC
+            // NombreProcesador1
             // 
-            this.ModeloLC.Caption = "Descripcion";
-            this.ModeloLC.FieldName = "ModeloLC";
-            this.ModeloLC.MinWidth = 40;
-            this.ModeloLC.Name = "ModeloLC";
-            this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ModeloLC.Visible = true;
-            this.ModeloLC.VisibleIndex = 1;
-            this.ModeloLC.Width = 100;
+            this.NombreProcesador1.Caption = "Descripcion";
+            this.NombreProcesador1.FieldName = "NombreProcesador1";
+            this.NombreProcesador1.MinWidth = 40;
+            this.NombreProcesador1.Name = "NombreProcesador1";
+            this.NombreProcesador1.OptionsColumn.AllowEdit = false;
+            this.NombreProcesador1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreProcesador1.Visible = true;
+            this.NombreProcesador1.VisibleIndex = 1;
+            this.NombreProcesador1.Width = 100;
             // 
-            // Observacion
+            // DetalleAdicional1
             // 
-            this.Observacion.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Observacion.AppearanceCell.Options.UseBackColor = true;
-            this.Observacion.Caption = "Detalles Adicionales";
-            this.Observacion.FieldName = "Observacion";
-            this.Observacion.MinWidth = 40;
-            this.Observacion.Name = "Observacion";
-            this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Observacion.Visible = true;
-            this.Observacion.VisibleIndex = 2;
-            this.Observacion.Width = 150;
+            this.DetalleAdicional1.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DetalleAdicional1.AppearanceCell.Options.UseBackColor = true;
+            this.DetalleAdicional1.Caption = "Detalles Adicionales";
+            this.DetalleAdicional1.FieldName = "DetalleAdicional1";
+            this.DetalleAdicional1.MinWidth = 40;
+            this.DetalleAdicional1.Name = "DetalleAdicional1";
+            this.DetalleAdicional1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DetalleAdicional1.Visible = true;
+            this.DetalleAdicional1.VisibleIndex = 2;
+            this.DetalleAdicional1.Width = 150;
             // 
-            // IdLC
+            // FechaIniContrato
             // 
-            this.IdLC.Caption = "Inicio Plazo Alquiler";
-            this.IdLC.FieldName = "IdLC";
-            this.IdLC.Name = "IdLC";
-            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.IdLC.Visible = true;
-            this.IdLC.VisibleIndex = 3;
+            this.FechaIniContrato.Caption = "Inicio Plazo Alquiler";
+            this.FechaIniContrato.FieldName = "FechaIniContrato";
+            this.FechaIniContrato.Name = "FechaIniContrato";
+            this.FechaIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaIniContrato.Visible = true;
+            this.FechaIniContrato.VisibleIndex = 3;
             // 
             // gridColumn2
             // 
@@ -353,14 +354,16 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 11;
             // 
-            // gridColumn9
+            // FechaFinContrato
             // 
-            this.gridColumn9.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.gridColumn9.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn9.Caption = "Fin Plazo Alquiler";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
+            this.FechaFinContrato.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.FechaFinContrato.AppearanceCell.Options.UseBackColor = true;
+            this.FechaFinContrato.Caption = "Fin Plazo Alquiler";
+            this.FechaFinContrato.FieldName = "FechaFinContrato";
+            this.FechaFinContrato.Name = "FechaFinContrato";
+            this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaFinContrato.Visible = true;
+            this.FechaFinContrato.VisibleIndex = 4;
             // 
             // gridColumn1
             // 
@@ -525,10 +528,10 @@
         private System.Windows.Forms.Button btnGrabar;
         private DevExpress.XtraGrid.GridControl dgvLaptopsSeleccionados;
         private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
-        private DevExpress.XtraGrid.Columns.GridColumn MarcaLC;
-        private DevExpress.XtraGrid.Columns.GridColumn ModeloLC;
-        private DevExpress.XtraGrid.Columns.GridColumn Observacion;
-        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoLC;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreProcesador1;
+        private DevExpress.XtraGrid.Columns.GridColumn DetalleAdicional1;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaIniContrato;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
@@ -544,7 +547,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaFinContrato;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

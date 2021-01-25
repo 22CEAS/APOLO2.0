@@ -20,7 +20,7 @@ namespace Apolo
         ClienteDA clienteDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
-        BindingList<Renovacion> renovaciones;
+        BindingList<Renovacion> ordenInterna;
         int idCliente = 0;
 
         public frmProcesoOrdenInterna()
@@ -74,14 +74,13 @@ namespace Apolo
                 {
                     
                     BindingList<Renovacion> auxiliares = new BindingList<Renovacion>();
-                    foreach (Renovacion aux in renovaciones)
+                    foreach (Renovacion aux in ordenInterna)
                     {
                         auxiliares.Add(aux);
                     }
 
-                    /*
-                    foreach (Renovacion detalleTraido in frm.)
-                    {
+                    foreach (Renovacion detalleTraido in frm.DETALLES)
+                    {  
                         Renovacion dp = new Renovacion();
                         dp.IdLC = detalleTraido.IdLC;
                         bool exists = auxiliares.Any(x => x.IdLC.Equals(dp.IdLC));
@@ -90,15 +89,14 @@ namespace Apolo
                             auxiliares.Add(detalleTraido);
                         }
                     }
-                    */
-                    renovaciones = auxiliares;
+                    ordenInterna = auxiliares;
                     
                 }
 
             }
 
                 
-                dgvLaptopsSeleccionados.DataSource = renovaciones;
+                dgvLaptopsSeleccionados.DataSource = ordenInterna;
                 
             }
 
@@ -113,7 +111,7 @@ namespace Apolo
             int i = cmbCliente.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
-
+                ordenInterna = new BindingList<Renovacion>();
                 idCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
                 txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
 
