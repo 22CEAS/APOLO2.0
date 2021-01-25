@@ -88,8 +88,8 @@ namespace Apolo
                         Renglon["RucCliente"] = sl.GetCellValueAsString(iRow, 1);
                         Renglon["CodigoEquipo"] = sl.GetCellValueAsString(iRow, 2);
                         Renglon["Tarifa"] = sl.GetCellValueAsDouble(iRow, 3);
-                        Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 4);
-                        Renglon["Costo"] = sl.GetCellValueAsString(iRow, 5);
+                        Renglon["Costo"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 5);
                         Renglon["IdSalidaDet"] = "";
                         Renglon["IdSalida"] = "";
                         Renglon["GuiaSalida"] = "";

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoTarifa));
             this.dgvTarifas = new DevExpress.XtraGrid.GridControl();
             this.vistaTarifas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +47,6 @@
             this.pnlTarifas = new System.Windows.Forms.Panel();
             this.lblTarifas = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaTarifas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
@@ -101,6 +101,14 @@
             this.vistaTarifas.OptionsView.ShowAutoFilterRow = true;
             this.vistaTarifas.OptionsView.ShowGroupPanel = false;
             this.vistaTarifas.OptionsView.ShowIndicator = false;
+            // 
+            // Costo
+            // 
+            this.Costo.Caption = "COSTO";
+            this.Costo.FieldName = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.Visible = true;
+            this.Costo.VisibleIndex = 3;
             // 
             // gridColumn1
             // 
@@ -171,7 +179,7 @@
             this.gridColumn8.FieldName = "Moneda";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.VisibleIndex = 4;
             this.gridColumn8.Width = 100;
             // 
             // repositoryItemCheckEdit2
@@ -280,14 +288,6 @@
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // Costo
-            // 
-            this.Costo.Caption = "COSTO";
-            this.Costo.FieldName = "Costo";
-            this.Costo.Name = "Costo";
-            this.Costo.Visible = true;
-            this.Costo.VisibleIndex = 4;
             // 
             // frmProcesoTarifa
             // 
