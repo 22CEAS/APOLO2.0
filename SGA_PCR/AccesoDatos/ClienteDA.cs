@@ -13,31 +13,29 @@ namespace AccesoDatos
     {
         DBManager objManager;
         MySqlParameter[] parametrosEntrada = null;
-
         public ClienteDA()
         {
             objManager = new DBManager();
         }
-
-
         public DataTable ListarClientes()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_Cliente ;");
         }
-
         public DataTable ListarClientesKAM()
         {
             return objManager.MostrarTablaDatos("select c.nombre_razonSocial, IF(u.estado=1, u.nombre, '') as nombre from cliente c inner join usuario u on c.idKAM = u.idUsuario ");
         }
-
         public DataTable ListarKamEncargado(int idCliente)
         {
             return objManager.MostrarTablaDatos($"SELECT u.idUsuario,u.nombre FROM cliente c INNER JOIN usuario u on c.idKAM = u.idUsuario where idCliente = {idCliente}; ");
         }
-
         public DataTable ListarTipoDocumento()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_documento_tipo ;");
+        }
+        public DataTable ListarContactoTipo()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_contacto_tipo ;");
         }
         public DataTable ListarKams()
         {
@@ -47,7 +45,10 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_Sucursal_Cliente where idCliente="+idCliente+" ;");
         }
-
+        public DataTable ListarContactoCliente(int idCliente)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_Contacto_Cliente where IdCliente=" + idCliente + " ;");
+        }
         public int GuardarNuevoCliente(Cliente cliente, string usuario)
         {
             parametrosEntrada = new MySqlParameter[9];
@@ -83,8 +84,6 @@ namespace AccesoDatos
             return -1;
             
         }
-
-
         public int RelacionKAM(string cliente, int idKam)
         {
 
@@ -100,7 +99,6 @@ namespace AccesoDatos
             return ((aux) ? 1 : -1);
 
         }
-
         public int RelacionKAMmasivo(string ruc, string razonSocial, string dniKam,string nombreKam)
         {
 
@@ -174,8 +172,6 @@ namespace AccesoDatos
             return ((aux) ? 1 : -1);
 
         }
-
-
         public int ModificarCliente(Cliente cliente, string usuario)
         {
             
@@ -206,7 +202,6 @@ namespace AccesoDatos
             return ((aux) ? 1 : -1);
             
         }
-
         public int GuardarNuevoSucursal(ClienteSucursal sucursal, string usuario)
         {
             parametrosEntrada = new MySqlParameter[9];
@@ -267,6 +262,73 @@ namespace AccesoDatos
             parametrosEntrada[8].Value = usuario;
 
             bool aux = objManager.EjecutarProcedure(parametrosEntrada, "update_cliente_sucursal");
+            return ((aux) ? 1 : -1);
+
+        }
+        public int GuardarNuevoContacto(ClienteContacto contacto, string usuario)
+        {
+            parametrosEntrada = new MySqlParameter[10];
+            parametrosEntrada[0] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idTipoContacto", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 1000);
+            parametrosEntrada[3] = new MySqlParameter("@_email", MySqlDbType.VarChar, 255);
+            parametrosEntrada[4] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
+            parametrosEntrada[5] = new MySqlParameter("@_anexo", MySqlDbType.VarChar, 255);
+            parametrosEntrada[6] = new MySqlParameter("@_cargo", MySqlDbType.VarChar, 255);
+            parametrosEntrada[7] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+            parametrosEntrada[8] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+            parametrosEntrada[9] = new MySqlParameter("@_idContacto", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = contacto.IdCliente;
+            parametrosEntrada[1].Value = contacto.IdTipoContacto;
+            parametrosEntrada[2].Value = contacto.Nombre;
+            parametrosEntrada[3].Value = contacto.Email;
+            parametrosEntrada[4].Value = contacto.Telefono;
+            parametrosEntrada[5].Value = contacto.Anexo;
+            parametrosEntrada[6].Value = contacto.Cargo;
+            parametrosEntrada[7].Value = contacto.Observacion;
+            parametrosEntrada[8].Value = usuario;
+
+            string[] datosSalida = new string[1];
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_cliente_contacto  ",
+                9, 10, out datosSalida, 1);
+
+            if (datosSalida != null)
+            {
+                int idCliente = Convert.ToInt32(datosSalida[0]);
+                return idCliente;
+            }
+            return -1;
+
+        }
+        public int ModificarContacto(ClienteContacto contacto, string usuario)
+        {
+
+            parametrosEntrada = new MySqlParameter[10];
+            parametrosEntrada[0] = new MySqlParameter("@_idContacto", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idTipoContacto", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 1000);
+            parametrosEntrada[3] = new MySqlParameter("@_email", MySqlDbType.VarChar, 255);
+            parametrosEntrada[4] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
+            parametrosEntrada[5] = new MySqlParameter("@_anexo", MySqlDbType.VarChar, 255);
+            parametrosEntrada[6] = new MySqlParameter("@_cargo", MySqlDbType.VarChar, 255);
+            parametrosEntrada[7] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
+            parametrosEntrada[8] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[9] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+            parametrosEntrada[0].Value = contacto.IdContacto;
+            parametrosEntrada[1].Value = contacto.IdTipoContacto;
+            parametrosEntrada[2].Value = contacto.Nombre;
+            parametrosEntrada[3].Value = contacto.Email;
+            parametrosEntrada[4].Value = contacto.Telefono;
+            parametrosEntrada[5].Value = contacto.Anexo;
+            parametrosEntrada[6].Value = contacto.Cargo;
+            parametrosEntrada[7].Value = contacto.Observacion;
+            parametrosEntrada[8].Value = contacto.Estado;
+            parametrosEntrada[9].Value = usuario;
+
+            bool aux = objManager.EjecutarProcedure(parametrosEntrada, "update_cliente_contacto");
             return ((aux) ? 1 : -1);
 
         }

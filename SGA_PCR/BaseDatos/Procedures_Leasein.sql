@@ -4138,3 +4138,96 @@ END
 $$
 DELIMITER ;
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertTarifas`(
+	IN _ruc NVARCHAR(200),
+	IN _codigo NVARCHAR(200),
+	IN _tarifa DOUBLE, 
+	IN _moneda NVARCHAR(200),
+	IN _idSalidaDet INT,
+	IN _idSalida INT,
+	IN _guia NVARCHAR(200),
+	IN _usuario NVARCHAR(200)
+)
+BEGIN
+	SET @fecha=(CURDATE());
+	#select (select count(*) from tarifa where idsalidadet=_idSalidaDet);
+	if(select count(*) from tarifa where idsalidadet=_idSalidaDet<>0) then
+
+	update tarifa
+	set tarifa=_tarifa,
+	moneda=_moneda,
+	fec_mod=CURDATE(),
+	usuario_mod=_usuario
+	where idsalidadet=_idSalidaDet;
+	
+	
+	else
+
+	INSERT INTO tarifa (idsalidadet,idsalida,guiaSalida,rucCliente,codigoLC,tarifa,moneda,estado,fec_ins,usuario_ins) values
+	(_idSalidaDet,_idSalida,_guia,_ruc,_codigo,_tarifa,_moneda,1,@fecha,_usuario);
+	
+	end if;
+	commit;
+END
+
+--======================CONTACTOS=======================================	
+
+
+DROP PROCEDURE IF EXISTS `insert_cliente_contacto`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_contacto`(
+	IN _idCliente INT,
+	IN _idTipoContacto INT,
+	IN _nombre NVARCHAR(1000),
+	IN _email NVARCHAR(255),
+	IN _telefono NVARCHAR(255),
+	IN _anexo NVARCHAR(255),
+	IN _cargo NVARCHAR(1000),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idContacto INT
+)
+BEGIN
+	SET _idContacto=(SELECT IFNULL( MAX( idContacto ) , 0 )+1 FROM cliente_contacto);
+	INSERT INTO cliente_contacto (idContacto,idCliente,idTipoContacto,nombre,email,telefono,anexo,cargo,observacion,estado,usuario_ins) values
+	(_idContacto,_idCliente,_idTipoContacto,_nombre,_email,_telefono,_anexo,_cargo,_observacion,1,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_cliente_contacto`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cliente_contacto`(
+	IN _idContacto INT,
+	IN _idTipoContacto INT,
+	IN _nombre NVARCHAR(1000),
+	IN _email NVARCHAR(255),
+	IN _telefono NVARCHAR(255),
+	IN _anexo NVARCHAR(255),
+	IN _cargo NVARCHAR(1000),
+	IN _observacion NVARCHAR(255),
+	IN _estado INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fec_mod=(SELECT now());
+	UPDATE cliente_contacto
+	SET nombre=_nombre,
+		idTipoContacto=_idTipoContacto,
+		email=_email,
+		telefono=_telefono,
+		anexo=_anexo,
+		cargo=_cargo,
+		observacion=_observacion,
+		estado=_estado,
+		fec_mod=@fec_mod,
+		usuario_mod=_usuario_mod
+	WHERE idContacto=_idContacto;
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+

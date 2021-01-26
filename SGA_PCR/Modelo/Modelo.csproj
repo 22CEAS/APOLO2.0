@@ -49,6 +49,7 @@
     <Compile Include="Cambio.cs" />
     <Compile Include="CambioRazonSocial.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="ClienteContacto.cs" />
     <Compile Include="CorteAlquiler.cs" />
     <Compile Include="Estados.cs" />
     <Compile Include="Impresora.cs" />

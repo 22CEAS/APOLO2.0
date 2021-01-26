@@ -1001,5 +1001,41 @@ CREATE TABLE `sede`  (
   `estado` TINYINT NOT NULL
 ) ENGINE = InnoDB;
 
+DROP TABLE IF EXISTS `tarifa`;
+CREATE TABLE tarifa(
+	idsalidadet INT NOT NULL PRIMARY KEY,
+	idsalida INT,
+	guiaSalida NVARCHAR(255),
+	rucCliente NVARCHAR(255),
+	codigoLC NVARCHAR(255),
+	tarifa DOUBLE,
+	moneda NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(255),
+	usuario_mod NVARCHAR(255)
+)ENGINE=INNODB;
 
 
+--======================CONTACTOS=======================================	
+
+DROP TABLE IF EXISTS `cliente_contacto`;
+CREATE TABLE cliente_contacto(
+		idContacto INT NOT NULL PRIMARY KEY,
+		idCliente INT NOT NULL,
+		idTipoContacto INT NOT NULL,
+		nombre NVARCHAR(1000),
+		email NVARCHAR(255),
+		telefono NVARCHAR(255),
+		anexo NVARCHAR(255),
+		cargo NVARCHAR(1000),
+		observacion NVARCHAR(255),
+		estado TINYINT NOT NULL,
+		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+		usuario_ins NVARCHAR(100),
+		usuario_mod NVARCHAR(100),
+		FOREIGN KEY (idCliente)
+    REFERENCES cliente(idCliente)
+)ENGINE=INNODB;

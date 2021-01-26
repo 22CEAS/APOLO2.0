@@ -88,6 +88,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchivoClienteContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchivoClienteContacto.Designer.cs">
+      <DependentUpon>frmArchivoClienteContacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoTarifa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchivoClienteContacto.resx">
+      <DependentUpon>frmArchivoClienteContacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoKam.resx">
       <DependentUpon>frmArchivoKam.cs</DependentUpon>

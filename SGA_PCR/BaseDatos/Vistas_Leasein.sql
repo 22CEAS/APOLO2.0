@@ -2744,3 +2744,31 @@ Order By codigoEquipo;
 Select * from vista_factura_CV ;
 ,
 	`d`.`corteAlquiler` AS `CorteAlquiler`;
+	
+
+
+
+--======================CONTACTOS=======================================	
+DROP VIEW IF EXISTS vista_contacto_tipo;
+create view vista_contacto_tipo as	
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="CONTACTO_TIPO" and activo=1;
+
+DROP VIEW IF EXISTS vista_maestro_Contacto_Cliente;
+create view vista_maestro_Contacto_Cliente as
+Select 	cc.idContacto as IdContacto,
+		cc.idCliente as IdCliente,
+		c.nombre_razonSocial as NombreCliente,
+		c.nroDocumento as DocumentoCliente,
+		cc.idTipoContacto as IdTipoContacto,
+		(Select descripcion from auxiliar where cod_tabla='CONTACTO_TIPO' and idAuxiliar=cc.idTipoContacto) AS TipoContacto,
+		cc.nombre as NombreContacto,
+		cc.email as Email,
+		cc.telefono as Telefono,
+		cc.anexo as Anexo,
+		cc.cargo as Cargo,
+		cc.observacion as Observacion,
+		cc.estado as IdEstado,
+		if((cc.estado=1),'ACTIVO','DESACTIVO') AS Estado
+from cliente c left join cliente_contacto cc  on c.idCliente=cc.idCliente;
