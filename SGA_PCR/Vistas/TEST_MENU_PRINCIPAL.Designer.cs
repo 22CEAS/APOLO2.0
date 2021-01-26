@@ -248,7 +248,7 @@
             this.gridColumn36.Caption = "Pendiente por facturar";
             this.gridColumn36.DisplayFormat.FormatString = "S/ {0:n0}";
             this.gridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn36.FieldName = "PendienteFacturarSoles";
+            this.gridColumn36.FieldName = "DeudaSoles";
             this.gridColumn36.MinWidth = 40;
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.OptionsFilter.AllowFilter = false;
@@ -2356,8 +2356,8 @@
             this.ClientSize = new System.Drawing.Size(1386, 734);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
-            this.Controls.Add(this.pnlInventarioOfi);
             this.Controls.Add(this.pnlFacturacionOfi);
+            this.Controls.Add(this.pnlInventarioOfi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;

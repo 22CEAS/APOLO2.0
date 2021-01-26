@@ -24,6 +24,12 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_cuadro_vencimiento ;");
         }
 
+
+        public DataTable ListaDiscosDuros()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_discos;");
+        }
+
         public DataTable ListarMemoriasMaestro()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_memoria ;");
@@ -64,7 +70,7 @@ namespace AccesoDatos
         public DataTable ListarLaptopsPorFacturarDASH()
         {
             //return objManager.MostrarTablaDatos("SELECT * FROM vista_productos_por_facturar_dash ;");
-            return objManager.MostrarTablaDatos("select cliente as cliente,max(diasVencidos) as maxDiasVencidos,round(sum(PendienteFacturarSoles),2) as PendienteFacturarSoles from vista_productos_por_facturar_dash group by cliente; ");
+            return objManager.MostrarTablaDatos("select cliente as cliente,max(diasVencidos) as maxDiasVencidos,round(sum(DeudaSoles),2) as DeudaSoles from vista_productos_por_facturar_dash group by cliente order by DeudaSoles desc ; ");
         }
 
         public DataTable ListarLaptopsPorFacturarDASH_segun_dias()

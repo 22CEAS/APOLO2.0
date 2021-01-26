@@ -29,6 +29,11 @@ namespace Modelo
         private DateTime _fecIniContrato;
         private DateTime _fecFinContrato;
 
+        //test
+
+        private string NombreProcesador;
+        private string DetalleAdicional;
+        private string MemoriaRam;
 
         public int IdSalidaDetalle { get => idSalidaDetalle; set => idSalidaDetalle = value; }
         public int IdSucursal { get => idSucursal; set => idSucursal = value; }
@@ -50,5 +55,8 @@ namespace Modelo
         public string NombreModeloLC { get => nombreModeloLC; set => nombreModeloLC = value; }
         public DateTime fecIniContrato { get => _fecIniContrato; set => _fecIniContrato = value; }
         public DateTime fecFinContrato { get => _fecFinContrato; set => _fecFinContrato = value; }
+        public string NombreProcesador1 { get => NombreProcesador; set => NombreProcesador = value; }
+        public string DetalleAdicional1 { get => DetalleAdicional; set => DetalleAdicional = value; }
+        public string MemoriaRam1 { get => MemoriaRam; set => MemoriaRam = value; }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoTarifa));
             this.dgvTarifas = new DevExpress.XtraGrid.GridControl();
             this.vistaTarifas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,6 +82,7 @@
             this.vistaTarifas.Appearance.Row.Options.UseFont = true;
             this.vistaTarifas.Appearance.Row.Options.UseForeColor = true;
             this.vistaTarifas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Costo,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -99,6 +101,14 @@
             this.vistaTarifas.OptionsView.ShowAutoFilterRow = true;
             this.vistaTarifas.OptionsView.ShowGroupPanel = false;
             this.vistaTarifas.OptionsView.ShowIndicator = false;
+            // 
+            // Costo
+            // 
+            this.Costo.Caption = "COSTO";
+            this.Costo.FieldName = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.Visible = true;
+            this.Costo.VisibleIndex = 3;
             // 
             // gridColumn1
             // 
@@ -133,7 +143,7 @@
             this.gridColumn4.FieldName = "Observacion";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 8;
             this.gridColumn4.Width = 150;
             // 
             // gridColumn5
@@ -142,7 +152,7 @@
             this.gridColumn5.FieldName = "IdSalidaDet";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 150;
             // 
             // gridColumn6
@@ -151,7 +161,7 @@
             this.gridColumn6.FieldName = "IdSalida";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 150;
             // 
             // gridColumn7
@@ -160,7 +170,7 @@
             this.gridColumn7.FieldName = "GuiaSalida";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             this.gridColumn7.Width = 150;
             // 
             // gridColumn8
@@ -169,7 +179,7 @@
             this.gridColumn8.FieldName = "Moneda";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 3;
+            this.gridColumn8.VisibleIndex = 4;
             this.gridColumn8.Width = 100;
             // 
             // repositoryItemCheckEdit2
@@ -323,5 +333,6 @@
         private System.Windows.Forms.Panel pnlTarifas;
         private System.Windows.Forms.Label lblTarifas;
         private System.Windows.Forms.Button btnCerrar;
+        private DevExpress.XtraGrid.Columns.GridColumn Costo;
     }
 }

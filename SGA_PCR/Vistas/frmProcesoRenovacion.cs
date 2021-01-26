@@ -417,5 +417,15 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void frmProcesoRenovacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmProcesoRenovacion_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Apolo
 {
-    partial class Form1
+    partial class frmProcesoOrdenInterna
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoOrdenInterna));
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnObservacion = new System.Windows.Forms.Button();
@@ -39,10 +39,19 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.dgvLaptopsSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreProcesador1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DetalleAdicional1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
@@ -52,20 +61,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarProducto
@@ -79,13 +77,14 @@
             this.btnAgregarProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProducto.Image")));
             this.btnAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(218, 565);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(1071, 124);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 71);
             this.btnAgregarProducto.TabIndex = 199;
             this.btnAgregarProducto.Text = "Agregar\r\nEquipos";
             this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnAnular
             // 
@@ -98,7 +97,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(667, 572);
+            this.btnAnular.Location = new System.Drawing.Point(559, 560);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(67, 60);
             this.btnAnular.TabIndex = 198;
@@ -117,7 +116,7 @@
             this.btnObservacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObservacion.Image = ((System.Drawing.Image)(resources.GetObject("btnObservacion.Image")));
             this.btnObservacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnObservacion.Location = new System.Drawing.Point(466, 576);
+            this.btnObservacion.Location = new System.Drawing.Point(358, 564);
             this.btnObservacion.Name = "btnObservacion";
             this.btnObservacion.Size = new System.Drawing.Size(100, 57);
             this.btnObservacion.TabIndex = 197;
@@ -136,7 +135,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(826, 572);
+            this.btnImprimir.Location = new System.Drawing.Point(718, 560);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 57);
             this.btnImprimir.TabIndex = 196;
@@ -154,7 +153,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(740, 572);
+            this.btnCancelar.Location = new System.Drawing.Point(632, 560);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 59);
             this.btnCancelar.TabIndex = 195;
@@ -172,7 +171,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(380, 574);
+            this.btnEditar.Location = new System.Drawing.Point(272, 562);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 59);
             this.btnEditar.TabIndex = 194;
@@ -191,7 +190,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(299, 577);
+            this.btnNuevo.Location = new System.Drawing.Point(191, 565);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 57);
             this.btnNuevo.TabIndex = 193;
@@ -210,7 +209,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(567, 574);
+            this.btnGrabar.Location = new System.Drawing.Point(459, 562);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 58);
             this.btnGrabar.TabIndex = 192;
@@ -243,22 +242,21 @@
             this.vistaEquipos.Appearance.Row.Options.UseFont = true;
             this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
             this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MarcaLC,
-            this.ModeloLC,
-            this.Observacion,
-            this.IdLC,
+            this.CodigoLC,
+            this.NombreProcesador1,
+            this.DetalleAdicional1,
+            this.FechaIniContrato,
             this.gridColumn2,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
+            this.FechaFinContrato,
             this.gridColumn1,
             this.gridColumn3});
             this.vistaEquipos.GridControl = this.dgvLaptopsSeleccionados;
             this.vistaEquipos.Name = "vistaEquipos";
-            this.vistaEquipos.OptionsBehavior.Editable = false;
             this.vistaEquipos.OptionsCustomization.AllowColumnMoving = false;
             this.vistaEquipos.OptionsMenu.EnableColumnMenu = false;
             this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
@@ -266,49 +264,120 @@
             this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
             this.vistaEquipos.OptionsView.ShowGroupPanel = false;
             // 
-            // MarcaLC
+            // CodigoLC
             // 
-            this.MarcaLC.Caption = "Codigo Equipo";
-            this.MarcaLC.FieldName = "MarcaLC";
-            this.MarcaLC.MinWidth = 40;
-            this.MarcaLC.Name = "MarcaLC";
-            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MarcaLC.Visible = true;
-            this.MarcaLC.VisibleIndex = 0;
-            this.MarcaLC.Width = 100;
+            this.CodigoLC.Caption = "Codigo Equipo";
+            this.CodigoLC.FieldName = "CodigoLC";
+            this.CodigoLC.MinWidth = 40;
+            this.CodigoLC.Name = "CodigoLC";
+            this.CodigoLC.OptionsColumn.AllowEdit = false;
+            this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoLC.Visible = true;
+            this.CodigoLC.VisibleIndex = 0;
+            this.CodigoLC.Width = 100;
             // 
-            // ModeloLC
+            // NombreProcesador1
             // 
-            this.ModeloLC.Caption = "Descripcion";
-            this.ModeloLC.FieldName = "ModeloLC";
-            this.ModeloLC.MinWidth = 40;
-            this.ModeloLC.Name = "ModeloLC";
-            this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ModeloLC.Visible = true;
-            this.ModeloLC.VisibleIndex = 1;
-            this.ModeloLC.Width = 100;
+            this.NombreProcesador1.Caption = "Descripcion";
+            this.NombreProcesador1.FieldName = "NombreProcesador1";
+            this.NombreProcesador1.MinWidth = 40;
+            this.NombreProcesador1.Name = "NombreProcesador1";
+            this.NombreProcesador1.OptionsColumn.AllowEdit = false;
+            this.NombreProcesador1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreProcesador1.Visible = true;
+            this.NombreProcesador1.VisibleIndex = 1;
+            this.NombreProcesador1.Width = 100;
             // 
-            // Observacion
+            // DetalleAdicional1
             // 
-            this.Observacion.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Observacion.AppearanceCell.Options.UseBackColor = true;
-            this.Observacion.Caption = "Detalles Adicionales";
-            this.Observacion.FieldName = "Observacion";
-            this.Observacion.MinWidth = 40;
-            this.Observacion.Name = "Observacion";
-            this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Observacion.Visible = true;
-            this.Observacion.VisibleIndex = 2;
-            this.Observacion.Width = 150;
+            this.DetalleAdicional1.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DetalleAdicional1.AppearanceCell.Options.UseBackColor = true;
+            this.DetalleAdicional1.Caption = "Detalles Adicionales";
+            this.DetalleAdicional1.FieldName = "DetalleAdicional1";
+            this.DetalleAdicional1.MinWidth = 40;
+            this.DetalleAdicional1.Name = "DetalleAdicional1";
+            this.DetalleAdicional1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DetalleAdicional1.Visible = true;
+            this.DetalleAdicional1.VisibleIndex = 2;
+            this.DetalleAdicional1.Width = 150;
             // 
-            // IdLC
+            // FechaIniContrato
             // 
-            this.IdLC.Caption = "Inicio Plazo Alquiler";
-            this.IdLC.FieldName = "IdLC";
-            this.IdLC.Name = "IdLC";
-            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.IdLC.Visible = true;
-            this.IdLC.VisibleIndex = 3;
+            this.FechaIniContrato.Caption = "Inicio Plazo Alquiler";
+            this.FechaIniContrato.FieldName = "FechaIniContrato";
+            this.FechaIniContrato.Name = "FechaIniContrato";
+            this.FechaIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaIniContrato.Visible = true;
+            this.FechaIniContrato.VisibleIndex = 3;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Precio";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Costo";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 7;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Ganancia";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 8;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Sujeto a";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 9;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.gridColumn7.AppearanceCell.Options.UseBackColor = true;
+            this.gridColumn7.Caption = "OC";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 10;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Forma de Pago";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 11;
+            // 
+            // FechaFinContrato
+            // 
+            this.FechaFinContrato.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.FechaFinContrato.AppearanceCell.Options.UseBackColor = true;
+            this.FechaFinContrato.Caption = "Fin Plazo Alquiler";
+            this.FechaFinContrato.FieldName = "FechaFinContrato";
+            this.FechaFinContrato.Name = "FechaFinContrato";
+            this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaFinContrato.Visible = true;
+            this.FechaFinContrato.VisibleIndex = 4;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Moneda";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tipo Servicio";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 12;
             // 
             // cmbCliente
             // 
@@ -320,6 +389,7 @@
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(349, 21);
             this.cmbCliente.TabIndex = 232;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // labelX1
             // 
@@ -338,6 +408,7 @@
             // 
             // txtNroDocumento
             // 
+            this.txtNroDocumento.Enabled = false;
             this.txtNroDocumento.Location = new System.Drawing.Point(402, 68);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.ReadOnly = true;
@@ -400,66 +471,6 @@
             this.label8.TabIndex = 253;
             this.label8.Text = "OI";
             // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Precio";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Costo";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Ganancia";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Sujeto a";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 9;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.gridColumn7.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn7.Caption = "OC";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 10;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Forma de Pago";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 11;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.gridColumn9.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn9.Caption = "Fin Plazo Alquiler";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Moneda";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -471,27 +482,11 @@
             this.label2.TabIndex = 254;
             this.label2.Text = "■ Datos Modificable";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(901, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 104);
-            this.pictureBox1.TabIndex = 255;
-            this.pictureBox1.TabStop = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Tipo Servicio";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 12;
-            // 
-            // Form1
+            // frmProcesoOrdenInterna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 698);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
@@ -511,11 +506,11 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
-            this.Name = "Form1";
+            this.Name = "frmProcesoOrdenInterna";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmProcesoOrdenInterna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptopsSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,10 +528,10 @@
         private System.Windows.Forms.Button btnGrabar;
         private DevExpress.XtraGrid.GridControl dgvLaptopsSeleccionados;
         private DevExpress.XtraGrid.Views.Grid.GridView vistaEquipos;
-        private DevExpress.XtraGrid.Columns.GridColumn MarcaLC;
-        private DevExpress.XtraGrid.Columns.GridColumn ModeloLC;
-        private DevExpress.XtraGrid.Columns.GridColumn Observacion;
-        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoLC;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreProcesador1;
+        private DevExpress.XtraGrid.Columns.GridColumn DetalleAdicional1;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaIniContrato;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
@@ -552,10 +547,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaFinContrato;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

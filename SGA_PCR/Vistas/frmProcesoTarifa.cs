@@ -72,6 +72,7 @@ namespace Apolo
                     miDataTable.Columns.Add("CodigoEquipo");
                     miDataTable.Columns.Add("Tarifa");
                     miDataTable.Columns.Add("Moneda");
+                    miDataTable.Columns.Add("Costo");
                     miDataTable.Columns.Add("IdSalidaDet");
                     miDataTable.Columns.Add("IdSalida");
                     miDataTable.Columns.Add("GuiaSalida");
@@ -87,7 +88,8 @@ namespace Apolo
                         Renglon["RucCliente"] = sl.GetCellValueAsString(iRow, 1);
                         Renglon["CodigoEquipo"] = sl.GetCellValueAsString(iRow, 2);
                         Renglon["Tarifa"] = sl.GetCellValueAsDouble(iRow, 3);
-                        Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["Costo"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 5);
                         Renglon["IdSalidaDet"] = "";
                         Renglon["IdSalida"] = "";
                         Renglon["GuiaSalida"] = "";
@@ -122,6 +124,7 @@ namespace Apolo
             string CodigoEquipo = "";
             double Tarifa = 0;
             string Moneda = "";
+            double Costo = 0;
             int IdSalidaDet = 0;
             int IdSalida = 0;
             string GuiaSalida = "";
@@ -156,6 +159,7 @@ namespace Apolo
                 CodigoEquipo = (vistaTarifas.GetRowCellValue(i, "CodigoEquipo").ToString());
                 Tarifa = double.Parse((vistaTarifas.GetRowCellValue(i, "Tarifa").ToString()));
                 Moneda = (vistaTarifas.GetRowCellValue(i, "Moneda").ToString());
+                Costo = double.Parse((vistaTarifas.GetRowCellValue(i, "Costo").ToString()));
                 IdSalidaDet = int.Parse((vistaTarifas.GetRowCellValue(i, "IdSalidaDet").ToString()));
                 IdSalida = int.Parse((vistaTarifas.GetRowCellValue(i, "IdSalida").ToString()));
                 GuiaSalida = (vistaTarifas.GetRowCellValue(i, "GuiaSalida").ToString());
@@ -165,7 +169,7 @@ namespace Apolo
 
                 //PROCEDURE PARA RELACIONAR KAMS DE FORMA MASIVA
 
-                int resultado = tarifaDA.SubirTarifas(RucCliente, CodigoEquipo, Tarifa, IdSalidaDet, IdSalida, GuiaSalida,Moneda,this.nombreUsuario);
+                int resultado = tarifaDA.SubirTarifas(RucCliente, CodigoEquipo, Tarifa, IdSalidaDet, IdSalida, GuiaSalida,Moneda,this.nombreUsuario,Costo);
 
 
                 //ERRORES

@@ -1,6 +1,6 @@
 ﻿namespace Apolo
 {
-    partial class frmProcesoRenovacionAgregarProducto
+    partial class frmProcesoOIAgregarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoRenovacionAgregarProducto));
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtCantMeses = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoOIAgregarProducto));
+            this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
+            this.btnSeleccionarFilas = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvRenovacionProductos = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,54 +56,79 @@
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.btnAgregarMeses = new System.Windows.Forms.Button();
-            this.btnSeleccionarFilas = new System.Windows.Forms.Button();
-            this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCancelar
+            // btnDeseleccionarFilas
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.AutoSize = true;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(677, 416);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(92, 65);
-            this.btnCancelar.TabIndex = 126;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnDeseleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeseleccionarFilas.AutoSize = true;
+            this.btnDeseleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeseleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeseleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnDeseleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
+            this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(175, 71);
+            this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
+            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
+            this.btnDeseleccionarFilas.TabIndex = 145;
+            this.btnDeseleccionarFilas.Text = "Deseleccionar Filas";
+            this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
             // 
-            // txtCantMeses
+            // btnSeleccionarFilas
             // 
-            this.txtCantMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantMeses.Location = new System.Drawing.Point(643, 31);
-            this.txtCantMeses.Name = "txtCantMeses";
-            this.txtCantMeses.Size = new System.Drawing.Size(124, 22);
-            this.txtCantMeses.TabIndex = 129;
-            this.txtCantMeses.TextChanged += new System.EventHandler(this.txtCantMeses_TextChanged);
-            this.txtCantMeses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMeses_KeyPress);
+            this.btnSeleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionarFilas.AutoSize = true;
+            this.btnSeleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
+            this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(53, 71);
+            this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
+            this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
+            this.btnSeleccionarFilas.TabIndex = 144;
+            this.btnSeleccionarFilas.Text = "Seleccionar Filas";
+            this.btnSeleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSeleccionarFilas.UseVisualStyleBackColor = false;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionar.AutoSize = true;
+            this.btnSeleccionar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
+            this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSeleccionar.Location = new System.Drawing.Point(800, 473);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
+            this.btnSeleccionar.TabIndex = 142;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // dgvRenovacionProductos
             // 
-            this.dgvRenovacionProductos.Location = new System.Drawing.Point(30, 77);
+            this.dgvRenovacionProductos.Location = new System.Drawing.Point(55, 136);
             this.dgvRenovacionProductos.MainView = this.vista;
             this.dgvRenovacionProductos.Name = "dgvRenovacionProductos";
             this.dgvRenovacionProductos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
             this.dgvRenovacionProductos.Size = new System.Drawing.Size(874, 321);
-            this.dgvRenovacionProductos.TabIndex = 130;
+            this.dgvRenovacionProductos.TabIndex = 140;
             this.dgvRenovacionProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
             // 
@@ -341,117 +367,37 @@
             this.FechaFinContratoAntiguo.Name = "FechaFinContratoAntiguo";
             this.FechaFinContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             // 
-            // label1
+            // btnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(513, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 131;
-            this.label1.Text = "Número de Meses";
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(702, 475);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(92, 65);
+            this.btnCancelar.TabIndex = 138;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnSeleccionar
+            // frmProcesoOIAgregarProducto
             // 
-            this.btnSeleccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionar.AutoSize = true;
-            this.btnSeleccionar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
-            this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionar.Location = new System.Drawing.Point(775, 414);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
-            this.btnSeleccionar.TabIndex = 132;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
-            // btnAgregarMeses
-            // 
-            this.btnAgregarMeses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarMeses.AutoSize = true;
-            this.btnAgregarMeses.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarMeses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMeses.FlatAppearance.BorderSize = 0;
-            this.btnAgregarMeses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarMeses.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarMeses.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMeses.Image")));
-            this.btnAgregarMeses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarMeses.Location = new System.Drawing.Point(784, 20);
-            this.btnAgregarMeses.Name = "btnAgregarMeses";
-            this.btnAgregarMeses.Size = new System.Drawing.Size(68, 42);
-            this.btnAgregarMeses.TabIndex = 133;
-            this.btnAgregarMeses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregarMeses.UseVisualStyleBackColor = false;
-            this.btnAgregarMeses.Click += new System.EventHandler(this.btnAgregarMeses_Click);
-            // 
-            // btnSeleccionarFilas
-            // 
-            this.btnSeleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionarFilas.AutoSize = true;
-            this.btnSeleccionarFilas.BackColor = System.Drawing.Color.Transparent;
-            this.btnSeleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionarFilas.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
-            this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(28, 12);
-            this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
-            this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
-            this.btnSeleccionarFilas.TabIndex = 136;
-            this.btnSeleccionarFilas.Text = "Seleccionar Filas";
-            this.btnSeleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSeleccionarFilas.UseVisualStyleBackColor = false;
-            this.btnSeleccionarFilas.Click += new System.EventHandler(this.btnSeleccionarFilas_Click);
-            // 
-            // btnDeseleccionarFilas
-            // 
-            this.btnDeseleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeseleccionarFilas.AutoSize = true;
-            this.btnDeseleccionarFilas.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeseleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeseleccionarFilas.FlatAppearance.BorderSize = 0;
-            this.btnDeseleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
-            this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(150, 12);
-            this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
-            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
-            this.btnDeseleccionarFilas.TabIndex = 137;
-            this.btnDeseleccionarFilas.Text = "Deseleccionar Filas";
-            this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
-            this.btnDeseleccionarFilas.Click += new System.EventHandler(this.btnDeseleccionarFilas_Click);
-            // 
-            // frmProcesoRenovacionAgregarProducto
-            // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(916, 493);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(982, 610);
             this.Controls.Add(this.btnDeseleccionarFilas);
             this.Controls.Add(this.btnSeleccionarFilas);
-            this.Controls.Add(this.btnAgregarMeses);
             this.Controls.Add(this.btnSeleccionar);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvRenovacionProductos);
-            this.Controls.Add(this.txtCantMeses);
             this.Controls.Add(this.btnCancelar);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmProcesoRenovacionAgregarProducto";
-            this.ShowIcon = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar Producto";
-            this.Load += new System.EventHandler(this.frmProcesoRenovacionAgregarProducto_Load);
+            this.Name = "frmProcesoOIAgregarProducto";
+            this.Text = "frmProcesoOIAgregarProducto";
+            this.Load += new System.EventHandler(this.frmProcesoOIAgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -462,10 +408,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtCantMeses;
+        private System.Windows.Forms.Button btnDeseleccionarFilas;
+        private System.Windows.Forms.Button btnSeleccionarFilas;
+        private System.Windows.Forms.Button btnSeleccionar;
         private DevExpress.XtraGrid.GridControl dgvRenovacionProductos;
         private DevExpress.XtraGrid.Views.Grid.GridView vista;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn Codigo;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
         private DevExpress.XtraGrid.Columns.GridColumn Marca;
         private DevExpress.XtraGrid.Columns.GridColumn Modelo;
         private DevExpress.XtraGrid.Columns.GridColumn Pantalla;
@@ -475,23 +426,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn Capacidad;
         private DevExpress.XtraGrid.Columns.GridColumn fecIniContrato;
         private DevExpress.XtraGrid.Columns.GridColumn fecFinContrato;
-        private DevExpress.XtraGrid.Columns.GridColumn Codigo;
         private DevExpress.XtraGrid.Columns.GridColumn IdLC;
         private DevExpress.XtraGrid.Columns.GridColumn IdVideo;
         private DevExpress.XtraGrid.Columns.GridColumn IdProcesador;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalidaDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn IdSucursal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button btnAgregarMeses;
-        private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private System.Windows.Forms.Button btnSeleccionarFilas;
-        private System.Windows.Forms.Button btnDeseleccionarFilas;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
         private DevExpress.XtraGrid.Columns.GridColumn GuiaSalida;
         private DevExpress.XtraGrid.Columns.GridColumn FechaIniContratoAntiguo;
         private DevExpress.XtraGrid.Columns.GridColumn FechaFinContratoAntiguo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
