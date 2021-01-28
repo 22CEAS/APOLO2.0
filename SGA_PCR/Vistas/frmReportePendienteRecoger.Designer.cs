@@ -65,6 +65,7 @@
             this.pnlPR = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.MotivoRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -129,7 +130,8 @@
             this.CostoSoles,
             this.CostoDolares,
             this.VersionOffice,
-            this.KAM});
+            this.KAM,
+            this.MotivoRecojo});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -574,6 +576,17 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // MotivoRecojo
+            // 
+            this.MotivoRecojo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.MotivoRecojo.AppearanceHeader.Options.UseBackColor = true;
+            this.MotivoRecojo.Caption = "Motivo Recojo";
+            this.MotivoRecojo.FieldName = "MotivoRecojo";
+            this.MotivoRecojo.Name = "MotivoRecojo";
+            this.MotivoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MotivoRecojo.Visible = true;
+            this.MotivoRecojo.VisibleIndex = 24;
+            // 
             // frmReportePendienteRecoger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -643,5 +656,6 @@
         private System.Windows.Forms.Panel pnlPR;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCerrar;
+        private DevExpress.XtraGrid.Columns.GridColumn MotivoRecojo;
     }
 }

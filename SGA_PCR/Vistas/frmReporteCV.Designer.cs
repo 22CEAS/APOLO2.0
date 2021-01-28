@@ -33,11 +33,13 @@
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Direccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Guia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +48,12 @@
             this.Generacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Video = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscoDuro1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscoDuro2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VersionWindows = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FecPrimerTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.factura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,10 +65,6 @@
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UBSoles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FecPrimerTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -69,10 +72,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
             this.cargarData = new System.Windows.Forms.Button();
-            this.DiscoDuro1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DiscoDuro2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Windows = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Office = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -137,11 +136,13 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.IdSalida,
-            this.Cliente,
+            this.KAM,
             this.ruc,
+            this.Cliente,
             this.Contacto,
             this.Direccion,
             this.Codigo,
+            this.CodigoAntiguo,
             this.Guia,
             this.Marca,
             this.Modelo,
@@ -150,7 +151,12 @@
             this.Generacion,
             this.Video,
             this.Capacidad,
-            this.CodigoAntiguo,
+            this.RAM,
+            this.DiscoDuro1,
+            this.DiscoDuro2,
+            this.VersionWindows,
+            this.VersionOffice,
+            this.FecPrimerTraslado,
             this.fecIniContrato,
             this.fecFinContrato,
             this.factura,
@@ -161,15 +167,7 @@
             this.TotalDolares,
             this.CostoSoles,
             this.CostoDolares,
-            this.UBSoles,
-            this.VersionOffice,
-            this.KAM,
-            this.RAM,
-            this.FecPrimerTraslado,
-            this.DiscoDuro1,
-            this.DiscoDuro2,
-            this.Windows,
-            this.Office});
+            this.UBSoles});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -191,6 +189,28 @@
             this.IdSalida.VisibleIndex = 0;
             this.IdSalida.Width = 70;
             // 
+            // KAM
+            // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.Name = "KAM";
+            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 1;
+            this.KAM.Width = 150;
+            // 
+            // ruc
+            // 
+            this.ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ruc.AppearanceHeader.Options.UseBackColor = true;
+            this.ruc.Caption = "Ruc";
+            this.ruc.FieldName = "ruc";
+            this.ruc.Name = "ruc";
+            this.ruc.Visible = true;
+            this.ruc.VisibleIndex = 2;
+            // 
             // Cliente
             // 
             this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -203,16 +223,6 @@
             this.Cliente.Visible = true;
             this.Cliente.VisibleIndex = 3;
             this.Cliente.Width = 250;
-            // 
-            // ruc
-            // 
-            this.ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruc.AppearanceHeader.Options.UseBackColor = true;
-            this.ruc.Caption = "Ruc";
-            this.ruc.FieldName = "ruc";
-            this.ruc.Name = "ruc";
-            this.ruc.Visible = true;
-            this.ruc.VisibleIndex = 2;
             // 
             // Contacto
             // 
@@ -244,6 +254,19 @@
             this.Codigo.Visible = true;
             this.Codigo.VisibleIndex = 4;
             this.Codigo.Width = 150;
+            // 
+            // CodigoAntiguo
+            // 
+            this.CodigoAntiguo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoAntiguo.AppearanceHeader.Options.UseBackColor = true;
+            this.CodigoAntiguo.Caption = "Código Antiguo";
+            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
+            this.CodigoAntiguo.MinWidth = 40;
+            this.CodigoAntiguo.Name = "CodigoAntiguo";
+            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoAntiguo.Visible = true;
+            this.CodigoAntiguo.VisibleIndex = 5;
+            this.CodigoAntiguo.Width = 120;
             // 
             // Guia
             // 
@@ -343,18 +366,80 @@
             this.Capacidad.VisibleIndex = 12;
             this.Capacidad.Width = 100;
             // 
-            // CodigoAntiguo
+            // RAM
             // 
-            this.CodigoAntiguo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CodigoAntiguo.AppearanceHeader.Options.UseBackColor = true;
-            this.CodigoAntiguo.Caption = "Código Antiguo";
-            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
-            this.CodigoAntiguo.MinWidth = 40;
-            this.CodigoAntiguo.Name = "CodigoAntiguo";
-            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 5;
-            this.CodigoAntiguo.Width = 120;
+            this.RAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RAM.AppearanceHeader.Options.UseBackColor = true;
+            this.RAM.Caption = "RAM";
+            this.RAM.FieldName = "RAM";
+            this.RAM.MinWidth = 40;
+            this.RAM.Name = "RAM";
+            this.RAM.Visible = true;
+            this.RAM.VisibleIndex = 13;
+            this.RAM.Width = 100;
+            // 
+            // DiscoDuro1
+            // 
+            this.DiscoDuro1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro1.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro1.Caption = "Disco Duro (HDD)";
+            this.DiscoDuro1.FieldName = "DiscoDuro1";
+            this.DiscoDuro1.MinWidth = 40;
+            this.DiscoDuro1.Name = "DiscoDuro1";
+            this.DiscoDuro1.Visible = true;
+            this.DiscoDuro1.VisibleIndex = 14;
+            this.DiscoDuro1.Width = 100;
+            // 
+            // DiscoDuro2
+            // 
+            this.DiscoDuro2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro2.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro2.Caption = "Disco Duro (SSD)";
+            this.DiscoDuro2.FieldName = "DiscoDuro2";
+            this.DiscoDuro2.MinWidth = 40;
+            this.DiscoDuro2.Name = "DiscoDuro2";
+            this.DiscoDuro2.Visible = true;
+            this.DiscoDuro2.VisibleIndex = 15;
+            this.DiscoDuro2.Width = 100;
+            // 
+            // VersionWindows
+            // 
+            this.VersionWindows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.VersionWindows.AppearanceHeader.Options.UseBackColor = true;
+            this.VersionWindows.Caption = "Versión Windows";
+            this.VersionWindows.FieldName = "VersionWindows";
+            this.VersionWindows.MinWidth = 40;
+            this.VersionWindows.Name = "VersionWindows";
+            this.VersionWindows.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.VersionWindows.Visible = true;
+            this.VersionWindows.VisibleIndex = 16;
+            this.VersionWindows.Width = 100;
+            // 
+            // VersionOffice
+            // 
+            this.VersionOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.VersionOffice.AppearanceHeader.Options.UseBackColor = true;
+            this.VersionOffice.Caption = "Versión Office";
+            this.VersionOffice.FieldName = "VersionOffice";
+            this.VersionOffice.MinWidth = 40;
+            this.VersionOffice.Name = "VersionOffice";
+            this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.VersionOffice.Visible = true;
+            this.VersionOffice.VisibleIndex = 17;
+            this.VersionOffice.Width = 100;
+            // 
+            // FecPrimerTraslado
+            // 
+            this.FecPrimerTraslado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecPrimerTraslado.AppearanceHeader.Options.UseBackColor = true;
+            this.FecPrimerTraslado.Caption = "Fecha Primer Traslado";
+            this.FecPrimerTraslado.FieldName = "FecPrimerTraslado";
+            this.FecPrimerTraslado.MinWidth = 40;
+            this.FecPrimerTraslado.Name = "FecPrimerTraslado";
+            this.FecPrimerTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.FecPrimerTraslado.Visible = true;
+            this.FecPrimerTraslado.VisibleIndex = 18;
+            this.FecPrimerTraslado.Width = 100;
             // 
             // fecIniContrato
             // 
@@ -366,7 +451,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 14;
+            this.fecIniContrato.VisibleIndex = 19;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -379,7 +464,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 15;
+            this.fecFinContrato.VisibleIndex = 20;
             this.fecFinContrato.Width = 100;
             // 
             // factura
@@ -392,7 +477,7 @@
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 16;
+            this.factura.VisibleIndex = 21;
             this.factura.Width = 100;
             // 
             // fecInicioFactura
@@ -405,7 +490,7 @@
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 17;
+            this.fecInicioFactura.VisibleIndex = 22;
             this.fecInicioFactura.Width = 100;
             // 
             // fecFinFactura
@@ -418,7 +503,7 @@
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 18;
+            this.fecFinFactura.VisibleIndex = 23;
             this.fecFinFactura.Width = 100;
             // 
             // MontoSoles
@@ -431,7 +516,7 @@
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 19;
+            this.MontoSoles.VisibleIndex = 24;
             this.MontoSoles.Width = 100;
             // 
             // MontoDolares
@@ -444,7 +529,7 @@
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 20;
+            this.MontoDolares.VisibleIndex = 25;
             this.MontoDolares.Width = 100;
             // 
             // TotalDolares
@@ -468,7 +553,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 21;
+            this.CostoSoles.VisibleIndex = 26;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -481,7 +566,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 22;
+            this.CostoDolares.VisibleIndex = 27;
             this.CostoDolares.Width = 100;
             // 
             // UBSoles
@@ -490,55 +575,11 @@
             this.UBSoles.AppearanceHeader.Options.UseBackColor = true;
             this.UBSoles.Caption = "Utilidad Bruta Soles";
             this.UBSoles.FieldName = "UBSoles";
+            this.UBSoles.MinWidth = 40;
             this.UBSoles.Name = "UBSoles";
             this.UBSoles.Visible = true;
-            this.UBSoles.VisibleIndex = 23;
-            // 
-            // VersionOffice
-            // 
-            this.VersionOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.VersionOffice.AppearanceHeader.Options.UseBackColor = true;
-            this.VersionOffice.Caption = "Versión Office";
-            this.VersionOffice.FieldName = "VersionOffice";
-            this.VersionOffice.MinWidth = 40;
-            this.VersionOffice.Name = "VersionOffice";
-            this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.VersionOffice.Visible = true;
-            this.VersionOffice.VisibleIndex = 24;
-            this.VersionOffice.Width = 100;
-            // 
-            // KAM
-            // 
-            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.KAM.AppearanceHeader.Options.UseBackColor = true;
-            this.KAM.Caption = "KAM";
-            this.KAM.FieldName = "KAM";
-            this.KAM.Name = "KAM";
-            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 1;
-            this.KAM.Width = 150;
-            // 
-            // RAM
-            // 
-            this.RAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RAM.AppearanceHeader.Options.UseBackColor = true;
-            this.RAM.Caption = "RAM";
-            this.RAM.FieldName = "RAM";
-            this.RAM.Name = "RAM";
-            this.RAM.Visible = true;
-            this.RAM.VisibleIndex = 13;
-            // 
-            // FecPrimerTraslado
-            // 
-            this.FecPrimerTraslado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.FecPrimerTraslado.AppearanceHeader.Options.UseBackColor = true;
-            this.FecPrimerTraslado.Caption = "Fecha Primer Traslado";
-            this.FecPrimerTraslado.FieldName = "FecPrimerTraslado";
-            this.FecPrimerTraslado.Name = "FecPrimerTraslado";
-            this.FecPrimerTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.FecPrimerTraslado.Visible = true;
-            this.FecPrimerTraslado.VisibleIndex = 25;
+            this.UBSoles.VisibleIndex = 28;
+            this.UBSoles.Width = 100;
             // 
             // giftCarga
             // 
@@ -625,50 +666,6 @@
             this.cargarData.UseVisualStyleBackColor = true;
             this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
-            // DiscoDuro1
-            // 
-            this.DiscoDuro1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.DiscoDuro1.AppearanceHeader.Options.UseBackColor = true;
-            this.DiscoDuro1.Caption = "Disco Duro (HDD)";
-            this.DiscoDuro1.FieldName = "DiscoDuro1";
-            this.DiscoDuro1.Name = "DiscoDuro1";
-            this.DiscoDuro1.Visible = true;
-            this.DiscoDuro1.VisibleIndex = 26;
-            this.DiscoDuro1.Width = 100;
-            // 
-            // DiscoDuro2
-            // 
-            this.DiscoDuro2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.DiscoDuro2.AppearanceHeader.Options.UseBackColor = true;
-            this.DiscoDuro2.Caption = "Disco Duro (SSD)";
-            this.DiscoDuro2.FieldName = "DiscoDuro2";
-            this.DiscoDuro2.Name = "DiscoDuro2";
-            this.DiscoDuro2.Visible = true;
-            this.DiscoDuro2.VisibleIndex = 27;
-            this.DiscoDuro2.Width = 100;
-            // 
-            // Windows
-            // 
-            this.Windows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Windows.AppearanceHeader.Options.UseBackColor = true;
-            this.Windows.Caption = "Windows";
-            this.Windows.FieldName = "Windows";
-            this.Windows.Name = "Windows";
-            this.Windows.Visible = true;
-            this.Windows.VisibleIndex = 28;
-            this.Windows.Width = 150;
-            // 
-            // Office
-            // 
-            this.Office.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Office.AppearanceHeader.Options.UseBackColor = true;
-            this.Office.Caption = "Office";
-            this.Office.FieldName = "Office";
-            this.Office.Name = "Office";
-            this.Office.Visible = true;
-            this.Office.VisibleIndex = 29;
-            this.Office.Width = 150;
-            // 
             // frmReporteCV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -744,8 +741,7 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.Button cargarData;
         private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro2;
-        private DevExpress.XtraGrid.Columns.GridColumn Windows;
-        private DevExpress.XtraGrid.Columns.GridColumn Office;
         private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro1;
+        private DevExpress.XtraGrid.Columns.GridColumn VersionWindows;
     }
 }

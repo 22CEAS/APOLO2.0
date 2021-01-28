@@ -26,7 +26,7 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos(
                 "Select * from submodulos" +
                 $" where idModuloP={idModuloP}" +
-                $" and idSubmodulo not in (select idSubmodulo from accesos_usuarios where idUsuario={idUsuario});"
+                $" and idSubmodulo not in (select idSubmodulo from accesos_usuarios where idUsuario={idUsuario}) Order By descripcionSubmodulo ;"
                 );
         }
 
@@ -46,7 +46,7 @@ namespace AccesoDatos
                 $" INNER JOIN submodulos x ON a.idSubmodulo = x.idSubmodulo" +
                 $" where a.idUsuario={idUsuario}" +
                 $" and a.idSubmodulo in (select idSubmodulo from submodulos" +
-                $"                      where idModuloP={idModuloP});"
+                $"                      where idModuloP={idModuloP}) Order By descripcionSubmodulo ;"
                 );
 
 

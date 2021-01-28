@@ -2772,3 +2772,38 @@ Select 	cc.idContacto as IdContacto,
 		cc.estado as IdEstado,
 		if((cc.estado=1),'ACTIVO','DESACTIVO') AS Estado
 from cliente c left join cliente_contacto cc  on c.idCliente=cc.idCliente;
+
+
+
+SELECT
+	(Select c.nombre_razonSocial from cliente c where c.nroDocumento=d.rucDni) as cliente,
+	d.fechaDevolucion,
+	dd.codigoLC 
+FROM
+	devolucion_det dd
+	INNER JOIN devolucion d ON dd.idDevolucion = d.idDevolucion 
+WHERE
+	idSalidaDet IN ( SELECT idSalidaDet FROM salida_det WHERE corteAlquiler = 0 AND estado = 4 AND fueDevuelto = 1 );
+	
+	
+SELECT
+	(Select c.nombre_razonSocial from cliente c where c.nroDocumento=d.rucDni) as cliente,
+	d.fechaDevolucion,
+	dd.codigoLC,
+	dd.idSalidaDet, fecIniContrato, fecInicioPago, fecFinContrato ,fecFinPago
+FROM
+	devolucion_det dd
+	INNER JOIN devolucion d ON dd.idDevolucion = d.idDevolucion 
+	inner join salida_det sd on dd.idSalidaDet=sd.idSalidaDet
+	inner join cuota c on sd.idSalida=c.idSalida and sd.idLC=c.idLC
+WHERE
+	dd.idSalidaDet IN ( SELECT idSalidaDet FROM salida_det WHERE corteAlquiler = 0 AND estado = 4 AND fueDevuelto = 1 );
+	
+SELECT
+	idSalidaDet, fecIniContrato, fecInicioPago, fecFinContrato ,fecFinPago
+FROM
+	salida_det d inner join cuota c on d.idSalida=c.idSalida and d.idLC=c.idLC
+WHERE
+	d.corteAlquiler = 0 
+	AND d.estado = 4 
+	AND d.fueDevuelto = 1;
