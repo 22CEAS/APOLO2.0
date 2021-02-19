@@ -17,7 +17,7 @@ namespace Apolo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmProcesoTarifa());
-            //Application.Run(new frmProcesoOrdenInterna());
+            //Application.Run(new frmConfiguracionPermisos());
             Application.Run(new frmLogueo());
         }
     }

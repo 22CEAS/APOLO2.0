@@ -21,6 +21,9 @@ namespace Apolo
     {
 
         DataTable tablaLaptops;
+        DataTable DiscosDuros;
+        DataTable memoriaLC;
+        DataTable memoria;
         ReporteDA reporteDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -62,7 +65,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(18, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(26, 1)));
         }
 
 
@@ -250,18 +253,87 @@ namespace Apolo
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarLaptopsPorFacturar();
 
+                DiscosDuros = reporteDA.ListaDiscosDuros();
+                memoriaLC = reporteDA.ListarMemoriasLC();
+                memoria = reporteDA.ListarMemoriasMaestro();
+                                
+                tablaLaptops.Columns.Add("RAM");
+                tablaLaptops.Columns.Add("DiscoDuro1");
+                tablaLaptops.Columns.Add("DiscoDuro2");
+
+                //PONER MEMORIA
+                for (int i = 0; i < tablaLaptops.Rows.Count; i++)
+                {
+                    int idLC = int.Parse(tablaLaptops.Rows[i]["idLC"].ToString());
+
+                    //RECORREMOS TABLA MEMORIALC
+                    List<int> codigosMemorias = new List<int>(); //! IMPORTANTE
+                    int aux = 0;
+                    for (int j = 0; j < memoriaLC.Rows.Count; j++)
+                    {
+                        if (int.Parse(memoriaLC.Rows[j]["idLC"].ToString()) == idLC)
+                        {
+                            aux = int.Parse(memoriaLC.Rows[j]["cantidad"].ToString());
+                            for (int h = 0; h < aux; h++)
+                            {
+                                codigosMemorias.Add(int.Parse(memoriaLC.Rows[j]["idMemoria"].ToString()));
+                            }
+                        }
+                    }
+
+                    //RECORREMOS TABLA MEMORIA
+                    List<int> capacidadMemorias = new List<int>();
+                    for (int k = 0; k < memoria.Rows.Count; k++)
+                    {
+                        for (int s = 0; s < codigosMemorias.Count; s++)
+                        {
+                            if (int.Parse(memoria.Rows[k]["idMemoria"].ToString()) == codigosMemorias[s])
+                                capacidadMemorias.Add(int.Parse(memoria.Rows[k]["capacidad"].ToString()));
+
+                        }
+                    }
+
+                    //RECORREMOS LAS CAPACIDAD
+                    int suma = 0;
+                    for (int b = 0; b < capacidadMemorias.Count; b++)
+                    {
+                        suma = suma + capacidadMemorias[b];
+                    }
+
+                    tablaLaptops.Rows[i]["RAM"] = suma + " GB";
+                                       
+                    //DISCO DURO 
+                    int capacidadSSD = 0;
+                    int capacidadHDD = 0;
+
+                    for (int m = 0; m < DiscosDuros.Rows.Count; m++)
+                    {
+                        if (tablaLaptops.Rows[i]["IdLC"].ToString() == DiscosDuros.Rows[m]["IdLC"].ToString() && DiscosDuros.Rows[m]["TipoDisco"].ToString() == "HDD")
+                        {
+                            capacidadHDD = int.Parse(DiscosDuros.Rows[m]["Capacidad"].ToString()) * int.Parse(DiscosDuros.Rows[m]["Cantidad"].ToString());
+                        }
+                        if (tablaLaptops.Rows[i]["IdLC"].ToString() == DiscosDuros.Rows[m]["IdLC"].ToString() && DiscosDuros.Rows[m]["TipoDisco"].ToString() == "SSD")
+                        {
+                            capacidadSSD = int.Parse(DiscosDuros.Rows[m]["Capacidad"].ToString()) * int.Parse(DiscosDuros.Rows[m]["Cantidad"].ToString());
+                        }
+                    }
+
+                    tablaLaptops.Rows[i]["DiscoDuro1"] = capacidadHDD;
+                    tablaLaptops.Rows[i]["DiscoDuro2"] = capacidadSSD;
+
+                }
+
                 dgvFacturas.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
                 dgvFacturas.Refresh();
+
             }
             catch (Exception e)
             {
                 //MessageBox.Show(e.Message); OMITIMOS EL MENSAJE
             }
-
-
-
+            
             return true;
         }
 
@@ -304,6 +376,7 @@ namespace Apolo
      
         int posY = 0;
         int posX = 0;
+
         private void pnlPF_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)

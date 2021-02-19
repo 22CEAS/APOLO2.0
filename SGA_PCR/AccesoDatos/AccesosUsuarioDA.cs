@@ -42,7 +42,36 @@ namespace AccesoDatos
             return clave;
         }
 
-        public List<string> Obtener_accessos(string idUsuario,int idModuloP)
+        //public List<string> Obtener_accessos(string idUsuario, int idModuloP)
+        //{
+
+        //    List<string> lista = new List<string>();
+
+        //    MySqlDataReader reader;
+        //    string sql = "";
+        //    string idSubmodulo = "";
+
+        //    sql = $"select * from accesos_usuarios " +
+        //        $"where 1 = 1 " +
+        //        $"and idUsuario = '{idUsuario}' " +
+        //        $"and idSubmodulo in (select idSubmodulo " +
+        //        $"                    from submodulos " +
+        //        $"                    where 1 = 1 " +
+        //        $"                    and idModuloP = {idModuloP})";
+
+        //    reader = objManager.MostrarInformacion(sql);
+
+        //    while (reader.Read())
+        //    {
+        //        idSubmodulo = reader.GetString("idSubmodulo");
+        //        lista.Add(idSubmodulo);
+        //    }
+
+        //    return lista;
+
+        //}
+
+        public List<string> Obtener_accessos(int idUsuario)
         {
 
             List<string> lista = new List<string>();
@@ -51,13 +80,7 @@ namespace AccesoDatos
             string sql = "";
             string idSubmodulo = "";
 
-            sql = $"select * from accesos_usuarios " +
-                $"where 1 = 1 " +
-                $"and idUsuario = '{idUsuario}' " +
-                $"and idSubmodulo in (select idSubmodulo " +
-                $"                    from submodulos " +
-                $"                    where 1 = 1 " +
-                $"                    and idModuloP = {idModuloP})";
+            sql = "SELECT * FROM accesos_usuarios WHERE	idUsuario = " + idUsuario + "; ";
 
             reader = objManager.MostrarInformacion(sql);
 

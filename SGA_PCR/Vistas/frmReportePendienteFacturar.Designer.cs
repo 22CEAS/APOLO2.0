@@ -40,7 +40,8 @@
             this.dgvFacturas = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaInicioContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Factura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +56,8 @@
             this.PendienteFacturarSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PendienteFacturarDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PendienteFacturarUtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Periodos = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NuevaDeudaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
@@ -71,8 +73,15 @@
             this.pnlPF = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GeneracionProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscoDuro1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscoDuro2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -89,7 +98,7 @@
             this.DíasVencidos.Name = "DíasVencidos";
             this.DíasVencidos.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DíasVencidos.Visible = true;
-            this.DíasVencidos.VisibleIndex = 11;
+            this.DíasVencidos.VisibleIndex = 20;
             this.DíasVencidos.Width = 100;
             // 
             // CódigoLC
@@ -102,7 +111,7 @@
             this.CódigoLC.Name = "CódigoLC";
             this.CódigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CódigoLC.Visible = true;
-            this.CódigoLC.VisibleIndex = 8;
+            this.CódigoLC.VisibleIndex = 9;
             this.CódigoLC.Width = 140;
             // 
             // dgvFacturas
@@ -139,15 +148,25 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Cliente,
-            this.ruc,
+            this.KAM,
+            this.RUC,
             this.FechaInicioContrato,
             this.FechaFinContrato,
             this.Factura,
             this.FechaInicioFactura,
             this.FechaFinFactura,
-            this.CódigoLC,
             this.Guía,
+            this.CódigoLC,
             this.CodigoAntiguo,
+            this.MarcaLC,
+            this.NombreModeloLC,
+            this.TamanoPantalla,
+            this.TipoProcesador,
+            this.GeneracionProcesador,
+            this.CapacidadVideo,
+            this.RAM,
+            this.DiscoDuro1,
+            this.DiscoDuro2,
             this.DíasVencidos,
             this.TotalSoles,
             this.TotalDolares,
@@ -156,9 +175,8 @@
             this.PendienteFacturarSoles,
             this.PendienteFacturarDolares,
             this.PendienteFacturarUtilidadSoles,
-            this.KAM,
-            this.gridColumn1,
-            this.gridColumn2});
+            this.Periodos,
+            this.NuevaDeudaSoles});
             gridFormatRule1.Column = this.DíasVencidos;
             gridFormatRule1.ColumnApplyTo = this.CódigoLC;
             gridFormatRule1.Name = "Mas de 7";
@@ -207,15 +225,30 @@
             this.Cliente.VisibleIndex = 0;
             this.Cliente.Width = 200;
             // 
-            // ruc
+            // KAM
             // 
-            this.ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruc.AppearanceHeader.Options.UseBackColor = true;
-            this.ruc.Caption = "Ruc";
-            this.ruc.FieldName = "ruc";
-            this.ruc.Name = "ruc";
-            this.ruc.Visible = true;
-            this.ruc.VisibleIndex = 2;
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.MinWidth = 40;
+            this.KAM.Name = "KAM";
+            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 1;
+            this.KAM.Width = 200;
+            // 
+            // RUC
+            // 
+            this.RUC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RUC.AppearanceHeader.Options.UseBackColor = true;
+            this.RUC.Caption = "Ruc";
+            this.RUC.FieldName = "ruc";
+            this.RUC.MinWidth = 40;
+            this.RUC.Name = "RUC";
+            this.RUC.Visible = true;
+            this.RUC.VisibleIndex = 2;
+            this.RUC.Width = 100;
             // 
             // FechaInicioContrato
             // 
@@ -292,7 +325,7 @@
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 9;
+            this.Guía.VisibleIndex = 8;
             this.Guía.Width = 140;
             // 
             // CodigoAntiguo
@@ -318,7 +351,7 @@
             this.TotalSoles.Name = "TotalSoles";
             this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 12;
+            this.TotalSoles.VisibleIndex = 21;
             this.TotalSoles.Width = 100;
             // 
             // TotalDolares
@@ -331,7 +364,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 13;
+            this.TotalDolares.VisibleIndex = 22;
             this.TotalDolares.Width = 100;
             // 
             // CostoSoles
@@ -344,7 +377,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 14;
+            this.CostoSoles.VisibleIndex = 23;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -357,7 +390,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 15;
+            this.CostoDolares.VisibleIndex = 24;
             this.CostoDolares.Width = 100;
             // 
             // PendienteFacturarSoles
@@ -390,22 +423,31 @@
             this.PendienteFacturarUtilidadSoles.FieldName = "PendienteFacturarUtilidadSoles";
             this.PendienteFacturarUtilidadSoles.MinWidth = 40;
             this.PendienteFacturarUtilidadSoles.Name = "PendienteFacturarUtilidadSoles";
-            this.PendienteFacturarUtilidadSoles.Visible = true;
-            this.PendienteFacturarUtilidadSoles.VisibleIndex = 16;
             this.PendienteFacturarUtilidadSoles.Width = 140;
             // 
-            // KAM
+            // Periodos
             // 
-            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.KAM.AppearanceHeader.Options.UseBackColor = true;
-            this.KAM.Caption = "KAM";
-            this.KAM.FieldName = "KAM";
-            this.KAM.MinWidth = 40;
-            this.KAM.Name = "KAM";
-            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 1;
-            this.KAM.Width = 200;
+            this.Periodos.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Periodos.AppearanceHeader.Options.UseBackColor = true;
+            this.Periodos.Caption = "Periodos  (Meses)";
+            this.Periodos.FieldName = "Periodos";
+            this.Periodos.MinWidth = 40;
+            this.Periodos.Name = "Periodos";
+            this.Periodos.Visible = true;
+            this.Periodos.VisibleIndex = 25;
+            this.Periodos.Width = 100;
+            // 
+            // NuevaDeudaSoles
+            // 
+            this.NuevaDeudaSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.NuevaDeudaSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.NuevaDeudaSoles.Caption = "Deuda Soles";
+            this.NuevaDeudaSoles.FieldName = "NuevaDeudaSoles";
+            this.NuevaDeudaSoles.MinWidth = 40;
+            this.NuevaDeudaSoles.Name = "NuevaDeudaSoles";
+            this.NuevaDeudaSoles.Visible = true;
+            this.NuevaDeudaSoles.VisibleIndex = 26;
+            this.NuevaDeudaSoles.Width = 100;
             // 
             // btnExportar
             // 
@@ -581,27 +623,122 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // gridColumn1
+            // MarcaLC
             // 
-            this.gridColumn1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.gridColumn1.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn1.Caption = "Periodos  (Meses)";
-            this.gridColumn1.FieldName = "Periodos";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 17;
-            this.gridColumn1.Width = 100;
+            this.MarcaLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.MarcaLC.AppearanceHeader.Options.UseBackColor = true;
+            this.MarcaLC.Caption = "Marca";
+            this.MarcaLC.FieldName = "MarcaLC";
+            this.MarcaLC.MinWidth = 40;
+            this.MarcaLC.Name = "MarcaLC";
+            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MarcaLC.Visible = true;
+            this.MarcaLC.VisibleIndex = 11;
+            this.MarcaLC.Width = 100;
             // 
-            // gridColumn2
+            // NombreModeloLC
             // 
-            this.gridColumn2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.gridColumn2.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn2.Caption = "Deuda Soles";
-            this.gridColumn2.FieldName = "NuevaDeudaSoles";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 18;
-            this.gridColumn2.Width = 100;
+            this.NombreModeloLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.NombreModeloLC.AppearanceHeader.Options.UseBackColor = true;
+            this.NombreModeloLC.Caption = "Modelo";
+            this.NombreModeloLC.FieldName = "NombreModeloLC";
+            this.NombreModeloLC.MinWidth = 40;
+            this.NombreModeloLC.Name = "NombreModeloLC";
+            this.NombreModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreModeloLC.Visible = true;
+            this.NombreModeloLC.VisibleIndex = 12;
+            this.NombreModeloLC.Width = 100;
+            // 
+            // TamanoPantalla
+            // 
+            this.TamanoPantalla.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TamanoPantalla.AppearanceHeader.Options.UseBackColor = true;
+            this.TamanoPantalla.Caption = "Pantalla";
+            this.TamanoPantalla.FieldName = "TamanoPantalla";
+            this.TamanoPantalla.MinWidth = 40;
+            this.TamanoPantalla.Name = "TamanoPantalla";
+            this.TamanoPantalla.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TamanoPantalla.Visible = true;
+            this.TamanoPantalla.VisibleIndex = 13;
+            this.TamanoPantalla.Width = 100;
+            // 
+            // TipoProcesador
+            // 
+            this.TipoProcesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TipoProcesador.AppearanceHeader.Options.UseBackColor = true;
+            this.TipoProcesador.Caption = "Procesador";
+            this.TipoProcesador.FieldName = "TipoProcesador";
+            this.TipoProcesador.MinWidth = 40;
+            this.TipoProcesador.Name = "TipoProcesador";
+            this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoProcesador.Visible = true;
+            this.TipoProcesador.VisibleIndex = 14;
+            this.TipoProcesador.Width = 100;
+            // 
+            // GeneracionProcesador
+            // 
+            this.GeneracionProcesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GeneracionProcesador.AppearanceHeader.Options.UseBackColor = true;
+            this.GeneracionProcesador.Caption = "Generación";
+            this.GeneracionProcesador.FieldName = "GeneracionProcesador";
+            this.GeneracionProcesador.MinWidth = 40;
+            this.GeneracionProcesador.Name = "GeneracionProcesador";
+            this.GeneracionProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.GeneracionProcesador.Visible = true;
+            this.GeneracionProcesador.VisibleIndex = 15;
+            this.GeneracionProcesador.Width = 100;
+            // 
+            // CapacidadVideo
+            // 
+            this.CapacidadVideo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadVideo.AppearanceHeader.Options.UseBackColor = true;
+            this.CapacidadVideo.Caption = "Capacidad Video";
+            this.CapacidadVideo.FieldName = "CapacidadVideo";
+            this.CapacidadVideo.MinWidth = 40;
+            this.CapacidadVideo.Name = "CapacidadVideo";
+            this.CapacidadVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CapacidadVideo.Visible = true;
+            this.CapacidadVideo.VisibleIndex = 16;
+            this.CapacidadVideo.Width = 100;
+            // 
+            // RAM
+            // 
+            this.RAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RAM.AppearanceHeader.Options.UseBackColor = true;
+            this.RAM.Caption = "RAM";
+            this.RAM.FieldName = "RAM";
+            this.RAM.MinWidth = 40;
+            this.RAM.Name = "RAM";
+            this.RAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.RAM.Visible = true;
+            this.RAM.VisibleIndex = 17;
+            this.RAM.Width = 100;
+            // 
+            // DiscoDuro1
+            // 
+            this.DiscoDuro1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro1.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro1.Caption = "Disco Duro (HDD)";
+            this.DiscoDuro1.FieldName = "DiscoDuro1";
+            this.DiscoDuro1.MinWidth = 40;
+            this.DiscoDuro1.Name = "DiscoDuro1";
+            this.DiscoDuro1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DiscoDuro1.Visible = true;
+            this.DiscoDuro1.VisibleIndex = 18;
+            this.DiscoDuro1.Width = 100;
+            // 
+            // DiscoDuro2
+            // 
+            this.DiscoDuro2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DiscoDuro2.AppearanceHeader.Options.UseBackColor = true;
+            this.DiscoDuro2.Caption = "Disco Duro (SSD)";
+            this.DiscoDuro2.FieldName = "DiscoDuro2";
+            this.DiscoDuro2.MinWidth = 40;
+            this.DiscoDuro2.Name = "DiscoDuro2";
+            this.DiscoDuro2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DiscoDuro2.Visible = true;
+            this.DiscoDuro2.VisibleIndex = 19;
+            this.DiscoDuro2.Width = 100;
             // 
             // frmReportePendienteFacturar
             // 
@@ -667,7 +804,7 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
-        private DevExpress.XtraGrid.Columns.GridColumn ruc;
+        private DevExpress.XtraGrid.Columns.GridColumn RUC;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -679,7 +816,16 @@
         private System.Windows.Forms.Panel pnlPF;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn Periodos;
+        private DevExpress.XtraGrid.Columns.GridColumn NuevaDeudaSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn MarcaLC;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreModeloLC;
+        private DevExpress.XtraGrid.Columns.GridColumn TamanoPantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn GeneracionProcesador;
+        private DevExpress.XtraGrid.Columns.GridColumn CapacidadVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn RAM;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro1;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro2;
     }
 }

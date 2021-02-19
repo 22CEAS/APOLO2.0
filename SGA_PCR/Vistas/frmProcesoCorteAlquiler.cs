@@ -71,7 +71,8 @@ namespace Apolo
             tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
 
             ObtenerDatosRenovacion();
-            dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
+            vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaEquipos.OptionsSelection.MultiSelect = true;
 
         }
 
@@ -96,7 +97,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -109,7 +110,7 @@ namespace Apolo
                     cmbCliente.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtNroDocumento.Enabled = true;
-                    dgvLaptopsSeleccionados.Enabled = true;
+                    dgvEquiposSeleccionados.Enabled = true;
                     btnAgregarProducto.Enabled = true;
                     btnNuevo.Enabled = false;
                     btnCancelar.Enabled = true;
@@ -123,7 +124,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -134,7 +135,7 @@ namespace Apolo
                     cmbCliente.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtNroDocumento.Enabled = true;
-                    dgvLaptopsSeleccionados.Enabled = true;
+                    dgvEquiposSeleccionados.Enabled = true;
                     btnAgregarProducto.Enabled = true;
                     btnNuevo.Enabled = false;
                     btnCancelar.Enabled = true;
@@ -145,7 +146,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -157,7 +158,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -170,7 +171,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -183,7 +184,7 @@ namespace Apolo
                     cmbCliente.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
-                    dgvLaptopsSeleccionados.Enabled = false;
+                    dgvEquiposSeleccionados.Enabled = false;
                     btnAgregarProducto.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
@@ -197,7 +198,7 @@ namespace Apolo
         {
             txtReferencia.Text = "";
             cmbCliente.SelectedIndex = 0;
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+            dgvEquiposSeleccionados.DataSource = null;
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,7 +211,7 @@ namespace Apolo
                 IdCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
                 txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
                 tablaLaptops = null;
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvEquiposSeleccionados.DataSource = null;
             }
             else
             {
@@ -285,6 +286,7 @@ namespace Apolo
             }
 
         }
+
         public void EnviarCodigo(string correo, string body, out string codigo, out int idUsuario)
         {
 
@@ -423,7 +425,7 @@ namespace Apolo
             {
                 estadoComponentes(TipoVista.Limpiar);
                 renovaciones = new BindingList<CorteAlquiler>();
-                dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
+                dgvEquiposSeleccionados.DataSource = null;
             }
         }
 
@@ -440,6 +442,7 @@ namespace Apolo
                                MessageBoxIcon.Error);
                 return;
             }
+
             using (frmProcesoCorteAlquilerAgregarProducto frm = new frmProcesoCorteAlquilerAgregarProducto(IdCliente))
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -464,20 +467,28 @@ namespace Apolo
                 }
             }
 
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = renovaciones;
+            dgvEquiposSeleccionados.DataSource = renovaciones;
         }
-
-        private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
-        { }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Estas seguro deseas Eliminar esta laptop de tu detalle", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                bool error;
+                vistaEquipos.ClearColumnsFilter();
+
+                int equipoID = -1;
+                int h = 0;
+                for (h = 0; h < vistaEquipos.RowCount; h++)
+                    if (vistaEquipos.IsRowSelected(h) == true)
+                    {
+                        equipoID = int.Parse(vistaEquipos.GetRowCellValue(h, "IdLC").ToString());
+                        break;
+                    }
+
+                if (equipoID != -1)
                 {
-                    bool error;
-                    renovacionTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                    renovacionTemp.IdLC = equipoID;
 
                     int indiceLC = 0;
                     foreach (CorteAlquiler detalle in renovaciones)
@@ -488,21 +499,21 @@ namespace Apolo
                         }
                         indiceLC++;
                     }
-
                     renovaciones.RemoveAt(indiceLC);
-
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = renovaciones;
+                    dgvEquiposSeleccionados.DataSource = renovaciones;
                 }
             }
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
         int posY = 0;
         int posX = 0;
+
         private void pnlCA_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -516,5 +527,6 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
         }
+
     }
 }

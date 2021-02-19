@@ -23,24 +23,11 @@ namespace Apolo
         DataTable tablaPerfiles;
         DataTable tablaEstados;
         DataTable tablaUsuarios;
-        DataTable auxiliar;
 
-        Area area;
         AreaDA areaDA;
-
-        Perfil perfil;
         PerfilDA perfilDA;
-
-        Estados estados;
         EstadosDA estadosDA;
-
-        Usuario usuario;
         UsuarioDA usuarioDA;
-
-        
-        BindingList<Usuario> usu;
-
-
 
         public frmConfiguracionUsuarios()
         {
@@ -49,20 +36,12 @@ namespace Apolo
             Inicializando();
         }
 
-
         public void Inicializando()
         {
             areaDA = new AreaDA();
-            area = new Area();
-
             perfilDA = new PerfilDA();
-            perfil = new Perfil();
-
             estadosDA = new EstadosDA();
-            estados = new Estados();
-
             usuarioDA = new UsuarioDA();
-            usuario = new Usuario();
 
             //! AREA
             tablaAreas = areaDA.ListarAreas();
@@ -88,42 +67,11 @@ namespace Apolo
             cmbEstado.SelectedIndex = -1;
             cmbPerfil.SelectedIndex = -1;
 
-            llenadoTablaUsuarios();
+            tablaUsuarios = usuarioDA.ListUsers();
+            dgvUsuario.DataSource = tablaUsuarios;
+            vistaUsuario.OptionsBehavior.AutoPopulateColumns = false;
+            vistaUsuario.OptionsSelection.MultiSelect = true;
         }
-
-        public void llenadoTablaUsuarios()
-        {
-          
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////
-
-            auxiliar = usuarioDA.ListarUsuario();
-            usu = new BindingList<Usuario>();
-            int rec = 0;
-            while (rec < auxiliar.Rows.Count)
-            {
-                Usuario usuario= new Usuario();
-                usuario.IdUsuario = int.Parse(auxiliar.Rows[rec]["idUsuario"].ToString());
-                usuario.Dni = auxiliar.Rows[rec]["dni"].ToString();
-                usuario.Nombre = auxiliar.Rows[rec]["nombre"].ToString();
-                usuario.User = auxiliar.Rows[rec]["usuario"].ToString();
-                usuario.IdPerfil = int.Parse(auxiliar.Rows[rec]["perfil"].ToString());
-                usuario.NombrePerfil1 = auxiliar.Rows[rec]["descripcionPerfil"].ToString();
-                usuario.Email = auxiliar.Rows[rec]["email"].ToString();
-                usuario.Estado = int.Parse(auxiliar.Rows[rec]["estado"].ToString());
-                usuario.NombreEstado1 = auxiliar.Rows[rec]["descripcionEstado"].ToString();
-                usuario.IdArea = int.Parse(auxiliar.Rows[rec]["idArea"].ToString());
-                usuario.NombreArea1 = auxiliar.Rows[rec]["descripcionArea"].ToString();
-                usu.Add(usuario);
-                rec++;
-            }
-
-            dgvUsu.DataSource = usu;
-            vistaUsu.OptionsBehavior.AutoPopulateColumns = false;
-            vistaUsu.OptionsSelection.MultiSelect = true;
-
-        }
-
 
         public void estadoComponentes(TipoVista estado)
         {
@@ -145,7 +93,8 @@ namespace Apolo
                     cmbEstado.Enabled = false;
                     cmbPerfil.Enabled = false;
 
-                    dgvUsu.Enabled = true;
+                    dgvUsuario.Enabled = true;
+                    limpiar_componentes();
                     break;
                 case TipoVista.Nuevo: //ya esta
                     //Inicializado(idUsuario, nombreUsuario);
@@ -163,21 +112,21 @@ namespace Apolo
                     cmbArea.Enabled = true;
                     cmbEstado.Enabled = true;
                     cmbPerfil.Enabled = true;
-                    dgvUsu.Enabled = false;
+                    dgvUsuario.Enabled = false;
                     break;
                 case TipoVista.Guardar: //ya esta listo
                     btnNuevo.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    dgvUsu.Enabled = false;
+                    dgvUsuario.Enabled = false;
                     break;
                 case TipoVista.Modificar://ya esta //Inicializado(idUsuario, nombreUsuario);
                     btnNuevo.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    dgvUsu.Enabled = false;
+                    dgvUsuario.Enabled = false;
 
                     txtDni.Enabled = false;
                     txtNombre.Enabled = true;
@@ -187,7 +136,7 @@ namespace Apolo
                     cmbArea.Enabled = true;
                     cmbEstado.Enabled = true;
                     cmbPerfil.Enabled = true;
-                    dgvUsu.Enabled = false;
+                    dgvUsuario.Enabled = false;
                     break;
                 case TipoVista.Cancelar://ya esta //Inicializado(idUsuario, nombreUsuario);
                     btnNuevo.Enabled = true;
@@ -203,7 +152,7 @@ namespace Apolo
                     cmbArea.Enabled = false;
                     cmbEstado.Enabled = false;
                     cmbPerfil.Enabled = false;
-                    dgvUsu.Enabled = true;
+                    dgvUsuario.Enabled = true;
                     limpiar_componentes();
                     break;
                 case TipoVista.Limpiar: //ya esta
@@ -227,112 +176,105 @@ namespace Apolo
             cmbEstado.SelectedIndex = -1;
             cmbPerfil.SelectedIndex = -1;
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmConfiguracionUsuarios_Load(object sender, EventArgs e)
-        {
-
-        }
-
+                
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             estadoComponentes(TipoVista.Nuevo);
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            estadoComponentes(TipoVista.Modificar);
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Seguro?");
+            MessageBox.Show("Estás seguro de cancelar el proceso","◄ AVISO | LEASEIN ►");
             estadoComponentes(TipoVista.Cancelar);
+        }
+
+        public bool validarCampos()
+        {
+            bool isError = false;
+            
+            if (txtEmail.Text.Trim().Length == 0 || validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
+            {
+                isError = true;
+                MessageBox.Show("REVISE EL CORREO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtClaveUsuario.Text.Trim().Length <= 4)
+            {
+                isError = true;
+                MessageBox.Show("LA CONTRASEÑA DEBE TENER UNA LONGITUD MINIMA DE 5", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtUsuario.Text.Trim().Length == 0)
+            {
+                isError = true;
+                MessageBox.Show("REVISE EL USUARIO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtNombre.Text.Trim().Length == 0 || validacionSoloLetras(txtNombre.Text.Trim()) == false)
+            {
+                isError = true;
+                MessageBox.Show("REVISE EL NOMBRE", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtDni.Text.Trim().Length != 8 || validacionSoloNumeros(txtDni.Text.Trim()) == false) //VALIDACION DNI
+            {
+                isError = true;
+                MessageBox.Show("REVISE EL DNI", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //VALIDACION DE COMBOBOXS
+            else if (cmbArea.SelectedIndex == -1)
+            {
+                isError = true;
+                MessageBox.Show("DEBES SELECCIONAR UN AREA", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if (cmbPerfil.SelectedIndex == -1)
+            {
+                isError = true;
+                MessageBox.Show("DEBES SELECCIONAR UN PERFIL", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if (cmbEstado.SelectedIndex == -1)
+            {
+                isError = true;
+                MessageBox.Show("DEBES SELECCIONAR UN ESTADO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return isError;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtDni.Text.Trim().Length == 8 && validacionSoloNumeros(txtDni.Text.Trim()) == true) //VALIDACION DNI
+            if (validarCampos())
             {
-                if (txtNombre.Text.Trim().Length > 0 && validacionSoloLetras(txtNombre.Text.Trim()) == true)
+                Cursor.Current = Cursors.Default;
+                return;
+            }
+
+            string dni = txtDni.Text.Trim();
+            string nombre = txtNombre.Text.Trim();
+            string usuario = txtUsuario.Text.Trim();
+            string claveUsuario = txtClaveUsuario.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            int idArea = Convert.ToInt32(cmbArea.SelectedValue);
+            int idPerfil = Convert.ToInt32(cmbPerfil.SelectedValue);
+            int idEstado = Convert.ToInt32(cmbEstado.SelectedValue);
+
+            if (MessageBox.Show("Estas seguro que deseas guardar este proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                int resultado = usuarioDA.InsertarNuevoUsuario(dni, nombre, usuario, claveUsuario, email, idArea, idPerfil, idEstado); //orUpdate
+                if (resultado == 0)
                 {
-                    if (txtUsuario.Text.Trim().Length > 0)
-                    {
-                        if (txtClaveUsuario.Text.Trim().Length > 4)
-                        {
-                            if (txtEmail.Text.Trim().Length > 0 && validacionCorreoLeasein(txtEmail.Text.Trim()) == true)
-                            {
-                                //VALIDACION DE COMBOBOXS
-                                if (cmbArea.SelectedIndex != -1)
-                                {
-                                    if (cmbPerfil.SelectedIndex != -1)
-                                    {
-                                        if (cmbEstado.SelectedIndex != -1)
-                                        {
-                                            //INSERTAR CON PROCEDURE -> RECUPERAMOS LOS ELEMENTOS
-
-                                            string dni = txtDni.Text.Trim();
-                                            string nombre = txtNombre.Text.Trim();
-                                            string usuario = txtUsuario.Text.Trim();
-                                            string claveUsuario = txtClaveUsuario.Text.Trim();
-                                            string email = txtEmail.Text.Trim();
-                                            int idArea = Convert.ToInt32(cmbArea.SelectedValue);
-                                            int idPerfil = Convert.ToInt32(cmbPerfil.SelectedValue);
-                                            int idEstado = Convert.ToInt32(cmbEstado.SelectedValue);
-
-
-                                            int resultado = usuarioDA.InsertarNuevoUsuario(dni, nombre, usuario, claveUsuario, email, idArea, idPerfil, idEstado); //orUpdate
-                                            if (resultado == 0)
-                                            {
-                                                MessageBox.Show("OCURRIO UN ERROR AL GUARDAR/MODIFICAR EL NUEVO USUARIO");
-                                            }
-                                            else
-                                            {
-
-                                                MessageBox.Show("NUEVO USUARIO GUARDADO/MODIFICADO CORRECTAMENTE");
-                                                llenadoTablaUsuarios(); //ACTUALIZA LA TABLA
-                                                limpiar_componentes();
-                                                estadoComponentes(TipoVista.Inicial);
-
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("DEBES SELECCIONAR UN ESTADO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("DEBES SELECCIONAR UN PERFIL", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("DEBES SELECCIONAR UN AREA", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("REVISE EL CORREO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("LA CONTRASEÑA DEBE TENER UNA LONGITUD MINIMA DE 5", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("REVISE EL USUARIO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Ocurrió un error al guardar el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("REVISE EL NOMBRE", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Se realizó el proceso con éxito", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tablaUsuarios = usuarioDA.ListUsers();
+                    dgvUsuario.DataSource = tablaUsuarios;
+                    estadoComponentes(TipoVista.Inicial);
                 }
-            }
-            else
-            {
-                MessageBox.Show("REVISE EL DNI", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -354,16 +296,14 @@ namespace Apolo
             return Regex.IsMatch(correo, expresion) ? true : false;
         }
 
-      
-
-    
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         int posY = 0;
         int posX = 0;
+
         private void pnlConfguracionUsuario_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -378,29 +318,25 @@ namespace Apolo
             }
         }
 
-    
-
-        private void dgvUsu_Click(object sender, EventArgs e)
+        private void dgvUsuario_Click(object sender, EventArgs e)
         {
-            
-            int fila = vistaUsu.GetFocusedDataSourceRowIndex();
-            vistaUsu.ClearColumnsFilter();
+            int fila;// = vistaUsuario.GetFocusedDataSourceRowIndex();
+            vistaUsuario.ClearColumnsFilter();
+            for (fila = 0; fila < vistaUsuario.RowCount; fila++)
+                if (vistaUsuario.IsRowSelected(fila) == true)
+                {
+                    txtDni.Text = vistaUsuario.GetRowCellValue(fila, "Dni").ToString();
+                    txtNombre.Text = vistaUsuario.GetRowCellValue(fila, "Nombre").ToString();
+                    txtUsuario.Text = vistaUsuario.GetRowCellValue(fila, "User").ToString();
+                    txtClaveUsuario.Text = vistaUsuario.GetRowCellValue(fila, "ClaveUsuario").ToString();
+                    txtEmail.Text = vistaUsuario.GetRowCellValue(fila, "Email").ToString();
 
-            txtDni.Text = vistaUsu.GetRowCellValue(fila, "Dni").ToString();
-            txtNombre.Text = vistaUsu.GetRowCellValue(fila, "Nombre").ToString();
-            txtUsuario.Text = vistaUsu.GetRowCellValue(fila, "User").ToString();
-            txtClaveUsuario.Text = vistaUsu.GetRowCellValue(fila, "Dni").ToString();
-            txtEmail.Text = vistaUsu.GetRowCellValue(fila, "Email").ToString();
-            
-            cmbArea.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "IdArea").ToString())-1;
-            cmbEstado.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "Estado").ToString());
-            cmbPerfil.SelectedIndex = int.Parse(vistaUsu.GetRowCellValue(fila, "IdPerfil").ToString())-1;
-            
+                    cmbArea.SelectedValue = int.Parse(vistaUsuario.GetRowCellValue(fila, "IdArea").ToString());
+                    cmbEstado.SelectedValue = int.Parse(vistaUsuario.GetRowCellValue(fila, "Estado").ToString());
+                    cmbPerfil.SelectedValue = int.Parse(vistaUsuario.GetRowCellValue(fila, "IdPerfil").ToString());
+                    break;
+                }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            estadoComponentes(TipoVista.Modificar);
-        }
     }
 }

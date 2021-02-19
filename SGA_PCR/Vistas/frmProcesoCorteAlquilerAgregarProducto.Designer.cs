@@ -57,6 +57,7 @@
             this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -168,7 +169,8 @@
             this.IdSalida,
             this.GuiaSalida,
             this.FechaIniContratoAntiguo,
-            this.FechaFinContratoAntiguo});
+            this.FechaFinContratoAntiguo,
+            this.NumFactura});
             this.vista.GridControl = this.dgvRenovacionProductos;
             this.vista.Name = "vista";
             this.vista.OptionsSelection.MultiSelect = true;
@@ -384,6 +386,13 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // NumFactura
+            // 
+            this.NumFactura.Caption = "NumFactura";
+            this.NumFactura.FieldName = "NumFactura";
+            this.NumFactura.Name = "NumFactura";
+            this.NumFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
             // frmProcesoCorteAlquilerAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -402,7 +411,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Producto";
-            this.Load += new System.EventHandler(this.frmProcesoCorteAlquilerAgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
@@ -441,5 +449,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaIniContratoAntiguo;
         private DevExpress.XtraGrid.Columns.GridColumn FechaFinContratoAntiguo;
         private System.Windows.Forms.Button btnCancelar;
+        private DevExpress.XtraGrid.Columns.GridColumn NumFactura;
     }
 }

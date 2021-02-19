@@ -73,1161 +73,93 @@ namespace Apolo
         private int totalDispo = 0;
         private int totalPronosticador = 0;
 
-        private int GeneracionDesfasado = 6;
+        private int GeneracionDesfasado = 3;
         
 
         public TEST_MENU_PRINCIPAL(int idUsuario, string nombreUsuario)
         {
-            
+            InitializeComponent();
+            Inicializado(idUsuario, nombreUsuario);
+        }
+
+        public void Inicializado(int idUsuario, string nombreUsuario)
+        {
+            accesos_usuarioDA = new AccesosUsuarioDA();
+            accesos_usuarios = new Accesos_usuarios();
+
             this.FormBorderStyle = FormBorderStyle.None;
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 1300, 650, 20, 20));
-            InitializeComponent();
-
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
-            Inicializado();
-            customizeDesign();
+
+            lblFecPronosticador.Text = "<- Seleccione una fecha";
+            lblCantidadTotal.Text = "";
+            int DiaMinimo = DateTime.Now.Day;
+            CalendarioDash.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DiaMinimo);
+
+            panelArchivo.Visible = false;
+            panelProceso.Visible = false;
+            panelReporte.Visible = false;
+            panelConfiguracion.Visible = false;
             MenuVertical.Width = 0;
 
-
-            //MessageBox.Show(idUsuario.ToString());
             usuarioConectado.Text = idUsuario.ToString();
             this.idUser = idUsuario;
             this.nameUser = nombreUsuario;
 
-            //VERIFICACION DE PERMISOS (INICIO)
-            verificandoPermisosMaestro();
-            verificandoPermisosProcesos();
-            verificandoPermisosReportes();
-            verificandoPermisosConfiguracion();
-
-
+            verificandoPermisos();
 
             //NUEVO DASH
             CargarInventarioDash();
             CargarFacturacionDash();
-
         }
-
-
-
-        private void verificandoPermisosMaestro()
+        
+        private void verificandoPermisos()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_archivo = { btnMProcesador, btnMDisco, btnMMemoria, btnMTarjetaVideo, btnMCliente, btnMSucursal, btnMProveedor,btnMKAM,btnMLicencias };
-            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a" };
+            Button[] botones_archivo = 
+            { btnMProcesador, btnMDisco, btnMMemoria, btnMTarjetaVideo, btnMCliente, btnMSucursal, btnMProveedor,btnMKAM,btnMLicencias,
+                btnPCompra, btnPDevolucion, btnPAlquiler, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans,btnPTarifas,
+                brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas,btnAlquileres,
+                btnCUsuarios, btnCPermisos};
+            string[] idSubmodulo_archivo = 
+            { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a",
+              "1b", "2b", "3b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b","15b",
+              "1c", "3c", "4c", "5c", "7c", "8c", "9c", "10c","13c","14c","15c","16c",
+              "1d", "2d" };
 
-            foreach (Button btn in botones_archivo)
-            {
-                btn.Enabled = false;
-            }
             List<string> accesos = new List<string>();
-            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 1);
+            accesos = accesos_usuarioDA.Obtener_accessos(this.idUser);
             int index = 0;
 
             foreach (string codigo in accesos)
             {
                 index = Array.IndexOf(idSubmodulo_archivo, codigo);
-                //MessageBox.Show(codigo+" "+index);
                 botones_archivo[index].Enabled = true;
             }
-            //FIN LOGICA-------------------
 
         }
-
-        private void verificandoPermisosProcesos()
-        {
-            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_procesos = { btnPCompra, btnPDevolucion, btnPAlquiler, btnPRenovacion, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans,btnTarifas};
-            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b","15b" };
-
-            foreach (Button btn in botones_procesos)
-            {
-                btn.Enabled = false;
-            }
-            List<string> accesos = new List<string>();
-            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 2);
-            int index = 0;
-
-
-
-            foreach (string codigo in accesos)
-            {
-                index = Array.IndexOf(idSubmodulo_procesos, codigo);
-                botones_procesos[index].Enabled = true;
-            }
-            //FIN LOGICA-------------------
-        }
-        private void verificandoPermisosReportes()
-        {
-            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_reportes = { brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRLapVencer, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas,btnAlquileres };
-            string[] idSubmodulo_reportes = { "1c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c","13c","14c","15c","16c" };
-
-            foreach (Button btn in botones_reportes)
-            {
-                btn.Enabled = false;
-            }
-            List<string> accesos = new List<string>();
-            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 3);
-            int index = 0;
-
-            foreach (string codigo in accesos)
-            {
-                index = Array.IndexOf(idSubmodulo_reportes, codigo);
-                botones_reportes[index].Enabled = true;
-            }
-            //FIN LOGICA-------------------
-        }
-
-        private void verificandoPermisosConfiguracion()
-        {
-            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_configuracion = { btnConfiguracionClientes, btnConfiguracionPermisos };
-            string[] idSubmodulo_configuracion = { "1d", "2d" };
-
-            foreach (Button btn in botones_configuracion)
-            {
-                btn.Enabled = false;
-            }
-            List<string> accesos = new List<string>();
-            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 4);
-            int index = 0;
-
-            foreach (string codigo in accesos)
-            {
-                index = Array.IndexOf(idSubmodulo_configuracion, codigo);
-                botones_configuracion[index].Enabled = true;
-            }
-            //FIN LOGICA-------------------
-        }
-
-
-
-        private void customizeDesign()
-        {
-            ARCHIVO.Visible = false;
-            PROCESOS.Visible = false;
-            REPORTES.Visible = false;
-            panelConfiguracion.Visible = false;
-        }
-
-
-        private void hideSubMenu()
-        {
-            if (ARCHIVO.Visible == true)
-                ARCHIVO.Visible = false;
-            if (PROCESOS.Visible == true)
-                PROCESOS.Visible = false;
-            if (REPORTES.Visible == true)
-                REPORTES.Visible = false;
-            if (panelConfiguracion.Visible == true)
-                panelConfiguracion.Visible = false;
-        }
-
-        private void showSubMenu(Panel subMenu) //! MOVIMIENTO SUB-MENUS
-        {
-            if (subMenu.Visible == false)
-            {
-                hideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
-        }
-
-
-        public void Inicializado()
-        {
-            accesos_usuarioDA = new AccesosUsuarioDA();
-            accesos_usuarios = new Accesos_usuarios();
-        }
-
-
-
-
-        private void btnSlideMenu_Click(object sender, EventArgs e) //! MOVIMIENTO SLIDER IZQUIERDA/DERECHA
-        {
-            if (MenuVertical.Width == 350)
-            {
-                MenuVertical.Width = 80;                
-            }
-            else
-            {
-                MenuVertical.Width = 350;
-            }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e) //! BOTON SALIR DE APOLO
-        {
-            DialogResult dialogResult = MessageBox.Show("DESEAS SALIR DE APOLO?", "◄ AVISO | LEASEIN ►",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Hide();
-            }
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoCrearProcesador")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearProcesador f2 = new frmArchivoCrearProcesador(this.idUser,this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-
-            hideSubMenu();
-        }
-
+        
         private void TEST_MENU_PRINCIPAL_Load(object sender, EventArgs e)
-        {
-            
-            lblFecPronosticador.Text = "<- Seleccione una fecha";
-            lblCantidadTotal.Text = "";
-            int DiaMinimo= DateTime.Now.Day;
-            CalendarioDash.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DiaMinimo);
-
-            
+        {            
+            //lblFecPronosticador.Text = "<- Seleccione una fecha";
+            //lblCantidadTotal.Text = "";
+            //int DiaMinimo= DateTime.Now.Day;
+            //CalendarioDash.MinDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DiaMinimo);
         }
-
-     
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            showSubMenu(PROCESOS);
-        }
-
+             
         private void horafecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToShortDateString();
         }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoCrearDiscoDuro")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearDiscoDuro f2 = new frmArchivoCrearDiscoDuro(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoCrearMemoria")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearMemoria f2 = new frmArchivoCrearMemoria(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoCrearTarjetaVideo")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearTarjetaVideo f2 = new frmArchivoCrearTarjetaVideo(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmCrearCliente")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearCliente f2 = new frmArchivoCrearCliente(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoClienteSucursal")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoClienteSucursal f2 = new frmArchivoClienteSucursal(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmCrearProveedor")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoCrearProveedor f2 = new frmArchivoCrearProveedor(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoIngreso")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoIngreso f2 = new frmProcesoIngreso(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoDevolucion")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoDevolucion f2 = new frmProcesoDevolucion(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoAlquiler")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoAlquiler f2 = new frmProcesoAlquiler(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoRenovacion")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoRenovacion f2 = new frmProcesoRenovacion(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoCambio")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoCambio f2 = new frmProcesoCambio(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoSubirFacturas")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoSubirFacturas f2 = new frmProcesoSubirFacturas(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoReparacion")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoReparacion f2 = new frmProcesoReparacion(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoCambioComponentes")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoCambioComponentes f2 = new frmProcesoCambioComponentes(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoCambioDescripcion")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoCambioDescripcion f2 = new frmProcesoCambioDescripcion(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoLevantamientoObservaciones")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoLevantamientoObservaciones f2 = new frmProcesoLevantamientoObservaciones(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        { 
-            showSubMenu(REPORTES);
-        }
-
-        private void button30_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteCV")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteCV f2 = new frmReporteCV(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteFacturasPorVencer")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button26_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReportePendienteFacturar")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReportePendienteFacturar f2 = new frmReportePendienteFacturar(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button29_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReportePendienteRecoger")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReportePendienteRecoger f2 = new frmReportePendienteRecoger(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-     
-        }
-
-        private void button27_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReportePendienteReposicion")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReportePendienteReposicion f2 = new frmReportePendienteReposicion(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button25_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteAlquileresPorVencer")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteAlquileresPorVencer f2 = new frmReporteAlquileresPorVencer(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteStocksLaptops")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteStocksLaptops f2 = new frmReporteStocksLaptops(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteMemoria")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteMemoria f2 = new frmReporteMemoria(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteDisco")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteDisco f2 = new frmReporteDisco(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteLicencia")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteLicencia f2 = new frmReporteLicencia(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button31_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteAlquiler")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteAlquiler f2 = new frmReporteAlquiler(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button32_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteCompras")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteCompras f2 = new frmReporteCompras();
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmReporteMantenimiento")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmReporteMantenimiento f2 = new frmReporteMantenimiento(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            showSubMenu(ARCHIVO);
-        }
-
-        private void btnConfiguracion_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelConfiguracion);
-        }
-
-
-        private void button34_Click_1(object sender, EventArgs e)
-        {
-            
-            if (MenuVertical.Width == 350)
-            {
-                pictureBox1.Visible = true;
-                MenuVertical.Width = 0;
-            }
-            else
-            {
-                pnlFacturacionOfi.Visible = false;
-                pnlInventarioOfi.Visible = false;
-                pictureBox1.Visible = false;
-                MenuVertical.Width = 350;
-            }
-            
-        }
-
-        private void btnConfiguracionPermisos_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmConfiguracionPermisos")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmConfiguracionPermisos f2 = new frmConfiguracionPermisos();
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void btnConfiguracionClientes_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmConfiguracionUsuarios")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmConfiguracionUsuarios f2 = new frmConfiguracionUsuarios();
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button35_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoKam")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoKam f2 = new frmArchivoKam(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void btnLicencias_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmArchivoLicencias")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmArchivoLicencias f2 = new frmArchivoLicencias(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-        private void button35_Click_1(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoSalida")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoSalida f2 = new frmProcesoSalida(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-
-       
-
-        private void btnVerDetalleDispo_Click(object sender, EventArgs e)
-        {
-            /*
-            if (pnlDispo.Visible == false)
-            {
-                vista.ActiveFilterString = "[EstadoNombre] like '%DISPONIBLE%'";
-                dgvLaptops.Visible = true;
-                
-            }
-            else
-            {
-                
-                dgvLaptops.Visible = false;
-            }
-      
-            */
-
-        }
-
-       
-        private void gridControl4_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void gridControl4_MouseLeave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnVerDashboard_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
-
-    
-        private void btnCorteAlquiler_Click(object sender, EventArgs e)
-        {
-            bool IsOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "frmProcesoCorteAlquiler")
-                {
-                    IsOpen = true;
-                    f.Focus();
-                    break;
-                }
-            }
-            if (IsOpen == false)
-            {
-                MenuVertical.Width = 0;
-                frmProcesoCorteAlquiler f2 = new frmProcesoCorteAlquiler(this.idUser, this.nameUser);
-                f2.MdiParent = this;
-                CerrarDash();
-                f2.Show();
-            }
-        }
-       
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
- 
-        private void lblLaptopsDisponibles_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("aa");
-        }
-
-
-        private void button41_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-   
-
-        private void panelDashboard_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelDashboard_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
         private void pnlLaptopsDisponibles_Paint(object sender, PaintEventArgs e)
         {
             pnlLaptopsDisponibles.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlLaptopsDisponibles.Width,
                  pnlLaptopsDisponibles.Height, 30, 30));
         }
 
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
+        private void pnlPronosticadorInfo_Paint(object sender, PaintEventArgs e)
         {
             pnlPronosticadorInfo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlPronosticadorInfo.Width,
                  pnlPronosticadorInfo.Height, 30, 30));
@@ -1238,17 +170,6 @@ namespace Apolo
             pnlResumenInventario.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlResumenInventario.Width,
                  pnlResumenInventario.Height, 30, 30));
         }
-
-        private void pnlInventarioOfi_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-
-
-
 
         //========================================== NUEVO DASH
         
@@ -1350,15 +271,11 @@ namespace Apolo
             pnlProsticar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlProsticar.Width,
                  pnlProsticar.Height, 20, 20));
         }
-
-       
-
+              
         private void pnlProsticar_Click(object sender, EventArgs e)
         {
             CalendarioDash.Visible = true;
         }
-
-
 
         private void CargarInventarioPronosticadorDash()
         {
@@ -1497,16 +414,10 @@ namespace Apolo
 
         }
 
-
         private void CalendarioDash_DateSelected(object sender, DateRangeEventArgs e)
         {
             CalendarioDash.Visible = false;
             CargarInventarioPronosticadorDash();
-        }
-
-        private void dgvLapDispo_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void lblInvtoFact_Click(object sender, EventArgs e)
@@ -1582,8 +493,6 @@ namespace Apolo
             }
         }
 
-
-
         private void lblFactToInv_Click(object sender, EventArgs e)
         {
             pnlFacturacionOfi.Visible = false;
@@ -1608,8 +517,6 @@ namespace Apolo
                 }
             }
 
-            
-            
         }
 
         private void CerrarDash()
@@ -1618,7 +525,298 @@ namespace Apolo
             pnlFacturacionOfi.Visible = false;
         }
 
-        private void btnNotaDeCredito_Click(object sender, EventArgs e)
+        private void lblPronosticar_Click(object sender, EventArgs e)
+        {
+            CalendarioDash.Visible = true;
+        }
+
+        //========================= Menu ==================================
+
+        private void hideSubMenu()
+        {
+            if (panelArchivo.Visible == true)
+                panelArchivo.Visible = false;
+            if (panelProceso.Visible == true)
+                panelProceso.Visible = false;
+            if (panelReporte.Visible == true)
+                panelReporte.Visible = false;
+            if (panelConfiguracion.Visible == true)
+                panelConfiguracion.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu) //! MOVIMIENTO SUB-MENUS
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else subMenu.Visible = false;
+        }
+
+        private void btnSlideMenu_Click(object sender, EventArgs e) //! MOVIMIENTO SLIDER IZQUIERDA/DERECHA
+        {
+            if (MenuVertical.Width == 350)
+                MenuVertical.Width = 80;
+            else
+                MenuVertical.Width = 350;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e) //! BOTON SALIR DE APOLO
+        {
+            DialogResult dialogResult = MessageBox.Show("DESEAS SALIR DE APOLO?", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 350)
+            {
+                pictureBox1.Visible = true;
+                MenuVertical.Width = 0;
+            }
+            else
+            {
+                pnlFacturacionOfi.Visible = false;
+                pnlInventarioOfi.Visible = false;
+                pictureBox1.Visible = false;
+                MenuVertical.Width = 350;
+            }
+
+        }
+
+        private void btnMaestro_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelArchivo);
+        }
+
+        private void btnProceso_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelProceso);
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelReporte);
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelConfiguracion);
+        }
+
+
+        //========================= Maestros ==================================
+        private void btnMProcesador_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoCrearProcesador")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearProcesador f2 = new frmArchivoCrearProcesador(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMDisco_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoCrearDiscoDuro")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearDiscoDuro f2 = new frmArchivoCrearDiscoDuro(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMMemoria_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoCrearMemoria")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearMemoria f2 = new frmArchivoCrearMemoria(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMTarjetaVideo_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoCrearTarjetaVideo")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearTarjetaVideo f2 = new frmArchivoCrearTarjetaVideo(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMCliente_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmCrearCliente")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearCliente f2 = new frmArchivoCrearCliente(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMSucursal_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoClienteSucursal")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoClienteSucursal f2 = new frmArchivoClienteSucursal(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMProveedor_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmCrearProveedor")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoCrearProveedor f2 = new frmArchivoCrearProveedor(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMKAM_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoKam")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoKam f2 = new frmArchivoKam(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnMLicencias_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoLicencias")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmArchivoLicencias f2 = new frmArchivoLicencias(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+
+        //========================= Procesos ==================================
+
+        private void btnPNotaCredito_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -1640,7 +838,7 @@ namespace Apolo
             }
         }
 
-        private void btnFacturasTransito_Click(object sender, EventArgs e)
+        private void btnPFacturasTrans_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -1662,7 +860,539 @@ namespace Apolo
             }
         }
 
-        private void btnReporteFT_Click(object sender, EventArgs e)
+        private void btnPTarifas_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoTarifa")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoTarifa f2 = new frmProcesoTarifa(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPCompra_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoIngreso")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoIngreso f2 = new frmProcesoIngreso(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPDevolucion_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoDevolucion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoDevolucion f2 = new frmProcesoDevolucion(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPAlquiler_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoAlquiler")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoAlquiler f2 = new frmProcesoAlquiler(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPRenovacion_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoRenovacion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoRenovacion f2 = new frmProcesoRenovacion(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPCambio_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoCambio")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoCambio f2 = new frmProcesoCambio(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPSubirFactura_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoSubirFacturas")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoSubirFacturas f2 = new frmProcesoSubirFacturas(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPReparacion_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoReparacion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoReparacion f2 = new frmProcesoReparacion(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPCambioComp_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoCambioComponentes")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoCambioComponentes f2 = new frmProcesoCambioComponentes(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPCambioDescr_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoCambioDescripcion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoCambioDescripcion f2 = new frmProcesoCambioDescripcion(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPLevantarObser_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoLevantamientoObservaciones")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoLevantamientoObservaciones f2 = new frmProcesoLevantamientoObservaciones(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPMovInternos_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoSalida")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoSalida f2 = new frmProcesoSalida(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnPCorteAlquiler_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoCorteAlquiler")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmProcesoCorteAlquiler f2 = new frmProcesoCorteAlquiler(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+
+        //========================= Reportes ==================================
+
+        private void brnRCuadroVenc_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteCV")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteCV f2 = new frmReporteCV(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRPendienteFact_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReportePendienteFacturar")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReportePendienteFacturar f2 = new frmReportePendienteFacturar(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRPendienteRec_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReportePendienteRecoger")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReportePendienteRecoger f2 = new frmReportePendienteRecoger(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+
+        }
+
+        private void btnRObservacionDeu_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReportePendienteReposicion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReportePendienteReposicion f2 = new frmReportePendienteReposicion(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRLapVencer_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteAlquileresPorVencer")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteAlquileresPorVencer f2 = new frmReporteAlquileresPorVencer(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRInventario_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteStocksLaptops")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteStocksLaptops f2 = new frmReporteStocksLaptops(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRMemorias_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteMemoria")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteMemoria f2 = new frmReporteMemoria(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRDiscos_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteDisco")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteDisco f2 = new frmReporteDisco(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRLicencias_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteLicencia")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteLicencia f2 = new frmReporteLicencia(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRReparacion_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteMantenimiento")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteMantenimiento f2 = new frmReporteMantenimiento(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRAlquileres_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteAlquiler")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteAlquiler f2 = new frmReporteAlquiler(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+        
+        private void btnRFacturasTrans_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -1705,13 +1435,31 @@ namespace Apolo
                 f2.Show();
             }
         }
-
-        private void lblPronosticar_Click(object sender, EventArgs e)
+               
+        private void btnRFacturasPorVencer_Click(object sender, EventArgs e)
         {
-            CalendarioDash.Visible = true;
+
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteFacturasPorVencer")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
         }
 
-        private void btnAlquileres_Click(object sender, EventArgs e)
+        private void btnRAlquileres2_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
@@ -1733,12 +1481,12 @@ namespace Apolo
             }
         }
 
-        private void btnTarifas_Click(object sender, EventArgs e)
+        private void btnRCompras_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "frmProcesoTarifa")
+                if (f.Name == "frmReporteCompras")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -1748,12 +1496,59 @@ namespace Apolo
             if (IsOpen == false)
             {
                 MenuVertical.Width = 0;
-                frmProcesoTarifa f2 = new frmProcesoTarifa(this.idUser, this.nameUser);
+                frmReporteCompras f2 = new frmReporteCompras();
                 f2.MdiParent = this;
                 CerrarDash();
                 f2.Show();
             }
         }
+
+        //========================= Configuracion ==================================
+
+        private void btnCPermisos_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmConfiguracionPermisos")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmConfiguracionPermisos f2 = new frmConfiguracionPermisos();
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnCUsuarios_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmConfiguracionUsuarios")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmConfiguracionUsuarios f2 = new frmConfiguracionUsuarios();
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
     }
 }
 

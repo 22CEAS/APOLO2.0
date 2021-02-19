@@ -57,6 +57,7 @@
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MotivoRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
             this.pnlPR = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.MotivoRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -224,8 +224,6 @@
             this.Guía.MinWidth = 40;
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 6;
             this.Guía.Width = 200;
             // 
             // MarcaLC
@@ -237,8 +235,6 @@
             this.MarcaLC.MinWidth = 40;
             this.MarcaLC.Name = "MarcaLC";
             this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MarcaLC.Visible = true;
-            this.MarcaLC.VisibleIndex = 7;
             this.MarcaLC.Width = 150;
             // 
             // NombreModeloLC
@@ -250,8 +246,6 @@
             this.NombreModeloLC.MinWidth = 40;
             this.NombreModeloLC.Name = "NombreModeloLC";
             this.NombreModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.NombreModeloLC.Visible = true;
-            this.NombreModeloLC.VisibleIndex = 8;
             this.NombreModeloLC.Width = 200;
             // 
             // CodigoAntiguo
@@ -263,8 +257,6 @@
             this.CodigoAntiguo.MinWidth = 40;
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 9;
             this.CodigoAntiguo.Width = 140;
             // 
             // FechaInicioContrato
@@ -276,21 +268,19 @@
             this.FechaInicioContrato.MinWidth = 40;
             this.FechaInicioContrato.Name = "FechaInicioContrato";
             this.FechaInicioContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.FechaInicioContrato.Visible = true;
-            this.FechaInicioContrato.VisibleIndex = 10;
             this.FechaInicioContrato.Width = 150;
             // 
             // FechaFinContrato
             // 
             this.FechaFinContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.FechaFinContrato.AppearanceHeader.Options.UseBackColor = true;
-            this.FechaFinContrato.Caption = "Fecha Fin Contrato";
+            this.FechaFinContrato.Caption = "Fecha Corte Alquiler";
             this.FechaFinContrato.FieldName = "fecFinContrato";
             this.FechaFinContrato.MinWidth = 40;
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 11;
+            this.FechaFinContrato.VisibleIndex = 6;
             this.FechaFinContrato.Width = 150;
             // 
             // TipoProcesador
@@ -302,8 +292,6 @@
             this.TipoProcesador.MinWidth = 40;
             this.TipoProcesador.Name = "TipoProcesador";
             this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.TipoProcesador.Visible = true;
-            this.TipoProcesador.VisibleIndex = 12;
             this.TipoProcesador.Width = 150;
             // 
             // NombreModeloVideo
@@ -326,8 +314,6 @@
             this.DiasAtrasoRecojo.MinWidth = 40;
             this.DiasAtrasoRecojo.Name = "DiasAtrasoRecojo";
             this.DiasAtrasoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.DiasAtrasoRecojo.Visible = true;
-            this.DiasAtrasoRecojo.VisibleIndex = 13;
             this.DiasAtrasoRecojo.Width = 150;
             // 
             // MotivoNoRecojo
@@ -350,8 +336,6 @@
             this.factura.MinWidth = 40;
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.factura.Visible = true;
-            this.factura.VisibleIndex = 14;
             this.factura.Width = 150;
             // 
             // fecInicioFactura
@@ -363,8 +347,6 @@
             this.fecInicioFactura.MinWidth = 40;
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 15;
             this.fecInicioFactura.Width = 150;
             // 
             // fecFinFactura
@@ -376,8 +358,6 @@
             this.fecFinFactura.MinWidth = 40;
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 16;
             this.fecFinFactura.Width = 150;
             // 
             // MontoSoles
@@ -389,8 +369,6 @@
             this.MontoSoles.MinWidth = 40;
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 17;
             this.MontoSoles.Width = 150;
             // 
             // MontoDolares
@@ -402,8 +380,6 @@
             this.MontoDolares.MinWidth = 40;
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 18;
             this.MontoDolares.Width = 150;
             // 
             // TotalDolares
@@ -415,8 +391,6 @@
             this.TotalDolares.MinWidth = 40;
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 19;
             this.TotalDolares.Width = 150;
             // 
             // CostoSoles
@@ -428,8 +402,6 @@
             this.CostoSoles.MinWidth = 40;
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 20;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -441,8 +413,6 @@
             this.CostoDolares.MinWidth = 40;
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 21;
             this.CostoDolares.Width = 100;
             // 
             // VersionOffice
@@ -454,8 +424,6 @@
             this.VersionOffice.MinWidth = 40;
             this.VersionOffice.Name = "VersionOffice";
             this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.VersionOffice.Visible = true;
-            this.VersionOffice.VisibleIndex = 22;
             this.VersionOffice.Width = 100;
             // 
             // KAM
@@ -468,8 +436,19 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 23;
+            this.KAM.VisibleIndex = 7;
             this.KAM.Width = 200;
+            // 
+            // MotivoRecojo
+            // 
+            this.MotivoRecojo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.MotivoRecojo.AppearanceHeader.Options.UseBackColor = true;
+            this.MotivoRecojo.Caption = "Motivo Recojo";
+            this.MotivoRecojo.FieldName = "MotivoRecojo";
+            this.MotivoRecojo.Name = "MotivoRecojo";
+            this.MotivoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MotivoRecojo.Visible = true;
+            this.MotivoRecojo.VisibleIndex = 8;
             // 
             // btnExportar
             // 
@@ -575,17 +554,6 @@
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // MotivoRecojo
-            // 
-            this.MotivoRecojo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.MotivoRecojo.AppearanceHeader.Options.UseBackColor = true;
-            this.MotivoRecojo.Caption = "Motivo Recojo";
-            this.MotivoRecojo.FieldName = "MotivoRecojo";
-            this.MotivoRecojo.Name = "MotivoRecojo";
-            this.MotivoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MotivoRecojo.Visible = true;
-            this.MotivoRecojo.VisibleIndex = 24;
             // 
             // frmReportePendienteRecoger
             // 

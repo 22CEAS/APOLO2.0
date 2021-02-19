@@ -205,6 +205,10 @@ namespace Apolo
             for(int i=0;i<filas;i++)
             {
                 String concatCodSis = (vistaTarifas.GetRowCellValue(i, "RucCliente").ToString()) + "-" + (vistaTarifas.GetRowCellValue(i, "CodigoEquipo").ToString());
+                vistaTarifas.SetRowCellValue(i, "GuiaSalida", "");
+                vistaTarifas.SetRowCellValue(i, "IdSalidaDet", "");
+                vistaTarifas.SetRowCellValue(i, "IdSalida", "");
+                vistaTarifas.SetRowCellValue(i, "Observacion", "REGISTRO NO ENCONTRADO");
                 for (int x = 0; x < buscarV.Rows.Count; x++)
                 {
                     string concatenado = buscarV.Rows[x]["concatenado"].ToString();
@@ -216,13 +220,6 @@ namespace Apolo
                         vistaTarifas.SetRowCellValue(i, "IdSalida", buscarV.Rows[x]["idSalida"].ToString());
                         vistaTarifas.SetRowCellValue(i, "Observacion","Todo Ok");
                         break;
-                    }
-                    else
-                    {
-                        vistaTarifas.SetRowCellValue(i, "GuiaSalida", "");
-                        vistaTarifas.SetRowCellValue(i, "IdSalidaDet", "");
-                        vistaTarifas.SetRowCellValue(i, "IdSalida", "");
-                        vistaTarifas.SetRowCellValue(i, "Observacion", "REGISTRO NO ENCONTRADO");
                     }
                 }
             }

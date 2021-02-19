@@ -92,7 +92,7 @@ namespace Apolo
                     XlsxExportOptionsEx options = new XlsxExportOptionsEx();
                     options.CustomizeSheetHeader += options_CustomizeSheetHeader;
                     //options.CustomizeCell += op_CustomizeCell;
-                    string file = "INVENTARIOS LAPTOPS.xlsx";
+                    string file = "FACTURAS.xlsx";
                     dgvFacturas.ExportToXlsx(file, options);
                     System.Diagnostics.Process.Start(file);
                     //btnExportar2_Click();

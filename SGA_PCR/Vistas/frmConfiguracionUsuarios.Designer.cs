@@ -52,24 +52,23 @@
             this.pnlConfguracionUsuario = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblUsuarios = new System.Windows.Forms.Label();
-            this.dgvUsu = new DevExpress.XtraGrid.GridControl();
-            this.vistaUsu = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgvUsuario = new DevExpress.XtraGrid.GridControl();
+            this.vistaUsuario = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dni = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.User = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdPerfil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NombrePerfil1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ClaveUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NombreEstado1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdPerfil = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombrePerfil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdArea = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NombreArea1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.NombreArea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NombreEstado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlConfguracionUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaUsu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDni
@@ -150,7 +149,6 @@
             this.label4.Size = new System.Drawing.Size(112, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "CONTRASEÑA";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -176,6 +174,8 @@
             // 
             // cmbArea
             // 
+            this.cmbArea.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Location = new System.Drawing.Point(581, 131);
             this.cmbArea.Name = "cmbArea";
@@ -284,6 +284,8 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(581, 158);
             this.cmbEstado.Name = "cmbEstado";
@@ -292,6 +294,8 @@
             // 
             // cmbPerfil
             // 
+            this.cmbPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPerfil.FormattingEnabled = true;
             this.cmbPerfil.Location = new System.Drawing.Point(123, 159);
             this.cmbPerfil.Name = "cmbPerfil";
@@ -340,147 +344,165 @@
             this.lblUsuarios.Text = "CONFIGURACION USUARIOS";
             this.lblUsuarios.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlConfguracionUsuario_MouseMove);
             // 
-            // dgvUsu
+            // dgvUsuario
             // 
-            this.dgvUsu.Location = new System.Drawing.Point(15, 186);
-            this.dgvUsu.MainView = this.vistaUsu;
-            this.dgvUsu.Name = "dgvUsu";
-            this.dgvUsu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
-            this.dgvUsu.Size = new System.Drawing.Size(728, 387);
-            this.dgvUsu.TabIndex = 141;
-            this.dgvUsu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vistaUsu});
-            this.dgvUsu.Click += new System.EventHandler(this.dgvUsu_Click);
+            this.dgvUsuario.Location = new System.Drawing.Point(15, 202);
+            this.dgvUsuario.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvUsuario.MainView = this.vistaUsuario;
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.Size = new System.Drawing.Size(714, 356);
+            this.dgvUsuario.TabIndex = 232;
+            this.dgvUsuario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaUsuario});
+            this.dgvUsuario.Click += new System.EventHandler(this.dgvUsuario_Click);
             // 
-            // vistaUsu
+            // vistaUsuario
             // 
-            this.vistaUsu.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaUsu.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.vistaUsu.Appearance.HeaderPanel.Options.UseFont = true;
-            this.vistaUsu.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.vistaUsu.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.vistaUsu.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.vistaUsu.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.vistaUsu.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vistaUsu.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.vistaUsu.Appearance.Row.Options.UseFont = true;
-            this.vistaUsu.Appearance.Row.Options.UseForeColor = true;
-            this.vistaUsu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.vistaUsuario.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaUsuario.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaUsuario.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaUsuario.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaUsuario.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaUsuario.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaUsuario.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaUsuario.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaUsuario.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaUsuario.Appearance.Row.Options.UseFont = true;
+            this.vistaUsuario.Appearance.Row.Options.UseForeColor = true;
+            this.vistaUsuario.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.IdUsuario,
             this.Dni,
             this.Nombre,
             this.User,
-            this.IdPerfil,
-            this.NombrePerfil1,
+            this.ClaveUsuario,
             this.Email,
-            this.Estado,
-            this.NombreEstado1,
+            this.IdPerfil,
+            this.NombrePerfil,
             this.IdArea,
-            this.NombreArea1});
-            this.vistaUsu.GridControl = this.dgvUsu;
-            this.vistaUsu.Name = "vistaUsu";
-            this.vistaUsu.OptionsBehavior.Editable = false;
-            this.vistaUsu.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
-            this.vistaUsu.OptionsSelection.MultiSelect = true;
-            this.vistaUsu.OptionsView.ColumnAutoWidth = false;
-            this.vistaUsu.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.vistaUsu.OptionsView.ShowAutoFilterRow = true;
+            this.NombreArea,
+            this.Estado,
+            this.NombreEstado});
+            this.vistaUsuario.GridControl = this.dgvUsuario;
+            this.vistaUsuario.Name = "vistaUsuario";
+            this.vistaUsuario.OptionsBehavior.Editable = false;
+            this.vistaUsuario.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaUsuario.OptionsMenu.EnableColumnMenu = false;
+            this.vistaUsuario.OptionsView.ColumnAutoWidth = false;
+            this.vistaUsuario.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaUsuario.OptionsView.ShowAutoFilterRow = true;
+            this.vistaUsuario.OptionsView.ShowGroupPanel = false;
             // 
             // IdUsuario
             // 
-            this.IdUsuario.Caption = "IDUSUARIO";
+            this.IdUsuario.Caption = "gridColumn1";
             this.IdUsuario.FieldName = "IdUsuario";
-            this.IdUsuario.MinWidth = 100;
             this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.Width = 100;
+            this.IdUsuario.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
             // Dni
             // 
             this.Dni.Caption = "DNI";
             this.Dni.FieldName = "Dni";
+            this.Dni.MinWidth = 40;
             this.Dni.Name = "Dni";
+            this.Dni.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Dni.Visible = true;
             this.Dni.VisibleIndex = 0;
             this.Dni.Width = 100;
             // 
             // Nombre
             // 
-            this.Nombre.Caption = "NOMBRE";
+            this.Nombre.Caption = "Nombre";
             this.Nombre.FieldName = "Nombre";
+            this.Nombre.MinWidth = 40;
             this.Nombre.Name = "Nombre";
+            this.Nombre.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Nombre.Visible = true;
             this.Nombre.VisibleIndex = 1;
             this.Nombre.Width = 100;
             // 
             // User
             // 
-            this.User.Caption = "USUARIO";
+            this.User.Caption = "Usuario";
             this.User.FieldName = "User";
+            this.User.MinWidth = 40;
             this.User.Name = "User";
+            this.User.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.User.Visible = true;
             this.User.VisibleIndex = 2;
             this.User.Width = 100;
             // 
-            // IdPerfil
+            // ClaveUsuario
             // 
-            this.IdPerfil.Caption = "ID PERFIL";
-            this.IdPerfil.FieldName = "IdPerfil";
-            this.IdPerfil.Name = "IdPerfil";
-            // 
-            // NombrePerfil1
-            // 
-            this.NombrePerfil1.Caption = "PERFIL";
-            this.NombrePerfil1.FieldName = "NombrePerfil1";
-            this.NombrePerfil1.Name = "NombrePerfil1";
-            this.NombrePerfil1.Visible = true;
-            this.NombrePerfil1.VisibleIndex = 3;
-            this.NombrePerfil1.Width = 100;
+            this.ClaveUsuario.Caption = "gridColumn1";
+            this.ClaveUsuario.FieldName = "ClaveUsuario";
+            this.ClaveUsuario.Name = "ClaveUsuario";
+            this.ClaveUsuario.UnboundType = DevExpress.Data.UnboundColumnType.String;
             // 
             // Email
             // 
-            this.Email.Caption = "EMAIL";
+            this.Email.Caption = "Email";
             this.Email.FieldName = "Email";
+            this.Email.MinWidth = 40;
             this.Email.Name = "Email";
+            this.Email.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Email.Visible = true;
-            this.Email.VisibleIndex = 4;
+            this.Email.VisibleIndex = 3;
             this.Email.Width = 100;
             // 
-            // Estado
+            // IdPerfil
             // 
-            this.Estado.Caption = "ID ESTADO";
-            this.Estado.FieldName = "Estado";
-            this.Estado.Name = "Estado";
+            this.IdPerfil.Caption = "gridColumn1";
+            this.IdPerfil.FieldName = "IdPerfil";
+            this.IdPerfil.Name = "IdPerfil";
+            this.IdPerfil.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
-            // NombreEstado1
+            // NombrePerfil
             // 
-            this.NombreEstado1.Caption = "ESTADO";
-            this.NombreEstado1.FieldName = "NombreEstado1";
-            this.NombreEstado1.Name = "NombreEstado1";
-            this.NombreEstado1.Visible = true;
-            this.NombreEstado1.VisibleIndex = 5;
-            this.NombreEstado1.Width = 100;
+            this.NombrePerfil.Caption = "Perfil";
+            this.NombrePerfil.FieldName = "NombrePerfil";
+            this.NombrePerfil.MinWidth = 40;
+            this.NombrePerfil.Name = "NombrePerfil";
+            this.NombrePerfil.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombrePerfil.Visible = true;
+            this.NombrePerfil.VisibleIndex = 4;
+            this.NombrePerfil.Width = 100;
             // 
             // IdArea
             // 
-            this.IdArea.Caption = "ID AREA";
+            this.IdArea.Caption = "gridColumn1";
             this.IdArea.FieldName = "IdArea";
             this.IdArea.Name = "IdArea";
+            this.IdArea.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
-            // NombreArea1
+            // NombreArea
             // 
-            this.NombreArea1.Caption = "AREA";
-            this.NombreArea1.FieldName = "NombreArea1";
-            this.NombreArea1.Name = "NombreArea1";
-            this.NombreArea1.Visible = true;
-            this.NombreArea1.VisibleIndex = 6;
-            this.NombreArea1.Width = 100;
+            this.NombreArea.Caption = "Área";
+            this.NombreArea.FieldName = "NombreArea";
+            this.NombreArea.MinWidth = 40;
+            this.NombreArea.Name = "NombreArea";
+            this.NombreArea.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreArea.Visible = true;
+            this.NombreArea.VisibleIndex = 5;
+            this.NombreArea.Width = 100;
             // 
-            // repositoryItemCheckEdit1
+            // Estado
             // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.Estado.Caption = "gridColumn1";
+            this.Estado.FieldName = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // NombreEstado
+            // 
+            this.NombreEstado.Caption = "Estado";
+            this.NombreEstado.FieldName = "NombreEstado";
+            this.NombreEstado.MinWidth = 40;
+            this.NombreEstado.Name = "NombreEstado";
+            this.NombreEstado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NombreEstado.Visible = true;
+            this.NombreEstado.VisibleIndex = 6;
+            this.NombreEstado.Width = 100;
             // 
             // frmConfiguracionUsuarios
             // 
@@ -488,7 +510,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(836, 585);
-            this.Controls.Add(this.dgvUsu);
+            this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.pnlConfguracionUsuario);
             this.Controls.Add(this.cmbPerfil);
             this.Controls.Add(this.cmbEstado);
@@ -518,12 +540,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USUARIOS";
-            this.Load += new System.EventHandler(this.frmConfiguracionUsuarios_Load);
             this.pnlConfguracionUsuario.ResumeLayout(false);
             this.pnlConfguracionUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaUsu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,19 +574,19 @@
         private System.Windows.Forms.Panel pnlConfguracionUsuario;
         private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Button btnCerrar;
-        private DevExpress.XtraGrid.GridControl dgvUsu;
-        private DevExpress.XtraGrid.Views.Grid.GridView vistaUsu;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.GridControl dgvUsuario;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaUsuario;
         private DevExpress.XtraGrid.Columns.GridColumn IdUsuario;
         private DevExpress.XtraGrid.Columns.GridColumn Dni;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre;
         private DevExpress.XtraGrid.Columns.GridColumn User;
-        private DevExpress.XtraGrid.Columns.GridColumn IdPerfil;
-        private DevExpress.XtraGrid.Columns.GridColumn NombrePerfil1;
+        private DevExpress.XtraGrid.Columns.GridColumn ClaveUsuario;
         private DevExpress.XtraGrid.Columns.GridColumn Email;
-        private DevExpress.XtraGrid.Columns.GridColumn Estado;
-        private DevExpress.XtraGrid.Columns.GridColumn NombreEstado1;
+        private DevExpress.XtraGrid.Columns.GridColumn IdPerfil;
+        private DevExpress.XtraGrid.Columns.GridColumn NombrePerfil;
         private DevExpress.XtraGrid.Columns.GridColumn IdArea;
-        private DevExpress.XtraGrid.Columns.GridColumn NombreArea1;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreArea;
+        private DevExpress.XtraGrid.Columns.GridColumn Estado;
+        private DevExpress.XtraGrid.Columns.GridColumn NombreEstado;
     }
 }

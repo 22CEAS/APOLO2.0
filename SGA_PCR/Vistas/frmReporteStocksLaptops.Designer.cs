@@ -55,6 +55,7 @@
             this.idSalidaAlquilado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecTraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.idSede = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
@@ -85,7 +86,8 @@
             this.pnlInv = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.tamanoPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LicenciaWindows = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LicenciaOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -114,7 +116,7 @@
             this.TipoSede.FieldName = "TipoSede";
             this.TipoSede.Name = "TipoSede";
             this.TipoSede.Visible = true;
-            this.TipoSede.VisibleIndex = 19;
+            this.TipoSede.VisibleIndex = 20;
             this.TipoSede.Width = 150;
             // 
             // dgvLaptops
@@ -162,6 +164,8 @@
             this.Disco2,
             this.CapacidadDisco2,
             this.MemoriaRam,
+            this.LicenciaWindows,
+            this.LicenciaOffice,
             this.Estado,
             this.Cliente,
             this.RucCliente,
@@ -348,7 +352,7 @@
             this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 12;
+            this.Estado.VisibleIndex = 13;
             this.Estado.Width = 130;
             // 
             // Cliente
@@ -360,7 +364,7 @@
             this.Cliente.MinWidth = 40;
             this.Cliente.Name = "Cliente";
             this.Cliente.Visible = true;
-            this.Cliente.VisibleIndex = 13;
+            this.Cliente.VisibleIndex = 14;
             this.Cliente.Width = 150;
             // 
             // RucCliente
@@ -373,7 +377,7 @@
             this.RucCliente.Name = "RucCliente";
             this.RucCliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RucCliente.Visible = true;
-            this.RucCliente.VisibleIndex = 14;
+            this.RucCliente.VisibleIndex = 15;
             this.RucCliente.Width = 140;
             // 
             // Ubicacion
@@ -385,7 +389,7 @@
             this.Ubicacion.MinWidth = 40;
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.Visible = true;
-            this.Ubicacion.VisibleIndex = 15;
+            this.Ubicacion.VisibleIndex = 16;
             this.Ubicacion.Width = 150;
             // 
             // SerieFabrica
@@ -397,7 +401,7 @@
             this.SerieFabrica.MinWidth = 40;
             this.SerieFabrica.Name = "SerieFabrica";
             this.SerieFabrica.Visible = true;
-            this.SerieFabrica.VisibleIndex = 16;
+            this.SerieFabrica.VisibleIndex = 17;
             this.SerieFabrica.Width = 150;
             // 
             // idSalidaAlquilado
@@ -410,7 +414,7 @@
             this.idSalidaAlquilado.Name = "idSalidaAlquilado";
             this.idSalidaAlquilado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.idSalidaAlquilado.Visible = true;
-            this.idSalidaAlquilado.VisibleIndex = 17;
+            this.idSalidaAlquilado.VisibleIndex = 18;
             this.idSalidaAlquilado.Width = 80;
             // 
             // fecTraslado
@@ -424,7 +428,7 @@
             this.fecTraslado.Name = "fecTraslado";
             this.fecTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.fecTraslado.Visible = true;
-            this.fecTraslado.VisibleIndex = 18;
+            this.fecTraslado.VisibleIndex = 19;
             this.fecTraslado.Width = 120;
             // 
             // idSede
@@ -432,6 +436,16 @@
             this.idSede.Caption = "id Sede";
             this.idSede.FieldName = "IdSede";
             this.idSede.Name = "idSede";
+            // 
+            // tamanoPantalla
+            // 
+            this.tamanoPantalla.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tamanoPantalla.AppearanceHeader.Options.UseBackColor = true;
+            this.tamanoPantalla.Caption = "Tamaño Pantalla";
+            this.tamanoPantalla.FieldName = "TamanoPantalla";
+            this.tamanoPantalla.Name = "tamanoPantalla";
+            this.tamanoPantalla.Visible = true;
+            this.tamanoPantalla.VisibleIndex = 5;
             // 
             // btnExportar
             // 
@@ -811,15 +825,29 @@
             this.label4.Text = "INVENTARIO";
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
             // 
-            // tamanoPantalla
+            // LicenciaWindows
             // 
-            this.tamanoPantalla.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tamanoPantalla.AppearanceHeader.Options.UseBackColor = true;
-            this.tamanoPantalla.Caption = "Tamaño Pantalla";
-            this.tamanoPantalla.FieldName = "TamanoPantalla";
-            this.tamanoPantalla.Name = "tamanoPantalla";
-            this.tamanoPantalla.Visible = true;
-            this.tamanoPantalla.VisibleIndex = 5;
+            this.LicenciaWindows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LicenciaWindows.AppearanceHeader.Options.UseBackColor = true;
+            this.LicenciaWindows.Caption = "Windows";
+            this.LicenciaWindows.FieldName = "LicenciaWindows";
+            this.LicenciaWindows.MinWidth = 40;
+            this.LicenciaWindows.Name = "LicenciaWindows";
+            this.LicenciaWindows.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.LicenciaWindows.Visible = true;
+            this.LicenciaWindows.VisibleIndex = 12;
+            this.LicenciaWindows.Width = 140;
+            // 
+            // LicenciaOffice
+            // 
+            this.LicenciaOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LicenciaOffice.AppearanceHeader.Options.UseBackColor = true;
+            this.LicenciaOffice.Caption = "Office";
+            this.LicenciaOffice.FieldName = "LicenciaOffice";
+            this.LicenciaOffice.MinWidth = 40;
+            this.LicenciaOffice.Name = "LicenciaOffice";
+            this.LicenciaOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.LicenciaOffice.Width = 140;
             // 
             // frmReporteStocksLaptops
             // 
@@ -932,5 +960,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraGrid.Columns.GridColumn tamanoPantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn LicenciaWindows;
+        private DevExpress.XtraGrid.Columns.GridColumn LicenciaOffice;
     }
 }

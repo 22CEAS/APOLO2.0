@@ -21,7 +21,6 @@ namespace Apolo
         DataTable tablaSubmodulos;
         DataTable tablaPermisosUsuario;
 
-
         Usuario usuario;
         UsuarioDA usuarioDA;
 
@@ -44,6 +43,8 @@ namespace Apolo
         {
             usuarioDA = new UsuarioDA();
             usuario = new Usuario();
+            SubmoduloDA = new SubmoduloDA();
+            Submodulo = new Submodulo();
 
             ModulosPrincipalesDA = new ModulosPrincipalesDA();
             ModulosPrincipales = new ModulosPrincipales();
@@ -64,174 +65,146 @@ namespace Apolo
             cmbModulosPrincipales.DisplayMember = "descripcionModuloP";
             cmbModulosPrincipales.ValueMember = "idModuloP";
 
+            vistaPermisos.OptionsBehavior.AutoPopulateColumns = false;
+            vistaPermisos.OptionsSelection.MultiSelect = true;
+            vistaSubModulo.OptionsBehavior.AutoPopulateColumns = false;
+            vistaSubModulo.OptionsSelection.MultiSelect = true;
+
+            actualizarTablas();
         }
-
-
-
-
-
-
-
-
-
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void btnAgregarPermiso_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvSubmodulos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //AGREGAR PERMISO
-            GridRow aux = (GridRow)dgvSubmodulos.PrimaryGrid.ActiveRow;
-
-            if (aux != null)
-            {
-                string idSubmodulo = ((GridCell)(((GridRow)dgvSubmodulos.PrimaryGrid.ActiveRow)[0])).Value.ToString();
-                int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
-
-                int resultado = accesosusuariosda.GuardarPermisoNuevo(idSubmodulo, idUsuario);
-
-                if (resultado == 0)
+            int fila;
+            int resultado=0;
+            vistaSubModulo.ClearColumnsFilter();
+            for (fila = 0; fila < vistaSubModulo.RowCount; fila++)
+                if (vistaSubModulo.IsRowSelected(fila) == true)
                 {
-                    MessageBox.Show("OCURRIO UN ERROR");
-                }
-                else
-                {
-                    //REFRESH DE TABLAS
-                    MessageBox.Show("PERMISO GUARDADO CORRECAMENTE");
-                    button3.PerformClick();
+                    string idSubmodulo = vistaSubModulo.GetRowCellValue(fila, "idSubmodulo").ToString();
+                    int i = cmbUsuarios.SelectedIndex;
+                    int idUsuario = Convert.ToInt32(tablaUsuario.Rows[i]["idUsuario"].ToString());
+                    //int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+                    resultado = accesosusuariosda.GuardarPermisoNuevo(idSubmodulo, idUsuario);
+                    //break;
                 }
 
-            }
+            if (resultado == 0)
+                MessageBox.Show("Ocurrió un error en el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            {
-                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+                MessageBox.Show("Proceso realizado exitosamente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK);
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //ELIMINAR PERMISO
-            GridRow aux = (GridRow)dgvPermisosUsuario.PrimaryGrid.ActiveRow;
-
-            if (aux != null)
-            {
-                string idSubmodulo = ((GridCell)(((GridRow)dgvPermisosUsuario.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
-
-                int resultado = accesosusuariosda.EliminarPermiso(idSubmodulo, idUsuario);
-
-                if (resultado == 0)
-                {
-                    MessageBox.Show("OCURRIO UN ERROR");
-                }
-                else
-                {
-                    //REFRESH DE TABLAS
-                    MessageBox.Show("PERMISO ELIMINADO CORRECAMENTE");
-                    button3.PerformClick();
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("DEBE SELECCIONAR UN PERMISO", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-
-            //AQUI MOSTRAR LOS POSIBLES PERMISOS A DAR
-            SubmoduloDA = new SubmoduloDA();
-            Submodulo = new Submodulo();
-
-            int idUsuario, idModuloP;
-
-            idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
-            idModuloP = Convert.ToInt32(cmbModulosPrincipales.SelectedValue);
-
-
-
-            tablaSubmodulos = SubmoduloDA.ListarSubmodulosPermisos(idModuloP, idUsuario);
-            dgvSubmodulos.PrimaryGrid.AutoGenerateColumns = false;
-            dgvSubmodulos.PrimaryGrid.DataSource = tablaSubmodulos;
-
-            //AQUI MOSTRAR LOS PERMISOS QUE YA TIENE EL USUARIO
-            tablaPermisosUsuario = SubmoduloDA.ListarPermisosUsuario(idModuloP, idUsuario);
-            dgvPermisosUsuario.PrimaryGrid.AutoGenerateColumns = true;
-            dgvPermisosUsuario.PrimaryGrid.DataSource = tablaPermisosUsuario;
+            actualizarTablas();
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnAgregarPermisos_Click(object sender, EventArgs e)
         {
             int filas = tablaSubmodulos.Rows.Count;
-            int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+            int i = cmbUsuarios.SelectedIndex;
+            int idUsuario = Convert.ToInt32(tablaUsuario.Rows[i]["idUsuario"].ToString());
+            //int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 
-            for (int i = 0; i < filas; i++)
+            for (i = 0; i < filas; i++)
             {
-                string idSubmodulo = ((GridCell)(dgvSubmodulos.PrimaryGrid.GetCell(i,0))).Value.ToString();
+                //string idSubmodulo = ((GridCell)(dgvSubmodulos.PrimaryGrid.GetCell(i, 0))).Value.ToString();
+                string idSubmodulo = vistaSubModulo.GetRowCellValue(i, "idSubmodulo").ToString();
                 int resultado = accesosusuariosda.GuardarPermisoNuevo(idSubmodulo, idUsuario);
             }
 
-            MessageBox.Show("PERMISOS GUARDADOS CORRECAMENTE");
-            button3.PerformClick();
+            MessageBox.Show("Proceso realizado exitosamente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK);
+
+            actualizarTablas();
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnQuitarPermiso_Click(object sender, EventArgs e)
+        {
+            int fila;
+            vistaPermisos.ClearColumnsFilter();
+            int resultado = 0;
+
+            for (fila = 0; fila < vistaPermisos.RowCount; fila++)
+                if (vistaPermisos.IsRowSelected(fila) == true)
+                {
+                    string idSubmodulo = vistaPermisos.GetRowCellValue(fila, "idSubmodulo").ToString();
+                    int i = cmbUsuarios.SelectedIndex;
+                    int idUsuario = Convert.ToInt32(tablaUsuario.Rows[i]["idUsuario"].ToString());
+                    //int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+                    resultado = accesosusuariosda.EliminarPermiso(idSubmodulo, idUsuario);
+                    //break;
+                }
+
+            if (resultado == 0)
+                MessageBox.Show("Ocurrió un error en el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Proceso realizado exitosamente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK);
+
+            actualizarTablas();
+        }
+
+        private void btnQuitarPermisos_Click(object sender, EventArgs e)
         {
             int filas = tablaPermisosUsuario.Rows.Count;
-            int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+            int i = cmbUsuarios.SelectedIndex;
+            int idUsuario = Convert.ToInt32(tablaUsuario.Rows[i]["idUsuario"].ToString());
+            //idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 
-            for (int i = 0; i < filas; i++)
+            for (i = 0; i < filas; i++)
             {
-                string idSubmodulo = ((GridCell)(dgvPermisosUsuario.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                //string idSubmodulo = ((GridCell)(dgvPermisosUsuario.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                string idSubmodulo = vistaPermisos.GetRowCellValue(i, "idSubmodulo").ToString();
                 int resultado = accesosusuariosda.EliminarPermiso(idSubmodulo, idUsuario);
             }
 
-            MessageBox.Show("PERMISOS ELIMINADOS CORRECAMENTE");
-            button3.PerformClick();
+            MessageBox.Show("Proceso realizado exitosamente", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK);
+
+            actualizarTablas();
+        }
+
+        private void actualizarTablas()
+        {
+            int idUsuario, idModuloP;
+
+            int i = cmbUsuarios.SelectedIndex;
+            int j = cmbModulosPrincipales.SelectedIndex;
+            if (i!=-1 && j != -1)
+            {
+                idUsuario = Convert.ToInt32(tablaUsuario.Rows[i]["idUsuario"].ToString());
+                idModuloP = Convert.ToInt32(tablaModulosPrincipales.Rows[j]["idModuloP"].ToString());
+
+                tablaSubmodulos = SubmoduloDA.ListarSubmodulosPermisos(idModuloP, idUsuario);
+                dgvSubModulo.DataSource = tablaSubmodulos;
+
+                tablaPermisosUsuario = SubmoduloDA.ListarPermisosUsuario(idModuloP, idUsuario);
+                dgvPermisos.DataSource = tablaPermisosUsuario;
+
+            }
+
         }
 
         private void cmbModulosPrincipales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button3.PerformClick();
+            int idModuloP = cmbModulosPrincipales.SelectedIndex;
+            if (idModuloP!=-1)
+                actualizarTablas();
         }
 
-        private void dgvPermisosUsuario_Click(object sender, EventArgs e)
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmConfiguracionPermisos_Load(object sender, EventArgs e)
-        {
-            button3.PerformClick();
+            int idUsuario = cmbUsuarios.SelectedIndex;
+            if (idUsuario != -1)
+                actualizarTablas();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         int posY = 0;
         int posX = 0;
+
         private void pnlPermisos_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -246,9 +219,5 @@ namespace Apolo
             }
         }
 
-        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            button3.PerformClick();
-        }
     }
 }

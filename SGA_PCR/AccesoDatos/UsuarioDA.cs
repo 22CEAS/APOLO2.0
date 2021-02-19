@@ -21,7 +21,38 @@ namespace AccesoDatos
             objManager = new DBManager();
         }
 
-        
+        public DataTable ListUsers()
+        {
+            string sql = @"SELECT
+                        u.idUsuario AS 'IdUsuario',
+	                    u.dni AS 'Dni',
+	                    u.nombre AS 'Nombre',
+	                    u.usuario AS 'User',
+	                    u.claveUsuario AS 'ClaveUsuario',
+	                    u.perfil AS 'IdPerfil',
+	                    p.descripcion AS 'NombrePerfil',
+	                    u.email AS 'Email',
+	                    u.estado AS 'Estado',
+	                    e.nombreEstado AS 'NombreEstado',
+	                    u.fec_ins AS 'fec_ins',
+	                    u.fec_mod AS 'fec_mod',
+	                    u.usuario_ins AS 'usuario_ins',
+	                    u.usuario_mod AS 'usuario_mod',
+	                    u.idArea AS 'IdArea',
+	                    a.descripcionArea AS 'NombreArea'
+                    FROM
+                        usuario u
+                        INNER JOIN areas a ON u.idArea = a.idArea
+
+                        INNER JOIN perfil p ON u.perfil = p.idPerfil
+
+                        INNER JOIN estados e ON u.estado = e.idEstado
+                    ORDER BY
+
+                        nombre; ";
+            return objManager.MostrarTablaDatos(sql);
+        }
+
         public DataTable ListarUsuario()
         {
             return objManager.MostrarTablaDatos("SELECT u.idUsuario as 'idUsuario',u.dni as 'dni',u.nombre as 'nombre',u.usuario as 'usuario',u.claveUsuario as 'claveUsuario', u.perfil as 'perfil', p.descripcion as 'descripcionPerfil', u.email as 'email', u.estado as 'estado', e.nombreEstado as 'descripcionEstado', u.fec_ins as 'fec_ins', u.fec_mod as 'fec_mod', u.usuario_ins as 'usuario_ins', u.usuario_mod as 'usuario_mod', u.idArea as 'idArea', a.descripcionArea as 'descripcionArea' FROM usuario  u inner JOIN areas a on u.idArea = a.idArea inner JOIN perfil p on u.perfil = p.idPerfil inner JOIN estados e on u.estado = e.idEstado Order By nombre ;");

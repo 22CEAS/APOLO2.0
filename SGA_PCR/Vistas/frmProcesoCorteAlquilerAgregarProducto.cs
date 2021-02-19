@@ -62,6 +62,7 @@ namespace Apolo
                 auxiliar.fecFinContrato = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecFinContrato"].ToString());
                 auxiliar.FechaIniContratoAntiguo = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecIniContrato"].ToString());
                 auxiliar.FechaFinContratoAntiguo = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecFinContrato"].ToString());
+                auxiliar.NumFactura = tablaLaptops.Rows[rec]["numFactura"].ToString();
 
                 auxiliares.Add(auxiliar);
                 rec++;
@@ -96,12 +97,14 @@ namespace Apolo
                     detalle.FechaFinContrato = DateTime.Parse(vista.GetRowCellValue(i, "fecFinContrato").ToString());
                     detalle.FechaIniContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaIniContratoAntiguo").ToString());
                     detalle.FechaFinContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaFinContratoAntiguo").ToString());
+                    detalle.NumFactura = vista.GetRowCellValue(i, "NumFactura").ToString();
                     detalles.Add(detalle);
                     flag = true;
                 }
             }
             return flag;
         }
+
         public BindingList<CorteAlquiler> DETALLES { get => detalles; set => detalles = value; }
 
 
@@ -138,9 +141,5 @@ namespace Apolo
             }
         }
 
-        private void frmProcesoCorteAlquilerAgregarProducto_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

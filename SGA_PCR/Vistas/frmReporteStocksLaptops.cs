@@ -53,7 +53,7 @@ namespace Apolo
         private int[][] arregloLCApple;
 
 
-        private int GeneracionDesfasado = 6;
+        private int GeneracionDesfasado = 3;
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -105,7 +105,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(19, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(20, 1)));
         }
 
         
@@ -595,6 +595,9 @@ namespace Apolo
                     laptop.Licencias = null;
                     laptop.Discos = null;
                     laptop.Memorias = null;
+
+                    laptop.LicenciaWindows = tablaLaptops.Rows[rec]["VersionWindows"].ToString();
+                    laptop.LicenciaOffice = tablaLaptops.Rows[rec]["VersionOffice"].ToString();
 
                     //laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
 

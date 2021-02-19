@@ -29,38 +29,44 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfiguracionPermisos));
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.cmbModulosPrincipales = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregarPermiso = new System.Windows.Forms.Button();
+            this.btnQuitarPermiso = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvSubmodulos = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.dgvPermisosUsuario = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnAgregarPermisos = new System.Windows.Forms.Button();
+            this.btnQuitarPermisos = new System.Windows.Forms.Button();
             this.submoduloDABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlPermisos = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblPermisos = new System.Windows.Forms.Label();
+            this.dgvSubModulo = new DevExpress.XtraGrid.GridControl();
+            this.vistaSubModulo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.idSubmodulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.descripcionSubmodulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idModuloP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dgvPermisos = new DevExpress.XtraGrid.GridControl();
+            this.vistaPermisos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.submoduloDABindingSource)).BeginInit();
             this.pnlPermisos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubModulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaSubModulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaPermisos)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbUsuarios
             // 
             this.cmbUsuarios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbUsuarios.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUsuarios.ForeColor = System.Drawing.Color.Black;
             this.cmbUsuarios.FormattingEnabled = true;
@@ -72,6 +78,8 @@
             // 
             // cmbModulosPrincipales
             // 
+            this.cmbModulosPrincipales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbModulosPrincipales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModulosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModulosPrincipales.ForeColor = System.Drawing.Color.Black;
             this.cmbModulosPrincipales.FormattingEnabled = true;
@@ -103,29 +111,29 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "MODULO";
             // 
-            // button1
+            // btnAgregarPermiso
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(438, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 41);
-            this.button1.TabIndex = 10;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregarPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPermiso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAgregarPermiso.Location = new System.Drawing.Point(438, 224);
+            this.btnAgregarPermiso.Name = "btnAgregarPermiso";
+            this.btnAgregarPermiso.Size = new System.Drawing.Size(53, 41);
+            this.btnAgregarPermiso.TabIndex = 10;
+            this.btnAgregarPermiso.Text = ">";
+            this.btnAgregarPermiso.UseVisualStyleBackColor = true;
+            this.btnAgregarPermiso.Click += new System.EventHandler(this.btnAgregarPermiso_Click);
             // 
-            // button2
+            // btnQuitarPermiso
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(438, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 41);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnQuitarPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarPermiso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnQuitarPermiso.Location = new System.Drawing.Point(438, 296);
+            this.btnQuitarPermiso.Name = "btnQuitarPermiso";
+            this.btnQuitarPermiso.Size = new System.Drawing.Size(53, 41);
+            this.btnQuitarPermiso.TabIndex = 11;
+            this.btnQuitarPermiso.Text = "<";
+            this.btnQuitarPermiso.UseVisualStyleBackColor = true;
+            this.btnQuitarPermiso.Click += new System.EventHandler(this.btnQuitarPermiso_Click);
             // 
             // label3
             // 
@@ -149,127 +157,29 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "PERMISOS DEL USUARIO";
             // 
-            // dgvSubmodulos
+            // btnAgregarPermisos
             // 
-            this.dgvSubmodulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvSubmodulos.BackColor = System.Drawing.Color.Silver;
-            this.dgvSubmodulos.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvSubmodulos.ForeColor = System.Drawing.Color.Black;
-            this.dgvSubmodulos.Location = new System.Drawing.Point(73, 157);
-            this.dgvSubmodulos.Name = "dgvSubmodulos";
-            this.dgvSubmodulos.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvSubmodulos.PrimaryGrid.AllowRowResize = true;
-            this.dgvSubmodulos.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "idSubmodulo";
-            gridColumn1.Visible = false;
-            gridColumn2.HeaderText = "Descripcion Sub Modulo";
-            gridColumn2.Name = "descripcionSubmodulo";
-            gridColumn2.Width = 300;
-            gridColumn3.Name = "idModuloP";
-            gridColumn3.Visible = false;
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvSubmodulos.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvSubmodulos.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvSubmodulos.PrimaryGrid.EnableFiltering = true;
-            this.dgvSubmodulos.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvSubmodulos.PrimaryGrid.Filter.Visible = true;
-            this.dgvSubmodulos.PrimaryGrid.MultiSelect = false;
-            this.dgvSubmodulos.PrimaryGrid.NoRowsText = "NO HAY PERMISOS DISPONIBLES";
-            this.dgvSubmodulos.PrimaryGrid.NullString = "<<null>>";
-            this.dgvSubmodulos.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvSubmodulos.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvSubmodulos.Size = new System.Drawing.Size(317, 419);
-            this.dgvSubmodulos.TabIndex = 93;
-            this.dgvSubmodulos.Text = "Tabla Memoria";
-            this.dgvSubmodulos.Click += new System.EventHandler(this.dgvSubmodulos_Click);
+            this.btnAgregarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPermisos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAgregarPermisos.Location = new System.Drawing.Point(438, 403);
+            this.btnAgregarPermisos.Name = "btnAgregarPermisos";
+            this.btnAgregarPermisos.Size = new System.Drawing.Size(53, 41);
+            this.btnAgregarPermisos.TabIndex = 152;
+            this.btnAgregarPermisos.Text = ">>";
+            this.btnAgregarPermisos.UseVisualStyleBackColor = true;
+            this.btnAgregarPermisos.Click += new System.EventHandler(this.btnAgregarPermisos_Click);
             // 
-            // dgvPermisosUsuario
+            // btnQuitarPermisos
             // 
-            this.dgvPermisosUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPermisosUsuario.BackColor = System.Drawing.Color.Silver;
-            this.dgvPermisosUsuario.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvPermisosUsuario.ForeColor = System.Drawing.Color.Black;
-            this.dgvPermisosUsuario.Location = new System.Drawing.Point(544, 157);
-            this.dgvPermisosUsuario.Name = "dgvPermisosUsuario";
-            this.dgvPermisosUsuario.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvPermisosUsuario.PrimaryGrid.AllowRowResize = true;
-            this.dgvPermisosUsuario.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn4.Name = "idUsuario";
-            gridColumn4.Visible = false;
-            gridColumn5.Name = "idSubmodulo";
-            gridColumn5.Visible = false;
-            gridColumn6.HeaderText = "Descripcion Sub Modulo";
-            gridColumn6.Name = "descripcionSubmodulo";
-            gridColumn6.Width = 300;
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvPermisosUsuario.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvPermisosUsuario.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvPermisosUsuario.PrimaryGrid.EnableFiltering = true;
-            this.dgvPermisosUsuario.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvPermisosUsuario.PrimaryGrid.Filter.Visible = true;
-            this.dgvPermisosUsuario.PrimaryGrid.MultiSelect = false;
-            this.dgvPermisosUsuario.PrimaryGrid.NoRowsText = "NO HAY PERMISOS DISPONIBLES";
-            this.dgvPermisosUsuario.PrimaryGrid.NullString = "<<null>>";
-            this.dgvPermisosUsuario.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvPermisosUsuario.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvPermisosUsuario.Size = new System.Drawing.Size(316, 419);
-            this.dgvPermisosUsuario.TabIndex = 95;
-            this.dgvPermisosUsuario.Text = "Tabla Memoria";
-            this.dgvPermisosUsuario.Click += new System.EventHandler(this.dgvPermisosUsuario_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(902, 533);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(17, 16);
-            this.button3.TabIndex = 151;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(438, 403);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 41);
-            this.button4.TabIndex = 152;
-            this.button4.Text = ">>";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button5.Location = new System.Drawing.Point(438, 472);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 41);
-            this.button5.TabIndex = 153;
-            this.button5.Text = "<<";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnQuitarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarPermisos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnQuitarPermisos.Location = new System.Drawing.Point(438, 472);
+            this.btnQuitarPermisos.Name = "btnQuitarPermisos";
+            this.btnQuitarPermisos.Size = new System.Drawing.Size(53, 41);
+            this.btnQuitarPermisos.TabIndex = 153;
+            this.btnQuitarPermisos.Text = "<<";
+            this.btnQuitarPermisos.UseVisualStyleBackColor = true;
+            this.btnQuitarPermisos.Click += new System.EventHandler(this.btnQuitarPermisos_Click);
             // 
             // submoduloDABindingSource
             // 
@@ -280,7 +190,7 @@
             this.pnlPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlPermisos.Controls.Add(this.btnCerrar);
             this.pnlPermisos.Controls.Add(this.lblPermisos);
-            this.pnlPermisos.Location = new System.Drawing.Point(2, 2);
+            this.pnlPermisos.Location = new System.Drawing.Point(2, 1);
             this.pnlPermisos.Name = "pnlPermisos";
             this.pnlPermisos.Size = new System.Drawing.Size(948, 43);
             this.pnlPermisos.TabIndex = 154;
@@ -317,22 +227,147 @@
             this.lblPermisos.Text = "CONFIGURACION PERMISOS";
             this.lblPermisos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPermisos_MouseMove);
             // 
+            // dgvSubModulo
+            // 
+            this.dgvSubModulo.Location = new System.Drawing.Point(73, 173);
+            this.dgvSubModulo.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvSubModulo.MainView = this.vistaSubModulo;
+            this.dgvSubModulo.Name = "dgvSubModulo";
+            this.dgvSubModulo.Size = new System.Drawing.Size(317, 375);
+            this.dgvSubModulo.TabIndex = 233;
+            this.dgvSubModulo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaSubModulo});
+            // 
+            // vistaSubModulo
+            // 
+            this.vistaSubModulo.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaSubModulo.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaSubModulo.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaSubModulo.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaSubModulo.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaSubModulo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaSubModulo.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaSubModulo.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaSubModulo.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaSubModulo.Appearance.Row.Options.UseFont = true;
+            this.vistaSubModulo.Appearance.Row.Options.UseForeColor = true;
+            this.vistaSubModulo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.idSubmodulo,
+            this.descripcionSubmodulo,
+            this.idModuloP});
+            this.vistaSubModulo.GridControl = this.dgvSubModulo;
+            this.vistaSubModulo.Name = "vistaSubModulo";
+            this.vistaSubModulo.OptionsBehavior.Editable = false;
+            this.vistaSubModulo.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaSubModulo.OptionsMenu.EnableColumnMenu = false;
+            this.vistaSubModulo.OptionsView.ColumnAutoWidth = false;
+            this.vistaSubModulo.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaSubModulo.OptionsView.ShowAutoFilterRow = true;
+            this.vistaSubModulo.OptionsView.ShowGroupPanel = false;
+            // 
+            // idSubmodulo
+            // 
+            this.idSubmodulo.Caption = "IdSubmodulo";
+            this.idSubmodulo.FieldName = "idSubmodulo";
+            this.idSubmodulo.Name = "idSubmodulo";
+            this.idSubmodulo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // descripcionSubmodulo
+            // 
+            this.descripcionSubmodulo.Caption = "Sub Módulo";
+            this.descripcionSubmodulo.FieldName = "descripcionSubmodulo";
+            this.descripcionSubmodulo.MinWidth = 40;
+            this.descripcionSubmodulo.Name = "descripcionSubmodulo";
+            this.descripcionSubmodulo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.descripcionSubmodulo.Visible = true;
+            this.descripcionSubmodulo.VisibleIndex = 0;
+            this.descripcionSubmodulo.Width = 285;
+            // 
+            // idModuloP
+            // 
+            this.idModuloP.Caption = "IdModulo";
+            this.idModuloP.FieldName = "idModuloP";
+            this.idModuloP.Name = "idModuloP";
+            this.idModuloP.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // dgvPermisos
+            // 
+            this.dgvPermisos.Location = new System.Drawing.Point(543, 173);
+            this.dgvPermisos.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dgvPermisos.MainView = this.vistaPermisos;
+            this.dgvPermisos.Name = "dgvPermisos";
+            this.dgvPermisos.Size = new System.Drawing.Size(317, 375);
+            this.dgvPermisos.TabIndex = 234;
+            this.dgvPermisos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vistaPermisos});
+            // 
+            // vistaPermisos
+            // 
+            this.vistaPermisos.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaPermisos.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vistaPermisos.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vistaPermisos.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vistaPermisos.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vistaPermisos.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vistaPermisos.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vistaPermisos.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vistaPermisos.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vistaPermisos.Appearance.Row.Options.UseFont = true;
+            this.vistaPermisos.Appearance.Row.Options.UseForeColor = true;
+            this.vistaPermisos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.vistaPermisos.GridControl = this.dgvPermisos;
+            this.vistaPermisos.Name = "vistaPermisos";
+            this.vistaPermisos.OptionsBehavior.Editable = false;
+            this.vistaPermisos.OptionsCustomization.AllowColumnMoving = false;
+            this.vistaPermisos.OptionsMenu.EnableColumnMenu = false;
+            this.vistaPermisos.OptionsView.ColumnAutoWidth = false;
+            this.vistaPermisos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.vistaPermisos.OptionsView.ShowAutoFilterRow = true;
+            this.vistaPermisos.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "IdSubmodulo";
+            this.gridColumn1.FieldName = "idSubmodulo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Sub Módulo";
+            this.gridColumn2.FieldName = "descripcionSubmodulo";
+            this.gridColumn2.MinWidth = 40;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 285;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "IdModulo";
+            this.gridColumn3.FieldName = "idModuloP";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
             // frmConfiguracionPermisos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(946, 588);
+            this.Controls.Add(this.dgvPermisos);
+            this.Controls.Add(this.dgvSubModulo);
             this.Controls.Add(this.pnlPermisos);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dgvPermisosUsuario);
-            this.Controls.Add(this.dgvSubmodulos);
+            this.Controls.Add(this.btnQuitarPermisos);
+            this.Controls.Add(this.btnAgregarPermisos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnQuitarPermiso);
+            this.Controls.Add(this.btnAgregarPermiso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbModulosPrincipales);
@@ -347,10 +382,13 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PERMISOS";
-            this.Load += new System.EventHandler(this.frmConfiguracionPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.submoduloDABindingSource)).EndInit();
             this.pnlPermisos.ResumeLayout(false);
             this.pnlPermisos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubModulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaSubModulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaPermisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,18 +400,25 @@
         private System.Windows.Forms.ComboBox cmbModulosPrincipales;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregarPermiso;
+        private System.Windows.Forms.Button btnQuitarPermiso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource submoduloDABindingSource;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvSubmodulos;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvPermisosUsuario;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAgregarPermisos;
+        private System.Windows.Forms.Button btnQuitarPermisos;
         private System.Windows.Forms.Panel pnlPermisos;
         private System.Windows.Forms.Label lblPermisos;
         private System.Windows.Forms.Button btnCerrar;
+        private DevExpress.XtraGrid.GridControl dgvSubModulo;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaSubModulo;
+        private DevExpress.XtraGrid.Columns.GridColumn idSubmodulo;
+        private DevExpress.XtraGrid.Columns.GridColumn descripcionSubmodulo;
+        private DevExpress.XtraGrid.Columns.GridColumn idModuloP;
+        private DevExpress.XtraGrid.GridControl dgvPermisos;
+        private DevExpress.XtraGrid.Views.Grid.GridView vistaPermisos;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

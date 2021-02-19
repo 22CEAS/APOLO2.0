@@ -21,6 +21,7 @@ namespace Modelo
         private DateTime fechaIniContratoAntiguo;
         private DateTime fechaFinContratoAntiguo;
         private string observacion;
+        private string _numFactura;
 
         private bool seleccion;
         private string codigo;
@@ -58,6 +59,6 @@ namespace Modelo
         public DateTime fecIniContrato { get => _fecIniContrato; set => _fecIniContrato = value; }
         public DateTime fecFinContrato { get => _fecFinContrato; set => _fecFinContrato = value; }
         public string RucCliente1 { get => RucCliente; set => RucCliente = value; }
-   
+        public string NumFactura { get => _numFactura; set => _numFactura = value; }
     }
 }
