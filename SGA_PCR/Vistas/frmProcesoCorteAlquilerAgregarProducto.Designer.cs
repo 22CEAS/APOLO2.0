@@ -56,8 +56,8 @@
             this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -74,7 +74,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(142, 12);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(144, 12);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 145;
@@ -94,7 +94,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(20, 12);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(22, 12);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 144;
@@ -114,7 +114,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionar.Location = new System.Drawing.Point(767, 414);
+            this.btnSeleccionar.Location = new System.Drawing.Point(609, 414);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
             this.btnSeleccionar.TabIndex = 142;
@@ -130,7 +130,7 @@
             this.dgvRenovacionProductos.Name = "dgvRenovacionProductos";
             this.dgvRenovacionProductos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.dgvRenovacionProductos.Size = new System.Drawing.Size(874, 321);
+            this.dgvRenovacionProductos.Size = new System.Drawing.Size(698, 321);
             this.dgvRenovacionProductos.TabIndex = 140;
             this.dgvRenovacionProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -152,6 +152,8 @@
             this.Seleccionar,
             this.Codigo,
             this.CodigoAntiguo,
+            this.fecIniContrato,
+            this.fecFinContrato,
             this.Marca,
             this.Modelo,
             this.Pantalla,
@@ -159,8 +161,6 @@
             this.Generacion,
             this.Video,
             this.Capacidad,
-            this.fecIniContrato,
-            this.fecFinContrato,
             this.IdLC,
             this.IdVideo,
             this.IdProcesador,
@@ -173,10 +173,15 @@
             this.NumFactura});
             this.vista.GridControl = this.dgvRenovacionProductos;
             this.vista.Name = "vista";
+            this.vista.OptionsCustomization.AllowColumnMoving = false;
+            this.vista.OptionsCustomization.AllowGroup = false;
+            this.vista.OptionsDetail.EnableMasterViewMode = false;
+            this.vista.OptionsMenu.EnableColumnMenu = false;
             this.vista.OptionsSelection.MultiSelect = true;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.OptionsView.ShowGroupPanel = false;
             // 
             // Seleccionar
             // 
@@ -228,8 +233,6 @@
             this.Marca.Name = "Marca";
             this.Marca.OptionsColumn.AllowEdit = false;
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 3;
             this.Marca.Width = 100;
             // 
             // Modelo
@@ -239,8 +242,6 @@
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.OptionsColumn.AllowEdit = false;
-            this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 4;
             this.Modelo.Width = 100;
             // 
             // Pantalla
@@ -294,7 +295,7 @@
             this.fecIniContrato.OptionsColumn.AllowEdit = false;
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 5;
+            this.fecIniContrato.VisibleIndex = 3;
             this.fecIniContrato.Width = 140;
             // 
             // fecFinContrato
@@ -306,7 +307,7 @@
             this.fecFinContrato.OptionsColumn.AllowEdit = false;
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 6;
+            this.fecFinContrato.VisibleIndex = 4;
             this.fecFinContrato.Width = 140;
             // 
             // IdLC
@@ -367,6 +368,13 @@
             this.FechaFinContratoAntiguo.Name = "FechaFinContratoAntiguo";
             this.FechaFinContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             // 
+            // NumFactura
+            // 
+            this.NumFactura.Caption = "NumFactura";
+            this.NumFactura.FieldName = "NumFactura";
+            this.NumFactura.Name = "NumFactura";
+            this.NumFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -377,7 +385,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(669, 416);
+            this.btnCancelar.Location = new System.Drawing.Point(511, 416);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 65);
             this.btnCancelar.TabIndex = 138;
@@ -386,19 +394,12 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // NumFactura
-            // 
-            this.NumFactura.Caption = "NumFactura";
-            this.NumFactura.FieldName = "NumFactura";
-            this.NumFactura.Name = "NumFactura";
-            this.NumFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            // 
             // frmProcesoCorteAlquilerAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(916, 493);
+            this.ClientSize = new System.Drawing.Size(742, 493);
             this.Controls.Add(this.btnDeseleccionarFilas);
             this.Controls.Add(this.btnSeleccionarFilas);
             this.Controls.Add(this.btnSeleccionar);

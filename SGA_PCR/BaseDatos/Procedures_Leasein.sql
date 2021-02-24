@@ -4231,3 +4231,62 @@ $$
 DELIMITER ;
 
 
+--======================CORTE ALQUILER=======================================	
+
+
+DROP PROCEDURE IF EXISTS `insert_corte_alquiler`;
+DELIMITER $$
+CREATE DEFINER=`root`@`%` PROCEDURE `insert_corte_alquiler`(
+		IN _idSalida INT,
+		IN _idSalidaDet INT,
+		IN _idTipoEquipo INT,
+		IN _idEquipo INT,
+		IN _idCliente INT,
+		IN _guiaSalida NVARCHAR(255),
+		IN _fecIniContratoAnt DATE,
+		IN _fecFinContratoAnt DATE,
+		IN _fecIniContratoNew DATE,
+		IN _fecFinContratoNew DATE,
+		IN _documentoReferencia NVARCHAR(500),
+		IN _motivoCorte NVARCHAR(255),
+		IN _fecRecojo DATE,
+		IN _direccionRecojo NVARCHAR(1000),
+		IN _personaContacto NVARCHAR(500),
+		IN _telefono NVARCHAR(255),
+		IN _observacion NVARCHAR(1000),
+		IN _usuario_ins NVARCHAR(100),
+		OUT _idCorteAlquiler INT
+)
+BEGIN
+	SET _idCorteAlquiler=(SELECT IFNULL( MAX(idCorteAlquiler) , 0 )+1 FROM corte_alquiler);	
+	INSERT INTO corte_alquiler(idCorteAlquiler,idSalida,idSalidaDet,idTipoEquipo,idEquipo,idCliente,guiaSalida,fecIniContratoAnt,fecFinContratoAnt,fecIniContratoNew,fecFinContratoNew,documentoReferencia,motivoCorte,fecRecojo,direccionRecojo,personaContacto,telefono,observacion,estado,usuario_ins) 
+	VALUES (_idCorteAlquiler,_idSalida,_idSalidaDet,_idTipoEquipo,_idEquipo,_idCliente,_guiaSalida,_fecIniContratoAnt,_fecFinContratoAnt,_fecIniContratoNew,_fecFinContratoNew,_documentoReferencia,_motivoCorte,_fecRecojo,_direccionRecojo,_personaContacto,_telefono,_observacion,1,_usuario_ins);
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `cancel_corte_alquiler`;
+DELIMITER $$
+CREATE DEFINER=`root`@`%` PROCEDURE `cancel_corte_alquiler`(
+		IN _idCorteAlquiler INT,
+		IN _estado TINYINT,
+		IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE corte_alquiler 
+	SET estado=_estado,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod
+	WHERE idCorteAlquiler=_idCorteAlquiler;
+END
+$$
+DELIMITER ;
+
+ALTER TABLE `bd_leasein`.`salida_det` 
+ADD COLUMN `motivoCorte` varchar(255) NULL AFTER `corteAlquiler`,
+ADD COLUMN `fecRecojo` date NULL AFTER `motivoCorte`,
+ADD COLUMN `direccionRecojo` varchar(1000) NULL AFTER `fecRecojo`,
+ADD COLUMN `personaContacto` varchar(500) NULL AFTER `direccionRecojo`,
+ADD COLUMN `telefono` varchar(255) NULL AFTER `personaContacto`;

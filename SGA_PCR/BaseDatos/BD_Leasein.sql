@@ -1039,3 +1039,37 @@ CREATE TABLE cliente_contacto(
 		FOREIGN KEY (idCliente)
     REFERENCES cliente(idCliente)
 )ENGINE=INNODB;
+
+
+--======================CORTE ALQUILER=======================================	
+
+DROP TABLE IF EXISTS `corte_alquiler`;
+CREATE TABLE corte_alquiler(
+		idCorteAlquiler INT NOT NULL PRIMARY KEY,
+		idSalida INT NOT NULL,
+		idSalidaDet INT NOT NULL,
+		idTipoEquipo INT NOT NULL,
+		idEquipo INT NOT NULL,
+		idCliente INT NOT NULL,
+		guiaSalida NVARCHAR(255),
+		fecIniContratoAnt DATE,
+		fecFinContratoAnt DATE,
+		fecIniContratoNew DATE,
+		fecFinContratoNew DATE,
+		documentoReferencia NVARCHAR(500),
+		motivoCorte NVARCHAR(255),
+		fecRecojo DATE,
+		direccionRecojo NVARCHAR(1000),
+		personaContacto NVARCHAR(500),
+		telefono NVARCHAR(255),
+		observacion NVARCHAR(1000),
+		estado TINYINT NOT NULL,
+		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+		usuario_ins NVARCHAR(100),
+		usuario_mod NVARCHAR(100),
+		FOREIGN KEY (idCliente)
+    REFERENCES cliente(idCliente),
+		FOREIGN KEY (idSalidaDet)
+    REFERENCES salida_det(idSalidaDet)
+)ENGINE=INNODB;

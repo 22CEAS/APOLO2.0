@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoCorteAlquiler));
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -40,22 +41,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.pnlCA = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEquiposSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.MotivoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PersonaContacto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DireccionRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.pnlCA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBorrar
@@ -213,6 +223,20 @@
             this.pnlCA.TabIndex = 193;
             this.pnlCA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCA_MouseMove);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(647, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 27);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 232;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -227,11 +251,13 @@
             // 
             // dgvEquiposSeleccionados
             // 
-            this.dgvEquiposSeleccionados.Location = new System.Drawing.Point(21, 182);
+            this.dgvEquiposSeleccionados.Location = new System.Drawing.Point(38, 191);
             this.dgvEquiposSeleccionados.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvEquiposSeleccionados.MainView = this.vistaEquipos;
             this.dgvEquiposSeleccionados.Name = "dgvEquiposSeleccionados";
-            this.dgvEquiposSeleccionados.Size = new System.Drawing.Size(559, 294);
+            this.dgvEquiposSeleccionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1});
+            this.dgvEquiposSeleccionados.Size = new System.Drawing.Size(512, 294);
             this.dgvEquiposSeleccionados.TabIndex = 231;
             this.dgvEquiposSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaEquipos});
@@ -251,11 +277,16 @@
             this.vistaEquipos.Appearance.Row.Options.UseForeColor = true;
             this.vistaEquipos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.CodigoEquipo,
-            this.MarcaLC,
-            this.ModeloLC,
             this.NumFactura,
             this.FechaIniContrato,
             this.FechaFinContrato,
+            this.MotivoCorte,
+            this.PersonaContacto,
+            this.DireccionRecojo,
+            this.Telefono,
+            this.FechaRecojo,
+            this.MarcaLC,
+            this.ModeloLC,
             this.IdLC});
             this.vistaEquipos.GridControl = this.dgvEquiposSeleccionados;
             this.vistaEquipos.Name = "vistaEquipos";
@@ -270,6 +301,7 @@
             // 
             this.CodigoEquipo.Caption = "Código Equipo";
             this.CodigoEquipo.FieldName = "CodigoLC";
+            this.CodigoEquipo.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.CodigoEquipo.MinWidth = 40;
             this.CodigoEquipo.Name = "CodigoEquipo";
             this.CodigoEquipo.OptionsColumn.AllowEdit = false;
@@ -298,29 +330,6 @@
             this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ModeloLC.Width = 100;
             // 
-            // FechaIniContrato
-            // 
-            this.FechaIniContrato.Caption = "Fecha Inicio";
-            this.FechaIniContrato.FieldName = "FechaIniContrato";
-            this.FechaIniContrato.MinWidth = 40;
-            this.FechaIniContrato.Name = "FechaIniContrato";
-            this.FechaIniContrato.OptionsColumn.AllowEdit = false;
-            this.FechaIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.FechaIniContrato.Visible = true;
-            this.FechaIniContrato.VisibleIndex = 2;
-            this.FechaIniContrato.Width = 130;
-            // 
-            // FechaFinContrato
-            // 
-            this.FechaFinContrato.Caption = "Fecha Fin";
-            this.FechaFinContrato.FieldName = "FechaFinContrato";
-            this.FechaFinContrato.MinWidth = 40;
-            this.FechaFinContrato.Name = "FechaFinContrato";
-            this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 3;
-            this.FechaFinContrato.Width = 130;
-            // 
             // NumFactura
             // 
             this.NumFactura.Caption = "Número Factura";
@@ -333,6 +342,29 @@
             this.NumFactura.VisibleIndex = 1;
             this.NumFactura.Width = 130;
             // 
+            // FechaIniContrato
+            // 
+            this.FechaIniContrato.Caption = "Fecha Inicio Alquiler";
+            this.FechaIniContrato.FieldName = "FechaIniContrato";
+            this.FechaIniContrato.MinWidth = 40;
+            this.FechaIniContrato.Name = "FechaIniContrato";
+            this.FechaIniContrato.OptionsColumn.AllowEdit = false;
+            this.FechaIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaIniContrato.Visible = true;
+            this.FechaIniContrato.VisibleIndex = 2;
+            this.FechaIniContrato.Width = 130;
+            // 
+            // FechaFinContrato
+            // 
+            this.FechaFinContrato.Caption = "Fecha Fin Alquiler";
+            this.FechaFinContrato.FieldName = "FechaFinContrato";
+            this.FechaFinContrato.MinWidth = 40;
+            this.FechaFinContrato.Name = "FechaFinContrato";
+            this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaFinContrato.Visible = true;
+            this.FechaFinContrato.VisibleIndex = 3;
+            this.FechaFinContrato.Width = 130;
+            // 
             // IdLC
             // 
             this.IdLC.Caption = "IdLC";
@@ -340,19 +372,64 @@
             this.IdLC.Name = "IdLC";
             this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
-            // btnCerrar
+            // MotivoCorte
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(647, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 27);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 232;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.MotivoCorte.Caption = "Motivo Corte";
+            this.MotivoCorte.FieldName = "DescripcionMotivoCorte";
+            this.MotivoCorte.MinWidth = 40;
+            this.MotivoCorte.Name = "MotivoCorte";
+            this.MotivoCorte.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MotivoCorte.Visible = true;
+            this.MotivoCorte.VisibleIndex = 4;
+            this.MotivoCorte.Width = 140;
+            // 
+            // PersonaContacto
+            // 
+            this.PersonaContacto.Caption = "Persona Contacto";
+            this.PersonaContacto.FieldName = "PersonaContacto";
+            this.PersonaContacto.MinWidth = 40;
+            this.PersonaContacto.Name = "PersonaContacto";
+            this.PersonaContacto.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.PersonaContacto.Visible = true;
+            this.PersonaContacto.VisibleIndex = 5;
+            this.PersonaContacto.Width = 140;
+            // 
+            // DireccionRecojo
+            // 
+            this.DireccionRecojo.Caption = "Dirección Recojo";
+            this.DireccionRecojo.FieldName = "Direccion";
+            this.DireccionRecojo.MinWidth = 40;
+            this.DireccionRecojo.Name = "DireccionRecojo";
+            this.DireccionRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DireccionRecojo.Visible = true;
+            this.DireccionRecojo.VisibleIndex = 6;
+            this.DireccionRecojo.Width = 140;
+            // 
+            // Telefono
+            // 
+            this.Telefono.Caption = "Teléfono";
+            this.Telefono.FieldName = "Telefono";
+            this.Telefono.MinWidth = 40;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Telefono.Visible = true;
+            this.Telefono.VisibleIndex = 7;
+            this.Telefono.Width = 100;
+            // 
+            // FechaRecojo
+            // 
+            this.FechaRecojo.Caption = "Fecha Recojo";
+            this.FechaRecojo.FieldName = "FechaRecojo";
+            this.FechaRecojo.MinWidth = 40;
+            this.FechaRecojo.Name = "FechaRecojo";
+            this.FechaRecojo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaRecojo.Visible = true;
+            this.FechaRecojo.VisibleIndex = 8;
+            this.FechaRecojo.Width = 100;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // btnAgregarProducto
             // 
@@ -403,9 +480,11 @@
             this.Text = "Corte Alquiler";
             this.pnlCA.ResumeLayout(false);
             this.pnlCA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEquipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +515,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn IdLC;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnAgregarProducto;
+        private DevExpress.XtraGrid.Columns.GridColumn MotivoCorte;
+        private DevExpress.XtraGrid.Columns.GridColumn PersonaContacto;
+        private DevExpress.XtraGrid.Columns.GridColumn DireccionRecojo;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaRecojo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

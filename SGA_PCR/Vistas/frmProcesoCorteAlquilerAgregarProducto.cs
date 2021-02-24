@@ -97,6 +97,7 @@ namespace Apolo
                     detalle.FechaFinContrato = DateTime.Parse(vista.GetRowCellValue(i, "fecFinContrato").ToString());
                     detalle.FechaIniContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaIniContratoAntiguo").ToString());
                     detalle.FechaFinContratoAntiguo = DateTime.Parse(vista.GetRowCellValue(i, "FechaFinContratoAntiguo").ToString());
+                    detalle.FechaRecojo = DateTime.Parse(vista.GetRowCellValue(i, "fecFinContrato").ToString()).AddDays(1);
                     detalle.NumFactura = vista.GetRowCellValue(i, "NumFactura").ToString();
                     detalles.Add(detalle);
                     flag = true;

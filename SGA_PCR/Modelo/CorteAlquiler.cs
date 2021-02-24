@@ -31,11 +31,24 @@ namespace Modelo
         private DateTime _fecFinContrato;
 
         private string RucCliente;
+        private int idCliente;
+
+        private int idMotivoCorte;
+        private String descripcionMotivoCorte;
+        private string personaContacto;
+        private string direccion;
+        private string telefono;
+        private DateTime fechaRecojo;
+
 
 
         public CorteAlquiler()
         {
-
+            DescripcionMotivoCorte = "";
+            PersonaContacto = "";
+            Direccion = "";
+            Telefono = "";
+            Observacion = "";
         }
 
         public int IdSalidaDetalle { get => idSalidaDetalle; set => idSalidaDetalle = value; }
@@ -60,5 +73,13 @@ namespace Modelo
         public DateTime fecFinContrato { get => _fecFinContrato; set => _fecFinContrato = value; }
         public string RucCliente1 { get => RucCliente; set => RucCliente = value; }
         public string NumFactura { get => _numFactura; set => _numFactura = value; }
+
+        public int IdMotivoCorte { get => idMotivoCorte; set => idMotivoCorte = value; }
+        public string DescripcionMotivoCorte { get => descripcionMotivoCorte; set => descripcionMotivoCorte = value; }
+        public string PersonaContacto { get => personaContacto; set => personaContacto = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public DateTime FechaRecojo { get => fechaRecojo; set => fechaRecojo = value; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
     }
 }

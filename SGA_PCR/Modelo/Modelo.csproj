@@ -51,6 +51,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="ClienteContacto.cs" />
     <Compile Include="CorteAlquiler.cs" />
+    <Compile Include="CorteAlquilerMotivo.cs" />
     <Compile Include="Estados.cs" />
     <Compile Include="Impresora.cs" />
     <Compile Include="IngresoDetalleImpresora.cs" />

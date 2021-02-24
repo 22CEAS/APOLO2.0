@@ -106,3 +106,66 @@ END
 $$    
 
 DELIMITER ;
+
+
+--======================CORTE ALQUILER=======================================	
+
+
+DROP TRIGGER IF EXISTS `after_corte_alquiler_insert`;
+DELIMITER $$
+CREATE TRIGGER after_corte_alquiler_insert
+AFTER INSERT
+ON corte_alquiler FOR EACH ROW
+BEGIN
+	IF NEW.estado=1 THEN
+
+		SET @fechaModificacion=(SELECT now());
+		UPDATE salida_det 
+		SET fecFinContrato= NEW.fecFinContratoNew,
+		fec_mod=@fechaModificacion,
+		idSalidaTipo=4,
+		nombreSalidaTipo='CORTE ALQUILER',
+		documentoSalidaTipo= NEW.documentoReferencia,
+		usuario_mod= NEW.usuario_ins,
+		corteAlquiler= 1,
+		motivoCorte = NEW.motivoCorte,
+		fecRecojo = NEW.fecRecojo,
+		direccionRecojo = NEW.direccionRecojo,
+		personaContacto = NEW.personaContacto,
+		telefono = NEW.telefono
+		WHERE idSalidaDet=NEW.idSalidaDet;
+			
+    END IF;
+
+END
+$$    
+DELIMITER ;
+
+
+DROP TRIGGER IF EXISTS `after_corte_alquiler_cancel`;
+DELIMITER $$
+CREATE TRIGGER after_corte_alquiler_cancel
+AFTER UPDATE
+ON corte_alquiler FOR EACH ROW
+BEGIN
+    IF OLD.estado <> new.estado THEN
+	
+			SET @fechaModificacion=(SELECT now());
+			UPDATE salida_det 
+			SET fec_mod=@fechaModificacion,
+			idSalidaTipo=null,
+			nombreSalidaTipo=null,
+			documentoSalidaTipo= null,
+			usuario_mod= NEW.usuario_mod,
+			corteAlquiler= 0,
+			motivoCorte = null,
+			fecRecojo = null,
+			direccionRecojo = null,
+			personaContacto = null,
+			telefono = null
+			WHERE idSalidaDet=NEW.idSalidaDet;
+			
+    END IF;
+END
+$$
+DELIMITER ;

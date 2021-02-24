@@ -2785,7 +2785,7 @@ FROM
 WHERE
 	idSalidaDet IN ( SELECT idSalidaDet FROM salida_det WHERE corteAlquiler = 0 AND estado = 4 AND fueDevuelto = 1 );
 	
-	
+--Reporte de equipos que han sido devueltos sin tener corte de alquiler	
 SELECT
 	(Select c.nombre_razonSocial from cliente c where c.nroDocumento=d.rucDni) as cliente,
 	d.fechaDevolucion,
@@ -2807,3 +2807,16 @@ WHERE
 	d.corteAlquiler = 0 
 	AND d.estado = 4 
 	AND d.fueDevuelto = 1;
+	
+--Reporte de Ingresos	
+SELECT
+	i.facturaIngreso,
+	i.razonSocial,
+	i.fecIngresa,
+	lc.codigo,
+	lc.idModelo,
+	(Select modelo.nombre from modelo where modelo.idModelo=lc.idModelo) as Modelo,
+	(Select marca.nombre from marca inner join modelo on marca.idMarca=modelo.idMarca where modelo.idModelo=lc.idModelo) as Marca
+FROM
+	ingreso i
+	INNER JOIN laptop_cpu lc ON i.idIngreso = lc.idIngreso;	

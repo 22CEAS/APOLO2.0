@@ -33,7 +33,7 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * From vista_salida_tipo ;");
         }
 
-        public int InsertarRenovaciones(BindingList<CorteAlquiler> renovaciones, string usuario, string documentoReferencia)
+        public int InsertarRenovaciones(BindingList<CorteAlquiler> renovaciones, string usuario, string documentoReferencia, int IdCliente)
         {
             bool error = false;
 
@@ -103,6 +103,61 @@ namespace AccesoDatos
                     return 0;
                 }
 
+
+
+                parametrosEntrada = new MySqlParameter[19];
+                parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+                parametrosEntrada[2] = new MySqlParameter("@_idTipoEquipo", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_idEquipo", MySqlDbType.Int32);
+                parametrosEntrada[4] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
+                parametrosEntrada[5] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
+                parametrosEntrada[6] = new MySqlParameter("@_fecIniContratoAnt", MySqlDbType.Date);
+                parametrosEntrada[7] = new MySqlParameter("@_fecFinContratoAnt", MySqlDbType.Date);
+                parametrosEntrada[8] = new MySqlParameter("@_fecIniContratoNew", MySqlDbType.Date);
+                parametrosEntrada[9] = new MySqlParameter("@_fecFinContratoNew", MySqlDbType.Date);
+                parametrosEntrada[10] = new MySqlParameter("@_documentoReferencia", MySqlDbType.VarChar, 500);
+                parametrosEntrada[11] = new MySqlParameter("@_motivoCorte", MySqlDbType.VarChar, 255);
+                parametrosEntrada[12] = new MySqlParameter("@_fecRecojo", MySqlDbType.Date);
+                parametrosEntrada[13] = new MySqlParameter("@_direccionRecojo", MySqlDbType.VarChar, 1000);
+                parametrosEntrada[14] = new MySqlParameter("@_personaContacto", MySqlDbType.VarChar, 500);
+                parametrosEntrada[15] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
+                parametrosEntrada[16] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 1000);
+                parametrosEntrada[17] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+                parametrosEntrada[18] = new MySqlParameter("@_idCorteAlquiler", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = renovacion.IdSalida;
+                parametrosEntrada[1].Value = renovacion.IdSalidaDetalle;
+                parametrosEntrada[2].Value = 1;
+                parametrosEntrada[3].Value = renovacion.IdLC;
+                parametrosEntrada[4].Value = IdCliente;
+                parametrosEntrada[5].Value = renovacion.GuiaSalida;
+                parametrosEntrada[6].Value = renovacion.FechaIniContratoAntiguo;
+                parametrosEntrada[7].Value = renovacion.FechaFinContratoAntiguo;
+                parametrosEntrada[8].Value = renovacion.FechaIniContrato;
+                parametrosEntrada[9].Value = renovacion.FechaFinContrato;
+                parametrosEntrada[10].Value = documentoReferencia;
+                parametrosEntrada[11].Value = renovacion.DescripcionMotivoCorte;
+                parametrosEntrada[12].Value = renovacion.FechaRecojo;
+                parametrosEntrada[13].Value = renovacion.Direccion;
+                parametrosEntrada[14].Value = renovacion.PersonaContacto;
+                parametrosEntrada[15].Value = renovacion.Telefono;
+                parametrosEntrada[16].Value = renovacion.Observacion;
+                parametrosEntrada[17].Value = usuario;
+
+                datosSalida = new string[1];
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_corte_alquiler",
+                    18, 19, out datosSalida, 1);
+
+                if (datosSalida != null)
+                {
+                    int idSalidaDet = Convert.ToInt32(datosSalida[0]);
+                    error = true;
+                }
+                else
+                {
+                    return 0;
+                }
             }
 
             return 1;

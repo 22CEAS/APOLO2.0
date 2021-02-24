@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
+using DevExpress.XtraEditors.Repository;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Apolo
         DataTable tablaLaptops;
         ClienteDA clienteDA;
         AlquilerDA alquilerDA;
-        CorteAlquilerDA renovacionDA;
+        CorteAlquilerDA corteDA;
         BindingList<CorteAlquiler> renovaciones;
         CorteAlquiler renovacionTemp;
         int IdCliente;
@@ -30,6 +31,10 @@ namespace Apolo
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private string motivoCambio = "CAMBIO RAZÓN SOCIAL";
+        private string motivoDevolucion = "DEVOLUCIÓN";
+        private string motivoVenta = "VENTA";
+        private int maxNumDias = 7;
 
 
         public frmProcesoCorteAlquiler()
@@ -53,7 +58,7 @@ namespace Apolo
 
             clienteDA = new ClienteDA();
             alquilerDA = new AlquilerDA();
-            renovacionDA = new CorteAlquilerDA();
+            corteDA = new CorteAlquilerDA();
             renovaciones = new BindingList<CorteAlquiler>();
 
             renovacionTemp = new CorteAlquiler();
@@ -68,12 +73,17 @@ namespace Apolo
             int idCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
             txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
 
-            tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
+            //tablaLaptops = corteDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
 
             ObtenerDatosRenovacion();
             vistaEquipos.OptionsBehavior.AutoPopulateColumns = false;
             vistaEquipos.OptionsSelection.MultiSelect = true;
 
+            //dgvEquiposSeleccionados.ForceInitialize();
+            RepositoryItemComboBox cmbMotivo = new RepositoryItemComboBox();
+            cmbMotivo.Items.AddRange(new string[] { motivoCambio, motivoDevolucion, motivoVenta });
+            dgvEquiposSeleccionados.RepositoryItems.Add(cmbMotivo);
+            vistaEquipos.Columns[4].ColumnEdit = cmbMotivo;
         }
 
         public void ObtenerDatosRenovacion()
@@ -89,6 +99,68 @@ namespace Apolo
 
         }
 
+
+        public bool ValidarDatos()
+        {
+            bool error = false;
+
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Corte de Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return true;
+            }
+
+            //if (txtReferencia.Text.Trim().Length == 0)
+            //{
+            //    MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar un documento de referencia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+            //                MessageBoxIcon.Error);
+            //  return true;
+            //}
+
+            if (renovaciones.Count == 0)
+            {
+                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return true;
+            }
+
+            foreach (CorteAlquiler rev in renovaciones)
+            {
+                if (rev.FechaIniContrato > rev.FechaFinContrato)
+                {
+                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+
+                if (rev.DescripcionMotivoCorte!=motivoCambio && rev.DescripcionMotivoCorte != motivoDevolucion && rev.DescripcionMotivoCorte != motivoVenta)
+                {
+                    MessageBox.Show("No se puede grabar el corte de alquiler si no se ha elegido un motivo", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+
+                TimeSpan tSpan = rev.FechaRecojo - rev.FechaFinContrato;
+                int numDiasTrans = tSpan.Days;
+                if (rev.DescripcionMotivoCorte==motivoDevolucion && numDiasTrans > this.maxNumDias)
+                {
+                    MessageBox.Show("Hay un salto de " + numDiasTrans + " entre la fecha de recojo y la fecha fin de alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+                if (rev.DescripcionMotivoCorte == motivoDevolucion && 
+                    (rev.PersonaContacto.Trim().Length==0 || rev.Direccion.Trim().Length == 0
+                     || rev.Telefono.Trim().Length == 0))
+                {
+                    MessageBox.Show("No se puede grabar porque uno de los campos obligatorios falta ser llenado", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+
+            return error;
+        }
         public void estadoComponentes(TipoVista estado)
         {
             switch (estado)
@@ -235,52 +307,29 @@ namespace Apolo
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-
-            if (cmbCliente.SelectedValue == null)
-            {
-                MessageBox.Show("No se puede grabar una Corte de Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                return;
-            }
-
+            
             ObtenerDatosRenovacion();
 
-            foreach (CorteAlquiler rev in renovaciones)
+            if (ValidarDatos())
             {
-                if (rev.FechaIniContrato > rev.FechaFinContrato)
-                {
-                    MessageBox.Show("No se puede grabar si hay una fecha Final de Plazo de Alquiler menor a la fecha inicial", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-
-            if (renovaciones.Count == 0)
-            {
-                MessageBox.Show("No se puede grabar si no hay ninguna laptop.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
                 return;
             }
-
-            //if (DocumentoReferencia.Length == 0)
-            //{
-            //    MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar un documento de referencia.", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK,
-            //                MessageBoxIcon.Error);
-            //    return;
-            //}
 
             if (MessageBox.Show("Estas seguro que deseas guardar este proceso de Corte de Alquiler", "◄ AVISO | LEASEIN ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error = 0;
-                error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario, DocumentoReferencia);
+                error = corteDA.InsertarRenovaciones(renovaciones, this.nombreUsuario, DocumentoReferencia, IdCliente);
 
                 if (error == 0)
                 {
                     MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
-                //enviarCorreo();
+                //bool exists = renovaciones.Any(x => x.DescripcionMotivoCorte.Equals(motivoDevolucion));
+                //if (exists)
+                //{
+                //    enviarCorreo();
+                //}
                 MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
@@ -301,7 +350,7 @@ namespace Apolo
             //Direccion de correo electronico a la que queremos enviar el mensaje
             mmsg.To.Add(correo);
             mmsg.CC.Add("carlos.arango@leasein.pe");
-            mmsg.CC.Add("steven.mignardi@leasein.pe ");
+            //mmsg.CC.Add("steven.mignardi@leasein.pe ");
 
             //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
 
@@ -360,6 +409,7 @@ namespace Apolo
         {
             int i = cmbCliente.SelectedIndex;
             string razonSocial = tablaCliente.Rows[i]["nombre_razonSocial"].ToString();
+            string ruc = tablaCliente.Rows[i]["nroDocumento"].ToString();
 
             int idUsuario;
             string codigo;
@@ -396,27 +446,41 @@ namespace Apolo
                         <h3>Cliente: "
                         + razonSocial +
                         @"</h3></br>
+                        <h3>RUC: "
+                        + ruc +
+                        @"</h3></br>
                         <table id='t01'>
                           <tr>
                             <th>Código Equipo</th>
                             <th>Tipo Equipo</th>
                             <th>Fecha Corte</th>
+                            <th>Fecha Sugerida de Recojo</th>
+                            <th>Dirección de Recojo</th>
+                            <th>Persona de Contacto</th>
+                            <th>Celular</th>
                           </tr>
                         ";
             string cadena = "";
             foreach (CorteAlquiler renovacion in renovaciones)
             {
-                cadena += "<tr>";
-                cadena += "<td>" + renovacion.CodigoLC + "</td>";
-                cadena += "<td>" + "LAPTOP" + "</td>";
-                cadena += "<td>" + renovacion.FechaFinContrato.ToShortDateString() + "</td>";
-                cadena += "</tr>";
+                if (renovacion.DescripcionMotivoCorte == motivoDevolucion)
+                {
+                    cadena += "<tr>";
+                    cadena += "<td>" + renovacion.CodigoLC + "</td>";
+                    cadena += "<td>" + "LAPTOP" + "</td>";
+                    cadena += "<td>" + renovacion.FechaFinContrato.ToShortDateString() + "</td>";
+                    cadena += "<td>" + renovacion.FechaRecojo.ToShortDateString() + "</td>";
+                    cadena += "<td>" + renovacion.Direccion + "</td>";
+                    cadena += "<td>" + renovacion.PersonaContacto + "</td>";
+                    cadena += "<td>" + renovacion.Telefono + "</td>";
+                    cadena += "</tr>";
+                }
             }
             cadena += @"</table> 
                         </ body > 
                         </ html > ";
             body += cadena;
-            EnviarCodigo("andree.garcia@leasein.pe", body, out codigo, out idUsuario);
+            EnviarCodigo("carlos.arango@leasein.pe", body, out codigo, out idUsuario);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
