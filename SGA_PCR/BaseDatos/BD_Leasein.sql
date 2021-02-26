@@ -1051,6 +1051,8 @@ CREATE TABLE corte_alquiler(
 		idTipoEquipo INT NOT NULL,
 		idEquipo INT NOT NULL,
 		idCliente INT NOT NULL,
+		codigoEquipo NVARCHAR(255),
+		codigoEquipoAntiguo NVARCHAR(255),
 		guiaSalida NVARCHAR(255),
 		fecIniContratoAnt DATE,
 		fecFinContratoAnt DATE,

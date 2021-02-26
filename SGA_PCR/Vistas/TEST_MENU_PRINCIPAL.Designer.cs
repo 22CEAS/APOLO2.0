@@ -173,6 +173,7 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnRCorteAlquiler = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.panelReporte.SuspendLayout();
@@ -282,7 +283,7 @@
             this.panelConfiguracion.Controls.Add(this.btnCPermisos);
             this.panelConfiguracion.Controls.Add(this.btnCUsuarios);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1945);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 2004);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(232, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -339,7 +340,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1905);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1964);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(232, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -350,6 +351,7 @@
             // panelReporte
             // 
             this.panelReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelReporte.Controls.Add(this.btnRCorteAlquiler);
             this.panelReporte.Controls.Add(this.btnAlquileres);
             this.panelReporte.Controls.Add(this.btnRFacturas);
             this.panelReporte.Controls.Add(this.btnRFacturasTrans);
@@ -365,7 +367,7 @@
             this.panelReporte.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReporte.Location = new System.Drawing.Point(0, 1291);
             this.panelReporte.Name = "panelReporte";
-            this.panelReporte.Size = new System.Drawing.Size(232, 614);
+            this.panelReporte.Size = new System.Drawing.Size(232, 673);
             this.panelReporte.TabIndex = 20;
             this.panelReporte.Visible = false;
             // 
@@ -379,7 +381,7 @@
             this.btnAlquileres.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlquileres.ForeColor = System.Drawing.Color.Black;
             this.btnAlquileres.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlquileres.Location = new System.Drawing.Point(0, 562);
+            this.btnAlquileres.Location = new System.Drawing.Point(3, 309);
             this.btnAlquileres.Name = "btnAlquileres";
             this.btnAlquileres.Size = new System.Drawing.Size(319, 45);
             this.btnAlquileres.TabIndex = 25;
@@ -399,7 +401,7 @@
             this.btnRFacturas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRFacturas.ForeColor = System.Drawing.Color.Black;
             this.btnRFacturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRFacturas.Location = new System.Drawing.Point(3, 511);
+            this.btnRFacturas.Location = new System.Drawing.Point(3, 258);
             this.btnRFacturas.Name = "btnRFacturas";
             this.btnRFacturas.Size = new System.Drawing.Size(319, 45);
             this.btnRFacturas.TabIndex = 24;
@@ -419,7 +421,7 @@
             this.btnRFacturasTrans.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRFacturasTrans.ForeColor = System.Drawing.Color.Black;
             this.btnRFacturasTrans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRFacturasTrans.Location = new System.Drawing.Point(0, 460);
+            this.btnRFacturasTrans.Location = new System.Drawing.Point(3, 207);
             this.btnRFacturasTrans.Name = "btnRFacturasTrans";
             this.btnRFacturasTrans.Size = new System.Drawing.Size(319, 45);
             this.btnRFacturasTrans.TabIndex = 23;
@@ -439,7 +441,7 @@
             this.btnRReparacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRReparacion.ForeColor = System.Drawing.Color.Black;
             this.btnRReparacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRReparacion.Location = new System.Drawing.Point(0, 410);
+            this.btnRReparacion.Location = new System.Drawing.Point(0, 465);
             this.btnRReparacion.Name = "btnRReparacion";
             this.btnRReparacion.Size = new System.Drawing.Size(319, 45);
             this.btnRReparacion.TabIndex = 22;
@@ -459,7 +461,7 @@
             this.btnRLicencias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRLicencias.ForeColor = System.Drawing.Color.Black;
             this.btnRLicencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRLicencias.Location = new System.Drawing.Point(3, 360);
+            this.btnRLicencias.Location = new System.Drawing.Point(0, 618);
             this.btnRLicencias.Name = "btnRLicencias";
             this.btnRLicencias.Size = new System.Drawing.Size(319, 45);
             this.btnRLicencias.TabIndex = 19;
@@ -479,7 +481,7 @@
             this.btnRDiscos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRDiscos.ForeColor = System.Drawing.Color.Black;
             this.btnRDiscos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRDiscos.Location = new System.Drawing.Point(3, 309);
+            this.btnRDiscos.Location = new System.Drawing.Point(0, 567);
             this.btnRDiscos.Name = "btnRDiscos";
             this.btnRDiscos.Size = new System.Drawing.Size(319, 45);
             this.btnRDiscos.TabIndex = 18;
@@ -499,7 +501,7 @@
             this.btnRMemorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRMemorias.ForeColor = System.Drawing.Color.Black;
             this.btnRMemorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRMemorias.Location = new System.Drawing.Point(3, 258);
+            this.btnRMemorias.Location = new System.Drawing.Point(0, 516);
             this.btnRMemorias.Name = "btnRMemorias";
             this.btnRMemorias.Size = new System.Drawing.Size(319, 45);
             this.btnRMemorias.TabIndex = 17;
@@ -519,7 +521,7 @@
             this.btnRInventario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRInventario.ForeColor = System.Drawing.Color.Black;
             this.btnRInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRInventario.Location = new System.Drawing.Point(3, 207);
+            this.btnRInventario.Location = new System.Drawing.Point(3, 156);
             this.btnRInventario.Name = "btnRInventario";
             this.btnRInventario.Size = new System.Drawing.Size(319, 45);
             this.btnRInventario.TabIndex = 16;
@@ -559,7 +561,7 @@
             this.btnRObservacionDeu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRObservacionDeu.ForeColor = System.Drawing.Color.Black;
             this.btnRObservacionDeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRObservacionDeu.Location = new System.Drawing.Point(3, 156);
+            this.btnRObservacionDeu.Location = new System.Drawing.Point(0, 414);
             this.btnRObservacionDeu.Name = "btnRObservacionDeu";
             this.btnRObservacionDeu.Size = new System.Drawing.Size(319, 45);
             this.btnRObservacionDeu.TabIndex = 13;
@@ -2337,6 +2339,26 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
+            // btnRCorteAlquiler
+            // 
+            this.btnRCorteAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRCorteAlquiler.Enabled = false;
+            this.btnRCorteAlquiler.FlatAppearance.BorderSize = 0;
+            this.btnRCorteAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRCorteAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRCorteAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRCorteAlquiler.ForeColor = System.Drawing.Color.Black;
+            this.btnRCorteAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRCorteAlquiler.Location = new System.Drawing.Point(3, 360);
+            this.btnRCorteAlquiler.Name = "btnRCorteAlquiler";
+            this.btnRCorteAlquiler.Size = new System.Drawing.Size(319, 45);
+            this.btnRCorteAlquiler.TabIndex = 26;
+            this.btnRCorteAlquiler.Text = "> CORTE ALQUILER";
+            this.btnRCorteAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRCorteAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRCorteAlquiler.UseVisualStyleBackColor = false;
+            this.btnRCorteAlquiler.Click += new System.EventHandler(this.btnRCorteAlquiler_Click);
+            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2532,5 +2554,6 @@
         private System.Windows.Forms.Button btnRFacturas;
         private System.Windows.Forms.Button btnAlquileres;
         private System.Windows.Forms.Button btnPTarifas;
+        private System.Windows.Forms.Button btnRCorteAlquiler;
     }
 }

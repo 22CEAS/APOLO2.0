@@ -46,17 +46,17 @@
             this.dgvEquiposSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.vistaEquipos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MotivoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PersonaContacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DireccionRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -79,7 +79,7 @@
             this.btnBorrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBorrar.Location = new System.Drawing.Point(587, 410);
+            this.btnBorrar.Location = new System.Drawing.Point(880, 359);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(80, 66);
             this.btnBorrar.TabIndex = 192;
@@ -98,7 +98,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(589, 339);
+            this.btnCancelar.Location = new System.Drawing.Point(882, 288);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 65);
             this.btnCancelar.TabIndex = 191;
@@ -118,7 +118,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(590, 191);
+            this.btnNuevo.Location = new System.Drawing.Point(883, 140);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(65, 63);
             this.btnNuevo.TabIndex = 190;
@@ -138,7 +138,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(594, 260);
+            this.btnGrabar.Location = new System.Drawing.Point(887, 209);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(64, 64);
             this.btnGrabar.TabIndex = 189;
@@ -188,7 +188,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(18, 98);
+            this.label3.Location = new System.Drawing.Point(621, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 16);
             this.label3.TabIndex = 185;
@@ -207,7 +207,7 @@
             // txtReferencia
             // 
             this.txtReferencia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReferencia.Location = new System.Drawing.Point(16, 117);
+            this.txtReferencia.Location = new System.Drawing.Point(619, 64);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 23);
             this.txtReferencia.TabIndex = 182;
@@ -219,7 +219,7 @@
             this.pnlCA.Controls.Add(this.label2);
             this.pnlCA.Location = new System.Drawing.Point(0, 0);
             this.pnlCA.Name = "pnlCA";
-            this.pnlCA.Size = new System.Drawing.Size(679, 34);
+            this.pnlCA.Size = new System.Drawing.Size(976, 34);
             this.pnlCA.TabIndex = 193;
             this.pnlCA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCA_MouseMove);
             // 
@@ -229,7 +229,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(647, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(944, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +242,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(271, 5);
+            this.label2.Location = new System.Drawing.Point(420, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 23);
             this.label2.TabIndex = 195;
@@ -251,13 +251,13 @@
             // 
             // dgvEquiposSeleccionados
             // 
-            this.dgvEquiposSeleccionados.Location = new System.Drawing.Point(38, 191);
+            this.dgvEquiposSeleccionados.Location = new System.Drawing.Point(16, 114);
             this.dgvEquiposSeleccionados.LookAndFeel.UseDefaultLookAndFeel = false;
             this.dgvEquiposSeleccionados.MainView = this.vistaEquipos;
             this.dgvEquiposSeleccionados.Name = "dgvEquiposSeleccionados";
             this.dgvEquiposSeleccionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.dgvEquiposSeleccionados.Size = new System.Drawing.Size(512, 294);
+            this.dgvEquiposSeleccionados.Size = new System.Drawing.Size(849, 294);
             this.dgvEquiposSeleccionados.TabIndex = 231;
             this.dgvEquiposSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vistaEquipos});
@@ -310,26 +310,6 @@
             this.CodigoEquipo.VisibleIndex = 0;
             this.CodigoEquipo.Width = 140;
             // 
-            // MarcaLC
-            // 
-            this.MarcaLC.Caption = "Marca";
-            this.MarcaLC.FieldName = "MarcaLC";
-            this.MarcaLC.MinWidth = 40;
-            this.MarcaLC.Name = "MarcaLC";
-            this.MarcaLC.OptionsColumn.AllowEdit = false;
-            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.MarcaLC.Width = 100;
-            // 
-            // ModeloLC
-            // 
-            this.ModeloLC.Caption = "Modelo";
-            this.ModeloLC.FieldName = "ModeloLC";
-            this.ModeloLC.MinWidth = 40;
-            this.ModeloLC.Name = "ModeloLC";
-            this.ModeloLC.OptionsColumn.AllowEdit = false;
-            this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ModeloLC.Width = 100;
-            // 
             // NumFactura
             // 
             this.NumFactura.Caption = "Número Factura";
@@ -364,13 +344,6 @@
             this.FechaFinContrato.Visible = true;
             this.FechaFinContrato.VisibleIndex = 3;
             this.FechaFinContrato.Width = 130;
-            // 
-            // IdLC
-            // 
-            this.IdLC.Caption = "IdLC";
-            this.IdLC.FieldName = "IdLC";
-            this.IdLC.Name = "IdLC";
-            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
             // MotivoCorte
             // 
@@ -427,6 +400,33 @@
             this.FechaRecojo.VisibleIndex = 8;
             this.FechaRecojo.Width = 100;
             // 
+            // MarcaLC
+            // 
+            this.MarcaLC.Caption = "Marca";
+            this.MarcaLC.FieldName = "MarcaLC";
+            this.MarcaLC.MinWidth = 40;
+            this.MarcaLC.Name = "MarcaLC";
+            this.MarcaLC.OptionsColumn.AllowEdit = false;
+            this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.MarcaLC.Width = 100;
+            // 
+            // ModeloLC
+            // 
+            this.ModeloLC.Caption = "Modelo";
+            this.ModeloLC.FieldName = "ModeloLC";
+            this.ModeloLC.MinWidth = 40;
+            this.ModeloLC.Name = "ModeloLC";
+            this.ModeloLC.OptionsColumn.AllowEdit = false;
+            this.ModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ModeloLC.Width = 100;
+            // 
+            // IdLC
+            // 
+            this.IdLC.Caption = "IdLC";
+            this.IdLC.FieldName = "IdLC";
+            this.IdLC.Name = "IdLC";
+            this.IdLC.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
@@ -442,7 +442,7 @@
             this.btnAgregarProducto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProducto.Image")));
             this.btnAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(505, 98);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(880, 50);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 71);
             this.btnAgregarProducto.TabIndex = 232;
@@ -456,7 +456,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(677, 519);
+            this.ClientSize = new System.Drawing.Size(976, 439);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.dgvEquiposSeleccionados);
             this.Controls.Add(this.pnlCA);

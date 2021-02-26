@@ -16,9 +16,9 @@ namespace Apolo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmProcesoTarifa());
-            Application.Run(new frmProcesoCorteAlquiler());
-            //Application.Run(new frmLogueo());
+            //Application.Run(new frmProcesoCorteAlquiler());
+            //Application.Run(new frmReporteCorteAlquiler(2,"CEAS"));
+            Application.Run(new frmLogueo());
         }
     }
 }

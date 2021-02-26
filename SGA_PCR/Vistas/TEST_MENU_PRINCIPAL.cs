@@ -119,12 +119,12 @@ namespace Apolo
             Button[] botones_archivo = 
             { btnMProcesador, btnMDisco, btnMMemoria, btnMTarjetaVideo, btnMCliente, btnMSucursal, btnMProveedor,btnMKAM,btnMLicencias,
                 btnPCompra, btnPDevolucion, btnPAlquiler, btnPCambio, btnPSubirFactura, btnPReparacion, btnPCambioComp, btnPCambioDescr, btnPLevantarObser,btnPMovInternos,btnPCorteAlquiler,btnPNotaCredito,btnPFacturasTrans,btnPTarifas,
-                brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas,btnAlquileres,
+                brnRCuadroVenc,  btnRPendienteFact, btnRPendienteRec, btnRObservacionDeu, btnRInventario, btnRMemorias, btnRDiscos, btnRLicencias, btnRReparacion,btnRFacturasTrans,btnRFacturas,btnAlquileres,btnRCorteAlquiler,
                 btnCUsuarios, btnCPermisos};
             string[] idSubmodulo_archivo = 
             { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a",
               "1b", "2b", "3b", "5b", "6b", "7b", "8b", "9b", "10b","11b","12b","13b","14b","15b",
-              "1c", "3c", "4c", "5c", "7c", "8c", "9c", "10c","13c","14c","15c","16c",
+              "1c", "3c", "4c", "5c", "7c", "8c", "9c", "10c","13c","14c","15c","16c","17c",
               "1d", "2d" };
 
             List<string> accesos = new List<string>();
@@ -1453,6 +1453,28 @@ namespace Apolo
             {
                 MenuVertical.Width = 0;
                 frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer(this.idUser, this.nameUser);
+                f2.MdiParent = this;
+                CerrarDash();
+                f2.Show();
+            }
+        }
+
+        private void btnRCorteAlquiler_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteCorteAlquiler")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                MenuVertical.Width = 0;
+                frmReporteCorteAlquiler f2 = new frmReporteCorteAlquiler(this.idUser, this.nameUser);
                 f2.MdiParent = this;
                 CerrarDash();
                 f2.Show();

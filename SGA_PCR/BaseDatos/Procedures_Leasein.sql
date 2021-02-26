@@ -4242,6 +4242,8 @@ CREATE DEFINER=`root`@`%` PROCEDURE `insert_corte_alquiler`(
 		IN _idTipoEquipo INT,
 		IN _idEquipo INT,
 		IN _idCliente INT,
+		IN _codigoEquipo NVARCHAR(255),
+		IN _codigoEquipoAntiguo NVARCHAR(255),
 		IN _guiaSalida NVARCHAR(255),
 		IN _fecIniContratoAnt DATE,
 		IN _fecFinContratoAnt DATE,
@@ -4259,8 +4261,8 @@ CREATE DEFINER=`root`@`%` PROCEDURE `insert_corte_alquiler`(
 )
 BEGIN
 	SET _idCorteAlquiler=(SELECT IFNULL( MAX(idCorteAlquiler) , 0 )+1 FROM corte_alquiler);	
-	INSERT INTO corte_alquiler(idCorteAlquiler,idSalida,idSalidaDet,idTipoEquipo,idEquipo,idCliente,guiaSalida,fecIniContratoAnt,fecFinContratoAnt,fecIniContratoNew,fecFinContratoNew,documentoReferencia,motivoCorte,fecRecojo,direccionRecojo,personaContacto,telefono,observacion,estado,usuario_ins) 
-	VALUES (_idCorteAlquiler,_idSalida,_idSalidaDet,_idTipoEquipo,_idEquipo,_idCliente,_guiaSalida,_fecIniContratoAnt,_fecFinContratoAnt,_fecIniContratoNew,_fecFinContratoNew,_documentoReferencia,_motivoCorte,_fecRecojo,_direccionRecojo,_personaContacto,_telefono,_observacion,1,_usuario_ins);
+	INSERT INTO corte_alquiler(idCorteAlquiler,idSalida,idSalidaDet,idTipoEquipo,idEquipo,idCliente,codigoEquipo,codigoEquipoAntiguo,guiaSalida,fecIniContratoAnt,fecFinContratoAnt,fecIniContratoNew,fecFinContratoNew,documentoReferencia,motivoCorte,fecRecojo,direccionRecojo,personaContacto,telefono,observacion,estado,usuario_ins) 
+	VALUES (_idCorteAlquiler,_idSalida,_idSalidaDet,_idTipoEquipo,_idEquipo,_idCliente,_codigoEquipo,_codigoEquipoAntiguo,_guiaSalida,_fecIniContratoAnt,_fecFinContratoAnt,_fecIniContratoNew,_fecFinContratoNew,_documentoReferencia,_motivoCorte,_fecRecojo,_direccionRecojo,_personaContacto,_telefono,_observacion,1,_usuario_ins);
 END
 $$
 DELIMITER ;
@@ -4284,9 +4286,18 @@ END
 $$
 DELIMITER ;
 
+
 ALTER TABLE `bd_leasein`.`salida_det` 
 ADD COLUMN `motivoCorte` varchar(255) NULL AFTER `corteAlquiler`,
 ADD COLUMN `fecRecojo` date NULL AFTER `motivoCorte`,
 ADD COLUMN `direccionRecojo` varchar(1000) NULL AFTER `fecRecojo`,
 ADD COLUMN `personaContacto` varchar(500) NULL AFTER `direccionRecojo`,
 ADD COLUMN `telefono` varchar(255) NULL AFTER `personaContacto`;
+
+INSERT INTO `bd_leasein`.`areas`(`idArea`, `descripcionArea`) VALUES (5, 'COMERCIAL SUPERVISOR');
+
+DELETE FROM `bd_leasein`.`submodulos` WHERE `idSubmodulo` = '4b';
+
+DELETE FROM `bd_leasein`.`submodulos` WHERE `idSubmodulo` = '6c';
+
+INSERT INTO `bd_leasein`.`submodulos`(`idSubmodulo`, `descripcionSubmodulo`, `idModuloP`) VALUES ('17c', 'REPORTE CORTE ALQUILER', 3);

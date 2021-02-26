@@ -72,6 +72,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
             this.cargarData = new System.Windows.Forms.Button();
+            this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -167,7 +168,8 @@
             this.TotalDolares,
             this.CostoSoles,
             this.CostoDolares,
-            this.UBSoles});
+            this.UBSoles,
+            this.CorteAlquiler});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -666,6 +668,19 @@
             this.cargarData.UseVisualStyleBackColor = true;
             this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
+            // CorteAlquiler
+            // 
+            this.CorteAlquiler.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CorteAlquiler.AppearanceHeader.Options.UseBackColor = true;
+            this.CorteAlquiler.Caption = "Corte Alquiler";
+            this.CorteAlquiler.FieldName = "CorteAlquiler";
+            this.CorteAlquiler.MinWidth = 40;
+            this.CorteAlquiler.Name = "CorteAlquiler";
+            this.CorteAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CorteAlquiler.Visible = true;
+            this.CorteAlquiler.VisibleIndex = 29;
+            this.CorteAlquiler.Width = 80;
+            // 
             // frmReporteCV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -743,5 +758,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro2;
         private DevExpress.XtraGrid.Columns.GridColumn DiscoDuro1;
         private DevExpress.XtraGrid.Columns.GridColumn VersionWindows;
+        private DevExpress.XtraGrid.Columns.GridColumn CorteAlquiler;
     }
 }

@@ -188,5 +188,11 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("Select * From factura_transito where estado = 1 ;");
         }
+
+
+        public DataTable ListarCorteAlquiler()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_reporte_corte_alquiler ;");
+        }
     }
 }

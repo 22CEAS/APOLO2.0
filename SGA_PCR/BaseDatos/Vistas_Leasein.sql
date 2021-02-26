@@ -2820,3 +2820,78 @@ SELECT
 FROM
 	ingreso i
 	INNER JOIN laptop_cpu lc ON i.idIngreso = lc.idIngreso;	
+
+
+
+--======================CORTE ALQUILER=======================================	
+
+
+DROP VIEW IF EXISTS vista_reporte_corte_alquiler;
+create view vista_reporte_corte_alquiler as
+SELECT c.fec_ins AS FechaProceso,
+	(SELECT nroDocumento FROM cliente where cliente.idCliente=c.idCliente) AS RUC,
+	c.codigoEquipo AS Codigo,
+	c.motivoCorte AS MotivoCorte,
+	c.fecRecojo AS FechaRecojo,
+	c.fecFinContratoNew AS FechaCorteAlquiler,
+	c.idCorteAlquiler AS IdCorteAlquiler,
+	c.estado AS IdEstado,
+	if((c.estado=1),'ACTIVO','ANULADO') AS NombreEstado,
+	ifnull((SELECT c1.fecFinPago AS fecFinPago 
+		FROM cuota c1 JOIN laptop_cpu lc ON c1.idLC = lc.idLC
+		WHERE c.idSalida = c1.idSalida AND  lc.idLC = c.idEquipo),
+		ifnull((SELECT c2.fecFinPago AS fecFinPago 
+			FROM cuota c2 JOIN laptop_cpu lc2 ON c2.idLC = lc2.idLC
+			WHERE c.idSalida = c2.idSalida AND lc2.codigo = c.codigoEquipoAntiguo),
+			'' 
+		)) AS FechaUltimaFactura ,
+	(Select d.FueDevuelto from salida_det d where c.idSalidaDet=d.idSalidaDet ) AS FueDevuelto
+FROM corte_alquiler c;
+
+
+Vista cuadro de venciomiento
+--vista_laptops_cuadro_vencimiento
+	,
+	if((d.corteAlquiler=1),'SI','NO') AS CorteAlquiler
+
+where
+	AND
+		CASE WHEN d.motivoCorte='DEVOLUCIÓN' THEN
+			(( to_days( `d`.`fecRecojo` ) - to_days( curdate()) - 1) >= 0 ) 
+		ELSE
+			(( to_days( `d`.`fecFinContrato` ) - to_days( curdate())) >= 0 )
+		END
+		
+
+Vista Pendiente por facturar
+--vista_productos_por_facturar
+	,
+	if((d.corteAlquiler=1),'SI','NO') AS CorteAlquiler
+	
+
+Vista Pendiente por recoger
+--vista_productos_por_recoger	
+		
+	IFNULL(d.personaContacto,sc.nombreContacto) AS `Contacto`,
+	IFNULL(d.direccionRecojo,sc.direccion) AS `DireccionCliente`,
+	IFNULL(d.telefono,sc.telefono) AS `TelefonoContacto`,
+	IFNULL(d.fecRecojo,'') AS `FechaRecojo`,
+	
+	,
+	IF(d.estado = 9, 'CAMBIO', IF(d.motivoCorte='DEVOLUCIÓN','DEVOLUCIÓN','OTRO MOTIVO') ) AS MotivoRecojo 
+
+where 
+	AND (
+			(
+				(d.estado = 4 ) 
+				AND 
+					CASE WHEN d.motivoCorte='DEVOLUCIÓN' THEN
+						(( to_days( `d`.`fecRecojo` ) - to_days( curdate()) - 1) < 0 ) 
+					ELSE
+						(( to_days( d.fecFinContrato) - to_days( curdate())) < 0 )
+					END
+				
+			)
+			OR 
+			( d.estado = 9 )
+		) 

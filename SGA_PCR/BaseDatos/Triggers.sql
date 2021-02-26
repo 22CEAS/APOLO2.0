@@ -149,22 +149,33 @@ AFTER UPDATE
 ON corte_alquiler FOR EACH ROW
 BEGIN
     IF OLD.estado <> new.estado THEN
-	
-			SET @fechaModificacion=(SELECT now());
-			UPDATE salida_det 
-			SET fec_mod=@fechaModificacion,
-			idSalidaTipo=null,
-			nombreSalidaTipo=null,
-			documentoSalidaTipo= null,
-			usuario_mod= NEW.usuario_mod,
-			corteAlquiler= 0,
-			motivoCorte = null,
-			fecRecojo = null,
-			direccionRecojo = null,
-			personaContacto = null,
-			telefono = null
-			WHERE idSalidaDet=NEW.idSalidaDet;
-			
+
+		SET @fechaModificacion=(SELECT now());
+		UPDATE salida_det 
+		SET fec_mod=@fechaModificacion,
+		fecFinContrato = NEW.fecFinContratoAnt,
+		idSalidaTipo=null,
+		nombreSalidaTipo=null,
+		documentoSalidaTipo= null,
+		usuario_mod= NEW.usuario_mod,
+		corteAlquiler= 0,
+		motivoCorte = null,
+		fecRecojo = null,
+		direccionRecojo = null,
+		personaContacto = null,
+		telefono = null
+		WHERE idSalidaDet=NEW.idSalidaDet;
+	ELSE
+		UPDATE salida_det 
+		SET 
+		fecFinContrato = NEW.fecFinContratoNew,
+		motivoCorte = NEW.motivoCorte,
+		fecRecojo = NEW.fecRecojo,
+		direccionRecojo = NEW.direccionRecojo,
+		personaContacto = NEW.personaContacto,
+		telefono = NEW.telefono
+		WHERE idSalidaDet=NEW.idSalidaDet;
+		
     END IF;
 END
 $$

@@ -66,6 +66,7 @@
             this.pnlPR = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.FechaRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -131,7 +132,8 @@
             this.CostoDolares,
             this.VersionOffice,
             this.KAM,
-            this.MotivoRecojo});
+            this.MotivoRecojo,
+            this.FechaRecojo});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -555,6 +557,19 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // FechaRecojo
+            // 
+            this.FechaRecojo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaRecojo.AppearanceHeader.Options.UseBackColor = true;
+            this.FechaRecojo.Caption = "Fecha Recojo";
+            this.FechaRecojo.FieldName = "FechaRecojo";
+            this.FechaRecojo.MinWidth = 40;
+            this.FechaRecojo.Name = "FechaRecojo";
+            this.FechaRecojo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaRecojo.Visible = true;
+            this.FechaRecojo.VisibleIndex = 9;
+            this.FechaRecojo.Width = 150;
+            // 
             // frmReportePendienteRecoger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -625,5 +640,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCerrar;
         private DevExpress.XtraGrid.Columns.GridColumn MotivoRecojo;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaRecojo;
     }
 }

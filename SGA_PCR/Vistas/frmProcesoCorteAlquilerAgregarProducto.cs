@@ -88,7 +88,8 @@ namespace Apolo
                     detalle.IdSalida = int.Parse(vista.GetRowCellValue(i, "IdSalida").ToString());
                     detalle.GuiaSalida = vista.GetRowCellValue(i, "GuiaSalida").ToString();
                     detalle.IdLC = int.Parse(vista.GetRowCellValue(i, "IdLC").ToString());
-                    detalle.CodigoLC = vista.GetRowCellValue(i, "Codigo").ToString();
+                    detalle.CodigoLC = vista.GetRowCellValue(i, "Codigo").ToString(); 
+                    detalle.CodigoAntiguo = vista.GetRowCellValue(i, "CodigoAntiguo").ToString();
                     detalle.MarcaLC = vista.GetRowCellValue(i, "MarcaLC").ToString();
                     detalle.ModeloLC = vista.GetRowCellValue(i, "NombreModeloLC").ToString();
                     detalle.IdSalidaDetalle = int.Parse(vista.GetRowCellValue(i, "IdSalidaDetalle").ToString());

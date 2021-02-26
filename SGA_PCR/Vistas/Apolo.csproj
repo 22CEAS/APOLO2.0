@@ -334,6 +334,12 @@
     <Compile Include="frmReporteAlquileresPorVencer.Designer.cs">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteCorteAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteCorteAlquiler.Designer.cs">
+      <DependentUpon>frmReporteCorteAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteCV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -716,6 +722,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteAlquileresPorVencer.resx">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteCorteAlquiler.resx">
+      <DependentUpon>frmReporteCorteAlquiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteCV.resx">
       <DependentUpon>frmReporteCV.cs</DependentUpon>
