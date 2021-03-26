@@ -83,7 +83,7 @@ namespace Apolo
             RepositoryItemComboBox cmbMotivo = new RepositoryItemComboBox();
             cmbMotivo.Items.AddRange(new string[] { motivoCambio, motivoDevolucion, motivoVenta });
             dgvEquiposSeleccionados.RepositoryItems.Add(cmbMotivo);
-            vistaEquipos.Columns[4].ColumnEdit = cmbMotivo;
+            vistaEquipos.Columns[5].ColumnEdit = cmbMotivo;
         }
 
         public void ObtenerDatosRenovacion()
@@ -325,11 +325,11 @@ namespace Apolo
                     MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
-                //bool exists = renovaciones.Any(x => x.DescripcionMotivoCorte.Equals(motivoDevolucion));
-                //if (exists)
-                //{
-                //    enviarCorreo();
-                //}
+                bool exists = renovaciones.Any(x => x.DescripcionMotivoCorte.Equals(motivoDevolucion));
+                if (exists)
+                {
+                    enviarCorreo();
+                }
                 MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }

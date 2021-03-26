@@ -88,7 +88,7 @@ namespace Apolo
                         Renglon["RucCliente"] = sl.GetCellValueAsString(iRow, 1);
                         Renglon["CodigoEquipo"] = sl.GetCellValueAsString(iRow, 2);
                         Renglon["Tarifa"] = sl.GetCellValueAsDouble(iRow, 3);
-                        Renglon["Costo"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["Costo"] = sl.GetCellValueAsDouble(iRow, 4);
                         Renglon["Moneda"] = sl.GetCellValueAsString(iRow, 5);
                         Renglon["IdSalidaDet"] = "";
                         Renglon["IdSalida"] = "";
@@ -99,7 +99,6 @@ namespace Apolo
                     }
 
                     dgvTarifas.DataSource = miDataTable;
-
 
                 }
             }
@@ -114,9 +113,9 @@ namespace Apolo
             vistaTarifas.ClearColumnsFilter();
             int filas = vistaTarifas.RowCount;
 
-            if (filas <= 0)
+            if (filas == 0)
             {
-                MessageBox.Show("Primero debe ingresar data");
+                MessageBox.Show("Primero debe ingresar data", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return;
             }
 
@@ -182,10 +181,8 @@ namespace Apolo
                     vistaTarifas.SetRowCellValue(i, "Observacion", "Se guardó correctamente");
                 }
             }
-            MessageBox.Show("SE COMPLETÓ LA OPERACION | REVISÉ LAS OBSERVACIONES");
+            MessageBox.Show("Se completó la operación | Revise las observaciones pendientes", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             return;
-
-
 
         }
 
@@ -194,7 +191,7 @@ namespace Apolo
             vistaTarifas.ClearColumnsFilter();
             if (vistaTarifas.RowCount == 0)
             {
-                MessageBox.Show("SUBA DATA");
+                MessageBox.Show("Primero debe ingresar data", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 return;
             }
 
@@ -248,18 +245,5 @@ namespace Apolo
             }
         }
 
-        private void lblTarifas_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)
-            {
-                posX = e.X;
-                posY = e.Y;
-            }
-            else
-            {
-                Left = Left + (e.X - posX);
-                Top = Top + (e.Y - posY);
-            }
-        }
     }
 }

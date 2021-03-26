@@ -184,6 +184,9 @@ namespace Apolo
                 }
             }
 
+            vista.GetFocusedValue();
+
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -515,6 +518,16 @@ namespace Apolo
             {
                 GC.Collect();
             }
+        }
+
+        private void vista_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+            //{
+            //    string aux = vista.GetFocusedValue().ToString();
+            //    MessageBox.Show(aux);
+            //    Clipboard.SetText(aux);
+            //}
         }
     }
 }

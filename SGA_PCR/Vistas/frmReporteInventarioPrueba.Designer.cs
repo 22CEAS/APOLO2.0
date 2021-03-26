@@ -48,9 +48,9 @@
             this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -68,7 +68,7 @@
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExportar.Location = new System.Drawing.Point(804, 11);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(71, 51);
             this.btnExportar.TabIndex = 142;
@@ -82,10 +82,10 @@
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLaptops.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLaptops.Location = new System.Drawing.Point(16, 67);
             this.dgvLaptops.MainView = this.vista;
-            this.dgvLaptops.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLaptops.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLaptops.Name = "dgvLaptops";
             this.dgvLaptops.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
@@ -129,8 +129,12 @@
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
+            this.vista.OptionsClipboard.CopyCollapsedData = DevExpress.Utils.DefaultBoolean.True;
+            this.vista.OptionsClipboard.CopyColumnHeaders = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // CodigoLC
             // 
@@ -266,17 +270,6 @@
             this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.IdSalida.Width = 60;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 16);
-            this.label1.TabIndex = 140;
-            this.label1.Text = "Reporte de Laptops";
-            // 
             // Observacion
             // 
             this.Observacion.Caption = "Observacion";
@@ -298,6 +291,17 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 16);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "Reporte de Laptops";
+            // 
             // frmReporteInventarioPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,7 +310,7 @@
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmReporteInventarioPrueba";
             this.Text = "frmReporteInventarioPrueba";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();

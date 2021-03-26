@@ -1,91 +1,91 @@
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_cambio`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_devolucion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_devolucion_detalle`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_devolucion_observacion_deudas`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_reparacion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_salida`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`anular_salida_detalle`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_cuota`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_det_accesorios_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_det_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_devolucion_detalle`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_disco_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_disco_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_licencia_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_licencia_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_memoria_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_memoria_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_observacion_deudas_cambio`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_salida_detalle`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`delete_salida_detalle_idDetalle`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cambio`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_categoria`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cliente`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cliente_sucursal`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cuota`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion_det`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC_SinAfectarCantidad`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_duro`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_factura`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_ingreso_det`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_ingreso_det_accesorios`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_laptop_cpu`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia_det`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia_det_accesorios`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_marca`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC_SinAfectarCantidad`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_modelo`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_observacion_deudas`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_observacion_deudas_cambio`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_orden_compra`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_pedido`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_pre_salida`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_procesador`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_proveedor`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_reparacion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_requerimiento_compra`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_salida_det`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_usuario`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_video`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`mostrar_componente_modelos`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_cambio`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_cliente`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_cliente_sucursal`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_devolucion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_disco_cantidad`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_disco_cantidad_menos`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_disco_duro`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_ingreso`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_laptop_disponibilidad`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_laptop_memoria`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_licencia_LC`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_memoria`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_memoria_cantidad`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_memoria_cantidad_menos`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_observacion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_procesador`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_proveedor`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_reparacion`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_salida`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_salida_det_devuelto`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_salida_det_estado_cambiado`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_salida_det_fechaFinalPlazo`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_seguro_laptop_cpu`;
-DROP PROCEDURE IF EXISTS `bd_leasein`.`update_video`;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_cambio;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_devolucion;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_devolucion_detalle;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_devolucion_observacion_deudas;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_reparacion;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_salida;
+DROP PROCEDURE IF EXISTS bd_leasein.anular_salida_detalle;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_cuota;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_det_accesorios_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_det_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_devolucion_detalle;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_disco_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_disco_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_licencia_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_licencia_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_memoria_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_memoria_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_observacion_deudas_cambio;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_salida_detalle;
+DROP PROCEDURE IF EXISTS bd_leasein.delete_salida_detalle_idDetalle;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_cambio;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_categoria;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_cliente;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_cliente_sucursal;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_cuota;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_devolucion;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_devolucion_det;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_disco_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_disco_LC_SinAfectarCantidad;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_disco_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_disco_duro;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_factura;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_ingreso_det;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_ingreso_det_accesorios;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_laptop_cpu;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_licencia_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_licencia;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_licencia_det;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_licencia_det_accesorios;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_marca;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_memoria_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_memoria_LC_SinAfectarCantidad;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_memoria_LC_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_memoria;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_modelo;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_observacion_deudas;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_observacion_deudas_cambio;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_orden_compra;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_pedido;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_pre_salida;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_procesador;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_proveedor;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_reparacion;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_requerimiento_compra;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_salida_det;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_usuario;
+DROP PROCEDURE IF EXISTS bd_leasein.insert_video;
+DROP PROCEDURE IF EXISTS bd_leasein.mostrar_componente_modelos;
+DROP PROCEDURE IF EXISTS bd_leasein.update_cambio;
+DROP PROCEDURE IF EXISTS bd_leasein.update_cliente;
+DROP PROCEDURE IF EXISTS bd_leasein.update_cliente_sucursal;
+DROP PROCEDURE IF EXISTS bd_leasein.update_devolucion;
+DROP PROCEDURE IF EXISTS bd_leasein.update_disco_cantidad;
+DROP PROCEDURE IF EXISTS bd_leasein.update_disco_cantidad_menos;
+DROP PROCEDURE IF EXISTS bd_leasein.update_disco_duro;
+DROP PROCEDURE IF EXISTS bd_leasein.update_ingreso;
+DROP PROCEDURE IF EXISTS bd_leasein.update_laptop_disponibilidad;
+DROP PROCEDURE IF EXISTS bd_leasein.update_laptop_memoria;
+DROP PROCEDURE IF EXISTS bd_leasein.update_licencia_LC;
+DROP PROCEDURE IF EXISTS bd_leasein.update_memoria;
+DROP PROCEDURE IF EXISTS bd_leasein.update_memoria_cantidad;
+DROP PROCEDURE IF EXISTS bd_leasein.update_memoria_cantidad_menos;
+DROP PROCEDURE IF EXISTS bd_leasein.update_observacion;
+DROP PROCEDURE IF EXISTS bd_leasein.update_procesador;
+DROP PROCEDURE IF EXISTS bd_leasein.update_proveedor;
+DROP PROCEDURE IF EXISTS bd_leasein.update_reparacion;
+DROP PROCEDURE IF EXISTS bd_leasein.update_salida;
+DROP PROCEDURE IF EXISTS bd_leasein.update_salida_det_devuelto;
+DROP PROCEDURE IF EXISTS bd_leasein.update_salida_det_estado_cambiado;
+DROP PROCEDURE IF EXISTS bd_leasein.update_salida_det_fechaFinalPlazo;
+DROP PROCEDURE IF EXISTS bd_leasein.update_seguro_laptop_cpu;
+DROP PROCEDURE IF EXISTS bd_leasein.update_video;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_categoria`(
+CREATE DEFINER=root@localhost PROCEDURE insert_categoria(
 	IN _nombre NVARCHAR(80),
 	IN _subCategoria NVARCHAR(80),
 	IN _usuario_ins NVARCHAR(100)
@@ -97,7 +97,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_marca`(
+CREATE DEFINER=root@localhost PROCEDURE insert_marca(
 	IN _nombre NVARCHAR(80),
 	IN _idCategoria INT,
 	IN _usuario_ins NVARCHAR(100)
@@ -109,7 +109,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_modelo`(
+CREATE DEFINER=root@localhost PROCEDURE insert_modelo(
 	IN _nombre NVARCHAR(80),
 	IN _idMarca INT,
 	IN _usuario_ins NVARCHAR(100)
@@ -121,7 +121,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_procesador`(
+CREATE DEFINER=root@localhost PROCEDURE insert_procesador(
 	IN _idModelo INT,
 	IN _idGeneracion INT,
 	IN _generacion INT,
@@ -147,7 +147,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_procesador`(
+CREATE DEFINER=root@localhost PROCEDURE update_procesador(
 	IN _idModelo INT,
 	IN _idGeneracion INT,
 	IN _generacion INT,
@@ -181,7 +181,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_video`(
+CREATE DEFINER=root@localhost PROCEDURE insert_video(
 	IN _idModelo INT,
 	IN _idTipo INT,
 	IN _tipo NVARCHAR(20),
@@ -204,7 +204,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_video`(
+CREATE DEFINER=root@localhost PROCEDURE update_video(
 	IN _idVideo INT,
 	IN _idModelo INT,
 	IN _idTipo INT,
@@ -234,7 +234,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria`(
+CREATE DEFINER=root@localhost PROCEDURE insert_memoria(
 	IN _idModelo INT,
 	IN _idBusFrecuencia INT,
 	IN _busFrecuencia DOUBLE,
@@ -259,7 +259,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria`(
+CREATE DEFINER=root@localhost PROCEDURE update_memoria(
 	IN _idModelo INT,
 	IN _idBusFrecuencia INT,
 	IN _busFrecuencia DOUBLE,
@@ -292,7 +292,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_duro`(
+CREATE DEFINER=root@localhost PROCEDURE insert_disco_duro(
 	IN _idModelo INT,
 	IN _idTamano INT,
 	IN _tamano  NVARCHAR(80),
@@ -314,7 +314,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_duro`(
+CREATE DEFINER=root@localhost PROCEDURE update_disco_duro(
 	IN _idDisco INT,
 	IN _idModelo INT,
 	IN _idTamano INT,
@@ -342,7 +342,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+CREATE DEFINER=root@localhost PROCEDURE insert_laptop_cpu(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -374,7 +374,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE insert_memoria_LC_ingreso(
 	IN _idMemoria INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -389,7 +389,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE insert_disco_LC_ingreso(
 	IN _idDisco INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -404,7 +404,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_seguro_laptop_cpu`(
+CREATE DEFINER=root@localhost PROCEDURE update_seguro_laptop_cpu(
 	IN _idLC INT,
 	IN _fecInicioSeguro DATETIME,
 	IN _fecFinSeguro DATETIME,
@@ -419,7 +419,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC`(
+CREATE DEFINER=root@localhost PROCEDURE insert_memoria_LC(
 	IN _idMemoria INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -433,7 +433,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC_SinAfectarCantidad`(
+CREATE DEFINER=root@localhost PROCEDURE insert_memoria_LC_SinAfectarCantidad(
 	IN _idMemoria INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -445,7 +445,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_memoria_LC`(
+CREATE DEFINER=root@localhost PROCEDURE delete_memoria_LC(
 	IN _idLC INT
 )
 BEGIN
@@ -454,7 +454,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria_cantidad`(
+CREATE DEFINER=root@localhost PROCEDURE update_memoria_cantidad(
 	IN _idMemoria INT,
 	IN _cantidad INT
 )
@@ -464,7 +464,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC`(
+CREATE DEFINER=root@localhost PROCEDURE insert_disco_LC(
 	IN _idDisco INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -477,7 +477,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC_SinAfectarCantidad`(
+CREATE DEFINER=root@localhost PROCEDURE insert_disco_LC_SinAfectarCantidad(
 	IN _idDisco INT,
 	IN _idLC INT,
 	IN _cantidad INT,
@@ -489,7 +489,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_disco_LC`(
+CREATE DEFINER=root@localhost PROCEDURE delete_disco_LC(
 	IN _idLC INT
 )
 BEGIN
@@ -498,7 +498,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_cantidad`(
+CREATE DEFINER=root@localhost PROCEDURE update_disco_cantidad(
 	IN _idDisco INT,
 	IN _cantidad INT
 )
@@ -508,7 +508,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia`(
+CREATE DEFINER=root@localhost PROCEDURE insert_licencia(
 	IN _idModelo INT,
 	IN _idLC INT,
 	IN _clave NVARCHAR(80), 
@@ -526,7 +526,7 @@ END
 $$ DELIMITER ;
 	
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_licencia_det(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -546,7 +546,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_det_accesorios`(
+CREATE DEFINER=root@localhost PROCEDURE insert_licencia_det_accesorios(
 	IN _idIngreso INT,
 	IN _idIngresoDetAccesorios INT,
 	IN _idModelo INT,
@@ -566,7 +566,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_LC`(
+CREATE DEFINER=root@localhost PROCEDURE insert_licencia_LC(
 	IN _idLicencia INT,
 	IN _idLC INT,
 	IN _usuario_mod NVARCHAR(100)
@@ -586,7 +586,7 @@ $$ DELIMITER ;
 
 /*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_licencia_LC`(
+CREATE DEFINER=root@localhost PROCEDURE update_licencia_LC(
 	IN _idLicencia INT,
 	IN _usuario_mod NVARCHAR(100)
 )
@@ -603,7 +603,7 @@ $$ DELIMITER ;
 
 /*Esta procedimiento se hace cuando una licencia ya vence y tienen que cambiar de licencia, entonces esa licencia queda en estado 0 porque ya esta inutilizable*/
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_licencia_LC`(
+CREATE DEFINER=root@localhost PROCEDURE delete_licencia_LC(
 	IN _idLicencia INT,
 	IN _usuario_mod NVARCHAR(100)
 )
@@ -618,7 +618,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cliente(
 	IN _tipoDocumento INT,
 	IN _nroDocumento NVARCHAR(20),
 	IN _nombre_razonSocial NVARCHAR(255),
@@ -640,7 +640,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cliente`(
+CREATE DEFINER=root@localhost PROCEDURE update_cliente(
 	IN _idCliente INT,
 	IN _tipoDocumento INT,
 	IN _nroDocumento NVARCHAR(20),
@@ -673,7 +673,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_sucursal`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cliente_sucursal(
 	IN _idCliente INT,
 	IN _nroDocumento NVARCHAR(100),
 	IN _nombreContacto NVARCHAR(100),
@@ -695,7 +695,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cliente_sucursal`(
+CREATE DEFINER=root@localhost PROCEDURE update_cliente_sucursal(
 	IN _idSucursal INT,
 	IN _nroDocumento NVARCHAR(100),
 	IN _nombreContacto NVARCHAR(100),
@@ -726,7 +726,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proveedor`(
+CREATE DEFINER=root@localhost PROCEDURE insert_proveedor(
 	IN _ruc NVARCHAR(11),
 	IN _razonSocial NVARCHAR(255),
 	IN _nombreComercial NVARCHAR(255),
@@ -752,7 +752,7 @@ END
 $$ DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_proveedor`(
+CREATE DEFINER=root@localhost PROCEDURE update_proveedor(
 	IN _idProveedor INT,
 	IN _ruc NVARCHAR(11),
 	IN _razonSocial NVARCHAR(255),
@@ -795,7 +795,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_usuario`(
+CREATE DEFINER=root@localhost PROCEDURE insert_usuario(
 	IN _dni NVARCHAR(8),
 	IN _nombre NVARCHAR(255),
 	IN _usuario NVARCHAR(20),
@@ -813,7 +813,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_requerimiento_compra`(
+CREATE DEFINER=root@localhost PROCEDURE insert_requerimiento_compra(
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(100)
@@ -827,7 +827,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_orden_compra`(
+CREATE DEFINER=root@localhost PROCEDURE insert_orden_compra(
 	IN _idRO INT,
 	IN _idProveedor INT,
 	IN _observacion NVARCHAR(255),
@@ -842,7 +842,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_pedido`(
+CREATE DEFINER=root@localhost PROCEDURE insert_pedido(
 	IN _fecPedido DATETIME,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
@@ -856,7 +856,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_pre_salida`(
+CREATE DEFINER=root@localhost PROCEDURE insert_pre_salida(
 	IN _idCliente INT,
 	IN _idSucursal INT,
 	IN _rucDni NVARCHAR(100),
@@ -882,7 +882,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_salida_det(
 	IN _idSalida INT,
 	IN _idLC INT,
 	IN _idProcesador INT,
@@ -918,7 +918,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cambio`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cambio(
 	IN _idLCAntiguo INT,
 	IN _codigoLCAntiguo NVARCHAR(80),
 	IN _estadoLCAntiguo INT,
@@ -953,9 +953,9 @@ END
 $$ DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_devolucion`;
+DROP PROCEDURE IF EXISTS insert_devolucion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_devolucion`(
+CREATE DEFINER=root@localhost PROCEDURE insert_devolucion(
 	IN _idCliente INT,
 	IN _rucDni NVARCHAR(11),
 	IN _guiaDevolucion NVARCHAR(50),
@@ -974,9 +974,9 @@ BEGIN
 END
 $$ DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `insert_devolucion_det`;
+DROP PROCEDURE IF EXISTS insert_devolucion_det;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_devolucion_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_devolucion_det(
 	IN _idDevolucion INT,
 	IN _idLC INT,
 	IN _codigoLC NVARCHAR(255),
@@ -1004,9 +1004,9 @@ $$ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `insert_observacion_deudas`;
+DROP PROCEDURE IF EXISTS insert_observacion_deudas;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_observacion_deudas`(
+CREATE DEFINER=root@localhost PROCEDURE insert_observacion_deudas(
 	IN _idCliente INT,
 	IN _idLC INT,
 	IN _idSalidaDet INT,
@@ -1025,9 +1025,9 @@ END
 $$ DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_observacion_deudas_cambio`;
+DROP PROCEDURE IF EXISTS insert_observacion_deudas_cambio;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_observacion_deudas_cambio`(
+CREATE DEFINER=root@localhost PROCEDURE insert_observacion_deudas_cambio(
 	IN _idCliente INT,
 	IN _idLC INT,
 	IN _idSalidaDet INT,
@@ -1047,9 +1047,9 @@ $$ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `mostrar_componente_modelos`;
+DROP PROCEDURE IF EXISTS mostrar_componente_modelos;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_componente_modelos`(
+CREATE DEFINER=root@localhost PROCEDURE mostrar_componente_modelos(
 	IN _idMarca INT
 )
 BEGIN
@@ -1060,9 +1060,9 @@ END
 $$ DELIMITER ;
 
 /*este procedure no se usará pero quedará provisional para saber como se hace, nada más)*/
-DROP PROCEDURE IF EXISTS `update_laptop_memoria`;
+DROP PROCEDURE IF EXISTS update_laptop_memoria;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_memoria`(
+CREATE DEFINER=root@localhost PROCEDURE update_laptop_memoria(
 	IN	_idLC int,
     IN  _idMemoria int,
     IN  _cantidad int,
@@ -1090,7 +1090,7 @@ DELIMITER ;
 
 /*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad`(
+CREATE DEFINER=root@localhost PROCEDURE update_laptop_disponibilidad(
 	IN _idLC INT,
 	IN _estado INT,
 	IN _ubicacion NVARCHAR(250),
@@ -1109,7 +1109,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_salida_detalle`(
+CREATE DEFINER=root@localhost PROCEDURE delete_salida_detalle(
 	IN _idSalida INT
 )
 BEGIN
@@ -1119,7 +1119,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_salida_detalle_idDetalle`(
+CREATE DEFINER=root@localhost PROCEDURE delete_salida_detalle_idDetalle(
 	IN _idCambio INT
 )
 BEGIN
@@ -1131,7 +1131,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_observacion_deudas_cambio`(
+CREATE DEFINER=root@localhost PROCEDURE delete_observacion_deudas_cambio(
 	IN _idCambio INT
 )
 BEGIN
@@ -1144,7 +1144,7 @@ DELIMITER ;
 
 /*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida`(
+CREATE DEFINER=root@localhost PROCEDURE update_salida(
 	IN _idCliente INT,
 	IN _idSucursal INT,
 	IN _rucDni NVARCHAR(100),
@@ -1181,9 +1181,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_devolucion`;
+DROP PROCEDURE IF EXISTS update_devolucion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_devolucion`(
+CREATE DEFINER=root@localhost PROCEDURE update_devolucion(
 	IN _idCliente INT,
 	IN _rucDni NVARCHAR(11),
 	IN _guiaDevolucion NVARCHAR(50),
@@ -1209,9 +1209,9 @@ END
 $$ DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_devolucion_detalle`;
+DROP PROCEDURE IF EXISTS delete_devolucion_detalle;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_devolucion_detalle`(
+CREATE DEFINER=root@localhost PROCEDURE delete_devolucion_detalle(
 	IN _idDevolucion INT
 )
 BEGIN
@@ -1221,7 +1221,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_devuelto`(
+CREATE DEFINER=root@localhost PROCEDURE update_salida_det_devuelto(
 	IN _idSalidaDet INT,
     IN _fueDevuelto TINYINT,
 	IN _usuario_mod NVARCHAR(100)
@@ -1238,7 +1238,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_estado_cambiado`(
+CREATE DEFINER=root@localhost PROCEDURE update_salida_det_estado_cambiado(
 	IN _idSalidaDet INT,
     IN _estadoDet TINYINT,
 	IN _usuario_mod NVARCHAR(100)
@@ -1255,7 +1255,7 @@ $$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion`(
+CREATE DEFINER=root@localhost PROCEDURE anular_devolucion(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
@@ -1275,7 +1275,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_detalle`(
+CREATE DEFINER=root@localhost PROCEDURE anular_devolucion_detalle(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idDevolucionDet INT
@@ -1293,7 +1293,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida`(
+CREATE DEFINER=root@localhost PROCEDURE anular_salida(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
@@ -1313,7 +1313,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida_detalle`(
+CREATE DEFINER=root@localhost PROCEDURE anular_salida_detalle(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idSalidaDet INT
@@ -1331,7 +1331,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_observacion_deudas`(
+CREATE DEFINER=root@localhost PROCEDURE anular_devolucion_observacion_deudas(
     IN _idDevolucion INT
 )
 BEGIN
@@ -1341,9 +1341,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_cambio`;
+DROP PROCEDURE IF EXISTS update_cambio;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cambio`(
+CREATE DEFINER=root@localhost PROCEDURE update_cambio(
 	IN _idLCAntiguo INT,
 	IN _codigoLCAntiguo NVARCHAR(80),
 	IN _estadoLCAntiguo INT,
@@ -1400,7 +1400,7 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_cambio`(
+CREATE DEFINER=root@localhost PROCEDURE anular_cambio(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
@@ -1419,9 +1419,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso`;
+DROP PROCEDURE IF EXISTS insert_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso(
 	IN _idOC INT,
 	IN _idTipoIngreso INT,
 	IN _tipoIngreso NVARCHAR(255),
@@ -1451,9 +1451,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det(
 	IN _idIngreso INT,
 	IN _idMarcaLC INT,
 	IN _idModeloLC INT,
@@ -1494,9 +1494,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det_accesorios`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det_accesorios;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_accesorios`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det_accesorios(
 	IN _idIngreso INT,
 	IN _idCategoria INT,
 	IN _idModeloLicencia INT,
@@ -1521,9 +1521,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_licencia_LC_ingreso`;
+DROP PROCEDURE IF EXISTS delete_licencia_LC_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_licencia_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_licencia_LC_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1534,9 +1534,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `delete_disco_LC_ingreso`;
+DROP PROCEDURE IF EXISTS delete_disco_LC_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_disco_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_disco_LC_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1547,9 +1547,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `delete_memoria_LC_ingreso`;
+DROP PROCEDURE IF EXISTS delete_memoria_LC_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_memoria_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_memoria_LC_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1559,9 +1559,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_LC_ingreso`;
+DROP PROCEDURE IF EXISTS delete_LC_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_LC_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_LC_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1571,9 +1571,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1583,9 +1583,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_accesorios_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_accesorios_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_accesorios_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_accesorios_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -1595,9 +1595,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_memoria_cantidad_menos`;
+DROP PROCEDURE IF EXISTS update_memoria_cantidad_menos;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria_cantidad_menos`(
+CREATE DEFINER=root@localhost PROCEDURE update_memoria_cantidad_menos(
 	IN _idMemoria INT,
 	IN _cantidad INT
 )
@@ -1608,9 +1608,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_disco_cantidad_menos`;
+DROP PROCEDURE IF EXISTS update_disco_cantidad_menos;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_cantidad_menos`(
+CREATE DEFINER=root@localhost PROCEDURE update_disco_cantidad_menos(
 	IN _idDisco INT,
 	IN _cantidad INT
 )
@@ -1621,9 +1621,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_ingreso`;
+DROP PROCEDURE IF EXISTS update_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE update_ingreso(
 	IN _idOC INT,
 	IN _idTipoIngreso INT,
 	IN _tipoIngreso NVARCHAR(255),
@@ -1668,9 +1668,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `anular_ingreso`;
+DROP PROCEDURE IF EXISTS anular_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE anular_ingreso(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
@@ -1705,9 +1705,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_factura`;
+DROP PROCEDURE IF EXISTS insert_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
+CREATE DEFINER=root@localhost PROCEDURE insert_factura(
 	IN _idSalida INT,
 	IN _numFactura NVARCHAR(20),
 	IN _fecIniPago DATETIME,
@@ -1736,9 +1736,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_cuota`;
+DROP PROCEDURE IF EXISTS insert_cuota;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cuota`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cuota(
 	IN _idFactura INT,
 	IN _idSalida INT,
 	IN _idLC INT,
@@ -1765,9 +1765,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_cuota`;
+DROP PROCEDURE IF EXISTS delete_cuota;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_cuota`(
+CREATE DEFINER=root@localhost PROCEDURE delete_cuota(
 	IN _idSalida INT,
 	IN _idLC INT
 )
@@ -1779,9 +1779,9 @@ $$
 
 
 
-DROP PROCEDURE IF EXISTS `update_salida_det_fechaFinalPlazo`;
+DROP PROCEDURE IF EXISTS update_salida_det_fechaFinalPlazo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_fechaFinalPlazo`(
+CREATE DEFINER=root@localhost PROCEDURE update_salida_det_fechaFinalPlazo(
 	IN _idSalidaDet INT,
 	IN _fecFinContrato DATETIME,
 	IN _documentoRenovacion NVARCHAR(255),
@@ -1800,9 +1800,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_reparacion`;
+DROP PROCEDURE IF EXISTS insert_reparacion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_reparacion`(
+CREATE DEFINER=root@localhost PROCEDURE insert_reparacion(
 	IN _idLC INT,
 	IN _codigoLC NVARCHAR(80),
 	IN _fechaReparacion DATETIME,
@@ -1826,9 +1826,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `update_reparacion`;
+DROP PROCEDURE IF EXISTS update_reparacion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_reparacion`(
+CREATE DEFINER=root@localhost PROCEDURE update_reparacion(
 	IN _idLC INT,
 	IN _codigoLC NVARCHAR(80),
 	IN _fechaReparacion DATETIME,
@@ -1860,9 +1860,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `anular_reparacion`;
+DROP PROCEDURE IF EXISTS anular_reparacion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_reparacion`(
+CREATE DEFINER=root@localhost PROCEDURE anular_reparacion(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idReparacion INT
@@ -1880,9 +1880,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `update_observacion`;
+DROP PROCEDURE IF EXISTS update_observacion;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_observacion`(
+CREATE DEFINER=root@localhost PROCEDURE update_observacion(
 	IN _guiaLevantamiento NVARCHAR(80),
 	IN _observacionLevantamiento NVARCHAR(1000),
 	IN _fechaLevantamiento DATETIME,
@@ -1905,9 +1905,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_auxiliar`;
+DROP PROCEDURE IF EXISTS insert_auxiliar;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_auxiliar`(
+CREATE DEFINER=root@localhost PROCEDURE insert_auxiliar(
 	IN _cod_tabla NVARCHAR(255),
 	IN _descripcion NVARCHAR(255),
 	IN _activo TINYINT,
@@ -1922,9 +1922,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `update_auxiliar`;
+DROP PROCEDURE IF EXISTS update_auxiliar;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_auxiliar`(
+CREATE DEFINER=root@localhost PROCEDURE update_auxiliar(
 	IN _cod_tabla NVARCHAR(255),
 	IN _descripcion NVARCHAR(255),
 	IN _activo TINYINT,
@@ -1939,9 +1939,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `insert_marca`;
+DROP PROCEDURE IF EXISTS insert_marca;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_marca`(
+CREATE DEFINER=root@localhost PROCEDURE insert_marca(
 	IN _idCategoria INT,
 	IN _nombre NVARCHAR(255),
 	IN _estado TINYINT,
@@ -1957,9 +1957,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `update_marca`;
+DROP PROCEDURE IF EXISTS update_marca;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_marca`(
+CREATE DEFINER=root@localhost PROCEDURE update_marca(
 	IN _idCategoria INT,
 	IN _nombre NVARCHAR(255),
 	IN _estado TINYINT,
@@ -1979,9 +1979,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_modelo`;
+DROP PROCEDURE IF EXISTS insert_modelo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_modelo`(
+CREATE DEFINER=root@localhost PROCEDURE insert_modelo(
 	IN _idMarca INT,
 	IN _nombre NVARCHAR(255),
 	IN _estado TINYINT,
@@ -1997,9 +1997,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `update_modelo`;
+DROP PROCEDURE IF EXISTS update_modelo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_modelo`(
+CREATE DEFINER=root@localhost PROCEDURE update_modelo(
 	IN _idMarca INT,
 	IN _nombre NVARCHAR(255),
 	IN _estado TINYINT,
@@ -2021,9 +2021,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `insert_ingresos_salidas_internas`;
+DROP PROCEDURE IF EXISTS insert_ingresos_salidas_internas;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingresos_salidas_internas`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingresos_salidas_internas(
 	IN _idLC INT ,
 	IN _codigoLC NVARCHAR(80) ,
 	IN _estadoLCAnt TINYINT ,
@@ -2056,9 +2056,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `update_salida_det_corte_alquiler`;
+DROP PROCEDURE IF EXISTS update_salida_det_corte_alquiler;
 DELIMITER $$
-CREATE DEFINER=`root`@`%` PROCEDURE `update_salida_det_corte_alquiler`(
+CREATE DEFINER=root@% PROCEDURE update_salida_det_corte_alquiler(
 		IN _idSalidaDet INT,
 		IN _fecIniContrato DATETIME,
 		IN _fecFinContrato DATETIME,
@@ -2086,7 +2086,7 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `update_salida_det_fechaFinalPlazoEvento`;
+DROP PROCEDURE IF EXISTS update_salida_det_fechaFinalPlazoEvento;
 DELIMITER $$
 CREATE PROCEDURE update_salida_det_fechaFinalPlazoEvento(
 	)
@@ -2107,9 +2107,9 @@ DO call update_salida_det_fechaFinalPlazoEvento();
 
 --==============================================================================================
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det_impresora`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det_impresora(
 	IN _idIngreso INT,
 	IN _idMarca INT,
 	IN _idModelo INT,
@@ -2135,9 +2135,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det_monitor`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det_monitor(
 	IN _idIngreso INT,
 	IN _idMarca INT,
 	IN _idModelo INT,
@@ -2166,9 +2166,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det_tablet`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det_tablet(
 	IN _idIngreso INT,
 	IN _idMarca INT,
 	IN _idModelo INT,
@@ -2196,9 +2196,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det_proyectorEcram`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det_proyectorEcram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_proyectorEcram`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det_proyectorEcram(
 	IN _idIngreso INT,
 	IN _idMarca INT,
 	IN _idModelo INT,
@@ -2227,9 +2227,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_tablet`;
+DROP PROCEDURE IF EXISTS insert_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE insert_tablet(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -2260,9 +2260,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_impresora`;
+DROP PROCEDURE IF EXISTS insert_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE insert_impresora(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -2291,9 +2291,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_monitor`;
+DROP PROCEDURE IF EXISTS insert_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE insert_monitor(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -2325,9 +2325,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_proyectorEcram`;
+DROP PROCEDURE IF EXISTS insert_proyectorEcram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proyectorEcram`(
+CREATE DEFINER=root@localhost PROCEDURE insert_proyectorEcram(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -2359,9 +2359,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_tablet_ingreso`;
+DROP PROCEDURE IF EXISTS delete_tablet_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_tablet_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_tablet_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2371,9 +2371,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_tablet_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_tablet_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_tablet_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_tablet_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2383,9 +2383,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_impresora_ingreso`;
+DROP PROCEDURE IF EXISTS delete_impresora_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_impresora_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_impresora_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2395,9 +2395,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_impresora_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_impresora_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_impresora_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_impresora_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2407,9 +2407,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_monitor_ingreso`;
+DROP PROCEDURE IF EXISTS delete_monitor_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_monitor_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_monitor_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2419,9 +2419,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_monitor_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_monitor_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_monitor_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_monitor_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2431,9 +2431,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_proyectorEcram_ingreso`;
+DROP PROCEDURE IF EXISTS delete_proyectorEcram_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_proyectorEcram_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_proyectorEcram_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2443,9 +2443,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `delete_det_proyectorEcram_ingreso`;
+DROP PROCEDURE IF EXISTS delete_det_proyectorEcram_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_proyectorEcram_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE delete_det_proyectorEcram_ingreso(
 	IN _idIngreso INT
 )
 BEGIN
@@ -2455,9 +2455,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `anular_ingreso`;
+DROP PROCEDURE IF EXISTS anular_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE anular_ingreso(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
@@ -2525,9 +2525,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_impresora`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_impresora(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -2565,9 +2565,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_monitor`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_monitor(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -2601,9 +2601,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_tablet`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_tablet(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -2636,9 +2636,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_proy_ecram`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_proy_ecram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_proy_ecram`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_proy_ecram(
 	IN _marcaProyEcram NVARCHAR(80),
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
@@ -2697,21 +2697,21 @@ DELIMITER ;
 
 
 
-ALTER TABLE `ingreso_det` 
-ADD COLUMN `idTipoEquipoLC` int NULL AFTER `idIngreso`;
-ALTER TABLE `ingreso_det` 
-ADD COLUMN `nombreTipoEquipoLC` varchar(255) NULL AFTER `idTipoEquipoLC`;
+ALTER TABLE ingreso_det 
+ADD COLUMN idTipoEquipoLC int NULL AFTER idIngreso;
+ALTER TABLE ingreso_det 
+ADD COLUMN nombreTipoEquipoLC varchar(255) NULL AFTER idTipoEquipoLC;
 
-ALTER TABLE `laptop_cpu` 
-ADD COLUMN `idTipoEquipoLC` int NULL AFTER `codigo`;
-ALTER TABLE `laptop_cpu` 
-ADD COLUMN `nombreTipoEquipoLC` varchar(255) NULL AFTER `idTipoEquipoLC`;
+ALTER TABLE laptop_cpu 
+ADD COLUMN idTipoEquipoLC int NULL AFTER codigo;
+ALTER TABLE laptop_cpu 
+ADD COLUMN nombreTipoEquipoLC varchar(255) NULL AFTER idTipoEquipoLC;
 
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det(
 	IN _idIngreso INT,
 	IN _idMarcaLC INT,
 	IN _idModeloLC INT,
@@ -2753,9 +2753,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_laptop_cpu`;
+DROP PROCEDURE IF EXISTS insert_laptop_cpu;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+CREATE DEFINER=root@localhost PROCEDURE insert_laptop_cpu(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -2787,9 +2787,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo(
 	IN _marcaLap NVARCHAR(80), #PCR-LAP o PCR_MAC
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
@@ -2829,9 +2829,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_cpu`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_cpu;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_cpu`(	
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_cpu(	
 	IN _marcaLap NVARCHAR(80), #PCR-LAP o PCR_MAC
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
@@ -2872,9 +2872,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_impresora`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_impresora(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -2910,9 +2910,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_monitor`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_monitor(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -2946,9 +2946,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_proy_ecram`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_proy_ecram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_proy_ecram`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_proy_ecram(
 	IN _marcaProyEcram NVARCHAR(80),
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
@@ -3005,9 +3005,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `obtener_codigo_correlativo_tablet`;
+DROP PROCEDURE IF EXISTS obtener_codigo_correlativo_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `obtener_codigo_correlativo_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE obtener_codigo_correlativo_tablet(
 	IN _idProveedor int,
 	IN _monthIngreso NVARCHAR(80),
 	IN _yearIngreso NVARCHAR(80),
@@ -3041,9 +3041,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `verificarArrendamiento`;
+DROP PROCEDURE IF EXISTS verificarArrendamiento;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `verificarArrendamiento`(
+CREATE DEFINER=root@localhost PROCEDURE verificarArrendamiento(
 	IN _codigoLapArrendamiento nvarchar(255),
 	OUT _cantidad int,
 	OUT _idLC int,
@@ -3069,9 +3069,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `verificarArrendamiento_impresora`;
+DROP PROCEDURE IF EXISTS verificarArrendamiento_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `verificarArrendamiento_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE verificarArrendamiento_impresora(
 	IN _codigoLapArrendamiento nvarchar(255),
 	OUT _cantidad int,
 	OUT _idImpresora int,
@@ -3094,9 +3094,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `verificarArrendamiento_monitor`;
+DROP PROCEDURE IF EXISTS verificarArrendamiento_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `verificarArrendamiento_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE verificarArrendamiento_monitor(
 	IN _codigoLapArrendamiento nvarchar(255),
 	OUT _cantidad int,
 	OUT _idMonitor int,
@@ -3120,9 +3120,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `verificarArrendamiento_proyector_ecram`;
+DROP PROCEDURE IF EXISTS verificarArrendamiento_proyector_ecram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `verificarArrendamiento_proyector_ecram`(
+CREATE DEFINER=root@localhost PROCEDURE verificarArrendamiento_proyector_ecram(
 	IN _codigoLapArrendamiento nvarchar(255),
 	OUT _cantidad int,
 	OUT _idProyectorEcram int,
@@ -3146,9 +3146,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `verificarArrendamiento_tablet`;
+DROP PROCEDURE IF EXISTS verificarArrendamiento_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `verificarArrendamiento_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE verificarArrendamiento_tablet(
 	IN _codigoLapArrendamiento nvarchar(255),
 	OUT _cantidad int,
 	OUT _idTablet int,
@@ -3172,9 +3172,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idLC int
@@ -3191,9 +3191,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento_impresora`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento_impresora;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento_impresora`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento_impresora(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idImpresora int
@@ -3206,9 +3206,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento_monitor`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento_monitor;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento_monitor`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento_monitor(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idMonitor int
@@ -3221,9 +3221,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento_proyector_ecram`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento_proyector_ecram;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento_proyector_ecram`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento_proyector_ecram(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idProyectorEcram int
@@ -3236,9 +3236,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento_tablet`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento_tablet;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento_tablet`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento_tablet(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idTablet int
@@ -3251,9 +3251,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `insert_ingreso_det`;
+DROP PROCEDURE IF EXISTS insert_ingreso_det;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso_det(
 	IN _idIngreso INT,
 	IN _idMarcaLC INT,
 	IN _idModeloLC INT,
@@ -3298,9 +3298,9 @@ DELIMITER ;
 
 --========================NOTA CREDITO======================================
 
-DROP PROCEDURE IF EXISTS `anular_factura`;
+DROP PROCEDURE IF EXISTS anular_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
+CREATE DEFINER=root@localhost PROCEDURE anular_factura(
 	IN _idFactura int,
 	IN _idSalida int,
 	IN _idTipoEquipo int,
@@ -3377,9 +3377,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `update_factura`;
+DROP PROCEDURE IF EXISTS update_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_factura`(
+CREATE DEFINER=root@localhost PROCEDURE update_factura(
 	IN _idFactura int,
 	IN _idSalida int,
 	IN _idTipoEquipo int,
@@ -3445,14 +3445,14 @@ DELIMITER ;
 
 --======================FACTURAS TRANSITO=======================================	
 
-INSERT INTO `bd_leasein`.`estados`(`idEstado`, `nombreEstado`, `descripcion`) VALUES (14, 'TRANSFERIDO', NULL);
+INSERT INTO bd_leasein.estados(idEstado, nombreEstado, descripcion) VALUES (14, 'TRANSFERIDO', NULL);
 
-ALTER TABLE `factura` 
-ADD COLUMN `idFacturaTransito` int NULL AFTER `idSalida`;
+ALTER TABLE factura 
+ADD COLUMN idFacturaTransito int NULL AFTER idSalida;
 
-DROP PROCEDURE IF EXISTS `insert_facturaTransito`;
+DROP PROCEDURE IF EXISTS insert_facturaTransito;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_facturaTransito`(
+CREATE DEFINER=root@localhost PROCEDURE insert_facturaTransito(
 	IN _idSalida INT,
 	IN _numFacturaTransito NVARCHAR(255),
 	IN _numeroOC NVARCHAR(255),
@@ -3484,9 +3484,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_facturaTransito`;
+DROP PROCEDURE IF EXISTS update_facturaTransito;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_facturaTransito`(
+CREATE DEFINER=root@localhost PROCEDURE update_facturaTransito(
 	IN _estado int,
 	IN _idSalida int,
 	IN _idFacturaTransito int
@@ -3503,9 +3503,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `update_facturaIdFacturaTransito`;
+DROP PROCEDURE IF EXISTS update_facturaIdFacturaTransito;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_facturaIdFacturaTransito`(
+CREATE DEFINER=root@localhost PROCEDURE update_facturaIdFacturaTransito(
 	IN _idFacturaTransito int,
 	IN _idFactura int
 )
@@ -3523,19 +3523,19 @@ DELIMITER ;
 
 --======================STEVEN=======================================
 
-ALTER TABLE `laptop_cpu` 
-ADD COLUMN `idSede` int NULL AFTER `ubicacion`;
+ALTER TABLE laptop_cpu 
+ADD COLUMN idSede int NULL AFTER ubicacion;
 
-ALTER TABLE `ingreso` 
-ADD COLUMN `idSede` int NULL AFTER `tipoMoneda`;
+ALTER TABLE ingreso 
+ADD COLUMN idSede int NULL AFTER tipoMoneda;
 
-ALTER TABLE `ingreso` 
-ADD COLUMN `nombreSede` varchar(255) NULL AFTER `idSede`;
+ALTER TABLE ingreso 
+ADD COLUMN nombreSede varchar(255) NULL AFTER idSede;
 
 
-DROP PROCEDURE IF EXISTS `insert_laptop_cpu`;
+DROP PROCEDURE IF EXISTS insert_laptop_cpu;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+CREATE DEFINER=root@localhost PROCEDURE insert_laptop_cpu(
 	IN _idIngreso INT,
 	IN _idIngresoDet INT,
 	IN _idModelo INT,
@@ -3569,9 +3569,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_ingreso`;
+DROP PROCEDURE IF EXISTS insert_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE insert_ingreso(
 	IN _idOC INT,
 	IN _idTipoIngreso INT,
 	IN _tipoIngreso NVARCHAR(255),
@@ -3603,9 +3603,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_ingreso`;
+DROP PROCEDURE IF EXISTS update_ingreso;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_ingreso`(
+CREATE DEFINER=root@localhost PROCEDURE update_ingreso(
 	IN _idOC INT,
 	IN _idTipoIngreso INT,
 	IN _tipoIngreso NVARCHAR(255),
@@ -3654,9 +3654,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_laptop_disponibilidad_dev_cam`;
+DROP PROCEDURE IF EXISTS update_laptop_disponibilidad_dev_cam;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad_dev_cam`(
+CREATE DEFINER=root@localhost PROCEDURE update_laptop_disponibilidad_dev_cam(
 	IN _idLC INT,
 	IN _estado INT,
 	IN _ubicacion NVARCHAR(250),
@@ -3678,9 +3678,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `actualizarIngresoArrendamiento`;
+DROP PROCEDURE IF EXISTS actualizarIngresoArrendamiento;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarIngresoArrendamiento`(
+CREATE DEFINER=root@localhost PROCEDURE actualizarIngresoArrendamiento(
 	IN _idIngresoAntiguo int,
 	IN _idIngresoNuevo int,
 	IN _idLC int,
@@ -3699,17 +3699,17 @@ DELIMITER ;
 
 					
 --===================================Tipo de Cambio=================================
-ALTER TABLE `bd_leasein`.`factura` 
-ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
-ALTER TABLE `bd_leasein`.`cuota` 
-ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
-ALTER TABLE `bd_leasein`.`factura_transito` 
-ADD COLUMN `tipoCambio` double NULL AFTER `costoDolares`;
+ALTER TABLE bd_leasein.factura 
+ADD COLUMN tipoCambio double NULL AFTER costoDolares;
+ALTER TABLE bd_leasein.cuota 
+ADD COLUMN tipoCambio double NULL AFTER costoDolares;
+ALTER TABLE bd_leasein.factura_transito 
+ADD COLUMN tipoCambio double NULL AFTER costoDolares;
 
                     
-DROP PROCEDURE IF EXISTS `insert_facturaTransito`;
+DROP PROCEDURE IF EXISTS insert_facturaTransito;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_facturaTransito`(
+CREATE DEFINER=root@localhost PROCEDURE insert_facturaTransito(
 	IN _idSalida INT,
 	IN _numFacturaTransito NVARCHAR(255),
 	IN _numeroOC NVARCHAR(255),
@@ -3742,9 +3742,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_factura`;
+DROP PROCEDURE IF EXISTS insert_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
+CREATE DEFINER=root@localhost PROCEDURE insert_factura(
 	IN _idSalida INT,
 	IN _numFactura NVARCHAR(20),
 	IN _fecIniPago DATETIME,
@@ -3774,9 +3774,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `insert_cuota`;
+DROP PROCEDURE IF EXISTS insert_cuota;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cuota`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cuota(
 	IN _idFactura INT,
 	IN _idSalida INT,
 	IN _idLC INT,
@@ -3805,9 +3805,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `anular_factura`;
+DROP PROCEDURE IF EXISTS anular_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
+CREATE DEFINER=root@localhost PROCEDURE anular_factura(
 	IN _idFactura int,
 	IN _idSalida int,
 	IN _idTipoEquipo int,
@@ -3883,16 +3883,16 @@ $$
 DELIMITER ;
 
 --===========================Modificar nota credito, fechaEmisiom y tipoCambio=======
-ALTER TABLE `bd_leasein`.`nota_credito` 
-ADD COLUMN `fecEmisiom` date NULL AFTER `numFactura`;
-ALTER TABLE `bd_leasein`.`nota_credito` 
-ADD COLUMN `tipoCambio` double NULL AFTER `costoDolaresActual`;
-ALTER TABLE `bd_leasein`.`nota_credito` 
-ADD COLUMN `accion` int NULL AFTER `guiaSalida`;
+ALTER TABLE bd_leasein.nota_credito 
+ADD COLUMN fecEmisiom date NULL AFTER numFactura;
+ALTER TABLE bd_leasein.nota_credito 
+ADD COLUMN tipoCambio double NULL AFTER costoDolaresActual;
+ALTER TABLE bd_leasein.nota_credito 
+ADD COLUMN accion int NULL AFTER guiaSalida;
 
-DROP PROCEDURE IF EXISTS `anular_factura`;
+DROP PROCEDURE IF EXISTS anular_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_factura`(
+CREATE DEFINER=root@localhost PROCEDURE anular_factura(
 	IN _idFactura int,
 	IN _idSalida int,
 	IN _idTipoEquipo int,
@@ -3971,9 +3971,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `update_factura`;
+DROP PROCEDURE IF EXISTS update_factura;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_factura`(
+CREATE DEFINER=root@localhost PROCEDURE update_factura(
 	IN _idFactura int,
 	IN _idSalida int,
 	IN _idTipoEquipo int,
@@ -4039,9 +4039,9 @@ $$
 DELIMITER ;
 
 --=========================================================================================================
-DROP PROCEDURE IF EXISTS `relacionarKAMmasivo`;
+DROP PROCEDURE IF EXISTS relacionarKAMmasivo;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `relacionarKAMmasivo`(
+CREATE DEFINER=root@localhost PROCEDURE relacionarKAMmasivo(
 	IN _rucCliente NVARCHAR(200),
 	IN _razonSocialCliente NVARCHAR(200),
 	IN _dniKam NVARCHAR(200),
@@ -4063,9 +4063,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `relacion_KAM`;
+DROP PROCEDURE IF EXISTS relacion_KAM;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `relacion_KAM`(
+CREATE DEFINER=root@localhost PROCEDURE relacion_KAM(
 	IN _Nombre_razonSocial NVARCHAR(200),
 	IN _idKam int
 )
@@ -4085,9 +4085,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `VerificarDniKam`;
+DROP PROCEDURE IF EXISTS VerificarDniKam;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerificarDniKam`(
+CREATE DEFINER=root@localhost PROCEDURE VerificarDniKam(
 	IN _dniKam  NVARCHAR(200),
 	OUT _cantidad INT
 )
@@ -4097,9 +4097,9 @@ END
 $$
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS `VerificarRucCliente`;
+DROP PROCEDURE IF EXISTS VerificarRucCliente;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerificarRucCliente`(
+CREATE DEFINER=root@localhost PROCEDURE VerificarRucCliente(
 	IN _rucCliente NVARCHAR(255),
 	OUT _cantidad INT
 )
@@ -4111,9 +4111,9 @@ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `insert_usuario`;
+DROP PROCEDURE IF EXISTS insert_usuario;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_usuario`(
+CREATE DEFINER=root@localhost PROCEDURE insert_usuario(
 	IN _dni NVARCHAR(8),
 	IN _nombre NVARCHAR(255),
 	IN _usuario NVARCHAR(20),
@@ -4138,7 +4138,7 @@ END
 $$
 DELIMITER ;
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insertTarifas`(
+CREATE DEFINER=root@localhost PROCEDURE insertTarifas(
 	IN _ruc NVARCHAR(200),
 	IN _codigo NVARCHAR(200),
 	IN _tarifa DOUBLE, 
@@ -4173,9 +4173,9 @@ END
 --======================CONTACTOS=======================================	
 
 
-DROP PROCEDURE IF EXISTS `insert_cliente_contacto`;
+DROP PROCEDURE IF EXISTS insert_cliente_contacto;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_contacto`(
+CREATE DEFINER=root@localhost PROCEDURE insert_cliente_contacto(
 	IN _idCliente INT,
 	IN _idTipoContacto INT,
 	IN _nombre NVARCHAR(1000),
@@ -4197,9 +4197,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `update_cliente_contacto`;
+DROP PROCEDURE IF EXISTS update_cliente_contacto;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cliente_contacto`(
+CREATE DEFINER=root@localhost PROCEDURE update_cliente_contacto(
 	IN _idContacto INT,
 	IN _idTipoContacto INT,
 	IN _nombre NVARCHAR(1000),
@@ -4234,9 +4234,9 @@ DELIMITER ;
 --======================CORTE ALQUILER=======================================	
 
 
-DROP PROCEDURE IF EXISTS `insert_corte_alquiler`;
+DROP PROCEDURE IF EXISTS insert_corte_alquiler;
 DELIMITER $$
-CREATE DEFINER=`root`@`%` PROCEDURE `insert_corte_alquiler`(
+CREATE PROCEDURE insert_corte_alquiler(
 		IN _idSalida INT,
 		IN _idSalidaDet INT,
 		IN _idTipoEquipo INT,
@@ -4268,9 +4268,9 @@ $$
 DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS `cancel_corte_alquiler`;
+DROP PROCEDURE IF EXISTS cancel_corte_alquiler;
 DELIMITER $$
-CREATE DEFINER=`root`@`%` PROCEDURE `cancel_corte_alquiler`(
+CREATE PROCEDURE cancel_corte_alquiler(
 		IN _idCorteAlquiler INT,
 		IN _estado TINYINT,
 		IN _usuario_mod NVARCHAR(100)
@@ -4287,17 +4287,17 @@ $$
 DELIMITER ;
 
 
-ALTER TABLE `bd_leasein`.`salida_det` 
-ADD COLUMN `motivoCorte` varchar(255) NULL AFTER `corteAlquiler`,
-ADD COLUMN `fecRecojo` date NULL AFTER `motivoCorte`,
-ADD COLUMN `direccionRecojo` varchar(1000) NULL AFTER `fecRecojo`,
-ADD COLUMN `personaContacto` varchar(500) NULL AFTER `direccionRecojo`,
-ADD COLUMN `telefono` varchar(255) NULL AFTER `personaContacto`;
+ALTER TABLE salida_det 
+ADD COLUMN motivoCorte varchar(255) NULL AFTER corteAlquiler,
+ADD COLUMN fecRecojo date NULL AFTER motivoCorte,
+ADD COLUMN direccionRecojo varchar(1000) NULL AFTER fecRecojo,
+ADD COLUMN personaContacto varchar(500) NULL AFTER direccionRecojo,
+ADD COLUMN telefono varchar(255) NULL AFTER personaContacto;
 
-INSERT INTO `bd_leasein`.`areas`(`idArea`, `descripcionArea`) VALUES (5, 'COMERCIAL SUPERVISOR');
+INSERT INTO areas(idArea, descripcionArea) VALUES (5, 'COMERCIAL SUPERVISOR');
 
-DELETE FROM `bd_leasein`.`submodulos` WHERE `idSubmodulo` = '4b';
+DELETE FROM submodulos WHERE idSubmodulo = '4b';
 
-DELETE FROM `bd_leasein`.`submodulos` WHERE `idSubmodulo` = '6c';
+DELETE FROM submodulos WHERE idSubmodulo = '6c';
 
-INSERT INTO `bd_leasein`.`submodulos`(`idSubmodulo`, `descripcionSubmodulo`, `idModuloP`) VALUES ('17c', 'REPORTE CORTE ALQUILER', 3);
+INSERT INTO submodulos(idSubmodulo, descripcionSubmodulo, idModuloP) VALUES ('17c', 'REPORTE CORTE ALQUILER', 3);

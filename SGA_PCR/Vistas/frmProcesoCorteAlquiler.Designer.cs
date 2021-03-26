@@ -60,6 +60,7 @@
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.FechaFinAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlCA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSeleccionados)).BeginInit();
@@ -279,6 +280,7 @@
             this.CodigoEquipo,
             this.NumFactura,
             this.FechaIniContrato,
+            this.FechaFinAlquiler,
             this.FechaFinContrato,
             this.MotivoCorte,
             this.PersonaContacto,
@@ -312,7 +314,7 @@
             // 
             // NumFactura
             // 
-            this.NumFactura.Caption = "Número Factura";
+            this.NumFactura.Caption = "Última Factura";
             this.NumFactura.FieldName = "NumFactura";
             this.NumFactura.MinWidth = 40;
             this.NumFactura.Name = "NumFactura";
@@ -336,13 +338,13 @@
             // 
             // FechaFinContrato
             // 
-            this.FechaFinContrato.Caption = "Fecha Fin Alquiler";
+            this.FechaFinContrato.Caption = "Fecha Corte Alquiler";
             this.FechaFinContrato.FieldName = "FechaFinContrato";
             this.FechaFinContrato.MinWidth = 40;
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 3;
+            this.FechaFinContrato.VisibleIndex = 4;
             this.FechaFinContrato.Width = 130;
             // 
             // MotivoCorte
@@ -353,7 +355,7 @@
             this.MotivoCorte.Name = "MotivoCorte";
             this.MotivoCorte.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.MotivoCorte.Visible = true;
-            this.MotivoCorte.VisibleIndex = 4;
+            this.MotivoCorte.VisibleIndex = 5;
             this.MotivoCorte.Width = 140;
             // 
             // PersonaContacto
@@ -364,7 +366,7 @@
             this.PersonaContacto.Name = "PersonaContacto";
             this.PersonaContacto.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.PersonaContacto.Visible = true;
-            this.PersonaContacto.VisibleIndex = 5;
+            this.PersonaContacto.VisibleIndex = 6;
             this.PersonaContacto.Width = 140;
             // 
             // DireccionRecojo
@@ -375,7 +377,7 @@
             this.DireccionRecojo.Name = "DireccionRecojo";
             this.DireccionRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.DireccionRecojo.Visible = true;
-            this.DireccionRecojo.VisibleIndex = 6;
+            this.DireccionRecojo.VisibleIndex = 7;
             this.DireccionRecojo.Width = 140;
             // 
             // Telefono
@@ -386,18 +388,18 @@
             this.Telefono.Name = "Telefono";
             this.Telefono.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Telefono.Visible = true;
-            this.Telefono.VisibleIndex = 7;
+            this.Telefono.VisibleIndex = 8;
             this.Telefono.Width = 100;
             // 
             // FechaRecojo
             // 
-            this.FechaRecojo.Caption = "Fecha Recojo";
+            this.FechaRecojo.Caption = "Fecha Sugerida de Recojo";
             this.FechaRecojo.FieldName = "FechaRecojo";
             this.FechaRecojo.MinWidth = 40;
             this.FechaRecojo.Name = "FechaRecojo";
             this.FechaRecojo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaRecojo.Visible = true;
-            this.FechaRecojo.VisibleIndex = 8;
+            this.FechaRecojo.VisibleIndex = 9;
             this.FechaRecojo.Width = 100;
             // 
             // MarcaLC
@@ -450,6 +452,18 @@
             this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // FechaFinAlquiler
+            // 
+            this.FechaFinAlquiler.Caption = "Fecha Fin Alquiler";
+            this.FechaFinAlquiler.FieldName = "FechaFinContrato";
+            this.FechaFinAlquiler.MinWidth = 40;
+            this.FechaFinAlquiler.Name = "FechaFinAlquiler";
+            this.FechaFinAlquiler.OptionsColumn.AllowEdit = false;
+            this.FechaFinAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaFinAlquiler.Visible = true;
+            this.FechaFinAlquiler.VisibleIndex = 3;
+            this.FechaFinAlquiler.Width = 130;
             // 
             // frmProcesoCorteAlquiler
             // 
@@ -522,5 +536,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaRecojo;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaFinAlquiler;
     }
 }

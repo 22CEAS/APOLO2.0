@@ -16,26 +16,18 @@ namespace AccesoDatos
 
         //public static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=UInag9; database=inf282g2; SslMode=None";
 
-        //public static string cadena = "server=localhost; user=root; password=; database=bd_leasein; SslMode=None;Connect Timeout=300000";
+        //public static string cadena = "server=localhost; user=root; password=; database=bd_leasein; SslMode=None;Connect Timeout=tiempo00";
 
         //public static MySqlConnection conexion = null;
 
         public static string servidor = ConfigurationManager.AppSettings["ServidorMySql"].ToString();
         public static string basedatos = ConfigurationManager.AppSettings["BaseDatosMySql"].ToString();
 
-        //public static string cadena = "server=" + "209.45.53.41" + "; user=root; password=root; database=" + "bd_leasein_test" + "; SslMode=None;Connect Timeout=300000";
-        //public static string cadena = "server="+ servidor + "; user=root; password=; database="+ basedatos + "; SslMode=None;Connect Timeout=300000";
+        //public static string cadena = "server="+ servidor + "; user=root; password=; database="+ basedatos + "; SslMode=None;Connect Timeout=9000";
+        public static string cadena = "server=" + "localhost" + "; user=root; password=root; database=" + "bd_leasein_test" + "; SslMode=None;Connect Timeout=9000";
+        //public static string cadena = "server=" + "209.45.53.41" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=9000";
 
-        //local carlos
-        public static string cadena = "server=" + "localhost" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=300000";
-
-        //local steven
-        //static string cadena = "server=" + "localhost" + "; user=root; password=ROOT; port=3305; database=" + "test_leasein" + "; SslMode=None;Connect Timeout=300000";
-
-        //PRUEBAS SERVIDOR 16gb
-        //public static string cadena = "server=" + "204.2.195.84" + "; user=root; password=rootroot; port=18886; database=" + "test" + "; SslMode=None;Connect Timeout=300000";
-
-        //public static string cadena = "server=" + "209.45.53.41" + "; user=root; password=root; database=" + "bd_leasein" + "; SslMode=None;Connect Timeout=300000";
+        public int tiempo =5000;
         public MySqlConnection conexion = null;
         public MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
@@ -50,6 +42,7 @@ namespace AccesoDatos
                 conexion.Open();
                 cmd = new MySqlCommand(nombProcedimiento, conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = tiempo;
                 cmd.Parameters.AddRange(parametrosEntrada);
                 cmd.ExecuteNonQuery();
                 conexion.Close();
@@ -77,7 +70,7 @@ namespace AccesoDatos
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
                 cmd = new MySqlCommand(nombProcedimiento, conexion);
-                cmd.CommandTimeout = 3000;
+                cmd.CommandTimeout = tiempo;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(parametrosEntrada);
                 for (int i = index; i < n; i++)
@@ -114,6 +107,7 @@ namespace AccesoDatos
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
                 cmd = new MySqlCommand(nombProcedimiento, conexion);
+                cmd.CommandTimeout = tiempo;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(parametros);
                 for (int i = index; i < n; i++)
@@ -140,10 +134,21 @@ namespace AccesoDatos
         {
             try
             {
+                //conexion = new MySqlConnection(cadena);
+                //conexion.Open();
+                //tabla = new DataTable();
+                //adaptador = new MySqlDataAdapter(comando, conexion);
+                //adaptador.Fill(tabla);
+                //conexion.Close();
+                //return tabla;
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
+                cmd = new MySqlCommand(comando, conexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandTimeout = tiempo;
+                //cmd.ExecuteReader();  
                 tabla = new DataTable();
-                adaptador = new MySqlDataAdapter(comando, conexion);
+                adaptador = new MySqlDataAdapter(cmd);
                 adaptador.Fill(tabla);
                 conexion.Close();
                 return tabla;
@@ -168,6 +173,7 @@ namespace AccesoDatos
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
                 cmd = new MySqlCommand(datos, conexion);
+                cmd.CommandTimeout = tiempo;
                 leer = cmd.ExecuteReader();
                 //conexion.Close();
                 return leer;
@@ -194,6 +200,7 @@ namespace AccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (parametrosEntrada != null)
                     cmd.Parameters.AddRange(parametrosEntrada);
+                cmd.CommandTimeout = tiempo;
                 cmd.ExecuteNonQuery();
                 tabla = new DataTable();
                 adaptador = new MySqlDataAdapter(cmd);
@@ -220,6 +227,7 @@ namespace AccesoDatos
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
                 cmd = new MySqlCommand(sql, conexion);
+                cmd.CommandTimeout = tiempo;
                 cmd.ExecuteNonQuery();
                 return true;
             }

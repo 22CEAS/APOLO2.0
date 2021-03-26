@@ -268,7 +268,7 @@
             this.lblTarifas.Size = new System.Drawing.Size(137, 31);
             this.lblTarifas.TabIndex = 144;
             this.lblTarifas.Text = "TARIFAS";
-            this.lblTarifas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTarifas_MouseMove);
+            this.lblTarifas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTarifas_MouseMove);
             // 
             // btnCerrar
             // 
