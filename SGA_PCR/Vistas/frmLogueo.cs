@@ -75,14 +75,16 @@ namespace Apolo
         {
 
             int idUsuario = int.Parse(usuarioDA.Obtener_idUsuario(txtUsername.Text));
+            string email = usuarioDA.Obtener_correoUsuario(txtUsername.Text);
 
-            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL(idUsuario,txtUsername.Text);
+            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL(idUsuario,txtUsername.Text,email);
             //frmPrincipal frm = new frmPrincipal(); 
 
 
             //CORRER QUERY PARA SABER EL ID
             frm.usuario.Text = txtUsername.Text;
             frm.lblUser.Text = txtUsername.Text;
+            frm.lblCorreo.Text = email;
             //frm.usuarioConectado.Text = usuarioDA.Obtener_idUsuario(txtUsername.Text);
 
 

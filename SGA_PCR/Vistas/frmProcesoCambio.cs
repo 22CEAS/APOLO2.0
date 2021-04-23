@@ -796,5 +796,16 @@ namespace Apolo
             }
         }
 
+        
+
+        private void vistaEquipos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+            {
+                string aux = vistaEquipos.GetFocusedValue().ToString();
+                //MessageBox.Show(aux);
+                Clipboard.SetText(aux);
+            }
+        }
     }
 }

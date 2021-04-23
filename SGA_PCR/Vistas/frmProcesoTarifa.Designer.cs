@@ -101,6 +101,7 @@
             this.vistaTarifas.OptionsView.ShowAutoFilterRow = true;
             this.vistaTarifas.OptionsView.ShowGroupPanel = false;
             this.vistaTarifas.OptionsView.ShowIndicator = false;
+            this.vistaTarifas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaTarifas_KeyUp);
             // 
             // Costo
             // 

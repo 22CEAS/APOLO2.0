@@ -4255,7 +4255,7 @@ CREATE PROCEDURE insert_corte_alquiler(
 		IN _direccionRecojo NVARCHAR(1000),
 		IN _personaContacto NVARCHAR(500),
 		IN _telefono NVARCHAR(255),
-		IN _observacion NVARCHAR(1000),
+		IN _observacion NVARCHAR(3000),
 		IN _usuario_ins NVARCHAR(100),
 		OUT _idCorteAlquiler INT
 )
@@ -4301,3 +4301,8 @@ DELETE FROM submodulos WHERE idSubmodulo = '4b';
 DELETE FROM submodulos WHERE idSubmodulo = '6c';
 
 INSERT INTO submodulos(idSubmodulo, descripcionSubmodulo, idModuloP) VALUES ('17c', 'REPORTE CORTE ALQUILER', 3);
+
+
+UPDATE salida_det
+set motivoCorte='DEVOLUCIÓN'
+where fueDevuelto=0 and corteAlquiler=1 and estado=4 and motivoCorte is null;

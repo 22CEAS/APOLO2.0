@@ -47,6 +47,8 @@
             this.Disco2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CapacidadDisco2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MemoriaRam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LicenciaWindows = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LicenciaOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RucCliente = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,8 +88,6 @@
             this.pnlInv = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.LicenciaWindows = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LicenciaOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -199,6 +199,7 @@
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             this.vista.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.vista_CellValueChanged);
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // CodigoLC
             // 
@@ -342,6 +343,30 @@
             this.MemoriaRam.Visible = true;
             this.MemoriaRam.VisibleIndex = 11;
             this.MemoriaRam.Width = 100;
+            // 
+            // LicenciaWindows
+            // 
+            this.LicenciaWindows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LicenciaWindows.AppearanceHeader.Options.UseBackColor = true;
+            this.LicenciaWindows.Caption = "Windows";
+            this.LicenciaWindows.FieldName = "LicenciaWindows";
+            this.LicenciaWindows.MinWidth = 40;
+            this.LicenciaWindows.Name = "LicenciaWindows";
+            this.LicenciaWindows.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.LicenciaWindows.Visible = true;
+            this.LicenciaWindows.VisibleIndex = 12;
+            this.LicenciaWindows.Width = 140;
+            // 
+            // LicenciaOffice
+            // 
+            this.LicenciaOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LicenciaOffice.AppearanceHeader.Options.UseBackColor = true;
+            this.LicenciaOffice.Caption = "Office";
+            this.LicenciaOffice.FieldName = "LicenciaOffice";
+            this.LicenciaOffice.MinWidth = 40;
+            this.LicenciaOffice.Name = "LicenciaOffice";
+            this.LicenciaOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.LicenciaOffice.Width = 140;
             // 
             // Estado
             // 
@@ -824,30 +849,6 @@
             this.label4.TabIndex = 189;
             this.label4.Text = "INVENTARIO";
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
-            // 
-            // LicenciaWindows
-            // 
-            this.LicenciaWindows.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LicenciaWindows.AppearanceHeader.Options.UseBackColor = true;
-            this.LicenciaWindows.Caption = "Windows";
-            this.LicenciaWindows.FieldName = "LicenciaWindows";
-            this.LicenciaWindows.MinWidth = 40;
-            this.LicenciaWindows.Name = "LicenciaWindows";
-            this.LicenciaWindows.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.LicenciaWindows.Visible = true;
-            this.LicenciaWindows.VisibleIndex = 12;
-            this.LicenciaWindows.Width = 140;
-            // 
-            // LicenciaOffice
-            // 
-            this.LicenciaOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LicenciaOffice.AppearanceHeader.Options.UseBackColor = true;
-            this.LicenciaOffice.Caption = "Office";
-            this.LicenciaOffice.FieldName = "LicenciaOffice";
-            this.LicenciaOffice.MinWidth = 40;
-            this.LicenciaOffice.Name = "LicenciaOffice";
-            this.LicenciaOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.LicenciaOffice.Width = 140;
             // 
             // frmReporteStocksLaptops
             // 

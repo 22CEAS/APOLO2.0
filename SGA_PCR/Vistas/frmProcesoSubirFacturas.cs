@@ -27,8 +27,8 @@ namespace Apolo
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
-        private int maxNumDias=3;
-        private int minNumDias=-1;
+        private int maxNumDias=5;
+        private int minNumDias=-5;
 
         public frmProcesoSubirFacturas()
         {

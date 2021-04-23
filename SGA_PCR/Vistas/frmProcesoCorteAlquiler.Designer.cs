@@ -48,19 +48,21 @@
             this.CodigoEquipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MotivoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PersonaContacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DireccionRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.FechaFinAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSubirSeries = new System.Windows.Forms.Button();
             this.pnlCA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSeleccionados)).BeginInit();
@@ -287,6 +289,7 @@
             this.DireccionRecojo,
             this.Telefono,
             this.FechaRecojo,
+            this.Observacion,
             this.MarcaLC,
             this.ModeloLC,
             this.IdLC});
@@ -298,6 +301,7 @@
             this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaEquipos.OptionsView.ShowAutoFilterRow = true;
             this.vistaEquipos.OptionsView.ShowGroupPanel = false;
+            this.vistaEquipos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaEquipos_KeyUp);
             // 
             // CodigoEquipo
             // 
@@ -335,6 +339,18 @@
             this.FechaIniContrato.Visible = true;
             this.FechaIniContrato.VisibleIndex = 2;
             this.FechaIniContrato.Width = 130;
+            // 
+            // FechaFinAlquiler
+            // 
+            this.FechaFinAlquiler.Caption = "Fecha Fin Alquiler";
+            this.FechaFinAlquiler.FieldName = "FechaFinContrato";
+            this.FechaFinAlquiler.MinWidth = 40;
+            this.FechaFinAlquiler.Name = "FechaFinAlquiler";
+            this.FechaFinAlquiler.OptionsColumn.AllowEdit = false;
+            this.FechaFinAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaFinAlquiler.Visible = true;
+            this.FechaFinAlquiler.VisibleIndex = 3;
+            this.FechaFinAlquiler.Width = 130;
             // 
             // FechaFinContrato
             // 
@@ -402,6 +418,17 @@
             this.FechaRecojo.VisibleIndex = 9;
             this.FechaRecojo.Width = 100;
             // 
+            // Observacion
+            // 
+            this.Observacion.Caption = "Comentario";
+            this.Observacion.FieldName = "Observacion";
+            this.Observacion.MinWidth = 40;
+            this.Observacion.Name = "Observacion";
+            this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Observacion.Visible = true;
+            this.Observacion.VisibleIndex = 10;
+            this.Observacion.Width = 200;
+            // 
             // MarcaLC
             // 
             this.MarcaLC.Caption = "Marca";
@@ -453,17 +480,24 @@
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // FechaFinAlquiler
+            // btnSubirSeries
             // 
-            this.FechaFinAlquiler.Caption = "Fecha Fin Alquiler";
-            this.FechaFinAlquiler.FieldName = "FechaFinContrato";
-            this.FechaFinAlquiler.MinWidth = 40;
-            this.FechaFinAlquiler.Name = "FechaFinAlquiler";
-            this.FechaFinAlquiler.OptionsColumn.AllowEdit = false;
-            this.FechaFinAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.FechaFinAlquiler.Visible = true;
-            this.FechaFinAlquiler.VisibleIndex = 3;
-            this.FechaFinAlquiler.Width = 130;
+            this.btnSubirSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubirSeries.AutoSize = true;
+            this.btnSubirSeries.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubirSeries.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubirSeries.FlatAppearance.BorderSize = 0;
+            this.btnSubirSeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubirSeries.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirSeries.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirSeries.Image")));
+            this.btnSubirSeries.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSubirSeries.Location = new System.Drawing.Point(825, 55);
+            this.btnSubirSeries.Name = "btnSubirSeries";
+            this.btnSubirSeries.Size = new System.Drawing.Size(40, 34);
+            this.btnSubirSeries.TabIndex = 233;
+            this.btnSubirSeries.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSubirSeries.UseVisualStyleBackColor = false;
+            this.btnSubirSeries.Click += new System.EventHandler(this.btnSubirSeries_Click);
             // 
             // frmProcesoCorteAlquiler
             // 
@@ -471,6 +505,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(976, 439);
+            this.Controls.Add(this.btnSubirSeries);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.dgvEquiposSeleccionados);
             this.Controls.Add(this.pnlCA);
@@ -537,5 +572,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraGrid.Columns.GridColumn FechaFinAlquiler;
+        private DevExpress.XtraGrid.Columns.GridColumn Observacion;
+        private System.Windows.Forms.Button btnSubirSeries;
     }
 }

@@ -105,6 +105,7 @@
             this.vistaFacturas.OptionsView.ColumnAutoWidth = false;
             this.vistaFacturas.OptionsView.ShowAutoFilterRow = true;
             this.vistaFacturas.OptionsView.ShowIndicator = false;
+            this.vistaFacturas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaFacturas_KeyUp);
             // 
             // NumeroFactura
             // 

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteCorteAlquiler));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pnlCA = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.IdEstado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NombreEstado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdCorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Observacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Anular = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAnular = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnExportar = new System.Windows.Forms.Button();
@@ -67,7 +68,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(882, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1077, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +83,7 @@
             this.pnlCA.Controls.Add(this.label2);
             this.pnlCA.Location = new System.Drawing.Point(0, 0);
             this.pnlCA.Name = "pnlCA";
-            this.pnlCA.Size = new System.Drawing.Size(914, 34);
+            this.pnlCA.Size = new System.Drawing.Size(1109, 34);
             this.pnlCA.TabIndex = 194;
             this.pnlCA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCV_MouseMove);
             // 
@@ -91,7 +92,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(340, 5);
+            this.label2.Location = new System.Drawing.Point(496, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 23);
             this.label2.TabIndex = 195;
@@ -114,10 +115,12 @@
             this.dgvLaptops.Name = "dgvLaptops";
             this.dgvLaptops.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAnular});
-            this.dgvLaptops.Size = new System.Drawing.Size(889, 272);
+            this.dgvLaptops.Size = new System.Drawing.Size(1085, 272);
             this.dgvLaptops.TabIndex = 195;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvLaptops.MouseLeave += new System.EventHandler(this.dgvLaptops_MouseLeave);
+            this.dgvLaptops.MouseHover += new System.EventHandler(this.dgvLaptops_MouseHover);
             // 
             // vista
             // 
@@ -144,6 +147,7 @@
             this.IdEstado,
             this.NombreEstado,
             this.IdCorteAlquiler,
+            this.Observacion,
             this.Anular});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
@@ -151,6 +155,7 @@
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // FechaProceso
             // 
@@ -268,6 +273,19 @@
             this.IdCorteAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.IdCorteAlquiler.Width = 100;
             // 
+            // Observacion
+            // 
+            this.Observacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Observacion.AppearanceHeader.Options.UseBackColor = true;
+            this.Observacion.Caption = "Comentario";
+            this.Observacion.FieldName = "Observacion";
+            this.Observacion.MinWidth = 40;
+            this.Observacion.Name = "Observacion";
+            this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Observacion.Visible = true;
+            this.Observacion.VisibleIndex = 7;
+            this.Observacion.Width = 200;
+            // 
             // Anular
             // 
             this.Anular.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -276,16 +294,16 @@
             this.Anular.ColumnEdit = this.btnAnular;
             this.Anular.Name = "Anular";
             this.Anular.Visible = true;
-            this.Anular.VisibleIndex = 7;
+            this.Anular.VisibleIndex = 8;
             // 
             // btnAnular
             // 
             this.btnAnular.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Appearance.Image")));
             this.btnAnular.Appearance.Options.UseImage = true;
             this.btnAnular.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.btnAnular.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnAnular.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnAnular_ButtonPressed);
@@ -301,7 +319,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(12, 363);
+            this.btnExportar.Location = new System.Drawing.Point(208, 363);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 196;
@@ -336,7 +354,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(913, 450);
+            this.ClientSize = new System.Drawing.Size(1109, 450);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);
@@ -383,5 +401,6 @@
         public System.Windows.Forms.PictureBox giftCarga;
         private DevExpress.XtraGrid.Columns.GridColumn IdEstado;
         private DevExpress.XtraGrid.Columns.GridColumn NombreEstado;
+        private DevExpress.XtraGrid.Columns.GridColumn Observacion;
     }
 }

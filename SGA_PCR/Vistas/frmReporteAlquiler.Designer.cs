@@ -49,15 +49,15 @@
             this.NombreEstado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaCambio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.pnlAlquileres = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.lblAlquileres = new System.Windows.Forms.Label();
             this.idSalidaDet = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UltimaFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FecInicioFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FecFinFactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaEmisionFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.pnlAlquileres = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblAlquileres = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaAlquiler)).BeginInit();
             this.pnlAlquileres.SuspendLayout();
@@ -165,6 +165,7 @@
             this.vistaAlquiler.OptionsView.ColumnAutoWidth = false;
             this.vistaAlquiler.OptionsView.ShowAutoFilterRow = true;
             this.vistaAlquiler.OptionsView.ShowIndicator = false;
+            this.vistaAlquiler.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaAlquiler_KeyUp);
             // 
             // IdSalida
             // 
@@ -312,6 +313,51 @@
             this.FechaCambio.VisibleIndex = 9;
             this.FechaCambio.Width = 150;
             // 
+            // idSalidaDet
+            // 
+            this.idSalidaDet.Caption = "idSalidaDet";
+            this.idSalidaDet.FieldName = "idSalidaDet";
+            this.idSalidaDet.Name = "idSalidaDet";
+            this.idSalidaDet.Visible = true;
+            this.idSalidaDet.VisibleIndex = 13;
+            this.idSalidaDet.Width = 100;
+            // 
+            // UltimaFactura
+            // 
+            this.UltimaFactura.Caption = "UltimaFactura";
+            this.UltimaFactura.FieldName = "UltimaFactura";
+            this.UltimaFactura.Name = "UltimaFactura";
+            this.UltimaFactura.Visible = true;
+            this.UltimaFactura.VisibleIndex = 14;
+            this.UltimaFactura.Width = 150;
+            // 
+            // FecInicioFactura
+            // 
+            this.FecInicioFactura.Caption = "FecInicioFactura";
+            this.FecInicioFactura.FieldName = "FecInicioFactura";
+            this.FecInicioFactura.Name = "FecInicioFactura";
+            this.FecInicioFactura.Visible = true;
+            this.FecInicioFactura.VisibleIndex = 15;
+            this.FecInicioFactura.Width = 150;
+            // 
+            // FecFinFactura
+            // 
+            this.FecFinFactura.Caption = "FecFinFactura";
+            this.FecFinFactura.FieldName = "FecFinFactura";
+            this.FecFinFactura.Name = "FecFinFactura";
+            this.FecFinFactura.Visible = true;
+            this.FecFinFactura.VisibleIndex = 16;
+            this.FecFinFactura.Width = 150;
+            // 
+            // FechaEmisionFactura
+            // 
+            this.FechaEmisionFactura.Caption = "FechaEmisionFactura";
+            this.FechaEmisionFactura.FieldName = "FechaEmisionFactura";
+            this.FechaEmisionFactura.Name = "FechaEmisionFactura";
+            this.FechaEmisionFactura.Visible = true;
+            this.FechaEmisionFactura.VisibleIndex = 17;
+            this.FechaEmisionFactura.Width = 150;
+            // 
             // btnExportar
             // 
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -373,51 +419,6 @@
             this.lblAlquileres.TabIndex = 152;
             this.lblAlquileres.Text = "ALQUILERES";
             this.lblAlquileres.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAlquileres_MouseMove);
-            // 
-            // idSalidaDet
-            // 
-            this.idSalidaDet.Caption = "idSalidaDet";
-            this.idSalidaDet.FieldName = "idSalidaDet";
-            this.idSalidaDet.Name = "idSalidaDet";
-            this.idSalidaDet.Visible = true;
-            this.idSalidaDet.VisibleIndex = 13;
-            this.idSalidaDet.Width = 100;
-            // 
-            // UltimaFactura
-            // 
-            this.UltimaFactura.Caption = "UltimaFactura";
-            this.UltimaFactura.FieldName = "UltimaFactura";
-            this.UltimaFactura.Name = "UltimaFactura";
-            this.UltimaFactura.Visible = true;
-            this.UltimaFactura.VisibleIndex = 14;
-            this.UltimaFactura.Width = 150;
-            // 
-            // FecInicioFactura
-            // 
-            this.FecInicioFactura.Caption = "FecInicioFactura";
-            this.FecInicioFactura.FieldName = "FecInicioFactura";
-            this.FecInicioFactura.Name = "FecInicioFactura";
-            this.FecInicioFactura.Visible = true;
-            this.FecInicioFactura.VisibleIndex = 15;
-            this.FecInicioFactura.Width = 150;
-            // 
-            // FecFinFactura
-            // 
-            this.FecFinFactura.Caption = "FecFinFactura";
-            this.FecFinFactura.FieldName = "FecFinFactura";
-            this.FecFinFactura.Name = "FecFinFactura";
-            this.FecFinFactura.Visible = true;
-            this.FecFinFactura.VisibleIndex = 16;
-            this.FecFinFactura.Width = 150;
-            // 
-            // FechaEmisionFactura
-            // 
-            this.FechaEmisionFactura.Caption = "FechaEmisionFactura";
-            this.FechaEmisionFactura.FieldName = "FechaEmisionFactura";
-            this.FechaEmisionFactura.Name = "FechaEmisionFactura";
-            this.FechaEmisionFactura.Visible = true;
-            this.FechaEmisionFactura.VisibleIndex = 17;
-            this.FechaEmisionFactura.Width = 150;
             // 
             // frmReporteAlquiler
             // 

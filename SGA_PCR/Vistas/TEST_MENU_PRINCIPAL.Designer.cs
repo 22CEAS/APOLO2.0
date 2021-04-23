@@ -51,6 +51,7 @@
             this.btnCUsuarios = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.panelReporte = new System.Windows.Forms.Panel();
+            this.btnRCorteAlquiler = new System.Windows.Forms.Button();
             this.btnAlquileres = new System.Windows.Forms.Button();
             this.btnRFacturas = new System.Windows.Forms.Button();
             this.btnRFacturasTrans = new System.Windows.Forms.Button();
@@ -173,7 +174,7 @@
             this.lblMontoFacturado = new System.Windows.Forms.Label();
             this.lblFechaMF = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnRCorteAlquiler = new System.Windows.Forms.Button();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.panelReporte.SuspendLayout();
@@ -370,6 +371,26 @@
             this.panelReporte.Size = new System.Drawing.Size(232, 673);
             this.panelReporte.TabIndex = 20;
             this.panelReporte.Visible = false;
+            // 
+            // btnRCorteAlquiler
+            // 
+            this.btnRCorteAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRCorteAlquiler.Enabled = false;
+            this.btnRCorteAlquiler.FlatAppearance.BorderSize = 0;
+            this.btnRCorteAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnRCorteAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRCorteAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRCorteAlquiler.ForeColor = System.Drawing.Color.Black;
+            this.btnRCorteAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRCorteAlquiler.Location = new System.Drawing.Point(3, 360);
+            this.btnRCorteAlquiler.Name = "btnRCorteAlquiler";
+            this.btnRCorteAlquiler.Size = new System.Drawing.Size(319, 45);
+            this.btnRCorteAlquiler.TabIndex = 26;
+            this.btnRCorteAlquiler.Text = "> CORTE ALQUILER";
+            this.btnRCorteAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRCorteAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRCorteAlquiler.UseVisualStyleBackColor = false;
+            this.btnRCorteAlquiler.Click += new System.EventHandler(this.btnRCorteAlquiler_Click);
             // 
             // btnAlquileres
             // 
@@ -1172,6 +1193,7 @@
             // 
             // BarraTitulo
             // 
+            this.BarraTitulo.Controls.Add(this.lblCorreo);
             this.BarraTitulo.Controls.Add(this.btnOCDash);
             this.BarraTitulo.Controls.Add(this.lblUser);
             this.BarraTitulo.Controls.Add(this.usuarioConectado);
@@ -2339,25 +2361,18 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Monto\r\nFacturado";
             // 
-            // btnRCorteAlquiler
+            // lblCorreo
             // 
-            this.btnRCorteAlquiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnRCorteAlquiler.Enabled = false;
-            this.btnRCorteAlquiler.FlatAppearance.BorderSize = 0;
-            this.btnRCorteAlquiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnRCorteAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRCorteAlquiler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRCorteAlquiler.ForeColor = System.Drawing.Color.Black;
-            this.btnRCorteAlquiler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRCorteAlquiler.Location = new System.Drawing.Point(3, 360);
-            this.btnRCorteAlquiler.Name = "btnRCorteAlquiler";
-            this.btnRCorteAlquiler.Size = new System.Drawing.Size(319, 45);
-            this.btnRCorteAlquiler.TabIndex = 26;
-            this.btnRCorteAlquiler.Text = "> CORTE ALQUILER";
-            this.btnRCorteAlquiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRCorteAlquiler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRCorteAlquiler.UseVisualStyleBackColor = false;
-            this.btnRCorteAlquiler.Click += new System.EventHandler(this.btnRCorteAlquiler_Click);
+            this.lblCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblCorreo.Location = new System.Drawing.Point(747, 9);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(77, 25);
+            this.lblCorreo.TabIndex = 15;
+            this.lblCorreo.Text = "Correo";
+            this.lblCorreo.Visible = false;
             // 
             // TEST_MENU_PRINCIPAL
             // 
@@ -2555,5 +2570,6 @@
         private System.Windows.Forms.Button btnAlquileres;
         private System.Windows.Forms.Button btnPTarifas;
         private System.Windows.Forms.Button btnRCorteAlquiler;
+        public System.Windows.Forms.Label lblCorreo;
     }
 }

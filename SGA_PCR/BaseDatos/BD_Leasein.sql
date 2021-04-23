@@ -1064,7 +1064,7 @@ CREATE TABLE corte_alquiler(
 		direccionRecojo NVARCHAR(1000),
 		personaContacto NVARCHAR(500),
 		telefono NVARCHAR(255),
-		observacion NVARCHAR(1000),
+		observacion NVARCHAR(3000),
 		estado TINYINT NOT NULL,
 		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
 		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,

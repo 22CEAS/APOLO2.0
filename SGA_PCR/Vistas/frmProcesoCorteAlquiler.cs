@@ -2,6 +2,7 @@
 using DevComponents.DotNetBar.SuperGrid;
 using DevExpress.XtraEditors.Repository;
 using Modelo;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,12 +32,12 @@ namespace Apolo
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private string email = "carlos.arango@leasein.pe";
         private string motivoCambio = "CAMBIO RAZÓN SOCIAL";
         private string motivoDevolucion = "DEVOLUCIÓN";
         private string motivoVenta = "VENTA";
         private int maxNumDias = 7;
-
-
+        
         public frmProcesoCorteAlquiler()
         {
             InitializeComponent();
@@ -44,11 +45,12 @@ namespace Apolo
             estadoComponentes(TipoVista.Inicial);
         }
 
-        public frmProcesoCorteAlquiler(int idUsuario, string nombreUsuario)
+        public frmProcesoCorteAlquiler(int idUsuario, string nombreUsuario, string email)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;
+            this.email = email;
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
@@ -98,8 +100,7 @@ namespace Apolo
             NumeroDniRuc = aux2.Trim();
 
         }
-
-
+        
         public bool ValidarDatos()
         {
             bool error = false;
@@ -161,6 +162,7 @@ namespace Apolo
 
             return error;
         }
+
         public void estadoComponentes(TipoVista estado)
         {
             switch (estado)
@@ -348,9 +350,11 @@ namespace Apolo
             System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
 
             //Direccion de correo electronico a la que queremos enviar el mensaje
-            mmsg.To.Add(correo);
-            mmsg.CC.Add("carlos.arango@leasein.pe");
-            //mmsg.CC.Add("steven.mignardi@leasein.pe ");
+            mmsg.To.Add("operacionesleasein@gmail.com");
+            //mmsg.To.Add(correo);
+            mmsg.CC.Add(this.email);
+            mmsg.CC.Add("comercialleasein@gmail.com");
+            //mmsg.CC.Add(this.email);
 
             //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
 
@@ -405,6 +409,7 @@ namespace Apolo
 
             }
         }
+
         private void enviarCorreo()
         {
             int i = cmbCliente.SelectedIndex;
@@ -458,6 +463,7 @@ namespace Apolo
                             <th>Dirección de Recojo</th>
                             <th>Persona de Contacto</th>
                             <th>Celular</th>
+                            <th>Comentario</th>
                           </tr>
                         ";
             string cadena = "";
@@ -473,6 +479,7 @@ namespace Apolo
                     cadena += "<td>" + renovacion.Direccion + "</td>";
                     cadena += "<td>" + renovacion.PersonaContacto + "</td>";
                     cadena += "<td>" + renovacion.Telefono + "</td>";
+                    cadena += "<td>" + renovacion.Observacion + "</td>";
                     cadena += "</tr>";
                 }
             }
@@ -568,8 +575,7 @@ namespace Apolo
                 }
             }
         }
-
-
+        
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -591,6 +597,90 @@ namespace Apolo
                 Top = Top + (e.Y - posY);
             }
         }
+        
+        private void vistaEquipos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+            {
+                string aux = vistaEquipos.GetFocusedValue().ToString();
+                Clipboard.SetText(aux);
+            }
+        }
 
+        private void btnSubirSeries_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    //DE ESTA MANERA FILTRAMOS TODOS LOS ARCHIVOS EXCEL EN EL NAVEGADOR DE ARCHIVOS
+                    Filter = "Excel | *.xls;*.xlsx;",
+
+                    //AQUÍ INDICAMOS QUE NOMBRE TENDRÁ EL NAVEGADOR DE ARCHIVOS COMO TITULO
+                    Title = "Seleccionar Archivo"
+                };
+
+                //EN CASO DE SELECCIONAR EL ARCHIVO, ENTONCES PROCEDEMOS A ABRIR EL ARCHIVO CORRESPONDIENTE
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable miDataTable = new DataTable();
+                    miDataTable.Columns.Add("CodigoLC");
+                    miDataTable.Columns.Add("PersonaContacto");
+                    miDataTable.Columns.Add("Direccion");
+                    miDataTable.Columns.Add("Telefono");
+                    miDataTable.Columns.Add("Observacion");
+                    //miDataTable.Columns.Add("FechaRecojo");
+
+                    path = openFileDialog.FileName;
+                    SLDocument sl = new SLDocument(path);
+
+                    int iRow = 2;
+                    while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
+                    {
+                        DataRow Renglon = miDataTable.NewRow();
+                        Renglon["CodigoLC"] = sl.GetCellValueAsString(iRow, 1);
+                        Renglon["PersonaContacto"] = sl.GetCellValueAsString(iRow, 2);
+                        Renglon["Direccion"] = sl.GetCellValueAsString(iRow, 3);
+                        Renglon["Telefono"] = sl.GetCellValueAsString(iRow, 4);
+                        Renglon["Observacion"] = sl.GetCellValueAsString(iRow, 5);
+                        //Renglon["FechaRecojo"] = sl.GetCellValueAsDateTime(iRow, 6);
+                        iRow++;
+                        miDataTable.Rows.Add(Renglon);
+                    }
+
+                    int filasExcel = miDataTable.Rows.Count;
+                    for (int i = 0; i < filasExcel; i++)
+                    {
+                        string codigo = miDataTable.Rows[i]["CodigoLC"].ToString();
+                        vistaEquipos.ClearColumnsFilter();
+                        int filasDgv = vistaEquipos.RowCount;
+                        for (int j = 0; j < filasDgv; j++)
+                        {
+                            if (codigo == vistaEquipos.GetRowCellValue(j, "CodigoLC").ToString())
+                            {
+                                string PersonaContacto = miDataTable.Rows[i]["PersonaContacto"].ToString();
+                                string Direccion = miDataTable.Rows[i]["Direccion"].ToString();
+                                string Telefono = miDataTable.Rows[i]["Telefono"].ToString();
+                                string Observacion = miDataTable.Rows[i]["Observacion"].ToString();
+                                //string FechaRecojo = miDataTable.Rows[i]["FechaRecojo"].ToString();
+                                vistaEquipos.SetRowCellValue(j, "PersonaContacto", PersonaContacto);
+                                vistaEquipos.SetRowCellValue(j, "Direccion", Direccion);
+                                vistaEquipos.SetRowCellValue(j, "Telefono", Telefono);
+                                vistaEquipos.SetRowCellValue(j, "Observacion", Observacion);
+                                //if(FechaRecojo!="1/01/1900 00:00:00")
+                                //    vistaEquipos.SetRowCellValue(j, "FechaRecojo", FechaRecojo);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
     }
 }

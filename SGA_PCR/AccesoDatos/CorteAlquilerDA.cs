@@ -133,7 +133,7 @@ namespace AccesoDatos
                 parametrosEntrada[15] = new MySqlParameter("@_direccionRecojo", MySqlDbType.VarChar, 1000);
                 parametrosEntrada[16] = new MySqlParameter("@_personaContacto", MySqlDbType.VarChar, 500);
                 parametrosEntrada[17] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
-                parametrosEntrada[18] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 1000);
+                parametrosEntrada[18] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 3000);
                 parametrosEntrada[19] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
                 parametrosEntrada[20] = new MySqlParameter("@_idCorteAlquiler", MySqlDbType.Int32);
 

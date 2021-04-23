@@ -101,6 +101,27 @@ namespace AccesoDatos
         }
 
 
+        public string Obtener_correoUsuario(string usuario)
+        {
+
+            MySqlDataReader reader;
+            string sql = "";
+            string correo = "";
+
+            sql = $"Select * From usuario where usuario='{usuario}';";
+
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                correo = reader.GetString("email");
+            }
+
+            objManager.conexion.Close(); objManager.conexion.Dispose(); objManager.cmd.Dispose();
+
+            return correo;
+        }
+
 
         public int InsertarNuevoUsuario(string dni,string nombre,string usuario,string claveUsuario,string email,int idArea, int idPerfil, int idEstado)
         {

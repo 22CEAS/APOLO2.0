@@ -122,6 +122,7 @@
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // IdReparacion
             // 

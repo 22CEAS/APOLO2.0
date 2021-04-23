@@ -549,6 +549,7 @@
             this.vistaEquipos.OptionsView.ColumnAutoWidth = false;
             this.vistaEquipos.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaEquipos.OptionsView.ShowGroupPanel = false;
+            this.vistaEquipos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaEquipos_KeyUp);
             // 
             // Codigo
             // 
@@ -600,7 +601,7 @@
             this.TipoProcesador.Name = "TipoProcesador";
             this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoProcesador.Visible = true;
-            this.TipoProcesador.VisibleIndex = 4;
+            this.TipoProcesador.VisibleIndex = 3;
             this.TipoProcesador.Width = 100;
             // 
             // GeneracionProcesador
@@ -611,7 +612,7 @@
             this.GeneracionProcesador.Name = "GeneracionProcesador";
             this.GeneracionProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GeneracionProcesador.Visible = true;
-            this.GeneracionProcesador.VisibleIndex = 5;
+            this.GeneracionProcesador.VisibleIndex = 4;
             this.GeneracionProcesador.Width = 100;
             // 
             // NombreModeloVideo
@@ -629,7 +630,7 @@
             this.CapacidadVideo.Name = "CapacidadVideo";
             this.CapacidadVideo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CapacidadVideo.Visible = true;
-            this.CapacidadVideo.VisibleIndex = 6;
+            this.CapacidadVideo.VisibleIndex = 5;
             this.CapacidadVideo.Width = 100;
             // 
             // IdLC

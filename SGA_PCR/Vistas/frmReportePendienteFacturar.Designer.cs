@@ -58,15 +58,13 @@
             this.RAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiscoDuro1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiscoDuro2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TotalSoles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PendienteFacturarSoles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PendienteFacturarDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PendienteFacturarUtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Moneda = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tarifa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoCambio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Periodos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NuevaDeudaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
@@ -82,7 +80,6 @@
             this.pnlPF = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.CorteAlquiler = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -169,13 +166,10 @@
             this.DiscoDuro1,
             this.DiscoDuro2,
             this.DíasVencidos,
-            this.TotalSoles,
-            this.TotalDolares,
-            this.CostoSoles,
-            this.CostoDolares,
-            this.PendienteFacturarSoles,
-            this.PendienteFacturarDolares,
-            this.PendienteFacturarUtilidadSoles,
+            this.Moneda,
+            this.Tarifa,
+            this.Costo,
+            this.TipoCambio,
             this.Periodos,
             this.NuevaDeudaSoles,
             this.CorteAlquiler});
@@ -212,6 +206,7 @@
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // Cliente
             // 
@@ -460,89 +455,57 @@
             this.DiscoDuro2.VisibleIndex = 19;
             this.DiscoDuro2.Width = 100;
             // 
-            // TotalSoles
+            // Moneda
             // 
-            this.TotalSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.TotalSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.TotalSoles.Caption = "Total Soles";
-            this.TotalSoles.FieldName = "TotalSoles";
-            this.TotalSoles.MinWidth = 40;
-            this.TotalSoles.Name = "TotalSoles";
-            this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 21;
-            this.TotalSoles.Width = 100;
+            this.Moneda.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Moneda.AppearanceHeader.Options.UseBackColor = true;
+            this.Moneda.Caption = "Moneda";
+            this.Moneda.FieldName = "Moneda";
+            this.Moneda.MinWidth = 40;
+            this.Moneda.Name = "Moneda";
+            this.Moneda.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Moneda.Visible = true;
+            this.Moneda.VisibleIndex = 21;
+            this.Moneda.Width = 100;
             // 
-            // TotalDolares
+            // Tarifa
             // 
-            this.TotalDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.TotalDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.TotalDolares.Caption = "Total Dolares";
-            this.TotalDolares.FieldName = "TotalDolares";
-            this.TotalDolares.MinWidth = 40;
-            this.TotalDolares.Name = "TotalDolares";
-            this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 22;
-            this.TotalDolares.Width = 100;
+            this.Tarifa.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Tarifa.AppearanceHeader.Options.UseBackColor = true;
+            this.Tarifa.Caption = "Tarifa";
+            this.Tarifa.FieldName = "Tarifa";
+            this.Tarifa.MinWidth = 40;
+            this.Tarifa.Name = "Tarifa";
+            this.Tarifa.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Tarifa.Visible = true;
+            this.Tarifa.VisibleIndex = 22;
+            this.Tarifa.Width = 100;
             // 
-            // CostoSoles
+            // Costo
             // 
-            this.CostoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CostoSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.CostoSoles.Caption = "Costo Soles";
-            this.CostoSoles.FieldName = "CostoSoles";
-            this.CostoSoles.MinWidth = 40;
-            this.CostoSoles.Name = "CostoSoles";
-            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 23;
-            this.CostoSoles.Width = 100;
+            this.Costo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Costo.AppearanceHeader.Options.UseBackColor = true;
+            this.Costo.Caption = "Costo";
+            this.Costo.FieldName = "Costo";
+            this.Costo.MinWidth = 40;
+            this.Costo.Name = "Costo";
+            this.Costo.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Costo.Visible = true;
+            this.Costo.VisibleIndex = 23;
+            this.Costo.Width = 100;
             // 
-            // CostoDolares
+            // TipoCambio
             // 
-            this.CostoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CostoDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.CostoDolares.Caption = "Costo Dolares";
-            this.CostoDolares.FieldName = "CostoDolares";
-            this.CostoDolares.MinWidth = 40;
-            this.CostoDolares.Name = "CostoDolares";
-            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 24;
-            this.CostoDolares.Width = 100;
-            // 
-            // PendienteFacturarSoles
-            // 
-            this.PendienteFacturarSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PendienteFacturarSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.PendienteFacturarSoles.Caption = "Pendiente Facturar Soles";
-            this.PendienteFacturarSoles.FieldName = "PendienteFacturarSoles";
-            this.PendienteFacturarSoles.MinWidth = 40;
-            this.PendienteFacturarSoles.Name = "PendienteFacturarSoles";
-            this.PendienteFacturarSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.PendienteFacturarSoles.Width = 100;
-            // 
-            // PendienteFacturarDolares
-            // 
-            this.PendienteFacturarDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PendienteFacturarDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.PendienteFacturarDolares.Caption = "Pendiente Facturar Dolares";
-            this.PendienteFacturarDolares.FieldName = "PendienteFacturarDolares";
-            this.PendienteFacturarDolares.MinWidth = 40;
-            this.PendienteFacturarDolares.Name = "PendienteFacturarDolares";
-            this.PendienteFacturarDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.PendienteFacturarDolares.Width = 100;
-            // 
-            // PendienteFacturarUtilidadSoles
-            // 
-            this.PendienteFacturarUtilidadSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PendienteFacturarUtilidadSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.PendienteFacturarUtilidadSoles.Caption = "Pendiente Facturar Utilidad Soles";
-            this.PendienteFacturarUtilidadSoles.FieldName = "PendienteFacturarUtilidadSoles";
-            this.PendienteFacturarUtilidadSoles.MinWidth = 40;
-            this.PendienteFacturarUtilidadSoles.Name = "PendienteFacturarUtilidadSoles";
-            this.PendienteFacturarUtilidadSoles.Width = 140;
+            this.TipoCambio.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TipoCambio.AppearanceHeader.Options.UseBackColor = true;
+            this.TipoCambio.Caption = "Tipo de Cambio";
+            this.TipoCambio.FieldName = "TipoCambio";
+            this.TipoCambio.MinWidth = 40;
+            this.TipoCambio.Name = "TipoCambio";
+            this.TipoCambio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.TipoCambio.Visible = true;
+            this.TipoCambio.VisibleIndex = 24;
+            this.TipoCambio.Width = 100;
             // 
             // Periodos
             // 
@@ -567,6 +530,19 @@
             this.NuevaDeudaSoles.Visible = true;
             this.NuevaDeudaSoles.VisibleIndex = 26;
             this.NuevaDeudaSoles.Width = 100;
+            // 
+            // CorteAlquiler
+            // 
+            this.CorteAlquiler.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CorteAlquiler.AppearanceHeader.Options.UseBackColor = true;
+            this.CorteAlquiler.Caption = "Corte Alquiler";
+            this.CorteAlquiler.FieldName = "CorteAlquiler";
+            this.CorteAlquiler.MinWidth = 40;
+            this.CorteAlquiler.Name = "CorteAlquiler";
+            this.CorteAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CorteAlquiler.Visible = true;
+            this.CorteAlquiler.VisibleIndex = 27;
+            this.CorteAlquiler.Width = 80;
             // 
             // btnExportar
             // 
@@ -742,19 +718,6 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // CorteAlquiler
-            // 
-            this.CorteAlquiler.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CorteAlquiler.AppearanceHeader.Options.UseBackColor = true;
-            this.CorteAlquiler.Caption = "Corte Alquiler";
-            this.CorteAlquiler.FieldName = "CorteAlquiler";
-            this.CorteAlquiler.MinWidth = 40;
-            this.CorteAlquiler.Name = "CorteAlquiler";
-            this.CorteAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.CorteAlquiler.Visible = true;
-            this.CorteAlquiler.VisibleIndex = 27;
-            this.CorteAlquiler.Width = 80;
-            // 
             // frmReportePendienteFacturar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -808,12 +771,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaInicioFactura;
         private DevExpress.XtraGrid.Columns.GridColumn FechaFinFactura;
         private System.Windows.Forms.Button btnExportar;
-        private DevExpress.XtraGrid.Columns.GridColumn TotalSoles;
-        private DevExpress.XtraGrid.Columns.GridColumn TotalDolares;
-        private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
-        private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
-        private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarSoles;
-        private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn Moneda;
+        private DevExpress.XtraGrid.Columns.GridColumn Tarifa;
+        private DevExpress.XtraGrid.Columns.GridColumn Costo;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoCambio;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button verResumen;
@@ -827,7 +788,6 @@
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button36;
-        private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarUtilidadSoles;
         private System.Windows.Forms.Panel pnlPF;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label2;

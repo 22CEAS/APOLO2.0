@@ -86,11 +86,11 @@ namespace Apolo
             // Merge cells of two new rows. 
             if (idArea == idAreaComercialSupervisor)
             {
-                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(7, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
+                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(8, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
             }
             else
             {
-                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(6, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
+                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(7, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
             }
         }
 
@@ -138,6 +138,7 @@ namespace Apolo
                 tablaLaptops = reporteDA.ListarCorteAlquiler();
                 dgvLaptops.DataSource = tablaLaptops;
                 dgvLaptops.Refresh();
+                label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
             }
             catch (Exception e)
             {
@@ -201,6 +202,20 @@ namespace Apolo
                 MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 bool i = cargarDataTabla();
             }
+        }
+
+
+        private void vista_KeyUp(object sender, KeyEventArgs e)
+        {
+            int filas = vista.RowCount;
+            if (filas > 0)
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+                {
+                    string aux = vista.GetFocusedValue().ToString();
+                    if (aux.Length == 0)
+                        aux = "a";
+                    Clipboard.SetText(aux);
+                }
         }
 
     }

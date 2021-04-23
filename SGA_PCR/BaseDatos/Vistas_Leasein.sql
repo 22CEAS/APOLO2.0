@@ -3047,212 +3047,13 @@ SELECT
 
 
 
-
---=============================Nuevo Pendiente por facturar======================================
-
-
-
-DROP VIEW IF EXISTS vista_productos_por_facturar;
-create view vista_productos_por_facturar as
-SELECT	
-	(SELECT	c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente) AS cliente,
-	(SELECT	c.nombreKam FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS KAM,
-	(SELECT	c.nroDocumento FROM	cliente c WHERE	c.idCliente = s.idCliente) AS ruc,
-	d.fecIniContrato AS fecIniPlazoAlquiler,
-	d.fecFinContrato AS fecFinPlazoAlquiler,
-	'' AS factura,
-	'' AS fecInicioFactura,
-	'' AS fecFinFactura,
-	0 AS TotalSoles,
-	0 AS TotalDolares,
-	0 AS CostoSoles,
-	0 AS CostoDolares,
-	s.idSalida AS idSalida,
-	d.idSalidaDet AS idSalidaDet,
-	d.guiaSalida AS guia,	
-	lc.codigo AS codigoEquipo,
-	ifnull(d.observacion, '' ) AS CodigoAntiguo,
-	ifnull(t.tarifa, 0 ) AS TARIFA,
-	ifnull(t.costo, 0 ) AS costo,
-	ifnull(t.moneda, 0 ) AS moneda,
-	3.6 AS tipoCambio,
-	(to_days(curdate()) - to_days( d.fecIniContrato)) AS diasVencidos,
-	(ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30))) AS Periodos,
-	IF((t.tarifa IS NOT NULL ),
-		IF((t.moneda = 'SOLES'), 
-			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2),
-			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2)),
-		0) AS NuevaDeudaSoles,
-	'' AS GuiaAntigua,
-	0 AS IdSalidaDetAntigua,
-	lc.idMarca AS idMarca,
-	lc.marca AS MarcaLC,
-	lc.idModelo AS idModelo,
-	lc.nombreModelo AS NombreModeloLC,
-	lc.codigo AS Codigo,
-	lc.tamanoPantalla AS TamanoPantalla,
-	lc.VersionOffice AS VersionOffice,
-	lc.VersionWindows AS VersionWindows,
-	p.idProcesador AS idProcesador,
-	p.marca AS marcaProcesador,
-	p.tipo AS TipoProcesador,
-	p.generacion AS GeneracionProcesador,
-	ifnull( v.idVideo, 0 ) AS idVideo,
-	ifnull( v.marca, '' ) AS marcaVideo,
-	ifnull( v.nombreModelo, '' ) AS NombreModeloVideo,
-	ifnull( v.capacidad, 0 ) AS CapacidadVideo,
-	ifnull( v.tipo, '' ) AS tipoVideo,
-	lc.idLC AS idLC,
-	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
-	INNER JOIN vista_maestro_laptops lc ON lc.idLC = d.idLC 
-	LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador 
-	LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo 
-	LEFT JOIN tarifa t ON t.idsalidadet=d.idSalidaDet
-WHERE
-	((
-		d.estado = 4 
-		) 
-	AND (
-		0 <> (
-		CASE
-				
-			WHEN ( d.caracteristicas = '' ) THEN
-			concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) ELSE (
-				concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
-				AND (
-				SELECT
-					concat( ca.idLCAntiguo, '-', d.idSalida ) 
-				FROM
-					cambio ca 
-				WHERE
-				( ca.idCambio = d.caracteristicas )) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c )) 
-			END 
-			))) 
-				
-UNION
-				
-SELECT
-	(SELECT c.nombre_razonSocial FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS cliente,
-	(SELECT c.nombreKam FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS KAM,
-	(SELECT c.nroDocumento FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS ruc,
-	d.fecIniContrato AS fecIniPlazoAlquiler,
-	d.fecFinContrato AS fecFinPlazoAlquiler,
-	cu.numFactura AS factura,
-	cu.fecInicioPago AS fecInicioFactura,
-	cu.fecFinPago AS fecFinFactura,
-	cu.totalSoles AS TotalSoles,
-	cu.totalDolares AS TotalDolares,
-	cu.costoSoles AS CostoSoles,
-	cu.costoDolares AS CostoDolares,
-	s.idSalida AS idSalida,
-	d.idSalidaDet AS idSalidaDet,
-	d.guiaSalida AS guia,
-	lc.codigo AS codigoEquipo,
-	ifnull(d.observacion, '' ) AS CodigoAntiguo,
-	ifnull(t.tarifa, 0 ) AS TARIFA,
-	ifnull(t.costo, 0 ) AS costo,
-	ifnull(t.moneda, 0 ) AS moneda,
-	3.6 AS tipoCambio,
-	(to_days(curdate()) - to_days( cu.fecFinPago )) AS diasVencidos,
-	(ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30))) AS Periodos,
-	IF((t.tarifa IS NOT NULL ),
-		IF((t.moneda = 'SOLES'), 
-			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2),
-			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2)),
-		0) AS NuevaDeudaSoles,
-	'' AS GuiaAntigua,
-	0 AS IdSalidaDetAntigua,
-	lc.idMarca AS idMarca,
-	lc.marca AS MarcaLC,
-	lc.idModelo AS idModelo,
-	lc.nombreModelo AS NombreModeloLC,
-	lc.codigo AS Codigo,
-	lc.tamanoPantalla AS TamanoPantalla,
-	lc.VersionOffice AS VersionOffice,
-	lc.VersionWindows AS VersionWindows,
-	p.idProcesador AS idProcesador,
-	p.marca AS marcaProcesador,
-	p.tipo AS TipoProcesador,
-	p.generacion AS GeneracionProcesador,
-	ifnull( v.idVideo, 0 ) AS idVideo,
-	ifnull( v.marca, '' ) AS marcaVideo,
-	ifnull( v.nombreModelo, '' ) AS NombreModeloVideo,
-	ifnull( v.capacidad, 0 ) AS CapacidadVideo,
-	ifnull( v.tipo, '' ) AS tipoVideo,
-	lc.idLC AS idLC,
-	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
-	FROM
-		salida s
-		INNER JOIN salida_det d ON s.idSalida = d.idSalida 
-		INNER JOIN vista_maestro_laptops lc ON lc.idLC = d.idLC 
-		LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador 
-		LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo 
-		LEFT JOIN tarifa t ON t.idsalidadet=d.idSalidaDet
-		JOIN cuota cu 
-	WHERE
-		((
-			d.estado = 4 
-			) 
-		AND (((
-					d.fecFinContrato = cu.fecFinPago 
-					) 
-				AND ( d.corteAlquiler = 0 )) 
-		OR ( d.fecFinContrato > cu.fecFinPago )) 
-		AND (
-		cu.fecFinPago < curdate()) 
-		AND (
-			0 <> (
-			CASE
-					
-				WHEN ( d.caracteristicas = '' ) THEN
-				(
-					concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) ELSE ((
-					concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) 
-					OR ((
-						SELECT
-							concat( ca.idLCAntiguo, '-', d.idSalida ) 
-						FROM
-							cambio ca 
-						WHERE
-						( ca.idCambio = d.caracteristicas )) = concat( cu.idLC, '-', cu.idSalida ))) 
-				END 
-				))) 
-		ORDER BY
-		cliente,
-	codigoEquipo
-
---======================CORTE ALQUILER=======================================	
-
-
-DROP VIEW IF EXISTS vista_reporte_corte_alquiler;
-create view vista_reporte_corte_alquiler as
-SELECT c.fec_ins AS FechaProceso,
-	(SELECT nroDocumento FROM cliente where cliente.idCliente=c.idCliente) AS RUC,
-	c.codigoEquipo AS Codigo,
-	c.motivoCorte AS MotivoCorte,
-	c.fecRecojo AS FechaRecojo,
-	c.fecFinContratoNew AS FechaCorteAlquiler,
-	c.idCorteAlquiler AS IdCorteAlquiler,
-	c.estado AS IdEstado,
-	if((c.estado=1),'ACTIVO','ANULADO') AS NombreEstado,
-	ifnull((SELECT c1.fecFinPago AS fecFinPago 
-		FROM cuota c1 JOIN laptop_cpu lc ON c1.idLC = lc.idLC
-		WHERE c.idSalida = c1.idSalida AND  lc.idLC = c.idEquipo),
-		ifnull((SELECT c2.fecFinPago AS fecFinPago 
-			FROM cuota c2 JOIN laptop_cpu lc2 ON c2.idLC = lc2.idLC
-			WHERE c.idSalida = c2.idSalida AND lc2.codigo = c.codigoEquipoAntiguo),
-			'' 
-		)) AS FechaUltimaFactura ,
-	(Select d.FueDevuelto from salida_det d where c.idSalidaDet=d.idSalidaDet ) AS FueDevuelto
-FROM corte_alquiler c;
-
-
 Vista cuadro de venciomiento
 --vista_laptops_cuadro_vencimiento
 	,
+	IFNULL(t.moneda,'') AS `Moneda`,
+	IFNULL(t.tarifa,0) AS `Tarifa`,
+	IFNULL(t.costo,0) AS `Costo`,
+	3.6 as TipoCambio,
 	if((d.corteAlquiler=1),'SI','NO') AS CorteAlquiler
 
 where
@@ -3281,10 +3082,12 @@ where
 			(
 				(d.estado = 4 ) 
 				AND 
-					CASE WHEN d.motivoCorte='DEVOLUCIÓN' AND (( to_days( `d`.`fecRecojo` ) - to_days( d.fecFinContrato) - 1) < 0 )  THEN
-						(( to_days( `d`.`fecRecojo` ) - to_days( curdate()) - 1) < 0 ) 
-					ELSE
-						(( to_days( d.fecFinContrato) - to_days( curdate())) < 0 )
+					CASE WHEN d.corteAlquiler=1 THEN
+						CASE WHEN d.motivoCorte='DEVOLUCIÓN' AND (( to_days( `d`.`fecRecojo` ) - to_days( d.fecFinContrato) - 1) < 0 )  THEN
+							(( to_days( `d`.`fecRecojo` ) - to_days( curdate()) - 1) < 0 ) 
+						ELSE
+							(( to_days( d.fecFinContrato) - to_days( curdate())) < 0 )
+						END
 					END
 				
 			)
@@ -3309,7 +3112,7 @@ WHERE
 	
 	
 --================Esto es para el dash cuando se implemente la tarifas=========
-
+--vista_productos_por_facturar_dash
 
 SELECT
 	d.idSalidaDet AS IdSalidaDet,
@@ -3444,4 +3247,690 @@ DEVOLUCIÓN
 UPDATE salida_det
 set motivoCorte='DEVOLUCIÓN'
 where fueDevuelto=0 and corteAlquiler=1 and estado=4 and motivoCorte is null;
+
+
+IFNULL(t.moneda,'') AS `Moneda`,
+IFNULL(t.tarifa,0) AS `Tarifa`,
+IFNULL(t.costo,0) AS `Costo`,
+3.6 as TipoCambio,
+((3.6 * ( `cu`.`totalDolares` - `cu`.`costoDolares` )) + ( `cu`.`totalSoles` - `cu`.`costoSoles` )) AS `UBSoles`
+
+from
+
+	LEFT JOIN tarifa t ON d.idSalidaDet=t.idsalidadet
+	
+	
+				LEFT JOIN `tarifa` `t` ON ((
+						d.idSalidaDet=t.idsalidadet 
+					)))
+					
+					
+					
+					
+
+
+--================================================Queries a correr==========================================================
+
+
+/*=============================Nuevo Pendiente por facturar======================================*/
+
+
+DROP VIEW IF EXISTS vista_productos_por_facturar;
+create view vista_productos_por_facturar as
+SELECT	
+	(SELECT	c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente) AS cliente,
+	(SELECT	c.nombreKam FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS KAM,
+	(SELECT	c.nroDocumento FROM	cliente c WHERE	c.idCliente = s.idCliente) AS ruc,
+	d.fecIniContrato AS fecIniPlazoAlquiler,
+	d.fecFinContrato AS fecFinPlazoAlquiler,
+	'' AS factura,
+	'' AS fecInicioFactura,
+	'' AS fecFinFactura,
+	0 AS TotalSoles,
+	0 AS TotalDolares,
+	0 AS CostoSoles,
+	0 AS CostoDolares,
+	s.idSalida AS idSalida,
+	d.idSalidaDet AS idSalidaDet,
+	d.guiaSalida AS guia,	
+	lc.codigo AS codigoEquipo,
+	ifnull(d.observacion, '' ) AS CodigoAntiguo,
+	ifnull(t.tarifa, 0 ) AS Tarifa,
+	ifnull(t.costo, 0 ) AS Costo,
+	ifnull(t.moneda, '' ) AS Moneda,
+	3.6 AS TipoCambio,
+	(to_days(curdate()) - to_days( d.fecIniContrato)) AS diasVencidos,
+	(ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30))) AS Periodos,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2)),
+		0) AS NuevaDeudaSoles,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	lc.VersionOffice AS VersionOffice,
+	lc.VersionWindows AS VersionWindows,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	ifnull( v.idVideo, 0 ) AS idVideo,
+	ifnull( v.marca, '' ) AS marcaVideo,
+	ifnull( v.nombreModelo, '' ) AS NombreModeloVideo,
+	ifnull( v.capacidad, 0 ) AS CapacidadVideo,
+	ifnull( v.tipo, '' ) AS tipoVideo,
+	lc.idLC AS idLC,
+	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
+
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	INNER JOIN vista_maestro_laptops lc ON lc.idLC = d.idLC 
+	LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador 
+	LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo 
+	LEFT JOIN tarifa t ON t.idsalidadet=d.idSalidaDet
+WHERE
+	((
+		d.estado = 4 
+		) 
+	AND (
+		0 <> (
+		CASE
+				
+			WHEN ( d.caracteristicas = '' ) THEN
+			concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) ELSE (
+				concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+				AND (
+				SELECT
+					concat( ca.idLCAntiguo, '-', d.idSalida ) 
+				FROM
+					cambio ca 
+				WHERE
+				( ca.idCambio = d.caracteristicas )) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c )) 
+			END 
+			))) 
+				
+UNION
+				
+SELECT
+	(SELECT c.nombre_razonSocial FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS cliente,
+	(SELECT c.nombreKam FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS KAM,
+	(SELECT c.nroDocumento FROM cliente c WHERE ( c.idCliente = s.idCliente )) AS ruc,
+	d.fecIniContrato AS fecIniPlazoAlquiler,
+	d.fecFinContrato AS fecFinPlazoAlquiler,
+	cu.numFactura AS factura,
+	cu.fecInicioPago AS fecInicioFactura,
+	cu.fecFinPago AS fecFinFactura,
+	cu.totalSoles AS TotalSoles,
+	cu.totalDolares AS TotalDolares,
+	cu.costoSoles AS CostoSoles,
+	cu.costoDolares AS CostoDolares,
+	s.idSalida AS idSalida,
+	d.idSalidaDet AS idSalidaDet,
+	d.guiaSalida AS guia,
+	lc.codigo AS codigoEquipo,
+	ifnull(d.observacion, '' ) AS CodigoAntiguo,
+	ifnull(t.tarifa, 0 ) AS Tarifa,
+	ifnull(t.costo, 0 ) AS Costo,
+	ifnull(t.moneda, '' ) AS Moneda,
+	3.6 AS TipoCambio,
+	(to_days(curdate()) - to_days( cu.fecFinPago )) AS diasVencidos,
+	(ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30))) AS Periodos,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2)),
+		0) AS NuevaDeudaSoles,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	lc.VersionOffice AS VersionOffice,
+	lc.VersionWindows AS VersionWindows,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	ifnull( v.idVideo, 0 ) AS idVideo,
+	ifnull( v.marca, '' ) AS marcaVideo,
+	ifnull( v.nombreModelo, '' ) AS NombreModeloVideo,
+	ifnull( v.capacidad, 0 ) AS CapacidadVideo,
+	ifnull( v.tipo, '' ) AS tipoVideo,
+	lc.idLC AS idLC,
+	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
+	FROM
+		salida s
+		INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+		INNER JOIN vista_maestro_laptops lc ON lc.idLC = d.idLC 
+		LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador 
+		LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo 
+		LEFT JOIN tarifa t ON t.idsalidadet=d.idSalidaDet
+		JOIN cuota cu 
+	WHERE
+		((
+			d.estado = 4 
+			) 
+		AND (((
+					d.fecFinContrato = cu.fecFinPago 
+					) 
+				AND ( d.corteAlquiler = 0 )) 
+		OR ( d.fecFinContrato > cu.fecFinPago )) 
+		AND (
+		cu.fecFinPago < curdate()) 
+		AND (
+			0 <> (
+			CASE
+					
+				WHEN ( d.caracteristicas = '' ) THEN
+				(
+					concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) ELSE ((
+					concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )) 
+					OR ((
+						SELECT
+							concat( ca.idLCAntiguo, '-', d.idSalida ) 
+						FROM
+							cambio ca 
+						WHERE
+						( ca.idCambio = d.caracteristicas )) = concat( cu.idLC, '-', cu.idSalida ))) 
+				END 
+				))) 
+		ORDER BY
+		cliente,
+	codigoEquipo;
+
+/*--======================CORTE ALQUILER=======================================	*/
+
+
+DROP VIEW IF EXISTS vista_reporte_corte_alquiler;
+create view vista_reporte_corte_alquiler as
+SELECT c.fec_ins AS FechaProceso,
+	(SELECT nroDocumento FROM cliente where cliente.idCliente=c.idCliente) AS RUC,
+	c.codigoEquipo AS Codigo,
+	c.motivoCorte AS MotivoCorte,
+	c.fecRecojo AS FechaRecojo,
+	c.fecFinContratoNew AS FechaCorteAlquiler,
+	c.idCorteAlquiler AS IdCorteAlquiler,
+	c.estado AS IdEstado,
+	if((c.estado=1),'ACTIVO','ANULADO') AS NombreEstado,
+	ifnull((SELECT c1.fecFinPago AS fecFinPago 
+		FROM cuota c1 JOIN laptop_cpu lc ON c1.idLC = lc.idLC
+		WHERE c.idSalida = c1.idSalida AND  lc.idLC = c.idEquipo),
+		ifnull((SELECT c2.fecFinPago AS fecFinPago 
+			FROM cuota c2 JOIN laptop_cpu lc2 ON c2.idLC = lc2.idLC
+			WHERE c.idSalida = c2.idSalida AND lc2.codigo = c.codigoEquipoAntiguo),
+			'' 
+		)) AS FechaUltimaFactura ,
+	c.observacion AS Observacion,
+	(Select d.FueDevuelto from salida_det d where c.idSalidaDet=d.idSalidaDet ) AS FueDevuelto
+FROM corte_alquiler c;
+
+
+/*======================CUADRO DE VENCIMIENTO=======================================*/	
+
+
+DROP VIEW IF EXISTS vista_laptops_cuadro_vencimiento;
+create view vista_laptops_cuadro_vencimiento as
+
+
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	s.idSalida AS IdSalida,
+	cast( s.fecSalida AS date ) AS FecPrimerTraslado,
+	d.idLC AS IdLC,
+	cast( d.fecIniContrato AS date ) AS fecIniContrato,
+	cast( d.fecFinContrato AS date ) AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nroDocumento AS ruc,
+	sc.nombreCliente AS Cliente,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	lc.VersionOffice AS VersionOffice,
+	lc.VersionWindows AS VersionWindows,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	IFNULL(v.idVideo,0) AS idVideo,
+	IFNULL(v.marca,'') AS marcaVideo,
+	IFNULL(v.nombreModelo,'') AS NombreModeloVideo,
+	IFNULL(v.capacidad,0) AS CapacidadVideo,
+	IFNULL(v.tipo,'') AS tipoVideo,
+	d.guiaSalida AS guia,
+	'' AS factura,
+	'' AS fecInicioFactura,
+	'' AS fecFinFactura,
+	0 AS MontoSoles,
+	0 AS MontoDolares,
+	0 AS TotalDolares,
+	0 AS CostoSoles,
+	0 AS CostoDolares,
+	0 AS UBSoles,
+	(to_days(curdate()) - to_days( d.fecIniContrato )) AS diasVencidos,
+	IFNULL(d.observacion,'') AS CodigoAntiguo,	
+	(SELECT	c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente) AS KAM,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	IFNULL( t.moneda, '' ) AS Moneda,
+	IFNULL( t.tarifa, 0 ) AS Tarifa,
+	IFNULL( t.costo, 0 ) AS Costo,
+	3.6 AS TipoCambio,
+	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	LEFT JOIN vista_maestro_sucursal_cliente sc ON s.idSucursal = sc.idSucursal
+	LEFT JOIN vista_maestro_laptops lc ON d.idLC = lc.idLC 
+	LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador 
+	LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo 
+	LEFT JOIN tarifa t ON d.idSalidaDet = t.idsalidadet 
+	JOIN cuota cu 
+WHERE
+	d.fueDevuelto = 0 				 
+	AND d.estado = 4 
+	AND 
+	CASE WHEN d.caracteristicas = '' THEN
+		CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+	ELSE
+		CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+		AND (SELECT	CONCAT( ca.idLCAntiguo, '-', d.idSalida ) FROM	cambio ca  WHERE ca.idCambio = d.caracteristicas ) 		NOT IN (SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+	END 	
+	
+UNION
+
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	s.idSalida AS IdSalida,
+	cast( s.fecSalida AS date ) AS FecPrimerTraslado,
+	d.idLC AS IdLC,
+	cast( d.fecIniContrato AS date ) AS fecIniContrato,
+	cast( d.fecFinContrato AS date ) AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nroDocumento AS ruc,
+	sc.nombreCliente AS Cliente,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	lc.VersionOffice AS VersionOffice,
+	lc.VersionWindows AS VersionWindows,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	IFNULL(v.idVideo,0) AS idVideo,
+	IFNULL(v.marca,'') AS marcaVideo,
+	IFNULL(v.nombreModelo,'') AS NombreModeloVideo,
+	IFNULL(v.capacidad,0) AS CapacidadVideo,
+	IFNULL(v.tipo,'') AS tipoVideo,
+	d.guiaSalida AS guia,
+	cu.numFactura AS factura,
+	cast( cu.fecInicioPago AS date ) AS fecInicioFactura,
+	cast( cu.fecFinPago AS date ) AS fecFinFactura,
+	cu.totalSoles AS MontoSoles,
+	cu.totalDolares AS MontoDolares,
+	round(( cu.totalDolares + ( cu.totalSoles / 3.5 )), 2 ) AS TotalDolares,
+	cu.costoSoles AS CostoSoles,
+	cu.costoDolares AS CostoDolares,
+	((3.6 * ( cu.totalDolares - cu.costoDolares )) + ( cu.totalSoles - cu.costoSoles )) AS UBSoles,
+	(to_days(curdate()) - to_days( cu.fecFinPago )) AS diasVencidos,
+	IFNULL(d.observacion,'') AS CodigoAntiguo,	
+	(SELECT	c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente) AS KAM,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	IFNULL( t.moneda, '' ) AS Moneda,
+	IFNULL( t.tarifa, 0 ) AS Tarifa,
+	IFNULL( t.costo, 0 ) AS Costo,
+	3.6 AS TipoCambio,
+	IF (( d.corteAlquiler = 1 ), 'SI', 'NO' ) AS CorteAlquiler 
+FROM 
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida  
+	LEFT JOIN vista_maestro_sucursal_cliente sc ON  s.idSucursal = sc.idSucursal  
+	LEFT JOIN vista_maestro_laptops lc ON d.idLC = lc.idLC  
+	LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador  
+	LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo  
+	LEFT JOIN tarifa t ON d.idSalidaDet = t.idsalidadet  
+	JOIN cuota cu  
+	WHERE d.fueDevuelto = 0 				 
+		AND d.estado = 4 
+		AND 
+		CASE WHEN d.caracteristicas = '' THEN
+			CONCAT( d.idLC, '-', d.idSalida ) = CONCAT( cu.idLC, '-', cu.idSalida ) 
+		ELSE 
+			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+			(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) FROM cambio ca WHERE ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+		END 
+					 
+ORDER BY
+IdCliente;
+	
+/*--DATEDIFF( d.fecFinContrato , CURDATE())>=0  )*/
+
+/*--======================PENDIENTE RECOGER=======================================	*/
+
+
+DROP VIEW IF EXISTS vista_productos_por_recoger;
+create view vista_productos_por_recoger as
+	
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	d.idLC AS IdLC,
+	d.fecIniContrato AS fecIniContrato,
+	d.fecFinContrato AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nombreCliente AS Cliente,
+	sc.nroDocumento AS Ruc,
+	IFNULL(d.personaContacto,sc.nombreContacto) AS `Contacto`,
+	IFNULL(d.direccionRecojo,sc.direccion) AS `DireccionCliente`,
+	IFNULL(d.telefono,sc.telefono) AS `TelefonoContacto`,
+	IFNULL(d.fecRecojo,'') AS `FechaRecojo`,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	IFNULL(v.idVideo,0) AS idVideo,
+	IFNULL(v.marca,'') AS marcaVideo,
+	IFNULL(v.nombreModelo,'') AS NombreModeloVideo,
+	IFNULL(v.capacidad,0) AS CapacidadVideo,
+	IFNULL(v.tipo,'') AS tipoVideo,
+	(to_days(curdate()) - to_days( d.fecFinContrato )) AS diasAtrasoRecojo,
+	d.guiaSalida AS guia,
+	d.motivoNoRecojo AS motivoNoRecojo,
+	(SELECT	c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente) AS KAM,
+	d.estado AS estado,
+	IFNULL(d.observacion,'') AS CodigoAntiguo,	
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	'' AS factura,
+	'' AS fecInicioFactura,
+	'' AS fecFinFactura,
+	0 AS MontoSoles,
+	0 AS MontoDolares,
+	0 AS TotalDolares,
+	IF(d.estado = 9, 'CAMBIO', IF(d.motivoCorte='DEVOLUCIÓN','DEVOLUCIÓN','OTRO MOTIVO') ) AS MotivoRecojo 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	LEFT JOIN vista_maestro_sucursal_cliente sc ON s.idSucursal = sc.idSucursal 
+	LEFT JOIN vista_maestro_laptops lc ON d.idLC = lc.idLC 
+	LEFT JOIN vista_maestro_procesador p ON d.idProcesador = p.idProcesador 
+	LEFT JOIN vista_maestro_video v ON d.idVideo = v.idVideo 
+	JOIN cuota cu 
+WHERE
+	(
+	d.fueDevuelto = 0 
+	AND 
+	(( d.estado = 4 
+		AND 
+		CASE WHEN d.corteAlquiler=1 THEN
+			CASE WHEN d.motivoCorte='DEVOLUCIÓN' AND (( to_days( d.fecRecojo ) - to_days( d.fecFinContrato) - 1) < 0 )  THEN
+				(( to_days( d.fecRecojo ) - to_days( curdate()) - 1) < 0 ) 
+			ELSE
+				(( to_days( d.fecFinContrato) - to_days( curdate())) < 0 )
+			END
+		END
+		)
+		OR 
+		( d.estado = 9 )
+	)
+	
+	AND 
+	CASE WHEN d.caracteristicas = '' THEN
+		concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+	ELSE 
+		concat( d.idLC, '-', d.idSalida ) NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+		AND (SELECT concat( ca.idLCAntiguo, '-', d.idSalida ) FROM cambio ca  WHERE ca.idCambio = d.caracteristicas) 
+			NOT IN ( SELECT concat( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+	END 
+	) 
+
+UNION
+
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	d.idLC AS IdLC,
+	d.fecIniContrato AS fecIniContrato,
+	d.fecFinContrato AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nombreCliente AS Cliente,
+	sc.nroDocumento AS Ruc,
+	IFNULL(d.personaContacto,sc.nombreContacto) AS `Contacto`,
+	IFNULL(d.direccionRecojo,sc.direccion) AS `DireccionCliente`,
+	IFNULL(d.telefono,sc.telefono) AS `TelefonoContacto`,
+	IFNULL(d.fecRecojo,'') AS `FechaRecojo`,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	IFNULL(v.idVideo,0) AS idVideo,
+	IFNULL(v.marca,'') AS marcaVideo,
+	IFNULL(v.nombreModelo,'') AS NombreModeloVideo,
+	IFNULL(v.capacidad,0) AS CapacidadVideo,
+	IFNULL(v.tipo,'') AS tipoVideo,
+	(to_days(curdate()) - to_days( d.fecFinContrato )) AS diasAtrasoRecojo,
+	d.guiaSalida AS guia,
+	d.motivoNoRecojo AS motivoNoRecojo,
+	(SELECT	c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente) AS KAM,
+	d.estado AS estado,
+	IFNULL(d.observacion,'') AS CodigoAntiguo,	
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua,
+	cu.numFactura AS factura,
+	cast( cu.fecInicioPago AS date ) AS fecInicioFactura,
+	cast( cu.fecFinPago AS date ) AS fecFinFactura,
+	cu.totalSoles AS MontoSoles,
+	cu.totalDolares AS MontoDolares,
+	round(( cu.totalDolares + ( cu.totalSoles / 3.5 )), 2 ) AS TotalDolares,
+	IF(d.estado = 9, 'CAMBIO', IF(d.motivoCorte='DEVOLUCIÓN','DEVOLUCIÓN','OTRO MOTIVO') ) AS MotivoRecojo 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	LEFT JOIN vista_maestro_sucursal_cliente sc ON s.idSucursal = sc.idSucursal 
+	LEFT JOIN vista_maestro_laptops lc ON d.idLC = lc.idLC 
+	LEFT JOIN vista_maestro_procesador p ON d.idProcesador = p.idProcesador 
+	LEFT JOIN vista_maestro_video v ON d.idVideo = v.idVideo 
+	JOIN cuota cu 
+WHERE
+	(d.fueDevuelto = 0 
+	AND 
+	(
+		(d.estado = 4
+		AND 
+		CASE WHEN d.corteAlquiler=1 THEN
+			CASE WHEN d.motivoCorte='DEVOLUCIÓN' AND (( to_days( d.fecRecojo ) - to_days( d.fecFinContrato) - 1) < 0 )  THEN
+				(( to_days( d.fecRecojo ) - to_days( curdate()) - 1) < 0 ) 
+			ELSE
+				(( to_days( d.fecFinContrato) - to_days( curdate())) < 0 )
+			END
+		END
+		)
+		OR  ( d.estado = 9 )
+	)
+	AND 
+	CASE WHEN d.caracteristicas = '' THEN
+		concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida )
+	ELSE
+		concat( d.idLC, '-', d.idSalida ) = concat( cu.idLC, '-', cu.idSalida ) 
+		OR ((SELECT concat( ca.idLCAntiguo, '-', d.idSalida ) FROM cambio ca WHERE ca.idCambio = d.caracteristicas) 
+			= concat( cu.idLC, '-', cu.idSalida )) 
+	END
+	) 
+ORDER BY
+IdLC;
+		
+	
+
+/*--======================PRONOSTICADOR=======================================	*/
+
+
+DROP VIEW IF EXISTS vista_pronosticador;
+create view vista_pronosticador as
+	
+		
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	d.idLC AS IdLC,
+	d.fecIniContrato AS fecIniContrato,
+	d.fecFinContrato AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nombreCliente AS Cliente,
+	sc.nroDocumento AS Ruc,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+	p.idGeneracion AS idGeneracionProcesador,
+	p.idTipo AS idTipoProcesador,
+	lc.estado AS idEstado,
+	(SELECT	e.nombreEstado FROM	estados e WHERE	( lc.estado = e.idEstado )) AS estado,
+	IFNULL(v.idVideo,0) AS idVideo,
+	IFNULL(v.marca,'') AS marcaVideo,
+	IFNULL(v.nombreModelo,'') AS NombreModeloVideo,
+	IFNULL(v.capacidad,0) AS CapacidadVideo,
+	IFNULL(v.tipo,'') AS tipoVideo,
+	d.guiaSalida AS GuiaSalida,
+	IFNULL(d.observacion,'') AS CodigoAntiguo,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	LEFT JOIN vista_maestro_sucursal_cliente sc ON s.idSucursal = sc.idSucursal  
+	LEFT JOIN vista_maestro_laptops lc ON d.idLC = lc.idLC  
+	LEFT JOIN vista_maestro_procesador p ON lc.idProcesador = p.idProcesador  
+	LEFT JOIN vista_maestro_video v ON lc.idVideo = v.idVideo  
+WHERE
+	d.fueDevuelto = 0 
+	AND d.estado = 4
+	AND d.corteAlquiler = 1 
+	AND d.motivoCorte='DEVOLUCIÓN'	 
+ORDER BY
+	lc.idLC;
+	
+	
+/*--======================PRODUCTOS POR FACTURAR DASH=======================================	*/
+
+
+DROP VIEW IF EXISTS vista_productos_por_facturar_dash;
+create view vista_productos_por_facturar_dash as
+	
+
+SELECT
+	d.idSalidaDet AS IdSalidaDet,
+	cli.nombre_razonSocial AS cliente,
+	cli.nroDocumento AS ruc,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2)),
+		0) AS PendienteFacturarSoles,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( d.fecIniContrato )) / 30)))),2)),
+		0) AS DeudaSoles,
+	(to_days(curdate()) - to_days( d.fecIniContrato )) AS diasVencidos
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	INNER JOIN cliente cli ON cli.idCliente = s.idCliente 
+	LEFT JOIN tarifa t ON d.idSalidaDet=t.idsalidadet
+WHERE
+	d.estado = 4 
+	AND
+		CASE WHEN d.caracteristicas='' THEN
+			CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+		ELSE
+			CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+			(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+		END
+				
+UNION
+
+SELECT
+	d.idSalidaDet AS IdSalidaDet,
+	cli.nombre_razonSocial AS cliente,
+	cli.nroDocumento AS ruc,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2)),
+		0) AS PendienteFacturarSoles,
+	IF((t.tarifa IS NOT NULL ),
+		IF((t.moneda = 'SOLES'), 
+			round(((t.tarifa - t.costo) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2),
+			round((((t.tarifa - t.costo) * 3.6) * (ceiling(((to_days(curdate()) - to_days( cu.fecFinPago )) / 30)))),2)),
+		0) AS DeudaSoles,
+	(to_days(curdate()) - to_days( cu.fecFinPago )) AS diasVencidos
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida 
+	INNER JOIN cliente cli ON cli.idCliente = s.idCliente 
+	LEFT JOIN tarifa t ON d.idSalidaDet=t.idsalidadet
+	JOIN cuota cu 
+WHERE
+	d.estado = 4 
+	AND ((d.fecFinContrato = cu.fecFinPago AND  d.corteAlquiler = 0 ) OR  d.fecFinContrato > cu.fecFinPago ) 
+	AND cu.fecFinPago < curdate()
+	AND
+		CASE WHEN d.caracteristicas='' THEN
+			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+		ELSE
+			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+			(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+		END
+ORDER BY
+cliente;
+
+
+
+
 

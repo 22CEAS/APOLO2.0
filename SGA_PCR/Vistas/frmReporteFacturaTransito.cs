@@ -200,5 +200,18 @@ namespace Apolo
         {
             this.Close();
         }
+
+        private void vistaCodigo_KeyUp(object sender, KeyEventArgs e)
+        {
+            int filas = vistaCodigo.RowCount;
+            if (filas > 0)
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+                {
+                    string aux = vistaCodigo.GetFocusedValue().ToString();
+                    if (aux.Length == 0)
+                        aux = "a";
+                    Clipboard.SetText(aux);
+                }
+        }
     }
 }

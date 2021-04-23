@@ -27,7 +27,7 @@ END$$
 DELIMITER ;
 
 
---======================FACTURAS TRANSITO=======================================	
+/*======================FACTURAS TRANSITO=======================================	*/
 
 
 DROP TRIGGER IF EXISTS `after_alquiler_detalle_insert`;
@@ -67,7 +67,7 @@ BEGIN
 			where idFacturaTransito=@IdFacturaTransito;
 			
 		ELSE
-			IF (( to_days( @FecIniPago )-  to_days(@FecIniContrato))>3 OR ( to_days( @FecIniPago )-  to_days(@FecIniContrato))<-1) THEN
+			IF (( to_days( @FecIniPago )-  to_days(@FecIniContrato))>5 OR ( to_days( @FecIniPago )-  to_days(@FecIniContrato))<-5) THEN
 			
 				UPDATE factura_transito 
 				SET observacion = CONCAT("Esta factura tiene errores en la fecha. Hay un Salto de fechas de ", to_days( @FecIniPago )-  to_days(@FecIniContrato))
@@ -108,7 +108,7 @@ $$
 DELIMITER ;
 
 
---======================CORTE ALQUILER=======================================	
+/*======================CORTE ALQUILER=======================================	*/
 
 
 DROP TRIGGER IF EXISTS `after_corte_alquiler_insert`;

@@ -133,5 +133,18 @@ namespace Apolo
 
             }
         }
+
+        private void vistaAlquiler_KeyUp(object sender, KeyEventArgs e)
+        {
+            int filas = vistaAlquiler.RowCount;
+            if (filas > 0)
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+                {
+                    string aux = vistaAlquiler.GetFocusedValue().ToString();
+                    if (aux.Length == 0)
+                        aux = "a";
+                    Clipboard.SetText(aux);
+                }
+        }
     }
 }

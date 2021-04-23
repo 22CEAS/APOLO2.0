@@ -52,8 +52,8 @@
             this.CantidadEquipos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnlFTr = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposCodigos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCodigo)).BeginInit();
@@ -178,6 +178,7 @@
             this.vistaCodigo.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vistaCodigo.OptionsView.ShowAutoFilterRow = true;
             this.vistaCodigo.OptionsView.ShowGroupPanel = false;
+            this.vistaCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vistaCodigo_KeyUp);
             // 
             // CodigoEquipo
             // 
@@ -392,18 +393,6 @@
             this.pnlFTr.TabIndex = 242;
             this.pnlFTr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(514, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 23);
-            this.label2.TabIndex = 178;
-            this.label2.Text = "FACTURAS EN TRANSITO";
-            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -417,6 +406,18 @@
             this.btnCerrar.TabIndex = 243;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(514, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(224, 23);
+            this.label2.TabIndex = 178;
+            this.label2.Text = "FACTURAS EN TRANSITO";
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFTr_MouseMove);
             // 
             // frmReporteFacturaTransito
             // 

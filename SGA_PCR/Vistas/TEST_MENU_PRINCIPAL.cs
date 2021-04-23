@@ -68,6 +68,7 @@ namespace Apolo
 
         private int idUser;
         private string nameUser;
+        private string emailUser;
 
 
         private int totalDispo = 0;
@@ -76,13 +77,13 @@ namespace Apolo
         private int GeneracionDesfasado = 3;
         
 
-        public TEST_MENU_PRINCIPAL(int idUsuario, string nombreUsuario)
+        public TEST_MENU_PRINCIPAL(int idUsuario, string nombreUsuario, string email)
         {
             InitializeComponent();
-            Inicializado(idUsuario, nombreUsuario);
+            Inicializado(idUsuario, nombreUsuario, email);
         }
 
-        public void Inicializado(int idUsuario, string nombreUsuario)
+        public void Inicializado(int idUsuario, string nombreUsuario, string email)
         {
             accesos_usuarioDA = new AccesosUsuarioDA();
             accesos_usuarios = new Accesos_usuarios();
@@ -105,6 +106,7 @@ namespace Apolo
             usuarioConectado.Text = idUsuario.ToString();
             this.idUser = idUsuario;
             this.nameUser = nombreUsuario;
+            this.emailUser = email;
 
             verificandoPermisos();
 
@@ -1139,7 +1141,7 @@ namespace Apolo
             if (IsOpen == false)
             {
                 MenuVertical.Width = 0;
-                frmProcesoCorteAlquiler f2 = new frmProcesoCorteAlquiler(this.idUser, this.nameUser);
+                frmProcesoCorteAlquiler f2 = new frmProcesoCorteAlquiler(this.idUser, this.nameUser, this.emailUser);
                 f2.MdiParent = this;
                 CerrarDash();
                 f2.Show();

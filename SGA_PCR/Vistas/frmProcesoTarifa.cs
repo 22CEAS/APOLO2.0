@@ -245,5 +245,17 @@ namespace Apolo
             }
         }
 
+        private void vistaTarifas_KeyUp(object sender, KeyEventArgs e)
+        {/*
+            int filas = vistaTarifas.RowCount;
+            if (filas > 0)
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.N))
+                {
+                    string aux = vistaTarifas.GetFocusedValue().ToString();
+                    if (aux.Length == 0)
+                        aux = "a";
+                    Clipboard.SetText(aux);
+                }
+        */}
     }
 }

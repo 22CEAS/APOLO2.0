@@ -93,6 +93,7 @@
             this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            this.vista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vista_KeyUp);
             // 
             // TipoDisco
             // 
