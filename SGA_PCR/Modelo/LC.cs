@@ -45,7 +45,8 @@ namespace Modelo
         private string fechaTraslado;
         private string idSede;
         private string tipoSede;
-
+        private string fechaCompra;
+        private double precio;
 
         public LC()
         {
@@ -228,5 +229,7 @@ namespace Modelo
         public string FechaTraslado { get => fechaTraslado; set => fechaTraslado = value; }
         public string IdSede { get => idSede; set => idSede = value; }
         public string TipoSede { get => tipoSede; set => tipoSede = value; }
+        public string FechaCompra { get => fechaCompra; set => fechaCompra = value; }
+        public double Precio { get => precio; set => precio = value; }
     }
 }

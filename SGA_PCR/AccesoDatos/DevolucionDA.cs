@@ -29,6 +29,11 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * From vista_laptops_detalle_alquiler_cliente_estado_alquilado where idCliente=" +idCliente+ " ;");
         }
 
+        public DataTable ListarLaptopsClientesEstadoAlquiladoConCorteAlquiler(int idCliente)
+        {
+            return objManager.MostrarTablaDatos("Select * From vista_laptops_detalle_alquiler_cliente_estado_alquilado where corteAlquiler=1 and idCliente=" + idCliente + " ;");
+        }
+
         public DataTable ListarDevolucion(string sql)
         {
             return objManager.MostrarTablaDatos("Select * from vista_lista_devoluciones v " + sql + " ;");

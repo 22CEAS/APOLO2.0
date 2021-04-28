@@ -315,6 +315,8 @@
             // 
             // idSalidaDet
             // 
+            this.idSalidaDet.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.idSalidaDet.AppearanceHeader.Options.UseBackColor = true;
             this.idSalidaDet.Caption = "idSalidaDet";
             this.idSalidaDet.FieldName = "idSalidaDet";
             this.idSalidaDet.Name = "idSalidaDet";
@@ -324,6 +326,8 @@
             // 
             // UltimaFactura
             // 
+            this.UltimaFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.UltimaFactura.AppearanceHeader.Options.UseBackColor = true;
             this.UltimaFactura.Caption = "UltimaFactura";
             this.UltimaFactura.FieldName = "UltimaFactura";
             this.UltimaFactura.Name = "UltimaFactura";
@@ -333,6 +337,8 @@
             // 
             // FecInicioFactura
             // 
+            this.FecInicioFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecInicioFactura.AppearanceHeader.Options.UseBackColor = true;
             this.FecInicioFactura.Caption = "FecInicioFactura";
             this.FecInicioFactura.FieldName = "FecInicioFactura";
             this.FecInicioFactura.Name = "FecInicioFactura";
@@ -342,6 +348,8 @@
             // 
             // FecFinFactura
             // 
+            this.FecFinFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FecFinFactura.AppearanceHeader.Options.UseBackColor = true;
             this.FecFinFactura.Caption = "FecFinFactura";
             this.FecFinFactura.FieldName = "FecFinFactura";
             this.FecFinFactura.Name = "FecFinFactura";
@@ -351,6 +359,8 @@
             // 
             // FechaEmisionFactura
             // 
+            this.FechaEmisionFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaEmisionFactura.AppearanceHeader.Options.UseBackColor = true;
             this.FechaEmisionFactura.Caption = "FechaEmisionFactura";
             this.FechaEmisionFactura.FieldName = "FechaEmisionFactura";
             this.FechaEmisionFactura.Name = "FechaEmisionFactura";

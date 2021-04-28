@@ -47,7 +47,7 @@ namespace Apolo
             devolucionDA = new DevolucionDA();
             //laptop = new LC();
             detalles = new BindingList<DevolucionDetalle>();
-            tablaLaptops = devolucionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
+            tablaLaptops = devolucionDA.ListarLaptopsClientesEstadoAlquiladoConCorteAlquiler(idCliente);
 
             tablaLaptops.Columns.Add("Seleccionar", typeof(bool));
             tablaLaptops.Columns.Add("Observacion", typeof(string));

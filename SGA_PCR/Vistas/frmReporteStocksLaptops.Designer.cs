@@ -88,6 +88,9 @@
             this.pnlInv = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.Precio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaCompra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PartNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -114,6 +117,7 @@
             this.TipoSede.AppearanceHeader.Options.UseBackColor = true;
             this.TipoSede.Caption = "Sede";
             this.TipoSede.FieldName = "TipoSede";
+            this.TipoSede.MinWidth = 40;
             this.TipoSede.Name = "TipoSede";
             this.TipoSede.Visible = true;
             this.TipoSede.VisibleIndex = 20;
@@ -158,6 +162,7 @@
             this.Procesador,
             this.GeneracionProcesador,
             this.Video,
+            this.tamanoPantalla,
             this.CapacidadVideo,
             this.Disco1,
             this.CapacidadDisco1,
@@ -176,7 +181,9 @@
             this.idSede,
             this.TipoSede,
             this.IdEstado,
-            this.tamanoPantalla});
+            this.Precio,
+            this.FechaCompra,
+            this.PartNumber});
             gridFormatRule1.Column = this.IdEstado;
             gridFormatRule1.ColumnApplyTo = this.TipoSede;
             gridFormatRule1.Name = "5555";
@@ -450,6 +457,7 @@
             this.fecTraslado.DisplayFormat.FormatString = "d";
             this.fecTraslado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.fecTraslado.FieldName = "FechaTraslado";
+            this.fecTraslado.MinWidth = 40;
             this.fecTraslado.Name = "fecTraslado";
             this.fecTraslado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.fecTraslado.Visible = true;
@@ -850,6 +858,45 @@
             this.label4.Text = "INVENTARIO";
             this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlInv_MouseMove);
             // 
+            // Precio
+            // 
+            this.Precio.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Precio.AppearanceHeader.Options.UseBackColor = true;
+            this.Precio.Caption = "Precio";
+            this.Precio.FieldName = "Precio";
+            this.Precio.MinWidth = 40;
+            this.Precio.Name = "Precio";
+            this.Precio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Precio.Visible = true;
+            this.Precio.VisibleIndex = 21;
+            this.Precio.Width = 80;
+            // 
+            // FechaCompra
+            // 
+            this.FechaCompra.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaCompra.AppearanceHeader.Options.UseBackColor = true;
+            this.FechaCompra.Caption = "Fecha Compra";
+            this.FechaCompra.FieldName = "FechaCompra";
+            this.FechaCompra.MinWidth = 40;
+            this.FechaCompra.Name = "FechaCompra";
+            this.FechaCompra.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.FechaCompra.Visible = true;
+            this.FechaCompra.VisibleIndex = 22;
+            this.FechaCompra.Width = 100;
+            // 
+            // PartNumber
+            // 
+            this.PartNumber.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.PartNumber.AppearanceHeader.Options.UseBackColor = true;
+            this.PartNumber.Caption = "PartNumber";
+            this.PartNumber.FieldName = "PartNumber";
+            this.PartNumber.MinWidth = 40;
+            this.PartNumber.Name = "PartNumber";
+            this.PartNumber.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.PartNumber.Visible = true;
+            this.PartNumber.VisibleIndex = 23;
+            this.PartNumber.Width = 100;
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -963,5 +1010,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn tamanoPantalla;
         private DevExpress.XtraGrid.Columns.GridColumn LicenciaWindows;
         private DevExpress.XtraGrid.Columns.GridColumn LicenciaOffice;
+        private DevExpress.XtraGrid.Columns.GridColumn Precio;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaCompra;
+        private DevExpress.XtraGrid.Columns.GridColumn PartNumber;
     }
 }

@@ -105,7 +105,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(20, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(23, 1)));
         }
 
         
@@ -503,6 +503,9 @@ namespace Apolo
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    laptop.Precio = double.Parse(tablaLaptops.Rows[rec]["Precio"].ToString());
+                    laptop.FechaCompra = tablaLaptops.Rows[rec]["FechaCompra"].ToString();
+                    laptop.PartNumber = tablaLaptops.Rows[rec]["PartNumber"].ToString();
                     /*
                     if (tablaLaptops.Rows[rec]["fecTraslado"].ToString() == " ")
                     {
@@ -513,7 +516,7 @@ namespace Apolo
                         laptop.FechaTraslado = tablaLaptops.Rows[rec]["fecTraslado"].ToString();
                     }
                     */
-                    
+
                     if (laptop.EstadoNombre == "DISPONIBLE")
                     {
                         if (laptop.GeneracionProcesador <= this.GeneracionDesfasado)
