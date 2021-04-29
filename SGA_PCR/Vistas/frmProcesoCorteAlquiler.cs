@@ -327,11 +327,12 @@ namespace Apolo
                     MessageBox.Show("Hubo error en el registro, comunicarse con tu soporte", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
-                bool exists = renovaciones.Any(x => x.DescripcionMotivoCorte.Equals(motivoDevolucion));
-                if (exists)
-                {
-                    enviarCorreo();
-                }
+                //bool exists = renovaciones.Any(x => x.DescripcionMotivoCorte.Equals(motivoDevolucion));
+                //if (exists)
+                //{
+                //    enviarCorreo();
+                //}
+                enviarCorreo();
                 MessageBox.Show("Se guardó el proceso", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
@@ -359,7 +360,9 @@ namespace Apolo
             //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
 
             //Asunto
-            mmsg.Subject = "Corte de Alquiler";
+            int i = cmbCliente.SelectedIndex;
+            string razonSocial = tablaCliente.Rows[i]["nombre_razonSocial"].ToString();
+            mmsg.Subject = "Corte de Alquiler " + razonSocial;
             mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
 
             //Direccion de correo electronico que queremos que reciba una copia del mensaje
@@ -458,6 +461,7 @@ namespace Apolo
                           <tr>
                             <th>Código Equipo</th>
                             <th>Tipo Equipo</th>
+                            <th>Motivo Corte</th>
                             <th>Fecha Corte</th>
                             <th>Fecha Sugerida de Recojo</th>
                             <th>Dirección de Recojo</th>
@@ -469,19 +473,30 @@ namespace Apolo
             string cadena = "";
             foreach (CorteAlquiler renovacion in renovaciones)
             {
-                if (renovacion.DescripcionMotivoCorte == motivoDevolucion)
-                {
+                //if (renovacion.DescripcionMotivoCorte == motivoDevolucion)
+                //{
                     cadena += "<tr>";
                     cadena += "<td>" + renovacion.CodigoLC + "</td>";
                     cadena += "<td>" + "LAPTOP" + "</td>";
+                    cadena += "<td>" + renovacion.DescripcionMotivoCorte + "</td>";
                     cadena += "<td>" + renovacion.FechaFinContrato.ToShortDateString() + "</td>";
-                    cadena += "<td>" + renovacion.FechaRecojo.ToShortDateString() + "</td>";
-                    cadena += "<td>" + renovacion.Direccion + "</td>";
-                    cadena += "<td>" + renovacion.PersonaContacto + "</td>";
-                    cadena += "<td>" + renovacion.Telefono + "</td>";
+                    if (renovacion.DescripcionMotivoCorte == motivoDevolucion)
+                    {
+                        cadena += "<td>" + renovacion.FechaRecojo.ToShortDateString() + "</td>";
+                        cadena += "<td>" + renovacion.Direccion + "</td>";
+                        cadena += "<td>" + renovacion.PersonaContacto + "</td>";
+                        cadena += "<td>" + renovacion.Telefono + "</td>";
+                    }
+                    else
+                    {
+                        cadena += "<td>" + "" + "</td>";
+                        cadena += "<td>" + "" + "</td>";
+                        cadena += "<td>" + "" + "</td>";
+                        cadena += "<td>" + "" + "</td>";
+                    }
                     cadena += "<td>" + renovacion.Observacion + "</td>";
                     cadena += "</tr>";
-                }
+                //}
             }
             cadena += @"</table> 
                         </ body > 
@@ -631,7 +646,8 @@ namespace Apolo
                     miDataTable.Columns.Add("Direccion");
                     miDataTable.Columns.Add("Telefono");
                     miDataTable.Columns.Add("Observacion");
-                    //miDataTable.Columns.Add("FechaRecojo");
+                    miDataTable.Columns.Add("FechaRecojo");
+                    miDataTable.Columns.Add("DescripcionMotivoCorte");
 
                     path = openFileDialog.FileName;
                     SLDocument sl = new SLDocument(path);
@@ -645,7 +661,8 @@ namespace Apolo
                         Renglon["Direccion"] = sl.GetCellValueAsString(iRow, 3);
                         Renglon["Telefono"] = sl.GetCellValueAsString(iRow, 4);
                         Renglon["Observacion"] = sl.GetCellValueAsString(iRow, 5);
-                        //Renglon["FechaRecojo"] = sl.GetCellValueAsDateTime(iRow, 6);
+                        Renglon["FechaRecojo"] = sl.GetCellValueAsDateTime(iRow, 6);
+                        Renglon["DescripcionMotivoCorte"] = sl.GetCellValueAsString(iRow, 7);
                         iRow++;
                         miDataTable.Rows.Add(Renglon);
                     }
@@ -664,23 +681,40 @@ namespace Apolo
                                 string Direccion = miDataTable.Rows[i]["Direccion"].ToString();
                                 string Telefono = miDataTable.Rows[i]["Telefono"].ToString();
                                 string Observacion = miDataTable.Rows[i]["Observacion"].ToString();
-                                //string FechaRecojo = miDataTable.Rows[i]["FechaRecojo"].ToString();
+                                string FechaRecojo = miDataTable.Rows[i]["FechaRecojo"].ToString();
+                                string DescripcionMotivoCorte = miDataTable.Rows[i]["DescripcionMotivoCorte"].ToString();
                                 vistaEquipos.SetRowCellValue(j, "PersonaContacto", PersonaContacto);
                                 vistaEquipos.SetRowCellValue(j, "Direccion", Direccion);
                                 vistaEquipos.SetRowCellValue(j, "Telefono", Telefono);
                                 vistaEquipos.SetRowCellValue(j, "Observacion", Observacion);
-                                //if(FechaRecojo!="1/01/1900 00:00:00")
-                                //    vistaEquipos.SetRowCellValue(j, "FechaRecojo", FechaRecojo);
+                                vistaEquipos.SetRowCellValue(j, "DescripcionMotivoCorte", DescripcionMotivoCorte);
+                                if (FechaRecojo != "1/01/1900 00:00:00" && EsFecha(FechaRecojo))
+                                    vistaEquipos.SetRowCellValue(j, "FechaRecojo", FechaRecojo);
                                 break;
                             }
                         }
                     }
                 }
+                MessageBox.Show("Se terminó de subir el excel", "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
+
+        public static Boolean EsFecha(String fecha)
+        {
+            try
+            {
+                DateTime.Parse(fecha);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
