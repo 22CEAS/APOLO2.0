@@ -86,11 +86,11 @@ namespace Apolo
             // Merge cells of two new rows. 
             if (idArea == idAreaComercialSupervisor)
             {
-                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(8, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
+                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(9, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
             }
             else
             {
-                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(7, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
+                e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(8, 1))); //EL 6 SON LAS COLUMNAS QUE TIENE EL REPORTE
             }
         }
 

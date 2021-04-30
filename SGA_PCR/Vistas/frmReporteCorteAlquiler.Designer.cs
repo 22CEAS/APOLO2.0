@@ -54,6 +54,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.RazonSocial = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.pnlCA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
@@ -68,7 +69,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1077, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1122, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +84,7 @@
             this.pnlCA.Controls.Add(this.label2);
             this.pnlCA.Location = new System.Drawing.Point(0, 0);
             this.pnlCA.Name = "pnlCA";
-            this.pnlCA.Size = new System.Drawing.Size(1109, 34);
+            this.pnlCA.Size = new System.Drawing.Size(1154, 34);
             this.pnlCA.TabIndex = 194;
             this.pnlCA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCV_MouseMove);
             // 
@@ -115,7 +116,7 @@
             this.dgvLaptops.Name = "dgvLaptops";
             this.dgvLaptops.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAnular});
-            this.dgvLaptops.Size = new System.Drawing.Size(1085, 272);
+            this.dgvLaptops.Size = new System.Drawing.Size(1130, 272);
             this.dgvLaptops.TabIndex = 195;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -139,6 +140,7 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.FechaProceso,
+            this.RazonSocial,
             this.RUC,
             this.Codigo,
             this.MotivoCorte,
@@ -182,7 +184,7 @@
             this.RUC.OptionsColumn.AllowEdit = false;
             this.RUC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RUC.Visible = true;
-            this.RUC.VisibleIndex = 1;
+            this.RUC.VisibleIndex = 2;
             this.RUC.Width = 100;
             // 
             // Codigo
@@ -196,7 +198,7 @@
             this.Codigo.OptionsColumn.AllowEdit = false;
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 2;
+            this.Codigo.VisibleIndex = 3;
             this.Codigo.Width = 140;
             // 
             // MotivoCorte
@@ -210,7 +212,7 @@
             this.MotivoCorte.OptionsColumn.AllowEdit = false;
             this.MotivoCorte.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.MotivoCorte.Visible = true;
-            this.MotivoCorte.VisibleIndex = 3;
+            this.MotivoCorte.VisibleIndex = 4;
             this.MotivoCorte.Width = 140;
             // 
             // FechaUltimaFactura
@@ -224,7 +226,7 @@
             this.FechaUltimaFactura.OptionsColumn.AllowEdit = false;
             this.FechaUltimaFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaUltimaFactura.Visible = true;
-            this.FechaUltimaFactura.VisibleIndex = 4;
+            this.FechaUltimaFactura.VisibleIndex = 5;
             this.FechaUltimaFactura.Width = 100;
             // 
             // FechaCorteAlquiler
@@ -238,7 +240,7 @@
             this.FechaCorteAlquiler.OptionsColumn.AllowEdit = false;
             this.FechaCorteAlquiler.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaCorteAlquiler.Visible = true;
-            this.FechaCorteAlquiler.VisibleIndex = 5;
+            this.FechaCorteAlquiler.VisibleIndex = 6;
             this.FechaCorteAlquiler.Width = 100;
             // 
             // IdEstado
@@ -259,7 +261,7 @@
             this.NombreEstado.OptionsColumn.AllowEdit = false;
             this.NombreEstado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NombreEstado.Visible = true;
-            this.NombreEstado.VisibleIndex = 6;
+            this.NombreEstado.VisibleIndex = 7;
             this.NombreEstado.Width = 100;
             // 
             // IdCorteAlquiler
@@ -284,7 +286,7 @@
             this.Observacion.OptionsColumn.AllowEdit = false;
             this.Observacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Observacion.Visible = true;
-            this.Observacion.VisibleIndex = 7;
+            this.Observacion.VisibleIndex = 8;
             this.Observacion.Width = 200;
             // 
             // Anular
@@ -295,7 +297,7 @@
             this.Anular.ColumnEdit = this.btnAnular;
             this.Anular.Name = "Anular";
             this.Anular.Visible = true;
-            this.Anular.VisibleIndex = 8;
+            this.Anular.VisibleIndex = 9;
             // 
             // btnAnular
             // 
@@ -320,7 +322,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(208, 363);
+            this.btnExportar.Location = new System.Drawing.Point(253, 363);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 196;
@@ -344,18 +346,32 @@
             // giftCarga
             // 
             this.giftCarga.BackColor = System.Drawing.Color.White;
-            this.giftCarga.Location = new System.Drawing.Point(301, 339);
+            this.giftCarga.Location = new System.Drawing.Point(359, 339);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(190, 138);
             this.giftCarga.TabIndex = 233;
             this.giftCarga.TabStop = false;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RazonSocial.AppearanceHeader.Options.UseBackColor = true;
+            this.RazonSocial.Caption = "RazonSocial";
+            this.RazonSocial.FieldName = "RazonSocial";
+            this.RazonSocial.MinWidth = 40;
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.OptionsColumn.AllowEdit = false;
+            this.RazonSocial.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.RazonSocial.Visible = true;
+            this.RazonSocial.VisibleIndex = 1;
+            this.RazonSocial.Width = 140;
             // 
             // frmReporteCorteAlquiler
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1109, 450);
+            this.ClientSize = new System.Drawing.Size(1154, 450);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);
@@ -403,5 +419,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn IdEstado;
         private DevExpress.XtraGrid.Columns.GridColumn NombreEstado;
         private DevExpress.XtraGrid.Columns.GridColumn Observacion;
+        private DevExpress.XtraGrid.Columns.GridColumn RazonSocial;
     }
 }

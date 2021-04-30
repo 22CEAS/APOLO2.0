@@ -3455,6 +3455,7 @@ DROP VIEW IF EXISTS vista_reporte_corte_alquiler;
 create view vista_reporte_corte_alquiler as
 SELECT c.fec_ins AS FechaProceso,
 	(SELECT nroDocumento FROM cliente where cliente.idCliente=c.idCliente) AS RUC,
+	(SELECT nombre_razonSocial FROM cliente where cliente.idCliente=c.idCliente) AS RazonSocial,
 	c.codigoEquipo AS Codigo,
 	c.motivoCorte AS MotivoCorte,
 	c.fecRecojo AS FechaRecojo,
